@@ -1,0 +1,235 @@
+r0_m0_complete_s0 pretrain 20: mse=0.010740
+r0_m0_complete_s0 pretrain 40: mse=0.010216
+r0_m0_complete_s0 pretrain 60: mse=0.009973
+r0_m0_complete_s0 pretrain 80: mse=0.009788
+r0_m0_complete_s0 pretrain 100: mse=0.009645
+r0_m0_complete_s0 joint 0: ACC=0.2829 NMI=0.1713 clusters=7
+r0_m0_complete_s0 joint 20: ACC=0.3615 NMI=0.1757 clusters=7
+r0_m0_complete_s0 joint 40: ACC=0.4324 NMI=0.2548 clusters=6
+r0_m0_complete_s0 joint 60: ACC=0.4930 NMI=0.2876 clusters=7
+r0_m0_complete_s0 joint 80: ACC=0.5377 NMI=0.3213 clusters=7
+r0_m0_complete_s0 joint 100: ACC=0.5103 NMI=0.3083 clusters=7
+r0_m0_complete_s0 joint 120: ACC=0.5063 NMI=0.2934 clusters=7
+r0_m0_complete_s0 joint 140: ACC=0.4967 NMI=0.2767 clusters=7
+r0_m0_complete_s0 joint 160: ACC=0.4926 NMI=0.2675 clusters=7
+r0_m0_complete_s0 joint 180: ACC=0.4856 NMI=0.2616 clusters=7
+r0_m0_complete_s0 joint 200: ACC=0.4771 NMI=0.2539 clusters=7
+r0_m0_complete_s0 joint 220: ACC=0.4756 NMI=0.2480 clusters=7
+r0_m0_complete_s0 joint 240: ACC=0.4819 NMI=0.2524 clusters=7
+r0_m0_complete_s0 joint 260: ACC=0.4682 NMI=0.2413 clusters=7
+r0_m0_complete_s0 joint 280: ACC=0.4638 NMI=0.2387 clusters=7
+r0_m0_complete_s0 joint 300: ACC=0.4686 NMI=0.2386 clusters=7
+r0_m0_complete_s0 joint 320: ACC=0.4645 NMI=0.2355 clusters=7
+r0_m0_complete_s0 joint 340: ACC=0.4623 NMI=0.2353 clusters=7
+r0_m0_complete_s0 joint 360: ACC=0.4609 NMI=0.2325 clusters=7
+r0_m0_complete_s0 joint 380: ACC=0.4583 NMI=0.2287 clusters=7
+r0_m0_complete_s0 joint 400: ACC=0.4483 NMI=0.2250 clusters=7
+r0_m0_complete_s1 pretrain 20: mse=0.010808
+r0_m0_complete_s1 pretrain 40: mse=0.010236
+r0_m0_complete_s1 pretrain 60: mse=0.009984
+r0_m0_complete_s1 pretrain 80: mse=0.009805
+r0_m0_complete_s1 pretrain 100: mse=0.009679
+r0_m0_complete_s1 joint 0: ACC=0.3759 NMI=0.1365 clusters=5
+r0_m0_complete_s1 joint 20: ACC=0.3323 NMI=0.1604 clusters=5
+r0_m0_complete_s1 joint 40: ACC=0.3523 NMI=0.1815 clusters=5
+r0_m0_complete_s1 joint 60: ACC=0.4527 NMI=0.2511 clusters=5
+r0_m0_complete_s1 joint 80: ACC=0.4900 NMI=0.2785 clusters=6
+r0_m0_complete_s1 joint 100: ACC=0.4671 NMI=0.2634 clusters=7
+r0_m0_complete_s1 joint 120: ACC=0.4468 NMI=0.2510 clusters=7
+r0_m0_complete_s1 joint 140: ACC=0.4623 NMI=0.2825 clusters=7
+r0_m0_complete_s1 joint 160: ACC=0.4701 NMI=0.3048 clusters=7
+r0_m0_complete_s1 joint 180: ACC=0.4753 NMI=0.3048 clusters=7
+r0_m0_complete_s1 joint 200: ACC=0.4771 NMI=0.3079 clusters=7
+r0_m0_complete_s1 joint 220: ACC=0.4564 NMI=0.2975 clusters=7
+r0_m0_complete_s1 joint 240: ACC=0.4553 NMI=0.2951 clusters=7
+r0_m0_complete_s1 joint 260: ACC=0.4572 NMI=0.2933 clusters=7
+r0_m0_complete_s1 joint 280: ACC=0.4535 NMI=0.2854 clusters=7
+r0_m0_complete_s1 joint 300: ACC=0.4490 NMI=0.2791 clusters=7
+r0_m0_complete_s1 joint 320: ACC=0.4494 NMI=0.2775 clusters=7
+r0_m0_complete_s1 joint 340: ACC=0.4435 NMI=0.2742 clusters=7
+r0_m0_complete_s1 joint 360: ACC=0.4409 NMI=0.2708 clusters=7
+r0_m0_complete_s1 joint 380: ACC=0.4409 NMI=0.2659 clusters=7
+r0_m0_complete_s1 joint 400: ACC=0.4431 NMI=0.2659 clusters=7
+r0_m0_complete_s2 pretrain 20: mse=0.010732
+r0_m0_complete_s2 pretrain 40: mse=0.010156
+r0_m0_complete_s2 pretrain 60: mse=0.009922
+r0_m0_complete_s2 pretrain 80: mse=0.009757
+r0_m0_complete_s2 pretrain 100: mse=0.009618
+r0_m0_complete_s2 joint 0: ACC=0.3261 NMI=0.1247 clusters=7
+r0_m0_complete_s2 joint 20: ACC=0.4956 NMI=0.2907 clusters=6
+r0_m0_complete_s2 joint 40: ACC=0.5332 NMI=0.3638 clusters=6
+r0_m0_complete_s2 joint 60: ACC=0.5314 NMI=0.3931 clusters=6
+r0_m0_complete_s2 joint 80: ACC=0.5583 NMI=0.4135 clusters=6
+r0_m0_complete_s2 joint 100: ACC=0.5558 NMI=0.4029 clusters=7
+r0_m0_complete_s2 joint 120: ACC=0.5362 NMI=0.3794 clusters=7
+r0_m0_complete_s2 joint 140: ACC=0.5266 NMI=0.3705 clusters=7
+r0_m0_complete_s2 joint 160: ACC=0.5247 NMI=0.3614 clusters=7
+r0_m0_complete_s2 joint 180: ACC=0.5196 NMI=0.3528 clusters=7
+r0_m0_complete_s2 joint 200: ACC=0.5162 NMI=0.3409 clusters=7
+r0_m0_complete_s2 joint 220: ACC=0.5148 NMI=0.3350 clusters=7
+r0_m0_complete_s2 joint 240: ACC=0.5089 NMI=0.3304 clusters=7
+r0_m0_complete_s2 joint 260: ACC=0.4993 NMI=0.3204 clusters=7
+r0_m0_complete_s2 joint 280: ACC=0.4956 NMI=0.3113 clusters=7
+r0_m0_complete_s2 joint 300: ACC=0.4897 NMI=0.3088 clusters=7
+r0_m0_complete_s2 joint 320: ACC=0.4934 NMI=0.3070 clusters=7
+r0_m0_complete_s2 joint 340: ACC=0.4904 NMI=0.3012 clusters=7
+r0_m0_complete_s2 joint 360: ACC=0.4897 NMI=0.2993 clusters=7
+r0_m0_complete_s2 joint 380: ACC=0.4819 NMI=0.2946 clusters=7
+r0_m0_complete_s2 joint 400: ACC=0.4819 NMI=0.2953 clusters=7
+r0.8_m0_zero_s0 pretrain 20: mse=0.002205
+r0.8_m0_zero_s0 pretrain 40: mse=0.002005
+r0.8_m0_zero_s0 pretrain 60: mse=0.001867
+r0.8_m0_zero_s0 pretrain 80: mse=0.001755
+r0.8_m0_zero_s0 pretrain 100: mse=0.001676
+r0.8_m0_zero_s0 joint 0: ACC=0.2382 NMI=0.0295 clusters=7
+r0.8_m0_zero_s0 joint 20: ACC=0.3032 NMI=0.0275 clusters=7
+r0.8_m0_zero_s0 joint 40: ACC=0.3021 NMI=0.0014 clusters=2
+r0.8_m0_zero_s0 joint 60: ACC=0.3021 NMI=0.0000 clusters=1
+r0.8_m0_zero_s0 joint 80: ACC=0.3021 NMI=0.0000 clusters=1
+r0.8_m0_zero_s0 joint 100: ACC=0.3028 NMI=0.0022 clusters=2
+r0.8_m0_zero_s0 joint 120: ACC=0.3032 NMI=0.0026 clusters=2
+r0.8_m0_zero_s0 joint 140: ACC=0.3017 NMI=0.0039 clusters=2
+r0.8_m0_zero_s0 joint 160: ACC=0.2984 NMI=0.0064 clusters=2
+r0.8_m0_zero_s0 joint 180: ACC=0.3043 NMI=0.0097 clusters=4
+r0.8_m0_zero_s0 joint 200: ACC=0.3076 NMI=0.0185 clusters=5
+r0.8_m0_zero_s0 joint 220: ACC=0.3128 NMI=0.0262 clusters=6
+r0.8_m0_zero_s0 joint 240: ACC=0.3131 NMI=0.0294 clusters=5
+r0.8_m0_zero_s0 joint 260: ACC=0.3131 NMI=0.0312 clusters=5
+r0.8_m0_zero_s0 joint 280: ACC=0.3087 NMI=0.0358 clusters=5
+r0.8_m0_zero_s0 joint 300: ACC=0.3069 NMI=0.0377 clusters=5
+r0.8_m0_zero_s0 joint 320: ACC=0.3087 NMI=0.0391 clusters=5
+r0.8_m0_zero_s0 joint 340: ACC=0.3061 NMI=0.0375 clusters=5
+r0.8_m0_zero_s0 joint 360: ACC=0.3058 NMI=0.0392 clusters=6
+r0.8_m0_zero_s0 joint 380: ACC=0.3061 NMI=0.0396 clusters=6
+r0.8_m0_zero_s0 joint 400: ACC=0.3061 NMI=0.0397 clusters=6
+r0.8_m0_zero_s1 pretrain 20: mse=0.002211
+r0.8_m0_zero_s1 pretrain 40: mse=0.001999
+r0.8_m0_zero_s1 pretrain 60: mse=0.001865
+r0.8_m0_zero_s1 pretrain 80: mse=0.001781
+r0.8_m0_zero_s1 pretrain 100: mse=0.001709
+r0.8_m0_zero_s1 joint 0: ACC=0.2648 NMI=0.0243 clusters=5
+r0.8_m0_zero_s1 joint 20: ACC=0.2648 NMI=0.0179 clusters=5
+r0.8_m0_zero_s1 joint 40: ACC=0.2655 NMI=0.0143 clusters=4
+r0.8_m0_zero_s1 joint 60: ACC=0.2770 NMI=0.0113 clusters=2
+r0.8_m0_zero_s1 joint 80: ACC=0.2891 NMI=0.0065 clusters=2
+r0.8_m0_zero_s1 joint 100: ACC=0.2722 NMI=0.0162 clusters=3
+r0.8_m0_zero_s1 joint 120: ACC=0.3024 NMI=0.0036 clusters=3
+r0.8_m0_zero_s1 joint 140: ACC=0.3021 NMI=0.0061 clusters=3
+r0.8_m0_zero_s1 joint 160: ACC=0.2958 NMI=0.0122 clusters=5
+r0.8_m0_zero_s1 joint 180: ACC=0.2925 NMI=0.0272 clusters=6
+r0.8_m0_zero_s1 joint 200: ACC=0.2987 NMI=0.0381 clusters=6
+r0.8_m0_zero_s1 joint 220: ACC=0.2999 NMI=0.0409 clusters=6
+r0.8_m0_zero_s1 joint 240: ACC=0.3043 NMI=0.0518 clusters=7
+r0.8_m0_zero_s1 joint 260: ACC=0.3032 NMI=0.0522 clusters=7
+r0.8_m0_zero_s1 joint 280: ACC=0.3032 NMI=0.0580 clusters=7
+r0.8_m0_zero_s1 joint 300: ACC=0.3002 NMI=0.0564 clusters=7
+r0.8_m0_zero_s1 joint 320: ACC=0.2995 NMI=0.0548 clusters=7
+r0.8_m0_zero_s1 joint 340: ACC=0.2995 NMI=0.0550 clusters=7
+r0.8_m0_zero_s1 joint 360: ACC=0.2999 NMI=0.0544 clusters=7
+r0.8_m0_zero_s1 joint 380: ACC=0.2987 NMI=0.0528 clusters=7
+r0.8_m0_zero_s1 joint 400: ACC=0.2995 NMI=0.0540 clusters=7
+r0.8_m0_zero_s2 pretrain 20: mse=0.002221
+r0.8_m0_zero_s2 pretrain 40: mse=0.001984
+r0.8_m0_zero_s2 pretrain 60: mse=0.001848
+r0.8_m0_zero_s2 pretrain 80: mse=0.001749
+r0.8_m0_zero_s2 pretrain 100: mse=0.001665
+r0.8_m0_zero_s2 joint 0: ACC=0.2895 NMI=0.0337 clusters=7
+r0.8_m0_zero_s2 joint 20: ACC=0.2758 NMI=0.0669 clusters=6
+r0.8_m0_zero_s2 joint 40: ACC=0.2906 NMI=0.0416 clusters=4
+r0.8_m0_zero_s2 joint 60: ACC=0.3002 NMI=0.0062 clusters=3
+r0.8_m0_zero_s2 joint 80: ACC=0.3013 NMI=0.0010 clusters=2
+r0.8_m0_zero_s2 joint 100: ACC=0.3013 NMI=0.0029 clusters=4
+r0.8_m0_zero_s2 joint 120: ACC=0.3017 NMI=0.0150 clusters=4
+r0.8_m0_zero_s2 joint 140: ACC=0.2958 NMI=0.0268 clusters=6
+r0.8_m0_zero_s2 joint 160: ACC=0.2958 NMI=0.0342 clusters=6
+r0.8_m0_zero_s2 joint 180: ACC=0.2987 NMI=0.0433 clusters=6
+r0.8_m0_zero_s2 joint 200: ACC=0.2951 NMI=0.0445 clusters=6
+r0.8_m0_zero_s2 joint 220: ACC=0.2932 NMI=0.0489 clusters=7
+r0.8_m0_zero_s2 joint 240: ACC=0.2925 NMI=0.0483 clusters=7
+r0.8_m0_zero_s2 joint 260: ACC=0.2932 NMI=0.0508 clusters=7
+r0.8_m0_zero_s2 joint 280: ACC=0.2969 NMI=0.0530 clusters=7
+r0.8_m0_zero_s2 joint 300: ACC=0.3010 NMI=0.0627 clusters=7
+r0.8_m0_zero_s2 joint 320: ACC=0.3061 NMI=0.0715 clusters=7
+r0.8_m0_zero_s2 joint 340: ACC=0.3054 NMI=0.0735 clusters=7
+r0.8_m0_zero_s2 joint 360: ACC=0.3061 NMI=0.0717 clusters=7
+r0.8_m0_zero_s2 joint 380: ACC=0.3039 NMI=0.0683 clusters=7
+r0.8_m0_zero_s2 joint 400: ACC=0.3010 NMI=0.0692 clusters=7
+r0.8_m0_fp_s0 pretrain 20: mse=0.003422
+r0.8_m0_fp_s0 pretrain 40: mse=0.003034
+r0.8_m0_fp_s0 pretrain 60: mse=0.002807
+r0.8_m0_fp_s0 pretrain 80: mse=0.002653
+r0.8_m0_fp_s0 pretrain 100: mse=0.002540
+r0.8_m0_fp_s0 joint 0: ACC=0.2674 NMI=0.1723 clusters=7
+r0.8_m0_fp_s0 joint 20: ACC=0.3634 NMI=0.1525 clusters=7
+r0.8_m0_fp_s0 joint 40: ACC=0.4250 NMI=0.2453 clusters=6
+r0.8_m0_fp_s0 joint 60: ACC=0.4716 NMI=0.2856 clusters=7
+r0.8_m0_fp_s0 joint 80: ACC=0.4705 NMI=0.2907 clusters=7
+r0.8_m0_fp_s0 joint 100: ACC=0.4605 NMI=0.2840 clusters=7
+r0.8_m0_fp_s0 joint 120: ACC=0.4549 NMI=0.2808 clusters=7
+r0.8_m0_fp_s0 joint 140: ACC=0.4479 NMI=0.2751 clusters=7
+r0.8_m0_fp_s0 joint 160: ACC=0.4442 NMI=0.2715 clusters=7
+r0.8_m0_fp_s0 joint 180: ACC=0.4405 NMI=0.2672 clusters=7
+r0.8_m0_fp_s0 joint 200: ACC=0.4354 NMI=0.2620 clusters=7
+r0.8_m0_fp_s0 joint 220: ACC=0.4328 NMI=0.2608 clusters=7
+r0.8_m0_fp_s0 joint 240: ACC=0.4328 NMI=0.2596 clusters=7
+r0.8_m0_fp_s0 joint 260: ACC=0.4328 NMI=0.2584 clusters=7
+r0.8_m0_fp_s0 joint 280: ACC=0.4328 NMI=0.2599 clusters=7
+r0.8_m0_fp_s0 joint 300: ACC=0.4317 NMI=0.2588 clusters=7
+r0.8_m0_fp_s0 joint 320: ACC=0.4317 NMI=0.2587 clusters=7
+r0.8_m0_fp_s0 joint 340: ACC=0.4324 NMI=0.2581 clusters=7
+r0.8_m0_fp_s0 joint 360: ACC=0.4321 NMI=0.2581 clusters=7
+r0.8_m0_fp_s0 joint 380: ACC=0.4324 NMI=0.2582 clusters=7
+r0.8_m0_fp_s0 joint 400: ACC=0.4328 NMI=0.2585 clusters=7
+r0.8_m0_fp_s1 pretrain 20: mse=0.003478
+r0.8_m0_fp_s1 pretrain 40: mse=0.002989
+r0.8_m0_fp_s1 pretrain 60: mse=0.002776
+r0.8_m0_fp_s1 pretrain 80: mse=0.002636
+r0.8_m0_fp_s1 pretrain 100: mse=0.002529
+r0.8_m0_fp_s1 joint 0: ACC=0.3608 NMI=0.1400 clusters=5
+r0.8_m0_fp_s1 joint 20: ACC=0.3449 NMI=0.1781 clusters=5
+r0.8_m0_fp_s1 joint 40: ACC=0.3427 NMI=0.1533 clusters=5
+r0.8_m0_fp_s1 joint 60: ACC=0.3604 NMI=0.2289 clusters=6
+r0.8_m0_fp_s1 joint 80: ACC=0.3759 NMI=0.2625 clusters=6
+r0.8_m0_fp_s1 joint 100: ACC=0.3564 NMI=0.2629 clusters=6
+r0.8_m0_fp_s1 joint 120: ACC=0.3785 NMI=0.2641 clusters=6
+r0.8_m0_fp_s1 joint 140: ACC=0.4302 NMI=0.2811 clusters=7
+r0.8_m0_fp_s1 joint 160: ACC=0.4413 NMI=0.2954 clusters=7
+r0.8_m0_fp_s1 joint 180: ACC=0.4346 NMI=0.2922 clusters=7
+r0.8_m0_fp_s1 joint 200: ACC=0.4350 NMI=0.2933 clusters=7
+r0.8_m0_fp_s1 joint 220: ACC=0.4306 NMI=0.2886 clusters=7
+r0.8_m0_fp_s1 joint 240: ACC=0.4284 NMI=0.2846 clusters=7
+r0.8_m0_fp_s1 joint 260: ACC=0.4295 NMI=0.2839 clusters=7
+r0.8_m0_fp_s1 joint 280: ACC=0.4302 NMI=0.2829 clusters=7
+r0.8_m0_fp_s1 joint 300: ACC=0.4295 NMI=0.2813 clusters=7
+r0.8_m0_fp_s1 joint 320: ACC=0.4295 NMI=0.2808 clusters=7
+r0.8_m0_fp_s1 joint 340: ACC=0.4291 NMI=0.2809 clusters=7
+r0.8_m0_fp_s1 joint 360: ACC=0.4284 NMI=0.2800 clusters=7
+r0.8_m0_fp_s1 joint 380: ACC=0.4273 NMI=0.2787 clusters=7
+r0.8_m0_fp_s1 joint 400: ACC=0.4269 NMI=0.2778 clusters=7
+r0.8_m0_fp_s2 pretrain 20: mse=0.003490
+r0.8_m0_fp_s2 pretrain 40: mse=0.003084
+r0.8_m0_fp_s2 pretrain 60: mse=0.002865
+r0.8_m0_fp_s2 pretrain 80: mse=0.002695
+r0.8_m0_fp_s2 pretrain 100: mse=0.002567
+r0.8_m0_fp_s2 joint 0: ACC=0.3209 NMI=0.1419 clusters=7
+r0.8_m0_fp_s2 joint 20: ACC=0.3955 NMI=0.2496 clusters=7
+r0.8_m0_fp_s2 joint 40: ACC=0.3371 NMI=0.2164 clusters=5
+r0.8_m0_fp_s2 joint 60: ACC=0.3516 NMI=0.2463 clusters=5
+r0.8_m0_fp_s2 joint 80: ACC=0.4343 NMI=0.3323 clusters=7
+r0.8_m0_fp_s2 joint 100: ACC=0.4838 NMI=0.3641 clusters=6
+r0.8_m0_fp_s2 joint 120: ACC=0.4863 NMI=0.3656 clusters=7
+r0.8_m0_fp_s2 joint 140: ACC=0.4823 NMI=0.3624 clusters=7
+r0.8_m0_fp_s2 joint 160: ACC=0.4756 NMI=0.3502 clusters=7
+r0.8_m0_fp_s2 joint 180: ACC=0.4749 NMI=0.3501 clusters=7
+r0.8_m0_fp_s2 joint 200: ACC=0.4767 NMI=0.3495 clusters=7
+r0.8_m0_fp_s2 joint 220: ACC=0.4786 NMI=0.3492 clusters=7
+r0.8_m0_fp_s2 joint 240: ACC=0.4786 NMI=0.3487 clusters=7
+r0.8_m0_fp_s2 joint 260: ACC=0.4793 NMI=0.3476 clusters=7
+r0.8_m0_fp_s2 joint 280: ACC=0.4808 NMI=0.3482 clusters=7
+r0.8_m0_fp_s2 joint 300: ACC=0.4812 NMI=0.3485 clusters=7
+r0.8_m0_fp_s2 joint 320: ACC=0.4815 NMI=0.3481 clusters=7
+r0.8_m0_fp_s2 joint 340: ACC=0.4819 NMI=0.3478 clusters=7
+r0.8_m0_fp_s2 joint 360: ACC=0.4819 NMI=0.3476 clusters=7
+r0.8_m0_fp_s2 joint 380: ACC=0.4812 NMI=0.3464 clusters=7
+r0.8_m0_fp_s2 joint 400: ACC=0.4819 NMI=0.3465 clusters=7
+saved F:\�о�������\��������֤\sdcn_stage3_small_lr1e3

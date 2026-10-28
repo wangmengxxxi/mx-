@@ -1,0 +1,5 @@
+{'batch': 32, 'images_per_second': 8.655972849387027, 'peak_allocated': 373438976}
+{'batch': 16, 'images_per_second': 8.408913553478106, 'peak_allocated': 299145728}
+semi_use: True
+epsilon: 0.1
+sk_numItermax: 1000

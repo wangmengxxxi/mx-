@@ -1,0 +1,100 @@
+[
+  {
+    "file": "model.py",
+    "source_sha256": "bc6e3ed129147c33216897b8a6e7b02db8e98f0169bf9fecf383e3124a676f07",
+    "copy_sha256": "bc6e3ed129147c33216897b8a6e7b02db8e98f0169bf9fecf383e3124a676f07",
+    "changed": false
+  },
+  {
+    "file": "loss.py",
+    "source_sha256": "0ac5ea5853fef850ecfa86a06650875906c25df9c68db81ce0e0a737cd3b6ebf",
+    "copy_sha256": "0ac5ea5853fef850ecfa86a06650875906c25df9c68db81ce0e0a737cd3b6ebf",
+    "changed": false
+  },
+  {
+    "file": "get_mask.py",
+    "source_sha256": "f833566091aeee4465b9edc7d0ce5d81a17940aa2d382fbe5f1dfa0728fe20d7",
+    "copy_sha256": "aa3862af2192c160cb16f40cafb72a061588cc41ce3a9e30d4ee1c4fa945e146",
+    "changed": true
+  },
+  {
+    "file": "configure.py",
+    "source_sha256": "ca90ac6236263e4c6d6c08d12260f9b64e6eac7be94f7bc9bfde29d30e91312f",
+    "copy_sha256": "ca90ac6236263e4c6d6c08d12260f9b64e6eac7be94f7bc9bfde29d30e91312f",
+    "changed": false
+  },
+  {
+    "file": "util.py",
+    "source_sha256": "c28656959032e9589ded52ed18861882553416ac3e24f838d0ea7e73f88ac5aa",
+    "copy_sha256": "c28656959032e9589ded52ed18861882553416ac3e24f838d0ea7e73f88ac5aa",
+    "changed": false
+  },
+  {
+    "file": "evaluation.py",
+    "source_sha256": "3e2c6263ab3d10e3e6093ca3762cea691b0479c32767f998e31f299a9ce114ea",
+    "copy_sha256": "3e2c6263ab3d10e3e6093ca3762cea691b0479c32767f998e31f299a9ce114ea",
+    "changed": false
+  },
+  {
+    "file": "datasets.py",
+    "source_sha256": "7724086e56bc1aaa39988e846b965f66aad75c27db85617af0178708248e4ca6",
+    "copy_sha256": "02e7f95ec39cff4f7cc31a64fc2e1306511b4bb33360637a329a8358e016e27d",
+    "changed": true
+  },
+  {
+    "file": "scripts/run_diagnostic.py",
+    "source_sha256": "6594ad159aa71d2eaf829aa1562f8e7b7d5438d35fd93909ed511219937d0cc5",
+    "copy_sha256": "ea8a44a5738d5254ba80d62d18ff4d295615efbafd973e9fadd643c7dc0bf912",
+    "changed": true,
+    "purpose": "Device support, GPU verification and accurate device reporting; protocol unchanged"
+  },
+  {
+    "file": "scripts/run_batch.py",
+    "source_sha256": "db45b91a3343a2bf64ca48918b1ad4c4a55dc397dfb0a19f2240a5fe01f81b83",
+    "copy_sha256": "aae6a8f524dbc35eac553044b9b3a4c3bba2099938bc96e3c1b8a8eba9a77686",
+    "changed": true,
+    "purpose": "Device support, GPU verification and accurate device reporting; protocol unchanged"
+  },
+  {
+    "file": "scripts/audit_results.py",
+    "source_sha256": "17e60204e03441131dbcec55a170a4611c4c7986f148c63e496722ff0de5e2be",
+    "copy_sha256": "2d2ff2858ece7e25b3d2cc69bb8dd285c0a822e61b031beb4aef9bb963694f22",
+    "changed": true,
+    "purpose": "Device support, GPU verification and accurate device reporting; protocol unchanged"
+  },
+  {
+    "file": "scripts/summarize_results.py",
+    "source_sha256": "659d99340a2bac1a07c61d680ba9de980cac67c240bb06bf35a288a410b35441",
+    "copy_sha256": "abedf7d3f4ccccfee232cc15b26dd08870a61ddc6357120d618ab45929dc1d79",
+    "changed": true,
+    "purpose": "Device support, GPU verification and accurate device reporting; protocol unchanged"
+  },
+  {
+    "file": "scripts/prepare_adaptation.py",
+    "source_sha256": "527d1e5c3d6045a04c731bfbdc19d742d055fa53b593830ca994d2018c3261dd",
+    "copy_sha256": "527d1e5c3d6045a04c731bfbdc19d742d055fa53b593830ca994d2018c3261dd",
+    "changed": false,
+    "purpose": "Device support, GPU verification and accurate device reporting; protocol unchanged"
+  },
+  {
+    "file": "scripts/gpu_transition.py",
+    "source_sha256": null,
+    "copy_sha256": "61739cecb3b8a43d2b8bbc1eb08f2a0f557d6c168ad43d3ca968154cbab04e43",
+    "changed": true,
+    "purpose": "New local GPU transition/validation utility, no third-party modification"
+  },
+  {
+    "file": "scripts/run_gpu_checks.py",
+    "source_sha256": null,
+    "copy_sha256": "b56ffd594d0678d243ad1c3bd3eb754339a3f3d0a0919b717d7adc833b42203c",
+    "changed": true,
+    "purpose": "New local GPU transition/validation utility, no third-party modification"
+  },
+  {
+    "file": "scripts/verify_gpu_environment.py",
+    "source_sha256": null,
+    "copy_sha256": "1d6d98f05635a55c58066dbaab4dde462d7456be07b6b55c52fd6e0cff6e48d3",
+    "changed": true,
+    "purpose": "New local GPU transition/validation utility, no third-party modification"
+  }
+]

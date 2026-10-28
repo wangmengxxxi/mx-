@@ -1,0 +1,14 @@
+c1b_01 || "long-tailed" AND "number of clusters" AND (unsupervised OR clustering) || 2022-01-01 || 30
+c1b_02 || "imbalanced" AND "number of clusters" AND ("deep clustering" OR "unsupervised") || 2022-01-01 || 30
+c1b_03 || "cluster number estimation" AND (long-tailed OR imbalanced OR "class imbalance") || 2020-01-01 || 30
+c1b_04 || "estimating the number of classes" AND (long-tailed OR imbalanced OR unsupervised) || 2020-01-01 || 30
+c1b_05 || "unknown number of classes" AND (discovery OR clustering) || 2020-01-01 || 30
+c1b_06 || "generative model" AND "class imbalance" AND "number of clusters" || 2018-01-01 || 25
+c1b_07 || "over-clustering" AND "long-tailed" || 2020-01-01 || 25
+c1b_08 || "head" AND "tail" AND "cluster" AND ("unknown" OR "estimation") AND deep || 2022-01-01 || 25
+c2b_01 || "federated" AND "long-tailed" AND "clustering" || 2021-01-01 || 30
+c2b_02 || "federated clustering" AND ("class imbalance" OR "imbalanced classes" OR "long-tailed") || 2021-01-01 || 30
+c2b_03 || "federated" AND "unsupervised" AND ("long-tailed" OR "class imbalance") || 2021-01-01 || 30
+c2b_04 || "federated" AND "category discovery" AND (imbalance OR "long-tailed") || 2021-01-01 || 25
+c2b_05 || "federated clustering" AND "benchmark" || 2021-01-01 || 25
+c2b_06 || "CReFF" OR "classifier retraining with federated features" || 2019-01-01 || 20

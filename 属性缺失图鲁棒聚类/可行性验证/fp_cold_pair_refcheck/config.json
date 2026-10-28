@@ -1,0 +1,26 @@
+{
+  "rates": "0.4",
+  "methods": "fp",
+  "seeds": "0",
+  "masks": 1,
+  "mask_seed": 20261023,
+  "hidden": "128,64",
+  "latent": 10,
+  "clusters": 7,
+  "pretrain_epochs": 100,
+  "train_epochs": 400,
+  "batch_size": 256,
+  "pretrain_lr": 0.001,
+  "lr": 0.001,
+  "steps": 40,
+  "threads": 2,
+  "eval_every": 20,
+  "output": "fp_cold_pair_refcheck",
+  "hidden_dims": [
+    128,
+    64
+  ],
+  "torch": "2.8.0+cpu",
+  "numpy": "1.26.4",
+  "protocol": "SDCN adaptation; raw features; final epoch; no label selection"
+}

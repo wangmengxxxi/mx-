@@ -1,0 +1,680 @@
+﻿paper_id,title,topic,site_venue,site_year,verified_venue,authors_verified,note_url,problem_setting,core_method,datasets_and_results_from_note,limitations_from_note,reviewer_risk,original_url,code_url_in_note,verified_code_url,other_project_links,verification_status,repo_exists,last_push_utc,license,torch_version_readme,cu128_status,gpu_feasibility,role,local_note_path,verified_findings,primary_evidence_urls,local_primary_evidence,readme_snapshot_path,access_date
+P01,Mini-cluster Guided Long-tailed Deep Clustering,已有方向补充/长尾聚类,ICLR,2026,未核实，仅站内标签,未独立核实，见笔记原文链接,https://papernotes.org/ICLR2026/self_supervised/mini-cluster_guided_long-tailed_deep_clustering/,无标签、类别长尾、已知簇数的深度聚类,过度聚类计数估计头尾属性，重加权目标簇自训练并对齐双头相似度,"【站内笔记，未逐项核实；不得直接作证据】
+实验关键数据
+主实验表格 ¶
+CIFAR-10 / CIFAR-20 / STL-10，imbalance ratio = 5 与 10，对比 SCAN、SeCu、LFSS、ConMix 等 SOTA，指标 ACC/CAA/NMI/ARI（%）。
+数据集 (IR) 方法 ACC CAA NMI ARI CIFAR-10 (5) ConMix 61.6 65.4 59.8 45.6 CIFAR-10 (5) BYOL (Baseline) 60.4 66.4 62.0 46.5 CIFAR-10 (5) MiniClustering 74.3 72.6 69.9 62.1 CIFAR-10 (10) LFSS 56.3 59.7 57.9 43.0 CIFAR-10 (10) BYOL (Baseline) 51.9 55.2 56.3 41.7 CIFAR-10 (10) MiniClustering 64.6 61.4 63.9 56.7 STL-10 (5) MiniClustering 54.7 52.7 54.4 42.8 CIFAR-20 (10) MiniClustering 44.3 41.5 47.2 30.4
+在所有设置、所有指标上均取得最优；相对 BYOL 基线，CIFAR-10 在 IR=5/10 上 ACC 提升 13.9%/12.7%、ARI 提升 15.6%/15.0%。
+消融实验表格 ¶
+CIFAR-10，imbalance ratio = 10。
+配置 ACC CAA NMI ARI BYOL 51.9 55.2 56.3 41.7 仅阈值自标注 55.6 57.6 66.3 52.5 去掉阈值 τ 约束 54.1 55.1 58.5 45.6 仅 \(L_r\) 59.9 58.1 63.5 52.0 w/o \(L_r\) 46.7 39.0 51.1 26.7 w/o \(L_m\) 64.5 43.6 65.4 50.3 w/o \(L_s\) 56.0 57.6 63.5 40.0 完整 MiniClustering 64.6 61.4 63.9 56.7
+关键发现 ¶
+重加权策略是性能主因 ：仅用自标注训练单个目标簇头虽超基线，但 ACC/CAA 远逊于完整方法，证明 mini-cluster 引导的重加权确实有效。 \(L_m\) 专治尾类被吞 ：去掉 \(L_m\) 后 NMI 反而高但 CAA 暴跌至 43.6，说明纯自标注倾向把尾类样本并进其他簇， \(L_m\) 帮助把尾类分离出来。 \(L_r\) 与 \(L_s\) 缺一不可 ：无 \(L_r\) 则目标簇头权重不更新、性能崩到 ARI 26.7；无 \(L_s\) 两头失同步、ARI 掉到 40.0。 即插即用 ：换 SimCLR / MoCo 作预训练框架，MiniClustering 仍稳定优于各自基线，证明它能作为通用下游模块；还能把监督长尾损失迁移到无监督聚类。","【站内笔记的局限/展望，不等于原作者声明】
+局限与展望
+依赖高质量预训练表征 ：Theorem 1 明确指出表征质量差（ \(\rho\) 低、 \(\epsilon\) 大）时""头类占更多 mini-cluster""会失效，方法对编码器质量敏感。 超参较多 ：mini-cluster 数 \(M\) 、分配阈值 \(\delta\) 、置信阈值 \(\tau\) 、 \(\alpha/\beta\) 都需调，论文虽显示对 \(M/\delta\) 较稳健，但跨数据集的通用设定仍需经验。 类数 \(K\) 仍是已知先验 ：和多数深度聚类一样假设真实类数已知，真正未知类数的开放场景未覆盖。 极端长尾与大规模 ：正文主验在 IR≤10 的中小数据集，ImageNet-LT / Tiny-ImageNet 等更大规模与极端不平衡的鲁棒性放在附录，值得正文进一步展开。",只补充直接竞争，不重新推荐已有方向,https://openreview.net/forum?id=3JlljaiQwR,https://github.com/LZX-001/MiniClustering,未审计,未提供,问题/方法/实验/局限来自站内笔记，未核实原文；局限可能是笔记分析,未审计,未审计,未审计,未审计或README未写，未知,未验证torch>=2.7且cu128运行兼容性,未实测，须按模型、批大小、编码器与协议另核,只补充直接竞争，不重新推荐已有方向,F:\研究生毕设\方向检索\notes\P01.txt,问题/方法/实验/局限来自站内笔记，未核实原文；局限可能是笔记分析,未审计,未审计,未审计,2026-10-27
+P02,Uncover Underlying Correspondence for Robust Multi-view Clustering,候选A/噪声对应聚类,ICLR,2026,未完成官方核实；作者README称ICLR 2026 Oral,仅作者README：Haochen Zhou; Guofeng Ding; Mouxing Yang; Peng Hu; Yijie Lin; Xi Peng,https://papernotes.org/ICLR2026/self_supervised/uncover_underlying_correspondence_for_robust_multi-view_clustering/,跨视图实例错配、同类假负例与无有效对应的污染样本共存,CorreGen以潜在软对应为隐变量做EM；GMM估边际、OT求对应、虚拟样本吸收无法对齐质量,"【站内笔记，未逐项核实；不得直接作证据】
+实验关键数据
+主实验 ¶
+论文在 Scene15、LandUse21、Caltech101 和 UMPC-Food101 四个多视图数据集上评估，指标包括 ACC、NMI、ARI。实验分两类噪声：Mismatch Ratio (MR) 表示跨视图实例被随机置换造成的可对齐错配，Corruption Ratio (CR) 表示某些视图样本被高斯噪声腐蚀造成的不可对齐错配。下表摘取 Table 1 中 MR 变化时的 ACC 结果，展示 CorreGen 在只有错配、没有显式腐蚀时的稳定性。
+设置 数据集 CorreGen ACC 最强/代表性基线 ACC 提升 MR=0% Scene15 50.25 ROLL 47.61 +2.64 MR=0% Caltech101 68.52 CANDY 67.64 +0.88 MR=0% UMPC-Food101 49.77 DIVIDE 36.20 +13.57 MR=20% Caltech101 68.01 CANDY 65.79 +2.22 MR=20% UMPC-Food101 46.76 DIVIDE 31.41 +15.35 MR=50% Scene15 45.07 ROLL 42.41 +2.66 MR=50% UMPC-Food101 42.57 CANDY 28.80 +13.77 MR=80% Caltech101 64.74 CANDY 54.17 +10.57 MR=80% UMPC-Food101 43.00 CANDY 27.59 +15.41
+更困难的是 MR 和 CR 同时存在时，模型既要处理可重新对齐的错配，也要处理无法对齐的噪声观测。Table 2 的结果显示，UMPC-Food101 这种真实图像-文本噪声数据上，CorreGen 的优势尤其明显。
+设置 数据集 CorreGen ACC / NMI / ARI 最强/代表性基线 观察 MR=0.2, CR=0.2 Scene15 41.23 / 41.43 / 25.05 SURE ACC 37.93、CANDY NMI 37.00 三项指标均领先，说明软对应比硬 realignment 更稳 MR=0.2, CR=0.2 Caltech101 67.12 / 84.45 / 64.13 CANDY 65.80 / 82.23 / 62.52 类别级对应恢复带来高 ARI MR=0.2, CR=0.2 UMPC-Food101 45.97 / 54.66 / 31.36 CANDY 30.13 / 49.77 / 20.06 真实 noisy image-text 场景提升很大 MR=0.5, CR=0.5 Scene15 36.19 / 36.84 / 20.83 CANDY 29.44 / 32.67 / 17.09 高错配高腐蚀下仍保持优势 MR=0.5, CR=0.5 Caltech101 57.06 / 80.34 / 45.37 CANDY ACC 51.28、DIVIDE ARI 44.69 性能下降但没有崩溃 MR=0.5, CR=0.5 UMPC-Food101 37.26 / 49.30 / 23.25 CANDY 24.70 / 46.58 / 17.19 虚拟样本对 unalignable 噪声很关键
+消融实验 ¶
+消融在 Scene15 和 UMPC-Food101 上进行，比较去掉 Virtual Sample、去掉 GMM-guided marginal、两者都去掉，以及退回 vanilla InfoNCE 的效果。下表摘取 Table 3 中更能体现噪声鲁棒性的 MR=0.2、CR=0.2 设置。
+配置 Scene15 ACC / NMI / ARI UMPC-Food101 ACC / NMI / ARI 说明 CorreGen 41.78 / 41.67 / 25.50 45.97 / 54.66 / 31.36 完整模型，包含虚拟样本和 GMM 边际 w/o Virtual 41.10 / 41.12 / 24.77 44.01 / 53.92 / 30.36 不显式吸收 unalignable 样本，真实噪声数据下降更明显 w/o Guide 40.98 / 41.21 / 24.77 44.59 / 54.03 / 30.67 不用 GMM 边际后，样本质量差异建模变弱 w/o Virtual & Guide 40.52 / 40.95 / 24.66 43.68 / 53.41 / 29.78 两个 E-step 组件都去掉，软对应质量继续下降 Vanilla InfoNCE 38.36 / 37.60 / 21.96 43.84 / 52.76 / 29.15 固定正负样本假设最容易受 noisy correspondence 影响
+关键发现 ¶
+最核心的收益来自“软对应生成”而不是单个 trick：vanilla InfoNCE 在噪声设置下明显低于 CorreGen，说明把 posterior 从 one-hot 原始配对放宽为多对多语义分布，是鲁棒性的基础。 GMM-guided marginal 和 Virtual Sample 解决的是两类不同问题：前者判断哪些样本更像簇内可靠点，后者给无法对齐的样本留出口；UMPC-Food101 上去掉 Virtual 后 ACC 从 45.97 降到 44.01，说明真实网页文本噪声确实包含 unalignable 成分。 Posterior 可视化显示，Caltech101 上 MR=0.2、CR=0.0 时，训练早期后验矩阵类别结构很弱，中后期逐步接近 ground-truth category-level blocks。这支持作者关于“逐步 uncover latent correspondences”的叙述。 附录里的 CMR 统计显示，四个数据集的 category-level mismatch ratio 都超过 98%，例如 Scene15 为 99.65%、UMPC-Food101 为 99.53%。这说明“同类不同实例被当负例”不是边角问题，而是聚类任务中 instance-level contrastive objective 的结构性缺陷。 参数分析表明， \(\rho\) 在较宽范围内较稳定， \(m\le 10\) 时表现更好；Sinkhorn 迭代次数增加有小幅收益，但较少迭代已经能保持可比性能，说明该方法不是依赖极端精细的 OT 求解才有效。","【站内笔记的局限/展望，不等于原作者声明】
+局限与展望
+CorreGen 依赖当前嵌入空间中的 GMM 拟合质量。若 warmup 后 embedding 仍然高度混杂，或者真实类别不是近似 Gaussian 簇结构，边际估计可能会误判可靠样本与离群样本。 论文在实现中把 \(\rho\) 默认设为 0.2，虽然参数分析显示有一定稳定性，但真实数据中的噪声率通常未知且随类别、视图和采集源变化。后续可以考虑自适应估计 \(\rho\) ，而不是使用全局固定值。 OT 与 GMM 都会带来额外计算开销，尤其在 batch size 1024 和多视图扩展时，计算量与存储量会随候选对规模增长。论文报告了 Sinkhorn 迭代不必特别多，但大规模图文预训练场景仍需要近似或稀疏化策略。 当前实验主要是双视图或常见多视图聚类 benchmark，真实大规模 web multimodal 数据往往包含长尾类别、开放集噪声和语义层级关系。CorreGen 的类别级对应是否能处理细粒度层级或开放类，还需要进一步验证。 方法把 unalignable 样本视为应被吸收的噪声，但在某些任务里这些样本可能是新类别、罕见模式或有用异常。未来可以把 virtual mass 进一步拆分为“纯噪声”和“潜在新语义”两类。",A核心；OpenReview受阻，原文数值待核验,https://openreview.net/forum?id=a4S1nQay3b,https://github.com/XLearning-SCU/2026-ICLR-CorreGen,https://github.com/XLearning-SCU/2026-ICLR-CorreGen,未提供,OpenReview页面/API受验证或权限限制，题目作者会议仅与作者README一致；数值未核,存在（API 200），仅查README/根目录,2026-10-08T14:34:24Z,API未识别且根目录未见许可证；授权待核,未写具体版本,未验证torch>=2.7且cu128运行兼容性,特征MLP有望8GB；batch 1024及OT二次矩阵开销须核；未实测,A核心；OpenReview受阻，原文数值待核验,F:\研究生毕设\方向检索\notes\P02.txt,OpenReview正文与API受验证/权限限制，未核原始表格；身份仅与作者README一致。不得用笔记的错配损失数字作已核实证据。,https://openreview.net/forum?id=a4S1nQay3b; https://github.com/XLearning-SCU/2026-ICLR-CorreGen,F:\研究生毕设\方向检索\verification\P02_primary.txt,F:\研究生毕设\方向检索\verification\P02_README.md,2026-10-27
+P03,Relationship Alignment for View-aware Multi-view Clustering,候选A/关系对齐,ICLR,2026,未核实；站内标ICLR 2026,未独立核实，见笔记原文链接,https://papernotes.org/ICLR2026/self_supervised/relationship_alignment_for_view-aware_multi-view_clustering/,完整干净多视图中视图差异导致强制一致性损伤语义,RAV对齐跨视图关系矩阵，并以Wasserstein距离调节簇级对齐强度,"【站内笔记，未逐项核实；不得直接作证据】
+实验关键数据
+在 NGs、Digit-Product、ALOI、Cora、NUSWIDE、Caltech-5V、NoisyMNIST、YoutubeVideo、3Sources、Fashion 共 10 个基准 上，与 MFLVC、GCFAgg、SEM、MVCAN、SCMVC、DDMVC、SSLNMVC、AICN-MLM、DFL-NET 等 9 个代表性方法对比，指标为 ACC / NMI / PUR。
+主实验 ¶
+数据集 指标 RAV (本文) 次优 baseline 提升 NGs ACC 0.980 0.936 (SSLNMVC) +4.4% YoutubeVideo ACC 0.356 0.318 (SEM) +7.8% (NMI 0.332、PUR 0.445 亦最优) Cora ACC 0.592 0.567 (MVCAN) +2.5% NUSWIDE ACC 0.647 0.637 (SSLNMVC) +1.0% 3Sources NMI 0.599 0.584 (SEM) PUR 0.775 亦最优 ALOI ACC 0.826 0.849 (MVCAN) 略低于 MVCAN Caltech-5V ACC 0.901 0.919 (MVCAN) 略低于 MVCAN
+RAV 在多数数据集上整体最优，尤其在 NGs、YoutubeVideo、Cora 这类视图差异较大的数据集上提升明显；在 ALOI、Caltech-5V 上略逊于 MVCAN（作者归因于 MVCAN 不用标准对比学习、对视图差异更不敏感），在 Fashion、Digit-Product 这类结构简单、视图差异小的数据集上与 MFLVC/DFL-NET 等持平（此时自适应加权的必要性下降）。
+消融实验 ¶
+配置 (LREC / LQ / LS) Caltech-5V ACC NUSWIDE ACC ALOI ACC 3Sources NMI 说明 ✓ / ✓ / ✗ 0.899 0.644 0.780 0.464 去掉关系对齐 \(\mathcal{L}_S\) ✓ / ✗ / ✓ 0.424 0.298 0.264 0.135 去掉标签对比 \(\mathcal{L}_Q\) ，性能崩塌 ✓ / ✓ / ✓ 0.901 0.647 0.826 0.599 完整模型
+配置 NGs ACC ALOI ACC Cora ACC 说明 ours w/o W 0.966 0.801 0.585 去掉视图感知加权 ours (full) 0.980 0.826 0.592 +1.4% / +3.6% / +0.7%
+关键发现 ¶
+簇级标签对比 \(\mathcal{L}_Q\) 是地基 ：去掉它后所有数据集性能断崖式下跌（如 ALOI ACC 从 0.826 跌到 0.264），说明聚类语义对齐是聚类能力的来源；关系对齐 \(\mathcal{L}_S\) 则在其上稳定提升结构一致性。 视图感知加权 W 的收益与视图差异正相关 ：在差异大的 ALOI 上加 W 涨 3.6%，而在视图差异本就很小的 Digit-Product 上加不加 W 性能不变（ACC 都是 0.998），印证了「差异越大、加权越有用」的设计动机。 鲁棒性与收敛性好 ： \(\lambda_1\) 、 \(\lambda_2\) 在大范围内波动时性能只有小幅变化；损失快速下降后趋稳、ACC/NMI 随训练持续上升，t-SNE 可视化显示全局特征 \(Z\) 的簇随迭代越来越紧凑可分。","【站内笔记的局限/展望，不等于原作者声明】
+局限与展望
+作者承认未来需从 理论上 探索更鲁棒的关系结构和更通用的相似度度量；当前 WD 加权与高斯核关系矩阵更多是经验设计。 关系矩阵 \(S^v / S\) 是 \(N \times N\) 量级，WD 计算是 \(O(N^2)\) ，在超大规模样本上可能有内存与计算开销（论文用 mini-batch 缓解，但全局关系的近似质量未深入讨论）。 方法假设视图完整、数据干净；作者将不完整视图、含噪数据等复杂场景列为后续工作。 在视图差异极小的简单数据集（Fashion、Digit-Product）上，自适应加权几乎不带来增益，说明该机制的适用边界是「视图差异显著」的场景。",A近邻；不是已验证的噪声对应方法；仓库只有ZIP,https://openreview.net/forum?id=uRA9cT4MK6,https://github.com/chenzhe207/RAV,https://github.com/chenzhe207/RAV,未提供,OpenReview验证页；GitHub存在但根目录只有RAV.zip，无README，未下载ZIP,存在（API 200），仅查README/根目录,2026-05-19T05:33:57Z,API未识别且根目录未见许可证；授权待核,无README，未知,未验证torch>=2.7且cu128运行兼容性,特征级模型可能适合；代码和显存未核,A近邻；不是已验证的噪声对应方法；仓库只有ZIP,F:\研究生毕设\方向检索\notes\P03.txt,问题/方法/实验/局限来自站内笔记，未核实原文；局限可能是笔记分析,未审计,未审计,未审计,2026-10-27
+P04,Calibrated Information Bottleneck for Trusted Multi-modal Clustering,候选A/可信聚类,ICLR,2026,未核实，仅站内标签,未独立核实，见笔记原文链接,https://papernotes.org/ICLR2026/multimodal_vlm/calibrated_information_bottleneck_for_trusted_multi-modal_clustering/,完整单标签多模态聚类中的互信息估计偏差、伪标签噪声与过自信,CLIB以模态校准头筛选伪标签，训练主聚类头并用一致性约束校准,"【站内笔记，未逐项核实；不得直接作证据】
+实验关键数据
+主实验 ¶
+五个多模态基准（Caltech-2V/3V、ESP-Game、MIRFlickr、IAPR），MLP 作 backbone，对比 4 个传统 + 11 个最新多模态聚类方法。指标用 ACC、NMI（越高越好）和 ECE（越低越可信）。CLIB 在全部五个数据集的三项指标上都拿到最优。
+数据集 指标 CLIB 次优 提升 Caltech-3V ACC 77.8% DIVIDE 71.6% +6.2% Caltech-3V NMI 69.3% MVCAN 62.6% +6.7% ESP-Game ACC 56.3% MFLVC 52.1% +4.2% MIRFlickr ACC 55.4% MFLVC 53.8% +1.6% IAPR ACC 51.6% COPER 47.2% +4.4% IAPR ECE 7.8% MVCAN 22.4% 误差约降至 1/3
+ECE 上优势尤其明显：ESP-Game、MIRFlickr 上 ECE 相比此前最优腰斩还多（12.1% / 10.5%），IAPR 上 7.8% 近乎是次优的三分之一——说明 CLIB 不仅准，还显著缓解了过自信。（注：KM、DIVIDE 这类硬聚类方法 ECE 标 N/A，因为对其框架无意义。）
+消融实验 ¶
+配置 Caltech-3V ACC / ECE 说明 \(L_{IB}+L_{cluH}\) 60.6 / 25.5 只有 IB + 聚类头基线 \(+\,L_{re}\) 64.6 / 19.5 加熵正则，防坍缩、降 ECE \(+\,L_{caliH}\) 67.8 / 11.6 加校准头，筛高质量伪标签，ACC↑ECE↓双赢 \(+\,L_{con}\) 61.1 / 12.4 加一致性约束，主要降 ECE、聚类增益有限 I. 去掉 IB 预热 61.7 / 15.1 一上来就校准引入大量噪声，性能退化但未崩 II. 校准头梯度回传瓶颈 65.9 / 13.5 模态私有冗余信息污染瓶颈，性能下滑 CLIB（完整） 77.8 / 10.9 各组件协同后大幅领先
+关键发现 ¶
+\(L_{caliH}\) （校准头 + 伪标签筛选）贡献最大 ：它同时拉高 ACC、压低 ECE，是""准 + 可信""双赢的主力。 stop-gradient 是必要的 ：设置 II 让校准头梯度回传瓶颈，反而把模态私有冗余信息灌进 IB、损害特征质量，验证了切断梯度的设计。 IB 预热不可少 ：去掉预热（设置 I）会让噪声从一开始就涌入校准，性能退化——但因为有伪标签筛选兜底，模型没有彻底崩溃，反过来也印证了筛选机制的过滤能力。 \(L_{con}\) 是 trade-off 旋钮 ：它主降 ECE、对 ACC 增益有限（IAPR 上甚至从 39.1% 微降到 37.8%，因为它阻止模型对模糊样本""大胆猜""）。安全攸关场景建议调大它换可信度，重准确率场景调小它。 参数不敏感 ： \(\alpha,\beta\) 在 \((0,1)\) 网格搜索下 ACC 方差均在 20% 内（平均峰谷差 17.87%）；引入校准（第 101 epoch）后约 40 epoch 内三项指标即稳定，收敛快且稳。","【站内笔记的局限/展望，不等于原作者声明】
+局限与展望
+只能处理完整、单标签数据 ：作者明确承认 CLIB 当前无法应对缺失模态或多标签场景，未来计划把校准机制扩展到缺失模态与多标签关联。 依赖预定义簇数 \(C\) ：和多数聚类方法一样需要事先给定簇数，限制了灵活性；作者展望做自适应确定簇数的方法。 估计器不能从根上失效 ：校准能纠正""有偏""的估计，但若估计器一开始就完全失效、IB 抽不出任何有意义特征，框架也无能为力——所以仍需为具体目标选用最合适的现有估计器提供良好初始特征。 数据集规模偏小 ：实验都在 1k–12k 量级的经典多模态聚类基准上，更大规模、模态更异构（如真实视频-音频-文本）场景下的表现有待验证。 两阶段 + 跑 20 次取最优 ：训练需 200 epoch 两阶段、且为避局部最优跑 20 次选""最低 loss 下最高 ACC""，实际部署成本与稳定性还有优化空间。",A近邻；主页链接不是已确认的代码仓库,https://openreview.net/forum?id=iedlZOdI0d,笔记未提供可识别代码仓库,未审计,https://shizhehu.github.io/,问题/方法/实验/局限来自站内笔记，未核实原文；局限可能是笔记分析,未审计,未审计,未审计,未审计或README未写，未知,未验证torch>=2.7且cu128运行兼容性,未实测，须按模型、批大小、编码器与协议另核,A近邻；主页链接不是已确认的代码仓库,F:\研究生毕设\方向检索\notes\P04.txt,问题/方法/实验/局限来自站内笔记，未核实原文；局限可能是笔记分析,未审计,未审计,未审计,2026-10-27
+P05,Bootstrapping Multi-view Learning for Test-time Noisy Correspondence,候选A/监督任务近邻,CVPR,2026,CVPR 2026，CVF官方论文页核实,Changhao He; Di Xue; Shuxian Li; Yanji Hao; Xi Peng; Peng Hu,https://papernotes.org/CVPR2026/others/bootstrapping_multi-view_learning_for_test-time_noisy_correspondence/,有标签多视图分类训练配对干净、部署时视图错配,BML在线制造错配并记录掩码，以揭示监督学习可靠性加权融合,"【站内笔记，未逐项核实；不得直接作证据】
+实验关键数据
+主实验 ¶
+11 个基准（10 个特征向量数据集 + 自建原始数据集 SUN R-D-T），对比 9 个 SOTA（TMC/UIMC/ECML/CCML/ETF/TMCEK/FUML 等可信方法 + MAMC/RML 确定性方法），噪声比 \(\eta\in\{0\%,50\%,100\%\}\) ，10 个随机种子取均值。下表节选部分数据集的平均准确率（AVG. 为该表 5 个数据集均值）：
+噪声比 数据集组 之前最佳 baseline BML 提升 0% Caltech/Leaves/HW/LandUse/Scene 89.38 (FUML) 92.45 +3.07 50% 同上 83.49 (FUML) 89.02 +5.53 100% 同上 78.11 (FUML) 85.39 +7.28 0% CCV/Fashion/NUS-OBJ/AWA/YouTubeFace 64.51 (ETF) 69.79 +5.28 50% 同上 57.04 (FUML) 63.72 +6.68 100% 同上 51.32 (FUML) 57.83 +6.51
+噪声越大、BML 优势越明显（100% TNC 下领先幅度最大），印证它确实补上了 train-test 鸿沟。即便 0% 干净场景，BML 也全面领先（如 LandUse 上超 RML 6.03%、NUS-OBJ 上超 FUML 4.77%），说明揭示监督让它即使对齐良好也能利用逐视图质量。SUN R-D-T 原始数据集（RGB+深度+文本三视图）上 BML 在三档噪声均显著最优（0%/50%/100% 分别 68.15/64.54/60.97，均超第二名约 4-5 个点）。
+消融实验 ¶
+50% TNC 下逐组件消融（7 个数据集 AVG.）：
+配置 AVG. 说明 FULL 79.38 完整 BML W/O \(\mathcal{L}_w\) 71.77 去掉揭示监督损失，掉 7.61 （最关键） W/O on-the-fly 74.25 不每 epoch 重采样错配，掉 5.13 W/O \(J\) 78.35 去掉视图间分歧信号，掉 1.03 W/O \(Q\) 79.14 去掉视图内不确定性，掉 0.24
+关键发现 ¶
+揭示监督损失 \(\mathcal{L}_w\) 贡献最大 ：去掉它直接掉 7.61，说明""用已知污染位置当监督""是 BML 区别于无监督可信方法的核心，远比两路预测信号重要。 on-the-fly 重采样不可省 ：固定污染模式（W/O on-the-fly）掉 5.13，验证自举式多样化错配能防止估计器过拟合到特定噪声模式。 两路预测信号是锦上添花 ： \(J\) （+1.03）比 \(Q\) （+0.24）更有用，因为视图间分歧更直接地暴露""错配""这种跨视图不一致； \(Q\) 提供的额外信息相对有限。 可靠性标定合理 （Q3）：可视化显示干净视图与噪声视图的可靠性 \(\alpha\) 分布明显分离，证明估计器确实把坏视图降权了。","【站内笔记的局限/展望，不等于原作者声明】
+局限与展望
+TNC 假设""多数视图仍对齐"" （错配数 \(1\le k_i\le\lfloor M/2\rfloor\) ）：当过半视图同时坏掉时方法不再适用，作者主要在此 regime 验证。 自举增强是""换同视图的别的样本"" ：模拟的是""视图与标签不对应""，但真实部署里的退化可能是噪声/模糊/时序错位等更复杂形态，⚠️ 这类非""整体替换""型错配是否同样有效，文中未充分覆盖。 可靠性估计器的标定依赖增强分布 ：若测试时错配统计与自举注入的差异很大，监督信号的有效性可能下降，可考虑自适应调整 \(\rho\) 或错配类型。 多数实验在特征向量数据集上，原始数据（图像/文本）只有一个自建 SUN R-D-T，更大规模真实多模态部署场景的验证仍有限。",A关键近邻；监督分类不能直接充当无监督聚类基线,https://openaccess.thecvf.com/content/CVPR2026/html/He_Bootstrapping_Multi-view_Learning_for_Test-time_Noisy_Correspondence_CVPR_2026_paper.html,https://github.com/XLearning-SCU/2026-CVPR-BML,https://github.com/XLearning-SCU/2026-CVPR-BML,未提供,CVF核对题目作者会议；为监督分类测试时错配，不是无监督聚类；PDF获取未完成，未使用其表格数字,存在（API 200），仅查README/根目录,2026-07-01T09:16:34Z,MIT,未写具体版本,未验证torch>=2.7且cu128运行兼容性,特征级分类有望8GB；未实测,A关键近邻；监督分类不能直接充当无监督聚类基线,F:\研究生毕设\方向检索\notes\P05.txt,CVF核题目作者与CVPR2026归属；训练干净、测试错配的监督分类近邻，不能代替无监督聚类结果。PDF获取未完成，未使用其表格。,https://openaccess.thecvf.com/content/CVPR2026/html/He_Bootstrapping_Multi-view_Learning_for_Test-time_Noisy_Correspondence_CVPR_2026_paper.html,F:\研究生毕设\方向检索\verification\P05_primary.txt,F:\研究生毕设\方向检索\verification\P05_README.md,2026-10-27
+P06,Rethinking Cross-Modal Anchor Alignment for Mitigating Error Accumulation,粗筛/图文检索噪声对应,CVPR,2026,未核实，仅站内标签,未独立核实，见笔记原文链接,https://papernotes.org/CVPR2026/multimodal_vlm/rethinking_cross-modal_anchor_alignment_for_mitigating_error_accumulation/,图文检索中锚点对齐误差累积导致软标签纠错失效,频域锚点对齐、几何角度软标签校正与语义约束三元组损失,"【站内笔记，未逐项核实；不得直接作证据】
+实验关键数据
+主实验 ¶
+三个图文检索数据集 Flickr30K、MS-COCO、CC152K，指标为 R@1/5/10 及双向召回之和 RSum；Flickr30K 与 MS-COCO 模拟 20%/40%/60% 噪声，CC152K 为真实噪声。下表为 RSum 对比（GSL vs 最强基线）：
+数据集 / 噪声 指标 GSL 最强基线 提升 Flickr30K / 0.2 RSum 507.5 504.7 (BiCro) +2.8（论文称 +3.0） Flickr30K / 0.4 RSum 498.6 493.8 (PC2) +4.8 Flickr30K / 0.6 RSum 484.1 477.1 (ESC) +7.0 MS-COCO / 0.2 RSum 525.1 524.7 (L2RM) +0.4 MS-COCO / 0.4 RSum 520.9 518.9 (SPS) +2.0 MS-COCO / 0.6 RSum 513.2 511.3 (SPS) +1.9 CC152K（真实噪声） RSum 379.6 374.2 (L2RM) +5.4
+噪声越高、增益越大（Flickr30K 从 +3.0 → +7.0），说明 GSL 在更脏的数据上更能稳住监督信号；真实噪声 CC152K 上同样领先所有基线。
+消融实验 ¶
+Flickr30K 40% 噪声下逐组件叠加（GALC 为基底）：
+配置 RSum 说明 仅 GALC 488.4 只做几何标签校正 GALC + FoA2 495.8 加频域锚点对齐，+7.4 GALC + FoA2 + SCT（Full） 498.6 再加语义约束损失，+2.8
+关键发现 ¶
+FoA2 贡献最大 ：在 GALC 基础上加入频域锚点对齐单步带来 +7.4 RSum，远超 SCT 的 +2.8，直接验证了""锚点相关性差异""才是误差累积的主因——先把锚点对齐了，标签校正才有意义。 超参不敏感但有最优点 ： \(\zeta=1.0\) 、 \(\eta=0.1\) 时最佳；类间非对称项权重 \(\eta\) 明显小于类内一致项，暗示类内一致性约束是主力。 可视化佐证 ：施加 FoA2 后，Flickr30K（噪声 0.2）上锚点相关性差异分布显著收窄，直接证明频域对齐确实压低了 \(\Delta d\) 。","【站内笔记的局限/展望，不等于原作者声明】
+局限与展望
+方法绑定在""图文检索 + 噪声对应""这一具体设定，FoA2 的频域假设（相位/幅度分别承载语义/纹理）是否在视频、音频等模态同样成立未验证。 ⚠️ 类间非对称损失 \(L_{inter}\) 取负号""鼓励非对称差异""的具体作用机制论文叙述较简，其与鲁棒性的因果链条以原文为准。 BMM 样本划分依赖深度网络的记忆效应，在极高噪声（>60%）或记忆效应不明显的骨干上是否稳健，论文未做压力测试。 频域变换 + 双子集维护带来的额外计算/显存开销没有报告，工程落地成本不明。",检索任务近邻，成本与协议不同,https://openaccess.thecvf.com/content/CVPR2026/html/Liu_Rethinking_Cross-Modal_Anchor_Alignment_for_Mitigating_Error_Accumulation_CVPR_2026_paper.html,笔记未提供可识别代码仓库,未审计,未提供,问题/方法/实验/局限来自站内笔记，未核实原文；局限可能是笔记分析,未审计,未审计,未审计,未审计或README未写，未知,未验证torch>=2.7且cu128运行兼容性,未实测，须按模型、批大小、编码器与协议另核,检索任务近邻，成本与协议不同,F:\研究生毕设\方向检索\notes\P06.txt,问题/方法/实验/局限来自站内笔记，未核实原文；局限可能是笔记分析,未审计,未审计,未审计,2026-10-27
+P07,Beyond Missing Rates: Rethinking Incomplete Multi-View Clustering with Protocol Divergence,评测协议审计,NeurIPS,2026,arXiv作者comments声明NeurIPS 2026 Poster；未核官方程序,Haolu Liu; Xiyue Wang; Xuanting Xie; Liangjian Wen; Zhao Kang,https://papernotes.org/NeurIPS2026/self_supervised/beyond_missing_rates_rethinking_incomplete_multi-view_clustering_with_protocol_d/,相同名义缺失率对应不同条目缺失率、完整样本率及信息预算,刻画protocol divergence；CRAFT按已观测集合融合，分开报告按条件训练与完整数据训练一次部署,"【站内笔记，未逐项核实；不得直接作证据】
+实验关键数据
+主实验 ¶
+下面摘取原文表 2 的 ACC（%）。CRAFT per-condition 按每个条件独立训练；CRAFT train-once 从完整视图数据开始训练并复用检查点。CUB 与 MultiFashion 已报告的 per-condition 条件构成信息匹配比较；HandWritten 属于单独的缺失率匹配对照，不能一并计入“12/13”。
+数据集 协议 / \(r\) CRAFT per-condition CRAFT train-once 该条件最高基线 CUB P1 / 0.1 87.17 82.09 Energy-DIMC 75.20 CUB P1 / 0.7 69.00 73.61 DCG 63.50† CUB P4 / 0.3 72.00 74.15 DCG 65.39† CUB P4 / 0.5 N/A 68.99 Energy-DIMC 42.38 HandWritten P4 / 0.5 91.05 93.69 Energy-DIMC 92.75 HandWritten P4 / 0.7 82.56 85.21 Energy-DIMC 83.26† MultiFashion P1 / 0.1 98.07 93.21 HSACC 97.46 MultiFashion P1 / 0.7 89.61 91.97 COMPLETER 90.09 MultiFashion P4 / 0.5 86.59 88.12 DVIMC 80.43 MultiFashion P4 / 0.7 N/A 85.41 Energy-DIMC 29.14
+† 表示一个有效独立 seed。未标记的 CRAFT 与 HSACC 为五 seed 均值；其他基线按附录 A.1 的独立运行记录解释，不能一概称为五 seed。N/A 是未报告的不完整训练结果，不是失败或零精度；MultiFashion P4 / 0.7 的 DVIMC 与 COMPLETER 运行失败，不参与最高基线选择。表 2 的 HandWritten 只在 train-once 行启用 MFT，per-condition 行没有；附录 D.6 的双方均关闭 MFT 对照是另一套训练配方。
+完整信息匹配结果是 CUB 的六个条件全部第一、MultiFashion 的七个条件中六个第一。唯一例外为 MultiFashion P1 / 0.7：COMPLETER 90.09、Energy-DIMC 89.90、CRAFT per-condition 89.61。固定检查点覆盖七个数据集、每个四协议乘四缺失率的部署网格，但补充数据集 UCI-Digit、Out-Scene、Caltech 没有重跑基线，YTF-31 仅一个 seed，不能称七个数据集都获得同等强度的 SOTA 验证。
+消融实验 ¶
+以下摘取附录表 20，均为 P4 下三 seed 的 ACC 均值 ± 标准差。这组历史消融固定使用 learnable-placeholder 配方，不是表 2 的 canonical 注意力掩码配方，因此只与本表 Full 比较，不能直接相减推断主实验模块贡献。
+数据集 / \(r\) Full No Stage 2 No Entropy Recon Only Repr Only No Pretrain HandWritten / 0.5 74.42 ± 1.3 73.62 ± 1.5 73.47 ± 1.6 74.22 ± 5.8 11.33 ± 0.1 43.15 ± 6.4 HandWritten / 0.7 54.27 ± 1.9 53.67 ± 1.9 53.20 ± 1.7 54.83 ± 6.8 10.46 ± 0.1 31.40 ± 4.4 CUB / 0.3 68.62 ± 4.4 65.63 ± 1.9 66.03 ± 2.1 73.93 ± 4.8 31.60 ± 1.8 49.34 ± 1.3 CUB / 0.5 61.54 ± 5.7 57.99 ± 2.5 58.42 ± 2.7 69.28 ± 5.5 15.34 ± 1.1 47.49 ± 3.3
+Recon Only 去掉第一阶段一致性、仍保留后续训练；Repr Only 去掉第一阶段重建；No Pretrain 完全跳过第一阶段。HandWritten / 0.5 的 Repr Only 比 Full 低 63.09 个百分点，说明本配方中重建是关键锚点；CUB / 0.5 的 Recon Only 反而高 7.74 个百分点，一致性并非普遍有益。表内结果未建立统计显著性。
+关键发现 ¶
+真正隔离推理缺失处理的是表 4：同一完整视图训练检查点、CUB P4 / 0.5 下，注意力掩码为 63.84 ± 7.9，learnable 为 61.54 ± 5.7，zero 为 58.13 ± 4.4，mean 为 55.89 ± 0.9，均为三 seed。这里不能换用表 2 的 68.99，因为实验配方不同。 表 3 在共享编码器、两阶段训练且均无 MFT 时比较融合块：HandWritten P4 / 0.7 的 Transformer 为 79.06 ± 5.7，SetMLP-Light 为 62.09 ± 2.3，SetMLP-Match 为 55.15 ± 1.9，concat 为 56.55 ± 0.7，均为五 seed。满足 C1+C2 的池化方法也能运行，只是这组实验低于注意力融合，不能据此证明 Transformer 是唯一可行结构。 两视图 P4 的实际缺失率上限为 0.5，所以名义 0.5 与 0.7 是饱和后的同一掩码分布；CUB train-once 两列同为 68.99 不是两次独立的更强缺失鲁棒性证据。三视图 P4 的上限则为 \(2/3\) 。 MultiFashion 记录的十六次 DVIMC 总训练为 128 分钟、一次 CRAFT 为 14.5 分钟，约 8.8 倍是累计网格成本比；单次 DVIMC 为 8 分钟，反而更短。记录未单列模型选择、搜索和额外 MFT，因此不是完整开发流程的 8.8 倍加速。","【站内笔记的局限/展望，不等于原作者声明】
+局限与展望
+主要缺失机制是四种受控合成协议，尚未验证自然发生、质量相关或相关联的传感器故障。相同覆盖统计下的视图身份差异也没有被两个汇总量完全表达。 默认部署训练需要全部视图起初可用；某个模态训练阶段从未出现、严格零完整样本训练超出已报告条件等情况仍待研究。MFT 至少留两个视图，对单视图部署的适应是额外边界。 C1+C2 是前向条件，不是学习成功定理；支持门控界受归一化、梯度有界、抽样与优化器假设限制。不能用它给所有重建方法、分布方法或低精度运行指定共同失败原因。 历史表格混合独立运行数、训练配方与检查点记录完整度，限制了显著性及公平性解释。下一步应统一种子、信息预算、模型选择和完整成本记账，并补充真实缺失与不均衡簇测试。",防止缺失损失很小陷阱；不重新推荐补全,https://arxiv.org/abs/2606.04857,https://github.com/dk23lhl/CRAFT; https://github.com/dk23lhl/imvc-audit,https://github.com/dk23lhl/CRAFT,未提供,arXiv核题目作者及作者会议声明；README核协议与依赖；不把完整数据训练与缺失数据训练混比,存在（API 200），仅查README/根目录,2026-09-29T17:39:42Z,API未识别且根目录未见许可证；授权待核,2.1.0（README）,未验证torch>=2.7且cu128运行兼容性,未实测，须按模型、批大小、编码器与协议另核,防止缺失损失很小陷阱；不重新推荐补全,F:\研究生毕设\方向检索\notes\P07.txt,问题/方法/实验/局限来自站内笔记，未核实原文；局限可能是笔记分析,未审计,F:\研究生毕设\方向检索\verification\P07_extra.txt,F:\研究生毕设\方向检索\verification\P07_README.md,2026-10-27
+P08,Global-Graph Guided and Local-Graph Weighted Contrastive Learning for Unified Clustering on Incomplete and Noise Multi-View Data,候选A/含噪聚类近邻,CVPR,2026,CVPR 2026，CVF官方论文页核实,Hongqing He; Jie Xu; Wenyuan Yang; Yonghua Zhu; Guoqiu Wen; Xiaofeng Zhu,https://papernotes.org/CVPR2026/multimodal_vlm/global-graph_guided_and_local-graph_weighted_contrastive_learning_for_unified_cl/,不完整视图减少可配对样本，特征高斯噪声使对比学习监督失真,全局图扩展正负对、局部高阶图赋对级权重；原文简称GLC，代码仓库名GLGC,"【站内笔记，未逐项核实；不得直接作证据】
+实验关键数据
+四个数据集：DHA（483 样本/2 视图/23 类）、LandUse-21（2100/2/21）、ProteinFold（694/12/27）、ALOI（10800/4/100）。三种设置： 不完整 （随机删视图，保证每样本至少留 1 视图）、 噪声 （加均值 0、标准差 0.4 的高斯噪声）、 不完整 + 噪声 。指标 ACC / NMI，对比 DSIMVC、CPSPAN、RPCIC、SCSL、DCG、GHICMC、FreeCSL，报 5 次均值。
+主实验 ¶
+不完整设置下 ACC（节选，缺失率 0.5 / 0.7 / 1.0；GLGC vs 次优 FreeCSL）：
+数据集 缺失率 FreeCSL GLGC 提升 DHA 0.5 67.2 75.5 +8.3 DHA 1.0 32.0 39.4 +7.4 ProteinFold 0.7 20.8 28.7 +7.9 ALOI 0.7 75.5 85.4 +9.9 ALOI 1.0 48.1 82.8 +34.7
+作者报告：ALOI 上 GLGC 比 FreeCSL 平均 ACC 高 11.7%；缺失率达 1.0（极端不完整）时仍高出 34.7%——印证 GGC 靠全局语义关联补稀配对，在重度缺失下尤其救命。噪声设置下，ProteinFold 噪声率从 0.1 升到 1.0，次优方法 ACC 掉 9.1%，而 GLGC 只掉 2.3%，体现 LWC 的抗噪。不完整 + 噪声双重扰动下，DHA 在缺失率与噪声率都为 0.5 时，GLGC 比次优高 7.6% ACC。
+消融实验 ¶
+损失组件消融（ACC，节选 I = 不完整 / N = 噪声 / I+N，LandUse-21 与 ProteinFold）：
+设置 配置 LandUse-21 ProteinFold 说明 I 仅 \(\mathcal{L}_{rec}\) 15.1 17.0 只重构 I + \(\mathcal{L}_{ggc}\) 23.3 17.1 LandUse +8.2 I 全 26.9 30.6 三项齐全 N 仅 \(\mathcal{L}_{rec}\) 22.0 17.4 只重构 N + \(\mathcal{L}_{lwc}\) 25.6 19.7 ProteinFold +4.9（论文口径） N 全 27.4 31.5 三项齐全
+关键发现 ¶
+GGC 主治不完整、LWC 主治噪声 ，分工清晰：不完整设置下加 \(\mathcal{L}_{ggc}\) 让 LandUse-21 的 ACC +8.2%；噪声设置下加 \(\mathcal{L}_{lwc}\) 让 ProteinFold +4.9%（论文文字口径）。 加权机制（带高阶局部图 \(\hat W\) ）有效 ：去掉/加上权重 \(W\) 的对比中，DHA 不完整设置 ACC 从 64.2% 升到 75.5%，ProteinFold 噪声设置从 26.8% 升到 31.5%，说明对样本对粒度的自适应加权确实压住了不可靠对应。 越极端越能拉开差距：缺失率 1.0 时 ALOI 领先 34.7%，说明全局图补对的收益随稀配对加剧而放大。","【站内笔记的局限/展望，不等于原作者声明】
+局限与展望
+跨视图对的二次复杂度 ：每 batch 算所有视图对的亲和与高阶图是 \(O(V^2|B|^2)\) ，视图数 \(V\) 大（如 ProteinFold 的 12 视图）时开销可观；虽对 \(N\) 线性，但 \(V\) 维度上偏重。 多个超参需调 ： \(pos\%/neg\%\) 阈值、 \(\sigma\) 、 \(\alpha/\beta\) 都要设，论文未充分给出跨数据集的敏感性曲线，实际迁移时调参成本待评。⚠️ 高阶局部图 \(\hat W^{(u,v)}=W^{(u,v)}(W^{(v,v)})^{T}\) 中 \(W^{(v,v)}\) 为视图 \(v\) 自身的亲和图，具体传播语义以原文为准。 噪声类型受限 ：实验的""噪声""是特征加高斯扰动（对应关系仍保留），不同于会引入假正对的 noisy correspondence；对后者的鲁棒性未直接验证。 数据集规模偏小（最大 ALOI 1.08 万样本），更大规模下全局图的可扩展性待考。",A关键近邻；高斯污染不等于实例索引错配,https://openaccess.thecvf.com/content/CVPR2026/html/He_Global-Graph_Guided_and_Local-Graph_Weighted_Contrastive_Learning_for_Unified_Clustering_CVPR_2026_paper.html; https://arxiv.org/abs/2512.21516,https://github.com/hhq-sr/GLGC,https://github.com/hhq-sr/GLGC,未提供,CVF及arXiv核身份；arXiv全文核Table 3及高斯特征污染协议；原文简称GLC，仓库GLGC,存在（API 200），仅查README/根目录,2026-03-09T10:20:57Z,API未识别且根目录未见许可证；授权待核,未写具体版本,未验证torch>=2.7且cu128运行兼容性,预计算多视图特征有望8GB；大图/高阶邻接开销未实测,A关键近邻；高斯污染不等于实例索引错配,F:\研究生毕设\方向检索\notes\P08.txt,"CVF核正式CVPR2026。arXiv全文协议为Gaussian特征噪声(mean=0,std=0.4)，不是实例索引错配；Table3噪声率0.1->1.0，GLC的ACC：DHA83.9->72.2(-11.7pp)，LandUse27.3->24.7(-2.6pp)，ProteinFold31.8->29.5(-2.3pp)；无clean0格。仅为原文报告，未复现。",https://arxiv.org/html/2512.21516v1; https://openaccess.thecvf.com/content/CVPR2026/html/He_Global-Graph_Guided_and_Local-Graph_Weighted_Contrastive_Learning_for_Unified_Clustering_CVPR_2026_paper.html,F:\研究生毕设\方向检索\verification\P08_arxiv.txt; F:\研究生毕设\方向检索\verification\P08_primary.txt; F:\研究生毕设\方向检索\verification\P08_fulltext.txt; F:\研究生毕设\方向检索\verification\P08_tables.json,F:\研究生毕设\方向检索\verification\P08_README.md,2026-10-27
+P09,G2D: Boosting Multimodal Learning with Gradient-Guided Distillation,候选B/模态不平衡,ICCV,2025,arXiv作者comments声明Accepted at ICCV 2025；未核官方程序,"Rakib, Mohammed; Bagavathi, Arunkumar",https://papernotes.org/ICCV2025/multimodal_vlm/g2d_boosting_multimodal_learning_with_gradient-guided_distillation/,联合训练中强模态压制弱模态，分类与回归表征不足,G2D结合独立单模态教师的特征/logit蒸馏与按弱到强顺序的训练调制,"【站内笔记，未逐项核实；不得直接作证据】
+实验
+数据集 ¶
+CREMA-D ：音频-视频情感识别，6类 AV-MNIST ：音频-视频数字分类，10类 VGGSound ：音频-视频事件分类，309类 UR-Funny ：文本-视觉-音频幽默检测，2类 IEMOCAP ：音视频文本情感识别 MIS-ME ：土壤图像+气象表格回归（首次评估模态不平衡的回归场景）
+主实验结果（双模态音视频） ¶
+方法 CREMA-D Multi AV-MNIST Multi VGGSound Multi Joint-Train 67.47 69.77 50.97 AGM 78.48 72.14 47.11 OGM-GE 58.60 24.53 37.96 MLA 79.70 65.32 51.65 ReconBoost 83.62 72.14 52.74 DLMG 67.61 72.33 53.78 UMT (KD baseline) 67.61 72.33 53.78 G2D (本文) 85.89 73.03 53.82
+G2D在CREMA-D上大幅领先（+2.27 vs ReconBoost），将视频模态在多模态训练中的性能从27.42%提升到72.72%。
+三模态实验（UR-Funny） ¶
+模态组合 Joint-Train OGM-GE MMPareto ReconBoost UMT G2D A-V Multi 61.57 61.87 61.27 62.07 60.46 62.98 A-TXT Multi 62.17 62.47 62.88 61.06 62.47 63.28 A-V-TXT Multi 62.58 63.68 62.88 61.37 63.38 65.49
+G2D在三模态场景下同样有效，且不会过度抑制强势模态（如文本）。
+消融实验 ¶
+SMP对不同方法的增益 无SMP 有SMP 增益 Joint-Train on CREMA-D 67.47 80.78 +13.31 UMT on CREMA-D 67.61 82.39 +14.78 G2D loss on CREMA-D 78.63 85.89 +7.26
+完全抑制 vs 部分抑制 CREMA-D AV-MNIST VGGSound UR-Funny 部分抑制（OGM-GE式） 81.99 72.83 51.16 63.68 完全抑制（SMP） 85.89 73.03 53.82 65.49
+关键发现 ¶
+SMP对所有方法都有效——即使用在vanilla joint-training上也能带来+13个百分点的提升 完全梯度抑制一致优于部分抑制，支持""给弱模态充分的无干扰训练""假设 G2D首次在回归任务（MIS-ME）上验证了模态不平衡的存在和缓解 Late fusion在G2D框架下表现最优，因为它保留了独立的单模态表示","【站内笔记的局限/展望，不等于原作者声明】
+局限性
+SMP的 \(\tau_j\) 超参数在不同数据集上需要调节（CREMA-D上最优为150个epoch训练弱模态） 需要额外预训练多个单模态教师模型，增加了总体训练开销 在AV-MNIST等模态不平衡较轻的数据集上提升有限（73.03 vs 72.76） 未在大规模预训练模型（如CLIP, LLaVA）上验证",B关键；原笔记仓库404，arXiv给出有效新地址,https://arxiv.org/abs/2506.21514,https://github.com/rakib062/G2D,https://github.com/rAIson-Lab/G2D,未提供,arXiv核题目作者及作者会议声明；笔记旧仓库404，原文指向rAIson-Lab/G2D有效,存在（API 200），仅查README/根目录,2026-03-01T22:38:06Z,MIT,2.0.1；Python 3.11、CUDA 11.7（README）,未验证torch>=2.7且cu128运行兼容性,小CNN或冻结特征有望8GB；多教师端到端设置未实测,B关键；原笔记仓库404，arXiv给出有效新地址,F:\研究生毕设\方向检索\notes\P09.txt,arXiv核题目作者，comments声明ICCV2025；原文给出的有效仓库rAIson-Lab/G2D与笔记404旧仓库不同。README torch2.0.1/CUDA11.7，未验证cu128。,https://arxiv.org/abs/2506.21514; https://github.com/rAIson-Lab/G2D,F:\研究生毕设\方向检索\verification\P09_arxiv.txt,F:\研究生毕设\方向检索\verification\P09_README_corrected.md,2026-10-27
+P10,MIDAS: Misalignment-based Data Augmentation Strategy for Imbalanced Multimodal Learning,候选B/不对齐增强,NeurIPS,2025,arXiv作者comments声明Accepted NeurIPS 2025；未核官方程序,"Hwang, Seong-Hyeon; Choi, Soyoung; Whang, Steven Euijong",https://papernotes.org/NeurIPS2025/multimodal_vlm/midas_misalignment-based_data_augmentation_strategy_for_imbalanced_multimodal_le/,有标签多模态分类过度依赖主导模态,MIDAS制造语义冲突的跨模态组合，以单模态置信构造软标签并按弱模态和困难度加权,"【站内笔记，未逐项核实；不得直接作证据】
+实验关键数据
+与基线对比（4个数据集） ¶
+方法 K-S Acc K-S F1 CREMA-D Acc CREMA-D F1 UCF-101 Acc Food-101 Acc Joint 63.92 55.54 60.28 58.60 90.07 91.35 SMV 65.76 57.59 67.94 66.83 95.24 91.64 OPM 67.35 59.29 63.97 62.71 91.73 92.40 AMCo 67.04 58.41 69.91 68.85 93.77 92.00 MCR 71.75 64.23 70.91 70.19 91.84 90.58 MIDAS 74.88 67.18 74.99 73.82 95.20 93.46
+Kinetics-Sounds: +3.13%p over best baseline（MCR） CREMA-D: +4.08%p over best baseline
+消融实验 ¶
+W WM HS K-S Acc CREMA-D Acc UCF-101 Acc Food-101 Acc ✗ ✗ ✗ 71.70 72.32 94.16 93.39 ✓ ✓ ✓ 74.88 74.99 95.20 93.46
+三个组件单独使用提升有限，组合后产生明显协同效应。
+与数据增强方法对比 ¶
+方法 CREMA-D Acc Food-101 Acc Mixup 61.84 91.36 PowMix 63.66 89.59 LeMDA 58.13 91.19 MIDAS 74.99 93.11
+三模态实验（CMU-MOSI） ¶
+MIDAS: 74.00% Acc / 73.64 F1 vs Joint: 71.13% Acc / 70.86 F1，证明可扩展到三模态。","【站内笔记的局限/展望，不等于原作者声明】
+局限与展望
+仅在分类任务上验证，生成、检索等任务的适用性需进一步探索 当两种模态信息量差异极端时，不对齐样本的标注质量可能下降 warm-up 阶段需要单独训练单模态分类器，增加了训练流程复杂度 随机配对策略简单高效但可能非最优，基于语义相似度的智能配对策略值得研究",B直接竞争；笔记及摘要页未给出代码链接,https://arxiv.org/abs/2509.25831,笔记未提供可识别代码仓库,未审计,未提供,arXiv核题目作者及作者会议声明；笔记和摘要页未给出代码链接,未审计,未审计,未审计,未审计或README未写，未知,未验证torch>=2.7且cu128运行兼容性,未实测，须按模型、批大小、编码器与协议另核,B直接竞争；笔记及摘要页未给出代码链接,F:\研究生毕设\方向检索\notes\P10.txt,问题/方法/实验/局限来自站内笔记，未核实原文；局限可能是笔记分析,未审计,F:\研究生毕设\方向检索\verification\P10_arxiv.txt,未审计,2026-10-27
+P11,Multimodal Negative Learning,候选B/负学习,NeurIPS,2025,arXiv作者comments声明Published NeurIPS 2025；未核官方程序,"Gong, Baoquan; Gao, Xiyuan; Zhu, Pengfei; Hu, Qinghua; Cao, Bing",https://papernotes.org/NeurIPS2025/multimodal_vlm/multimodal_negative_learning/,双模态后融合的弱模态margin低且对污染不稳健,MNL以置信与margin选择逐样本优势模态，仅蒸馏非目标类信息,"【站内笔记，未逐项核实；不得直接作证据】
+实验关键数据
+主实验（表格） ¶
+方法 MVSA (ε=0/5/10) FOOD101 (ε=0/5/10) CREMA-D (ε=0/5/10) LF 76.88/63.46/55.16 90.69/68.49/57.99 68.04/64.25/52.39 LF+MNL 79.50/74.03/63.01 92.77/75.16/62.06 73.71/70.35/57.26 Δ +2.62/+10.57/+7.85 +2.08/+6.67/+4.06 +5.67/+6.10/+4.87 PDF 79.94/74.40/63.09 93.32/76.47/62.83 67.07/64.57/53.33 PDF+MNL 80.54/74.07/63.78 93.33/76.65/63.16 69.18/66.94/55.43
+MNL 对静态融合（LF）提升显著（MVSA ε=5 提升 10.57%），对动态融合（PDF/QMF）提升相对温和但一致。
+消融实验（表格） ¶
+引导策略 Prior Confident Robust MVSA ε=0/5/10 LF 基线 - - - 76.88/63.46/55.16 固定先验引导 ✓ 78.66/72.69/62.77 仅置信度引导 ✓ 78.74/71.87/59.35 置信度+UCoM ✓ ✓ 79.50/74.03/63.01
+引导范围 All-Class Non-Target MVSA ε=0/5/10 全类引导 ✓ 78.90/72.16/62.52 仅非目标类引导 ✓ 79.50/74.03/63.01
+关键发现 ¶
+MNL 对静态融合的提升远大于动态融合，因为动态融合本身会降低弱模态权重，与 MNL 增大弱模态 margin 的目标存在错位 在 NYU Depth V2 上提升较小，因为两个模态本身差距不大，强模态引导空间有限 非目标类引导（Non-Target）一致优于全类引导（All-Class），验证了""只教弱模态排除错误""比""全面对齐""更有效 动态引导（Confident+Robust）优于固定先验引导，说明模态优势地位确实因样本而异","【站内笔记的局限/展望，不等于原作者声明】
+局限与展望
+目前仅适用于后融合框架，对中间融合和早期融合的扩展尚未探索 仅考虑双模态情况，多模态（>2）场景下 RDM 的选择和引导关系更复杂 当两模态质量接近时（如 NYU Depth V2），MNL 收益有限 动态引导的判断依赖当前 batch 的预测，对极端噪声场景是否稳定需进一步验证",B关键；对强动态融合的边际收益可能很小,https://arxiv.org/abs/2510.20877,https://github.com/BaoquanGong/Multimodal-Negative-Learning,https://github.com/BaoquanGong/Multimodal-Negative-Learning,未提供,arXiv核题目作者及作者会议声明；未核全文实验表,存在（API 200），仅查README/根目录,2025-12-10T04:52:27Z,API未识别且根目录未见许可证；授权待核,未写具体版本,未验证torch>=2.7且cu128运行兼容性,后融合或小CNN有望8GB；BERT及全量图像编码器并训未实测,B关键；对强动态融合的边际收益可能很小,F:\研究生毕设\方向检索\notes\P11.txt,arXiv核题目作者，comments声明NeurIPS2025；GitHub存在，README未写torch，未核全文实验数字。,https://arxiv.org/abs/2510.20877; https://github.com/BaoquanGong/Multimodal-Negative-Learning,F:\研究生毕设\方向检索\verification\P11_arxiv.txt,F:\研究生毕设\方向检索\verification\P11_README.md,2026-10-27
+P12,Rethinking Multimodal Learning from the Perspective of Mitigating Classification Ability Disproportion,候选B/能力再平衡,NeurIPS,2025,arXiv作者comments声明Accepted NeurIPS 2025；未核官方程序,"Jiang, QingYuan; Huang, Longfei; Yang, Yang",https://papernotes.org/NeurIPS2025/multimodal_vlm/rethinking_multimodal_learning_from_the_perspective_of_mitig/,多模态模型的分类能力差距造成欠利用,AUG持续boosting弱模态分类器，按训练状态自适应分配分类器容量,"【站内笔记，未逐项核实；不得直接作证据】
+实验设计
+数据集 ：6 个多模态数据集覆盖音视频（CREMAD、KSounds、VGGSound）、三模态手势（NVGesture: RGB+OF+Depth）、图文（Twitter、Sarcasm）。
+Baselines ：传统融合（Concat、Affine、ML-LSTM、Sum、Weight）+ 再平衡方法（MSES、G-Blend、MSLR、OGM、PMR、AGM、MMPareto、SMV、MLA、DI-MML、LFM、ReconBoost），共 17 个对比方法。
+实现细节 ：
+- 编码器：ResNet18（音视频）、I3D（NVGesture）、BERT + ResNet50（图文）
+- 优化器：SGD，lr=0.01，momentum=0.9，weight decay=1e-4；图文用 Adam，lr=2e-5
+- \(\lambda\) 从 {0.1, 0.2, 0.33, 0.5, 1.0} 搜索
+- \(t_N\) （检查间隔）：CREMAD 20 epochs，VGGSound/KSounds/NVGesture 10，Twitter 5，Sarcasm 1
+
+实验结果
+主实验 ¶
+数据集 模态 Naive MML 最佳 baseline Ours CREMAD 音频+视频 0.6507 0.8362 (LFM) 0.8515 KSounds 音频+视频 0.6455 0.7253 (LFM) 0.7263 VGGSound 音频+视频 0.5116 0.5274 (LFM) 0.5301 Twitter 图+文 0.7300 0.7501 (LFM) 0.7512 Sarcasm 图+文 0.8294 0.8497 (LFM) 0.8510 NVGesture RGB+OF+Depth 0.8237 0.8436 (LFM) 0.8501
+所有数据集上均取得最佳结果。CREMAD 上相比 Naive MML 提升 20 个百分点 ，相比此前最佳 LFM 仍高 1.5%。
+消融实验（CREMAD） ¶
+损失组合 多模态 Acc 音频 Acc 视频 Acc 仅 \(\epsilon\) （残差） 0.8333 0.6465 0.6734 仅 \(\epsilon_{\text{all}}\) （总体） 0.8320 0.6573 0.6707 仅 \(\epsilon_{\text{pre}}\) （维护） 0.8360 0.6841 0.6371 三者联合 0.8515 0.6835 0.6828
+三项损失缺一不可，联合优化同时获得最高多模态精度与最均衡的模态表现。
+自适应 vs 固定分类器 ¶
+策略 音频/视频分类器数 多模态 Acc 固定 10 个视频分类器 1+10 0.8091 固定 12 个视频分类器 1+12 0.8118 自适应（ACA） 1+10（动态） 0.8515
+相同最终分类器数下，自适应比固定策略高 4.2% ，说明""何时加""比""加多少""更重要。
+模型容量控制 ¶
+方法 架构 参数量 Acc Naive MML R18+R18 23.6M 0.6507 Naive MML R18+R34 35.1M 0.6277 Ours R18+R18+classifiers 24.6M 0.8515
+R18→R34 增加 11.5M 参数准确率反而下降（更难收敛）。本文仅增加 1M 参数即提升 20%——性能增益显然不来自参数量，而来自 boosting 机制。
+模态缺失鲁棒性（CREMAD） ¶
+方法 缺失 0% 缺失 20% 缺失 50% Naive MML 0.6507 0.5849 0.5242 MLA 0.7943 0.6935 0.5753 Ours 0.8515 0.7540 0.6008
+50% 模态缺失下，本文方法（0.6008）仍优于 MLA 完整数据的结果（0.5753 @ 50% missing）。t-SNE 可视化也表明本文方法在视频模态上学到的特征区分性显著优于 naive MML 和 ReconBoost。","【站内笔记的局限/展望，不等于原作者声明】
+局限性
+理论仅分析 boosting 对 gap 收敛的影响，完整框架的整体收敛性未证明 分类器数量随训练递增，推理时存在线性开销 仅验证分类任务，检索/生成/分割等下游任务待探索 对 early fusion 架构的适配方案未展开讨论 超参数 \(t_N\) 按数据集手动设定，缺乏自适应选择机制",B直接竞争及强基线；README为torch1.11.0,https://arxiv.org/abs/2502.20120,https://github.com/njustkmg/NeurIPS25-AUG,https://github.com/njustkmg/NeurIPS25-AUG,未提供,arXiv核题目作者及作者会议声明；GitHub核README与结构,存在（API 200），仅查README/根目录,2025-10-21T13:04:25Z,API未识别且根目录未见许可证；授权待核,1.11.0；Python 3.8（README）,未验证torch>=2.7且cu128运行兼容性,未实测，须按模型、批大小、编码器与协议另核,B直接竞争及强基线；README为torch1.11.0,F:\研究生毕设\方向检索\notes\P12.txt,问题/方法/实验/局限来自站内笔记，未核实原文；局限可能是笔记分析,未审计,F:\研究生毕设\方向检索\verification\P12_arxiv.txt,F:\研究生毕设\方向检索\verification\P12_README.md,2026-10-27
+P13,RollingQ: Reviving the Cooperation Dynamics in Multimodal Transformer,候选B/注意力协作,ICML,2025,未核实，仅站内标签,未独立核实，见笔记原文链接,https://papernotes.org/ICML2025/multimodal_vlm/rollingq_reviving_the_cooperation_dynamics_in_multimodal_transformer/,多模态Transformer注意力自增强循环造成模态偏置,RollingQ检测注意力不平衡率，旋转query方向以恢复跨模态协作,"【站内笔记，未逐项核实；不得直接作证据】
+实验关键数据
+主实验（Table 1） ¶
+方法 类型 CREMA-D Acc Kinetic-Sound Acc CMU-MOSEI Acc Audio (单模态) - 47.6 53.9 - Visual (单模态) - 36.3 57.0 47.1 Concat (静态) 静态 49.3 68.0 62.8 OGM 静态 51.2 68.2 62.7 PMR 静态 50.1 68.2 63.0 Vanilla MT 动态 48.8 67.0 62.7 MBT 动态 51.5 72.2 63.0 MMML 动态 52.0 69.8 62.8 Vanilla MT + RollingQ 动态 51.9 69.3 63.2 MMML + RollingQ 动态 52.7 70.7 63.2
+RollingQ 为 Vanilla MT 带来一致性提升：CREMA-D +3.1%，Kinetic-Sound +2.3%，MOSEI +0.5%。
+噪声鲁棒性测试（Table 3, Kinetic-Sound） ¶
+噪声水平 Vanilla MT Vanilla MT + RollingQ 0.00 67.0 69.3 0.25 62.7 (-4.3) 67.2 (-1.9) 0.50 52.9 (-14.1) 58.2 (-11.1) 1.00 34.7 (-32.3) 40.6 (-28.7)
+RollingQ 在所有噪声水平下均表现更优，且精度下降更少。
+计算效率（Table 4, CREMA-D） ¶
+方法 Acc 参数量 GFLOPs MBT 51.5 114.21M 2746.90 MMML 52.0 77.88M 1828.29 JMT 50.7 62.23M 1494.87 Vanilla MT + RollingQ 51.9 60.46M 1489.20
+RollingQ 以最少的参数和计算量达到与复杂架构相当的性能。
+Pearson 相关性分析（Table 2） ¶
+方法 CREMA-D coef KS coef Vanilla MT 0.52 0.44 Vanilla MT + RollingQ 0.76 0.78
+RollingQ 显著提升了注意力分数与输入质量之间的相关性（p < 0.01），证明动态适应性得到恢复。","【站内笔记的局限/展望，不等于原作者声明】
+局限与展望
+理论分析局限于单层注意力 ：虽然提供了多层渐进训练的扩展方案，但对多层 Transformer 中更复杂的动态交互缺乏深入建模 不直接增强单模态编码器 ：RollingQ 仅调整 query 的分配策略，未像 OGM/PMR 等方法直接优化单模态特征质量；结合两类方法可能效果更好 数据集规模偏小 ：三个主要数据集（CREMA-D、Kinetic-Sound、CMU-MOSEI）都不算大规模，缺乏在大规模多模态预训练（如 VLM）上的验证 旋转次数需手动设定 ：不同数据集的最大旋转次数不同（1 或 3），自适应确定旋转次数的策略有待探索 仅验证双模态场景 ：对三模态及以上的扩展性未充分讨论",B直接竞争；原始多帧Transformer不自动适合8GB,https://arxiv.org/abs/2506.11465,https://github.com/GeWu-Lab/RollingQ_ICML2025,未审计,未提供,问题/方法/实验/局限来自站内笔记，未核实原文；局限可能是笔记分析,未审计,未审计,未审计,未审计或README未写，未知,未验证torch>=2.7且cu128运行兼容性,未实测，须按模型、批大小、编码器与协议另核,B直接竞争；原始多帧Transformer不自动适合8GB,F:\研究生毕设\方向检索\notes\P13.txt,问题/方法/实验/局限来自站内笔记，未核实原文；局限可能是笔记分析,未审计,未审计,未审计,2026-10-27
+P14,MASAM: Multimodal Adaptive Sharpness-Aware Minimization for Heterogeneous Data Fusion,候选B/优化几何,ICLR,2026,未核实，仅站内标签,未独立核实，见笔记原文链接,https://papernotes.org/ICLR2026/optimization/masam_multimodal_adaptive_sharpness-aware_minimization_for_heterogeneous_data_fu/,模态不平衡与各模态损失曲面尖锐性相互作用,MASAM结合学习速度与梯度对齐判断主导模态，对其做模态自适应SAM扰动,"【站内笔记，未逐项核实；不得直接作证据】
+实验关键数据
+主实验表格 ¶
+5 个多模态数据集 / 6 个下游任务，4 个随机种子平均（Relative Gain 相对最强 baseline）：
+任务/数据集 (指标) Late Fusion 最强 baseline MASAM 相对增益 MIMIC-Phenotype (AUPRC) 0.475 0.481 (InfoREG) 0.498 +3.53% MIMIC-Mortality (AUPRC) 0.567 0.585 (MMPareto) 0.603 +3.08% CREMA-D (Acc) 0.660 0.770 (AUG) 0.814 +5.71% Kinetics-Sounds (Acc) 0.636 0.689 (AUG) 0.740 +7.40% UPMC-Food101 (Acc) 0.907 0.928 (MLA) 0.935 +0.75% ADNI (mAP) 0.826 0.847 (AUG) 0.857 +1.18% UR-FUNNY 三模态 (Acc) 0.620 0.632 (OGM) 0.644 +1.90%
+MASAM 在全部 7 列都拿第一；UPMC 上虽然提升幅度小，但配对显著性检验 \(p=0.0046<0.005\) 。
+消融实验表格 ¶
+逐组件消融（MIMIC-Phenotype AUPRC / KS Acc，4 种子平均）：
+# 变体 APS MDPS SAM Phenotype KS – MASAM ✓ ✓ ✓ 0.498 0.740 1 w/o APS ✗ ✓ ✓ 0.484 0.724 2 w/o MDPS ✓ ✗ ✓ 0.491 0.723 3 SAM Only ✗ ✗ ✓ 0.478 0.689 4 Late Fusion ✗ ✗ ✗ 0.475 0.636
+对比 #3(SAM Only) vs #4(Late Fusion)：朴素 SAM 在 Phenotype 上只 +0.63%、几乎无用，印证「直接套 SAM 行不通」。加 APS（MASAM vs #1）带来 +2.89%（Phenotype）/+2.21%（KS），加 MDPS（MASAM vs #2）带来 +1.43%/+2.35%，两模块互补。
+关键发现 ¶
+平坦度可视化 ：MIMIC 上用 Li et al. (2018) 的损失曲面可视化与 Hessian trace，MASAM 让两个模态编码器 同时 收敛到比所有 baseline 更平坦的区域，而梯度调制类方法因忽略几何仍可能停在锐利区。 单模态性能解耦评估 ：冻结编码器后只训分类头，MASAM 的单模态表现全面超过多模态 baseline，在噪声/缺失严重的 MIMIC 上甚至超过用单模态数据单独训练的 unimodal baseline，说明真正做到了平衡学习。 标签噪声鲁棒性 ：在 CREMA-D / KS 注入 20%–60% 标签噪声，MASAM 在所有噪声档位都领先，平坦极小值带来的泛化收益在高噪声下尤为明显。","【站内笔记的局限/展望，不等于原作者声明】
+局限与展望
+框架主要在 late-fusion + 模态专属编码器结构上推导与验证，对早期融合/共享主干/大规模预训练多模态模型是否适用未充分讨论。 每步要为各模态额外算单模态梯度、融合梯度对齐及扰动点的二次前反向，开销高于纯梯度调制方法，论文未给出训练成本/吞吐的系统对比。 APS 假设「学得快 + 梯度对齐 = 强势」，在模态噪声极端不对称或存在模态缺失时该判据是否稳健仍待考察。 收敛性分析针对 dominant 模态的更新给出，整体三分区交替更新的全局动态分析较为有限。",B直接竞争；多次梯度与SAM增加训练开销,https://openreview.net/forum?id=AUKeDukcUi,https://github.com/Orange2107/MASAM-Multimodal-Adaptive-SAM,未审计,未提供,问题/方法/实验/局限来自站内笔记，未核实原文；局限可能是笔记分析,未审计,未审计,未审计,未审计或README未写，未知,未验证torch>=2.7且cu128运行兼容性,未实测，须按模型、批大小、编码器与协议另核,B直接竞争；多次梯度与SAM增加训练开销,F:\研究生毕设\方向检索\notes\P14.txt,问题/方法/实验/局限来自站内笔记，未核实原文；局限可能是笔记分析,未审计,未审计,未审计,2026-10-27
+P15,BALM: A Model-Agnostic Framework for Balanced Multimodal Learning under Imbalanced Missing Rates,候选B/不均衡缺失近邻,CVPR,2026,arXiv作者comments声明Accepted CVPR 2026；未核官方程序,"Nguyen, Phuong-Anh; Pham, Tien Anh; Le, Duc-Trong; Nguyen, Cam-Van Thi",https://papernotes.org/CVPR2026/multimodal_vlm/balm_a_model-agnostic_framework_for_balanced_multimodal_learning_under_imbalance/,不同模态缺失概率不同，表征与训练梯度同时偏置,BALM校准已观测特征，并从梯度幅值与方向两方面再平衡,"【站内笔记，未逐项核实；不得直接作证据】
+实验关键数据
+主实验（IEMOCAP，6 种 IMR 配置， \((r_A, r_L, r_V)\) ） ¶
+方法 (0.3,0.5,0.7) Acc (0.5,0.3,0.7) Acc (0.7,0.3,0.5) Acc 平均稳定性 MMIN 55.97 56.40 55.87 高一致但低性能 SDR-GNN 59.46 58.53 55.14 波动大 Mi-CGA 58.84 60.50 58.84 中等 MoMKE 55.39 60.18 58.26 波动大
+（BALM 作为插件提升各骨干的性能和稳定性，具体见下表）
+消融实验（BALM 各模块贡献） ¶
+配置 说明 仅 FCM 缓解表征不平衡，提升较弱模态特征质量 仅 GRM 平衡优化动态，防止强模态主导 FCM + GRM (完整) 两者互补，性能和稳定性最佳
+关键发现 ¶
+传统缺失模态方法在 IMR 下表现不稳定（如 SDR-GNN 准确率在不同 IMR 配置间波动 4.3%） BALM 作为插件可持续增强各类骨干（标准 MER 模型、不平衡专用模型、缺失模态方法） 分布驱动和空间驱动调制互补——仅用其一效果不及两者结合 FCM 对低可用模态的提升更明显，GRM 对高可用模态的过拟合有效抑制","【站内笔记的局限/展望，不等于原作者声明】
+局限与展望
+实验主要集中在多模态情感识别（MER），对其他多模态任务（如 VQA、视频理解）的泛化需验证 FCM 的全局描述子是 batch 级统计量，batch 较小时可能不稳定 GRM 的分布驱动调模依赖多模态预测作为参考，若多模态融合本身有偏，参考不可靠 极端缺失率（如某模态 >90% 缺失）下的行为未充分分析",B直接竞争；不是补全缺失特征,https://arxiv.org/abs/2603.19718,https://github.com/np4s/BALM_CVPR2026.git,未审计,未提供,arXiv核题目作者及作者会议声明；未审计GitHub,未审计,未审计,未审计,未审计或README未写，未知,未验证torch>=2.7且cu128运行兼容性,未实测，须按模型、批大小、编码器与协议另核,B直接竞争；不是补全缺失特征,F:\研究生毕设\方向检索\notes\P15.txt,问题/方法/实验/局限来自站内笔记，未核实原文；局限可能是笔记分析,未审计,F:\研究生毕设\方向检索\verification\P15_arxiv.txt,未审计,2026-10-27
+P16,Multimodal Learning on Low-Quality Data with Conformal Predictive Self-Calibration,候选B/低质量可靠融合,CVPR,2026,arXiv作者comments声明Accepted CVPR 2026；未核官方程序,"Jiang, Xun; Gu, Yufan; Hu, Disen; Hou, Yuqing; Yao, Yazhou; Shen, Fumin; Shen, Heng Tao; Xu, Xing",https://papernotes.org/CVPR2026/multimodal_vlm/multimodal_learning_on_low-quality_data_with_conformal_predictive_self-calibrati/,模态不平衡和输入噪声污染下样本及模态可靠性不同,CPSC将表征分量可靠性筛选、梯度校准和动态共形预测器更新组合成训练循环,"【站内笔记，未逐项核实；不得直接作证据】
+实验关键数据
+主实验 ¶
+不平衡多模态学习 （Acc \(_m\) /Acc \(_a\) /Acc \(_v\) 分别为多模态/音频/视觉准确率，Avg 为均值）：
+数据集 指标 CPSC 之前SOTA(ARL/IPRM等) 提升 Kinetics Sounds Acc \(_m\) 76.08 74.82 (IPRM) +1.26 CREMA-D Acc \(_m\) 87.83 86.02 (LFM) +1.81 CREMA-D Avg 78.65 75.94 (LFM) +2.71 AVE Acc \(_m\) 77.66 75.81 (MMPareto) +1.85 AVE Avg 63.41 61.85 (MMPareto) +1.56
+三个数据集的多模态与单模态准确率全面领先；论文称在 AVE 上多模态准确率较 ARL 提升约 5%、CREMA-D 上约 3%。
+鲁棒多模态学习 （含高斯 GS / 椒盐 SP 噪声，强度 \(\epsilon\) ）：
+数据集 Clean GS@5 GS@10 SP@5 SP@10 MVSA (CPSC) 80.07 74.12 63.32 73.95 61.27 MVSA 次优 79.15(EAU) 73.34 61.78 73.69 60.46 NYU Depth V2 (CPSC) 73.12 64.15 57.32 61.22 47.40 SUN RGB-D (CPSC) 62.12 54.11 49.10 53.37 41.28
+Clean 与各噪声强度下 CPSC 都最优，且噪声越强相对优势越明显（基线随噪声大幅退化、CPSC 更稳）。
+消融实验 ¶
+在 CREMA-D（不平衡）与 NYU Depth V2（噪声）上拆 RSC/GSC：
+配置 CREMA-D Avg NYU SP@10 说明 无 RSC / 无 GSC 73.10 41.22 baseline 仅 GSC 75.32 41.36 噪声下几乎无提升 仅 RSC 76.20 45.94 噪声下提升显著 Full (RSC+GSC) 78.65 47.40 完整模型最佳
+RSC 子约束消融（Fig.3）：去掉 \(\mathcal{L}_{div}\) 、只留一致性、只留多样性、全约束四档，单约束都有增益、全约束最优——一致性保语义连贯，多样性增覆盖减冗余。
+关键发现 ¶
+噪声场景下 RSC 远比 GSC 重要 ：噪声下 RSC 单独带来 2–5% 增益，GSC 单独几乎无提升；因为 RSC 能直接在特征层抑制被污染分量，而梯度重加权对显式噪声乏力。不平衡场景下二者则更接近、互补。 GSC 不挑优化器 ：SGD/Adam/AdaGrad 叠加 CPSC 都涨，CREMA-D 上 SGD 提升超 10%、AdaGrad 超 8%、Adam 约 2%，说明它是在引导优化轨迹避开局部极小、收敛到更优解。 CP 更新频率越低越差、预热不可省 ：更新间隔越长性能单调下降（用过期不确定性误导训练）；去掉 warm-up 明显变差（需要先建立基本表示能力，校准才有可靠基础）。 可靠性分布右移 ：训练后可靠性分数整体向高分集中（Fig.6），t-SNE 显示类内更紧、类间更分（Fig.5），证实它确实纠正了""过自信却不可靠""的预测。","【站内笔记的局限/展望，不等于原作者声明】
+局限与展望
+依赖校准集的同分布假设 ：CP 的覆盖保证建立在校准集与测试同分布上，遇到 OOD/分布漂移时分位数可能失准，论文未讨论这种情形。 训练开销上升 ：每个 iteration 要做特征分解 + 逐分量 CP 打分，且每轮在整个校准集上重算分位数，相比普通训练更重；论文未给训练时间/显存对比。 超参偏多 ： \(n,K,\alpha,\lambda_1,\lambda_2,a,b\) 都需调，敏感性分析只覆盖了更新频率与部分约束， \(K/n\) 的选取、 \(\alpha\) 的影响交代不充分。 只验证分类任务 ：方法天然绑定""分类预测集""，对回归、检索、生成等非分类多模态任务能否套用未知；作者把扩展到更多场景列为 future work。",B关键；已核原文表1/2，README现代torch但cu128未验证,https://arxiv.org/abs/2605.03820,https://github.com/XunCHN/CPSC,https://github.com/XunCHN/CPSC,未提供,arXiv核题目作者及作者会议声明；全文Table 1/2核数值、共形假设；代码仅README结构,存在（API 200），仅查README/根目录,2026-05-14T05:10:08Z,API未识别且根目录未见许可证；授权待核,2.9.0；README另写tested CUDA 12.1，未证明cu128,未验证torch>=2.7且cu128运行兼容性,小CNN/冻结特征可作为8GB主线方案；原模型显存未实测,B关键；已核原文表1/2，README现代torch但cu128未验证,F:\研究生毕设\方向检索\notes\P16.txt,"原文Table2 MVSA-Single准确率(%)：CPSC clean80.07,Gaussian@epsilon10=63.32,SP@epsilon10=61.27；退化16.75/18.80个百分点。相同格EAU61.78/ECML61.04，相对增益仅1.54/0.23点。Table1 CREMA-D CPSC87.83 vs LFM86.02(+1.81点)。噪声10是强度epsilon，非缺失率10%。只核原文报告，未复现；校准分布假设不自动覆盖任意shift。",https://arxiv.org/abs/2605.03820; https://arxiv.org/html/2605.03820v1,F:\研究生毕设\方向检索\verification\P16_arxiv.txt; F:\研究生毕设\方向检索\verification\P16_fulltext.txt; F:\研究生毕设\方向检索\verification\P16_tables.json,F:\研究生毕设\方向检索\verification\P16_README.md,2026-10-27
+P17,Enhance-then-Balance Modality Collaboration for Robust Multimodal Sentiment Analysis,已有备选补充/情感分析,CVPR,2026,未核实，仅站内标签,未独立核实，见笔记原文链接,https://papernotes.org/CVPR2026/multimodal_vlm/enhance-then-balance_modality_collaboration_for_robust_multimodal_sentiment_anal/,文本主导的情感分析中音视频被抑制且部署可能缺失模态,EBMC先解耦并互补增强，再以能量协调和实例可信度蒸馏平衡融合,"【站内笔记，未逐项核实；不得直接作证据】
+实验关键数据
+主实验 ¶
+在 CMU-MOSI / CMU-MOSEI 上对比 10 个 SOTA，EBMC 几乎全指标领先，尤其 Acc-7（细粒度 7 分类）提升明显：
+数据集 指标 EBMC 前 SOTA 提升 CMU-MOSI Acc-7↑ 50.34 46.50 (Semi-IIN) +3.84 CMU-MOSI F1↑ 87.79 86.60 (GLoMo) +1.19 CMU-MOSI Acc-2↑ 86.26/87.84 85.28/87.04 — CMU-MOSEI Acc-7↑ 57.32 55.89 (Semi-IIN) +1.43 CMU-MOSEI F1↑ 88.07 86.40 (GLoMo) +1.67
+跨任务迁移到 ERC（IEMOCAP 四情感 F1）也一致涨点，平均 86.35% vs 最强基线 DMD 85.08%（+1.27%），且在 Happy/Angry 类增益尤其明显。
+消融实验 ¶
+在 MOSI/MOSEI 上逐个删模块（报 F1 掉幅）：
+配置 MOSI F1 MOSEI F1 说明 EBMC（完整） 87.79 88.07 — w/o MSD 86.16 86.31 解耦没了，掉 1.63 / 1.76 w/o CCE 86.90 86.89 弱模态不增强，掉 0.89 / 1.18 w/o EMC 85.32 85.20 掉最多 2.43 / 2.87 w/o IMTD 86.77 87.09 实例信任没了，掉 1.02 / 0.98
+缺失模态鲁棒性 ¶
+在 CMU-MOSEI 六种不完整模态测试条件下（只给某一/某两个模态），EBMC 平均 F1 78.92，显著高于 CorrKD（74.02）、GCNet（73.54）、EUAR（74.50）。在最难的单视觉 {V}（70.05）、单音频 {A}（71.67）条件下优势尤其大——许多基线在单弱模态下崩盘，而 MSD/CCE 让模型即便缺模态也能学到有用信息。
+关键发现 ¶
+EMC 贡献最大 ：去掉它掉点最狠（≈2.4–2.9% F1），可视化显示没有 EMC 时文本贡献在三个库都冲过 50%、压死音视频；加上后贡献分布明显拉平，Acc-2 同步上升——直接证明了""模态竞争""假设和能量再平衡的有效性。 增强与平衡互补 ：MSD 让 T-SNE 情感边界变清晰但过渡区仍散，CCE 进一步把散点聚回情感簇——两者分别管""解耦干净""和""补强弱模态""，缺一不可。 IMTD 主要管鲁棒 ：常规设置下掉幅最小（≈1%），但它是缺失模态场景下抗噪的关键，价值体现在 Tab. 3 而非主表。","【站内笔记的局限/展望，不等于原作者声明】
+局限与展望
+四模块四套损失、超参众多（ \(\zeta, \beta, \gamma, \eta, \lambda_1, \lambda_2\) 等），虽然大多设 0.1，但能量函数里的 \(\alpha, \beta, \gamma, \delta, \lambda\) 调参空间大，迁移到新数据可能需重调。 能量函数 \(E(m)\) 把""表示幅度 + 任务难度 + 不确定性""线性相加，三项权重和物理含义偏经验，⚠️ 细节在 Appendix B，正文未充分论证为何这三项足以刻画模态""强弱""。 训练分两阶段、各 100 epoch，加上单模态教师 + 蒸馏，整体训练开销不小；论文未给与基线的训练/推理成本对比。 只验证了文本/音频/视觉三模态情感任务，能量协调能否扩展到更多模态或非情感任务（检索、问答）未知。",B近邻及已有MSA备选的直接竞争补充,https://openaccess.thecvf.com/content/CVPR2026/html/He_Enhance-then-Balance_Modality_Collaboration_for_Robust_Multimodal_Sentiment_Analysis_CVPR_2026_paper.html,https://github.com/kangverse/EBMC,未审计,未提供,问题/方法/实验/局限来自站内笔记，未核实原文；局限可能是笔记分析,未审计,未审计,未审计,未审计或README未写，未知,未验证torch>=2.7且cu128运行兼容性,未实测，须按模型、批大小、编码器与协议另核,B近邻及已有MSA备选的直接竞争补充,F:\研究生毕设\方向检索\notes\P17.txt,问题/方法/实验/局限来自站内笔记，未核实原文；局限可能是笔记分析,未审计,未审计,未审计,2026-10-27
+P18,Learning Reconfigurable Representations for Multimodal Federated Learning with Missing Data,候选C/多模态联邦,NeurIPS,2025,arXiv作者comments声明Accepted at NeurIPS 2025；未核官方程序,"Nguyen, Duong M.; Hoang, Trong Nghia; Huynh, Thanh Trung; Nguyen, Quoc Viet Hung; Nguyen, Phi Le",https://papernotes.org/NeurIPS2025/optimization/learning_reconfigurable_representations_for_multimodal_federated_learning_with_m/,客户端模态集合和样本缺失模式同时异构，局部表征难以聚合,PEPSY用可检索嵌入控制表示缺失画像，并对相似画像进行非参数聚合与表征重配置,"【站内笔记，未逐项核实；不得直接作证据】
+实验关键数据
+主实验 ¶
+PTBXL 数据集（12 模态，IID， \(p_m=0.2\) ）准确率 (%)：
+方法 \(p_s\) =0.2 \(p_s\) =0.4 \(p_s\) =0.6 \(p_s\) =0.8 \(p_s\) =1.0 FedProx 73.43 73.64 71.42 71.37 69.93 FedMAC 78.56 77.30 76.25 75.49 74.70 FedMSplit 54.84 53.63 52.12 52.50 55.84 PEPSY 78.81 77.43 76.75 76.13 75.41
+PTBXL Non-IID 设置（ \(p_m=0.2\) ）：
+方法 \(p_s\) =0.2 \(p_s\) =0.4 \(p_s\) =0.6 \(p_s\) =0.8 \(p_s\) =1.0 FedProx 54.01 51.15 50.06 54.89 44.17 FedMAC 58.26 58.55 54.98 50.94 48.38 PEPSY 71.45 69.70 66.92 68.26 66.75
+EDF 数据集（5 模态，Non-IID， \(p_m=0.8\) ）：
+方法 \(p_s\) =0.2 \(p_s\) =0.4 \(p_s\) =0.6 \(p_s\) =0.8 \(p_s\) =1.0 FedMAC 46.01 45.73 45.66 46.22 34.21 PEPSY 48.95 51.52 50.97 50.96 46.07
+消融实验 ¶
+PEPSY 在严重数据不完整情况下性能提升最为显著：
+场景 最大提升 PTBXL Non-IID ( \(p_m=0.2, p_s=1.0\) ) +18.37% (vs FedMAC) PTBXL Non-IID ( \(p_m=0.8, p_s=0.6\) ) +32.24% (vs FedMAC) EDF Non-IID ( \(p_m=0.8, p_s=0.4\) ) +5.79% (vs FedMAC)
+关键发现 ¶
+PEPSY 在 Non-IID 设置下优势最大，Non-IID + 高缺失率（ \(p_m=0.8\) ）场景下可实现高达 36.45% 的性能提升 IID 条件下 PEPSY 与 FedMAC 性能接近，说明数据缺失画像在数据分布一致时作用较小 现有方法（FedMSplit、FedInMM）仅解决单一缺失类型，在同时出现两种缺失时性能显著下降 理论分析表明缺失模态导致的预测偏差受 \(\mathcal{L}_{ds}\) 直接控制，验证了损失设计的有效性","【站内笔记的局限/展望，不等于原作者声明】
+局限与展望
+服务器聚合中的非参数聚类（PFPT）增加了通信和计算开销，扩展性需要验证 实验仅在医疗/睡眠两类数据集上验证，其他多模态场景（如自动驾驶、环境监测）待测试 嵌入控制数量 \(\tau\) 和选择数量 \(\kappa\) 的设置对性能影响未充分分析 数据特定特征中缺失模态用均值替代较为简单，可能限制了特征质量",C主基线；原文报告约2.15–2.86GB训练显存，但完整协议1000轮,https://arxiv.org/abs/2510.22880,https://github.com/nmduonggg/PEPSY,https://github.com/nmduonggg/PEPSY,未提供,"原文Table1 PTBXL,p_m=.2：IID p_s=.2 FedMAC78.56+-0.47 vsPEPSY78.81+-0.72(+.25pp)；IID p_s=1 74.70->75.41(+.71pp)；nonIID p_s=1 48.38+-0.59->66.75+-5.32(+18.37pp)，为服务器准确率，收益已被现有方法取得。Table6训练显存2.15–2.86GB，原机器A6000 48GB。正文概述1000轮，但附录Table4为PTBXL1000/EDF500轮；32client每轮10、本地3epoch。未实测本机。",存在（API 200），仅查README/根目录,2026-07-04T15:47:01Z,API未识别且根目录未见许可证；授权待核,未写具体版本；Python 3.9（README）,未验证torch>=2.7且cu128运行兼容性,原文训练显存2.15–2.86GB支持8GB可行性；原机器A6000 48GB；本机未实测,C主基线；原文报告约2.15–2.86GB训练显存，但完整协议1000轮,F:\研究生毕设\方向检索\notes\P18.txt,"原文Table1 PTBXL,p_m=.2：IID p_s=.2 FedMAC78.56+-0.47 vsPEPSY78.81+-0.72(+.25pp)；IID p_s=1 74.70->75.41(+.71pp)；nonIID p_s=1 48.38+-0.59->66.75+-5.32(+18.37pp)，为服务器准确率，收益已被现有方法取得。Table6训练显存2.15–2.86GB，原机器A6000 48GB。正文概述1000轮，但附录Table4为PTBXL1000/EDF500轮；32client每轮10、本地3epoch。未实测本机。",https://arxiv.org/abs/2510.22880; https://arxiv.org/html/2510.22880v1,F:\研究生毕设\方向检索\verification\P18_arxiv.txt; F:\研究生毕设\方向检索\verification\P18_fulltext.txt; F:\研究生毕设\方向检索\verification\P18_tables.json,F:\研究生毕设\方向检索\verification\P18_README.md,2026-10-27
+P19,Federated Prompt-Tuning with Heterogeneous and Incomplete Multimodal Client Data,候选C/图文联邦近邻,ICCV,2025,ICCV 2025，CVF官方论文页核实；arXiv上传2026并非会议年,"Phung, Thu Hang; Nguyen, Duong M.; Huynh, Thanh Trung; Nguyen, Quoc Viet Hung; Hoang, Trong Nghia; Nguyen, Phi Le",https://papernotes.org/ICCV2025/optimization/federated_prompt-tuning_with_heterogeneous_and_incomplete_multimodal_client_data/,图文联邦中客户端间和客户端内缺失模式异构，提示语义无法直接平均,FED-PRIME区分两组prompt，并用客户端间对齐聚合处理提示排列与语义差异,"【站内笔记，未逐项核实；不得直接作证据】
+实验关键数据
+主实验 ¶
+UPMC Food-101 数据集（分类准确率 %）：
+训练场景 方法 Test(~Train) Test(Miss Both) Test(Full Modal) Test(Text only) Test(Image only) Miss Text FEDAVG-P 15.71 14.90 21.56 16.91 15.36 Miss Text FED-INTER 54.82 48.87 59.17 35.13 56.59 Miss Text FED-PRIME 78.88 80.38 92.12 73.01 76.83 Miss Image FEDAVG-P 17.35 15.12 16.84 18.12 14.81 Miss Image FED-INTER 77.96 64.62 82.08 77.69 37.56 Miss Image FED-PRIME 90.55 79.12 92.89 90.18 54.14 Miss Both FEDAVG-P 14.57 - 17.17 16.40 13.24 Miss Both FED-INTER 56.32 - 69.57 45.15 59.30 Miss Both FED-PRIME 84.44 - 93.64 87.95 72.41
+FED-PRIME 相对第二名的提升幅度在 Food-101 上为 1.73%~107.83%，在 MM-IMDB 上为 4.41%~69.65%。
+消融实验 ¶
+方法 组成 Food-101 Miss Text (Full Modal) MM-IMDB Miss Text (Full Modal) FEDAVG-P 无 prompt 分离 21.56 30.78 FED-INTRA 仅 intra-prompt 62.06 12.55 FED-INTER 仅 inter-prompt 59.17 18.67 FED-PRIME 两者结合 92.12 37.67
+鲁棒性（Miss Both, Food-101, 不同缺失率 η）：
+缺失率 η FED-PRIME FEDAVG-P Centralized-P 0.00 ~93% ~90% ~93% 0.25 ~88% ~60% ~85% 0.50 ~85% ~45% ~80% 0.75 ~82% ~30% ~75% 1.00 ~80% ~15% ~70%
+关键发现 ¶
+双 prompt 设计缺一不可 ：仅用 FED-INTER 或 FED-INTRA 都远不如完整的 FED-PRIME，验证了 inter/intra 异构性需要分别处理 对齐机制至关重要 ：无对齐的 FedAvg prompt-tuning 在高缺失率下性能急剧退化（从 ~90% 降至 ~15%），而 FED-PRIME 保持在 80% 以上 FED-PRIME 接近集中式上界 ：在高缺失率下，FED-PRIME 甚至超过了集中式 Centralized-P（两者都使用 prompt-tuning） 收敛更快更稳定 ：FED-PRIME 的训练/测试 loss 收敛速度显著快于 FED-INTER 和 FED-INTRA 有趣的 Miss Text 实验 ：70% 文本缺失训练后，在 Text Only 测试上仍表现良好，说明 prompt 对齐能有效恢复缺失模态的信息","【站内笔记的局限/展望，不等于原作者声明】
+局限与展望
+仅在双模态（图像+文本）上验证 ：三模态及以上场景的可扩展性未知 ViLT 模型固有的文本偏向 ：实验发现 Image Only 测试性能总是较差，可能源于 ViLT 预训练的文本中心性 仅选择 8 类样本 ：从原始数据集中筛选频次最高的 8 类，可能低估了大规模类别下的挑战 Hungarian 算法的扩展性 ：聚类数为 \(n \times \tau\) 时， \(O(n^3\tau^3)\) 复杂度可能限制大规模部署 缺失模式为随机模拟 ：真实世界中的模态缺失可能有更复杂的结构（如与地理位置相关） 未与 CLIP 等更强基础模型结合 ：ViLT 已不是最先进的多模态模型",C关键近邻；原文16.80/23.68GB，不能直接宣称8GB可复现,https://arxiv.org/abs/2602.07081; https://openaccess.thecvf.com/content/ICCV2025/html/Phung_Federated_Prompt-Tuning_with_Heterogeneous_and_Incomplete_Multimodal_Client_Data_ICCV_2025_paper.html,https://github.com/hangpt01/FedPrime,https://github.com/hangpt01/FedPrime,未提供,arXiv核题作者，CVF核正式ICCV 2025；全文Table 1/3核结果/16.80–23.68GB显存；仅取最常见8类,存在（API 200），仅查README/根目录,2025-07-22T03:11:21Z,API未识别且根目录未见许可证；授权待核,未写具体版本；Python 3.8（README）,未验证torch>=2.7且cu128运行兼容性,原样16.80–23.68GB不适合8GB；提示反传经过冻结骨干，不能等同缓存特征,C关键近邻；原文16.80/23.68GB，不能直接宣称8GB可复现,F:\研究生毕设\方向检索\notes\P19.txt,CVF核ICCV2025，arXiv2026上传非会议年。原文Table1同MissBoth训练模型，UPMC Food101完整模态测试ACC93.64+-0.58 vs同训练缺失测试84.44+-2.65(-9.20pp)，不是可保证恢复上限；只选最常见8类。Table3显存Food16.80GB/MMIMDb23.68GB，8GB不能原样复现；冻结权重的输入提示仍需反传穿过骨干。,https://arxiv.org/html/2602.07081v1; https://openaccess.thecvf.com/content/ICCV2025/html/Phung_Federated_Prompt-Tuning_with_Heterogeneous_and_Incomplete_Multimodal_Client_Data_ICCV_2025_paper.html,F:\研究生毕设\方向检索\verification\P19_arxiv.txt; F:\研究生毕设\方向检索\verification\P19_extra.txt; F:\研究生毕设\方向检索\verification\P19_fulltext.txt; F:\研究生毕设\方向检索\verification\P19_tables.json,F:\研究生毕设\方向检索\verification\P19_README.md,2026-10-27
+P20,FedMVP: Federated Multimodal Visual Prompt Tuning for Vision-Language Models,候选C/基础模型联邦强对照,ICCV,2025,ICCV 2025，CVF官方论文页核实,Mainak Singha; Subhankar Roy; Sarthak Mehrotra; Ankit Jha; Moloud Abdar; Biplab Banerjee; Elisa Ricci,https://papernotes.org/ICCV2025/multimodal_vlm/fedmvp_federated_multimodal_visual_prompt_tuning_for_vision-language_models/,联邦CLIP提示学习对本地已见类过拟合，未见类及域泛化不足,FedMVP以图像patch与类别属性文本生成视觉提示，只训练轻量PromptFormer等适配模块,"【站内笔记，未逐项核实；不得直接作证据】
+实验关键数据
+主实验（Base-to-New泛化，9个数据集） ¶
+方法 Local Acc Base Acc New Acc HM ZS-CLIP 76.72 70.51 75.78 74.24 PromptFL 81.75 74.47 71.70 75.74 FedTPG 80.75 73.68 76.02 76.70 FedMaPLe 81.63 74.44 70.62 75.29 FedMVP (Ours) 81.89 75.37 77.82 78.27 提升 +0.14 +0.90 +1.79 +1.57
+消融实验 / 域泛化 ¶
+设置 (DomainBed MSST) PACS OfficeHome VLCS TerraInc DomainNet 平均 ZS-CLIP 96.16 81.49 83.29 33.98 57.13 70.41 FedTPG 90.99 82.78 69.77 26.79 56.82 65.43 FedCLIP 96.29 81.74 82.70 36.58 57.85 71.03 FedMVP (Ours) 97.28 84.15 85.12 37.36 61.17 73.02 提升 +0.99 +1.37 +1.83 +0.78 +2.29 +1.99
+ImageNet域泛化 (SSMT) IN INV2 IN-S IN-A IN-R 平均 FedTPG 69.51 62.90 47.65 49.97 76.35 59.22 FedMVP (Ours) 70.87 63.72 50.93 51.76 77.23 60.91 提升 +1.36 +0.82 +3.28 +1.43 +0.74 +1.69
+组件消融 Base-to-New HM MSST DG Avg ZS-CLIP 74.24 70.41 \(f_\Theta\) only 75.94 71.85 \(f_\Theta\) + \(\mathcal{L}_{con}\) 76.27 72.14 w/o LoRA 77.41 72.58 FedMVP (Full) 78.27 73.02
+关键发现 ¶
+多模态条件化是关键 ：FedMVP在未见类上比FedTPG（仅文本条件化）高1.79%，比FedCoCoOp（仅视觉条件化）高11.82% IN-Sketch上提升尤为显著（+3.28%） ：属性在真实图像和素描间保持不变（如""四条腿""），验证了属性特征的跨域迁移能力 多数提示学习方法在域泛化上不如ZS-CLIP ：只有FedCLIP和FedMVP超过了零样本基线，说明不恰当的提示学习可能导致源域过拟合 LoRA防过拟合显著 ：不使用LoRA的FedMVP（w/o LoRA行）HM下降0.86% FedMVP收敛比FedTPG快约10倍 （通信轮次计），虽然每轮传输参数量多2倍但总通信成本更低 跨数据集泛化最具挑战 ：FedMVP在OxfordPets和StanfordCars上低于ZS-CLIP，可能因为细粒度类别间属性重叠","【站内笔记的局限/展望，不等于原作者声明】
+局限与展望
+依赖GPT-4o生成属性，增加了部署环节的成本和对外部API的依赖 在细粒度数据集（OxfordPets、StanfordCars）上表现不如ZS-CLIP，属性重叠可能是根因——需要更细粒度的属性设计 仅使用ViT-B/16骨架，未验证更大模型（如ViT-L/14）的表现 LoRA的切换阈值 \(\sigma=0.5\) 是手动设置的，自适应阈值可能更好 客户端数量增多时的可扩展性和通信效率仍需进一步分析",C关键强对照；不是实际多模态传感器缺失任务,https://arxiv.org/abs/2504.20860,https://github.com/mainaksingha01/FedMVP,https://github.com/mainaksingha01/FedMVP,未提供,arXiv及CVF核身份；README顶部徽章链接错误，正文2504.20860正确,存在（API 200），仅查README/根目录,2025-10-08T23:42:23Z,MIT,1.12.1；torchvision 0.13.1、cudatoolkit 10.2（README）,未验证torch>=2.7且cu128运行兼容性,提示参数少不代表显存低；未核完整模型峰值,C关键强对照；不是实际多模态传感器缺失任务,F:\研究生毕设\方向检索\notes\P20.txt,CVF核ICCV2025；README正文arXiv2504.20860正确，顶部badge2404.00710误链。README旧torch1.12.1环境不代表5060兼容。,https://arxiv.org/abs/2504.20860; https://github.com/mainaksingha01/FedMVP,F:\研究生毕设\方向检索\verification\P20_arxiv.txt; F:\研究生毕设\方向检索\verification\P20_cvf.txt,F:\研究生毕设\方向检索\verification\P20_README.md,2026-10-27
+P21,pFedMMA: Personalized Federated Fine-Tuning with Multi-Modal Adapter for Vision-Language Models,候选C/个性化强对照,ICLR,2026,未确认会议；arXiv核身份，站内标ICLR 2026,"Ghiasvand, Sajjad; Alizadeh, Mahnoosh; Pedarsani, Ramtin",https://papernotes.org/ICLR2026/multimodal_vlm/pfedmma_personalized_federated_fine-tuning_with_multi-modal_adapter_for_vision-l/,CLIP联邦个性化与未见类、域泛化存在权衡,pFedMMA本地保留适配器上下投影，仅聚合跨模态共享投影,"【站内笔记，未逐项核实；不得直接作证据】
+实验关键数据
+主实验 ¶
+7 个 CLIP 数据集、16-shot、ViT-B/16，按本地（Local）/ 基类（Base）/ 新类（Novel）/ 调和平均（HM）评估（7 数据集平均）：
+方法 Local Base Novel HM CLIP（零样本） 76.36 76.81 81.21 78.03 PromptFL 88.93 88.95 75.36 83.09 FedPGP 95.38 76.49 71.68 79.09 FedOTP 97.34 18.00 36.69 31.08 pFedMoAP 97.89 61.82 66.60 71.05 pFedMMA（本文） 97.17 77.40 81.49 84.15
+亮点是 Novel 类比 pFedMoAP 高出 +13.69%、HM 高出 +6.4%，而 Local 只比最强基线低 0.74%——印证了它「几乎不牺牲个性化、却大幅拉回泛化」。FedOTP 这种 Local 97%、Novel 36% 的极端偏科被彻底治好。
+DomainNet / Office-Caltech10 的特征+标签双重 shift（β=0.5）：
+方法 DomainNet Avg. Office-Caltech10 Avg. FedPGP 24.90 20.71 pFedMoAP 24.65 19.55 pFedMMA 47.17 21.33
+在 DomainNet 上几乎翻倍（24.9 → 47.2），说明跨域泛化优势在真实异质场景里更明显。
+消融实验 ¶
+配置 关键指标 说明 共享层维度 32 vs 128 128 略高 128 维稍好，但为省参数全程用 32 维 缩放因子 \(\alpha\) 平衡通用/任务特征 控制 \(f(x)+\alpha A(x)\) 中适配器贡献 骨干 ViT-B/32 HM 全设定最优 换 backbone 后 Local 略低于 FedOTP/pFedMoAP，但 shot 增多差距收窄，HM 仍稳居第一 CIFAR-10/100 个性化（Dirichlet） 全 β 最优 100 客户端、10% 参与，各 β 下精度均第一
+关键发现 ¶
+拉开差距的是 Base/Novel 而非 Local：本文相对基线的提升几乎全集中在未见类/未见域，Local 基本持平——直接验证了「共享投影负责泛化」这一设计意图。 异质越强、优势越大：DomainNet 这种特征+标签双 shift 场景，pFedMMA 几乎翻倍领先，说明非对称拆分对真实联邦异质特别有效。 backbone 越小、shot 越少时个性化略逊，但 HM（综合权衡）始终最优，方法对 backbone 选择不敏感。","【站内笔记的局限/展望，不等于原作者声明】
+局限与展望
+共享投影是唯一的跨客户端协同通道，当客户端间模态对齐需求差异极大时，单一全局共享投影可能成为瓶颈（论文未深入探讨这种极端异质）。 个性化在小 backbone（ViT-B/32）、极少 shot 时略逊于 FedOTP/pFedMoAP，说明私有上下投影在数据极稀时容量受限。 方法依赖「高层判别、低层通用」「低层模态间隙大」这两个经验观察来定插入层 \(\ell\) ， \(\ell\) 的选取本身可能需按数据集调，论文未给系统的层选择策略。 仅在 CLIP（ViT-B 系列）上验证，更大模型（ViT-L/14）或非 CLIP 架构下的表现待考。",C强近邻；arXiv题目作者已核，ICLR归属未从OpenReview独立核实,https://openreview.net/forum?id=aX3E6LirK5; https://arxiv.org/abs/2507.05394,https://github.com/sajjad-ucsb/pFedMMA,https://github.com/sajjad-ucsb/pFedMMA,未提供,arXiv核题目作者；未核OpenReview会议归属；未核全文结果,存在（API 200），仅查README/根目录,2026-02-04T04:16:33Z,API未识别且根目录未见许可证；授权待核,未写具体版本,未验证torch>=2.7且cu128运行兼容性,适配器参数小不等于骨干无反传开销；未实测,C强近邻；arXiv题目作者已核，ICLR归属未从OpenReview独立核实,F:\研究生毕设\方向检索\notes\P21.txt,arXiv核题目作者；站内ICLR2026归属未完成官方核实。GitHub存在，README未写具体torch，未实测显存/兼容性。,https://arxiv.org/abs/2507.05394; https://github.com/sajjad-ucsb/pFedMMA,F:\研究生毕设\方向检索\verification\P21_arxiv.txt,F:\研究生毕设\方向检索\verification\P21_README.md,2026-10-27
+P22,FedAFD: Multimodal Federated Learning via Adversarial Fusion and Distillation,候选C/异构任务近邻,CVPR,2026,未核实，仅站内标签,未独立核实，见笔记原文链接,https://papernotes.org/CVPR2026/llm_safety/fedafd_multimodal_federated_learning_via_adversarial_fusion_and_distillation/,图像、文本、图文检索客户端模型和任务不一致，局部及全局目标冲突,FedAFD使用公共多模态数据做双层对抗对齐、细粒度融合和集成蒸馏,"【站内笔记，未逐项核实；不得直接作证据】
+实验关键数据
+主实验 ¶
+设定：3 个图像客户端（CIFAR-100）、3 个文本客户端（AGNEWS）、4 个多模态客户端（Flickr30k），服务器任务 MS-COCO 检索。
+方法 CIFAR-100 acc@1 AGNEWS acc@1 Flickr30k i2t R@1 MS-COCO rsum R@1 收敛轮数 LOCAL 28.07 48.35 22.33 57.54 29 FedMD 22.54 48.18 19.13 58.47 25 FedGEMS 22.84 48.30 18.93 58.62 27 CreamFL 22.14 42.16 18.38 59.61 21 FedET 31.86 49.38 22.63 58.92 27 FedMKD 24.99 47.99 22.33 59.18 21 FedDFA 23.09 43.79 19.68 59.10 26 FedAFD 33.18 51.98 32.48 60.16 20
+Non-IID 设置。IID 设置下优势更大：CIFAR-100 上 FedAFD 61.04% vs FedET 46.44%，AGNEWS 89.34% vs 86.07%。FedAFD 在客户端和服务器端均显著优于所有基线，尤其 Flickr30k i2t 检索提升 +10 个点 。注意许多 baseline 的 client 性能甚至低于 LOCAL，说明全局优化损害了个性化——FedAFD 是唯一能同时提升两端的方法。
+消融实验 ¶
+配置 CIFAR-100 AGNEWS MS-COCO rsum 说明 FedAFD (Full) 33.18 51.98 60.16 完整框架 w/o BAA 33.56 49.03 59.29 去掉对抗对齐，服务器性能下降 w/o GFF 24.94 44.46 59.72 去掉特征融合，客户端性能暴跌 w/o SED 32.21 50.20 59.56 去掉集成蒸馏，全局性能下降
+关键发现 ¶
+GFF 对客户端性能至关重要 ：去掉 GFF 后 CIFAR-100 准确率从 33.18% 降到 24.94%（-8.24%） BAA 主要提升服务器性能 ：去掉后 rsum 从 60.16 降到 59.29，同时文本客户端也受影响 公共数据量影响 ：公共数据从 10k 增至 30k，服务器 rsum 从 60.16 提升到 78.09，但客户端性能略有下降 收敛效率 ：FedAFD 仅需 20 轮达到基线目标（57.50），其他方法需 21-29 轮","【站内笔记的局限/展望，不等于原作者声明】
+局限与展望
+公共数据依赖 ：框架依赖一个公共多模态数据集 \(\mathcal{P}\) ，在数据敏感场景中获取公共数据可能受限 判别器开销 ：每个客户端需额外维护两个判别器，增加了计算和通信负担 扩展性验证不足 ：实验仅包含 10 个客户端，大规模场景（100+ 客户端）下的表现未知 模态类型有限 ：仅验证了图像和文本两种模态，音频/视频等多模态场景待探索",C近邻；依赖公共数据，不与无公共数据设定混比,https://arxiv.org/abs/2603.04890,https://github.com/Chao2433/FedAFD,未审计,未提供,问题/方法/实验/局限来自站内笔记，未核实原文；局限可能是笔记分析,未审计,未审计,未审计,未审计或README未写，未知,未验证torch>=2.7且cu128运行兼容性,未实测，须按模型、批大小、编码器与协议另核,C近邻；依赖公共数据，不与无公共数据设定混比,F:\研究生毕设\方向检索\notes\P22.txt,问题/方法/实验/局限来自站内笔记，未核实原文；局限可能是笔记分析,未审计,未审计,未审计,2026-10-27
+P23,Federated Graph-Level Clustering Network with Dual Knowledge Separation,图×联邦×聚类,ICLR,2026,未核实，仅站内标签,未独立核实，见笔记原文链接,https://papernotes.org/ICLR2026/graph_learning/federated_graph-level_clustering_network_with_dual_knowledge_separation/,非IID图级聚类共享全部知识引发共识失败,FGCN-DKS分离共享不变子图与私有变化子图，以图核做个性化聚合并两阶段聚类,"【站内笔记，未逐项核实；不得直接作证据】
+实验关键数据
+主实验表格 ¶
+在多个图基准上（括号内为图数/簇数），以 ACC/NMI/ARI/F1 衡量，FGCN-DKS（OURS）全面超过 SOTA：
+数据集 方法 ACC NMI ARI F1 SM2(7) FedPKA 77.0 26.8 31.2 67.3 SM2(7) OURS 79.2 28.3 34.6 72.3 SN3(2) FedPKA 67.5 25.7 32.6 55.5 SN3(2) OURS 70.2 34.2 36.8 60.4 SM-BIO2(9) FedPKA 70.8 15.4 19.6 60.6 SM-BIO2(9) OURS 73.8 17.7 21.3 61.3
+相比上一代联邦图聚类框架 FedGCN/FedPKA，ACC 普遍提升 2~3 个点，F1 在 SM 上提升达 5 个点。早期非联邦/通用 FGL 方法（FedSage、GCFL、FedStar、各类深度图聚类 DGLC/DCGLC 等）在这些非 IID 图级任务上 ARI 普遍只有个位数到十几，差距明显。
+消融实验表格 ¶
+论文通过去掉各损失/模块验证有效性（数值见附录），核心结论：
+变体 作用 去掉后影响 w/o 模式分离 不解耦不变/变化子图 共识失败，聚类大幅退化 w/o CKSS（退回平均聚合） 不做亲和度聚合 负迁移，跨客户端共识变差 w/o 两阶段精化 只用不变表征聚类 簇内多样性无法刻画，粒度变粗
+关键发现 ¶
+图核度量证实图级任务的 intra/inter-client 异质性远高于节点级，量化解释了""最大化共享范式""为何在 FGC 失效。 稳定性系数 \(\alpha\) + 历史平滑让亲和矩阵随通信轮次平稳演化，是收敛稳定的关键。 效率上仅比 FedAvg 多出 \(O(N_\psi^2\kappa)\) 的簇级亲和计算（ \(N_\psi\ll d\) ），开销可接受。","【站内笔记的局限/展望，不等于原作者声明】
+局限与展望
+引入了 \(\beta,\gamma,\lambda\) 等多个超参数和图核选择，调参与核选取对结果的敏感性需要更多分析。 每张图要生成 \(E=N_\phi\) 个扰动环境视图并跑双投影器，客户端侧计算/显存成本随簇数与图规模上升。 实验集中在中小规模图基准，在超大规模图、更多客户端、动态加入退出等真实联邦场景下的可扩展性有待验证。 簇数 \(N_\psi\) 仍需预先给定，自动估计簇数、以及对噪声/对抗扰动的鲁棒性是自然的延伸方向。",交叉方向观察名单；笔记未提供代码,https://openreview.net/forum?id=FwKFjBX0PK,笔记未提供可识别代码仓库,未审计,未提供,问题/方法/实验/局限来自站内笔记，未核实原文；局限可能是笔记分析,未审计,未审计,未审计,未审计或README未写，未知,未验证torch>=2.7且cu128运行兼容性,未实测，须按模型、批大小、编码器与协议另核,交叉方向观察名单；笔记未提供代码,F:\研究生毕设\方向检索\notes\P23.txt,问题/方法/实验/局限来自站内笔记，未核实原文；局限可能是笔记分析,未审计,未审计,未审计,2026-10-27
+P24,Low-pass Personalized Subgraph Federated Recommendation,图×联邦推荐,ICLR,2026,未核实，仅站内标签,未独立核实，见笔记原文链接,https://papernotes.org/ICLR2026/recommender/low-pass_personalized_subgraph_federated_recommendation/,子图规模连通度异构和局部流行度偏置影响联邦推荐,LPSFed以低通谱签名估计子图相似性并个性化聚合，加流行度感知margin,"【站内笔记，未逐项核实；不得直接作证据】
+实验关键数据
+主实验表格 ¶
+五个真实数据集（Amazon-Book / Gowalla / Movielens-1M / Yelp2018 / Tmall-Buy），全图经谱聚类切成 4 个子图模拟联邦设置，Recall@20 / NDCG@20，对比 9 个 baseline（FedAvg、FedPUB、FedMF、F2MF、PFedRec、FedRAP、FedPerGNN、FedHGNN、FedSSP）：
+数据集 指标 次优 baseline LPSFed 提升 Amazon-Book Recall / NDCG 0.0713 / 0.0356 0.0738 / 0.0442 +3.5% / +24.2% Gowalla Recall / NDCG 0.1528 / 0.0729 0.1621 / 0.0909 +6.1% / +17% Movielens-1M Recall / NDCG 0.2564 / 0.1265 0.2646 / 0.1342 +3.2% / +6.1% Yelp2018 Recall / NDCG 0.0750 / 0.0315 0.0783 / 0.0379 +4.4% / +20.3% Tmall-Buy Recall / NDCG 0.0370 / 0.0186 0.0385 / 0.0218 +4.1% / +17.2%
+NDCG 提升远大于 Recall，说明方法主要改善了 top-rank 的排序精度。仅用 BPR 损失的 LPSFed(BPR)（去掉 bias-aware margin、只保留谱域个性化）已经能打平甚至超过 FedSSP，证明谱域个性化本身就很强。
+结构不平衡鲁棒性（Amazon-Book，15 客户端分三组） ¶
+组 指标 次优 baseline LPSFed 提升 Large-Dense Recall / NDCG 0.0669 / 0.0380 0.0769 / 0.0448 +14.9% / +17.9% Medium-Balanced Recall / NDCG 0.0528 / 0.0269 0.0550 / 0.0295 +4.2% / +9.7% Small-Sparse Recall / NDCG 0.0317 / 0.0131 0.0331 / 0.0146 +4.4% / +11.5% Overall Recall / NDCG 0.0396 / 0.0184 0.0419 / 0.0206 +5.8% / +13.8%
+在最受流行度反馈环之害的 Large-Dense 组提升最大，说明 margin 有效打断了""热门更热门""。
+消融实验表格 ¶
+变体 Amazon-Book NDCG Gowalla NDCG 说明 w/o LGCN（换回空间域 NGCF） 0.0216 0.0427 性能灾难性下跌，证实空间域 GNN 扛不住结构发散 w/o bias-aware（=LPSFed(BPR)） 0.0322 0.0711 去掉流行度纠偏，长尾掉点明显 w/o per（去个性化聚合） 0.0368 0.0788 退化，相似度驱动的分发不可少 w/o per & bias-aware（≈FedAvg） 0.0312 0.0660 两个核心模块都去掉接近裸联邦 w/o statistics for \(G_R\) （更严隐私） 0.0403 0.0856 不聚合任何客户端统计量仍稳居次优 LPSFed（完整） 0.0442 0.0909 —
+关键发现 ¶
+谱域个性化与流行度 margin 是互补的两条腿 ：前者管表示对齐与抗结构发散，后者管长尾纠偏，去掉任一个都明显掉点，去掉 LGCN 主干则崩溃。 流行度纠偏不牺牲头部 ：在 Tail/Mid/Head 分组的偏置实验（Table 3）里，LPSFed 在 Tail 组涨幅最大（平衡集 Tail NDCG +271% vs FedAvg），同时 Head 也保持最优，说明 margin 去的是""流行度噪声""而非简单牺牲热门换长尾。 隐私可加严而几乎不掉性能 ：连客户端高层统计量都不上报的 w/o statistics for \(G_R\) 变体仍是多数指标的次优，给了""严格隐私下也能用""的余量。 超参规律清晰 ：margin 强度 \(\gamma\) 越大 NDCG 单调上升（ \(\gamma=1.0\) 时 Jaccard 增长最慢、最有效压制反馈环）；低通截断 \(\Phi=128\) 时最优（保留谱稳定低频、剔除高频噪声）；温度 \(\tau\) 过低难学、过高过拟合。","【站内笔记的局限/展望，不等于原作者声明】
+局限与展望
+依赖预处理阶段的特征分解 ：虽然用 Lanczos 只算前 \(\Phi\) 个特征向量、且只跑一次，但对超大子图或客户端子图频繁变动（动态图）的场景，预处理成本和""谱签名是否随时间漂移""仍需验证。 客户端切分方式偏理想 ：实验用谱聚类把全图切成 4 或 15 个结构鲜明的子图来""制造""结构不平衡，真实联邦里客户端边界由地理/业务决定，结构分布可能更杂、更难，泛化性待考。 隐私保证偏经验 ：上报的是平均 margin 标量和高层统计量、声称""不可逆""，但没有形式化的差分隐私预算分析；面对重建攻击的鲁棒性是后续可补的方向。 锚图生成的敏感性 ：中性锚图靠 GNMK 随机图近似，锚图选得好不好直接影响相似度排序，论文给了 ER vs GNMK 的对比但缺更系统的锚图设计探讨。 规模仍偏中小 ：五个公开数据集 + 4/15 客户端，距工业级成千上万客户端、强 non-IID 的真实联邦推荐还有距离。",粗筛；额外推荐协议与谱分解成本,https://openreview.net/forum?id=SSd3GENRAU,笔记未提供可识别代码仓库,未审计,未提供,问题/方法/实验/局限来自站内笔记，未核实原文；局限可能是笔记分析,未审计,未审计,未审计,未审计或README未写，未知,未验证torch>=2.7且cu128运行兼容性,未实测，须按模型、批大小、编码器与协议另核,粗筛；额外推荐协议与谱分解成本,F:\研究生毕设\方向检索\notes\P24.txt,问题/方法/实验/局限来自站内笔记，未核实原文；局限可能是笔记分析,未审计,未审计,未审计,2026-10-27
+P25,Personalized Subgraph Federated Learning with Differentiable Auxiliary Projections,图×联邦个性化,NeurIPS,2025,未核实，仅站内标签,未独立核实，见笔记原文链接,https://papernotes.org/NeurIPS2025/optimization/personalized_subgraph_federated_learning_with_differentiable_auxiliary_projectio/,子图分布异构导致联邦节点分类负迁移,FedAux以可微辅助投影向量和一维高斯核聚合形成结构摘要与个性化权重,"【站内笔记，未逐项核实；不得直接作证据】
+实验关键数据
+主实验（联邦节点分类） ¶
+数据集 客户端数 FedAux FED-PUB (SOTA) FedAvg Local Cora 5 84.57±0.39 83.72±0.18 74.45±5.64 81.30±0.21 Cora 10 82.05±0.71 81.45±0.12 69.19±0.67 79.94±0.24 Cora 20 81.60±0.64 81.10±0.64 69.50±3.58 80.30±0.25 CiteSeer 5 72.99±0.82 72.40±0.26 71.06±0.60 69.02±0.05 CiteSeer 10 73.16±0.29 71.83±0.61 63.61±3.59 67.82±0.13 CiteSeer 20 68.10±0.35 66.89±0.14 64.68±1.83 65.98±0.17 Pubmed 5 88.10±0.16 86.81±0.12 79.40±0.11 84.04±0.18 Pubmed 10 86.43±0.20 86.09±0.17 82.71±0.29 82.81±0.39 Pubmed 20 84.87±0.42 84.66±0.54 80.97±0.26 82.65±0.03
+更多数据集 ¶
+数据集 客户端数 FedAux GCFL FedPer FedAvg Amazon-Computer 10 90.50+ 90.03 89.73 79.54 Amazon-Photo 10 92.50+ 92.06 91.76 83.15 ogbn-arxiv 5 67.00+ 66.80 66.87 65.54
+消融实验 ¶
+配置 关键指标 说明 硬排序 vs 核聚合 核聚合更优 可微性使APV能被充分优化 有APV vs 无APV聚合 有APV显著更优 APV作为子图摘要的有效性 \(\sigma=1\) vs 其他值 \(\sigma=1\) 最优 作为正则化防止过拟合 Theorem 3.2验证 \(\sigma \to 0\) 时收敛到硬排序 理论与实验一致
+关键发现 ¶
+FedAux在全部6个数据集、3种客户端规模下 一致超越 所有baseline 在CiteSeer 10 clients上提升最明显（73.16 vs 71.83，绝对提升1.33%） APV仅是一个低维向量，隐私泄露风险极低 Pubmed上FedAux比Local训练提升4%，说明跨客户端知识迁移有效","【站内笔记的局限/展望，不等于原作者声明】
+局限与展望
+核聚合的复杂度为 \(O(N_k^2)\) ，对大规模子图可能成为瓶颈 APV作为主成分可能在某些数据分布下无法捕获关键的子图结构差异 仅在节点分类任务上验证，图级别和链接预测任务未涉及 温度参数 \(\alpha\) 对结果的敏感性分析不够充分",图联邦代表；对强FED-PUB边际提升需核验,https://arxiv.org/abs/2505.23864,https://github.com/JhuoW/FedAux,未审计,未提供,问题/方法/实验/局限来自站内笔记，未核实原文；局限可能是笔记分析,未审计,未审计,未审计,未审计或README未写，未知,未验证torch>=2.7且cu128运行兼容性,未实测，须按模型、批大小、编码器与协议另核,图联邦代表；对强FED-PUB边际提升需核验,F:\研究生毕设\方向检索\notes\P25.txt,问题/方法/实验/局限来自站内笔记，未核实原文；局限可能是笔记分析,未审计,未审计,未审计,2026-10-27
+P26,Towards Effective Federated Graph Foundation Model via Mitigating Knowledge Entanglement,图×联邦基础模型,NeurIPS,2025,未核实，仅站内标签,未独立核实，见笔记原文链接,https://papernotes.org/NeurIPS2025/model_compression/towards_effective_federated_graph_foundation_model_via_mitigating_knowledge_enta/,跨域联邦图基础模型的codebook和提示知识纠缠,FedGFM+以域锚点初始化离散码本，用域敏感提示池去纠缠,"【站内笔记，未逐项核实；不得直接作证据】
+实验关键数据
+主实验 ¶
+8个跨领域跨任务数据集上的性能对比：
+方法 Cora PubMed OGB-arxiv WikiCS FB15K WN18RR HIV PCBA GCN 80.17 84.70 72.50 77.24 71.24 82.27 65.37 63.41 FedAvg 81.45 85.22 71.53 77.67 73.14 83.55 66.05 68.52 GFT*(联邦变体) 81.07 84.24 73.19 78.81 73.52 86.30 66.32 72.81 GQT*(联邦变体) 81.92 85.59 74.07 77.52 73.40 85.66 67.93 73.22 FedGFM+ 83.79 88.52 76.31 80.70 75.25 89.25 69.39 77.68
+相比最佳基线的提升：节点分类 ≥2.70%，边分类 ≥2.18%，图分类 ≥3.09%。
+消融实验 ¶
+配置 Cora PubMed OGB-arxiv HIV PCBA 说明 w/o AncDAI 81.55 85.56 75.19 67.52 74.81 去掉初始化，性能下降最多 w/o AdaDPP 83.17 87.42 75.83 67.84 76.72 去掉提示池 FedGFM+ 83.79 88.52 76.31 69.39 77.68 完整方法
+关键发现 ¶
+知识纠缠是核心瓶颈 ：朴素联邦GFM变体（如GFT*）甚至会出现负迁移，性能低于孤立的监督模型 AncDAI贡献更大 ：去除AncDAI的性能下降大于去除AdaDPP，表明全局初始化对抗纠缠至关重要 通信高效 ：GFM参数量仅百万级（对比LLM的十亿级），联邦通信开销可接受 超参数鲁棒 ：codebook大小和提示数量在较大范围内性能稳定","【站内笔记的局限/展望，不等于原作者声明】
+局限与展望
+隐私风险 ：原型和提示的交换可能暴露部分语义信息，需要正式的隐私分析 当前实验中每个数据集分给3个客户端，真实场景的客户端数量和异构性可能更大 可考虑引入差分隐私（DP）或安全计算保护原型和提示的传输 仅验证了gVQ-VAE骨干，能否扩展到更大规模的GFM架构值得探索",粗筛；预训练与跨任务验证使工程量增加,https://arxiv.org/abs/2505.12684,笔记未提供可识别代码仓库,未审计,未提供,问题/方法/实验/局限来自站内笔记，未核实原文；局限可能是笔记分析,未审计,未审计,未审计,未审计或README未写，未知,未验证torch>=2.7且cu128运行兼容性,未实测，须按模型、批大小、编码器与协议另核,粗筛；预训练与跨任务验证使工程量增加,F:\研究生毕设\方向检索\notes\P26.txt,问题/方法/实验/局限来自站内笔记，未核实原文；局限可能是笔记分析,未审计,未审计,未审计,2026-10-27
+P27,FedSST: Rethinking Fair Federated Graph Learning under Structural Shift,图×联邦结构公平,CVPR,2026,未核实，仅站内标签,未独立核实，见笔记原文链接,https://papernotes.org/CVPR2026/others/fedsst_rethinking_fair_federated_graph_learning_under_structural_shift/,结构偏移下平均性能与客户端间泛化公平冲突,FedSST以共享探针图产生结构信号，调节本地轮数及两级聚合,"【站内笔记，未逐项核实；不得直接作证据】
+实验关键数据
+主实验 ¶
+跨域图分类，四个领域数据集（小分子 SM / 生物信息 BIO / 社交网络 SN / 视觉 CV），每个客户端持一个独立数据集，构造五种异质设置。两个核心指标： AVG↑ （所有客户端平均测试精度）与 STD↓ （客户端精度标准差，衡量泛化公平）。GIN 2 层、200 通信轮、5 种子取最后 5 轮平均。
+设置 指标 FedSST 次优 baseline 对比 SM（单域） AVG↑ / STD↓ 82.29 / 10.37 79.43(FedIGL) / 10.95(APPLE) AVG +2.86，STD 最低 SM-BIO AVG↑ / STD↓ 76.17 / 13.86 72.83(FedSSP) / 13.18(GCFL) AVG +3.34 SM-CV AVG↑ / STD↓ 82.17 / 10.81 83.70(FedSSP) / 11.12(AFL) STD 最低、AVG 次优 BIO-SM-SN AVG↑ / STD↓ 73.86 / 14.53 72.58(FedSSP) / 13.91(Local) AVG 最高 SM-SN-CV AVG↑ / STD↓ 79.48 / 13.29 79.07(FedSSP) / 13.53(AFL) AVG 最高
+FedSST 在多数设置同时拿到最高 AVG 与最低 STD。值得注意的是经典 FedAvg 在强拓扑异质场景下甚至打不过纯本地训练的 Local，印证了传统 FL 处理结构 non-IID 的无力；而只看 loss 的 q-FedAvg/AFL 虽优于 FedAvg，但缺结构感知，作者据此论证""结构感知信号比 loss 重加权是更有效的公平基础""。
+消融实验 ¶
+在 SM、SM-CV、SM-SN-CV 三个设置上逐个开关 SSCA / SLTA：
+SSCA SLTA SM (AVG/STD) SM-CV (AVG/STD) SM-SN-CV (AVG/STD) ✗ ✗ 75.04 / 13.64 75.81 / 14.00 74.15 / 14.60 ✓ ✗ 78.75 / 12.56 79.84 / 11.72 77.36 / 13.80 ✗ ✓ 80.07 / 12.22 78.90 / 12.46 74.98 / 14.16 ✓ ✓ 82.29 / 10.37 83.17 / 10.81 79.48 / 13.29
+单开 SLTA 或 SSCA 都能同时提升精度与公平，两者协同最优。⚠️ 主表 SM-CV 的 full model AVG 记为 82.17，消融表同设置记 83.17，两处数字不一致，以原文为准。
+关键发现 ¶
+收敛效率 ：SLTA 让 FedSST 约 100 轮即收敛到最高精度/最低方差，多数 baseline 需 200 轮，是""用适度增加的本地计算换通信轮数大幅减少""。 超参敏感性 ：SSCA 的 \(\alpha_{\max}\) 在所有设置都稳定在最优 0.9；而 SLTA 的 \(\lambda_{\text{reg}}\) 对异质程度敏感，chem/chemcv/chemsncv 的最优值分别为 20/25/30——异质性越强需要的训练强度调节越大。 结构信号 vs loss 信号 ：结构感知重加权在 STD 上整体优于 q-FedAvg/AFL 的 loss 重加权，说明拓扑异质场景下公平的""抓手""应是结构而非损失。","【站内笔记的局限/展望，不等于原作者声明】
+局限与展望
+探针图依赖合成假设 ：CSBM 探针图的统计参数（同质率 0.75 等）是人为设定的，对同质率极低/极高或强异配（heterophily）的真实图，单层 GIN 嵌入的平滑度是否仍能可靠区分结构贡献，文中未充分检验（作者称对各种探针设计稳定，详见附录，⚠️ 正文未给数据）。 只在 inter-graph、图分类上验证 ：每个客户端持一个完整数据集的设定，未覆盖 intra-graph（子图补全）或节点分类任务，泛化性待考。 \(\lambda_{\text{reg}}\) 需按场景调 ：超参研究显示 \(\lambda_{\text{reg}}\) 随异质程度变化最优值不同（20/25/30），缺一个自适应确定 \(\lambda_{\text{reg}}\) 的机制，实际部署需先调参。 结构信号粒度有限 ：把整张图的结构偏好压成一个标量，可能丢失细粒度的多模式结构信息；多维结构签名或许能进一步提升。",观察名单；笔记主表与消融数值不一致，未用作量化证据,https://openaccess.thecvf.com/content/CVPR2026/html/Zhao_FedSST_Rethinking_Fair_Federated_Graph_Learning_under_Structural_Shift_CVPR_2026_paper.html,笔记未提供可识别代码仓库,未审计,未提供,问题/方法/实验/局限来自站内笔记，未核实原文；局限可能是笔记分析,未审计,未审计,未审计,未审计或README未写，未知,未验证torch>=2.7且cu128运行兼容性,未实测，须按模型、批大小、编码器与协议另核,观察名单；笔记主表与消融数值不一致，未用作量化证据,F:\研究生毕设\方向检索\notes\P27.txt,问题/方法/实验/局限来自站内笔记，未核实原文；局限可能是笔记分析,未审计,未审计,未审计,2026-10-27
+P28,FedSDR: Federated Graph Learning with Structural Noise Detection and Reconstruction,图×联邦结构污染,CVPR,2026,未核实，仅站内标签,未独立核实，见笔记原文链接,https://papernotes.org/CVPR2026/others/fedsdr_federated_graph_learning_with_structural_noise_detection_and_reconstructi/,联邦子图随机加删边污染导致聚合与本地图学习恶化,FedSDR以谱域结构保真度降权污染客户端，再用全局模型相似性剪补边,"【站内笔记，未逐项核实；不得直接作证据】
+实验关键数据
+主实验 ¶
+在 7 个数据集（同配 PubMed / Coauthor-CS / Coauthor-Phy / ogbn-products，异配 Actor / Roman-empire / ogbn-mag）上与 17 个联邦基线对比平均测试精度（%），FedSDR 全面第一：
+数据集 FedAvg MOON FedGTA FedIIH FedSDR PubMed 78.41 68.55 78.04 78.34 82.57 Coauthor-CS 82.01 75.91 81.24 79.34 82.29 Coauthor-Phy 86.37 88.14 85.77 87.03 89.37 Actor 31.28 31.14 31.03 30.73 32.36 Roman-empire 41.72 42.51 40.65 39.84 48.33 ogbn-mag 42.74 42.96 42.52 42.16 47.41 ogbn-products 72.66 67.94 71.52 71.70 78.57
+异配数据集（Roman-empire +6.6 vs FedAvg、ogbn-products +5.9）提升最明显。值得注意的是，FedAvg/FedProx 这类基础算法反而超过了不少复杂方法（如 Scaffold 在 PubMed 仅 41.76），说明严重结构噪声会把多数针对其他问题设计的方法直接打垮。
+消融实验 ¶
+在 PubMed / Actor / ogbn-products 上逐个开关 SNAA 与 RLSR：
+SNAA RLSR PubMed Actor ogbn-products ✗ ✗ 78.41 31.28 72.66 ✓ ✗ 81.82 31.56 74.25 ✗ ✓ 82.26 32.07 75.92 ✓ ✓ 82.57 32.36 78.57
+关键发现 ¶
+两个组件都不可或缺，且互补 ：单独 SNAA（全局降权）在 PubMed 上 +3.4，单独 RLSR（本地修图）+3.85，合起来 +4.16。在 ogbn-products 上协同效应更突出——SNAA 单独 74.25、RLSR 单独 75.92，但合起来跳到 78.57，明显大于两者各自增量，印证""修好的图反哺检测""的正反馈。 保真度指标确实可分 ：论文 Fig.2b 显示污染客户端的 \(S_{\text{ide}}\) 显著低于干净客户端，为 SNAA 的可靠降权提供了经验依据。 对污染强度鲁棒 ：在 PubMed 上变化污染比例和噪声强度，FedAvg 随噪声增强持续掉点，FedSDR 始终保持稳定且全面超过基线。 剪枝比例 \(\alpha\) 不敏感且单调 ： \(\alpha\) 从 0.2 到 1.0 全程超过 FedAvg，且 \(\alpha\) 增大性能持续提升，说明重建能稳定区分噪声边与有意义的边。","【站内笔记的局限/展望，不等于原作者声明】
+局限与展望
+重建依赖全局模型质量 ：RLSR 的剪/补完全靠健康全局模型的特征相似度。如果污染比例极高、SNAA 也救不回一个足够干净的全局模型，相似度矩阵本身就不可靠，重建可能放大错误。论文虽测了污染比例为 1 的极端设置，但全局模型崩溃的边界条件未充分讨论。⚠️ 噪声模型较理想化 ：实验用""随机加删等量边""模拟结构噪声，真实世界的噪声可能有结构偏好（如机器人账号倾向连特定节点），这种非随机噪声未必呈现同样的谱域塌缩，指标的普适性有待验证。 超参 \(\alpha\) 全局共享 ：剪枝比例 \(\alpha\) 对所有客户端取同一值，但不同客户端污染程度不同，自适应的 per-client \(\alpha\) （比如直接由 \(S_{\text{ide}}\) 推导）可能更合理。 谱指标只用了度差异 ： \(S_{\text{ide}}\) 本质只刻画度分布层面的异常，对""保持度分布但破坏高阶结构""的噪声可能失效，可考虑引入更高阶的谱特征。",不优先；属于结构修复，必须先证实噪声损失及强MLP基线,https://openaccess.thecvf.com/content/CVPR2026/html/Liu_FedSDR_Federated_Graph_Learning_with_Structural_Noise_Detection_and_Reconstruction_CVPR_2026_paper.html,https://github.com/Subtleazure/FedSDR,未审计,未提供,问题/方法/实验/局限来自站内笔记，未核实原文；局限可能是笔记分析,未审计,未审计,未审计,未审计或README未写，未知,未验证torch>=2.7且cu128运行兼容性,未实测，须按模型、批大小、编码器与协议另核,不优先；属于结构修复，必须先证实噪声损失及强MLP基线,F:\研究生毕设\方向检索\notes\P28.txt,问题/方法/实验/局限来自站内笔记，未核实原文；局限可能是笔记分析,未审计,未审计,未审计,2026-10-27
+P29,FedSDR: Federated Self-Distillation with Rectification,误命中排除/联邦LLM,ICML,2026,未核实，仅站内标签,未独立核实，见笔记原文链接,https://papernotes.org/ICML2026/model_compression/fedsdr_federated_self-distillation_with_rectification/,联邦指令微调的文本语义分布异构与自蒸馏事实性偏差,同名FedSDR先自蒸馏对齐，再区分吸噪LoRA-S与事实修正LoRA-R，只聚合后者,"【站内笔记，未逐项核实；不得直接作证据】
+实验关键数据
+主实验 ¶
+FedSD 作为通用增强器叠加到 6 种经典聚合算法上，整体得分（Overall）以及四个评测子集（MMLU、BBH、CRASS、DROP）全部提升，对手 base 的胜率（Head-to-Head Win Rate）均在 55% 以上。
+算法 整体得分 (Base → Ours) MMLU (Base → Ours) BBH (Base → Ours) CRASS (Base → Ours) DROP (Base → Ours) 胜率 FedAvg 71.21 → 74.54 40.71 → 43.69 30.79 → 31.88 47.81 → 56.57 36.04 → 36.41 56.14% FedAvgM 68.18 → 73.34 8.72 → 11.81 6.71 → 8.18 12.77 → 20.07 15.64 → 15.75 60.30% FedProx 70.93 → 74.96 40.54 → 42.94 30.82 → 31.35 45.62 → 50.73 37.50 → 36.68 56.12% FedYogi 69.17 → 73.56 29.92 → 39.32 29.12 → 30.50 42.34 → 45.26 24.53 → 29.28 60.37% FedAdam 71.03 → 74.93 30.49 → 39.36 28.51 → 30.69 36.50 → 51.46 27.32 → 30.54 57.82% FedAdagrad 71.87 → 75.13 40.69 → 43.21 31.43 → 32.56 43.07 → 51.09 35.80 → 36.21 56.78%
+消融与机制分析 ¶
+""重写悖论""和""分布对齐""两条机制都得到了量化支持：JS 散度下降、TF-IDF 余弦上升验证了文本级对齐，跨任务梯度余弦平均增益验证了优化级对齐。
+分析维度 指标 原始数据 (Raw) 自蒸馏后 (Distilled) 变化 文本分布对齐 JS 散度 ↓ 0.4074 0.3611 \(-0.0463\) 文本分布对齐 TF-IDF 余弦 ↑ 0.6362 0.7064 \(+0.0702\) 跨任务梯度方向 (FinGPT 源) 余弦相似度 ↑ — — \(+41.5\) pp 跨任务梯度方向 (MathInstruct 源) 余弦相似度 ↑ — — \(+13.8\) pp 跨任务损失迁移 (MedAlpaca 源) 损失变化 ↓ — — \(-5.4\) pp 重写悖论 不蕴含真值的蒸馏样本占比 ↓ — \(\approx 47\%\) —
+关键发现 ¶
+""FedSD 作为通用增强器""这一论点被实验直接支持：在 6 种聚合算法、4 个评测集上几乎是全方位提升，最大单格涨幅出现在 FedAvg+CRASS 上（ \(+8.76\) 分）；这意味着把数据端先对齐一遍带来的红利远大于任何单一聚合改进。 ""重写悖论""是真实的，并且在 FL 中尤其危险：约 \(47\%\) 的蒸馏样本不能严格蕴含真值，回答平均更长、填充词频率翻倍；如果不引入 LoRA-R 锚定原始数据，这些瑕疵会被服务器广播形成伪共识。 双流不是""两套模型""的简单堆叠：LoRA-S 在前向中提供平滑的隐表示，作者实验观察到这让 LoRA-R 在原始数据上的优化曲线更平滑（""implicit smoothing eases raw-data learning""），呼应论文一开始把数据对齐而非权重对齐当根因的判断。 FedAvgM 的初始基线分（MMLU 8.72、BBH 6.71）显著低于其他算法，加上 FedSD 后整体得分跳到 73.34、胜率 60.30%，说明数据级对齐对""本身就更不稳定的聚合器""反而救场效应更明显。","【站内笔记的局限/展望，不等于原作者声明】
+局限与展望
+自蒸馏一次性生成 \(D_{dist}\) 的成本对超大模型不可忽略，论文没有充分讨论这部分本地算力开销；若客户端是边缘设备，这一阶段可能反而成为瓶颈。 LoRA-S 永久留在本地虽然避免了噪声广播，但也意味着客户端模型与全局模型之间存在结构差异，对长周期联邦部署、客户端更替（churn）、新客户端冷启动等场景的鲁棒性需要进一步验证。 ""重写悖论""的指标主要靠定性 case study + 一两个统计量（蕴含比、长度、填充词频）刻画，缺少一个统一的""事实性 / 风格性""度量；后续工作可以引入更细粒度的事实一致性评估来量化 LoRA-R 是否真的修复了 LoRA-S 引入的所有瑕疵。 实验主要在 LLM 指令微调任务上展开，对多模态、Tool-Use 等更复杂的输出空间是否仍然满足""自蒸馏=对齐""的前提，没有给出证据。",与P28同名但任务不同；排除大模型训练路线,https://arxiv.org/abs/2605.18028,笔记未提供可识别代码仓库,未审计,未提供,问题/方法/实验/局限来自站内笔记，未核实原文；局限可能是笔记分析,未审计,未审计,未审计,未审计或README未写，未知,未验证torch>=2.7且cu128运行兼容性,未实测，须按模型、批大小、编码器与协议另核,与P28同名但任务不同；排除大模型训练路线,F:\研究生毕设\方向检索\notes\P29.txt,问题/方法/实验/局限来自站内笔记，未核实原文；局限可能是笔记分析,未审计,未审计,未审计,2026-10-27
+P30,A Federated Generalized Expectation-Maximization Algorithm for Mixture Models with an Unknown Number of Components,已有备选补充/未知簇数联邦聚类,ICLR,2026,未核实，仅站内标签,未独立核实，见笔记原文链接,https://papernotes.org/ICLR2026/others/a_federated_generalized_expectation-maximization_algorithm_for_mixture_models_wi/,客户端混合分量部分重叠且全局混合分量数未知,FedGEM在本地EM更新后上传参数不确定性集，以交集检测合并全局组件,"【站内笔记，未逐项核实；不得直接作证据】
+实验关键数据
+主实验 ¶
+数据集 FedGEM (ARI) AFCL (ARI) DP-GMM (ARI) GMM (已知K) 估计K (真实K) MNIST 0.355±.064 0.137±.055 0.326±.080 0.287±.067 14.7 (10) FMNIST 0.415±.022 0.143±.019 0.332±.069 0.385±.023 12.3 (10) CIFAR-10 0.058±.008 0.022±.007 0.032±.017 0.402±.022 33.7 (10) Abalone 0.128±.030 0.091±.022 0.061±.018 0.096±.028 4.5 (3)
+消融实验 ¶
+配置 ARI (合成数据) 说明 集中式 EM ~0.95 上界 FedGEM ~0.90 接近集中式 AFCL ~0.50 大幅落后 k-FED (已知K) ~0.85 需要知道K
+关键发现 ¶
+FedGEM 在所有数据集上一致超越唯一不需要知道 \(K\) 的竞品 AFCL，在部分数据集上甚至超越需要知道 \(K\) 的方法 在 CIFAR-10 等非高斯数据集上过高估计了聚类数 (33.7 vs 10)，说明各向同性 GMM 假设在复杂数据上有局限 算法可扩展性良好，随问题规模增长的性能衰减显著小于竞品 在违反高斯假设的真实数据集上仍能保持合理性能","【站内笔记的局限/展望，不等于原作者声明】
+局限与展望
+各向同性 GMM 假设限制了在复杂高维数据 (如 CIFAR-10) 上的表现，扩展到全协方差 GMM 或更复杂的混合模型是自然方向 在聚类数估计上仍有明显偏差（特别是过高估计），实际部署需要更好的最终聚合半径选择策略 收敛保证需要聚类充分分离的假设，聚类重叠严重时保证可能失效 差分隐私讨论仅为初步性质，正式的隐私保证有待加强",与客户端模型分组的Clustered FL不同；高斯假设是主要风险,https://arxiv.org/abs/2601.21160,笔记未提供可识别代码仓库,未审计,未提供,问题/方法/实验/局限来自站内笔记，未核实原文；局限可能是笔记分析,未审计,未审计,未审计,未审计或README未写，未知,未验证torch>=2.7且cu128运行兼容性,未实测，须按模型、批大小、编码器与协议另核,与客户端模型分组的Clustered FL不同；高斯假设是主要风险,F:\研究生毕设\方向检索\notes\P30.txt,问题/方法/实验/局限来自站内笔记，未核实原文；局限可能是笔记分析,未审计,未审计,未审计,2026-10-27
+P31,FedRG: Unleashing the Representation Geometry for Federated Learning with Noisy Clients,聚类×联邦噪声标签,CVPR,2026,未核实，仅站内标签,未独立核实，见笔记原文链接,https://papernotes.org/CVPR2026/federated_learning/fedrg_unleashing_the_representation_geometry_for_federated_learning_with_noisy_c/,客户端标签噪声与非IID共存，小损失筛选不可靠,FedRG先学习标签解耦球面表征，用vMF混合几何判噪，并本地保留噪声吸收矩阵,"【站内笔记，未逐项核实；不得直接作证据】
+实验关键数据
+主实验 ¶
+数据集 CIFAR-10 / SVHN / CIFAR-100，主干 ResNet-18 / ResNet-34；强非 IID（Dirichlet \(\alpha=0.1\) ， \(K=10\) 客户端），噪声率 \(\epsilon=0.4\) ；四种噪声场景 = {对称, pairflip} × {localized, globalized}。对比 8 个代表性 FL 方法 + 6 个抗噪方法。
+CIFAR-10 主结果（Accuracy / Precision / F-score，节选）：
+配置（CIFAR-10） 指标 FedRG 次优方法 说明 对称-localized Acc / Prec / F 59.99 / 70.32 / 55.31 SymmetricCE 55.01 / FedProx 62.70 / SymmetricCE 49.78 三指标基本全面领先 对称-globalized Acc / Prec / F 63.29 / 72.94 / 59.14 SymmetricCE 59.23 / 64.55 / 54.38 Acc 大幅领先 pairflip-localized Acc / Prec / F 61.52 / 73.01 / 57.09 MOON 51.68 / FedELC ~ / MOON 48.80 优势明显 pairflip-globalized Acc / Prec / F 64.88 / 64.88 / 60.98 FedSAM 59.03 / 64.00 / 54.80 综合最佳
+SVHN / CIFAR-100（globalized 设置，Accuracy 节选）：
+数据集 噪声 FedRG Acc 次优 Acc 备注 SVHN 对称 62.70 SymmetricCE 57.82 F-score 58.83 同样最佳 SVHN pairflip 80.62 FedSAM 75.25 Acc 80.62 / F 68.83，优势最大 CIFAR-100 对称 51.95 SymmetricCE 56.36 ⚠️ 此格 Acc 不及 SymmetricCE，但作者称其跨 localized 场景不稳定 CIFAR-100 pairflip 60.80 FedELC 41.89 大幅领先
+消融实验 ¶
+原文以雷达图（Fig. 3，CIFAR-10 四种噪声场景）给出消融，去掉任一组件均掉点：
+配置 改动 趋势性结论 Full（FedRG） 完整模型 各场景综合最佳 w/o Noise Absorption Matrix 去掉前向噪声吸收矩阵 噪声样本无法被校正利用，Acc/F 下降 w/o Label Decoupled Spherical Rep. 去掉 Stage I 的 SimCLR 自监督 失去 label-free 几何底座，判噪质量下滑 replace SCE with CE 把对称交叉熵换成普通 CE 抗噪能力减弱 w/o Localized Noise Absorption Matrix 把个性化 \(\mathbf{T}\) 跨客户端聚合 个性化噪声特征被抹平，性能下降
+⚠️ 雷达图未给逐格数值，上表为定性趋势，具体掉点幅度以原文 Fig. 3 为准。
+关键发现 ¶
+几何证据比 loss 更可靠 ：Fig. 1 显示 loss-based 方法在严重异质下高 FN、低 TP（把大量正确标签误判为噪声），FedRG 用空间几何过滤更稳；这正是其在尾部类、pairflip 等困难场景领先的原因。 个性化 > 聚合 ：噪声吸收矩阵保持客户端本地（不聚合）是涨点关键，呼应""localized noise 各客户端模式不同""的设定。 客户端采样比例敏感性 ：选取客户端比例从 0.4→1.0，Acc 从 55.29 升到约 63，说明更多参与客户端有助于几何建模，但 0.8 之后趋于饱和。","【站内笔记的局限/展望，不等于原作者声明】
+局限与展望
+依赖 Stage I 自监督质量 ：整套判据建立在 SimCLR 学出的球面表征上，若客户端数据极少或增广不当，几何底座不稳会连锁影响后续判噪；消融也证实去掉 Stage I 明显掉点。 CIFAR-100 上并非全面领先 ：globalized 对称噪声下 Acc 不及 SymmetricCE，作者用""跨场景不稳定""解释，但说明在类别多、噪声规则全局共享时，几何簇数 \(G\) 的设置与细粒度类的可分性可能成为瓶颈。⚠️ 这是自己读表发现的局限。 超参与开销 ：vMF 混合分量数 \(G\) 、 \(\lambda_s/\lambda_n\) 、温度 \(\tau\) 等需调；额外的 vMF 建模与每轮本地 GMM 拟合带来计算开销，正文把成本分析放到附录，正文未量化通信/计算代价。 改进方向 ：可探索 \(G\) 的自适应估计、把几何证据反哺到 Stage I 表征学习形成闭环，或将""表征几何优先""扩展到 noisy + 类不平衡同时存在的更极端联邦场景。",后续候补；不是客户端聚类FL；自监督预训练和几何拟合有成本,https://openaccess.thecvf.com/content/CVPR2026/html/Wen_FedRG_Unleashing_the_Representation_Geometry_for_Federated_Learning_with_Noisy_CVPR_2026_paper.html,https://github.com/Tianjoker/FedRG,未审计,未提供,问题/方法/实验/局限来自站内笔记，未核实原文；局限可能是笔记分析,未审计,未审计,未审计,未审计或README未写，未知,未验证torch>=2.7且cu128运行兼容性,未实测，须按模型、批大小、编码器与协议另核,后续候补；不是客户端聚类FL；自监督预训练和几何拟合有成本,F:\研究生毕设\方向检索\notes\P31.txt,问题/方法/实验/局限来自站内笔记，未核实原文；局限可能是笔记分析,未审计,未审计,未审计,2026-10-27
+P32,"Learning Locally, Revising Globally: Global Reviser for Federated Learning with Noisy Labels",联邦噪声标签,ICML,2026,未核实，仅站内标签,未独立核实，见笔记原文链接,https://papernotes.org/ICML2026/optimization/learning_locally_revising_globally_global_reviser_for_federated_learning_with_no/,非IID和标注噪声叠加，本地筛选与EMA教师易受污染,FedGR在服务器聚合损失代理筛噪，修正本地EMA并约束全局局部表征,"【站内笔记，未逐项核实；不得直接作证据】
+实验关键数据
+主实验 ¶
+CIFAR-10 上，控制噪声客户端比例 \(\phi\) 和噪声率区间 \(\mathcal{U}(\rho_{\min}, \rho_{\max})\) 。这里给出""Sym 1.0/ \(\mathcal{U}(0.5,1.0)\) ""和""Mixed 1.0/ \(\mathcal{U}(0.2,0.4)\) ""两类极端设定。
+方法 IID Sym \(\phi=1.0\) IID Mixed \(\phi=1.0\) Non-IID Sym \(\phi=1.0\) Non-IID Mixed \(\phi=1.0\) FedAvg 23.89 70.66 17.32 51.92 FedProx 23.02 64.44 16.69 49.77 FL-Coteaching 47.28 83.99 33.49 72.42 FL-DivideMix 68.47 85.19 38.35 68.86 FedCorr (CVPR22) 55.12 84.15 29.42 83.33 FedNoRo (IJCAI23) 33.98 71.07 18.60 57.09 FedGR (Ours) 83.91 93.13 63.64 86.50
+CIFAR-10 上 Avg 列：FedGR 达到 91.07，第二名 FL-DivideMix 81.11；Clothing1M (Table 3) 上同样领先；最极端的 Non-IID Sym \(\phi=1.0\) / \(\mathcal{U}(0.5,1.0)\) 设定下相对 FedCorr 提升 +34.2 个点。
+消融实验 (CIFAR-10, Table 4) ¶
+配置 IID Sym 1.0 IID Mixed 1.0 Non-IID Sym 1.0 Non-IID Mixed 1.0 说明 Full FedGR 83.91 92.27 63.64 84.65 完整模型 w/o FS 54.59 91.71 45.48 84.01 去掉联邦筛选→IID Sym 掉 29.3，Non-IID Sym 掉 18.2 w/o LR 75.23 90.46 59.48 83.21 去掉标签精修→各设定均掉 1–8 点 w/o \(\mathcal{R}_k\) 81.49 91.84 58.23 82.70 去掉表征正则→Non-IID Sym 掉 5.4 w/o \(\mathcal{B}_k\) 78.14 91.24 51.07 79.44 去掉 EMA 蒸馏→Non-IID Sym 掉 12.6
+关键发现 ¶
+联邦筛选 (FS) 是命门 ：去掉 FS 后高噪声 IID Sym 暴跌 29.3 个点，远超去掉其它任何模块——说明服务器端聚合数据代理比客户端独立估计噪声率有质的差异，验证了""FL 全局视角""的核心价值。 EMA 蒸馏 (B_k) 在双异质下最有用 ：去掉后 Non-IID Sym 1.0 掉 12.6 个点，远高于 IID 同设定的 5.8——印证了它专门针对""本地模型在高噪声 + 类不均下被污染""这一痛点的设计动机。 超越 clean baseline 的反常现象 ：在 Mixed \(\phi=0.6\) / \(\mathcal{U}(0.2,0.4)\) 设定下 FedGR 甚至超过用纯净数据训练的 FedAvg，作者归因于额外正则的副作用，但承认这种 gap 很小，主要价值还是来自噪声鲁棒性而非正则化。 筛选准确性 ：Figure 3 报告 FedGR 估计的客户端噪声率 \(\{r_k\}\) 与真实值 Pearson 相关 > 0.9，远高于 FedCorr/FedFixer，说明聚合代理 + GMM 的方法在客户端层面就显著更准。","【站内笔记的局限/展望，不等于原作者声明】
+局限与展望
+假设客户端的损失代理在前 \(\alpha\) 轮就能在群体层面分出双峰；如果绝大多数客户端噪声率都很高且类型一致，GMM 退化为单峰，FS 会失效（作者未给出 100% 噪声场景的兜底）。 引入了 4 个新超参 \(\alpha, \beta, \gamma_g, \lambda_{\mathcal{R}}\) ，论文显示对 \(\gamma_g\) 较敏感（过大会反噬精度），实际部署需要按数据集调参，缺乏自适应机制。 服务器端 GMM 拟合 + 每样本损失观测的存储和带宽开销虽然作者声称""moderate""（附录 A.8），但相对 vanilla FedAvg 仍是显著增量，对超大规模 (>10k client) FL 的扩展性未做实验。 隐私保证只在直观层面（""损失与分布无关""），没有差分隐私之类的形式化分析，对成员推理攻击是否真正免疫待验证。",候补；站内标ICML2026，尚未核实正式年份,https://arxiv.org/abs/2412.00452,https://github.com/cs-yuxintian/FedGR-ICML26,未审计,未提供,问题/方法/实验/局限来自站内笔记，未核实原文；局限可能是笔记分析,未审计,未审计,未审计,未审计或README未写，未知,未验证torch>=2.7且cu128运行兼容性,未实测，须按模型、批大小、编码器与协议另核,候补；站内标ICML2026，尚未核实正式年份,F:\研究生毕设\方向检索\notes\P32.txt,问题/方法/实验/局限来自站内笔记，未核实原文；局限可能是笔记分析,未审计,未审计,未审计,2026-10-27
+P33,Making Classic GNNs Strong Baselines Across Varying Homophily: A Smoothness-Generalization Perspective,图学习/异配强基线,NeurIPS,2025,未核实，仅站内标签,未独立核实，见笔记原文链接,https://papernotes.org/NeurIPS2025/graph_learning/making_classic_gnns_strong_baselines_across_varying_homophily_a_smoothness-gener/,同配异配图中平滑与泛化的关系被复杂模型混淆,IGNN分离不同跳变换，聚合多感受野并学习跳间权重,"【站内笔记，未逐项核实；不得直接作证据】
+实验关键数据
+主实验 ¶
+数据集类型 IGNN vs 30 个基线 同质图 (Cora, CiteSeer, PubMed...) SOTA 或接近 SOTA 异质图 (Roman-Empire, Amazon-Ratings...) SOTA 大规模图 (ogbn-arxiv, ogbn-proteins) 竞争力强
+消融实验 ¶
+配置 效果 GCN + SN only 泛化显著提升 GCN + IN only smoothness 自适应改善 GCN + NR only 过滤器灵活性提升 GCN + SN + IN + NR (IGNN) 全面最优
+关键发现 ¶
+三个设计原则每个都有独立贡献，组合效果最优 揭示了一些已有 homoGNN（如 GCN+JK）已经隐式缓解了部分 dilemma，解释了它们在异质图上也能工作的原因 IGNN 不需要任何异质图专用模块即可通用","【站内笔记的局限/展望，不等于原作者声明】
+局限与展望
+理论基于线性 GCN ：Theorem 4.1 的分析基于线性 GCN，对非线性激活的 GNN 是否完全适用需要更多验证 计算开销 ：IN 需要并行计算多跳结果，每跳独立的权重矩阵增加了参数量 可改进 ：将 IGNN 原则应用到 GAT、GraphSAGE 等其他架构；与图结构学习结合",基线警戒；不能只超过弱GCN,https://arxiv.org/abs/2412.09805,https://github.com/galogm/IGNN,未审计,未提供,问题/方法/实验/局限来自站内笔记，未核实原文；局限可能是笔记分析,未审计,未审计,未审计,未审计或README未写，未知,未验证torch>=2.7且cu128运行兼容性,未实测，须按模型、批大小、编码器与协议另核,基线警戒；不能只超过弱GCN,F:\研究生毕设\方向检索\notes\P33.txt,问题/方法/实验/局限来自站内笔记，未核实原文；局限可能是笔记分析,未审计,未审计,未审计,2026-10-27
+P34,"Oversmoothing, Oversquashing, Heterophily, Long-Range, and More: Demystifying Common Beliefs in Graph Machine Learning",图学习/概念审计,ICLR,2026,未核实，仅站内标签,未独立核实，见笔记原文链接,https://papernotes.org/ICLR2026/others/oversmoothing_oversquashing_heterophily_long-range_and_more_demystifying_common_/,过平滑、过压缩、异配和长程依赖的常见因果解释过度泛化,以形式定义和小图反例拆分计算瓶颈与拓扑瓶颈，审计九种常见信念,"【站内笔记，未逐项核实；不得直接作证据】
+实验关键数据
+主实验：OSM 指标在不同架构下的表现（Cora, 50 seeds） ¶
+架构 W: DE 趋势 2W: DE 趋势 W: RQ 趋势 2W: RQ 趋势 GCN 坍缩→0 爆炸↑ 平稳 平稳 GAT 坍缩→0 爆炸↑ 线性衰减 稳定 SAGE 坍缩→0 爆炸↑ 线性衰减 部分稳定 GIN 爆炸↑ 爆炸↑↑ 线性衰减 部分稳定
+结论：同一模型在两个指标下可表现出完全矛盾的趋势。OSM 的观测高度依赖度量选择和超参。
+消融实验：有/无偏置下性能退化与 DE 对比 ¶
+配置 深度增加时 DE 深度增加时准确率 GCN (有 bias) 坍缩 下降 GCN (无 bias) 不坍缩 同样下降
+说明性能下降不能归因于 OSM——去除 bias 消除了 DE 坍缩但准确率仍下降，真正原因是梯度消失/过拟合。
+关键发现 ¶
+OSM 非普遍现象 : 换聚合函数（GIN）、微调权重缩放（2W）或换度量指标（DE vs RQ）都会改变结论 计算瓶颈 ≠ 拓扑瓶颈 : 网格图无拓扑瓶颈但对角节点间 effective resistance 线性增长，仍有严重计算瓶颈；graph rewiring 改善拓扑但可能恶化计算瓶颈 异质性 ≠ 困难性 : 完全异质图存在 1 层 DGN 完美分类的情况；高同质图也可能需要长程传播","【站内笔记的局限/展望，不等于原作者声明】
+局限性
+主要是概念澄清和反例驱动，未提出新的解决方案或模型 大部分反例基于人工构造的小图，实际大规模图上的情况更复杂 面向图 ML 社区的""元研究""，对其他领域的直接实用价值有限 部分 belief 的""反驳""本质是""不总是成立""，而非""从不成立""——边界条件仍需深入探讨",方法论阅读；反例否定普遍性不等于普遍无效,https://arxiv.org/abs/2505.15547,https://github.com/AdrianArnaiz/demystifyingGraphML,未审计,未提供,问题/方法/实验/局限来自站内笔记，未核实原文；局限可能是笔记分析,未审计,未审计,未审计,未审计或README未写，未知,未验证torch>=2.7且cu128运行兼容性,未实测，须按模型、批大小、编码器与协议另核,方法论阅读；反例否定普遍性不等于普遍无效,F:\研究生毕设\方向检索\notes\P34.txt,问题/方法/实验/局限来自站内笔记，未核实原文；局限可能是笔记分析,未审计,未审计,未审计,2026-10-27
+P35,Redundancy-Aware Test-Time Graph Out-of-Distribution Detection,图学习/OOD检测,NeurIPS,2025,未核实，仅站内标签,未独立核实，见笔记原文链接,https://papernotes.org/NeurIPS2025/llm_safety/redundancy-aware_test-time_graph_out-of-distribution_detection/,预训练图模型测试时难以区分ID/OOD结构，冗余干扰分数,RedOUT用结构熵编码树和冗余感知信息瓶颈校准图级OOD分数,"【站内笔记，未逐项核实；不得直接作证据】
+实验关键数据
+主实验 ¶
+在10个TUDataset和OGB数据集对上的OOD检测结果（AUC%）：
+ID/OOD数据集对 RedOUT GOOD-D(次优) GOODAT 提升 BZR/COX2 95.06 94.99 82.16 +0.07 PTC-MR/MUTAG 94.45 81.21 81.84 +12.61 AIDS/DHFR 99.98 99.07 96.43 +0.91 ClinTox/LIPO 86.56 69.18 62.46 +17.38 Esol/MUV 95.00 91.52 85.91 +3.48 平均AUC 87.46 80.73 76.89 +6.73 平均排名 1.3 2.4 3.9 -
+消融实验 ¶
+异常检测任务结果（AUC%）：
+数据集 RedOUT GOOD-D GLocalKD 说明 ENZYMES 69.14 65.64 57.18 蛋白质图 DHFR 54.45 53.08 52.11 分子图 BZR 66.86 61.24 55.32 分子图 IMDB-B 53.12 54.89 56.42 社交网络
+关键发现 ¶
+分子图上优势巨大 ：RedOUT在分子图数据集上平均提升约10%，因为分子图的语义信息直接体现在结构组成中（如功能团） 社交网络是弱项 ：在IMDB-B/IMDB-M上未取得最佳结果，因为这些数据来自相同来源，仅标签不同，难以仅凭结构区分 高效可扩展 ：在Erdős-Rényi图上的实验表明，运行时间和内存使用随节点数近似线性增长","【站内笔记的局限/展望，不等于原作者声明】
+局限与展望
+在社交网络等结构特征不明显的图数据上效果有限 编码树高度 \(k\) 需要预先设定，对不同图可能需要不同的最优高度 依赖伪标签 \(\tilde{Y}\) 的质量，若预训练模型在ID数据上表现不佳可能影响效果 可考虑将方法扩展到节点级别或子图级别的OOD检测",轻量备选；部分数据对接近饱和，社会网络收益弱,https://arxiv.org/abs/2510.14562,https://github.com/name-is-what/RedOUT,未审计,未提供,问题/方法/实验/局限来自站内笔记，未核实原文；局限可能是笔记分析,未审计,未审计,未审计,未审计或README未写，未知,未验证torch>=2.7且cu128运行兼容性,未实测，须按模型、批大小、编码器与协议另核,轻量备选；部分数据对接近饱和，社会网络收益弱,F:\研究生毕设\方向检索\notes\P35.txt,问题/方法/实验/局限来自站内笔记，未核实原文；局限可能是笔记分析,未审计,未审计,未审计,2026-10-27
+P36,GraphUniverse: Synthetic Graph Generation for Evaluating Inductive Generalization,图学习/归纳评测,ICLR,2026,未核实，仅站内标签,未独立核实，见笔记原文链接,https://papernotes.org/ICLR2026/graph_learning/graphuniverse_synthetic_graph_generation_for_evaluating_inductive_generalization/,传导图学习排名不能预测跨图归纳和结构偏移泛化,GraphUniverse以持久社区、分层DC-SBM生成语义一致图族并受控改变属性,"【站内笔记，未逐项核实；不得直接作证据】
+实验关键数据
+RQ1: Inductive vs. Transductive 性能差异 ¶
+在社区检测任务上系统比较了 9 种架构（DeepSet、GraphMLP、GCN、GraphSAGE、GIN、GATv2、TopoTune、Neural Sheaf Diffusion、GPS） 核心发现 ：模型排名在两种设置间显著不同。Neural Sheaf Diffusion 在 inductive 设置下表现优异但 transductive 下表现一般；GIN 在 transductive 下表现最好但 inductive 下失败 Transductive 设置会放大图属性（同质性、平均度）对性能的影响
+RQ2: 分布偏移鲁棒性 ¶
+对同质性 (±0.1)、平均度 (±4)、节点数 (±200) 进行受控偏移测试 核心发现 ：鲁棒性不是模型固有属性，而是架构与图属性交互的结果。相同偏移在不同训练域可产生相反效果（如增加同质性在低同质性域下损害性能，在中等域下提升性能）
+RQ3: 图大小泛化 ¶
+训练图：50-200 节点；测试图：250-400 和 550-700 节点 节点级任务（社区检测）：性能下降仅约 2% 图级任务（三角形计数）：传统 MPNN（如 GIN）无法泛化到更大图，GPS 和 NSD 可保持性能
+RQ4: 对真实数据的预测能力 ¶
+在 5 个真实 inductive 数据集上验证 GraphUniverse 与真实数据集的模型排名相关性显著高于 GraphWorld，对所有数据集均为正相关；GraphWorld 对半数数据集为负相关","【站内笔记的局限/展望，不等于原作者声明】
+局限与展望
+生成模型限制 ：基于 DC-SBM，缺乏高阶结构（如三角形、团）的精细控制，无法完全模拟真实网络的丰富拓扑特征 社区结构假设 ：默认均匀社区大小分配，真实网络中社区大小通常服从幂律分布 特征生成过于简单 ：社区特征为各向同性高斯分布，真实场景中特征分布可能更复杂（多模态、非高斯） 任务覆盖有限 ：实验仅涵盖节点分类和图级回归，缺少链接预测、图分类等重要任务 扩展到大规模图的验证不足 ：最大实验规模为 1000 节点，对万级以上节点图的表现尚未验证",评测近邻；合成社区不代表真实部署,https://arxiv.org/abs/2509.21097,https://github.com/LouisVanLangendonck/GraphUniverse,未审计,未提供,问题/方法/实验/局限来自站内笔记，未核实原文；局限可能是笔记分析,未审计,未审计,未审计,未审计或README未写，未知,未验证torch>=2.7且cu128运行兼容性,未实测，须按模型、批大小、编码器与协议另核,评测近邻；合成社区不代表真实部署,F:\研究生毕设\方向检索\notes\P36.txt,问题/方法/实验/局限来自站内笔记，未核实原文；局限可能是笔记分析,未审计,未审计,未审计,2026-10-27
+P37,Mask the Redundancy: Evolving Masking Representation Learning for Multivariate Time-Series Clustering,时间序列聚类,AAAI,2026,未核实，仅站内标签,未独立核实，见笔记原文链接,https://papernotes.org/AAAI2026/time_series/mask_the_redundancy_evolving_masking_representation_learning_for_multivariate_ti/,多变量时序冗余时间戳干扰无监督聚类,变量重要性感知掩码、多内生视图与聚类引导对比学习；代码仓库名EMTC，论文缩写须结合原文核对,"【站内笔记，未逐项核实；不得直接作证据】
+实验关键数据
+设置 ¶
+15 个 UEA 基准数据集 ，样本量 15–293，序列长度 30–17984，维度 3–1345 8 个 SOTA 对比方法 ：FEI (AAAI'25)、FCACC、TimesURL (AAAI'24)、UNITS (NeurIPS'24)、USLA (TPAMI'23)、Ti-MAE、MHCCL (AAAI'23)、T-GMRF (TKDE'23) 指标：ACC、F1、NMI、ARI
+主要结果 ¶
+EMTC 在 15 个数据集上 F1 平均提升 4.85% （vs 最强基线） 在 DuckDuckGeese 上 F1 达 0.4917（第二名 0.3980），提升显著 Cricket 数据集 F1 达 0.6317，大幅领先第二名 0.5136 在 FingerMovements 等难数据集上也取得最优
+消融实验 ¶
+去除 IVM → 性能显著下降，验证动态掩码的必要性 去除 CMC → 聚类效果退化，验证 cluster-guided contrastive 的有效性 去除 MEV → 单视图表现更差，验证多视图互补作用","【站内笔记的局限/展望，不等于原作者声明】
+局限与展望
+阈值 \(\epsilon\) 为固定超参数，自适应阈值可能进一步提升性能 实验仅基于 UEA 标准数据集，未在大规模工业场景验证 聚类数 \(g\) 需要预先指定，未探讨自动确定聚类数的策略 MEV 融合方式为简单平均，加权或注意力融合可能更优",轻量观察名单；需核对论文缩写与UEA切分，尚未核实一手结果,https://arxiv.org/abs/2511.17008,https://github.com/yueliangy/EMTC,未审计,未提供,问题/方法/实验/局限来自站内笔记，未核实原文；局限可能是笔记分析,未审计,未审计,未审计,未审计或README未写，未知,未验证torch>=2.7且cu128运行兼容性,未实测，须按模型、批大小、编码器与协议另核,轻量观察名单；需核对论文缩写与UEA切分，尚未核实一手结果,F:\研究生毕设\方向检索\notes\P37.txt,问题/方法/实验/局限来自站内笔记，未核实原文；局限可能是笔记分析,未审计,未审计,未审计,2026-10-27
+P38,When Foundation Models Are One-Liners: Limitations and Future Directions for Time Series Anomaly Detection,时间序列/基础模型反思,ICLR,2026,未核实，仅站内标签,未独立核实，见笔记原文链接,https://papernotes.org/ICLR2026/time_series/when_foundation_models_are_one-liners_limitations_and_future_directions_for_time/,零样本TSFM重建或预测误差可能退化为方差或相邻差分异常分数,逐序列比较TSFM与简单统计基线，分析归一化、预测horizon及隐藏表征,"【站内笔记，未逐项核实；不得直接作证据】
+实验关键数据
+主实验 ¶
+实验覆盖五大模型族，每族（除 TSPulse）测两个尺寸、至少三个上下文窗口（64/256/512），在 TSB-AD-U 的 350 条单变量时序上用 VUS-PR 评测。核心结论是 TSFM 与对应 one-liner 基线 统计上无显著差别 ：相关系数极高、 \(p\) 值近乎为 0、效应量 Cohen's \(d\) 极小。
+设置 TSFM 均值 基线均值 相关系数 Cohen's \(d\) MOMENT-base-512（重建） 0.311 0.313 0.991 -0.047 MOMENT-large-512（重建） 0.313 0.313 0.857 0.003 Chronos-Bolt-base-512（预测） 0.297 0.284 0.927 0.102 Time-MoE-large-512（预测） 0.303 0.284 0.923 0.146 TimesFM-2.0-512（预测） 0.302 0.284 0.923 0.142
+TSPulse 即便额外带了频域重建头，零样本下也打不过基线：其重建头 Head \(_{\text{time}}\) （0.42）与 Var-96（0.42）持平，预测头 Head \(_{\text{future}}\) （0.30）与 Last-3（0.28）持平，三角化/集成后两者也几乎一样（0.48 vs 0.46）。
+消融与分析实验 ¶
+配置 / 分析 现象 说明 换归一化（Min-Max/全局 z/mean-scaling） 与基线相关性下降 印证逐窗 z-归一化是重建路径塌缩主因 MOMENT-base → large MSE 分布更分散但异常/正常仍重叠 增大模型不改变「异常不更难重建」 上下文窗口 64→512(→1024) 无稳定提升 增大上下文也救不回来 预测 horizon \(h\) =1→64（序列异常） VUS-PR 0.04→0.65 长 horizon 利于长异常 预测 horizon \(h\) =1→64（点异常） VUS-PR 1.0→0.27 但牺牲短异常，需 MAX 集成 隐表征 KNN vs 重建误差（MOMENT） 0.003→0.250，排名 31→5 隐表征路线有潜力 非 TSFM 检测器 vs 基线 相关性普遍很低 塌缩是 TSFM 特有，非基线本身强
+关键发现 ¶
+塌缩与模型尺寸/上下文/预测重建性能全都无关 ：无论模型多大、窗口多长、预测或重建本身多准，TSFM 在 TSAD 上都退化到一行代码的水平，说明问题出在范式假设而非工程规模。 重建路径塌缩源于 z-归一化 ：异常分数被分解证明退化为窗口方差的代理；这也解释了为什么少数高相关的非 TSFM 检测器（如 TimesNet）恰好也用了 z-归一化。 预测路径塌缩源于单步 horizon ：滑窗使异常进入上下文后「不再意外」，因而漏检序列异常；拉长 horizon 是直接解药，但需跨 horizon 集成兼顾长短异常。 方法论启示 ：很多高 VUS-PR 其实来自标注问题与指标对微小差异的放大，剔除这些样本后差距进一步缩小——再次说明应看中间产物而非只看聚合指标。","【站内笔记的局限/展望，不等于原作者声明】
+局限与展望
+作者承认三条补救方向只给了定性/案例级证据（如隐表征 KNN、horizon 集成的单条时序示例），尚未做系统化大规模验证，端到端微调更是「超出本文范围」。 评测聚焦单变量时序（因多数 TSFM 只原生支持单变量），多变量、跨通道依赖的 TSFM（如 Chronos-2、Toto）只在附录给了初步定性结果。 隐表征路线虽优于重建误差，但仍被 KMeansAD 等专用检测器超过，说明「用 TSFM 的表征」本身不是银弹，还需配合更好的检测头。 改进思路：把三条方向（长短 horizon 集成、隐表征检测、标注微调）组合成统一框架，并在多变量、多领域 benchmark 上系统评测，是顺理成章的下一步。",强基线警戒；OpenReview未独立核实，不把相关性直接当显著性结论,https://openreview.net/forum?id=H27kvyG4qf,笔记未提供可识别代码仓库,未审计,未提供,问题/方法/实验/局限来自站内笔记，未核实原文；局限可能是笔记分析,未审计,未审计,未审计,未审计或README未写，未知,未验证torch>=2.7且cu128运行兼容性,未实测，须按模型、批大小、编码器与协议另核,强基线警戒；OpenReview未独立核实，不把相关性直接当显著性结论,F:\研究生毕设\方向检索\notes\P38.txt,问题/方法/实验/局限来自站内笔记，未核实原文；局限可能是笔记分析,未审计,未审计,未审计,2026-10-27
+P39,TSPulse: Tiny Pre-Trained Models with Disentangled Representations for Rapid Time Series,时间序列/轻量基础模型,ICLR,2026,未核实，仅站内标签,未独立核实，见笔记原文链接,https://papernotes.org/ICLR2026/time_series/tspulse_tiny_pre-trained_models_with_disentangled_representations_for_rapid_time/,诊断型时序任务需要轻量模型兼顾细节与语义,TSPulse以时频双空间掩码重建、细节语义解耦嵌入和多头异常打分复用小骨干,"【站内笔记，未逐项核实；不得直接作证据】
+实验关键数据
+异常检测（TSB-AD 榜单，Figure 4） ¶
+方法 单变量 VUS-PR 多变量 VUS-PR Sub-PCA (之前SOTA) 0.42 - CNN (之前SOTA) - 0.31* MOMENT (ZS) 0.38 - TSPulse (ZS) 0.48 (+14%) 0.36 (+16%) TSPulse (FT) 0.52 (+24%) 0.36 (+26%*)
+*TSPulse 同时位列 TSB-AD 单变量和多变量排行榜第一
+分类（UEA 29 数据集，Figure 5） ¶
+方法 参数量 平均准确率 VQShape ~37M 0.701 MOMENT ~110M 0.675 UniTS ~10M 0.634 TSPulse ~1M 0.733 (+5-16%)
+插补（6个LTSF基准，Figure 6 - 混合掩码） ¶
+方法 设置 平均 MSE↓ MOMENT ZS 0.276 UniTS (PMT) PMT 0.170 TSPulse ZS 0.074 (+56-73%) TimesNet FT 0.080 TSPulse FT 0.039 (+49-51%)
+消融实验（Table 1） ¶
+分类消融 :
+变体 准确率 下降 TSPulse (完整) 0.747 - w/o Short Embedding 0.689 -8% w/o Long Embedding 0.681 -10% w/o Masking 0.691 -8% w/o CM Identity Init 0.685 -9% w/o TSLens (Avg-Pool) 0.675 -11% w/o TSLens (Max-Pool) 0.645 -16% w/o Dual-space 0.696 -7%
+效率对比（Table 23） ¶
+模型 参数(M) GPU推理(ms) CPU推理(s) 内存(GB) TSPulse 1.06 7.16 0.06 0.39 MOMENT(small) 35.34 (33×) 32.57 (5×) 2.74 (46×) 0.56 MOMENT(large) 341.24 (322×) 405.42 (57×) 21.98 (366×) 2.30 Chronos(tiny) 8.39 (8×) 39.81 (6×) 66.15 (1103×) 2.91
+关键发现 ¶
+1M 参数击败 10-100 倍大的模型 ：模型大小不是唯一决定因素，架构设计同样重要 双空间学习至关重要 ：去除频域分支导致分类下降 7%，插补下降 8% 混合掩码预训练是插补性能的关键 ：纯块掩码在混合掩码评估下暴降 79% TSLens 显著优于标准池化 ：-11% (avg-pool) 和 -16% (max-pool) 的下降证明了学习注意力的价值 Register token 的语义嵌入对失真鲁棒 ：对噪声、幅值变化、时间偏移不敏感，对频率和形状敏感","【站内笔记的局限/展望，不等于原作者声明】
+局限与展望
+目前未涉及预测任务（forecasting），但紧凑模型在预测上的能力已由 TTM 验证 预训练数据主要覆盖特定领域（能源、交通等），其他领域的迁移性能有待验证 单变量预训练 + 多变量微调的两阶段设计可能不是最优的 增量学习能力缺失：无法在不遗忘旧知识的情况下持续更新 少样本分类能力有待探索 跨模态融合（如时间序列+文本）是有前景的未来方向",轻量备选；不推荐自行预训练，论文数字未核实,https://arxiv.org/abs/2505.13033,笔记未提供可识别代码仓库,未审计,https://huggingface.co/ibm-granite/granite-timeseries-tspulse-r1,问题/方法/实验/局限来自站内笔记，未核实原文；局限可能是笔记分析,未审计,未审计,未审计,未审计或README未写，未知,未验证torch>=2.7且cu128运行兼容性,未实测，须按模型、批大小、编码器与协议另核,轻量备选；不推荐自行预训练，论文数字未核实,F:\研究生毕设\方向检索\notes\P39.txt,问题/方法/实验/局限来自站内笔记，未核实原文；局限可能是笔记分析,未审计,未审计,未审计,2026-10-27
+P40,Adaptive Conformal Anomaly Detection with Time Series Foundation Models for Signal Monitoring,时间序列/校准异常告警,ICLR,2026,未核实，仅站内标签,未独立核实，见笔记原文链接,https://papernotes.org/ICLR2026/anomaly_detection/adaptive_conformal_anomaly_detection_with_time_series_foundation_models_for_sign/,非平稳监测残差缺少稳定阈值和误报解释,W1-ACAS在冻结预测器后做Wasserstein驱动的在线加权共形校准并聚合多步p值,"【站内笔记，未逐项核实；不得直接作证据】
+实验关键数据
+主实验表格（univariate，跨 7 个数据集均值±std） ¶
+Forecaster AD 方法 PA-F1↑ Affiliation-F↑ FPR↓ CalErr↓ AUC-PR↑ VUS-PR↑ TiRex W1-ACAS 0.925 0.897 0.084 0.025 0.344 0.438 TiRex Conformal 0.878 0.890 0.107 0.038 0.308 0.429 TiRex Gaussian 0.714 0.837 0.119 0.090 0.270 0.432 Chronos W1-ACAS 0.912 0.893 0.077 0.025 0.355 0.440 TTM W1-ACAS 0.889 0.886 0.082 0.029 0.342 0.449 - CNN* 0.858 0.881 0.083 0.643 0.269 0.423 - MOMENT ZS 0.596 0.867 0.261 0.417 0.110 0.461 - KShape 0.533 0.789 0.508 0.176 0.125 0.303 - USAD* 0.498 0.809 0.425 0.324 0.088 0.398
+（*为半监督深度方法，需在正常训练集上训练）
+消融与配置 ¶
+横跨三种 TSFM（Chronos / TTM / TiRex） ：W1-ACAS 在每个基座上都显著优于同基座的 Gaussian 与 Conformal offline 基线（PA-F1 提升约 5~20 点、CalErr 减半以上）。 三个基座结果一致 ：附录显示三种 TSFM 在各数据集上预测误差相近，对应其异常检测性能也接近，说明增益主要来自共形后处理而非某个特定基座。 超参敏感性 ：context length 52、horizon \(D=15\) 、 \(\alpha_c=0.01\) 、 \(n_b=10\) 、 \(\eta=0.001\) ；对小学习率和小 batch 表现稳定， \(D=15\) 在性能与样本效率间取得平衡。 多步长聚合 ：附录显示步长聚合（取中位数）相比单步长进一步降低误报，要求半数以上步长检测器都判异常才报警。 合成实验 ：在可获得真值 p-value 的合成数据上验证了方法在渐变与突变分布漂移下都能保持校准。
+关键发现 ¶
+W1-ACAS 在 阈值相关指标（PA-F1、Affiliation-F）上全面领先 ，甚至超过需训练的半监督方法（CNN/USAD/OmniAnomaly），在阈值无关指标（AUC、VUS）上保持竞争力。 校准误差 CalErr 极低（0.025） ，远优于深度基线（CNN 高达 0.643）：低 FPR 区间内其阈值最保守、方差最低，使阈值选择在实践中更可靠。 经典距离/密度方法（KShape、Sub-KNN、SAND）虽在部分基准表现不俗，但普遍非因果、需全量数据、FPR 高（0.4~0.5），不适合流式场景，被 W1-ACAS 全面压制。 学习到的权重能自动捕捉误差中的周期性等时间模式，并在异常区附近快速适配新分布，从而在端到端系统里压低报警数量。","【站内笔记的局限/展望，不等于原作者声明】
+局限与展望
+依赖一段初始正常数据做校准 ：每个数据集都需要无异常的初始片段来学权重，纯冷启动场景仍受限。 多变量仅靠 p-value 聚合 ：多变量异常通过 horizon 式聚合处理，未显式建模变量间相关性，复杂耦合异常可能漏检。 权重只看残差分布相似度 ：作者也指出未来要引入上下文特征来 refine 共形加权，当前对""语义上相似但数值分布不同""的上下文异常适配较弱。 临界误报率 \(\alpha_c\) 需人为设定 ：更小的 \(\alpha_c\) 要求更多的历史正常样本 \(n_c\) ，在长期监测中可能带来内存与延迟开销。",轻量备选；p值不是单次报警为假的后验概率，依赖初始校准正常段,笔记未提供原论文链接,https://github.com/ibm-granite/granite-tsfm/tree/main/notebooks/hfdemo/adaptive_conformal_tsad,未审计,未提供,问题/方法/实验/局限来自站内笔记，未核实原文；局限可能是笔记分析,未审计,未审计,未审计,未审计或README未写，未知,未验证torch>=2.7且cu128运行兼容性,未实测，须按模型、批大小、编码器与协议另核,轻量备选；p值不是单次报警为假的后验概率，依赖初始校准正常段,F:\研究生毕设\方向检索\notes\P40.txt,问题/方法/实验/局限来自站内笔记，未核实原文；局限可能是笔记分析,未审计,未审计,未审计,2026-10-27
+P41,Causality-Aware Contrastive Learning for Robust Multivariate Time-Series Anomaly Detection,时间序列/因果对比异常检测,ICML,2025,未核实，仅站内标签,未独立核实，见笔记原文链接,https://papernotes.org/ICML2025/object_detection/causality-aware_contrastive_learning_for_robust_multivariate_time-series_anomaly/,多变量时序中正常变化与因果关系破坏难以区分,CAROTS以因果保持/破坏增强形成正负样本，再组合表示距离和预测误差检测,"【站内笔记，未逐项核实；不得直接作证据】
+实验关键数据
+主实验 ¶
+5 个真实世界数据集的 F1 分数：
+方法 SWaT WADI SMD MSL PSM USAD 79.2 56.3 82.4 73.4 96.2 AnomalyTransformer 83.5 58.1 86.2 78.8 97.1 CAROTS 86.7 63.4 88.9 82.1 97.8
+消融实验 ¶
+配置 F1 (SWaT) 说明 无因果增强 81.2 退化为普通对比 仅因果保持 83.5 缺少异常模拟 仅因果破坏 84.1 缺少正常多样性 完整 CAROTS 86.7 最优
+关键发现 ¶
+在有明显因果关系的数据集上提升最大（SWaT: +3.2%） 在合成数据集上优势更明显（因果关系显式可控） 相似度过滤使训练更稳定，提升 +1.5%","【站内笔记的局限/展望，不等于原作者声明】
+局限与展望
+因果发现模型的准确性直接影响下游性能 假设因果关系在正常状态下稳定，时变因果场景需要扩展 仅测试线性和简单非线性因果",候补；需核对点调整和阈值选择协议,https://arxiv.org/abs/2506.03964,https://github.com/kimanki/CAROTS,未审计,未提供,问题/方法/实验/局限来自站内笔记，未核实原文；局限可能是笔记分析,未审计,未审计,未审计,未审计或README未写，未知,未验证torch>=2.7且cu128运行兼容性,未实测，须按模型、批大小、编码器与协议另核,候补；需核对点调整和阈值选择协议,F:\研究生毕设\方向检索\notes\P41.txt,问题/方法/实验/局限来自站内笔记，未核实原文；局限可能是笔记分析,未审计,未审计,未审计,2026-10-27
+P42,KAN-AD: Time Series Anomaly Detection with Kolmogorov-Arnold Networks,时间序列/小模型异常检测,ICML,2025,未核实，仅站内标签,未独立核实，见笔记原文链接,https://papernotes.org/ICML2025/object_detection/kan-ad_time_series_anomaly_detection_with_kolmogorov-arnold_networks/,时序异常检测中局部基函数过敏感且模型复杂,KAN-AD以截断傅里叶基函数参数化小KAN，并用预测误差打分,"【站内笔记，未逐项核实；不得直接作证据】
+实验关键数据
+主实验 ¶
+基准 指标 KAN-AD 之前SOTA 提升 基准1 F1 / AUC 最优 - 显著 基准2 F1 / AUC 最优 - 显著 基准3 F1 / AUC 最优 - 峰值超27% 基准4 F1 / AUC 最优 - 显著 4基准平均 检测精度 - - +15%
+消融实验 ¶
+配置 关键指标 说明 傅里叶 KAN (KAN-AD) 最优 全局基函数抗局部扰动 B 样条 KAN (原始 KAN) 较差 局部基函数对噪声敏感 不同截断阶 \(K\) 性能曲线 中等 \(K\) 最优，过大过拟合 推理速度 用时 比原始 KAN 快 50%
+关键发现 ¶
+傅里叶基函数比 B 样条在 TSAD 任务上大幅领先 不到 1000 个参数即可达到 SOTA 性能——极致的参数效率 推理速度比原始 KAN 快 50%，得益于傅里叶变换的高效实现 傅里叶截断阶 \(K\) 类似于频率带宽，控制拟合精度 vs 鲁棒性的权衡","【站内笔记的局限/展望，不等于原作者声明】
+局限与展望
+傅里叶展开假设一定的周期性/规律性，对完全非周期的时间序列可能不适用 单变量函数组合可能不足以表达高维时间序列中的复杂依赖 截断阶 \(K\) 目前需要手动选择 仅在 4 个标准基准上验证，实际生产环境的多样性未覆盖",轻量候补；站内实验表缺少具体基准名，不支撑量化结论,https://arxiv.org/abs/2411.00278,笔记未提供可识别代码仓库,未审计,未提供,问题/方法/实验/局限来自站内笔记，未核实原文；局限可能是笔记分析,未审计,未审计,未审计,未审计或README未写，未知,未验证torch>=2.7且cu128运行兼容性,未实测，须按模型、批大小、编码器与协议另核,轻量候补；站内实验表缺少具体基准名，不支撑量化结论,F:\研究生毕设\方向检索\notes\P42.txt,问题/方法/实验/局限来自站内笔记，未核实原文；局限可能是笔记分析,未审计,未审计,未审计,2026-10-27
+P43,Summaries as Centroids for Interpretable and Scalable Text Clustering,文本聚类,ICLR,2026,未核实，仅站内标签,未独立核实，见笔记原文链接,https://papernotes.org/ICLR2026/information_retrieval/summaries_as_centroids_for_interpretable_and_scalable_text_clustering/,数值质心缺乏可解释性，逐样本LLM查询成本高,k-NLPmeans/k-LLMmeans周期性以摘要嵌入替代质心，支持mini-batch与流式更新,"【站内笔记，未逐项核实；不得直接作证据】
+实验关键数据
+静态聚类（text-embedding-3-small） ¶
+方法 Bank77 ACC CLINC ACC GoEmo ACC MASSIVE(D) ACC MASSIVE(I) ACC k-means ~65 ~77 ~20 ~59 ~52 k-NLPmeans LSA-mult 67.1 80.2 22.3 63.3 55.3 k-LLMmeans single 67.1 78.1 24.0 — — k-LLMmeans mult 更高 更高 更高 更高 更高
+LLM 调用效率对比 ¶
+方法 LLM 调用复杂度 数据依赖 ClusterLLM O(n) 随数据增长 LLMEdgeRefine O(n) 随数据增长 k-NLPmeans O(0) 零 LLM k-LLMmeans O(k·摘要步数) 与 n 无关
+关键发现 ¶
+即使 单次摘要步 （ \(l=60\) ）也能显著提升 k-means 性能 k-NLPmeans（零 LLM）在多数基准上接近甚至匹配 k-LLMmeans k-means++ 采样输入文档比随机采样产生更好的 LLM 摘要 跨 4 种嵌入模型、5 种 LLM、3 种经典 NLP 方法的一致性改善 在流式聚类场景中也优于标准 mini-batch k-means","【站内笔记的局限/展望，不等于原作者声明】
+局限性
+摘要质量受限于摘要器本身的能力 对于语义高度重叠的簇，摘要可能无法有效区分 需要预指定簇数 \(k\) （继承 k-means 的限制） 摘要步的频率 \(l\) 需要调节，虽然实验显示对此不敏感",算力友好候补；代码及强嵌入下剩余空间未核实,https://arxiv.org/abs/2502.09667,笔记未提供可识别代码仓库,未审计,未提供,问题/方法/实验/局限来自站内笔记，未核实原文；局限可能是笔记分析,未审计,未审计,未审计,未审计或README未写，未知,未验证torch>=2.7且cu128运行兼容性,未实测，须按模型、批大小、编码器与协议另核,算力友好候补；代码及强嵌入下剩余空间未核实,F:\研究生毕设\方向检索\notes\P43.txt,问题/方法/实验/局限来自站内笔记，未核实原文；局限可能是笔记分析,未审计,未审计,未审计,2026-10-27
+P44,Optimized Algorithms for Text Clustering with LLM-Generated Constraints,文本聚类/约束,AAAI,2026,未核实，仅站内标签,未独立核实，见笔记原文链接,https://papernotes.org/AAAI2026/aigc_detection/optimized_algorithms_for_text_clustering_with_llm-generated_constraints/,LLM成对约束查询昂贵且噪声约束破坏聚类,LSCK-HC用集合式must-link/cannot-link约束，结合硬软置信与局部搜索,"【站内笔记，未逐项核实；不得直接作证据】
+实验关键数据
+主实验 ¶
+在 5 个文本数据集（Tweet, Banking77, CLINC-I, CLINC-D, GoEmo）上使用 Instructor-large 嵌入和 GPT-4o 生成约束。
+数据集 约束比例 LSCK-HC ACC PCK ACC k-means++ ACC 提升(vs k-means++) Tweet 40% ~68% ~65% ~62% +6% CLINC-D 40% ~78% ~75% ~74% +4% Banking77 20% 最佳 - - 20% 约束比最优
+查询效率对比（约束生成） ¶
+数据集 约束比例 FSC #Query Ours #Query 倍数减少 FSC ML-RI Ours ML-RI Banking77-ML 2% 5260 91 57x 9.92% 96.42% Banking77-ML 20% 26580 480 55x 11.40% 85.83% CLINC-ML 2% 25095 91 275x 42.05% 96.25% Tweet-ML 2% 13070 99 132x 50.00% 100.00% Tweet-CL 20% 31485 821 38x 99.17% 99.56%
+关键发现 ¶
+查询次数减少 20-275 倍 ：集合约束格式是关键——单次查询覆盖多个关系 ML 约束质量大幅提升 ：FSC 的 ML 准确率在低比例时极低（Banking77 仅 9.92%），因其 ML 约束是从 CL 推理间接得到的；本文直接基于距离选择候选集，ML 准确率达 85-100% 20% 约束比为最佳甜区 ：更高比例导致错误约束增多且改善趋于饱和 较弱的嵌入模型（E5）从约束聚类中获益更大（ARI 提升近 10%），因为更低的基线留有更多纠正空间","【站内笔记的局限/展望，不等于原作者声明】
+局限与展望
+仅在短文本聚类上验证，对长文档或多模态数据的效果未知 约束生成依赖嵌入空间的距离结构，若嵌入质量差则候选选择会退化 惩罚权重 \(w_m, w_{cl}\) 的设置缺乏自动调优机制 仅使用 GPT-4o 和 DeepSeek 两个 LLM，不同模型的约束质量差异未充分探索 固定 \(k\) 值假设——实际应用中簇数未知的情况更常见",算力友好候补；API成本与额外语义监督要记账,https://arxiv.org/abs/2601.11118,https://github.com/weihong-wu/LSCK-HC,未审计,未提供,问题/方法/实验/局限来自站内笔记，未核实原文；局限可能是笔记分析,未审计,未审计,未审计,未审计或README未写，未知,未验证torch>=2.7且cu128运行兼容性,未实测，须按模型、批大小、编码器与协议另核,算力友好候补；API成本与额外语义监督要记账,F:\研究生毕设\方向检索\notes\P44.txt,问题/方法/实验/局限来自站内笔记，未核实原文；局限可能是笔记分析,未审计,未审计,未审计,2026-10-27
+P45,Bures-Isotropy Alignment: Manifold Learning of Generalized Category Discovery,已有备选补充/GCD未知K,ICLR,2026,未核实，仅站内标签,未独立核实，见笔记原文链接,https://papernotes.org/ICLR2026/self_supervised/bures-isotropy_alignment_manifold_learning_of_generalized_category_discovery/,GCD中ViT类别token谱坍缩影响新类区分与簇数估计,BIA用Bures各向同性对齐的核范数代理正则增加谱容量,"【站内笔记，未逐项核实；不得直接作证据】
+实验关键数据
+主实验 ¶
+论文在粗粒度和细粒度 GCD 数据集上评估 BIA，包括 CIFAR100、ImageNet100、CUB、Stanford Cars、FGVC Aircraft 和 Herbarium19。评价分两种设置：一种假设聚类时给定真实类别数 \(K\) ，另一种不提供真实 \(K\) ，需要模型估计类别数。下面挑选最能说明问题的结果。
+设置 Baseline 数据集 All Old New BIA 后变化 给定真实 \(K\) SelEx CUB 78.7 → 80.6 81.3 → 81.0 77.5 → 80.4 New +2.9，All +1.9 给定真实 \(K\) SimGCD ImageNet100 83.3 → 86.7 92.1 → 93.1 78.9 → 83.6 New +4.7，All +3.4 给定真实 \(K\) CMS CUB 67.1 → 71.1 74.9 → 74.1 63.2 → 66.9 All +4.0，New +3.7 给定真实 \(K\) SPTNet Stanford Cars 56.2 → 58.8 70.3 → 75.4 46.6 → 50.8 三项均明显提升 未给定真实 \(K\) CMS CUB 66.2 → 68.7 69.7 → 74.1 64.4 → 66.0 Old +4.4，All +2.5 未给定真实 \(K\) CMS CIFAR100 77.8 → 79.5 84.0 → 84.7 65.3 → 69.1 New +3.8
+整体趋势是：BIA 对新类 accuracy 的帮助通常比旧类更明显，这和它恢复 intra-class completeness、避免未知类过度合并的动机一致。在给定真实 \(K\) 的细粒度数据集上，BIA 对 SimGCD、CMS、SPTNet、SelEx 均有增益；在不知道真实 \(K\) 的设置下，它也能提升 CMS 在多数数据集上的 All/New 表现。
+消融实验 ¶
+消融 / 分析 关键指标 说明 \(\lambda\) 与特征维度 \(D\) 敏感性 CUB / Cars / Aircraft clustering accuracy BIA 对 \(\lambda\) 不敏感；单纯降低维度 \(D\) 来避免坍缩并不理想，因为会直接损失有用语义维度 类别数估计 ImageNet100: CMS 估计 \(K=98\) 、BIA 后 \(K=100\) BIA 改善类别数估计，在 ImageNet100 上达到正确估计；CUB、Cars 的误差也有下降 与 SSL isotropy 正则对比 SimGCD + BIA 在 CUB All 为 62.1，高于大多数 VICReg/CorInfoMax 配置 VICReg/CorInfoMax 能带来部分提升，但更依赖超参数，且不是专门面向 GCD 的 batch class-token Gram 与 Iso-Frob / Iso-Ent 对比 CUB batch size 128: BIA All 62.1，Iso-Frob 61.5，Iso-Ent 61.8 BIA 在不同 batch size 下更稳定，小 batch 时优势更明显 计算开销 SVD 相对 backbone 约 0.37%--1.47%；整 epoch 时间增量 <1% BIA 的主要代价来自 batch 矩阵 SVD，但实际训练开销很低
+关键发现 ¶
+BIA 的收益主要来自谱结构修复，而不是更强的分类头或后处理。它在多个 baseline 上都有效，说明它补的是 GCD 表征空间的共性短板。 新类 accuracy 的提升更显著，尤其在 CUB、ImageNet100、Stanford Cars 这类需要细粒度区分或类别数估计的数据集上，符合“恢复未知类内部语义容量”的解释。 CIFAR100 和 Herbarium19 的收益相对有限。论文认为原因不是 BIA 失效，而是底层 embedding 质量本身受限：CIFAR100 图像分辨率低，插值进 ViT 后高频细节不足；Herbarium19 类别多且与预训练分布差异大，原始表征已经很难给出可分几何。 BIA 比更刚性的 whitening 或 entropy 正则更稳。它不是强制每个方向都等权，而是通过核范数鼓励更高有效秩，在保留语义各向异性的同时缓解坍缩。","【站内笔记的局限/展望，不等于原作者声明】
+局限与展望
+BIA 依赖底层 embedding 已经有一定语义质量。如果预训练模型对数据域覆盖很差，或者输入分辨率损失了关键细节，单靠谱正则无法凭空创造可分语义。 论文主要在视觉 GCD 和 ViT class token 上验证，虽然方法声称 architecture-agnostic，但在文本、音频、多模态 GCD 中，token pooling 和 batch 语义结构可能不同，还需要单独验证。 BIA 对类别不均衡和伪标签噪声的解释偏谱分析，实验上展示了稳定性，但还可以进一步研究何时 isotropy 会削弱真实的类别层级结构。例如某些数据天然有长尾或层级语义，完全均匀的谱未必总是最优。 当前 loss 只使用 mini-batch 级 Gram。小 batch 下谱估计噪声会更大，虽然论文显示 BIA 比 Iso-Frob/Iso-Ent 更稳，但未来可以探索 memory bank 或跨 batch 统计，让几何估计更可靠。 类别数估计的提升主要通过 CMS 框架展示，后续可以更系统地分析 BIA 如何影响不同 K-estimation 策略，而不只是看最终误差。",只补充直接竞争；不是空白的谱正则方向,https://openreview.net/forum?id=nfVKTJ1MJ3,https://github.com/lytang63/BIA,未审计,未提供,问题/方法/实验/局限来自站内笔记，未核实原文；局限可能是笔记分析,未审计,未审计,未审计,未审计或README未写，未知,未验证torch>=2.7且cu128运行兼容性,未实测，须按模型、批大小、编码器与协议另核,只补充直接竞争；不是空白的谱正则方向,F:\研究生毕设\方向检索\notes\P45.txt,问题/方法/实验/局限来自站内笔记，未核实原文；局限可能是笔记分析,未审计,未审计,未审计,2026-10-27
+P46,SpectralGCD: Spectral Concept Selection and Cross-modal Representation Learning for Generalized Category Discovery,已有备选补充/多模态GCD,ICLR,2026,未核实，仅站内标签,未独立核实，见笔记原文链接,https://papernotes.org/ICLR2026/multimodal_vlm/spectralgcd_spectral_concept_selection_and_cross-modal_representation_learning_f/,GCD中概念字典冗余与跨模态语义漂移,SpectralGCD谱过滤CLIP概念字典，预计算教师表示并正反蒸馏学生,"【站内笔记，未逐项核实；不得直接作证据】
+实验结果
+表1：与SOTA方法的全面对比（准确率%） ¶
+方法 类型 CUB All CUB New Cars All Cars New Aircraft All IN-100 All SimGCD 单模态 60.3 57.7 53.8 45.0 54.2 83.0 SelEx 单模态 73.6 72.8 58.5 50.3 57.1 83.1 DebGCD 单模态 66.3 63.5 65.3 57.4 61.7 85.9 GET 多模态 77.0 76.4 78.5 74.5 58.9 91.7 TextGCD 多模态 76.6 74.7 86.9 86.7 50.8 88.0 SpectralGCD 多模态 79.2 78.5 89.1 87.4 63.0 93.4
+表2：蒸馏方式消融（Stanford Cars） ¶
+蒸馏损失 Spearman ρ All准确率 FD + RD 0.665±0.09 89.1 仅FD 0.639±0.11 86.0 仅RD 0.611±0.11 87.5 无蒸馏 0.487±0.15 77.4
+表3：字典选择鲁棒性（Stanford Cars / CIFAR-100） ¶
+方法 字典 Cars All CIFAR100 All TextGCD* OpenImagesV7 78.1 82.6 TextGCD* Tags 86.2 84.3 SpectralGCD OpenImagesV7 85.8 84.9 SpectralGCD Tags 89.1 86.1","【站内笔记的局限/展望，不等于原作者声明】
+局限性
+对教师模型和字典的依赖 ：SpectralGCD的性能受教师质量和概念字典覆盖范围影响。若教师缺乏领域知识或字典未覆盖关键概念，性能会下降。表4显示使用ViT-B/16作教师时CUB All仅72.7%，远低于用ViT-H/14的79.2%。 概念字典非图像特定 ：当前使用数据集级别的全局概念字典，未针对每张图像做自适应——可能遗漏对特定图像重要但全局不显著的概念。 类别数需已知 ：与大多数GCD方法一样，需要预设类别数K，在实际应用中可能难以确定。 谱过滤的阈值敏感性 ：虽然默认 \(\beta_e=0.95, \beta_c=0.99\) 在多数数据集上表现良好，但最优值可能因数据集而异。",只补充直接竞争；强ViT-H教师和词典信息预算必须匹配,https://arxiv.org/abs/2602.17395,https://github.com/miccunifi/SpectralGCD,未审计,未提供,问题/方法/实验/局限来自站内笔记，未核实原文；局限可能是笔记分析,未审计,未审计,未审计,未审计或README未写，未知,未验证torch>=2.7且cu128运行兼容性,未实测，须按模型、批大小、编码器与协议另核,只补充直接竞争；强ViT-H教师和词典信息预算必须匹配,F:\研究生毕设\方向检索\notes\P46.txt,问题/方法/实验/局限来自站内笔记，未核实原文；局限可能是笔记分析,未审计,未审计,未审计,2026-10-27
+P47,Nonparametric Deep Fine-grained Clustering with Low-Rank Guided Vision-Language Model,已有备选补充/未知K细粒度聚类,CVPR,2026,未核实，仅站内标签,未独立核实，见笔记原文链接,https://papernotes.org/CVPR2026/self_supervised/nonparametric_deep_fine-grained_clustering_with_low-rank_guided_vision-language_/,无监督细粒度聚类需要同时控制类内紧凑、类间分离并估计簇数,VLM低秩top-k教师引导、实例扰动与簇心正交嵌入DPMM变分推断,"【站内笔记，未逐项核实；不得直接作证据】
+实验关键数据
+指标说明 ：NMI（Normalized Mutual Information，归一化互信息，衡量预测簇与真实标签的信息一致性，越高越好）；ACC（Clustering Accuracy，最优匹配后的聚类准确率，越高越好）。两者均以百分数报告。
+主实验 ¶
+四个细粒度数据集（CUB-200-2011 鸟、Stanford Dogs 狗、Oxford Flower 花、Oxford-IIIT Pet 宠物）上，配 CLIP 教师的版本（Ours+CLIP）在全部数据集刷新 SOTA；即便用普通 ResNet 教师也已超过多数 VLM 引导方法。
+数据集 指标 Ours+CLIP 之前最好 提升 CUB-200-2011 NMI / ACC 70.9 / 41.8 64.6 / 34.7 (TAC) +6.3 / +7.1 Stanford Dogs NMI / ACC 69.1 / 53.2 64.8 / 48.7 (TAC) +4.3 / +4.5 Oxford Flower NMI / ACC 88.4 / 72.6 81.5 / 69.7 (CLUDI) +6.9 / +2.9 Oxford-IIIT Pet NMI / ACC 88.0 / 82.2 87.3 / 74.1 (CLUDI) +0.7 / +8.1
+在大规模通用数据集（ImageNet-50/100/200）上同样有竞争力：ImageNet-50 达 92.4/84.2（NMI/ACC），ImageNet-100 达 87.8/77.1，均超 CLUDI；ImageNet-200 的 ACC（72.3）略逊 CLUDI（73.7）。
+簇数推断（Table 2） ：预测簇数与真实类别数高度吻合——CUB 200→210.4、Dogs 120→127.1、Flower 102→104.6、Pet 37→39.3，验证 DPMM 框架能自动逼近真实簇数而非靠预设。
+消融实验 ¶
+在 Oxford Flower 上逐组件拆解（基线 = DPMM + 标准实例/簇对比损失）：
+配置 NMI ACC 说明 (a) Baseline 52.1 24.4 DPMM + 普通对比 (b) + \(L_{guidance}\) 75.8 39.6 加低秩引导 (c) + 扰动 Pert. 76.6 42.1 再加输入扰动 (d) + \(L_{ortho}\) 81.7 57.5 在 (a) 上加正交引导 (e) Ours (Full) 84.7 65.5 全部组件协同
+关键发现 ¶
+低秩引导贡献最大 ：单加 \(L_{guidance}\) 就把 ACC 从 24.4 拉到 39.6（NMI 52.1→75.8），是涨幅最猛的单一组件；正交引导单加（d）也能把 ACC 提到 57.5，两者协同（e）才到 65.5，印证""类内紧凑 + 类间正交""的协同效应。 top-k 稀疏度 \(k\) 要小 ：Stanford Dogs 上 \(k=3\) 峰值（ACC 40.3），Flower 上 \(k\in[3,5]\) 近最优； \(k\) 过大会引入教师的噪声信号反而掉点，故全局默认 \(k=3\) 。 温度鲁棒 ： \(\tau_i=0.1\) 、 \(\tau_c=0.5\) 附近性能稳定见顶。 t-SNE 显示特征空间从 Epoch 0 的混沌纠缠演化到 Epoch 300 的紧凑可分簇，直观佐证双引导机制。","【站内笔记的局限/展望，不等于原作者声明】
+局限与展望
+依赖一个强 VLM 教师：教师质量直接决定 top-k 目标质量，弱教师或域外数据上 top-k 可能给错信号（论文 ImageNet-200 ACC 略逊或与此相关 ⚠️ 仅为笔者推测）。 评测沿用""不分训练/测试集，全量当聚类集""的惯例，泛化到真正未见样本上的表现未直接验证。 推断簇数虽接近真值但普遍 略多于 GT（如 CUB 210.4 vs 200），过分裂在更细域是否会放大值得关注； \(\alpha\) 、 \(T\) 的敏感性放在补充材料，正文未充分展开。 多损失（ \(L_{guidance}/L_{clu\_con}/L_{ins\_con}/L_{ortho}\) + DPMM）+ 多超参（ \(\lambda_{guide},\lambda_{ortho},\tau_i,\tau_c,k,\alpha\) ）调参成本不低。",直接竞争补充；不是简单加DPMM即可创新,https://openaccess.thecvf.com/content/CVPR2026/html/Ye_Nonparametric_Deep_Fine-grained_Clustering_with_Low-Rank_Guided_Vision-Language_Model_CVPR_2026_paper.html,https://github.com/HenryWells02/VLMFine-Clustering,未审计,未提供,问题/方法/实验/局限来自站内笔记，未核实原文；局限可能是笔记分析,未审计,未审计,未审计,未审计或README未写，未知,未验证torch>=2.7且cu128运行兼容性,未实测，须按模型、批大小、编码器与协议另核,直接竞争补充；不是简单加DPMM即可创新,F:\研究生毕设\方向检索\notes\P47.txt,问题/方法/实验/局限来自站内笔记，未核实原文；局限可能是笔记分析,未审计,未审计,未审计,2026-10-27
+P48,ABRA: Teleporting Fine-Tuned Knowledge Across Domains for Open-Vocabulary Object Detection,目标检测/粗筛,CVPR,2025,未核实，仅站内标签,未独立核实，见笔记原文链接,https://papernotes.org/CVPR2025/object_detection/abra_teleporting_fine-tuned_knowledge_across_domains_for_open-vocabulary_object_/,开放词汇检测跨域转移类别知识而缺目标类标注,ABRA先训练域专家与轻量类别残差，再通过SVD基旋转传送残差,"【站内笔记，未逐项核实；不得直接作证据】
+实验关键数据
+主实验 ¶
+Cityscapes → Foggy Cityscapes（mAP / AP50）
+方法 Bus Motor Rider Train Truck Average Fine-tuning (上界) 58.75/73.50 31.22/55.01 43.87/68.06 32.95/58.75 40.03/57.08 41.36/62.48 Zero shot 48.63/61.10 23.20/41.91 18.96/31.70 16.31/44.02 31.20/41.88 27.66/44.12 Source 54.77/66.93 29.62/50.96 40.25/61.99 29.40/55.30 37.23/51.54 38.25/57.34 Task Analogy 41.14/48.21 10.24/20.32 9.35/16.75 10.10/24.00 19.77/24.70 18.12/26.79 ParamΔ 50.23/60.41 20.59/40.59 18.53/31.44 21.70/49.42 30.42/40.26 28.29/44.42 ABRA (ours) 57.24/70.53 29.98/55.47 42.27/66.08 35.09/59.94 38.10/53.27 40.54/61.06
+SDGOD 跨域实验（mAP / AP50）
+方法 Day Foggy Dusk Rainy Night Clear Night Rainy Average Fine-tuning 36.37/57.83 26.77/50.65 36.86/69.40 16.81/29.85 29.20/51.93 Zero shot 26.36/41.10 19.55/34.93 27.50/49.63 9.19/13.60 20.65/34.82 ABRA (ours) 32.35/53.81 27.99/51.39 35.94/66.11 16.13/30.97 28.10/50.57
+消融实验 ¶
+域专家设计选择消融
+策略 效果 Zero Shot w/ Obj. 零样本 + objectification 组合，性能受限 Supervised（保留语义标签） 保留原始类别标签训练，迁移性差 Objectification 最优，类别无关表征最适合跨域传输
+初始化效果
+方法 Init. mAP AP50 FFT θ₀ 41.36 62.48 FFT ABRA 42.80 62.77 FDA θ₀ 38.25 57.80 FDA ABRA 40.74 61.35
+关键发现 ¶
+ABRA 在 Cityscapes→Foggy 实验中平均 mAP 达 40.54，接近完全微调上界 41.36，远超所有竞争方法 Task Analogy 和 ParamΔ 在严重域偏移下失效（ParamΔ 在 SDGOD 上平均 mAP 仅 8.87） 类别级专家化（单类一个模型）比合并专家（Merge）在所有类别上 AP50 更高 ABRA 为下游任务提供更优初始化，FFT 和 FDA 用 ABRA 初始化均提升 1-3 个点 Few-shot 实验中 ABRA 在 1/5/10/20/30 shot 下始终优于 θ₀ 初始化","【站内笔记的局限/展望，不等于原作者声明】
+局限与展望
+依赖 SVD 分解假设 ：假设源域和目标域的权重空间可以通过正交变换对齐，对极端域偏移可能不成立 仅用 top-3 类别做 objectification ：类别选择策略较简单，可能遗漏重要的域信息 单类别独立传送 ：每个类别需要独立的 SVFT 训练和传送，类别间的关联未建模 基线有限 ：目前只和 Task Analogy、ParamΔ 比较，可以加入更多 DAOD 方法 实验规模 ：仅在 Cityscapes 和 SDGOD 上验证，对更大规模场景（如 COCO→其他域）尚未验证",有轻量适配线索；仍需训练域专家，不能按参数少推断8GB适配,https://arxiv.org/abs/2603.12409,笔记未提供可识别代码仓库,未审计,未提供,问题/方法/实验/局限来自站内笔记，未核实原文；局限可能是笔记分析,未审计,未审计,未审计,未审计或README未写，未知,未验证torch>=2.7且cu128运行兼容性,未实测，须按模型、批大小、编码器与协议另核,有轻量适配线索；仍需训练域专家，不能按参数少推断8GB适配,F:\研究生毕设\方向检索\notes\P48.txt,问题/方法/实验/局限来自站内笔记，未核实原文；局限可能是笔记分析,未审计,未审计,未审计,2026-10-27
+P49,Efficient Test-Time Adaptive Object Detection via Sensitivity-Guided Pruning,目标检测/粗筛,CVPR,2025,未核实，仅站内标签,未独立核实，见笔记原文链接,https://papernotes.org/CVPR2025/object_detection/efficient_test-time_adaptive_object_detection_via_sensitivity-guided_pruning/,持续测试时域偏移引发检测通道负迁移且适配计算昂贵,按图像级和RoI级敏感性剪枝BN通道，并随机重激活防止误剪,"【站内笔记，未逐项核实；不得直接作证据】
+实验关键数据
+主实验 ¶
+Cityscapes → Cityscapes-C 持续自适应检测（10 轮平均 mAP 与 FLOPs）：
+方法 Avg mAP 前向 FLOPs 反向 FLOPs 总 FLOPs Direct Test 4.5 250.7 0.0 250.7 STFAR 7.6 501.4 501.4 1002.9 ActMAD 8.9 250.7 501.4 752.2 WHW 9.1 253.0 255.2 508.2 Ours 11.4 224.6 225.0 449.6
+本方法在适应精度上超越所有对比方法（比 WHW 高 2.3 mAP），同时总 FLOPs 最低（比 ActMAD 减少 40%，比 WHW 减少 12%）。
+消融实验 ¶
+配置 Avg mAP 总 FLOPs 说明 Full model 11.4 449.6 完整方法 均匀剪枝（无敏感性引导） 9.8 450.1 不区分通道敏感性 仅图像级敏感性 10.6 449.9 缺少实例级信息 仅实例级敏感性 10.3 450.0 缺少全局统计信息 w/o 通道重激活 10.8 441.2 计算量更少但精度下降
+关键发现 ¶
+敏感性引导 vs 均匀剪枝：引导后 mAP 提升 1.6（11.4 vs 9.8），说明""剪什么""比""剪多少""更重要。 图像级 + 实例级双粒度优于任一单粒度，两者提供互补的域偏移信息。 通道重激活贡献了 0.6 mAP（10.8→11.4），虽然增加了少量计算，但有效避免了误剪。 在 UAVDT→UAVDT-C（无人机场景）上同样验证了一致的优势，说明方法具有跨场景泛化性。 剪枝比例的二次方效率增益：保留 75% 通道可使某些卷积层计算量减至 ~56%。","【站内笔记的局限/展望，不等于原作者声明】
+局限与展望
+依赖 BN 层作为剪枝媒介，对于不使用 BN 的架构（如 ViT、LayerNorm 模型）适用性有限。 敏感性度量需要预存源域特征统计量（均值和方差），增加了部署前的准备工作。 当前仅在 Faster R-CNN 上验证，对单阶段检测器（YOLO 系列）和 Transformer 检测器的适用性待验证。 剪枝阈值 \(t\) 和剪枝比例阈值 \(p\) 是手动设定的超参数，自适应确定这些阈值可能进一步提升性能。",仅粗筛；Faster R-CNN源模型与框架兼容成本高,https://arxiv.org/abs/2506.02462,笔记未提供可识别代码仓库,未审计,未提供,问题/方法/实验/局限来自站内笔记，未核实原文；局限可能是笔记分析,未审计,未审计,未审计,未审计或README未写，未知,未验证torch>=2.7且cu128运行兼容性,未实测，须按模型、批大小、编码器与协议另核,仅粗筛；Faster R-CNN源模型与框架兼容成本高,F:\研究生毕设\方向检索\notes\P49.txt,问题/方法/实验/局限来自站内笔记，未核实原文；局限可能是笔记分析,未审计,未审计,未审计,2026-10-27
+P50,Adaptive Scaling of Policy Constraints for Offline Reinforcement Learning,强化学习/粗筛,ICLR,2026,未核实，仅站内标签,未独立核实，见笔记原文链接,https://papernotes.org/ICLR2026/reinforcement_learning/adaptive_scaling_of_policy_constraints_for_offline_reinforcement_learning/,离线RL中RL与行为克隆约束的权重需逐数据集调参,ASPC用双层二阶优化动态学习约束缩放，并依赖稳定的LayerNorm critic,"【站内笔记，未逐项核实；不得直接作证据】
+实验关键数据
+主实验 ¶
+在 D4RL 四大域共 39 个数据集上评测。ASPC、TD3+BC、wPC、A2PR 都用 单一超参 ，而 IQL、ReBRAC 用 逐数据集网格搜索 。
+域 TD3+BC* (✓) A2PR (✓) IQL (✗) wPC* (✓) ReBRAC (✗) ASPC (✓) MuJoCo Avg 70.7 74.2 72.9 77.8 81.2 82.1 Maze2d Avg 68.9 123.5 46.2 94.6 96.7 147.2 AntMaze Avg 35.4 38.8 58.3 78.7 76.8 74.5 Adroit Avg 46.4 4.7 53.4 28.8 58.6 55.7 Total Avg 57.7 51.2 62.6 64.2 74.8 77.9
+（✓=固定超参，✗=逐数据集调参；*表示用了 §5.5 的鲁棒 critic。）ASPC 在 MuJoCo、Maze2d 上拿最优，Adroit、AntMaze 上有竞争力，总均分 77.9 为全场最高—— 用一套超参超过了需要逐数据集精调的 ReBRAC（74.8） ，相对最弱基线提升约 35%。
+消融实验 ¶
+动态调 \(\alpha\) 的必要性（每格括号是相对 Naive 的相对变化）：
+域 Naive α=2.5 Converged α Linear α Dynamic α (ASPC) MuJoCo 70.3 79.3 (↑12.8%) 77.0 (↑9.5%) 82.1 (↑16.8%) Maze2d 61.9 133.2 (↑115.2%) 103.3 (↑66.9%) 147.2 (↑137.8%) AntMaze 28.7 64.1 (↑123.3%) 56.3 (↑96.2%) 74.5 (↑159.2%) Adroit 49.9 49.1 (↓1.6%) 47.6 (↓4.6%) 55.7 (↑11.6%) Total Avg 57.0 71.8 (↑25.9%) 66.7 (↑17.0%) 77.9 (↑36.6%)
+外层损失项消融（相对完整 ASPC 的百分差，越接近 0 越好）：单用 \(L_1\) 最差；只加 \(L_2\) 把 MuJoCo/Adroit 拉到接近满配水平，但 AntMaze 几乎不动；只加 \(L_3\) 大幅救起 AntMaze 却对 MuJoCo/Adroit 无感；Maze2d 两项缺一不可——与 Proposition 4.2 的""互为约束""完全吻合。
+关键发现 ¶
+光找到一个好的固定 \(\alpha\) 不够，必须在训练全程动态调 ：把 \(\alpha\) 固定为 ASPC 最终收敛值（Converged α）已经比 Naive 强很多，但仍被 Dynamic α 大幅甩开（总均分 71.8 vs 77.9），Linear 调度只补上部分差距——证明优势来自""动态自适应""本身而非""找到了好常数""。 \(\alpha\) 的演化可解释 ：高质量数据集 \(\alpha\) 收敛得小（偏 BC）、低质量数据集 \(\alpha\) 大（偏 RL）；door/pen/hammer/relocate 这类窄专家分布任务 \(\alpha\approx10^{-1}\) ，antmaze/maze2d 这类含大量次优轨迹的任务 \(\alpha>10\) ；训练早期 \(\alpha\) 先降（信 BC）、critic 稳后逐步升（放权 RL）。 鲁棒 critic 是动态 \(\alpha\) 能跑通的前提 ：去掉三层+LayerNorm 的鲁棒 critic 后，Q 值高估失控、ASPC 甚至退化。 开销可控 ： \(k_\alpha\) 设大（如 30）时运行时间几乎等于 TD3+BC（97 vs 99 min 量级），仍保持高性能。 强通用性 ：把 ASPC 的可学习 \(\alpha\) 思路接到 IQL/CQL/Diffusion-QL/FQL 上都能涨点（CQL 平均 ↑7.8%，因为调 \(\alpha\) 直接改保守度；IQL 涨得最少，因其隐式 Q 学习让加大 \(\alpha\) 难以真正偏向 RL），在 OGBench 目标条件 RL 上也超过所有基线。","【站内笔记的局限/展望，不等于原作者声明】
+局限与展望
+依赖鲁棒 critic ：动态调 \(\alpha\) 会放大 Q 值不稳，必须配三层+LayerNorm 的 critic 才不崩；这意味着方法对 critic 架构有一定耦合，换骨干时可能要重新调稳定性。 二阶梯度的开销靠 \(k_\alpha\) 拉大来掩盖 ：虽然实验显示 \(k_\alpha\) 增大不太掉点，但本质上是用""少调几次 \(\alpha\) ""换速度，极端情况下若任务需要更频繁地调 \(\alpha\) ，开销与性能的权衡会更紧张。 AntMaze/Adroit 并非全面最优 ：ASPC 在这两个域被 wPC 或 ReBRAC 略微反超，说明单一超参的自适应在某些任务上仍不及该任务的专门精调；自适应的""普适性""和单任务""极致性能""之间还有空间。 理论假设较强 ：性能保证建立在 critic 与转移核对动作 Lipschitz 连续等假设上，实际深度网络是否严格满足、保证在多大程度上成立，值得进一步检验（⚠️ 定理细节以原文 Appendix 为准）。",小MLP环境可能适合8GB；多seed和仿真环境成本仍高,https://openreview.net/forum?id=liOHottW7G,笔记未提供可识别代码仓库,未审计,未提供,问题/方法/实验/局限来自站内笔记，未核实原文；局限可能是笔记分析,未审计,未审计,未审计,未审计或README未写，未知,未验证torch>=2.7且cu128运行兼容性,未实测，须按模型、批大小、编码器与协议另核,小MLP环境可能适合8GB；多seed和仿真环境成本仍高,F:\研究生毕设\方向检索\notes\P50.txt,问题/方法/实验/局限来自站内笔记，未核实原文；局限可能是笔记分析,未审计,未审计,未审计,2026-10-27
+P51,Enhancing Robustness of Offline RL Under Data Corruption via SAM,强化学习/粗筛,AAAI,2026,未核实，仅站内标签,未独立核实，见笔记原文链接,https://papernotes.org/AAAI2026/reinforcement_learning/enhancing_robustness_of_offline_reinforcement_learning_under_data_corruption_via/,离线RL数据污染使价值网络优化不稳健,对IQL/RIQL的价值网络使用SAM两步优化寻找更平坦解,"【站内笔记，未逐项核实；不得直接作证据】
+实验关键数据
+主实验（D4RL medium-replay，随机损坏） ¶
+环境 损坏类型 IQL IQL+SAM RIQL RIQL+SAM HalfCheetah 观测 21.01 33.33 26.03 33.74 HalfCheetah 混合 20.93 33.02 22.08 32.06 Walker2d 观测 24.74 31.75 30.48 30.93 Hopper 观测 58.42 73.21 44.09 53.19 平均 34.47 44.40 33.97 39.47
+对抗损坏结果 ¶
+方法 平均得分 IQL 22.45 IQL+SAM 36.03 (+60%) RIQL 38.20 RIQL+SAM 40.09
+奖励曲面可视化 ¶
+IQL 收敛到尖锐高峰和深谷区域；IQL+SAM 学到显著更平滑更平坦的奖励曲面——直观确认 SAM 引导代理到更鲁棒的解。
+关键发现 ¶
+SAM 对混合损坏的改进尤为明显——混合损坏是最困难的设定 对抗损坏下 IQL+SAM 提升 60%+，效果惊人 仅需替换优化器，不改变任何算法逻辑——真正的即插即用 计算开销约 2x（每步需两次前向+反向传播）","【站内笔记的局限/展望，不等于原作者声明】
+局限与展望
+Student Abstract 篇幅限制，仅 3 个环境的 medium-replay 数据集 SAM 的计算开销（2x）在实时应用中需要考虑 \(\rho\) 参数的敏感性分析不够 未与其他鲁棒RL方法（如 UWMSG, TRACER, ADG）全面对比",Student Abstract不等于充分的大论文基线；只测少数环境,https://arxiv.org/abs/2511.17568,笔记未提供可识别代码仓库,未审计,未提供,问题/方法/实验/局限来自站内笔记，未核实原文；局限可能是笔记分析,未审计,未审计,未审计,未审计或README未写，未知,未验证torch>=2.7且cu128运行兼容性,未实测，须按模型、批大小、编码器与协议另核,Student Abstract不等于充分的大论文基线；只测少数环境,F:\研究生毕设\方向检索\notes\P51.txt,问题/方法/实验/局限来自站内笔记，未核实原文；局限可能是笔记分析,未审计,未审计,未审计,2026-10-27

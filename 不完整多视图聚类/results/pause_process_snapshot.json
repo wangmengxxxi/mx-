@@ -1,0 +1,20 @@
+[
+  {
+    "ProcessId": 10916,
+    "ParentProcessId": 28628,
+    "CreationDate": "2026-10-27T16:05:28.323931+08:00",
+    "CommandLine": "\"F:\\研究生毕设\\不完整多视图聚类\\envs\\imvc_cpu\\python.exe\" -I \"F:\\研究生毕设\\不完整多视图聚类\\scripts\\run_batch.py\""
+  },
+  {
+    "ProcessId": 41088,
+    "ParentProcessId": 10916,
+    "CreationDate": "2026-10-27T16:39:50.976373+08:00",
+    "CommandLine": "F:\\研究生毕设\\不完整多视图聚类\\envs\\imvc_cpu\\python.exe -I F:\\研究生毕设\\不完整多视图聚类\\scripts\\run_diagnostic.py --root F:\\研究生毕设\\不完整多视图聚类 --dataset Scene-15 --rate 0.5 --seed 2 --epochs 500 --threads 4 --out F:\\研究生毕设\\不完整多视图聚类\\results\\full\\Scene-15_r0.5_s2"
+  },
+  {
+    "ProcessId": 18772,
+    "ParentProcessId": 10916,
+    "CreationDate": "2026-10-27T16:39:56.834713+08:00",
+    "CommandLine": "F:\\研究生毕设\\不完整多视图聚类\\envs\\imvc_cpu\\python.exe -I F:\\研究生毕设\\不完整多视图聚类\\scripts\\run_diagnostic.py --root F:\\研究生毕设\\不完整多视图聚类 --dataset Scene-15 --rate 0.5 --seed 3 --epochs 500 --threads 4 --out F:\\研究生毕设\\不完整多视图聚类\\results\\full\\Scene-15_r0.5_s3"
+  }
+]

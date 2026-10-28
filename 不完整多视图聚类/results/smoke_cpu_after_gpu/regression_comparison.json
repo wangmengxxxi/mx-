@@ -1,0 +1,11 @@
+{
+  "all_passed": true,
+  "all_branch_input_hashes_equal": true,
+  "all_branch_metrics_equal": true,
+  "mask_equal": true,
+  "other_arrays_bitwise_equal": true,
+  "non_bitwise_derived_arrays_max_abs_difference": {
+    "s1": 9.641930571286598e-13,
+    "prototypes": 7.450580596923828e-09
+  }
+}

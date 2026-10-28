@@ -1,0 +1,741 @@
+--- scripts/cpu_before_gpu/run_diagnostic.py
++++ scripts/run_diagnostic.py
+@@ -1,14 +1,13 @@
+-"""CPU-only, fixed-final-epoch COMPLETER diagnostic. No label-driven training.
++"""CPU/CUDA, fixed-final-epoch COMPLETER diagnostic. No label-driven training.
+ 
+ Reviewed baseline modules are loaded only from scripts/completer, with python -I.
+ The wrapper changes evaluation instrumentation, never the training objective.
+ """
+ import os
+-os.environ['CUDA_VISIBLE_DEVICES']=''
+ os.environ.setdefault('OMP_NUM_THREADS','2')
+ os.environ.setdefault('MKL_NUM_THREADS','2')
+ os.environ.setdefault('OPENBLAS_NUM_THREADS','2')
+-import argparse, hashlib, itertools, json, logging, random, sys, time, types
++import argparse, hashlib, itertools, json, logging, random, sys, time, types, warnings
+ from pathlib import Path
+ import numpy as np
+ import torch
+@@ -46,10 +45,10 @@
+             (x1,m.autoencoder1,m.txt2img,m.autoencoder2,x2),
+             (x2,m.autoencoder2,m.img2txt,m.autoencoder1,x1)]):
+             observed=mask[:,v]==1;missing=~observed
+-            z=torch.zeros((len(mask),dim),dtype=torch.float32)
++            z=torch.zeros((len(mask),dim),dtype=torch.float32,device=x.device)
+             z[observed]=ae.encoder(x[observed])
+             if missing.any():z[missing]=predictor(other_ae.encoder(other_x[missing]))[0]
+-            zs.append(z.numpy())
++            zs.append(z.cpu().numpy())
+     for obj in modules:obj.train()
+     return zs
+ 
+@@ -78,8 +77,33 @@
+     started=time.perf_counter();root=a.root.resolve();out=a.out.resolve()
+     if (out/'result.json').exists():raise RuntimeError(f'Refusing to overwrite completed run: {out}')
+     out.mkdir(parents=True,exist_ok=True)
++    device=torch.device(a.device)
++    warning_records=[]
++    original_showwarning=warnings.showwarning
++    def log_warning(message,category,filename,lineno,file=None,line=None):
++        record=dict(message=str(message),category=category.__name__,filename=filename,lineno=lineno)
++        warning_records.append(record)
++        with (out/'warnings.jsonl').open('a',encoding='utf-8') as stream:
++            stream.write(json.dumps(record,ensure_ascii=False)+'\n')
++        original_showwarning(message,category,filename,lineno,file,line)
++    warnings.showwarning=log_warning
++    if device.type=='cuda':
++        os.environ['CUBLAS_WORKSPACE_CONFIG']=':4096:8'
++        if not torch.cuda.is_available():raise RuntimeError('CUDA requested but unavailable')
++        torch.backends.cudnn.deterministic=True
++        torch.backends.cudnn.benchmark=False
++        torch.use_deterministic_algorithms(True,warn_only=True)
++        warnings.simplefilter('always',UserWarning)
++        torch.cuda.reset_peak_memory_stats(device)
++    else:
++        torch.use_deterministic_algorithms(True)
++    runtime=dict(device=a.device,torch_version=torch.__version__,cuda_version=torch.version.cuda,
++                 gpu_name=torch.cuda.get_device_name(device) if device.type=='cuda' else None,
++                 cudnn_deterministic=torch.backends.cudnn.deterministic if device.type=='cuda' else None,
++                 cudnn_benchmark=torch.backends.cudnn.benchmark if device.type=='cuda' else None,
++                 cublas_workspace_config=os.environ.get('CUBLAS_WORKSPACE_CONFIG') if device.type=='cuda' else None,
++                 deterministic_algorithms=True,deterministic_warn_only=device.type=='cuda')
+     torch.set_num_threads(a.threads);torch.set_num_interop_threads(1)
+-    torch.use_deterministic_algorithms(True)
+     spec,n,k,dims,di=SPEC[a.dataset];config=get_default_config(spec)
+     config.update(dataset=spec,data_root=str(root/'data'),n_clusters=k,print_num=100)
+     config['training']['missing_rate']=a.rate;config['training']['epoch']=a.epochs
+@@ -91,27 +115,39 @@
+     assert len(np.unique(Y[0]))==k
+     np.random.seed(a.seed);mask=get_mask(2,n,a.rate).astype(np.int64)
+     assert np.isin(mask,[0,1]).all() and (mask.sum(axis=1)>=1).all()
+-    x=[torch.from_numpy((X[v]*mask[:,v,None]).astype(np.float32)) for v in range(2)]
++    x=[torch.from_numpy((X[v]*mask[:,v,None]).astype(np.float32)).to(device) for v in range(2)]
++    mask_tensor=torch.from_numpy(mask).long().to(device)
+     seed=config['training']['seed']
+     np.random.seed(seed);random.seed(seed+1);torch.manual_seed(seed+2)
+-    m=Completer(config);m.to_device(torch.device('cpu'))
++    m=Completer(config);m.to_device(device)
+     m.evaluation=types.MethodType(instrumentation_evaluation,m)
+     optimizer=torch.optim.Adam(itertools.chain(m.autoencoder1.parameters(),m.autoencoder2.parameters(),m.img2txt.parameters(),m.txt2img.parameters()),lr=config['training']['lr'])
+     logger=logging.getLogger('completer');logger.setLevel(logging.INFO)
+     if not logger.handlers:logger.addHandler(logging.StreamHandler(sys.stdout))
+-    dump(out/'config.json',dict(config=config,arguments={k:str(v) if isinstance(v,Path) else v for k,v in vars(a).items()},mask_sha256=digest(mask),versions=dict(python=sys.version,torch=torch.__version__,numpy=np.__version__),threadpools=threadpool_info()))
++    dump(out/'config.json',dict(config=config,arguments={k:str(v) if isinstance(v,Path) else v for k,v in vars(a).items()},mask_sha256=digest(mask),versions=dict(python=sys.version,torch=torch.__version__,numpy=np.__version__),runtime=runtime,threadpools=threadpool_info()))
+     np.save(out/'mask.npy',mask,allow_pickle=False)
+     print(f'START {a.dataset} rate={a.rate} mask_seed={a.seed} model_seed={seed} complete={(mask.sum(1)==2).sum()} threads={a.threads}',flush=True)
++    if device.type=='cuda':torch.cuda.synchronize(device)
+     train_start=time.perf_counter()
+-    m.train(config,logger,*x,None,torch.from_numpy(mask).long(),optimizer,torch.device('cpu'))
++    m.train(config,logger,*x,None,mask_tensor,optimizer,device)
++    if device.type=='cuda':torch.cuda.synchronize(device)
+     train_seconds=time.perf_counter()-train_start
+-    B=extract(m,torch.from_numpy(mask),*x,config['Autoencoder']['arch1'][-1])
++    B=extract(m,mask_tensor,*x,config['Autoencoder']['arch1'][-1])
+     for actual,expected in zip(B,m.diagnostic_final_z):assert np.array_equal(actual,expected)
+     # Training is now over. True withheld features are accessed only below this line.
+     for mod in [m.autoencoder1,m.autoencoder2,m.img2txt,m.txt2img]:mod.eval()
+     with torch.no_grad():
+-        oracle=[ae.encoder(torch.from_numpy(raw.astype(np.float32))).numpy() for ae,raw in zip([m.autoencoder1,m.autoencoder2],X)]
+-    for v in range(2):assert np.allclose(B[v][mask[:,v]==1],oracle[v][mask[:,v]==1],rtol=1e-5,atol=1e-7)
++        oracle=[ae.encoder(torch.from_numpy(raw.astype(np.float32)).to(device)).cpu().numpy() for ae,raw in zip([m.autoencoder1,m.autoencoder2],X)]
++    # CUDA GEMM kernels can round differently for observed-subset vs full-batch
++    # encoding. This check never changes representations or decision thresholds.
++    encoding_checks=[]
++    for v in range(2):
++        actual=B[v][mask[:,v]==1];expected=oracle[v][mask[:,v]==1]
++        atol=1e-6 if device.type=='cuda' else 1e-7
++        encoding_checks.append(dict(view=v,max_abs_difference=float(np.abs(actual-expected).max()),rtol=1e-5,atol=atol,
++                                    passed=bool(np.allclose(actual,expected,rtol=1e-5,atol=atol))))
++    dump(out/'encoding_consistency.json',encoding_checks)
++    assert all(check['passed'] for check in encoding_checks),encoding_checks
+     missing=np.flatnonzero(mask.sum(1)==1);mv=np.argmin(mask[missing],axis=1)
+     observed=1-mv;pred=np.stack([B[v][i] for i,v in zip(missing,mv)])
+     truth=np.stack([oracle[v][i] for i,v in zip(missing,mv)])
+@@ -166,10 +202,15 @@
+     np.savez_compressed(out/'diagnostic_arrays.npz',**arrays)
+     torch.save({name:getattr(m,name).state_dict() for name in ['autoencoder1','autoencoder2','img2txt','txt2img']},out/'model.pt')
+     result=dict(dataset=a.dataset,rate=a.rate,data_seed=a.seed,model_seed=seed,epochs=a.epochs,training_seconds=train_seconds,total_seconds=time.perf_counter()-started,missing_count=len(missing),replacement_count=half,actual_missing_rate=len(missing)/n,mask_sha256=digest(mask),branches=results,correlations=correlations,input_sha256=hashes,checkpoint_sha256=hashlib.sha256((out/'model.pt').read_bytes()).hexdigest(),selections={name:idx.tolist() for name,idx in selections.items()})
++    runtime.update(peak_memory_allocated_bytes=int(torch.cuda.max_memory_allocated(device)) if device.type=='cuda' else 0,
++                   peak_memory_reserved_bytes=int(torch.cuda.max_memory_reserved(device)) if device.type=='cuda' else 0,
++                   warning_count=len(warning_records))
++    result.update(runtime)
+     dump(out/'result.json',result)
+     print('COMPLETE '+json.dumps({key:result[key] for key in ['dataset','rate','data_seed','training_seconds','total_seconds','branches','correlations']}),flush=True)
+ 
+ if __name__=='__main__':
+     ap=argparse.ArgumentParser();ap.add_argument('--root',type=Path,required=True);ap.add_argument('--dataset',choices=list(SPEC),required=True);ap.add_argument('--rate',type=float,required=True);ap.add_argument('--seed',type=int,required=True);ap.add_argument('--epochs',type=int,default=500);ap.add_argument('--threads',type=int,default=2);ap.add_argument('--out',type=Path,required=True)
++    ap.add_argument('--device',choices=['cpu','cuda'],default='cpu')
+     a=ap.parse_args()
+     with threadpool_limits(limits=a.threads):run(a)
+--- scripts/cpu_before_gpu/run_batch.py
++++ scripts/run_batch.py
+@@ -1,14 +1,15 @@
+-"""Background CPU experiment driver. Run from root using python -I.
++"""Background CPU/CUDA experiment driver. Run from root using python -I.
+ 
+ Wait for the first standalone Caltech run, then at most two independent CPU
+ processes (four threads each). Training is shared by all branches in each run.
+ """
+ from pathlib import Path
+ from concurrent.futures import ThreadPoolExecutor,as_completed
+-import datetime,hashlib,json,subprocess,sys,time
++import argparse,datetime,hashlib,json,subprocess,sys,time
+ 
+ ROOT=Path(__file__).resolve().parents[1];PY=ROOT/'envs/imvc_cpu/python.exe'
+ FULL=ROOT/'results/full';LOG=ROOT/'results/batch_events.jsonl'
++DEVICE='cpu';WORKERS=2
+ 
+ def event(kind,**kwargs):
+     r=dict(event=kind,time=datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=8))).isoformat(),**kwargs)
+@@ -18,10 +19,13 @@
+ def run_one(dataset,rate,seed,rerun=False):
+     name=f'{dataset}_r{rate}_s{seed}';folder=(ROOT/'results/refcheck'/name) if rerun else FULL/name
+     if (folder/'result.json').exists():
++        existing=json.loads((folder/'result.json').read_text(encoding='utf-8'))
++        assert existing.get('device','cpu')==DEVICE,'Refusing mixed-device result reuse'
+         event('reuse_completed',name=name);return folder
+     prefix=folder.parent/name
+     folder.parent.mkdir(exist_ok=True)
+     cmd=[str(PY),'-I',str(ROOT/'scripts/run_diagnostic.py'),'--root',str(ROOT),'--dataset',dataset,'--rate',str(rate),'--seed',str(seed),'--epochs','500','--threads','4','--out',str(folder)]
++    cmd.extend(['--device',DEVICE])
+     event('start',name=name,rerun=rerun,command=cmd)
+     start=time.monotonic()
+     with prefix.with_suffix(prefix.suffix+'.stdout.log').open('w',encoding='utf-8') as stdout,prefix.with_suffix(prefix.suffix+'.stderr.log').open('w',encoding='utf-8') as stderr:
+@@ -33,29 +37,37 @@
+     return folder
+ 
+ def main():
+-    event('driver_started')
++    event('driver_started',device=DEVICE,workers=WORKERS,python=str(PY))
++    if DEVICE=='cuda':
++        check=json.loads((ROOT/'results/gpu_check/comparison.json').read_text(encoding='utf-8'))
++        assert check['passed'],'GPU gate has not passed'
++        run_one('Caltech101-20',0.5,1)
+     pilot=FULL/'Caltech101-20_r0.5_s1/result.json';t0=time.monotonic()
+     while not pilot.exists():
+         if time.monotonic()-t0>1800:raise RuntimeError('Pilot did not complete within 30 min after driver start; inspect CPU fallback condition')
+         time.sleep(15)
+     p=json.loads(pilot.read_text(encoding='utf-8'))
+     event('standalone_pilot_checked',training_seconds=p['training_seconds'])
+-    if p['training_seconds']>1200:
++    if DEVICE=='cpu' and p['training_seconds']>1200:
+         event('fallback_required',reason='Standalone CPU COMPLETER training exceeded approximately 20 min')
+         raise RuntimeError('Do not start full COMPLETER batch. Switch baseline per protocol.')
+     scene=run_one('Scene-15',0.5,1)
+     scene_time=json.loads((scene/'result.json').read_text(encoding='utf-8'))['training_seconds']
+     event('standalone_scene_checked',training_seconds=scene_time)
+-    if scene_time>1200:
++    if DEVICE=='cpu' and scene_time>1200:
+         event('fallback_required',reason='Standalone Scene CPU COMPLETER training exceeded approximately 20 min')
+         raise RuntimeError('Do not start remaining COMPLETER batch. Switch baseline per protocol.')
+     jobs=[(d,r,s) for r in [0.5,0.7] for d in ['Caltech101-20','Scene-15'] for s in range(1,6) if not (r==0.5 and s==1)]
+     errors=[]
+-    with ThreadPoolExecutor(max_workers=2) as pool:
+-        tasks={pool.submit(run_one,*job):job for job in jobs}
+-        for task in as_completed(tasks):
+-            try:task.result()
+-            except Exception as exc:errors.append(dict(job=tasks[task],error=repr(exc)))
++    if DEVICE=='cuda':
++        # Serial execution also stops admission immediately on any new failure.
++        for job in jobs:run_one(*job)
++    else:
++        with ThreadPoolExecutor(max_workers=WORKERS) as pool:
++            tasks={pool.submit(run_one,*job):job for job in jobs}
++            for task in as_completed(tasks):
++                try:task.result()
++                except Exception as exc:errors.append(dict(job=tasks[task],error=repr(exc)))
+     if errors:
+         (ROOT/'results/batch_errors.json').write_text(json.dumps(errors,indent=2),encoding='utf-8');raise RuntimeError(errors)
+     run_one('Caltech101-20',0.5,1,True)
+@@ -65,10 +77,19 @@
+         with (output.parent/(output.stem+'.stdout.log')).open('w',encoding='utf-8') as stdout,(output.parent/(output.stem+'.stderr.log')).open('w',encoding='utf-8') as stderr:
+             subprocess.run(cmd,cwd=ROOT,stdout=stdout,stderr=stderr,check=True)
+     event('batch_and_audits_completed')
++    if (ROOT/'results/gpu_numeric_check/numeric_summary.json').exists():
++        subprocess.run([str(PY),'-I',str(ROOT/'scripts/verify_gpu_roundoff.py'),'verify'],cwd=ROOT,check=True)
+     with (ROOT/'results/summary.stdout.log').open('w',encoding='utf-8') as stdout,(ROOT/'results/summary.stderr.log').open('w',encoding='utf-8') as stderr:
+         subprocess.run([str(PY),'-I',str(ROOT/'scripts/summarize_results.py'),'--root',str(ROOT)],cwd=ROOT,stdout=stdout,stderr=stderr,check=True)
+     event('report_completed',path=str(ROOT/'第一阶段IMVC可行性报告.md'))
+ 
+ if __name__=='__main__':
++    ap=argparse.ArgumentParser()
++    ap.add_argument('--device',choices=['cpu','cuda'],default='cpu')
++    ap.add_argument('--workers',type=int,default=2)
++    args=ap.parse_args()
++    if args.workers<1:ap.error('--workers must be positive')
++    DEVICE=args.device;WORKERS=1 if DEVICE=='cuda' else args.workers
++    PY=ROOT/('envs/imvc_gpu/python.exe' if DEVICE=='cuda' else 'envs/imvc_cpu/python.exe')
+     try:main()
+     except Exception as e:event('driver_failed',error=repr(e));raise
+--- scripts/cpu_before_gpu/audit_results.py
++++ scripts/audit_results.py
+@@ -1,7 +1,7 @@
+ # -*- coding: utf-8 -*-
+ """Reconstruct all interventions and independently recompute offline metrics."""
+ import os
+-os.environ['CUDA_VISIBLE_DEVICES']=''
++os.environ['CUBLAS_WORKSPACE_CONFIG']=':4096:8'
+ os.environ['OMP_NUM_THREADS']='2';os.environ['MKL_NUM_THREADS']='2'
+ from pathlib import Path
+ import argparse,hashlib,json,sys
+@@ -34,21 +34,30 @@
+         spec=SPEC[r['dataset']][0];config=get_default_config(spec)
+         config.update(dataset=spec,data_root=str(root/'data'))
+         model=Completer(config)
++        # Re-encode on the recorded training device; KMeans and all diagnostic
++        # array/metric checks below remain NumPy/scikit-learn on CPU.
++        device=torch.device(r.get('device','cpu'))
++        if device.type=='cuda':
++            assert torch.cuda.is_available(),'GPU checkpoint audit requires CUDA'
++            torch.backends.cudnn.deterministic=True;torch.backends.cudnn.benchmark=False
++            torch.use_deterministic_algorithms(True,warn_only=True)
+         weights=torch.load(run_dir/'model.pt',map_location='cpu',weights_only=True)
+         for name,state in weights.items():getattr(model,name).load_state_dict(state);getattr(model,name).eval()
++        model.to_device(device)
++        encoding_atol=1e-6 if device.type=='cuda' else 2e-7
+         X,Y=load_data(config)
+         assert np.array_equal(Y[0],z['labels'])
+         with torch.no_grad():
+             for v,ae in enumerate([model.autoencoder1,model.autoencoder2]):
+-                truth_z=ae.encoder(torch.from_numpy(X[v].astype(np.float32))).numpy()
+-                assert np.allclose(truth_z,oracle[v],rtol=1e-5,atol=2e-7)
++                truth_z=ae.encoder(torch.from_numpy(X[v].astype(np.float32)).to(device)).cpu().numpy()
++                assert np.allclose(truth_z,oracle[v],rtol=1e-5,atol=encoding_atol)
+                 observed=mask[:,v]==1
+-                assert np.allclose(truth_z[observed],B[v][observed],rtol=1e-5,atol=2e-7)
++                assert np.allclose(truth_z[observed],B[v][observed],rtol=1e-5,atol=encoding_atol)
+                 missing_idx=mask[:,v]==0
+                 other_ae=[model.autoencoder2,model.autoencoder1][v]
+                 predictor=[model.txt2img,model.img2txt][v]
+-                predicted=predictor(other_ae.encoder(torch.from_numpy(X[1-v][missing_idx].astype(np.float32))))[0].numpy()
+-                assert np.allclose(predicted,B[v][missing_idx],rtol=1e-5,atol=2e-7)
++                predicted=predictor(other_ae.encoder(torch.from_numpy(X[1-v][missing_idx].astype(np.float32)).to(device)))[0].cpu().numpy()
++                assert np.allclose(predicted,B[v][missing_idx],rtol=1e-5,atol=encoding_atol)
+     pred=np.stack([B[v][i] for i,v in zip(missing,z['missing_view'])]);truth=np.stack([oracle[v][i] for i,v in zip(missing,z['missing_view'])])
+     err=1-np.sum(pred*truth,axis=1)/np.maximum(np.linalg.norm(pred,axis=1)*np.linalg.norm(truth,axis=1),1e-12)
+     assert np.array_equal(err,z['error'])
+--- scripts/cpu_before_gpu/summarize_results.py
++++ scripts/summarize_results.py
+@@ -26,6 +26,13 @@
+     assert len(actual)==len(runs) and actual<=expected
+     if not a.partial:assert actual==expected,(len(runs),expected-actual)
+     assert all(r['epochs']==500 for r in runs)
++    devices={r.get('device','cpu') for r in runs}
++    assert len(devices)<=1,'Refusing mixed CPU/GPU formal statistics'
++    device=next(iter(devices),'cuda' if (results/'gpu_check/comparison.json').exists() else 'cpu')
++    gpu=device=='cuda'
++    device_label='GPU' if gpu else 'CPU'
++    gpu_check=json.loads((results/'gpu_check/comparison.json').read_text(encoding='utf-8')) if gpu else None
++    if gpu:assert gpu_check['passed']
+     groups=defaultdict(list)
+     for r in runs:groups[r['dataset'],r['rate']].append(r)
+     branches=[];paired=[];pairs=[];correlations=[];corr_summary=[];repro=[];decisions=[]
+@@ -67,6 +74,9 @@
+                 mean=statistics.mean(r['branches']['B'][m] for r in rs);row[m+'_paper']=PAPER[d][m];row[m+'_reproduced']=mean;row[m+'_diff']=mean-PAPER[d][m]
+             row['ACC_acceptable_approx_3pp']=len(rs)==5 and abs(row['ACC_diff'])<=.03;repro.append(row)
+     masks=[dict(dataset=r['dataset'],rate=r['rate'],data_seed=r['data_seed'],model_seed=r['model_seed'],actual_missing_rate=r['actual_missing_rate'],missing_count=r['missing_count'],replacement_count=r['replacement_count'],mask_sha256=r['mask_sha256'],training_seconds=r['training_seconds']) for r in runs]
++    for row,r in zip(masks,runs):
++        for key in ['device','torch_version','cuda_version','gpu_name','peak_memory_allocated_bytes','peak_memory_reserved_bytes','warning_count']:
++            row[key]=r.get(key)
+     for filename,rows in [('branch_means.csv',branches),('paired_differences.csv',paired),('paired_summary.csv',pairs),('reliability_correlations.csv',correlations),('reliability_summary.csv',corr_summary),('reproduction.csv',repro),('mask_metadata.csv',masks)]:write_csv(results/filename,rows)
+     primary=[x for x in decisions if x['rate']==.5]
+     if actual!=expected:overall='实验进行中，暂不判读'
+@@ -75,7 +85,7 @@
+     elif all(x['verdict']=='不通过' for x in primary):overall='不通过'
+     else:overall='未落入预设三类，证据不足'
+     implication={'通过':'工作一有继续研究的诊断依据，但尚未验证任何可部署的新方法。','部分通过':'补全仍有操作性上限空间，当前可靠性信号未能满足向聚类收益转化的全部条件；需要重新考虑信号设计或切入角度。','不通过':'在本次 COMPLETER、固定最终轮和模拟随机缺失协议下，oracle 额外空间很小，当前证据不支持直接把选择性补全作为已获验证的工作一；这不等于否定全部 IMVC baseline 或缺失设定。','未落入预设三类，证据不足':'原规则没有覆盖本次中间情形，保留证据不足，不事后修改阈值或强行贴入三类。'}.get(overall,'全量运行尚未结束，不提前作可行性结论。')
+-    summary=dict(runs=len(runs),expected_runs=20,overall=overall,decisions=decisions,branches=branches,pairs=pairs,correlations=corr_summary,reproduction=repro)
++    summary=dict(runs=len(runs),expected_runs=20,device=device,overall=overall,decisions=decisions,branches=branches,pairs=pairs,correlations=corr_summary,reproduction=repro)
+     (results/'summary.json').write_text(json.dumps(summary,ensure_ascii=False,indent=2),encoding='utf-8')
+     inventory=json.loads((results/'source_inventory.json').read_text(encoding='utf-8'))
+     def f(x):return f'{x:.4f}'
+@@ -89,18 +99,43 @@
+     ref=[]
+     for p in (results/'refcheck').glob('*/result.json'):
+         rr=json.loads(p.read_text(encoding='utf-8'));old=next(r for r in runs if (r['dataset'],r['rate'],r['data_seed'])==(rr['dataset'],rr['rate'],rr['data_seed']))
++        assert rr.get('device','cpu')==old.get('device','cpu')
+         delta={b:{m:rr['branches'][b][m]-old['branches'][b][m] for m in METRICS} for b in BRANCHES}
+         arrays1=np.load(p.parent/'diagnostic_arrays.npz');arrays0=np.load(results/'full'/p.parent.name/'diagnostic_arrays.npz')
+         equal={key:bool(np.array_equal(arrays1[key],arrays0[key])) for key in arrays0.files}
+-        ref.append(dict(run=p.parent.name,branch_metric_deltas=delta,array_equal=equal,mask_hash_equal=old['mask_sha256']==rr['mask_sha256'],input_hash_equal=old['input_sha256']==rr['input_sha256']))
++        numeric_differences={key:float(np.max(np.abs(arrays1[key]-arrays0[key]))) for key in arrays0.files if not equal[key]}
++        ref.append(dict(run=p.parent.name,branch_metric_deltas=delta,array_equal=equal,array_max_abs_differences=numeric_differences,mask_hash_equal=old['mask_sha256']==rr['mask_sha256'],input_hash_equal=old['input_sha256']==rr['input_sha256']))
+     (results/'refcheck').mkdir(exist_ok=True)
+     (results/'refcheck/comparison.json').write_text(json.dumps(ref,ensure_ascii=False,indent=2),encoding='utf-8')
+     reftext='尚未完成独立完整复跑。'
+     if ref:
+         item=ref[0];maxdelta=max(abs(v) for b in item['branch_metric_deltas'].values() for v in b.values())
+         reftext=f"完整复跑 `{item['run']}`：掩码哈希相同={item['mask_hash_equal']}；所有分支输入哈希相同={item['input_hash_equal']}；{sum(item['array_equal'].values())}/{len(item['array_equal'])} 个存档数组逐元素一致；六分支 ACC/NMI/ARI 最大绝对差 {maxdelta:.12g}。详见 `results/refcheck/comparison.json`。"
++        if item['array_max_abs_differences']:
++            reftext+=' 未逐位一致的数组及最大绝对差：'+', '.join(f"{key}={value:.6g}" for key,value in item['array_max_abs_differences'].items())+'。上述原型/得分浮点尾数差未改变干预样本、分支输入或最终聚类指标；未声称所有中间数组完全一致。'
+     times=[r['training_seconds'] for r in runs]
+-    runtime=f"训练耗时范围 {min(times)/60:.2f}–{max(times)/60:.2f} 分钟，20 次训练累计 CPU 进程墙钟时间（并行任务相加）{sum(times)/3600:.2f} 小时。" if times else ''
++    runtime=f"训练耗时范围 {min(times)/60:.2f}–{max(times)/60:.2f} 分钟，{len(runs)} 次训练累计{device_label}进程墙钟时间 {sum(times)/3600:.2f} 小时，仅计正式组，不含工程核对、失败复现和独立复跑。" if times else ''
++    execution=('本次正式统计全部在单张 GTX 1650 Ti 4GB 上按单进程重新训练，每进程 CPU 线程数 4；仅神经网络训练与表示提取使用 CUDA，KMeans、可靠性得分及评价使用 CPU。' if gpu else '本次正式训练使用 CPU，最多两进程，每进程 4 线程。')
++    envtext=('独立 conda 环境 `envs/imvc_gpu/`：Python 3.9.21、Torch 2.8.0+cu126（官方 cu126 源）、CUDA runtime 12.6，GTX 1650 Ti 4GB、驱动 621.01；其余包版本与 CPU 环境固定一致：NumPy 1.26.4、SciPy 1.13.1、scikit-learn 1.4.0、munkres 1.1.4 等。清单 `environment_gpu.txt`，依赖核对与 CUDA 验证见 `results/gpu_environment_verification.json`。原 `envs/imvc_cpu` 和 F:/Anaconda 下的环境均未改动。' if gpu else '独立环境 envs/imvc_cpu，Python 3.9.21、Torch 2.8.0+cpu，详见 environment.txt。')
++    gpusection=''
++    if gpu:
++        repair_path=results/'gpu_numeric_check/repair_comparison.json'
++        repair=json.loads(repair_path.read_text(encoding='utf-8')) if repair_path.exists() else None
++        repair_status='通过：3 组全部权重/缓冲区、掩码和比较数组逐位相同，原 17 组结果文件哈希不变。' if repair and repair.get('all_passed') else '尚未完成，不能记作通过。'
++        gpusection=f"""### GPU 切换核对与 CPU 归档
++
++CPU 已完成的 6 组和中断的 Scene 0.5 种子 2、3 全部移动至 `results/archive_cpu_partial/`，原进度报告复制存档；CPU 部分结果只作设备对照，不进入正式统计。原 smoke、benchmark、operational_restarts、下载和来源记录保持原位。
++
++Caltech101-20、0.5、seed 1 的两次独立 500 轮 GPU 核对：训练耗时 {gpu_check['gpu_training_seconds'][0]:.3f}/{gpu_check['gpu_training_seconds'][1]:.3f} 秒，对比 CPU {gpu_check['cpu_training_seconds']:.3f} 秒，加速 {gpu_check['training_speedups'][0]:.3f}/{gpu_check['training_speedups'][1]:.3f} 倍；两次六分支 ACC 最大差 {gpu_check['max_run_ACC_difference']:.8f}，通过既定 ≥1.5 倍及 ≤0.01 门槛。完整 ACC/NMI/ARI 及 CPU 差异见 `results/gpu_check/GPU核对说明.md`。检查模型不复用于正式全量。原 CPU 环境 3 轮冒烟及重新聚类审计通过，见 `results/smoke_cpu_after_gpu/`。
++
++CUDA 设置 cuDNN deterministic=True、benchmark=False、CUBLAS_WORKSPACE_CONFIG=:4096:8、torch.use_deterministic_algorithms(True,warn_only=True)。逐次 stderr 和 warnings.jsonl（有警告时）保留运行警告；result.json 记录设备、Torch/CUDA、显卡、allocated/reserved 显存峰值和警告计数。显存峰值只计 PyTorch 分配，不含显示/驱动。GPU 包 CUDA 12.6 与 nvidia-smi 的驱动支持上限 13.5 是不同概念。
++
++GPU 设备改动差异为 `scripts/gpu_device_adaptation.patch`；CPU 脚本原版在 `scripts/cpu_before_gpu/`，当前哈希在 `results/runtime_manifest.json`，旧 runtime 清单在 CPU 归档。协议文件字节和阈值保持不变。
++
++0.7 的 Caltech seed 1、Scene seed 2/3 曾在训练后的观测编码一致性断言失败，未产生最终结果。用原 GPU 入口逐组复现并保存权重/数组，发现不同批次大小下的 float32 GPU 舍入差：全部元素有限，六个视图比较最大绝对差 5.22×10⁻⁶。仅 CUDA 数值校验的 atol 从 1e−7 改为 1e−6，rtol 保持 1e−5；CPU 校验不变，训练、表示、分支和判读阈值均不改。审计中的 CUDA 编码容差同步为 1e−6。失败目录/日志保存在 `results/operational_gpu_roundoff/`，原 GPU 入口与初始 runtime 在 `scripts/gpu_before_roundoff_fix/`；复现数据见 `results/gpu_numeric_check/`。17 个已完成结果不重写，仅补跑这 3 组；GPU 队列现改为串行遇错即停。修正前后逐位权重/缓冲区、掩码及失败比较数组的核对见 `repair_comparison.json`，最终审核须通过后才交付。此处调整的是不参与指标判读的数值复算容差，不是事后更改可行性阈值。
++
++修正前后逐位核对状态：{repair_status}
++"""
+     paperhash=hashlib.sha256((root/'文献/COMPLETER_CVPR2021.pdf').read_bytes()).hexdigest()
+     findings=[]
+     for d in PAPER:
+@@ -120,13 +155,13 @@
+ 
+ 使用 Lin 等 CVPR 2021 的官方 COMPLETER：[仓库](https://github.com/XLearning-SCU/2021-CVPR-Completer)，commit `624dd9fd10431802214fab1d7b34c44f5a0a92df`，MIT 许可证。论文：[CVF 原文](https://openaccess.thecvf.com/content/CVPR2021/papers/Lin_COMPLETER_Incomplete_Multi-View_Clustering_via_Contrastive_Prediction_CVPR_2021_paper.pdf)，表 1 Incomplete（η=0.5）。已提取并渲染核对表 1 和 §4.1。论文 PDF SHA-256：`{paperhash}`。
+ 
+-Git clone 因 TLS 中断失败，官方 raw/API 可用，故用固定提交的原始文件快照，校验 Git blob 后使用；没有把暂时的 Git 传输失败误判为实现不可获取。首个独立 500 轮 Caltech CPU 运行满足约 20 分钟门槛，因此未获取、未运行 HSACC，未同时复现两个 baseline。其后训练并发最多两个进程，每进程 4 线程；并发资源竞争下墙钟时间不能作为独立运行的速度门槛。{runtime}
++Git clone 因 TLS 中断失败，官方 raw/API 可用，故用固定提交的原始文件快照，校验 Git blob 后使用；没有把暂时的 Git 传输失败误判为实现不可获取。此前独立 Caltech 和 Scene CPU 运行均满足约 20 分钟门槛，因此未获取、未运行 HSACC。后按用户要求改用 GPU 重跑全阶段。{execution}{runtime}
+ 
+ {repro_table}
+ 
+ 论文五次为随机初始化/数据划分；官方非零缺失率入口实际上把模型初始化固定为数据集配置 seed，而重复 1–5 只改变掩码。为按 baseline 自身协议复现，本次严格遵循后者：Caltech 的 np/random/torch seed 为 4/5/6，Scene 为 8/9/10，掩码 seed=1–5。不能把五次称为五个不同模型初始化。0.5 复现运行直接用于后续分支诊断，没有重复训练第二套模型。
+ 
+-ACC 差超过约 3pp 时如实标为复现不达标，仍按要求继续诊断。可能因素包括 Torch 1.2→2.8、sklearn 0.23→1.4、CPU 与原 GPU 数值路径、原论文未公开的逐次掩码/随机状态以及本次固定的最终 KMeans seed；这些是可能原因，未做因果归因。未按结果调整模型、轮次、KMeans seed 或超参。
++ACC 差超过约 3pp 时如实标为复现不达标，仍按要求继续诊断。可能因素包括 Torch 1.2→2.8、sklearn 0.23→1.4、运行设备与数值库版本、原论文未公开的逐次掩码/随机状态以及本次固定的最终 KMeans seed；这些是可能原因，未做因果归因。未按结果调整模型、轮次、KMeans seed 或超参。
+ 
+ ## 2. 数据核对与来源
+ 
+@@ -144,7 +179,9 @@
+ 
+ ## 3. 环境、安全与代码改动
+ 
+-CPU 为 AMD Ryzen 7 4800H，8 物理核心/16 逻辑处理器；正式训练每进程 4 线程。独立 conda 环境：`envs/imvc_cpu/`，Python 3.9.21、Torch 2.8.0+cpu、NumPy 1.26.4、SciPy 1.13.1、scikit-learn 1.4.0、munkres 1.1.4；详见 `environment.txt`、`environment_explicit.txt` 和 `environment_requirements.txt`。`pip check` 通过。Torch 是从已有同 Python 版本 CPU 环境只读复制的独立文件副本，11,480 个文件逐字节 SHA-256 核对；清单为 `results/torch_copy_manifest.json`。未向原 pytorch 环境装包；没有使用损坏的 base NumPy、没有修改旧 amgc_cpu、没有调用 GPU。
++CPU 为 AMD Ryzen 7 4800H，8 物理核心/16 逻辑处理器。{envtext}
++
++{gpusection}
+ 
+ 运行前通读第三方入口、数据加载、模型、损失、聚类评价和工具模块，未发现网络上传、删除、外部命令执行。代码与数据均视为不可信，核查后只从项目根用 `python -I` 和显式路径运行；不在 third_party 内执行。完整审阅说明见 `results/安全审阅与来源说明.md`。`-I` 是导入隔离，不是系统沙箱。
+ 
+@@ -183,13 +220,15 @@
+ 
+ 高得分应对应低误差，故期望负相关。s2 有离散并列值，Spearman 使用平均秩；每次唯一得分数、相关 p 值、所选子集/随机子集平均余弦误差见 `results/reliability_correlations.csv`。p 值仅描述，不参与预设判读。相关达到门槛但未取得 C_low−C_rand 收益，仍不能认定可靠性信号有效；替换误差更低也不代表聚类收益更大。
+ 
++Scene-15 的 0.7、seed 4 中 s2 为常数，因此该次 Spearman 未定义；五次均值也记为未定义，没有剔除该种子后仅平均四次、没有填零。警告保留在该组 stderr/warnings.jsonl 中，0.7 不改变主判读。
++
+ ## 8. 按规则判读
+ 
+ {decision_table}
+ 
+ {' '.join(findings)}
+ 
+-**主判读：{overall}。** {implication} 0.7 的结果仅作辅助描述，不用于改变 0.5 的判断。如有复现差距，本结论只对本次固定最终轮、CPU 适配实现成立，不包装为已精确复现论文后的普遍结论。
++**主判读：{overall}。** {implication} 0.7 的结果仅作辅助描述，不用于改变 0.5 的判断。如有复现差距，本结论只对本次固定最终轮、{device_label}适配实现成立，不包装为已精确复现论文后的普遍结论。
+ 
+ ## 9. 哈希、复跑和复算核验
+ 
+@@ -205,7 +244,7 @@
+ 
+ E−B 是该编码器与下游聚类的操作性 oracle 诊断，不是任意补全方法的数学上界；oracle 使用真实被遮盖视图，仅用于离线分析，不是可部署方案。C_low 比 C_rand 好最多说明信号有可利用的诊断价值，没有验证一种实际的选择性补全新方法；A/B/E 改动会影响全局 KMeans，不能把差值当成可加的逐样本误差贡献。
+ 
+-未开展新方法、联邦设定、噪声对应、多 baseline、超参搜索或 GPU。旧方向目录保持只读。
++未开展新方法、联邦设定、噪声对应、多 baseline 或超参搜索。旧方向目录保持只读。
+ 
+ - 固定协议：`results/protocol.json`；代码来源/数据：`results/source_inventory.json`、`results/git_blob_checks.json`。
+ - 主入口：`scripts/run_diagnostic.py`；后台队列：`scripts/run_batch.py`，事件 `results/batch_events.jsonl`，每次 stdout/stderr 位于 `results/full/`。
+--- /dev/null
++++ scripts/gpu_transition.py
+@@ -0,0 +1,115 @@
++"""One-off, auditable CPU archival, runtime freeze and GPU admission checks."""
++from pathlib import Path
++import argparse,datetime,difflib,hashlib,json,shutil
++
++ROOT=Path(__file__).resolve().parents[1]
++RESULTS=ROOT/'results'
++FROZEN='7ddf3260ccebdf199cea02efdb9f562e8afc66c6a725f05ff4bcf0d6553cb34a'
++FILES=['run_diagnostic.py','run_batch.py','audit_results.py','summarize_results.py','prepare_adaptation.py']
++
++def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
++def dump(p,x):p.write_text(json.dumps(x,ensure_ascii=False,indent=2),encoding='utf-8')
++
++def archive():
++    target=RESULTS/'archive_cpu_partial'
++    if target.exists():raise RuntimeError('CPU archive already exists; refusing overwrite')
++    assert sha(RESULTS/'protocol.json')==FROZEN
++    groups=[]
++    for p in sorted((RESULTS/'full').iterdir()):
++        if p.is_dir():
++            result=p/'result.json'
++            groups.append(dict(group=p.name,completed=result.exists(),result_sha256=sha(result) if result.exists() else None))
++    target.mkdir()
++    shutil.copy2(ROOT/'第一阶段IMVC可行性报告.md',target/'第一阶段IMVC可行性报告.md')
++    for name in ['runtime_manifest.json','adaptation_manifest.json','pause_state.json','pause_process_snapshot.json']:
++        if (RESULTS/name).exists():shutil.copy2(RESULTS/name,target/name)
++    names=['full','refcheck','batch_events.jsonl','batch.stdout.log','batch.stderr.log','batch_process.json','progress_summary.log',
++           'summary.json','branch_means.csv','paired_differences.csv','paired_summary.csv','reliability_correlations.csv',
++           'reliability_summary.csv','mask_metadata.csv','reproduction.csv','audit.json','audit.stdout.log','audit.stderr.log',
++           'summary.stdout.log','summary.stderr.log','batch_errors.json']
++    moved=[]
++    for name in names:
++        p=RESULTS/name
++        if p.exists():shutil.move(str(p),str(target/name));moved.append(name)
++    for group in groups:
++        if group['completed']:assert sha(target/'full'/group['group']/'result.json')==group['result_sha256']
++    dump(target/'archive_manifest.json',dict(groups=groups,moved=moved,protocol_sha256=FROZEN,reason='User requested full homogeneous GPU rerun'))
++    rows=['# CPU 部分结果归档','', '2026-10-27：按用户决定改用 GPU，CPU 队列已手动中止。以下文件移动归档，未删除；原始报告复制归档。',
++          '这些结果不参与新的正式统计，只作 CPU/GPU 设备对照。没有 result.json 的半成品没有最终检查点，不能接续训练。','',
++          '| 组 | 状态 |','| --- | --- |']
++    rows.extend('| '+g['group']+' | '+('完成 500 轮' if g['completed'] else '中断，无 result.json')+' |' for g in groups)
++    rows.extend(['','其余 0.7 组尚未启动。smoke、benchmark、operational_restarts、下载/来源记录保持原位。',
++                 '协议未改；原 CPU runtime/adaptation 清单与暂停记录保存在本目录。脚本原版另存 scripts/cpu_before_gpu/。'])
++    (target/'README.md').write_text('\n'.join(rows)+'\n',encoding='utf-8')
++    print(json.dumps(groups,ensure_ascii=False,indent=2))
++
++def freeze():
++    assert sha(RESULTS/'protocol.json')==FROZEN
++    old=json.loads((ROOT/'scripts/cpu_before_gpu/runtime_manifest.json').read_text(encoding='utf-8'))
++    # Only wrappers change. Reviewed training, loss, architecture, masking and loader stay fixed.
++    for path,h in old.items():
++        if path!='scripts\\run_diagnostic.py':assert sha(ROOT/path)==h,path
++    patch=[]
++    records=json.loads((ROOT/'scripts/cpu_before_gpu/adaptation_manifest.json').read_text(encoding='utf-8'))
++    for name in FILES:
++        before=ROOT/'scripts/cpu_before_gpu'/name;after=ROOT/'scripts'/name
++        patch.extend(difflib.unified_diff(before.read_text(encoding='utf-8').splitlines(True),after.read_text(encoding='utf-8').splitlines(True),fromfile='scripts/cpu_before_gpu/'+name,tofile='scripts/'+name))
++        records.append(dict(file='scripts/'+name,source_sha256=sha(before),copy_sha256=sha(after),changed=sha(before)!=sha(after),purpose='Device support, GPU verification and accurate device reporting; protocol unchanged'))
++    paths=list(old)+['scripts\\'+name for name in FILES if 'scripts\\'+name not in old]
++    for name in ['gpu_transition.py','run_gpu_checks.py','verify_gpu_environment.py','inspect_gpu_roundoff.py','inspect_failed_gpu_runs.py','verify_gpu_roundoff.py']:
++        if (ROOT/'scripts'/name).exists():
++            paths.append('scripts\\'+name)
++            records.append(dict(file='scripts/'+name,source_sha256=None,copy_sha256=sha(ROOT/'scripts'/name),changed=True,purpose='New local GPU transition/validation utility, no third-party modification'))
++            patch.extend(difflib.unified_diff([], (ROOT/'scripts'/name).read_text(encoding='utf-8').splitlines(True),fromfile='/dev/null',tofile='scripts/'+name))
++    (ROOT/'scripts/gpu_device_adaptation.patch').write_text(''.join(patch),encoding='utf-8')
++    dump(RESULTS/'adaptation_manifest.json',records)
++    dump(RESULTS/'runtime_manifest.json',{p:sha(ROOT/p) for p in paths})
++    print('Runtime frozen; protocol SHA-256',FROZEN)
++
++def compare():
++    base=RESULTS/'gpu_check'
++    cpu=json.loads((RESULTS/'archive_cpu_partial/full/Caltech101-20_r0.5_s1/result.json').read_text(encoding='utf-8'))
++    gpu=[json.loads((base/f'run{i}/result.json').read_text(encoding='utf-8')) for i in [1,2]]
++    smoke=json.loads((RESULTS/'smoke_cpu_after_gpu/audit.json').read_text(encoding='utf-8'))
++    assert smoke['all_passed'] and smoke['runs']==1
++    audit=json.loads((base/'audit.json').read_text(encoding='utf-8'))
++    assert audit['all_passed'] and audit['runs']==2
++    speedups=[cpu['training_seconds']/r['training_seconds'] for r in gpu]
++    metrics=['ACC','NMI','ARI'];branches=list(cpu['branches'])
++    deltas={b:{m:gpu[1]['branches'][b][m]-gpu[0]['branches'][b][m] for m in metrics} for b in branches}
++    max_acc=max(abs(d['ACC']) for d in deltas.values())
++    mask_match=all(r['mask_sha256']==cpu['mask_sha256'] for r in gpu)
++    runtime_ok=all(r['device']=='cuda' and r['torch_version']=='2.8.0+cu126' and 'GTX 1650 Ti' in r['gpu_name'] for r in gpu)
++    passed=min(speedups)>=1.5 and max_acc<=.01 and mask_match and runtime_ok
++    data=dict(passed=passed,protocol_sha256=sha(RESULTS/'protocol.json'),cpu_training_seconds=cpu['training_seconds'],
++              gpu_training_seconds=[r['training_seconds'] for r in gpu],training_speedups=speedups,max_run_ACC_difference=max_acc,
++              branch_run2_minus_run1=deltas,mask_match=mask_match,runtime_ok=runtime_ok,cpu_smoke_audit_passed=True,
++              peak_memory_allocated_bytes=[r['peak_memory_allocated_bytes'] for r in gpu],warning_counts=[r['warning_count'] for r in gpu],
++              checked_at=datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=8))).isoformat())
++    assert data['protocol_sha256']==FROZEN
++    dump(base/'comparison.json',data)
++    lines=['# GPU 核对说明','', 'Caltech101-20，缺失率 0.5，掩码种子 1，固定最终 500 轮。两次从头训练，不复用 GPU 检查模型进入正式统计。',
++           '协议 SHA-256：`'+FROZEN+'`。模型/损失/超参/训练轮数/掩码/分支/阈值不变；只迁移设备。', '',
++           '| 项目 | CPU 归档 | GPU run1 | GPU run2 |','| --- | --- | --- | --- |',
++           f"| 训练秒数（含既定中间无标签聚类） | {cpu['training_seconds']:.3f} | {gpu[0]['training_seconds']:.3f} | {gpu[1]['training_seconds']:.3f} |",
++           f'| 相对 CPU 加速 | 1 | {speedups[0]:.3f}× | {speedups[1]:.3f}× |',
++           '| 设备分配峰值 MiB | — | '+' | '.join(f"{r['peak_memory_allocated_bytes']/2**20:.1f}" for r in gpu)+' |','',
++           '| 分支 | 指标 | CPU | GPU run1 | GPU run2 | run1−CPU | run2−run1 |','| --- | --- | --- | --- | --- | --- | --- |']
++    for b in branches:
++        for m in metrics:
++            c=cpu['branches'][b][m];x=gpu[0]['branches'][b][m];y=gpu[1]['branches'][b][m]
++            lines.append(f'| {b} | {m} | {c:.8f} | {x:.8f} | {y:.8f} | {x-c:+.8f} | {y-x:+.8f} |')
++    lines.extend(['',f'两次 GPU 任一分支 ACC 最大绝对差：{max_acc:.8f}；掩码一致：{mask_match}。',
++                  'CUDA：cuDNN deterministic=True、benchmark=False；CUBLAS_WORKSPACE_CONFIG=:4096:8；确定性算法 True、warn_only=True。',
++                  f"警告数 run1/run2：{data['warning_counts']}；警告同时写入各次 stderr 和 warnings.jsonl（若有）。",
++                  '显存峰值为 torch.cuda.max_memory_allocated，不包括驱动、显示及其他进程；另存 reserved 峰值。',
++                  'CPU 设备路径使用原 imvc_cpu 完成 3 轮冒烟及 --recluster 审计。GPU 核对也独立审计，所有指标仍由 CPU NumPy/sklearn 计算。',
++                  'CPU/GPU 差异仅描述，不据此修改协议；速度以同组训练计时比较。',
++                  '', '**核对结论：'+('通过，可开始单进程 GPU 全量重跑。' if passed else '未通过，停止，不启动全量。')+'**'])
++    (base/'GPU核对说明.md').write_text('\n'.join(lines)+'\n',encoding='utf-8')
++    print(json.dumps(data,ensure_ascii=False,indent=2))
++    if not passed:raise RuntimeError('GPU admission conditions failed; do not start batch')
++
++if __name__=='__main__':
++    ap=argparse.ArgumentParser();ap.add_argument('action',choices=['archive','freeze','compare']);args=ap.parse_args()
++    dict(archive=archive,freeze=freeze,compare=compare)[args.action]()
+--- /dev/null
++++ scripts/run_gpu_checks.py
+@@ -0,0 +1,27 @@
++"""Sequential GPU gate runs. Any training/audit failure prevents admission."""
++from pathlib import Path
++import json,subprocess
++
++ROOT=Path(__file__).resolve().parents[1]
++PY=ROOT/'envs/imvc_gpu/python.exe'
++BASE=ROOT/'results/gpu_check'
++
++def execute(args,prefix):
++    with prefix.with_suffix('.stdout.log').open('w',encoding='utf-8') as out,prefix.with_suffix('.stderr.log').open('w',encoding='utf-8') as err:
++        subprocess.run([str(PY),'-I',*map(str,args)],cwd=ROOT,stdout=out,stderr=err,check=True)
++
++if __name__=='__main__':
++    BASE.mkdir(exist_ok=True)
++    try:
++        for idx in [1,2]:
++            target=BASE/f'run{idx}'
++            execute([ROOT/'scripts/run_diagnostic.py','--root',ROOT,'--dataset','Caltech101-20','--rate','.5','--seed','1',
++                     '--epochs','500','--threads','4','--device','cuda','--out',target],BASE/f'run{idx}')
++            print('GPU check completed',idx,flush=True)
++        execute([ROOT/'scripts/audit_results.py','--root',ROOT,'--runs',BASE,'--out',BASE/'audit.json','--recluster'],BASE/'audit')
++        subprocess.run([str(PY),'-I',str(ROOT/'scripts/gpu_transition.py'),'compare'],cwd=ROOT,check=True)
++    except Exception as exc:
++        (BASE/'failure.json').write_text(json.dumps(dict(passed=False,error=repr(exc)),indent=2),encoding='utf-8')
++        if not (BASE/'GPU核对说明.md').exists():
++            (BASE/'GPU核对说明.md').write_text('# GPU 核对说明\n\n未通过：执行报错，按要求停止，不进入全量。\n\n错误：`'+repr(exc)+'`\n\n详见各次 stdout/stderr、failure.json。\n',encoding='utf-8')
++        raise
+--- /dev/null
++++ scripts/verify_gpu_environment.py
+@@ -0,0 +1,25 @@
++"""Verify the requested isolated GPU runtime against pinned CPU requirements."""
++from pathlib import Path
++import importlib.metadata,json,platform,subprocess,sys
++import torch
++
++root=Path(__file__).resolve().parents[1]
++assert Path(sys.prefix).resolve()==(root/'envs/imvc_gpu').resolve()
++assert platform.python_version()=='3.9.21'
++assert torch.__version__=='2.8.0+cu126',torch.__version__
++assert torch.cuda.is_available(),'CUDA unavailable'
++name=torch.cuda.get_device_name(0)
++assert 'GTX 1650 Ti' in name,name
++versions={}
++for line in (root/'scripts/gpu_requirements.txt').read_text(encoding='utf-8').splitlines():
++    package,expected=line.split('==');actual=importlib.metadata.version(package)
++    assert actual==expected,(package,actual,expected)
++    versions[package]=actual
++subprocess.run([sys.executable,'-I','-m','pip','check'],check=True)
++data=dict(python=platform.python_version(),python_executable=sys.executable,torch=torch.__version__,
++          cuda=torch.version.cuda,cuda_available=True,gpu_name=name,total_memory_bytes=torch.cuda.get_device_properties(0).total_memory,
++          compute_capability=torch.cuda.get_device_capability(0),torch_cuda_arch_list=torch.cuda.get_arch_list(),
++          cudnn_version=torch.backends.cudnn.version(),other_packages=versions,
++          nvidia_smi=subprocess.run(['nvidia-smi'],check=True,capture_output=True,text=True).stdout)
++(root/'results/gpu_environment_verification.json').write_text(json.dumps(data,ensure_ascii=False,indent=2),encoding='utf-8')
++print(json.dumps(data,ensure_ascii=False,indent=2))
+--- /dev/null
++++ scripts/inspect_gpu_roundoff.py
+@@ -0,0 +1,49 @@
++"""Reproduce a failed numeric assertion without changing its tolerance or training.
++
++Run only after the batch has exited, to retain one GPU training process at a time.
++The original assertion is kept; arrays and final weights are saved on failure.
++"""
++from pathlib import Path
++import argparse,importlib.util,json,sys,traceback
++sys.path.insert(0,str(Path(__file__).resolve().parent))
++original=Path(__file__).resolve().parent/'gpu_before_roundoff_fix/run_diagnostic.py'
++if original.exists():
++    sys.path.insert(0,str(Path(__file__).resolve().parent/'completer'))
++    spec=importlib.util.spec_from_file_location('gpu_initial_diagnostic',original)
++    rd=importlib.util.module_from_spec(spec);spec.loader.exec_module(rd)
++else:
++    import run_diagnostic as rd
++from threadpoolctl import threadpool_limits
++
++if __name__=='__main__':
++    ap=argparse.ArgumentParser();ap.add_argument('--root',type=Path,required=True);ap.add_argument('--out',type=Path,required=True)
++    ap.add_argument('--dataset',choices=list(rd.SPEC),required=True);ap.add_argument('--seed',type=int,required=True)
++    args=ap.parse_args();args.out.mkdir(parents=True,exist_ok=True)
++    original_close=rd.np.allclose;original_extract=rd.extract;latest={}
++    def capture_model(model,*other,**kwargs):
++        latest['model']=model
++        return original_extract(model,*other,**kwargs)
++    def inspect_close(a,b,*other,**kwargs):
++        ok=original_close(a,b,*other,**kwargs)
++        if not ok:
++            diff=rd.np.abs(a-b);rtol=kwargs.get('rtol',1e-5);atol=kwargs.get('atol',1e-8)
++            limits=atol+rtol*rd.np.abs(b);worst=rd.np.unravel_index(diff.argmax(),diff.shape)
++            info=dict(shape=list(a.shape),dtype=str(a.dtype),original_rtol=rtol,original_atol=atol,
++                      max_abs_difference=float(diff.max()),max_difference_to_allowed_ratio=float((diff/limits).max()),
++                      failed_elements=int((diff>limits).sum()),total_elements=int(diff.size),
++                      value_at_max_difference=[float(a[worst]),float(b[worst])],
++                      all_finite=bool(rd.np.isfinite(a).all() and rd.np.isfinite(b).all()),
++                      allclose_at_rtol_1e5_atol_1e6=bool(original_close(a,b,rtol=1e-5,atol=1e-6)))
++            rd.np.savez_compressed(args.out/'failed_comparison.npz',subset_encoded=a,full_batch_encoded=b)
++            (args.out/'numeric_difference.json').write_text(json.dumps(info,indent=2),encoding='utf-8')
++            print(json.dumps(info,indent=2),flush=True)
++        return ok
++    rd.extract=capture_model;rd.np.allclose=inspect_close
++    run_args=argparse.Namespace(root=args.root,out=args.out/'run',dataset=args.dataset,rate=.7,seed=args.seed,epochs=500,threads=4,device='cuda')
++    try:
++        with threadpool_limits(limits=4):rd.run(run_args)
++    except AssertionError:
++        model=latest['model']
++        rd.torch.save({name:getattr(model,name).state_dict() for name in ['autoencoder1','autoencoder2','img2txt','txt2img']},args.out/'model_at_failure.pt')
++        (args.out/'assertion.txt').write_text(traceback.format_exc(),encoding='utf-8')
++        raise
+--- /dev/null
++++ scripts/inspect_failed_gpu_runs.py
+@@ -0,0 +1,23 @@
++"""Serial reproduction of every numerical-check failure, using original GPU code."""
++from pathlib import Path
++import json,subprocess
++ROOT=Path(__file__).resolve().parents[1]
++PY=ROOT/'envs/imvc_gpu/python.exe'
++BASE=ROOT/'results/gpu_numeric_check'
++
++if __name__=='__main__':
++    BASE.mkdir(exist_ok=True)
++    errors_path=ROOT/'results/batch_errors.json'
++    if not errors_path.exists():errors_path=ROOT/'results/operational_gpu_roundoff/batch_errors.json'
++    errors=json.loads(errors_path.read_text(encoding='utf-8'))
++    summary=[]
++    for item in errors:
++        dataset,rate,seed=item['job'];assert rate==.7
++        name=f'{dataset}_r{rate}_s{seed}';out=BASE/name
++        with (BASE/(name+'.stdout.log')).open('w',encoding='utf-8') as stdout,(BASE/(name+'.stderr.log')).open('w',encoding='utf-8') as stderr:
++            p=subprocess.run([str(PY),'-I',str(ROOT/'scripts/inspect_gpu_roundoff.py'),'--root',str(ROOT),'--out',str(out),
++                              '--dataset',dataset,'--seed',str(seed)],cwd=ROOT,stdout=stdout,stderr=stderr)
++        assert p.returncode!=0 and (out/'numeric_difference.json').exists() and (out/'model_at_failure.pt').exists(),name
++        info=json.loads((out/'numeric_difference.json').read_text(encoding='utf-8'))
++        summary.append(dict(group=name,**info));print(json.dumps(summary[-1]),flush=True)
++    (BASE/'numeric_summary.json').write_text(json.dumps(summary,indent=2),encoding='utf-8')
+--- /dev/null
++++ scripts/verify_gpu_roundoff.py
+@@ -0,0 +1,73 @@
++"""Inspect batch-shape roundoff and verify a validation-only repair changes no weights."""
++import os
++os.environ['CUBLAS_WORKSPACE_CONFIG']=':4096:8'
++from pathlib import Path
++import argparse,hashlib,json,sys
++import numpy as np
++import torch
++from threadpoolctl import threadpool_limits
++ROOT=Path(__file__).resolve().parents[1]
++sys.path.insert(0,str(ROOT/'scripts/completer'))
++from model import Completer
++from datasets import load_data
++
++def inspect():
++    records=[]
++    for folder in sorted((ROOT/'results/gpu_numeric_check').iterdir()):
++        if not (folder/'model_at_failure.pt').exists():continue
++        config=json.loads((folder/'run/config.json').read_text(encoding='utf-8'))['config']
++        mask=np.load(folder/'run/mask.npy');X,_=load_data(config)
++        model=Completer(config)
++        weights=torch.load(folder/'model_at_failure.pt',map_location='cpu',weights_only=True)
++        for name,state in weights.items():getattr(model,name).load_state_dict(state);getattr(model,name).eval()
++        model.to_device(torch.device('cuda'))
++        with torch.no_grad():
++            for v,ae in enumerate([model.autoencoder1,model.autoencoder2]):
++                observed=mask[:,v]==1
++                x=torch.from_numpy((X[v]*mask[:,v,None]).astype(np.float32)).cuda()
++                subset=ae.encoder(x[observed]).cpu().numpy()
++                full=ae.encoder(torch.from_numpy(X[v].astype(np.float32)).cuda()).cpu().numpy()[observed]
++                delta=np.abs(subset-full)
++                records.append(dict(group=folder.name,view=v,shape=list(subset.shape),max_abs_difference=float(delta.max()),
++                                    original_failed_elements=int((delta>1e-7+1e-5*np.abs(full)).sum()),
++                                    finite=bool(np.isfinite(subset).all() and np.isfinite(full).all()),
++                                    rtol_1e5_atol_1e6_passed=bool(np.allclose(subset,full,rtol=1e-5,atol=1e-6))))
++        del model,weights
++    (ROOT/'results/gpu_numeric_check/all_view_checks.json').write_text(json.dumps(records,indent=2),encoding='utf-8')
++    print(json.dumps(records,indent=2))
++    assert records and all(r['finite'] and r['rtol_1e5_atol_1e6_passed'] for r in records)
++
++def verify():
++    records=[]
++    for folder in sorted((ROOT/'results/gpu_numeric_check').iterdir()):
++        if not (folder/'model_at_failure.pt').exists():continue
++        repaired=ROOT/'results/full'/folder.name
++        before=torch.load(folder/'model_at_failure.pt',map_location='cpu',weights_only=True)
++        after=torch.load(repaired/'model.pt',map_location='cpu',weights_only=True)
++        equal=all(torch.equal(value,after[name][key]) for name,state in before.items() for key,value in state.items())
++        arrays=np.load(repaired/'diagnostic_arrays.npz');original=np.load(folder/'failed_comparison.npz')
++        mask=np.load(folder/'run/mask.npy')
++        assert np.array_equal(mask,arrays['mask'])
++        matched=[]
++        for v in range(2):
++            observed=mask[:,v]==1;a=arrays[f'B_v{v}'][observed];b=arrays[f'oracle_v{v}'][observed]
++            if a.shape==original['subset_encoded'].shape:
++                matched.append(bool(np.array_equal(a,original['subset_encoded']) and np.array_equal(b,original['full_batch_encoded'])))
++        record=dict(group=folder.name,all_weights_and_buffers_bitwise_equal=equal,mask_bitwise_equal=True,
++                    failed_comparison_arrays_bitwise_equal=any(matched))
++        assert equal and any(matched),record
++        records.append(record)
++    initial=json.loads((ROOT/'results/gpu_numeric_check/initial_completed_provenance.json').read_text(encoding='utf-8'))
++    for item in initial['runs']:
++        p=ROOT/'results/full'/item['group']/'result.json'
++        assert hashlib.sha256(p.read_bytes()).hexdigest()==item['result_sha256'],item['group']
++    result=dict(all_passed=bool(records),checks=records,initial_completed_results_hash_unchanged=len(initial['runs']),protocol_sha256=hashlib.sha256((ROOT/'results/protocol.json').read_bytes()).hexdigest())
++    (ROOT/'results/gpu_numeric_check/repair_comparison.json').write_text(json.dumps(result,indent=2),encoding='utf-8')
++    print(json.dumps(result,indent=2))
++
++if __name__=='__main__':
++    ap=argparse.ArgumentParser();ap.add_argument('action',choices=['inspect','verify']);args=ap.parse_args()
++    torch.set_num_threads(4);torch.set_num_interop_threads(1)
++    torch.backends.cudnn.deterministic=True;torch.backends.cudnn.benchmark=False
++    torch.use_deterministic_algorithms(True,warn_only=True)
++    with threadpool_limits(limits=4):dict(inspect=inspect,verify=verify)[args.action]()

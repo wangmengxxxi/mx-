@@ -1,0 +1,44 @@
+[
+  {
+    "file": "model.py",
+    "source_sha256": "bc6e3ed129147c33216897b8a6e7b02db8e98f0169bf9fecf383e3124a676f07",
+    "copy_sha256": "bc6e3ed129147c33216897b8a6e7b02db8e98f0169bf9fecf383e3124a676f07",
+    "changed": false
+  },
+  {
+    "file": "loss.py",
+    "source_sha256": "0ac5ea5853fef850ecfa86a06650875906c25df9c68db81ce0e0a737cd3b6ebf",
+    "copy_sha256": "0ac5ea5853fef850ecfa86a06650875906c25df9c68db81ce0e0a737cd3b6ebf",
+    "changed": false
+  },
+  {
+    "file": "get_mask.py",
+    "source_sha256": "f833566091aeee4465b9edc7d0ce5d81a17940aa2d382fbe5f1dfa0728fe20d7",
+    "copy_sha256": "aa3862af2192c160cb16f40cafb72a061588cc41ce3a9e30d4ee1c4fa945e146",
+    "changed": true
+  },
+  {
+    "file": "configure.py",
+    "source_sha256": "ca90ac6236263e4c6d6c08d12260f9b64e6eac7be94f7bc9bfde29d30e91312f",
+    "copy_sha256": "ca90ac6236263e4c6d6c08d12260f9b64e6eac7be94f7bc9bfde29d30e91312f",
+    "changed": false
+  },
+  {
+    "file": "util.py",
+    "source_sha256": "c28656959032e9589ded52ed18861882553416ac3e24f838d0ea7e73f88ac5aa",
+    "copy_sha256": "c28656959032e9589ded52ed18861882553416ac3e24f838d0ea7e73f88ac5aa",
+    "changed": false
+  },
+  {
+    "file": "evaluation.py",
+    "source_sha256": "3e2c6263ab3d10e3e6093ca3762cea691b0479c32767f998e31f299a9ce114ea",
+    "copy_sha256": "3e2c6263ab3d10e3e6093ca3762cea691b0479c32767f998e31f299a9ce114ea",
+    "changed": false
+  },
+  {
+    "file": "datasets.py",
+    "source_sha256": "7724086e56bc1aaa39988e846b965f66aad75c27db85617af0178708248e4ca6",
+    "copy_sha256": "02e7f95ec39cff4f7cc31a64fc2e1306511b4bb33360637a329a8358e016e27d",
+    "changed": true
+  }
+]

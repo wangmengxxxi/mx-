@@ -1,0 +1,53 @@
+--- third_party/2021-CVPR-Completer/get_mask.py
++++ scripts/completer/get_mask.py
+@@ -29,12 +29,12 @@
+         view_preserve = enc.fit_transform(randint(0, view_num, size=(data_len, 1))).toarray()
+         one_num = view_num * data_len * one_rate - data_len
+         ratio = one_num / (view_num * data_len)
+-        matrix_iter = (randint(0, 100, size=(data_len, view_num)) < int(ratio * 100)).astype(np.int)
+-        a = np.sum(((matrix_iter + view_preserve) > 1).astype(np.int))
++        matrix_iter = (randint(0, 100, size=(data_len, view_num)) < int(ratio * 100)).astype(int)
++        a = np.sum(((matrix_iter + view_preserve) > 1).astype(int))
+         one_num_iter = one_num / (1 - a / one_num)
+         ratio = one_num_iter / (view_num * data_len)
+-        matrix_iter = (randint(0, 100, size=(data_len, view_num)) < int(ratio * 100)).astype(np.int)
+-        matrix = ((matrix_iter + view_preserve) > 0).astype(np.int)
++        matrix_iter = (randint(0, 100, size=(data_len, view_num)) < int(ratio * 100)).astype(int)
++        matrix = ((matrix_iter + view_preserve) > 0).astype(int)
+         ratio = np.sum(matrix) / (view_num * data_len)
+         error = abs(one_rate - ratio)
+ 
+--- third_party/2021-CVPR-Completer/datasets.py
++++ scripts/completer/datasets.py
+@@ -8,19 +8,19 @@
+ def load_data(config):
+     """Load data """
+     data_name = config['dataset']
+-    main_dir = sys.path[0]
++    main_dir = config['data_root']  # explicit reviewed data root; never third_party cwd
+     X_list = []
+     Y_list = []
+ 
+     if data_name in ['Scene_15']:
+-        mat = sio.loadmat(os.path.join(main_dir, 'data', 'Scene-15.mat'))
++        mat = sio.loadmat(os.path.join(main_dir, 'Scene-15.mat'))
+         X = mat['X'][0]
+         X_list.append(X[0].astype('float32'))
+         X_list.append(X[1].astype('float32'))
+         Y_list.append(np.squeeze(mat['Y']))
+ 
+     elif data_name in ['LandUse_21']:
+-        mat = sio.loadmat(os.path.join(main_dir, 'data', 'LandUse-21.mat'))
++        mat = sio.loadmat(os.path.join(main_dir, 'LandUse-21.mat'))
+         train_x = []
+         train_x.append(sparse.csr_matrix(mat['X'][0, 0]).A)  # 20
+         train_x.append(sparse.csr_matrix(mat['X'][0, 1]).A)  # 59
+@@ -42,7 +42,7 @@
+         Y_list.append(np.concatenate([np.squeeze(tune.labels[:, 0]), np.squeeze(test.labels[:, 0])]))
+ 
+     elif data_name in ['Caltech101-20']:
+-        mat = sio.loadmat(os.path.join(main_dir, 'data', data_name + '.mat'))
++        mat = sio.loadmat(os.path.join(main_dir, data_name + '.mat'))
+         X = mat['X'][0]
+         for view in [3, 4]:
+             x = X[view]

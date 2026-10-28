@@ -1,0 +1,37 @@
+{
+  "args": {
+    "rates": "0.4,0.8",
+    "masks": 3,
+    "seeds": "0,1",
+    "output": "fp_cold_fallback_sdcn"
+  },
+  "reference_config": {
+    "rates": "0,0.4,0.8",
+    "methods": "zero,fp",
+    "seeds": "0,1,2",
+    "masks": 5,
+    "mask_seed": 20261023,
+    "hidden": "128,64",
+    "latent": 10,
+    "clusters": 7,
+    "pretrain_epochs": 100,
+    "train_epochs": 400,
+    "batch_size": 256,
+    "pretrain_lr": 0.001,
+    "lr": 0.001,
+    "steps": 40,
+    "threads": 2,
+    "eval_every": 20,
+    "output": "sdcn_stage4_holdout",
+    "hidden_dims": [
+      128,
+      64
+    ],
+    "torch": "2.8.0+cpu",
+    "numpy": "1.26.4",
+    "protocol": "SDCN adaptation; raw features; final epoch; no label selection"
+  },
+  "calibration_fraction": 0.2,
+  "candidate": "FP plus calibrated observed-mean fallback on zero-observed-neighbor nodes",
+  "reference": "F:\\\u7814\u7a76\u751f\u6bd5\u8bbe\\\u53ef\u884c\u6027\u9a8c\u8bc1\\sdcn_stage4_holdout"
+}

@@ -1,0 +1,16 @@
+{
+  "initial_runner_sha256": "ea8a44a5738d5254ba80d62d18ff4d295615efbafd973e9fadd643c7dc0bf912",
+  "updated_runner_sha256": "24ef739f4938a0c4c8c36afaf49536f0fdfc6efeb70b81cd3ca8c5905d6ce55c",
+  "CUDA_check_old_atol": 1e-07,
+  "CUDA_check_new_atol": 1e-06,
+  "rtol": 1e-05,
+  "CPU_check_unchanged": true,
+  "training_and_branch_inputs_unchanged": true,
+  "protocol_sha256": "7ddf3260ccebdf199cea02efdb9f562e8afc66c6a725f05ff4bcf0d6553cb34a",
+  "initial_complete_results_unchanged": 17,
+  "failed_groups": [
+    "Caltech101-20_r0.7_s1",
+    "Scene-15_r0.7_s2",
+    "Scene-15_r0.7_s3"
+  ]
+}

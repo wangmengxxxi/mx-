@@ -1,0 +1,53 @@
+# 环境与缓存
+envs/
+**/envs/
+__pycache__/
+*.pyc
+.claude/
+
+# 数据集、特征与模型权重
+data/
+**/data/
+**/amgc_data/
+*.pt
+*.pth
+*.ckpt
+*.npy
+*.npz
+*.mat
+*.bin
+*.mmdb
+*.dat
+*.db
+
+# 下载残留与压缩包
+*.zip
+*.tar.gz
+*.part
+*.parts/
+*.tail
+*.headers
+**/download_parts/
+**/proxy_runtime/
+
+# 第三方代码（部分仓库无明确许可证，不公开再分发）
+**/third_party/
+**/amgc_work/
+**/references/
+
+# 论文 PDF 与抓取的网页原文（版权归原作者/网站）
+*.pdf
+*.html
+**/文献/
+**/raw/
+方向检索/notes/
+方向检索/search_index.json
+**/papernotes_search_index*.json
+
+# 论文页面渲染图与原文全文抽取（版权归原作者）
+**/paper_page*.png
+**/paper.txt
+# PaperNotes 站点笔记全文抓取
+方向检索/read_notes.json
+**/papernotes_read.txt
+**/papernotes_matches.*

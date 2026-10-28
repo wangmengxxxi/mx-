@@ -1,0 +1,22 @@
+r0_m0_complete_s0 pretrain 20: mse=0.010425
+r0_m0_complete_s0 joint 0: ACC=0.3818 NMI=0.1824 clusters=7
+r0_m0_complete_s0 joint 20: ACC=0.5199 NMI=0.3728 clusters=6
+r0_m0_complete_s0 joint 40: ACC=0.4826 NMI=0.3129 clusters=6
+r0_m0_complete_s0 joint 60: ACC=0.4760 NMI=0.3021 clusters=6
+r0_m0_complete_s0 joint 80: ACC=0.4645 NMI=0.2888 clusters=6
+r0_m0_complete_s0 joint 100: ACC=0.4483 NMI=0.2733 clusters=6
+r0.8_m0_zero_s0 pretrain 20: mse=0.002215
+r0.8_m0_zero_s0 joint 0: ACC=0.2710 NMI=0.0704 clusters=7
+r0.8_m0_zero_s0 joint 20: ACC=0.3021 NMI=0.0000 clusters=1
+r0.8_m0_zero_s0 joint 40: ACC=0.3139 NMI=0.0162 clusters=3
+r0.8_m0_zero_s0 joint 60: ACC=0.3224 NMI=0.0273 clusters=4
+r0.8_m0_zero_s0 joint 80: ACC=0.3253 NMI=0.0404 clusters=4
+r0.8_m0_zero_s0 joint 100: ACC=0.3257 NMI=0.0407 clusters=4
+r0.8_m0_fp_s0 pretrain 20: mse=0.003206
+r0.8_m0_fp_s0 joint 0: ACC=0.3519 NMI=0.1854 clusters=7
+r0.8_m0_fp_s0 joint 20: ACC=0.4579 NMI=0.2766 clusters=6
+r0.8_m0_fp_s0 joint 40: ACC=0.4712 NMI=0.2752 clusters=5
+r0.8_m0_fp_s0 joint 60: ACC=0.4993 NMI=0.3086 clusters=6
+r0.8_m0_fp_s0 joint 80: ACC=0.4993 NMI=0.3210 clusters=7
+r0.8_m0_fp_s0 joint 100: ACC=0.4963 NMI=0.3192 clusters=7
+saved F:\�о�������\��������֤\sdcn_stage3_wide_probe

@@ -1,0 +1,7 @@
+{
+  "rates": "0.4,0.8",
+  "masks": 5,
+  "mask_seed": 20261023,
+  "steps": 40,
+  "output": "fp_coverage_pair"
+}

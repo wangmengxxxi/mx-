@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "F:\研究生毕设\不完整多视图聚类\scripts\run_diagnostic.py", line 207, in <module>
+    with threadpool_limits(limits=a.threads):run(a)
+  File "F:\研究生毕设\不完整多视图聚类\scripts\run_diagnostic.py", line 141, in run
+    for v in range(2):assert np.allclose(B[v][mask[:,v]==1],oracle[v][mask[:,v]==1],rtol=1e-5,atol=1e-7)
+AssertionError

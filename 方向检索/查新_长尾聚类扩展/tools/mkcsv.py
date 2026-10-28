@@ -1,0 +1,336 @@
+# -*- coding: utf-8 -*-
+import csv, os
+
+BASE = r"F:\研究生毕设\方向检索\查新_长尾聚类扩展"
+H = ["编号", "题目", "作者", "Venue", "年份", "核实等级", "原文链接", "代码链接", "许可证(GitHub API)",
+     "无监督", "已知K", "长尾", "联邦", "骨干/特征", "核心方法", "数据集与不平衡比", "主要baseline",
+     "论文自述局限", "关键数字(表号)", "对应候选", "角色"]
+
+R = []
+def a(*x):
+    R.append(list(x))
+
+# ---------------- 候选 1 ----------------
+a("C1-01", "P$^2$OT: Progressive Partial Optimal Transport for Deep Imbalanced Clustering",
+  "Chuyu Zhang, Hui Ren, Xuming He", "ICLR 2024 (poster)", "2024", "A",
+  "https://openreview.net/forum?id=hD3sGVqPsr ; https://proceedings.iclr.cc/paper_files/paper/2024/hash/3d03791377a31cb3e7357014ba58eb80-Abstract-Conference.html",
+  "https://github.com/rhfeiyang/PPOT", "NOASSERTION（无标准 SPDX 许可证）",
+  "是", "是（Sec.4.1 明确 K given as prior）", "是", "否", "ViT-B/16 + DINO 自监督预训练，冻结特征上训聚类头",
+  "把伪标签生成写成 progressive partial optimal transport：KL 约束簇质量为 rho*K*1_K，rho 用 sigmoid 从 0.1 升温；引入虚拟簇吸收未选质量，用矩阵缩放算法求解",
+  "CIFAR100-LT (R=100)；ImgNet-R (R=13)；iNature100 (R=67) / iNature500 (R=111) / iNature1000",
+  "DINO, BCL, IIC, PICA, SCAN, SCAN*, CC, DivClust",
+  "未讨论 K 估计/敏感性；唯一 future work 是 rho 的自适应设计（PDF p.4）",
+  "Table 1 (p.7)：CIFAR100 ACC 38.2±0.8 / NMI 69.6±0.3 / F1 32.0±0.9；ImgNet-R 25.9/45.7/27.3；iNature100 44.2/67.0/36.9；iNature500 32.2/67.2/25.2。SCAN 对照 37.2/69.4/31.4",
+  "候选1", "直接相关（长尾主线基准，K 已知）")
+
+a("C1-02", "SP$^2$OT: Semantic-Regularized Progressive Partial Optimal Transport for Imbalanced Clustering",
+  "Chuyu Zhang, Hui Ren, Xuming He", "arXiv 2404.03446（仅预印本，OpenReview 上也只有 CoRR 版本）", "2024", "C",
+  "https://arxiv.org/abs/2404.03446", "https://github.com/rhfeiyang/SPPOT", "未核实",
+  "是", "是", "是", "否", "未读全文（摘要级）",
+  "在 P2OT 基础上加语义关系约束，用投影镜像下降求解（摘要级信息）",
+  "声称同为 CIFAR100-LT / ImageNet-R / iNaturalist 子集（摘要级，未核实 IR）", "未核实", "未核实",
+  "未核实（未取得全文）", "候选1", "直接相关（P2OT 扩展版）")
+
+a("C1-03", "Mini-cluster Guided Long-tailed Deep Clustering (MiniClustering)",
+  "Zhixin Li, Yuheng Jia, Guanliang Chen, Hui Liu, Junhui Hou", "ICLR 2026", "2026", "B",
+  "https://proceedings.iclr.cc/paper_files/paper/2026/hash/813ed01a11220fcdeed10e0d7da2de25-Abstract-Conference.html ; https://openreview.net/forum?id=3JlljaiQwR",
+  "https://github.com/LZX-001/MiniClustering", "none（GitHub API 报告无 LICENSE）",
+  "是", "是（摘要：much more clusters than the target number of clusters）", "是", "否", "BYOL 风格自监督预训练 + 聚类头（README 显示 main_byol.py / MiniClustering.py）",
+  "专门的聚类头把数据切成远多于目标数的 mini-cluster，用 mini-cluster 级预测估计各类长尾程度并据此重加权自训练损失",
+  "摘要称 multiple benchmark datasets with different imbalance ratios，具体未核实", "未核实",
+  "未核实", "未读到表格（PDF 下载被限速截断，4 轮续传仍缺尾部）", "候选1", "直接相关（长尾主线最新，已用 over-clustering 但 K 目标已知）")
+
+a("C1-04", "DeepDPM: Deep Clustering With an Unknown Number of Clusters",
+  "Meitar Ronen, Shahaf E. Finder, Oren Freifeld", "CVPR 2022", "2022", "A",
+  "https://openaccess.thecvf.com/content/CVPR2022/papers/Ronen_DeepDPM_Deep_Clustering_With_an_Unknown_Number_of_Clusters_CVPR_2022_paper.pdf",
+  "https://github.com/BGU-CS-VIL/DeepDPM", "未核实",
+  "是", "否（自动推断 K，DPMM）", "部分（构造了 imbalanced 版本，但非标准长尾协议）", "否",
+  "MoCo 特征 + AE（可端到端或两段式）",
+  "Dirichlet Process Mixture Model + 分裂/合并；用 KL 散度在簇间重分配质量；AE 交替训练",
+  "MNIST / USPS / Fashion-MNIST（+ imb 版，R 未报，定义在 Supmat）；STL-10；Reuters10k；ImageNet-50 balanced & imbalanced（从单纯形均匀采样非均匀直方图）；全量 ImageNet",
+  "K-means, GMM, DBSCAN, moVB, DPM Sampler, DCC, AdapVAE；参数方法对比另含 SCAN, DCN++",
+  "① 只报 ImageNet-50 与 MNIST 级别的 imbalanced，未用 IR=100 长尾协议；② 全量 ImageNet 收敛到 707 簇（GT 1000），明显低估",
+  "Table 2 (p.6) 推断 K（GT=10）：MNIST 10±0.00 / USPS 9.2±0.42 / FMNIST 10.2±0.79。Table 4 (p.7) ImageNet-50 ACC：balanced 0.64 / imbalanced 0.58±.01（AE 交替版 0.60±.01）。Table 5 (p.7) Final/best K（GT=50）：DeepDPM 52.0±1.0 / imbalanced 43.67±1.2；SCAN 70 / 40；DCN++ 60 / 40；K-means 40 / 20",
+  "候选1", "直接相关（未知 K 侧基准，且已报告长尾下 K 低估）")
+
+a("C1-05", "UNSEEN: Dying Clusters Is All You Need - Deep Clustering With an Unknown Number of Clusters",
+  "Collin Leiber, Niklas Strauß, Matthias Schubert, Thomas Seidl", "ICDMW 2024", "2024", "B",
+  "https://doi.org/10.1109/icdmw65004.2024.00100", "https://github.com/collinleiber/UNSEEN", "未核实",
+  "是", "否（从给定上界估计 K）", "否（摘要未涉及）", "否", "未核实",
+  "通用框架：从给定上界出发，通过“簇死亡”机制估计簇数，可插在 DCN / DEC / DKM 上",
+  "图像与表格数据集（摘要级，未核实）", "未核实", "未核实（摘要级）",
+  "未核实", "候选1", "部分相关（未知 K 但无长尾评测）")
+
+a("C1-06", "Generalized Category Discovery under the Long-Tailed Distribution",
+  "Bingchen Zhao, Kai Han", "arXiv 2506.12515（未见正式 venue）", "2025", "C",
+  "https://arxiv.org/abs/2506.12515", "未找到", "—",
+  "否（半监督，有已知类标注集）", "否（明确要估计类别数）", "是", "否", "未核实",
+  "置信样本选择 + 密度聚类；显式把“平衡分类器学习”与“估计类别数”列为长尾 GCD 的两大挑战",
+  "长尾 GCD 数据集 + 常规 GCD 数据集（摘要级）", "未核实", "未核实",
+  "未核实（预印本，摘要级）", "候选1", "最危险的邻近工作（有标签但已提出“长尾+估类别数”）")
+
+a("C1-07", "ImbaGCD: Imbalanced Generalized Category Discovery",
+  "Ziyun Li, Ben Dai, Furkan Simsek, Christoph Meinel, Haojin Yang", "arXiv 2401.05353", "2023", "C",
+  "https://arxiv.org/abs/2401.05353", "未找到", "—",
+  "否（半监督 GCD）", "是（GCD 惯例）", "是", "否", "未核实",
+  "OT-based EM 框架，对齐边缘类先验；提出在 GCD 设定下估计不平衡类先验分布的机制",
+  "CIFAR-100、ImageNet-100（摘要称提升 2-4% / 15-19%）", "未核实", "未核实",
+  "摘要称提升 ~2-4%（CIFAR-100）与 15-19%（ImageNet-100），未核实表号", "候选1", "部分相关（不平衡 GCD，有标签）")
+
+a("C1-08", "Generalized Categories Discovery for Long-tailed Recognition",
+  "未核实", "arXiv 2401.05352", "2023", "C",
+  "https://arxiv.org/abs/2401.05352", "未找到", "—",
+  "否（半监督）", "是", "是", "否", "未核实", "未核实（仅题目与元数据）", "未核实", "未核实", "未核实", "未核实",
+  "候选1", "部分相关（长尾 GCD）")
+
+a("C1-09", "Long-tailed learning for generalized category discovery",
+  "Cuong Manh Hoang", "Neurocomputing 2025", "2025", "C",
+  "https://doi.org/10.1016/j.neucom.2025.130745 (arXiv 2506.06965)", "未找到", "—",
+  "否（半监督）", "是", "是", "否", "未核实", "未核实（摘要未取得）", "未核实", "未核实", "未核实", "未核实",
+  "候选1", "部分相关（长尾 GCD，期刊版）")
+
+a("C1-10", "Otem-IGCD: An Optimal Transport-based EM Framework for Imbalanced Generalized Category Discovery",
+  "未核实", "IJCNN 2024", "2024", "C", "https://doi.org/10.1109/ijcnn60899.2024.10651384", "未找到", "—",
+  "否（半监督）", "是", "是", "否", "未核实", "OT-based EM（仅题目）", "未核实", "未核实", "未核实", "未核实",
+  "候选1", "部分相关（不平衡 GCD）")
+
+a("C1-11", "Semantic Prototype-Guided Sampling for Long-Tailed Generalized Category Discovery",
+  "未核实", "ICIP 2025", "2025", "C", "https://doi.org/10.1109/icip55913.2025.11084746", "未找到", "—",
+  "否（半监督）", "是", "是", "否", "未核实", "语义原型引导采样（仅题目）", "未核实", "未核实", "未核实", "未核实",
+  "候选1", "部分相关（长尾 GCD）")
+
+a("C1-12", "Towards Distribution-Agnostic Generalized Category Discovery (BaCon)",
+  "未核实", "CVPR 2023", "2023", "B", "https://doi.org/10.1109/cvpr52729.2023.00337", "未找到", "—",
+  "否（半监督）", "是", "是（分布无关）", "否", "未核实", "Bi-level 对比学习 + 分布无关假设（摘要级）", "未核实", "未核实", "未核实", "未核实",
+  "候选1", "部分相关（分布无关 GCD）")
+
+a("C1-13", "Novel Class Discovery for Long-tailed Recognition",
+  "未核实", "arXiv 2308.02989", "2023", "C", "https://arxiv.org/abs/2308.02989", "未找到", "—",
+  "否（半监督 NCD）", "是", "是", "否", "未核实", "未核实", "未核实", "未核实", "未核实", "未核实",
+  "候选1", "部分相关（长尾 NCD）")
+
+a("C1-14", "Beyond Predefined Clusters: A Comprehensive Review of Clustering Methods for Unknown Numbers of Clusters",
+  "Nazila Pourhaji Aghayengejeh, Mohammad Ali Balafar, Jafar Tanha, Mustafa Alper Selver", "IEEE TKDE 2026", "2026", "B",
+  "https://doi.org/10.1109/tkde.2026.3680286", "—", "—",
+  "综述", "综述（未知 K）", "摘要未把长尾列为核心挑战", "否", "—",
+  "按“框架（经典/深度）× 策略（密度/模型/图/子空间）× 是否用标签”三视角系统分类未知簇数聚类方法",
+  "—", "—", "—", "—",
+  "候选1", "综述（用于论证“未知 K 已成熟、但长尾未进入其议程”）")
+
+a("C1-15", "AutoProPos: An Extension of Prototype Scattering and Positive Sampling Clustering for an Unknown Number of Clusters",
+  "未核实", "Applied Sciences 2025", "2025", "C", "https://doi.org/10.3390/app151810052", "未找到", "—",
+  "是", "否", "否", "否", "未核实", "把 ProPos 扩展到未知 K（仅题目）", "未核实", "未核实", "未核实", "未核实",
+  "候选1", "部分相关（未知 K，无长尾）")
+
+a("C1-16", "Dynamic Deep Clustering of High-Dimensional Directional Data via Hyperspherical Embeddings with Bayesian Nonparametric Mixtures",
+  "未核实", "KDD 2025", "2025", "C", "https://doi.org/10.1145/3690624.3709230", "未找到", "—",
+  "是", "否（非参）", "否", "否", "未核实", "球面嵌入 + 贝叶斯非参混合（仅题目/元数据）", "方向数据（非图像长尾）", "未核实", "未核实", "未核实",
+  "候选1", "部分相关（未知 K，模态特殊）")
+
+a("C1-17", "DGD: Density Gradient-Guided Diffusion for Long-Tailed Clustering",
+  "Xulun Ye, Yuanyuan Deng, Kun Zhou", "CVPRF 2026（会议名未能确认）", "2026", "C",
+  "https://doi.org/10.1109/cvprf71909.2026.00735", "未找到", "—",
+  "推测为是", "未核实", "是", "否", "未核实", "密度梯度引导的扩散模型做长尾聚类（仅题目）", "未核实", "未核实", "未核实", "未核实（无摘要）",
+  "候选1", "线索（长尾聚类新工作，需回到原文核实）")
+
+a("C1-18", "PROTOCOL: Partial Optimal Transport-enhanced Contrastive Learning for Imbalanced Multi-view Clustering",
+  "未核实", "arXiv 2506.12408", "2025", "C", "https://arxiv.org/abs/2506.12408", "未找到", "—",
+  "是", "是", "是（多视图）", "否", "未核实", "partial OT + 对比学习（仅题目）", "未核实", "未核实", "未核实", "未核实",
+  "候选1 / 组合A", "部分相关（多视图长尾）")
+
+a("C1-19", "Balanced Multi-View Clustering",
+  "未核实", "IEEE TPAMI 2026", "2026", "C", "https://doi.org/10.1109/tpami.2026.3688728", "未找到", "—",
+  "是", "未核实", "是（不平衡）", "否", "未核实", "未核实（仅题目）", "未核实", "未核实", "未核实", "未核实",
+  "组合A", "线索（不平衡多视图聚类最高级别工作）")
+
+a("C1-20", "AEMVC: Mitigate Imbalanced Embedding Space in Multi-view Clustering",
+  "未核实", "ACM MM 2025", "2025", "C", "https://doi.org/10.1145/3746027.3754697", "未找到", "—",
+  "是", "未核实", "部分（“不平衡嵌入空间”，未必指类别长尾）", "否", "未核实", "未核实", "未核实", "未核实", "未核实", "未核实",
+  "组合A", "线索（需核实“不平衡”具体所指）")
+
+# ---------------- 候选 2 ----------------
+a("C2-01", "Federated Generalized Category Discovery (Fed-GCD / AGCL)",
+  "Nan Pu, Wenjing Li, Xingyuan Ji, Yalan Qin, Nicu Sebe, Zhun Zhong", "CVPR 2024", "2024", "B",
+  "https://openaccess.thecvf.com/content/CVPR2024/html/Pu_Federated_Generalized_Category_Discovery_CVPR_2024_paper.html",
+  "https://github.com/TPCD/FedGCD", "none（GitHub API 报告无 LICENSE）",
+  "否（半监督，有已知类标注集）", "是（GCD 惯例）", "部分（摘要提到 heterogeneous label spaces，非长尾协议）", "是", "未核实（视觉 backbone）",
+  "Associated Gaussian Contrastive Learning：Client Semantics Association 在服务器聚合各客户端 GMM 得到全局 GMM；客户端做 local+global 双层 GMM 对比学习",
+  "6 个视觉数据集（摘要级，清单未核实）", "未核实", "摘要未单列局限",
+  "未核实（PDF 因限速未取全）", "候选2", "直接相关（联邦 + 类别发现，标签空间异构）")
+
+a("C2-02", "Fed$k^*$-HC: Federated hierarchical clustering with automatic selection of optimal cluster numbers",
+  "Yue Zhang, Chuanlong Qiu, Xinfa Liao, Yiqun Zhang", "Information Sciences 2025（arXiv 2603.12684）", "2025", "C",
+  "https://doi.org/10.1016/j.ins.2025.122957 ; https://arxiv.org/abs/2603.12684", "未找到", "—",
+  "是", "否（自动选 k*）", "是（摘要：cluster sizes are naturally imbalanced）", "是", "未核实",
+  "各客户端生成 micro-subcluster，原型上传服务器，密度式层次合并，按原型邻接关系自终止以确定 k*",
+  "diverse datasets（摘要级，未核实）", "未核实", "未核实（摘要级）", "未核实",
+  "候选2", "最直接竞争（联邦 + 未知 K + 簇大小不平衡）")
+
+a("C2-03", "FedHC: Learning Imbalanced Clusters via Federated Hierarchical Clustering",
+  "Yue Zhang, Xinfa Liao, Qingsheng Chen, Hao-Tian Wu, Yiqun Zhang", "DASFAA 2024 (LNCS 14856)", "2024", "C",
+  "https://doi.org/10.1007/978-981-97-8487-5_35", "未找到", "—",
+  "是", "未核实", "是（题目）", "是", "未核实", "联邦层次聚类（仅题目）", "未核实", "未核实", "未核实", "未核实（付费墙，摘要未取得）",
+  "候选2", "直接相关（联邦 + 不平衡簇），内容未核实")
+
+a("C2-04", "Asynchronous Federated Clustering with Unknown Number of Clusters (AFCL)",
+  "Yunfan Zhang, Yiqun Zhang, Yang Lu, Mengke Li, Xi Chen, Yiu-ming Cheung", "AAAI 2025", "2025", "A",
+  "https://doi.org/10.1609/aaai.v39i21.34429 ; https://ojs.aaai.org/index.php/AAAI/article/view/34429",
+  "https://github.com/Yunfan-Zhang/AFCL", "none（GitHub API 报告无 LICENSE）",
+  "是", "否（未知全局簇数 k*）", "否（「imbalance」指客户端上传频率不平衡，非类别不平衡）", "是", "无深度骨干（纯数值数据）",
+  "向客户端铺开过量 seed 点作为学习媒介；服务器端累积各客户端 update intensity，设计 balancing mechanism 处理异步，种子相互作用自动消除冗余并收敛出合适簇数",
+  "13 个数据集：2 个高斯球合成（SD1/SD2）+ 11 个 UCI 真实集（SE/IR/AL/AB/CC/AC/SG/LI/PA/AU/TF），规模极小（如 U=776、TF=748 样本）",
+  "DK++、FFCM-avg1、FFCM-avg2、FedSC、k-FED、Fed-SC",
+  "自述：假设联邦聚类处理纯数值数据，且客户端数量较少；后续方向是数值+类别混合属性、大量客户端（Concluding Remarks）",
+  "Table 3 (SC) 平均排名 AFCL 1.0769（最好）；Table 4 (CH) 平均排名 1.5385。数据集统计见 Table 2。指标为 SC/CH/BD，不用 ACC/NMI/ARI",
+  "候选2", "直接相关（联邦 + 未知 K），但不处理长尾")
+
+a("C2-05", "Federated Clustering with Unknown Local and Global Cluster Cardinalities",
+  "Mitushi Goyal, Tarun S., Riddhanya Senapathi, Arun Raman", "arXiv 2609.36762", "2026", "C",
+  "https://arxiv.org/abs/2609.36762", "未找到", "—",
+  "是", "否（本地 K_g 与全局 K 都未知）", "否", "是", "未核实",
+  "两阶段：客户端用 Adaptive Split-Merge（BIC 驱动分裂 + 合并过多成分）自估 K_g；再用 FedGEM 等需要本地计数的聚合器",
+  "8 个数据集（摘要级）", "FedGEM 及其他 label-free 估计器",
+  "摘要未单列；属于预印本", "摘要：mean ARI 0.333（ASM+FedGEM）vs 0.256（次优 label-free 估计器）vs 0.361（给真本地计数）",
+  "候选2 / 组合B", "部分相关（联邦 + 未知 K，不涉及长尾）")
+
+a("C2-06", "Fed-BRDECS: Privacy-Preserving and Heterogeneity-Aware Federated Deep Embedded Clustering",
+  "Haemin Park, Diego Klabjan, Martin Braun, Xiuqi Li, Balakrishnan Ananthanarayanan", "arXiv 2610.07399", "2026", "C",
+  "https://arxiv.org/abs/2610.07399", "未找到", "—",
+  "是", "是（DEC 式，隐含 K 给定）", "部分（本地稀有预测簇过采样）", "是", "未核实（图像 + 文本 + 时间序列）",
+  "用局部可计算的 sample-stability loss 替代全局归一化聚类目标；prediction-balanced sampling 过采样本地稀有预测簇；centroid-level restarting 刷新偏置/失活质心",
+  "图像与文本聚类 benchmark；另演示联邦时间序列异常检测（摘要级）", "代表性联邦聚类与深度聚类 baseline",
+  "摘要未单列", "未核实（摘要级）", "候选2", "机制上最接近候选2 想法的工作（2026-10 预印本）")
+
+a("C2-07", "Federated Deep Clustering Networks for High-Dimensional and Heterogeneous Data (FedDCN)",
+  "Morris Stallmann, C. Kouzinopoulos, Marcin Pietrasik, Anna Wilbik", "arXiv 2609.21829", "2026", "C",
+  "https://arxiv.org/abs/2609.21829", "未找到", "—",
+  "是", "是", "否", "是", "未核实",
+  "把 Deep Clustering Network 泛化到联邦：同时优化重建损失与聚类损失，生成合成数据增强 + 几何正则做隐空间对齐",
+  "IID 与 non-IID 划分（摘要级）", "未核实",
+  "摘要指出现有联邦深度聚类方法在 non-IID 下仍不够可靠", "未核实", "候选2", "部分相关（联邦深度聚类，非长尾）")
+
+a("C2-08", "Stitch the Fragments: One-Shot Hierarchical Federated Clustering",
+  "Shenghong Cai, Zihua Yang, Yang Lu, Mengke Li, Yuzhu Ji, Yiqun Zhang, Yiu-ming Cheung", "arXiv 2601.06404", "2026", "C",
+  "https://arxiv.org/abs/2601.06404", "未找到", "—",
+  "是", "未核实", "否（关注非 IID 碎片化，非长尾）", "是", "未核实",
+  "单轮通信的层次联邦聚类：客户端做细粒度分布探索并上传原型级知识，服务器做多粒度融合，把 clusterlet 拼成全局层次",
+  "真实 benchmark 数据集（摘要级）", "未核实", "摘要未单列", "未核实",
+  "候选2", "部分相关（非 IID 碎片化的同构表述）")
+
+a("C2-09", "Federated Clustering: An Overview of Algorithm Evolution and Research Prospects",
+  "Shifei Ding, Chao Li, Lili Guo, Qiang Yang", "IEEE TPAMI 2026", "2026", "B",
+  "https://doi.org/10.1109/tpami.2026.3701079", "—", "—",
+  "综述", "综述", "摘要未把长尾列为核心议题", "综述", "—",
+  "四部分：经典聚类范式回顾 → 联邦聚类的固有挑战与改进策略 → 实验设置与评测协议专章 → 按“数据划分方式 × 是否深度表征”四分类综述",
+  "—", "—", "讨论现有 FC 方法局限与未来方向（具体条目未核实）", "—",
+  "候选2", "综述（说明 FC 已成熟到可写综述，评测协议不统一是公认痛点）")
+
+a("C2-10", "Federated Spectral Clustering via Secure Similarity Reconstruction",
+  "Dong Qiao, Chris Ding, Jicong Fan", "NeurIPS 2023", "2023", "B",
+  "https://openreview.net/forum?id=RW7rZ8Y3Bp", "未找到", "—",
+  "是", "是", "否", "是", "未核实", "安全相似度重建 + 谱聚类（摘要级）", "未核实", "未核实", "未核实", "未核实",
+  "候选2", "部分相关（FC 但默认平衡）")
+
+a("C2-11", "Heterogeneity for the Win: One-Shot Federated Clustering (k-FED)",
+  "Don Kurian Dennis, Tian Li, Virginia Smith", "ICML 2021（OpenAlex 收录为 arXiv 2103.00697）", "2021", "C",
+  "https://arxiv.org/abs/2103.00697", "未找到", "—",
+  "是", "是", "否", "是", "未核实", "单轮 k-means 式联邦聚类（k-FED）", "未核实", "未核实", "未核实", "未核实",
+  "候选2", "部分相关（FC 奠基工作，AFCL 的 one-shot baseline）")
+
+a("C2-12", "Jigsaw Game: Federated Clustering",
+  "Jinxuan Xu, Hong-You Chen, Wei-Lun Chao, Yuqian Zhang", "TMLR 2024", "2024", "B",
+  "https://openreview.net/forum?id=8YcUJbxmmC", "未找到", "—",
+  "是", "是", "否", "是", "未核实", "拼图视角处理客户端分布差异（摘要级）", "未核实", "未核实", "未核实", "未核实",
+  "候选2", "部分相关（FC 但默认平衡）")
+
+a("C2-13", "Orchestra: Unsupervised Federated Learning via Globally Consistent Clustering",
+  "未核实", "ICML 2022（arXiv 2205.11506）", "2022", "C",
+  "https://arxiv.org/abs/2205.11506", "未找到", "—",
+  "是", "是", "否", "是", "未核实", "全局一致聚类 + 联邦无监督表示学习", "未核实", "未核实", "未核实", "未核实",
+  "候选2", "部分相关（联邦无监督，但非长尾）")
+
+a("C2-14", "CReFF: Federated Learning on Heterogeneous and Long-Tailed Data via Classifier Re-Training with Federated Features",
+  "未核实", "IJCAI 2022", "2022", "C", "https://doi.org/10.24963/ijcai.2022/308", "未找到", "—",
+  "否（有监督）", "是", "是", "是", "未核实", "上传类别条件特征到服务器，重训平衡分类器", "未核实", "未核实", "未核实", "未核实",
+  "候选2", "邻近（联邦长尾，有监督，施引 121）")
+
+a("C2-15", "Fed-GraB: Federated Long-tailed Learning with Self-Adjusting Gradient Balancer",
+  "Zikai Xiao, Zihan Chen, Songshang Liu, Hualiang Wang, Yang Feng", "NeurIPS 2023", "2023", "B",
+  "https://openreview.net/forum?id=gJewjFjfN2", "未找到", "—",
+  "否（有监督）", "是", "是", "是", "未核实", "自调整梯度平衡器（按类调梯度）", "未核实", "未核实", "未核实", "未核实",
+  "候选2", "邻近（联邦长尾，有监督）")
+
+a("C2-16", "FedLoGe: Joint Local and Generic Federated Learning under Long-tailed Data",
+  "Zikai Xiao, Zihan Chen, Liyinglan Liu, Yang Feng, Joey Tianyi Zhou", "ICLR 2024", "2024", "B",
+  "https://openreview.net/forum?id=V3j5d0GQgH", "未找到", "—",
+  "否（有监督）", "是", "是", "是", "未核实", "联合优化本地个性化模型与全局通用模型", "未核实", "未核实", "未核实", "未核实",
+  "候选2", "邻近（联邦长尾，有监督）")
+
+a("C2-17", "Global Balanced Experts for Federated Long-Tailed Learning",
+  "Yaopei Zeng, Lei Liu, Li Liu, Li Shen, ShaoGuo Liu", "ICCV 2023", "2023", "B",
+  "https://openreview.net/forum?id=dVu9l3vn3w", "未找到", "—",
+  "否（有监督）", "是", "是", "是", "未核实", "全局平衡专家（摘要级）", "未核实", "未核实", "未核实", "未核实",
+  "候选2", "邻近（联邦长尾，有监督）")
+
+a("C2-18", "CLIP2FL: CLIP-Guided Federated Learning on Heterogeneity and Long-Tailed Data",
+  "未核实", "AAAI 2024", "2024", "C", "https://doi.org/10.1609/aaai.v38i13.29416", "未找到", "—",
+  "否（有监督）", "是", "是", "是", "CLIP", "用 CLIP 语义知识引导（摘要级）", "未核实", "未核实", "未核实", "未核实",
+  "候选2", "邻近（联邦长尾，有监督）")
+
+a("C2-19", "FEDIC: Federated Learning on Non-IID and Long-Tailed Data via Calibrated Distillation",
+  "未核实", "ICME 2022", "2022", "C", "https://doi.org/10.1109/icme52920.2022.9860009", "未找到", "—",
+  "否（有监督）", "是", "是", "是", "未核实", "校准蒸馏（摘要级）", "未核实", "未核实", "未核实", "未核实",
+  "候选2", "邻近（联邦长尾，有监督）")
+
+a("C2-20", "BalanceFL: Addressing Class Imbalance in Long-Tail Federated Learning",
+  "未核实", "IPSN 2022", "2022", "C", "https://doi.org/10.1109/ipsn54338.2022.00029", "未找到", "—",
+  "否（有监督）", "是", "是", "是", "未核实", "未核实", "未核实", "未核实", "未核实", "未核实",
+  "候选2", "邻近（联邦长尾早期工作，施引 81）")
+
+a("C2-21", "FedHLC: A Novel Federated Learning Algorithm Targeting Heterogeneous and Long-Tailed Data",
+  "未核实", "IEEE TCE 2024", "2024", "C", "https://doi.org/10.1109/tce.2024.3443022", "未找到", "—",
+  "否（有监督）", "是", "是", "是", "未核实", "未核实", "未核实", "未核实", "未核实", "未核实",
+  "候选2", "邻近（联邦长尾，有监督）")
+
+a("C2-22", "FedLPA: Local Prior Alignment for Heterogeneous Federated Generalized Category Discovery",
+  "Geeho Kim, Jinu Lee, Bohyung Han", "NeurIPS 2025", "2025", "B",
+  "https://doi.org/10.52202/085713-1308", "未找到", "—",
+  "否（半监督 GCD）", "是", "异构先验（未必长尾）", "是", "未核实", "本地先验对齐（摘要级）", "未核实", "未核实", "未核实", "未核实",
+  "候选2", "部分相关（联邦 GCD 新工作）")
+
+a("C2-23", "Federated Generalized Category Discovery via Personalized Contrastive Graph Learning (PCGL)",
+  "Wenjing Li, Nan Pu, Jessica Fan, Nicu Sebe, Zhun Zhong", "IEEE TIFS 2026", "2026", "C",
+  "https://doi.org/10.1109/tifs.2026.3729513", "未找到", "—",
+  "否（半监督 GCD）", "是", "是（长尾数据集上评测）", "是", "未核实",
+  "KNN-Former 预测对比关系 + 自适应参数掩码解耦通用/个性化知识 + 个性化聚合",
+  "6 个通用与细粒度数据集，含长尾自然与医学图像（摘要级）", "Fed-GCD 等 SOTA",
+  "摘要未单列", "摘要：长尾自然与医学数据集上 All ACC 平均领先 4.8%", "候选2", "直接相关（联邦 GCD + 长尾评测）")
+
+a("C2-24", "Federated Continuous Category Discovery and Learning",
+  "未核实", "ICCV 2025", "2025", "C", "https://doi.org/10.1109/iccv51701.2025.00234", "未找到", "—",
+  "否（半监督）", "是", "未核实", "是", "未核实", "未核实（仅元数据）", "未核实", "未核实", "未核实", "未核实",
+  "候选2", "部分相关（联邦类别发现）")
+
+a("C2-25", "Federated K-Means Clustering",
+  "未核实", "LNCS 2024", "2024", "C", "https://doi.org/10.1007/978-3-031-78166-7_8", "未找到", "—",
+  "是", "是（k 给定）", "否", "是", "未核实", "联邦 k-means", "未核实", "未核实", "未核实", "未核实",
+  "候选2", "部分相关（FC 大类，默认平衡）")
+
+a("C2-26", "FedUGCN: Probabilistic Federated Clustering with Unknown Global Cluster Number",
+  "未核实", "OpenReview：ICLR 2027 Conference Desk Rejected Submission", "2026", "C",
+  "https://openreview.net/forum?id=oaclaUcoay", "未找到", "—",
+  "是", "否", "未核实", "是", "未核实", "概率联邦聚类 + 全局簇数未知（仅摘要级/投稿）", "未核实", "未核实", "未核实", "未核实",
+  "组合B", "线索（说明「联邦+未知K」赛道拥挤）")
+
+a("X-01", "Rarity-Guided Contrastive Learning for Imbalanced Multi-view Clustering",
+  "未核实", "SSRN 2026", "2026", "C", "https://doi.org/10.2139/ssrn.7611142", "未找到", "—",
+  "是", "未核实", "是", "否", "未核实", "稀有性引导对比学习（仅题目）", "未核实", "未核实", "未核实", "未核实",
+  "组合A", "线索")
+
+with open(os.path.join(BASE, "papers.csv"), "w", encoding="utf-8-sig", newline="") as f:
+    w = csv.writer(f)
+    w.writerow(H)
+    for r in R:
+        assert len(r) == len(H), (len(r), r[0])
+        w.writerow(r)
+print("rows:", len(R))

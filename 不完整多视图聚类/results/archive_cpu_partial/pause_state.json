@@ -1,0 +1,97 @@
+{
+  "status": "paused_by_user",
+  "time_shanghai": "2026-10-27T16:46:01.331200+08:00",
+  "reason": "User plans to switch to GPU PyTorch to accelerate execution",
+  "background_training_stopped": true,
+  "completed_count": 6,
+  "planned_count": 20,
+  "completed": [
+    {
+      "run": "Caltech101-20_r0.5_s1",
+      "dataset": "Caltech101-20",
+      "rate": 0.5,
+      "data_seed": 1,
+      "epochs": 500,
+      "B_ACC": 0.7690695725062867,
+      "E_minus_B": 0.002933780385582563,
+      "result_sha256": "597827cdefee4ccd06bb328560b07579bb4f14126ed9495b0977ca0b94f88616",
+      "checkpoint_sha256": "874c0f281922e51541c850c3beb8df2720b6fa7801e5bb92b44557a9933262f3"
+    },
+    {
+      "run": "Caltech101-20_r0.5_s2",
+      "dataset": "Caltech101-20",
+      "rate": 0.5,
+      "data_seed": 2,
+      "epochs": 500,
+      "B_ACC": 0.6797988264878457,
+      "E_minus_B": 0.002933780385582563,
+      "result_sha256": "21f89f7dcb5c1fef015f981a921a1d60ecc692f4dec9d301e560972c4fd2a255",
+      "checkpoint_sha256": "7f6e0683856ceda686031548139bd9551696f408d1d2076f8328b36b249c16f0"
+    },
+    {
+      "run": "Caltech101-20_r0.5_s3",
+      "dataset": "Caltech101-20",
+      "rate": 0.5,
+      "data_seed": 3,
+      "epochs": 500,
+      "B_ACC": 0.7418273260687342,
+      "E_minus_B": 0.0008382229673092878,
+      "result_sha256": "400d28a701fa6c0af139e6a609bf4a29ca3707ffaad9156cdf8a20da036fc568",
+      "checkpoint_sha256": "bddcd4cbe2efc59d9277297f271637f60b2347c0b47973bafefb0d41b1289304"
+    },
+    {
+      "run": "Caltech101-20_r0.5_s4",
+      "dataset": "Caltech101-20",
+      "rate": 0.5,
+      "data_seed": 4,
+      "epochs": 500,
+      "B_ACC": 0.6839899413243923,
+      "E_minus_B": 0.0016764459346185756,
+      "result_sha256": "a348076b546bfd06fe22312fb2c0598788b340e1690e73dc32aeafb681984d1d",
+      "checkpoint_sha256": "ab1902c5ed27b29dbecb67f1cf2527432c79d52ed8a67f94df75709fd09c6d68"
+    },
+    {
+      "run": "Caltech101-20_r0.5_s5",
+      "dataset": "Caltech101-20",
+      "rate": 0.5,
+      "data_seed": 5,
+      "epochs": 500,
+      "B_ACC": 0.7506286672254819,
+      "E_minus_B": -0.004191114836546439,
+      "result_sha256": "1e621792f5cdde5fb412b9c3c10306f8856bf4cfd432c7d05851c9aa8ce770fc",
+      "checkpoint_sha256": "0f3a32fcea205caa085c5da908b4cee3b40b39a3bcef606cc8e7316094597ad9"
+    },
+    {
+      "run": "Scene-15_r0.5_s1",
+      "dataset": "Scene-15",
+      "rate": 0.5,
+      "data_seed": 1,
+      "epochs": 500,
+      "B_ACC": 0.39420289855072466,
+      "E_minus_B": 0.005797101449275366,
+      "result_sha256": "ae5e5db6f7826d693662a6c619e704c94da4af51717f161c9f0957a731392f2e",
+      "checkpoint_sha256": "1d411ead28c9d34389d7f810f9f320b058f61579919429121bbf6c520600b6ae"
+    }
+  ],
+  "interrupted": [
+    {
+      "run": "Scene-15_r0.5_s2",
+      "last_logged_epoch": 100,
+      "checkpoint_exists": false,
+      "note": "Interrupted at user request; last logged epoch is only a lower bound, not a resumable checkpoint"
+    },
+    {
+      "run": "Scene-15_r0.5_s3",
+      "last_logged_epoch": 100,
+      "checkpoint_exists": false,
+      "note": "Interrupted at user request; last logged epoch is only a lower bound, not a resumable checkpoint"
+    }
+  ],
+  "remaining_count": 14,
+  "full_refcheck_completed": false,
+  "full_20_run_audit_completed": false,
+  "final_report_completed": false,
+  "protocol_sha256": "7ddf3260ccebdf199cea02efdb9f562e8afc66c6a725f05ff4bcf0d6553cb34a",
+  "environment": "F:\\研究生毕设\\不完整多视图聚类\\envs\\imvc_cpu\\python.exe",
+  "resume_note": "Do not restart automatically. Keep CPU results; after GPU setup, explicitly reconcile device/runtime changes and output directories before resuming. Existing runner and queue hardcode CPU."
+}

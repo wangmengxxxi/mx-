@@ -1,0 +1,498 @@
+[
+  {
+    "group": "聚类",
+    "lang": "EN",
+    "query": "deep clustering",
+    "regex": "deep.{0,15}cluster|cluster.{0,15}deep",
+    "total": 8,
+    "recent": 8
+  },
+  {
+    "group": "聚类",
+    "lang": "ZH",
+    "query": "深度聚类",
+    "regex": "深度聚类",
+    "total": 6,
+    "recent": 6
+  },
+  {
+    "group": "聚类",
+    "lang": "EN",
+    "query": "long-tailed / imbalanced clustering",
+    "regex": "(?:long.tail|imbalan).{0,50}cluster|cluster.{0,50}(?:long.tail|imbalan)",
+    "total": 3,
+    "recent": 3
+  },
+  {
+    "group": "聚类",
+    "lang": "ZH",
+    "query": "长尾/不平衡聚类",
+    "regex": "(?:长尾|不平衡).{0,15}聚类|聚类.{0,15}(?:长尾|不平衡)",
+    "total": 6,
+    "recent": 5
+  },
+  {
+    "group": "聚类",
+    "lang": "EN",
+    "query": "unknown number of clusters",
+    "regex": "unknown.{0,25}(?:cluster|categor)|(?:cluster|categor).{0,25}(?:unknown|number estimation)|estimating.{0,20}(?:cluster|categor)",
+    "total": 2,
+    "recent": 2
+  },
+  {
+    "group": "聚类",
+    "lang": "ZH",
+    "query": "簇数未知/类别数估计",
+    "regex": "簇数|类别数|聚类数|未知类别",
+    "total": 4,
+    "recent": 4
+  },
+  {
+    "group": "聚类",
+    "lang": "EN",
+    "query": "category discovery / GCD",
+    "regex": "category discovery|class discovery|\\bGCD\\b",
+    "total": 36,
+    "recent": 33
+  },
+  {
+    "group": "聚类",
+    "lang": "ZH",
+    "query": "类别发现/广义类别发现",
+    "regex": "类别发现|类发现",
+    "total": 33,
+    "recent": 31
+  },
+  {
+    "group": "聚类",
+    "lang": "EN",
+    "query": "multi-view clustering",
+    "regex": "multi.view.{0,15}cluster|multi.modal.{0,15}cluster",
+    "total": 25,
+    "recent": 24
+  },
+  {
+    "group": "聚类",
+    "lang": "ZH",
+    "query": "多视图/多模态聚类",
+    "regex": "多视图聚类|多模态聚类",
+    "total": 22,
+    "recent": 22
+  },
+  {
+    "group": "聚类",
+    "lang": "EN",
+    "query": "clustering + foundation / CLIP / DINO",
+    "regex": "^(?=.*cluster)(?=.*(?:foundation|\\bCLIP\\b|\\bDINO\\b))",
+    "total": 7,
+    "recent": 6
+  },
+  {
+    "group": "聚类",
+    "lang": "ZH",
+    "query": "基础模型/CLIP/DINO + 聚类",
+    "regex": "^(?=.*聚类)(?=.*(?:基础模型|预训练|CLIP|DINO))",
+    "total": 18,
+    "recent": 17
+  },
+  {
+    "group": "聚类",
+    "lang": "EN",
+    "query": "text clustering",
+    "regex": "text.{0,20}cluster|short.text.{0,20}cluster",
+    "total": 3,
+    "recent": 3
+  },
+  {
+    "group": "聚类",
+    "lang": "ZH",
+    "query": "文本聚类",
+    "regex": "文本聚类|短文本聚类",
+    "total": 3,
+    "recent": 3
+  },
+  {
+    "group": "多模态",
+    "lang": "EN",
+    "query": "missing modality",
+    "regex": "missing.{0,20}modal|incomplete.{0,20}modal|modal.{0,20}missing",
+    "total": 34,
+    "recent": 32
+  },
+  {
+    "group": "多模态",
+    "lang": "ZH",
+    "query": "缺失模态/模态缺失",
+    "regex": "缺失模态|模态缺失|不完整模态|不完整多模态",
+    "total": 50,
+    "recent": 48
+  },
+  {
+    "group": "多模态",
+    "lang": "EN",
+    "query": "modality imbalance",
+    "regex": "modal.{0,25}(?:imbalan|dominance)|imbalan.{0,25}modal",
+    "total": 6,
+    "recent": 6
+  },
+  {
+    "group": "多模态",
+    "lang": "ZH",
+    "query": "模态不平衡/模态失衡",
+    "regex": "模态不平衡|模态失衡|模态偏置|模态偏差|模态主导",
+    "total": 18,
+    "recent": 18
+  },
+  {
+    "group": "多模态",
+    "lang": "EN",
+    "query": "noisy correspondence",
+    "regex": "noisy correspondence|noisy.{0,15}(?:alignment|pair)|(?:unpaired|unaligned|misaligned).{0,25}(?:modal|view)|partially.view.aligned",
+    "total": 12,
+    "recent": 12
+  },
+  {
+    "group": "多模态",
+    "lang": "ZH",
+    "query": "噪声对应/错配/未对齐",
+    "regex": "噪声对应|错误对应|错配|不对齐|未对齐|部分对齐",
+    "total": 13,
+    "recent": 13
+  },
+  {
+    "group": "多模态",
+    "lang": "EN",
+    "query": "multimodal fusion robustness",
+    "regex": "^(?=.*(?:multimodal|multi.modal|fusion))(?=.*(?:robust|noise|noisy|corrupt))",
+    "total": 148,
+    "recent": 142
+  },
+  {
+    "group": "多模态",
+    "lang": "ZH",
+    "query": "多模态融合鲁棒性",
+    "regex": "^(?=.*(?:多模态|融合))(?=.*(?:鲁棒|噪声|噪音|污染))",
+    "total": 122,
+    "recent": 119
+  },
+  {
+    "group": "多模态",
+    "lang": "EN",
+    "query": "multimodal sentiment / emotion",
+    "regex": "(?:multimodal|multi.modal).{0,30}(?:sentiment|emotion)",
+    "total": 27,
+    "recent": 27
+  },
+  {
+    "group": "多模态",
+    "lang": "ZH",
+    "query": "多模态情感/情绪",
+    "regex": "多模态情感|多模态情绪",
+    "total": 23,
+    "recent": 23
+  },
+  {
+    "group": "图学习",
+    "lang": "EN",
+    "query": "graph clustering",
+    "regex": "graph.{0,20}cluster",
+    "total": 5,
+    "recent": 5
+  },
+  {
+    "group": "图学习",
+    "lang": "ZH",
+    "query": "图聚类",
+    "regex": "图聚类|图节点聚类",
+    "total": 26,
+    "recent": 26
+  },
+  {
+    "group": "图学习",
+    "lang": "EN",
+    "query": "graph structure learning",
+    "regex": "graph structure learning|structure refinement|graph rewiring",
+    "total": 0,
+    "recent": 0
+  },
+  {
+    "group": "图学习",
+    "lang": "ZH",
+    "query": "图结构学习",
+    "regex": "图结构学习|图结构优化|图重连",
+    "total": 10,
+    "recent": 8
+  },
+  {
+    "group": "图学习",
+    "lang": "EN",
+    "query": "heterophily / heterophilic",
+    "regex": "heterophil",
+    "total": 8,
+    "recent": 8
+  },
+  {
+    "group": "图学习",
+    "lang": "ZH",
+    "query": "异配图/异质配性",
+    "regex": "异配|异质配",
+    "total": 2,
+    "recent": 2
+  },
+  {
+    "group": "图学习",
+    "lang": "EN",
+    "query": "graph OOD",
+    "regex": "^(?=.*graph)(?=.*(?:out.of.distribution|\\bOOD\\b|distribution shift))",
+    "total": 9,
+    "recent": 9
+  },
+  {
+    "group": "图学习",
+    "lang": "ZH",
+    "query": "图分布外/分布偏移",
+    "regex": "^(?=.*图)(?=.*(?:分布外|分布偏移))",
+    "total": 28,
+    "recent": 26
+  },
+  {
+    "group": "图学习",
+    "lang": "EN",
+    "query": "graph prompt",
+    "regex": "graph.{0,20}prompt|prompt.{0,20}graph",
+    "total": 14,
+    "recent": 13
+  },
+  {
+    "group": "图学习",
+    "lang": "ZH",
+    "query": "图提示",
+    "regex": "图提示|图 Prompt|图prompt",
+    "total": 6,
+    "recent": 5
+  },
+  {
+    "group": "联邦学习",
+    "lang": "EN",
+    "query": "clustered / personalized FL",
+    "regex": "^(?=.*federat)(?=.*(?:cluster|personaliz))",
+    "total": 28,
+    "recent": 28
+  },
+  {
+    "group": "联邦学习",
+    "lang": "ZH",
+    "query": "聚类/个性化联邦",
+    "regex": "^(?=.*联邦)(?=.*(?:聚类|个性化))",
+    "total": 35,
+    "recent": 35
+  },
+  {
+    "group": "联邦学习",
+    "lang": "EN",
+    "query": "FL with missing modality",
+    "regex": "^(?=.*federat)(?=.*(?:missing|incomplete))(?=.*modal)",
+    "total": 3,
+    "recent": 3
+  },
+  {
+    "group": "联邦学习",
+    "lang": "ZH",
+    "query": "缺失模态联邦",
+    "regex": "^(?=.*联邦)(?=.*(?:缺失|不完整))(?=.*模态)",
+    "total": 2,
+    "recent": 2
+  },
+  {
+    "group": "联邦学习",
+    "lang": "EN",
+    "query": "federated clustering",
+    "regex": "federated.{0,25}cluster|clustered federated",
+    "total": 5,
+    "recent": 5
+  },
+  {
+    "group": "联邦学习",
+    "lang": "ZH",
+    "query": "联邦聚类",
+    "regex": "联邦聚类|聚类联邦",
+    "total": 5,
+    "recent": 5
+  },
+  {
+    "group": "联邦学习",
+    "lang": "EN",
+    "query": "federath noisy labels / federated noisy labels",
+    "regex": "^(?=.*(?:federath|federat))(?=.*(?:noisy|noise).{0,10}label)",
+    "total": 1,
+    "recent": 1
+  },
+  {
+    "group": "联邦学习",
+    "lang": "ZH",
+    "query": "联邦噪声标签",
+    "regex": "^(?=.*联邦)(?=.*(?:噪声标签|标签噪声|噪声标注))",
+    "total": 3,
+    "recent": 3
+  },
+  {
+    "group": "时间序列",
+    "lang": "EN",
+    "query": "time series clustering",
+    "regex": "time.series.{0,25}cluster|cluster.{0,25}time.series",
+    "total": 1,
+    "recent": 1
+  },
+  {
+    "group": "时间序列",
+    "lang": "ZH",
+    "query": "时间序列聚类",
+    "regex": "时间序列聚类|时序聚类",
+    "total": 3,
+    "recent": 3
+  },
+  {
+    "group": "时间序列",
+    "lang": "EN",
+    "query": "anomaly detection + time series",
+    "regex": "^(?=.*(?:time.series|temporal))(?=.*anomal)",
+    "total": 22,
+    "recent": 22
+  },
+  {
+    "group": "时间序列",
+    "lang": "ZH",
+    "query": "时间序列异常检测",
+    "regex": "^(?=.*(?:时间序列|时序))(?=.*异常)",
+    "total": 28,
+    "recent": 28
+  },
+  {
+    "group": "时间序列",
+    "lang": "EN",
+    "query": "imputation + time series",
+    "regex": "^(?=.*(?:time.series|temporal))(?=.*(?:imput|missing))",
+    "total": 8,
+    "recent": 8
+  },
+  {
+    "group": "时间序列",
+    "lang": "ZH",
+    "query": "时间序列插补/缺失",
+    "regex": "^(?=.*(?:时间序列|时序))(?=.*(?:插补|填补|缺失|补全))",
+    "total": 18,
+    "recent": 17
+  },
+  {
+    "group": "时间序列",
+    "lang": "EN",
+    "query": "TS foundation models",
+    "regex": "^(?=.*(?:time.series|\\bTS\\b))(?=.*(?:foundation|pre.train))",
+    "total": 31,
+    "recent": 31
+  },
+  {
+    "group": "时间序列",
+    "lang": "ZH",
+    "query": "时序基础模型",
+    "regex": "^(?=.*(?:时间序列|时序))(?=.*(?:基础模型|预训练))",
+    "total": 76,
+    "recent": 74
+  },
+  {
+    "group": "交叉",
+    "lang": "EN",
+    "query": "clustering x federated",
+    "regex": "^(?=.*cluster)(?=.*federat)",
+    "total": 7,
+    "recent": 7
+  },
+  {
+    "group": "交叉",
+    "lang": "ZH",
+    "query": "聚类×联邦",
+    "regex": "^(?=.*聚类)(?=.*联邦)",
+    "total": 11,
+    "recent": 11
+  },
+  {
+    "group": "交叉",
+    "lang": "EN",
+    "query": "clustering x multimodal",
+    "regex": "^(?=.*cluster)(?=.*(?:multi.modal|multimodal|multi.view))",
+    "total": 29,
+    "recent": 28
+  },
+  {
+    "group": "交叉",
+    "lang": "ZH",
+    "query": "聚类×多模态/多视图",
+    "regex": "^(?=.*聚类)(?=.*(?:多模态|多视图))",
+    "total": 39,
+    "recent": 39
+  },
+  {
+    "group": "交叉",
+    "lang": "EN",
+    "query": "federated x multimodal",
+    "regex": "^(?=.*federat)(?=.*(?:multi.modal|multimodal|modalit))",
+    "total": 10,
+    "recent": 9
+  },
+  {
+    "group": "交叉",
+    "lang": "ZH",
+    "query": "联邦×多模态",
+    "regex": "^(?=.*联邦)(?=.*多模态)",
+    "total": 11,
+    "recent": 10
+  },
+  {
+    "group": "交叉",
+    "lang": "EN",
+    "query": "graph x federated",
+    "regex": "^(?=.*federat)(?=.*graph)",
+    "total": 7,
+    "recent": 7
+  },
+  {
+    "group": "交叉",
+    "lang": "ZH",
+    "query": "图×联邦",
+    "regex": "^(?=.*联邦)(?=.*图)",
+    "total": 25,
+    "recent": 23
+  },
+  {
+    "group": "目标检测",
+    "lang": "EN",
+    "query": "lightweight / open-vocabulary detection",
+    "regex": "^(?=.*(?:detect|\\bYOLO\\b))(?=.*(?:lightweight|efficient|open.vocabulary|parameter.efficient|few.shot))",
+    "total": 103,
+    "recent": 99
+  },
+  {
+    "group": "目标检测",
+    "lang": "ZH",
+    "query": "轻量/开放词汇检测",
+    "regex": "^(?=.*(?:检测|YOLO))(?=.*(?:轻量|高效|开放词汇|少样本))",
+    "total": 113,
+    "recent": 108
+  },
+  {
+    "group": "强化学习",
+    "lang": "EN",
+    "query": "offline RL / small environments",
+    "regex": "offline reinforcement|offline.{0,10}\\bRL\\b|(?:reinforcement|\\bRL\\b).{0,20}(?:efficient|small)",
+    "total": 55,
+    "recent": 55
+  },
+  {
+    "group": "强化学习",
+    "lang": "ZH",
+    "query": "离线强化学习/小环境",
+    "regex": "离线强化学习|离线RL|离线 RL|小环境",
+    "total": 78,
+    "recent": 78
+  }
+]

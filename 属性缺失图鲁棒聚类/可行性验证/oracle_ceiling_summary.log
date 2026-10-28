@@ -1,0 +1,93 @@
+{
+  "main_EB": {
+    "rate": 0.8,
+    "contrast": "E-B",
+    "metric": "acc",
+    "mean": 0.07988675529295915,
+    "std": 0.09133080108583481,
+    "min": -0.04062038404726731,
+    "max": 0.21639586410635153,
+    "positive": 5,
+    "negative": 1,
+    "zero": 0,
+    "n": 6
+  },
+  "main_CB": {
+    "rate": 0.8,
+    "contrast": "C-B",
+    "metric": "acc",
+    "mean": 0.04812900049236826,
+    "std": 0.07830142088325394,
+    "min": -0.0417282127031019,
+    "max": 0.1285081240768094,
+    "positive": 3,
+    "negative": 3,
+    "zero": 0,
+    "n": 6
+  },
+  "main_DB": {
+    "rate": 0.8,
+    "contrast": "D-B",
+    "metric": "acc",
+    "mean": 0.062407680945347106,
+    "std": 0.0760153100285159,
+    "min": -0.03618906942392908,
+    "max": 0.14955686853766614,
+    "positive": 4,
+    "negative": 2,
+    "zero": 0,
+    "n": 6
+  },
+  "main_CD": {
+    "rate": 0.8,
+    "contrast": "C-D",
+    "metric": "acc",
+    "mean": -0.014278680452978846,
+    "std": 0.07751024848086303,
+    "min": -0.15620384047267355,
+    "max": 0.07865583456425407,
+    "positive": 2,
+    "negative": 4,
+    "zero": 0,
+    "n": 6
+  },
+  "main_BA": {
+    "rate": 0.8,
+    "contrast": "B-A",
+    "metric": "acc",
+    "mean": 0.24218365337272277,
+    "std": 0.05073130435861,
+    "min": 0.18316100443131464,
+    "max": 0.310192023633678,
+    "positive": 6,
+    "negative": 0,
+    "zero": 0,
+    "n": 6
+  },
+  "subgroups": [
+    {
+      "rate": 0.4,
+      "B_cold_acc": 0.4818357487922705,
+      "B_noncold_missing_acc": 0.5604792812663318,
+      "B_noncold_all_acc": 0.5623752618389499,
+      "B_cold_minus_noncold_missing": -0.07864353247406136,
+      "B_cold_minus_noncold_all": -0.08053951304667945,
+      "C_cold_acc": 0.543623188405797,
+      "C_minus_B_cold_acc": 0.06178743961352656,
+      "C_minus_B_cold_positive": 4
+    },
+    {
+      "rate": 0.8,
+      "B_cold_acc": 0.4820587829441034,
+      "B_noncold_missing_acc": 0.4837505564854761,
+      "B_noncold_all_acc": 0.48841951517506943,
+      "B_cold_minus_noncold_missing": -0.0016917735413726764,
+      "B_cold_minus_noncold_all": -0.006360732230966004,
+      "C_cold_acc": 0.5360046315121368,
+      "C_minus_B_cold_acc": 0.05394584856803342,
+      "C_minus_B_cold_positive": 4
+    }
+  ],
+  "severe_collapses": [],
+  "report": "F:\\�о�������\\��������֤\\���߽׶����޷ֽⱨ��.md"
+}

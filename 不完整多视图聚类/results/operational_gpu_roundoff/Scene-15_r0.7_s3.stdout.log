@@ -1,0 +1,11 @@
+START Scene-15 rate=0.7 mask_seed=3 model_seed=8 complete=1336 threads=4
+[2;29mEpoch : 100/500 ===> Reconstruction loss = 2.3047===> Reconstruction loss = 13.6560 ===> Dual prediction loss = 0.0129  ===> Contrastive loss = -5.3541e+02 ===> Loss = -5.3382e+02[0m
+Unlabelled evaluation mode switch, no intermediate label metrics
+[2;29mEpoch : 200/500 ===> Reconstruction loss = 2.0406===> Reconstruction loss = 13.2674 ===> Dual prediction loss = 0.0029  ===> Contrastive loss = -5.3690e+02 ===> Loss = -5.3537e+02[0m
+Unlabelled evaluation mode switch, no intermediate label metrics
+[2;29mEpoch : 300/500 ===> Reconstruction loss = 1.7879===> Reconstruction loss = 13.0191 ===> Dual prediction loss = 0.0022  ===> Contrastive loss = -5.3774e+02 ===> Loss = -5.3626e+02[0m
+Unlabelled evaluation mode switch, no intermediate label metrics
+[2;29mEpoch : 400/500 ===> Reconstruction loss = 1.5750===> Reconstruction loss = 12.5772 ===> Dual prediction loss = 0.0017  ===> Contrastive loss = -5.3913e+02 ===> Loss = -5.3772e+02[0m
+Unlabelled evaluation mode switch, no intermediate label metrics
+[2;29mEpoch : 500/500 ===> Reconstruction loss = 1.4082===> Reconstruction loss = 12.2703 ===> Dual prediction loss = 0.0023  ===> Contrastive loss = -5.3806e+02 ===> Loss = -5.3669e+02[0m
+Unlabelled evaluation mode switch, no intermediate label metrics

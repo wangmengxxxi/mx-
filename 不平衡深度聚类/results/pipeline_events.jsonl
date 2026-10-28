@@ -1,0 +1,71 @@
+{"stage": "waiting_for_verified_downloads", "time": "2026-10-27T21:29:50"}
+{"stage": "downloading_official_cifar", "time": "2026-10-27T21:29:50", "pid": 4656}
+{"stage": "start", "time": "2026-10-27T22:23:22", "script": "extract_features.py", "args": []}
+{"stage": "complete", "time": "2026-10-28T02:13:58", "script": "extract_features.py", "args": []}
+{"stage": "start", "time": "2026-10-28T02:13:58", "script": "run_diagnostic.py", "args": ["--dataset", "cifar100", "--ir", "1", "--seed", "1"]}
+{"stage": "complete", "time": "2026-10-28T02:37:23", "script": "run_diagnostic.py", "args": ["--dataset", "cifar100", "--ir", "1", "--seed", "1"]}
+{"stage": "start", "time": "2026-10-28T02:37:23", "script": "run_diagnostic.py", "args": ["--dataset", "cifar100", "--ir", "1", "--seed", "2"]}
+{"stage": "complete", "time": "2026-10-28T03:01:40", "script": "run_diagnostic.py", "args": ["--dataset", "cifar100", "--ir", "1", "--seed", "2"]}
+{"stage": "start", "time": "2026-10-28T03:01:40", "script": "run_diagnostic.py", "args": ["--dataset", "cifar100", "--ir", "1", "--seed", "3"]}
+{"stage": "complete", "time": "2026-10-28T03:25:18", "script": "run_diagnostic.py", "args": ["--dataset", "cifar100", "--ir", "1", "--seed", "3"]}
+{"stage": "start", "time": "2026-10-28T03:25:18", "script": "run_diagnostic.py", "args": ["--dataset", "cifar100", "--ir", "1", "--seed", "4"]}
+{"stage": "complete", "time": "2026-10-28T03:49:15", "script": "run_diagnostic.py", "args": ["--dataset", "cifar100", "--ir", "1", "--seed", "4"]}
+{"stage": "start", "time": "2026-10-28T03:49:15", "script": "run_diagnostic.py", "args": ["--dataset", "cifar100", "--ir", "1", "--seed", "5"]}
+{"stage": "complete", "time": "2026-10-28T04:12:36", "script": "run_diagnostic.py", "args": ["--dataset", "cifar100", "--ir", "1", "--seed", "5"]}
+{"stage": "start", "time": "2026-10-28T04:12:36", "script": "run_diagnostic.py", "args": ["--dataset", "cifar100", "--ir", "10", "--seed", "1"]}
+{"stage": "complete", "time": "2026-10-28T04:22:20", "script": "run_diagnostic.py", "args": ["--dataset", "cifar100", "--ir", "10", "--seed", "1"]}
+{"stage": "start", "time": "2026-10-28T04:22:20", "script": "run_diagnostic.py", "args": ["--dataset", "cifar100", "--ir", "10", "--seed", "2"]}
+{"stage": "complete", "time": "2026-10-28T04:32:01", "script": "run_diagnostic.py", "args": ["--dataset", "cifar100", "--ir", "10", "--seed", "2"]}
+{"stage": "start", "time": "2026-10-28T04:32:01", "script": "run_diagnostic.py", "args": ["--dataset", "cifar100", "--ir", "10", "--seed", "3"]}
+{"stage": "complete", "time": "2026-10-28T04:41:35", "script": "run_diagnostic.py", "args": ["--dataset", "cifar100", "--ir", "10", "--seed", "3"]}
+{"stage": "start", "time": "2026-10-28T04:41:35", "script": "run_diagnostic.py", "args": ["--dataset", "cifar100", "--ir", "10", "--seed", "4"]}
+{"stage": "complete", "time": "2026-10-28T04:51:33", "script": "run_diagnostic.py", "args": ["--dataset", "cifar100", "--ir", "10", "--seed", "4"]}
+{"stage": "start", "time": "2026-10-28T04:51:33", "script": "run_diagnostic.py", "args": ["--dataset", "cifar100", "--ir", "10", "--seed", "5"]}
+{"stage": "complete", "time": "2026-10-28T05:01:09", "script": "run_diagnostic.py", "args": ["--dataset", "cifar100", "--ir", "10", "--seed", "5"]}
+{"stage": "start", "time": "2026-10-28T05:01:09", "script": "run_diagnostic.py", "args": ["--dataset", "cifar100", "--ir", "100", "--seed", "1"]}
+{"stage": "complete", "time": "2026-10-28T05:06:37", "script": "run_diagnostic.py", "args": ["--dataset", "cifar100", "--ir", "100", "--seed", "1"]}
+{"stage": "start", "time": "2026-10-28T05:06:37", "script": "run_diagnostic.py", "args": ["--dataset", "cifar100", "--ir", "100", "--seed", "2"]}
+{"stage": "complete", "time": "2026-10-28T05:12:00", "script": "run_diagnostic.py", "args": ["--dataset", "cifar100", "--ir", "100", "--seed", "2"]}
+{"stage": "start", "time": "2026-10-28T05:12:00", "script": "run_diagnostic.py", "args": ["--dataset", "cifar100", "--ir", "100", "--seed", "3"]}
+{"stage": "complete", "time": "2026-10-28T05:17:22", "script": "run_diagnostic.py", "args": ["--dataset", "cifar100", "--ir", "100", "--seed", "3"]}
+{"stage": "start", "time": "2026-10-28T05:17:22", "script": "run_diagnostic.py", "args": ["--dataset", "cifar100", "--ir", "100", "--seed", "4"]}
+{"stage": "complete", "time": "2026-10-28T05:22:56", "script": "run_diagnostic.py", "args": ["--dataset", "cifar100", "--ir", "100", "--seed", "4"]}
+{"stage": "start", "time": "2026-10-28T05:22:56", "script": "run_diagnostic.py", "args": ["--dataset", "cifar100", "--ir", "100", "--seed", "5"]}
+{"stage": "complete", "time": "2026-10-28T05:28:21", "script": "run_diagnostic.py", "args": ["--dataset", "cifar100", "--ir", "100", "--seed", "5"]}
+{"stage": "start", "time": "2026-10-28T05:28:21", "script": "run_diagnostic.py", "args": ["--dataset", "cifar10", "--ir", "1", "--seed", "1"]}
+{"stage": "complete", "time": "2026-10-28T05:41:43", "script": "run_diagnostic.py", "args": ["--dataset", "cifar10", "--ir", "1", "--seed", "1"]}
+{"stage": "start", "time": "2026-10-28T05:41:43", "script": "run_diagnostic.py", "args": ["--dataset", "cifar10", "--ir", "1", "--seed", "2"]}
+{"stage": "complete", "time": "2026-10-28T05:53:07", "script": "run_diagnostic.py", "args": ["--dataset", "cifar10", "--ir", "1", "--seed", "2"]}
+{"stage": "start", "time": "2026-10-28T05:53:07", "script": "run_diagnostic.py", "args": ["--dataset", "cifar10", "--ir", "1", "--seed", "3"]}
+{"stage": "complete", "time": "2026-10-28T06:05:55", "script": "run_diagnostic.py", "args": ["--dataset", "cifar10", "--ir", "1", "--seed", "3"]}
+{"stage": "start", "time": "2026-10-28T06:05:55", "script": "run_diagnostic.py", "args": ["--dataset", "cifar10", "--ir", "1", "--seed", "4"]}
+{"stage": "complete", "time": "2026-10-28T06:18:16", "script": "run_diagnostic.py", "args": ["--dataset", "cifar10", "--ir", "1", "--seed", "4"]}
+{"stage": "start", "time": "2026-10-28T06:18:16", "script": "run_diagnostic.py", "args": ["--dataset", "cifar10", "--ir", "1", "--seed", "5"]}
+{"stage": "complete", "time": "2026-10-28T06:31:28", "script": "run_diagnostic.py", "args": ["--dataset", "cifar10", "--ir", "1", "--seed", "5"]}
+{"stage": "start", "time": "2026-10-28T06:31:28", "script": "run_diagnostic.py", "args": ["--dataset", "cifar10", "--ir", "10", "--seed", "1"]}
+{"stage": "complete", "time": "2026-10-28T06:36:34", "script": "run_diagnostic.py", "args": ["--dataset", "cifar10", "--ir", "10", "--seed", "1"]}
+{"stage": "start", "time": "2026-10-28T06:36:34", "script": "run_diagnostic.py", "args": ["--dataset", "cifar10", "--ir", "10", "--seed", "2"]}
+{"stage": "complete", "time": "2026-10-28T06:41:45", "script": "run_diagnostic.py", "args": ["--dataset", "cifar10", "--ir", "10", "--seed", "2"]}
+{"stage": "start", "time": "2026-10-28T06:41:45", "script": "run_diagnostic.py", "args": ["--dataset", "cifar10", "--ir", "10", "--seed", "3"]}
+{"stage": "complete", "time": "2026-10-28T06:46:56", "script": "run_diagnostic.py", "args": ["--dataset", "cifar10", "--ir", "10", "--seed", "3"]}
+{"stage": "start", "time": "2026-10-28T06:46:56", "script": "run_diagnostic.py", "args": ["--dataset", "cifar10", "--ir", "10", "--seed", "4"]}
+{"stage": "complete", "time": "2026-10-28T06:51:56", "script": "run_diagnostic.py", "args": ["--dataset", "cifar10", "--ir", "10", "--seed", "4"]}
+{"stage": "start", "time": "2026-10-28T06:51:56", "script": "run_diagnostic.py", "args": ["--dataset", "cifar10", "--ir", "10", "--seed", "5"]}
+{"stage": "complete", "time": "2026-10-28T06:56:52", "script": "run_diagnostic.py", "args": ["--dataset", "cifar10", "--ir", "10", "--seed", "5"]}
+{"stage": "start", "time": "2026-10-28T06:56:52", "script": "run_diagnostic.py", "args": ["--dataset", "cifar10", "--ir", "100", "--seed", "1"]}
+{"stage": "complete", "time": "2026-10-28T07:00:17", "script": "run_diagnostic.py", "args": ["--dataset", "cifar10", "--ir", "100", "--seed", "1"]}
+{"stage": "start", "time": "2026-10-28T07:00:17", "script": "run_diagnostic.py", "args": ["--dataset", "cifar10", "--ir", "100", "--seed", "2"]}
+{"stage": "complete", "time": "2026-10-28T07:03:30", "script": "run_diagnostic.py", "args": ["--dataset", "cifar10", "--ir", "100", "--seed", "2"]}
+{"stage": "start", "time": "2026-10-28T07:03:30", "script": "run_diagnostic.py", "args": ["--dataset", "cifar10", "--ir", "100", "--seed", "3"]}
+{"stage": "complete", "time": "2026-10-28T07:06:57", "script": "run_diagnostic.py", "args": ["--dataset", "cifar10", "--ir", "100", "--seed", "3"]}
+{"stage": "start", "time": "2026-10-28T07:06:57", "script": "run_diagnostic.py", "args": ["--dataset", "cifar10", "--ir", "100", "--seed", "4"]}
+{"stage": "complete", "time": "2026-10-28T07:10:27", "script": "run_diagnostic.py", "args": ["--dataset", "cifar10", "--ir", "100", "--seed", "4"]}
+{"stage": "start", "time": "2026-10-28T07:10:27", "script": "run_diagnostic.py", "args": ["--dataset", "cifar10", "--ir", "100", "--seed", "5"]}
+{"stage": "complete", "time": "2026-10-28T07:14:32", "script": "run_diagnostic.py", "args": ["--dataset", "cifar10", "--ir", "100", "--seed", "5"]}
+{"stage": "start", "time": "2026-10-28T07:14:32", "script": "run_diagnostic.py", "args": ["--dataset", "cifar100", "--ir", "100", "--seed", "1", "--base", "results/refcheck"]}
+{"stage": "complete", "time": "2026-10-28T07:20:07", "script": "run_diagnostic.py", "args": ["--dataset", "cifar100", "--ir", "100", "--seed", "1", "--base", "results/refcheck"]}
+{"stage": "start", "time": "2026-10-28T07:20:07", "script": "audit_results.py", "args": []}
+{"stage": "complete", "time": "2026-10-28T07:20:29", "script": "audit_results.py", "args": []}
+{"stage": "start", "time": "2026-10-28T07:20:29", "script": "summarize_results.py", "args": []}
+{"stage": "complete", "time": "2026-10-28T07:20:33", "script": "summarize_results.py", "args": []}
+{"stage": "all_complete", "time": "2026-10-28T07:20:33"}

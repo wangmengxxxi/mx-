@@ -1,0 +1,110 @@
+{
+  "same_indices": true,
+  "same_input_hash": true,
+  "methods": {
+    "KM": {
+      "metric_differences": {
+        "ACC": 0.0,
+        "NMI": 0.0,
+        "ARI": 0.0,
+        "balanced_accuracy": 0.0,
+        "macro_F1": 0.0,
+        "tail_recall": 0.0
+      },
+      "arrays": {
+        "centers": {
+          "equal": false,
+          "max_abs_diff": 7.450580596923828e-09
+        },
+        "pred": {
+          "equal": true,
+          "max_abs_diff": 0.0
+        }
+      }
+    },
+    "BAL": {
+      "metric_differences": {
+        "ACC": 0.0,
+        "NMI": 0.0,
+        "ARI": 0.0,
+        "balanced_accuracy": 0.0,
+        "macro_F1": 0.0,
+        "tail_recall": 0.0
+      },
+      "arrays": {
+        "weights": {
+          "equal": true,
+          "max_abs_diff": 0.0
+        },
+        "pred": {
+          "equal": true,
+          "max_abs_diff": 0.0
+        }
+      }
+    },
+    "P2OT_feat": {
+      "metric_differences": {
+        "ACC": 0.0,
+        "NMI": 0.0,
+        "ARI": 0.0,
+        "balanced_accuracy": 0.0,
+        "macro_F1": 0.0,
+        "tail_recall": 0.0
+      },
+      "arrays": {
+        "weights": {
+          "equal": true,
+          "max_abs_diff": 0.0
+        },
+        "pred": {
+          "equal": true,
+          "max_abs_diff": 0.0
+        }
+      }
+    },
+    "ORACLE_KM": {
+      "metric_differences": {
+        "ACC": 0.0,
+        "NMI": 0.0,
+        "ARI": 0.0,
+        "balanced_accuracy": 0.0,
+        "macro_F1": 0.0,
+        "tail_recall": 0.0
+      },
+      "arrays": {
+        "centers": {
+          "equal": true,
+          "max_abs_diff": 0.0
+        },
+        "pred": {
+          "equal": true,
+          "max_abs_diff": 0.0
+        }
+      }
+    },
+    "LP": {
+      "metric_differences": {
+        "ACC": 0.0,
+        "NMI": 0.0,
+        "ARI": 0.0,
+        "balanced_accuracy": 0.0,
+        "macro_F1": 0.0,
+        "tail_recall": 0.0
+      },
+      "arrays": {
+        "coef": {
+          "equal": true,
+          "max_abs_diff": 0.0
+        },
+        "intercept": {
+          "equal": true,
+          "max_abs_diff": 0.0
+        },
+        "pred": {
+          "equal": true,
+          "max_abs_diff": 0.0
+        }
+      }
+    }
+  }
+}

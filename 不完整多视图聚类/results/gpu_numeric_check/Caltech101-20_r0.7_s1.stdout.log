@@ -1,0 +1,30 @@
+START Caltech101-20 rate=0.7 mask_seed=1 model_seed=4 complete=705 threads=4
+[2;29mEpoch : 100/500 ===> Reconstruction loss = 0.1730===> Reconstruction loss = 0.0165 ===> Dual prediction loss = 0.0096  ===> Contrastive loss = -2.6840e+02 ===> Loss = -2.6838e+02[0m
+Unlabelled evaluation mode switch, no intermediate label metrics
+[2;29mEpoch : 200/500 ===> Reconstruction loss = 0.1573===> Reconstruction loss = 0.0136 ===> Dual prediction loss = 0.0013  ===> Contrastive loss = -2.6923e+02 ===> Loss = -2.6921e+02[0m
+Unlabelled evaluation mode switch, no intermediate label metrics
+[2;29mEpoch : 300/500 ===> Reconstruction loss = 0.1448===> Reconstruction loss = 0.0126 ===> Dual prediction loss = 0.0005  ===> Contrastive loss = -2.6948e+02 ===> Loss = -2.6947e+02[0m
+Unlabelled evaluation mode switch, no intermediate label metrics
+[2;29mEpoch : 400/500 ===> Reconstruction loss = 0.1386===> Reconstruction loss = 0.0124 ===> Dual prediction loss = 0.0007  ===> Contrastive loss = -2.6941e+02 ===> Loss = -2.6940e+02[0m
+Unlabelled evaluation mode switch, no intermediate label metrics
+[2;29mEpoch : 500/500 ===> Reconstruction loss = 0.1321===> Reconstruction loss = 0.0107 ===> Dual prediction loss = 0.0005  ===> Contrastive loss = -2.6917e+02 ===> Loss = -2.6915e+02[0m
+Unlabelled evaluation mode switch, no intermediate label metrics
+{
+  "shape": [
+    1528,
+    128
+  ],
+  "dtype": "float32",
+  "original_rtol": 1e-05,
+  "original_atol": 1e-07,
+  "max_abs_difference": 2.4437904357910156e-06,
+  "max_difference_to_allowed_ratio": 1.6395214796066284,
+  "failed_elements": 4,
+  "total_elements": 195584,
+  "value_at_max_difference": [
+    0.32459524273872375,
+    0.32459279894828796
+  ],
+  "all_finite": true,
+  "allclose_at_rtol_1e5_atol_1e6": true
+}

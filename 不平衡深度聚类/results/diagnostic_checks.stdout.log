@@ -1,0 +1,14 @@
+{"method": "BAL", "epoch": 20, "loss": 1.990294098854065, "lr": 0.00045677014356864043, "rho": null, "elapsed_s": 0.5113110000000001}
+{"method": "BAL", "epoch": 40, "loss": 1.8553391695022583, "lr": 0.0003346844800613229, "rho": null, "elapsed_s": 0.6325481999999996}
+{"method": "BAL", "epoch": 60, "loss": 1.7816082239151, "lr": 0.0001802522234901927, "rho": null, "elapsed_s": 0.7448088999999998}
+{"method": "BAL", "epoch": 80, "loss": 1.7531893253326416, "lr": 5.2461246906077396e-05, "rho": null, "elapsed_s": 0.8523889000000002}
+{"method": "BAL", "epoch": 100, "loss": 1.748521089553833, "lr": 1.233599085671e-07, "rho": null, "elapsed_s": 0.9674187000000005}
+semi_use: True
+epsilon: 0.1
+sk_numItermax: 1000
+{"method": "P2OT_feat", "epoch": 20, "loss": 0.13399159908294678, "lr": 0.00045677014356864043, "rho": 0.13384850264336878, "elapsed_s": 6.9351451}
+{"method": "P2OT_feat", "epoch": 40, "loss": 0.2410704642534256, "lr": 0.0003346844800613229, "rho": 0.2400353321577844, "elapsed_s": 11.416264700000001}
+{"method": "P2OT_feat", "epoch": 60, "loss": 0.6005560755729675, "lr": 0.0001802522234901927, "rho": 0.48834524990996897, "elapsed_s": 13.755476700000001}
+{"method": "P2OT_feat", "epoch": 80, "loss": 1.1633508205413818, "lr": 5.2461246906077396e-05, "rho": 0.821905874975467, "elapsed_s": 15.304484099999998}
+{"method": "P2OT_feat", "epoch": 100, "loss": 1.4954431056976318, "lr": 1.233599085671e-07, "rho": 0.9995501124812524, "elapsed_s": 16.2131003}
+Synthetic checks passed; no real-data metrics computed

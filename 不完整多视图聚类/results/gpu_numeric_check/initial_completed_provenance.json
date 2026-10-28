@@ -1,0 +1,90 @@
+{
+  "initial_runner_sha256": "ea8a44a5738d5254ba80d62d18ff4d295615efbafd973e9fadd643c7dc0bf912",
+  "runs": [
+    {
+      "group": "Caltech101-20_r0.5_s1",
+      "result_sha256": "e562ee9f3e09258974bc2367ab36ed8d34c7fabd89e1a6f5eb2f5644f9072945",
+      "checkpoint_sha256": "d9002ba5ae857897156c9ab756609392f2061b8132d0dcf4b2d6f9174e1da5eb"
+    },
+    {
+      "group": "Caltech101-20_r0.5_s2",
+      "result_sha256": "f8782d508352b1eed800b5bac261460966ce9387ecb13eaa822e6253d6cc5699",
+      "checkpoint_sha256": "8955fa8ab9fd8e4a7c590ffae4e12462e12c810f2e2c6957297c61226ef2334d"
+    },
+    {
+      "group": "Caltech101-20_r0.5_s3",
+      "result_sha256": "1d12ec3e2644112e4866e7c573676110ebf13b2ef3024aa9a96e4c5aef8c3b13",
+      "checkpoint_sha256": "dd282f358c97671fb7b6697311d4f77d80020f488f1578948ffab5700873ee3c"
+    },
+    {
+      "group": "Caltech101-20_r0.5_s4",
+      "result_sha256": "0158a92e8bbc56cdc9c083d7eb7b5f4d0e3dc0857abebcd8f8d9f5088fba5ea9",
+      "checkpoint_sha256": "9085ac9d2499939372b5b016e6ec8093bc29267807695cca49514ce6fa1e403b"
+    },
+    {
+      "group": "Caltech101-20_r0.5_s5",
+      "result_sha256": "6ba2ded696730823fef2b1a5ed8d2bef30fb87216424e9e716855b69a2f43324",
+      "checkpoint_sha256": "49ac25356aeb6929ffb06220437864547b28646bf8c51cea84a5a3a5b97d7899"
+    },
+    {
+      "group": "Caltech101-20_r0.7_s2",
+      "result_sha256": "b615ac190eff44f8197e5c872e1b0478c917b46de529431e46c48f7f87c2b903",
+      "checkpoint_sha256": "fc8247f2ee5b5f343ee1d040adbc9edcaebe6f9059a24dbcfd1c654e2068407e"
+    },
+    {
+      "group": "Caltech101-20_r0.7_s3",
+      "result_sha256": "50d6504c3646944da53995cb7fa93221a7edcb6df567cbfc49cab57716bbf16c",
+      "checkpoint_sha256": "314be51ce1ee84d30ce2fac2d546c9fa60276a464b991a2a91746c6694a44ea2"
+    },
+    {
+      "group": "Caltech101-20_r0.7_s4",
+      "result_sha256": "b42392aa49a5ecd211de3729b9ab068302355784fdc0d563646ff4bd01cd9930",
+      "checkpoint_sha256": "bf38b8534544fcde2123f4c763f5206d1401b8aa991d009c25c93f516f64f108"
+    },
+    {
+      "group": "Caltech101-20_r0.7_s5",
+      "result_sha256": "6efdc700292928da3f51091407474e7cf3550a757ca4187b7922c20519913c2c",
+      "checkpoint_sha256": "e1632f924a4acd4c6ddea2ca28e3f9662510deb156db0de6ea35780aeb2d927d"
+    },
+    {
+      "group": "Scene-15_r0.5_s1",
+      "result_sha256": "09519cbc527d3d8c632691612acfba265700b4275674f7006358300fc310f0c4",
+      "checkpoint_sha256": "d92c76f3d320668593d7f329d8f1df062cac4f224e2e3a8fa4d6bb3a1049d065"
+    },
+    {
+      "group": "Scene-15_r0.5_s2",
+      "result_sha256": "2d29df6995c8119a6f0027a0fa5b92019673faa010b18a5b285b3b263a1d856d",
+      "checkpoint_sha256": "450d7e383d3a371c53ece395ba50ab4a3249f28ee2aec6b5bc62cdca9080034e"
+    },
+    {
+      "group": "Scene-15_r0.5_s3",
+      "result_sha256": "34efe0618de3ad9839f0a94fc713e58a54d3138765ee0ad089711f5a70770a3e",
+      "checkpoint_sha256": "d45d8d2e2beb39fc42841e5b963abff62a0982a4b9958c38153ad0c2d68f1ef8"
+    },
+    {
+      "group": "Scene-15_r0.5_s4",
+      "result_sha256": "60dcd9b9f8b4824d060fbb5bb0da7e069069d8350119da4a8dc91f2cf4d328b5",
+      "checkpoint_sha256": "ba59f6c06cb12bc097c511e989449ac3a6189c28063e05c5988fc88d9ec130bc"
+    },
+    {
+      "group": "Scene-15_r0.5_s5",
+      "result_sha256": "367427286aca3af1c1582558dd60ba5c4a8c898e76c7473604d90eb9fd839b5a",
+      "checkpoint_sha256": "d5df69622598f835ae502d00507459143efe5c5d46cb5e7e135346b0a39d819c"
+    },
+    {
+      "group": "Scene-15_r0.7_s1",
+      "result_sha256": "81d535f6ea4d093ba80722f0cfa78d57b12b23d8ccbe38f4f39186c95619c5ed",
+      "checkpoint_sha256": "8daaf2ed5a38b9643798bb107e3e8c3ad10e3957a270cb65b6cbdc93c288f6b6"
+    },
+    {
+      "group": "Scene-15_r0.7_s4",
+      "result_sha256": "fcc8513e6bda6bc1494e96a46e627732684b26f54d09162749dbde2fae8718c4",
+      "checkpoint_sha256": "e302405be6006a69b8dbe92a529025f688f8e507d3233bf14763d642a15f2f1d"
+    },
+    {
+      "group": "Scene-15_r0.7_s5",
+      "result_sha256": "9c43b89d7ccdea0ff2cdd52dd9722683127912b270692f288b500b77be4d5ea3",
+      "checkpoint_sha256": "58a58ef868a69522d589d3c8f2190d7765ff4d591483d86f93308b2ae5d401a9"
+    }
+  ]
+}

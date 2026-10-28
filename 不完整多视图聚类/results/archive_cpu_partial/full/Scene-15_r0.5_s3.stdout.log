@@ -1,0 +1,3 @@
+START Scene-15 rate=0.5 mask_seed=3 model_seed=8 complete=2220 threads=4
+[2;29mEpoch : 100/500 ===> Reconstruction loss = 3.2503===> Reconstruction loss = 19.9772 ===> Dual prediction loss = 0.0277  ===> Contrastive loss = -8.0529e+02 ===> Loss = -8.0297e+02[0m
+Unlabelled evaluation mode switch, no intermediate label metrics

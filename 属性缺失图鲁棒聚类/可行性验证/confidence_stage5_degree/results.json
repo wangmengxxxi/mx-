@@ -1,0 +1,74 @@
+[
+  {
+    "rate": 0.4,
+    "mask": 0,
+    "mask_sha256": "a19bf3e5a8ac08478a0e81a833d436d4b5e85908392f02c58de72b68e9e24dff",
+    "calibration_count": 325,
+    "test_count": 325,
+    "test_spearman": -0.28318722817118597,
+    "missing_spearman": -0.31372993387919235,
+    "test_rmse_mean": 0.11209359019994736,
+    "missing_rmse_mean": 0.11226942390203476,
+    "missing_count": 1083
+  },
+  {
+    "rate": 0.4,
+    "mask": 1,
+    "mask_sha256": "e34a50529295d1e7f38a7067de4ac4e5fecafce87368bea0d9406db97623abdf",
+    "calibration_count": 325,
+    "test_count": 325,
+    "test_spearman": -0.3130937147538196,
+    "missing_spearman": -0.3290920859017377,
+    "test_rmse_mean": 0.11319190263748169,
+    "missing_rmse_mean": 0.11243250966072083,
+    "missing_count": 1083
+  },
+  {
+    "rate": 0.4,
+    "mask": 2,
+    "mask_sha256": "dc0cab0b5282a330eedec8f7546d0e9b876fb44a737045c8584fc73c56368e26",
+    "calibration_count": 325,
+    "test_count": 325,
+    "test_spearman": -0.3414009481750496,
+    "missing_spearman": -0.2923385139034208,
+    "test_rmse_mean": 0.11274688690900803,
+    "missing_rmse_mean": 0.1127152368426323,
+    "missing_count": 1083
+  },
+  {
+    "rate": 0.8,
+    "mask": 0,
+    "mask_sha256": "75407bc6ef90631e4e37fbcbf66f6b7bb7f5ecad1a48d1eca08a50c74afa5605",
+    "calibration_count": 108,
+    "test_count": 108,
+    "test_spearman": -0.21994259933611757,
+    "missing_spearman": -0.3179977502023075,
+    "test_rmse_mean": 0.11214295774698257,
+    "missing_rmse_mean": 0.11187176406383514,
+    "missing_count": 2166
+  },
+  {
+    "rate": 0.8,
+    "mask": 1,
+    "mask_sha256": "df3b47492fda6034c2b30a94cec518e2c7cbbe18448e560efe8fa4da04f53fa6",
+    "calibration_count": 108,
+    "test_count": 108,
+    "test_spearman": -0.0625230740698037,
+    "missing_spearman": -0.24829071542891537,
+    "test_rmse_mean": 0.11017806082963943,
+    "missing_rmse_mean": 0.11169077455997467,
+    "missing_count": 2166
+  },
+  {
+    "rate": 0.8,
+    "mask": 2,
+    "mask_sha256": "0c2f1e2aaad74c78c96af5e131004c1b2e5e75fbdeb0e9bc54f7bcb9fd668822",
+    "calibration_count": 108,
+    "test_count": 108,
+    "test_spearman": -0.16082865126193097,
+    "missing_spearman": -0.16778090773735393,
+    "test_rmse_mean": 0.1055762842297554,
+    "missing_rmse_mean": 0.1114903911948204,
+    "missing_count": 2166
+  }
+]

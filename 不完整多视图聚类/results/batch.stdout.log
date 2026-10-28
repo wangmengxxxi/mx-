@@ -1,0 +1,56 @@
+{"event": "driver_started", "time": "2026-10-27T18:53:23.880189+08:00", "device": "cuda", "workers": 1, "python": "F:\\研究生毕设\\不完整多视图聚类\\envs\\imvc_gpu\\python.exe"}
+{"event": "reuse_completed", "time": "2026-10-27T18:53:23.883352+08:00", "name": "Caltech101-20_r0.5_s1"}
+{"event": "standalone_pilot_checked", "time": "2026-10-27T18:53:23.885445+08:00", "training_seconds": 76.755957}
+{"event": "reuse_completed", "time": "2026-10-27T18:53:23.887090+08:00", "name": "Scene-15_r0.5_s1"}
+{"event": "standalone_scene_checked", "time": "2026-10-27T18:53:23.889102+08:00", "training_seconds": 116.6778777}
+{"event": "reuse_completed", "time": "2026-10-27T18:53:23.891103+08:00", "name": "Caltech101-20_r0.5_s2"}
+{"event": "reuse_completed", "time": "2026-10-27T18:53:23.891607+08:00", "name": "Caltech101-20_r0.5_s3"}
+{"event": "reuse_completed", "time": "2026-10-27T18:53:23.893613+08:00", "name": "Caltech101-20_r0.5_s4"}
+{"event": "reuse_completed", "time": "2026-10-27T18:53:23.894963+08:00", "name": "Caltech101-20_r0.5_s5"}
+{"event": "reuse_completed", "time": "2026-10-27T18:53:23.897017+08:00", "name": "Scene-15_r0.5_s2"}
+{"event": "reuse_completed", "time": "2026-10-27T18:53:23.899025+08:00", "name": "Scene-15_r0.5_s3"}
+{"event": "reuse_completed", "time": "2026-10-27T18:53:23.900041+08:00", "name": "Scene-15_r0.5_s4"}
+{"event": "reuse_completed", "time": "2026-10-27T18:53:23.901072+08:00", "name": "Scene-15_r0.5_s5"}
+{"event": "start", "time": "2026-10-27T18:53:23.902087+08:00", "name": "Caltech101-20_r0.7_s1", "rerun": false, "command": ["F:\\研究生毕设\\不完整多视图聚类\\envs\\imvc_gpu\\python.exe", "-I", "F:\\研究生毕设\\不完整多视图聚类\\scripts\\run_diagnostic.py", "--root", "F:\\研究生毕设\\不完整多视图聚类", "--dataset", "Caltech101-20", "--rate", "0.7", "--seed", "1", "--epochs", "500", "--threads", "4", "--out", "F:\\研究生毕设\\不完整多视图聚类\\results\\full\\Caltech101-20_r0.7_s1", "--device", "cuda"]}
+{"event": "completed", "time": "2026-10-27T18:54:28.131575+08:00", "name": "Caltech101-20_r0.7_s1", "rerun": false, "wall_seconds": 64.23400000000038, "training_seconds": 47.4568388}
+{"event": "reuse_completed", "time": "2026-10-27T18:54:28.134574+08:00", "name": "Caltech101-20_r0.7_s2"}
+{"event": "reuse_completed", "time": "2026-10-27T18:54:28.135573+08:00", "name": "Caltech101-20_r0.7_s3"}
+{"event": "reuse_completed", "time": "2026-10-27T18:54:28.137573+08:00", "name": "Caltech101-20_r0.7_s4"}
+{"event": "reuse_completed", "time": "2026-10-27T18:54:28.138573+08:00", "name": "Caltech101-20_r0.7_s5"}
+{"event": "reuse_completed", "time": "2026-10-27T18:54:28.139573+08:00", "name": "Scene-15_r0.7_s1"}
+{"event": "start", "time": "2026-10-27T18:54:28.140574+08:00", "name": "Scene-15_r0.7_s2", "rerun": false, "command": ["F:\\研究生毕设\\不完整多视图聚类\\envs\\imvc_gpu\\python.exe", "-I", "F:\\研究生毕设\\不完整多视图聚类\\scripts\\run_diagnostic.py", "--root", "F:\\研究生毕设\\不完整多视图聚类", "--dataset", "Scene-15", "--rate", "0.7", "--seed", "2", "--epochs", "500", "--threads", "4", "--out", "F:\\研究生毕设\\不完整多视图聚类\\results\\full\\Scene-15_r0.7_s2", "--device", "cuda"]}
+{"event": "completed", "time": "2026-10-27T18:56:07.148897+08:00", "name": "Scene-15_r0.7_s2", "rerun": false, "wall_seconds": 99.0, "training_seconds": 80.1491043}
+{"event": "start", "time": "2026-10-27T18:56:07.151898+08:00", "name": "Scene-15_r0.7_s3", "rerun": false, "command": ["F:\\研究生毕设\\不完整多视图聚类\\envs\\imvc_gpu\\python.exe", "-I", "F:\\研究生毕设\\不完整多视图聚类\\scripts\\run_diagnostic.py", "--root", "F:\\研究生毕设\\不完整多视图聚类", "--dataset", "Scene-15", "--rate", "0.7", "--seed", "3", "--epochs", "500", "--threads", "4", "--out", "F:\\研究生毕设\\不完整多视图聚类\\results\\full\\Scene-15_r0.7_s3", "--device", "cuda"]}
+{"event": "completed", "time": "2026-10-27T18:57:45.383949+08:00", "name": "Scene-15_r0.7_s3", "rerun": false, "wall_seconds": 98.23400000000038, "training_seconds": 79.4511638}
+{"event": "reuse_completed", "time": "2026-10-27T18:57:45.387023+08:00", "name": "Scene-15_r0.7_s4"}
+{"event": "reuse_completed", "time": "2026-10-27T18:57:45.389020+08:00", "name": "Scene-15_r0.7_s5"}
+{"event": "start", "time": "2026-10-27T18:57:45.390007+08:00", "name": "Caltech101-20_r0.5_s1", "rerun": true, "command": ["F:\\研究生毕设\\不完整多视图聚类\\envs\\imvc_gpu\\python.exe", "-I", "F:\\研究生毕设\\不完整多视图聚类\\scripts\\run_diagnostic.py", "--root", "F:\\研究生毕设\\不完整多视图聚类", "--dataset", "Caltech101-20", "--rate", "0.5", "--seed", "1", "--epochs", "500", "--threads", "4", "--out", "F:\\研究生毕设\\不完整多视图聚类\\results\\refcheck\\Caltech101-20_r0.5_s1", "--device", "cuda"]}
+{"event": "completed", "time": "2026-10-27T18:59:19.430541+08:00", "name": "Caltech101-20_r0.5_s1", "rerun": true, "wall_seconds": 94.03099999999995, "training_seconds": 78.3954393}
+{"event": "training_batch_finished", "time": "2026-10-27T18:59:19.432552+08:00", "unique_trainings": 20, "refcheck_trainings": 1}
+{"event": "batch_and_audits_completed", "time": "2026-10-27T19:01:04.298924+08:00"}
+{
+  "all_passed": true,
+  "checks": [
+    {
+      "group": "Caltech101-20_r0.7_s1",
+      "all_weights_and_buffers_bitwise_equal": true,
+      "mask_bitwise_equal": true,
+      "failed_comparison_arrays_bitwise_equal": true
+    },
+    {
+      "group": "Scene-15_r0.7_s2",
+      "all_weights_and_buffers_bitwise_equal": true,
+      "mask_bitwise_equal": true,
+      "failed_comparison_arrays_bitwise_equal": true
+    },
+    {
+      "group": "Scene-15_r0.7_s3",
+      "all_weights_and_buffers_bitwise_equal": true,
+      "mask_bitwise_equal": true,
+      "failed_comparison_arrays_bitwise_equal": true
+    }
+  ],
+  "initial_completed_results_hash_unchanged": 17,
+  "protocol_sha256": "7ddf3260ccebdf199cea02efdb9f562e8afc66c6a725f05ff4bcf0d6553cb34a"
+}
+{"event": "report_completed", "time": "2026-10-27T19:01:08.901954+08:00", "path": "F:\\研究生毕设\\不完整多视图聚类\\第一阶段IMVC可行性报告.md"}

@@ -1,0 +1,40 @@
+No broken requirements found.
+{
+  "python": "3.9.21",
+  "python_executable": "F:\\�о�������\\����������ͼ����\\envs\\imvc_gpu\\python.exe",
+  "torch": "2.8.0+cu126",
+  "cuda": "12.6",
+  "cuda_available": true,
+  "gpu_name": "NVIDIA GeForce GTX 1650 Ti",
+  "total_memory_bytes": 4294639616,
+  "compute_capability": [
+    7,
+    5
+  ],
+  "torch_cuda_arch_list": [
+    "sm_61",
+    "sm_70",
+    "sm_75",
+    "sm_80",
+    "sm_86",
+    "sm_90"
+  ],
+  "cudnn_version": 91002,
+  "other_packages": {
+    "filelock": "3.13.4",
+    "fsspec": "2024.3.1",
+    "Jinja2": "3.1.3",
+    "joblib": "1.5.3",
+    "MarkupSafe": "2.1.1",
+    "mpmath": "1.3.0",
+    "munkres": "1.1.4",
+    "networkx": "3.1",
+    "numpy": "1.26.4",
+    "scikit-learn": "1.4.0",
+    "scipy": "1.13.1",
+    "sympy": "1.14.0",
+    "threadpoolctl": "3.5.0",
+    "typing_extensions": "4.13.2"
+  },
+  "nvidia_smi": "Tue Oct 27 18:08:14 2026       \n+-----------------------------------------------------------------------------------------+\n| NVIDIA-SMI 621.01                 KMD Version: 621.01        CUDA UMD Version: 13.5     |\n+-----------------------------------------+------------------------+----------------------+\n| GPU  Name                  Driver-Model | Bus-Id          Disp.A | Volatile Uncorr. ECC |\n| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |\n|                                         |                        |               MIG M. |\n|=========================================+========================+======================|\n|   0  NVIDIA GeForce GTX 1650 Ti   WDDM  |   00000000:01:00.0  On |                  N/A |\n| N/A   44C    P8              3W /   55W |     645MiB /   4096MiB |      0%      Default |\n|                                         |                        |                  N/A |\n+-----------------------------------------+------------------------+----------------------+\n\n+-----------------------------------------------------------------------------------------+\n| Processes:                                                                              |\n|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |\n|        ID   ID                                                               Usage      |\n|=========================================================================================|\n|    0   N/A  N/A            2420    C+G   ...2p2nqsd0c76g0\\app\\ChatGPT.exe      N/A      |\n|    0   N/A  N/A            2844    C+G   ...xyewy\\ShellExperienceHost.exe      N/A      |\n|    0   N/A  N/A            4464    C+G   ....0.4283.62\\msedgewebview2.exe      N/A      |\n|    0   N/A  N/A            4948    C+G   F:\\Microsoft VS Code\\Code.exe         N/A      |\n|    0   N/A  N/A            6208    C+G   ...t\\Edge\\Application\\msedge.exe      N/A      |\n|    0   N/A  N/A            8068    C+G   C:\\Windows\\System32\\Taskmgr.exe       N/A      |\n|    0   N/A  N/A           10388    C+G   C:\\Windows\\explorer.exe               N/A      |\n|    0   N/A  N/A           11972    C+G   ..._cw5n1h2txyewy\\SearchHost.exe      N/A      |\n|    0   N/A  N/A           11996    C+G   ...y\\StartMenuExperienceHost.exe      N/A      |\n|    0   N/A  N/A           14556    C+G   F:\\ToDesk\\ToDesk.exe                  N/A      |\n|    0   N/A  N/A           16056    C+G   ...ntrolPanel\\SystemSettings.exe      N/A      |\n|    0   N/A  N/A           16496    C+G   ...5n1h2txyewy\\TextInputHost.exe      N/A      |\n|    0   N/A  N/A           17592    C+G   ...ot\\Application\\copilotapp.exe      N/A      |\n+-----------------------------------------------------------------------------------------+\n"
+}

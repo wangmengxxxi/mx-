@@ -1,0 +1,2 @@
+F:\�о�������\����������ͼ����\envs\imvc_cpu\lib\site-packages\scipy\spatial\distance.py:1271: RuntimeWarning: invalid value encountered in sqrt
+  return np.sqrt(js / 2.0)

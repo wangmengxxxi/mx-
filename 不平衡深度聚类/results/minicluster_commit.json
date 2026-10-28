@@ -1,0 +1,101 @@
+{
+  "sha": "e17dddcee21294e6d274bcdde8086ada7c1a08ff",
+  "node_id": "C_kwDORZk87doAKGUxN2RkZGNlZTIxMjk0ZTZkMjc0YmNkZGU4MDg2YWRhN2MxYTA4ZmY",
+  "commit": {
+    "author": {
+      "name": "LZX-001",
+      "email": "70796156+LZX-001@users.noreply.github.com",
+      "date": "2026-02-26T14:59:09Z"
+    },
+    "committer": {
+      "name": "GitHub",
+      "email": "noreply@github.com",
+      "date": "2026-02-26T14:59:09Z"
+    },
+    "message": "Update README.md",
+    "tree": {
+      "sha": "2b61240e57007565269c1eecb26cc0cb41751163",
+      "url": "https://api.github.com/repos/LZX-001/MiniClustering/git/trees/2b61240e57007565269c1eecb26cc0cb41751163"
+    },
+    "url": "https://api.github.com/repos/LZX-001/MiniClustering/git/commits/e17dddcee21294e6d274bcdde8086ada7c1a08ff",
+    "comment_count": 0,
+    "verification": {
+      "verified": true,
+      "reason": "valid",
+      "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJpoF+9CRC1aQ7uu5UhlAAAL6gQAJLURlW0Koo04r9bjbGrdXB7\nwqz/oaM6TkffPcRQQfwozYAXNP1RHcR+FbgpOn7s5feAGsjS5yWeGZ3viCYC22KR\nWLIdysqj1eokuCEHoT6ubJJk2WAneoLrdX748WYuw2qf0MFF6VEX6TUcKyAxIoqT\nGYtcOMJXbf/1aa0jhVrMsMWHTFwvXc4+j6X8Y/rrUisThkbam6PHrxU5gt7f1gbE\nyLOlsLjbeEL45aldLsI1faQXtODrHlz8rIxgzlz93vPwnvWe34VoF8QJ6owOL7wd\nFHAu2z+fk48MKz/nhYEJOMyiVrGu7vbzzqa4dSxTApgoah3Cj+MMqBT7OquPPzGw\nDwRmx+9T8xpoE+KYxzYOf6wBo7epPiHIfhSXzSCug7N6sP7pHePS7bmZzt3PUF5O\n8majwZo2jiArVg74zFQGIu3ijWHrLz5o6Ywlizc4fjHZVjYrSXv+CSBytCaW+BCs\n0jdP7h3E8YUAQMu9h6l0mWPHk2CgX5ReYoe/coYQzXd6q7hFVwkPFwX2QU56YKBp\nivWAV/38Hlw0S+Ft+bai8KTAGPTiCxzgZBsQ0WHKLSk4NXsjwTtMAHIpwQnRxfkQ\nvi/l/9I74LDawaRB5nw2OyOs6omUF4q88o+X5T+iLTxt/CkI4q+VS4aHKMje4Ps3\nIProU9M1P68rjeirLHmG\n=st/q\n-----END PGP SIGNATURE-----\n",
+      "payload": "tree 2b61240e57007565269c1eecb26cc0cb41751163\nparent 432129660b743e9919a3206bad8657d9d8ec1433\nauthor LZX-001 <70796156+LZX-001@users.noreply.github.com> 1772117949 +0800\ncommitter GitHub <noreply@github.com> 1772117949 +0800\n\nUpdate README.md",
+      "verified_at": "2026-02-26T14:59:10Z"
+    }
+  },
+  "url": "https://api.github.com/repos/LZX-001/MiniClustering/commits/e17dddcee21294e6d274bcdde8086ada7c1a08ff",
+  "html_url": "https://github.com/LZX-001/MiniClustering/commit/e17dddcee21294e6d274bcdde8086ada7c1a08ff",
+  "comments_url": "https://api.github.com/repos/LZX-001/MiniClustering/commits/e17dddcee21294e6d274bcdde8086ada7c1a08ff/comments",
+  "author": {
+    "login": "LZX-001",
+    "id": 70796156,
+    "node_id": "MDQ6VXNlcjcwNzk2MTU2",
+    "avatar_url": "https://avatars.githubusercontent.com/u/70796156?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/LZX-001",
+    "html_url": "https://github.com/LZX-001",
+    "followers_url": "https://api.github.com/users/LZX-001/followers",
+    "following_url": "https://api.github.com/users/LZX-001/following{/other_user}",
+    "gists_url": "https://api.github.com/users/LZX-001/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/LZX-001/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/LZX-001/subscriptions",
+    "organizations_url": "https://api.github.com/users/LZX-001/orgs",
+    "repos_url": "https://api.github.com/users/LZX-001/repos",
+    "events_url": "https://api.github.com/users/LZX-001/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/LZX-001/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "committer": {
+    "login": "web-flow",
+    "id": 19864447,
+    "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+    "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/web-flow",
+    "html_url": "https://github.com/web-flow",
+    "followers_url": "https://api.github.com/users/web-flow/followers",
+    "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+    "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+    "organizations_url": "https://api.github.com/users/web-flow/orgs",
+    "repos_url": "https://api.github.com/users/web-flow/repos",
+    "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/web-flow/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "parents": [
+    {
+      "sha": "432129660b743e9919a3206bad8657d9d8ec1433",
+      "url": "https://api.github.com/repos/LZX-001/MiniClustering/commits/432129660b743e9919a3206bad8657d9d8ec1433",
+      "html_url": "https://github.com/LZX-001/MiniClustering/commit/432129660b743e9919a3206bad8657d9d8ec1433"
+    }
+  ],
+  "stats": {
+    "total": 24,
+    "additions": 21,
+    "deletions": 3
+  },
+  "files": [
+    {
+      "sha": "0c6e46b25f5cb211f4d310eb71b0df57f2fcb238",
+      "filename": "README.md",
+      "status": "modified",
+      "additions": 21,
+      "deletions": 3,
+      "changes": 24,
+      "blob_url": "https://github.com/LZX-001/MiniClustering/blob/e17dddcee21294e6d274bcdde8086ada7c1a08ff/README.md",
+      "raw_url": "https://github.com/LZX-001/MiniClustering/raw/e17dddcee21294e6d274bcdde8086ada7c1a08ff/README.md",
+      "contents_url": "https://api.github.com/repos/LZX-001/MiniClustering/contents/README.md?ref=e17dddcee21294e6d274bcdde8086ada7c1a08ff",
+      "patch": "@@ -1,15 +1,33 @@\n It is the code for MiniClustering\r\n \r\n-## Training BYOL\r\n+#### Training BYOL\r\n ```bash\r\n torchrun  --nproc_per_node=1 --master_port 2000 main_byol.py\r\n ```\r\n You may choose a save_dir to save checkpoints and logs. \r\n \r\n And you can adjust the experimental setup and hyperparameters in the main_byol.py.\r\n \r\n-## Training MiniClustering\r\n+#### Training MiniClustering\r\n ```bash\r\n torchrun  --nproc_per_node=1 --master_port 2000 MiniClustering.py\r\n ```\r\n-use the specific save_dir and checkpoint for MiniClustering.\n\\ No newline at end of file\n+\r\n+use the specific save_dir and checkpoint for MiniClustering.\r\n+\r\n+## Acknowlegement\r\n+torch_clustering: https://github.com/Hzzone/torch_clustering\r\n+\r\n+## Citation\r\n+If this code is helpful, you are welcome to cite our paper.\r\n+\r\n+```\r\n+@inproceedings{\r\n+li2026minicluster,\r\n+title={Mini-cluster Guided Long-tailed Deep Clustering},\r\n+author={Zhixin Li and Yuheng Jia and Guanliang Chen and Hui LIU and Junhui Hou},\r\n+booktitle={The Fourteenth International Conference on Learning Representations},\r\n+year={2026},\r\n+url={https://openreview.net/forum?id=3JlljaiQwR}\r\n+}\r\n+```\r"
+    }
+  ]
+}

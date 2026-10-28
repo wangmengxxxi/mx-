@@ -1,0 +1,103 @@
+{
+  "P02": {
+    "verified_venue": "未完成官方核实；作者README称ICLR 2026 Oral",
+    "authors_verified": "仅作者README：Haochen Zhou; Guofeng Ding; Mouxing Yang; Peng Hu; Yijie Lin; Xi Peng",
+    "verification_status": "OpenReview页面/API受验证或权限限制，题目作者会议仅与作者README一致；数值未核",
+    "torch_version_readme": "未写具体版本",
+    "gpu_feasibility": "特征MLP有望8GB；batch 1024及OT二次矩阵开销须核；未实测"
+  },
+  "P03": {
+    "verified_venue": "未核实；站内标ICLR 2026",
+    "verification_status": "OpenReview验证页；GitHub存在但根目录只有RAV.zip，无README，未下载ZIP",
+    "torch_version_readme": "无README，未知",
+    "gpu_feasibility": "特征级模型可能适合；代码和显存未核"
+  },
+  "P05": {
+    "verified_venue": "CVPR 2026，CVF官方论文页核实",
+    "authors_verified": "Changhao He; Di Xue; Shuxian Li; Yanji Hao; Xi Peng; Peng Hu",
+    "verification_status": "CVF核对题目作者会议；为监督分类测试时错配，不是无监督聚类；PDF获取未完成，未使用其表格数字",
+    "torch_version_readme": "未写具体版本",
+    "gpu_feasibility": "特征级分类有望8GB；未实测"
+  },
+  "P07": {
+    "verified_venue": "arXiv作者comments声明NeurIPS 2026 Poster；未核官方程序",
+    "authors_verified": "Haolu Liu; Xiyue Wang; Xuanting Xie; Liangjian Wen; Zhao Kang",
+    "verification_status": "arXiv核题目作者及作者会议声明；README核协议与依赖；不把完整数据训练与缺失数据训练混比",
+    "torch_version_readme": "2.1.0（README）"
+  },
+  "P08": {
+    "verified_venue": "CVPR 2026，CVF官方论文页核实",
+    "authors_verified": "Hongqing He; Jie Xu; Wenyuan Yang; Yonghua Zhu; Guoqiu Wen; Xiaofeng Zhu",
+    "verification_status": "CVF及arXiv核身份；arXiv全文核Table 3及高斯特征污染协议；原文简称GLC，仓库GLGC",
+    "torch_version_readme": "未写具体版本",
+    "gpu_feasibility": "预计算多视图特征有望8GB；大图/高阶邻接开销未实测",
+    "additional_original_url": "https://arxiv.org/abs/2512.21516"
+  },
+  "P09": {
+    "verified_venue": "arXiv作者comments声明Accepted at ICCV 2025；未核官方程序",
+    "verification_status": "arXiv核题目作者及作者会议声明；笔记旧仓库404，原文指向rAIson-Lab/G2D有效",
+    "torch_version_readme": "2.0.1；Python 3.11、CUDA 11.7（README）",
+    "gpu_feasibility": "小CNN或冻结特征有望8GB；多教师端到端设置未实测",
+    "authors_verified": "Rakib, Mohammed; Bagavathi, Arunkumar"
+  },
+  "P10": {
+    "verified_venue": "arXiv作者comments声明Accepted NeurIPS 2025；未核官方程序",
+    "verification_status": "arXiv核题目作者及作者会议声明；笔记和摘要页未给出代码链接",
+    "authors_verified": "Hwang, Seong-Hyeon; Choi, Soyoung; Whang, Steven Euijong"
+  },
+  "P11": {
+    "verified_venue": "arXiv作者comments声明Published NeurIPS 2025；未核官方程序",
+    "verification_status": "arXiv核题目作者及作者会议声明；未核全文实验表",
+    "torch_version_readme": "未写具体版本",
+    "gpu_feasibility": "后融合或小CNN有望8GB；BERT及全量图像编码器并训未实测",
+    "authors_verified": "Gong, Baoquan; Gao, Xiyuan; Zhu, Pengfei; Hu, Qinghua; Cao, Bing"
+  },
+  "P12": {
+    "verified_venue": "arXiv作者comments声明Accepted NeurIPS 2025；未核官方程序",
+    "verification_status": "arXiv核题目作者及作者会议声明；GitHub核README与结构",
+    "torch_version_readme": "1.11.0；Python 3.8（README）",
+    "authors_verified": "Jiang, QingYuan; Huang, Longfei; Yang, Yang"
+  },
+  "P15": {
+    "verified_venue": "arXiv作者comments声明Accepted CVPR 2026；未核官方程序",
+    "verification_status": "arXiv核题目作者及作者会议声明；未审计GitHub",
+    "authors_verified": "Nguyen, Phuong-Anh; Pham, Tien Anh; Le, Duc-Trong; Nguyen, Cam-Van Thi"
+  },
+  "P16": {
+    "verified_venue": "arXiv作者comments声明Accepted CVPR 2026；未核官方程序",
+    "verification_status": "arXiv核题目作者及作者会议声明；全文Table 1/2核数值、共形假设；代码仅README结构",
+    "torch_version_readme": "2.9.0；README另写tested CUDA 12.1，未证明cu128",
+    "gpu_feasibility": "小CNN/冻结特征可作为8GB主线方案；原模型显存未实测",
+    "authors_verified": "Jiang, Xun; Gu, Yufan; Hu, Disen; Hou, Yuqing; Yao, Yazhou; Shen, Fumin; Shen, Heng Tao; Xu, Xing"
+  },
+  "P18": {
+    "verified_venue": "arXiv作者comments声明Accepted at NeurIPS 2025；未核官方程序",
+    "verification_status": "原文Table1 PTBXL,p_m=.2：IID p_s=.2 FedMAC78.56+-0.47 vsPEPSY78.81+-0.72(+.25pp)；IID p_s=1 74.70->75.41(+.71pp)；nonIID p_s=1 48.38+-0.59->66.75+-5.32(+18.37pp)，为服务器准确率，收益已被现有方法取得。Table6训练显存2.15–2.86GB，原机器A6000 48GB。正文概述1000轮，但附录Table4为PTBXL1000/EDF500轮；32client每轮10、本地3epoch。未实测本机。",
+    "torch_version_readme": "未写具体版本；Python 3.9（README）",
+    "gpu_feasibility": "原文训练显存2.15–2.86GB支持8GB可行性；原机器A6000 48GB；本机未实测",
+    "authors_verified": "Nguyen, Duong M.; Hoang, Trong Nghia; Huynh, Thanh Trung; Nguyen, Quoc Viet Hung; Nguyen, Phi Le"
+  },
+  "P19": {
+    "verified_venue": "ICCV 2025，CVF官方论文页核实；arXiv上传2026并非会议年",
+    "verification_status": "arXiv核题作者，CVF核正式ICCV 2025；全文Table 1/3核结果/16.80–23.68GB显存；仅取最常见8类",
+    "torch_version_readme": "未写具体版本；Python 3.8（README）",
+    "gpu_feasibility": "原样16.80–23.68GB不适合8GB；提示反传经过冻结骨干，不能等同缓存特征",
+    "additional_original_url": "https://openaccess.thecvf.com/content/ICCV2025/html/Phung_Federated_Prompt-Tuning_with_Heterogeneous_and_Incomplete_Multimodal_Client_Data_ICCV_2025_paper.html",
+    "authors_verified": "Phung, Thu Hang; Nguyen, Duong M.; Huynh, Thanh Trung; Nguyen, Quoc Viet Hung; Hoang, Trong Nghia; Nguyen, Phi Le"
+  },
+  "P20": {
+    "verified_venue": "ICCV 2025，CVF官方论文页核实",
+    "authors_verified": "Mainak Singha; Subhankar Roy; Sarthak Mehrotra; Ankit Jha; Moloud Abdar; Biplab Banerjee; Elisa Ricci",
+    "verification_status": "arXiv及CVF核身份；README顶部徽章链接错误，正文2504.20860正确",
+    "torch_version_readme": "1.12.1；torchvision 0.13.1、cudatoolkit 10.2（README）",
+    "gpu_feasibility": "提示参数少不代表显存低；未核完整模型峰值"
+  },
+  "P21": {
+    "verified_venue": "未确认会议；arXiv核身份，站内标ICLR 2026",
+    "verification_status": "arXiv核题目作者；未核OpenReview会议归属；未核全文结果",
+    "torch_version_readme": "未写具体版本",
+    "gpu_feasibility": "适配器参数小不等于骨干无反传开销；未实测",
+    "additional_original_url": "https://arxiv.org/abs/2507.05394",
+    "authors_verified": "Ghiasvand, Sajjad; Alizadeh, Mahnoosh; Pedarsani, Ramtin"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "acc": 0.6610044313146234,
+  "nmi": 0.4657825439585996,
+  "ari": 0.4134206098858472,
+  "missing_acc": 0.6510769230769231,
+  "observed_acc": 0.6759002770083102,
+  "cold_acc": 0.5751633986928104,
+  "occupied_clusters": 7,
+  "largest_cluster_fraction": 0.2171344165435746,
+  "elapsed_sec": 14983.7196775,
+  "initial": {
+    "acc": 0.5731166912850812,
+    "nmi": 0.3775847752155128,
+    "ari": 0.2956027219858159,
+    "missing_acc": 0.5673846153846154,
+    "observed_acc": 0.5817174515235457,
+    "cold_acc": 0.4923747276688453,
+    "occupied_clusters": 7,
+    "largest_cluster_fraction": 0.21861152141802068
+  },
+  "mean_train_sec": 14.854011299399994,
+  "peak_rss_mb": 575.08984375,
+  "last_prediction_change": 0.0
+}

@@ -1,0 +1,25 @@
+[
+  {
+    "rate": 0.8,
+    "mask": 0,
+    "seed": 0,
+    "branch": "E",
+    "shared_fit_path": "F:\\研究生毕设\\可行性验证\\oracle_ceiling_smoke\\r0_m0_complete_k2_s0",
+    "mask_sha256": "7817c38a81d949018caec9d6df50db79940a0e492d34f1f43ae4282934065f58",
+    "missing_count": 2166,
+    "cold_count": 1128,
+    "replaced_count": 2166,
+    "imputation_rmse": 0.0,
+    "imputation_cosine": 0.9999999885799041,
+    "acc": 0.30280649926144754,
+    "nmi": 0.02715465251236235,
+    "ari": 0.0074333307190591015,
+    "missing_acc": 0.30840258541089566,
+    "observed_acc": 0.28044280442804426,
+    "cold_acc": 0.2898936170212766,
+    "occupied_clusters": 4,
+    "largest_cluster_fraction": 0.8862629246676514,
+    "noncold_missing_acc": 0.3285163776493256,
+    "noncold_all_acc": 0.3120253164556962
+  }
+]

@@ -1,0 +1,101 @@
+{
+  "sha": "624dd9fd10431802214fab1d7b34c44f5a0a92df",
+  "node_id": "C_kwDOFMHowdoAKDYyNGRkOWZkMTA0MzE4MDIyMTRmYWIxZDdiMzRjNDRmNWEwYTkyZGY",
+  "commit": {
+    "author": {
+      "name": "Yijie Lin",
+      "email": "linyijie.gm@gmail.com",
+      "date": "2024-07-21T09:16:53Z"
+    },
+    "committer": {
+      "name": "Yijie Lin",
+      "email": "linyijie.gm@gmail.com",
+      "date": "2024-07-21T09:16:53Z"
+    },
+    "message": "support arbitrary number of views",
+    "tree": {
+      "sha": "efdbad250ce3782548f6b2c4b29de1f5a64b07b8",
+      "url": "https://api.github.com/repos/XLearning-SCU/2021-CVPR-Completer/git/trees/efdbad250ce3782548f6b2c4b29de1f5a64b07b8"
+    },
+    "url": "https://api.github.com/repos/XLearning-SCU/2021-CVPR-Completer/git/commits/624dd9fd10431802214fab1d7b34c44f5a0a92df",
+    "comment_count": 0,
+    "verification": {
+      "verified": false,
+      "reason": "unsigned",
+      "signature": null,
+      "payload": null,
+      "verified_at": null
+    }
+  },
+  "url": "https://api.github.com/repos/XLearning-SCU/2021-CVPR-Completer/commits/624dd9fd10431802214fab1d7b34c44f5a0a92df",
+  "html_url": "https://github.com/XLearning-SCU/2021-CVPR-Completer/commit/624dd9fd10431802214fab1d7b34c44f5a0a92df",
+  "comments_url": "https://api.github.com/repos/XLearning-SCU/2021-CVPR-Completer/commits/624dd9fd10431802214fab1d7b34c44f5a0a92df/comments",
+  "author": {
+    "login": "Lin-Yijie",
+    "id": 74489377,
+    "node_id": "MDQ6VXNlcjc0NDg5Mzc3",
+    "avatar_url": "https://avatars.githubusercontent.com/u/74489377?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/Lin-Yijie",
+    "html_url": "https://github.com/Lin-Yijie",
+    "followers_url": "https://api.github.com/users/Lin-Yijie/followers",
+    "following_url": "https://api.github.com/users/Lin-Yijie/following{/other_user}",
+    "gists_url": "https://api.github.com/users/Lin-Yijie/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/Lin-Yijie/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/Lin-Yijie/subscriptions",
+    "organizations_url": "https://api.github.com/users/Lin-Yijie/orgs",
+    "repos_url": "https://api.github.com/users/Lin-Yijie/repos",
+    "events_url": "https://api.github.com/users/Lin-Yijie/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/Lin-Yijie/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "committer": {
+    "login": "Lin-Yijie",
+    "id": 74489377,
+    "node_id": "MDQ6VXNlcjc0NDg5Mzc3",
+    "avatar_url": "https://avatars.githubusercontent.com/u/74489377?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/Lin-Yijie",
+    "html_url": "https://github.com/Lin-Yijie",
+    "followers_url": "https://api.github.com/users/Lin-Yijie/followers",
+    "following_url": "https://api.github.com/users/Lin-Yijie/following{/other_user}",
+    "gists_url": "https://api.github.com/users/Lin-Yijie/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/Lin-Yijie/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/Lin-Yijie/subscriptions",
+    "organizations_url": "https://api.github.com/users/Lin-Yijie/orgs",
+    "repos_url": "https://api.github.com/users/Lin-Yijie/repos",
+    "events_url": "https://api.github.com/users/Lin-Yijie/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/Lin-Yijie/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "parents": [
+    {
+      "sha": "2624c50f223eec5c644839230d05e9e6da33517d",
+      "url": "https://api.github.com/repos/XLearning-SCU/2021-CVPR-Completer/commits/2624c50f223eec5c644839230d05e9e6da33517d",
+      "html_url": "https://github.com/XLearning-SCU/2021-CVPR-Completer/commit/2624c50f223eec5c644839230d05e9e6da33517d"
+    }
+  ],
+  "stats": {
+    "total": 2,
+    "additions": 1,
+    "deletions": 1
+  },
+  "files": [
+    {
+      "sha": "699372b111f7aabfd4bae86c61a54d4cc861c8fc",
+      "filename": "README.md",
+      "status": "modified",
+      "additions": 1,
+      "deletions": 1,
+      "changes": 2,
+      "blob_url": "https://github.com/XLearning-SCU/2021-CVPR-Completer/blob/624dd9fd10431802214fab1d7b34c44f5a0a92df/README.md",
+      "raw_url": "https://github.com/XLearning-SCU/2021-CVPR-Completer/raw/624dd9fd10431802214fab1d7b34c44f5a0a92df/README.md",
+      "contents_url": "https://api.github.com/repos/XLearning-SCU/2021-CVPR-Completer/contents/README.md?ref=624dd9fd10431802214fab1d7b34c44f5a0a92df",
+      "patch": "@@ -3,7 +3,7 @@\n \n ## What's New\n \n-- We support **arbitrary number** of views for multi-view clustering and classification tasks. See [2022-TPAMI-DCP](2022-TPAMI-DCP) for more details.\n+- We support **arbitrary number** of views for multi-view clustering and classification tasks. See [2022-TPAMI-DCP](https://github.com/XLearning-SCU/2022-TPAMI-DCP) for more details.\n \n ## Intro\n This repo contains the code and data of our CVPR'2021 paper Completer: Incomplete Multi-view Clustering via Contrastive Prediction and that of our IEEE TPAMI'2022 paper Dual Contrastive Prediction for Incomplete Multi-view Representation Learning. "
+    }
+  ]
+}

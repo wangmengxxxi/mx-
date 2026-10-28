@@ -1,0 +1,35 @@
+{
+  "purpose": "Test whether confidence on joint reconstruction improves SDCN, then check FP versus zero under degree-biased node attribute missingness",
+  "dataset": "Planetoid Cora",
+  "hardware": "CPU; existing pytorch environment; no GPU driver change",
+  "code_snapshots": ["run_sdcn_stage5_weighted.py", "run_sdcn_stage5_baseline.py", "run_confidence_stage5.py"],
+  "code_note": "Stage-five runs started from these byte-identical script snapshots. Stage-four scripts were restored afterward and verified against the stage-four manifest.",
+  "random_missing_ablation": {
+    "mask_seed": 20261023,
+    "rates": [0.4, 0.8],
+    "masks": 5,
+    "model_seeds": [0, 1, 2],
+    "input": "FP with 40 propagation steps",
+    "pretrain_epochs": 100,
+    "joint_epochs": 400,
+    "joint_lr": 0.001,
+    "weights": ["fixed missing 0.6", "informed from observed-node calibration", "shuffled within missing nodes"],
+    "location": "Joint reconstruction loss only; pretraining and KL remain uniform",
+    "uniform_reference": "sdcn_stage4_holdout/results.json with matching mask and seed",
+    "analysis": "Paired final-epoch ACC, NMI and ARI; report all comparisons, no label-based model selection"
+  },
+  "different_missing_setting": {
+    "mask_mode": "degree_biased",
+    "sampling_probability": "Proportional to sqrt(degree + 1), without replacement",
+    "mask_seed": 20261024,
+    "rates": [0.4, 0.8],
+    "masks": 3,
+    "model_seeds": [0, 1, 2],
+    "inputs": ["zero", "fp"],
+    "pretrain_epochs": 100,
+    "joint_epochs": 400,
+    "joint_lr": 0.001,
+    "analysis": "Paired FP minus zero at final epoch, plus overlap and missing-node degree diagnostics"
+  },
+  "boundary": "This is one dataset under two missingness mechanisms; it does not establish cross-dataset generalization or paper-level novelty"
+}

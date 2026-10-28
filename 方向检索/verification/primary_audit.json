@@ -1,0 +1,446 @@
+[
+  {
+    "id": "P09",
+    "url": "https://arxiv.org/abs/2506.21514",
+    "status": 200,
+    "metadata": [
+      {
+        "name": "citation_title",
+        "content": "G$^{2}$D: Boosting Multimodal Learning with Gradient-Guided Distillation"
+      },
+      {
+        "name": "citation_author",
+        "content": "Rakib, Mohammed"
+      },
+      {
+        "name": "citation_author",
+        "content": "Bagavathi, Arunkumar"
+      },
+      {
+        "name": "citation_date",
+        "content": "2025/06/26"
+      },
+      {
+        "name": "citation_online_date",
+        "content": "2025/10/17"
+      },
+      {
+        "name": "citation_pdf_url",
+        "content": "https://arxiv.org/pdf/2506.21514"
+      },
+      {
+        "name": "citation_arxiv_id",
+        "content": "2506.21514"
+      },
+      {
+        "name": "citation_abstract",
+        "content": "Multimodal learning aims to leverage information from diverse data modalities to achieve more comprehensive performance. However, conventional multimodal models often suffer from modality imbalance, where one or a few modalities dominate model optimization, leading to suboptimal feature representation and underutilization of weak modalities. To address this challenge, we introduce Gradient-Guided Distillation (G$^{2}$D), a knowledge distillation framework that optimizes the multimodal model with a custom-built loss function that fuses both unimodal and multimodal objectives. G$^{2}$D further incorporates a dynamic sequential modality prioritization (SMP) technique in the learning process to ensure each modality leads the learning process, avoiding the pitfall of stronger modalities overshadowing weaker ones. We validate G$^{2}$D on multiple real-world datasets and show that G$^{2}$D amplifies the significance of weak modalities while training and outperforms state-of-the-art methods in classification and regression tasks. Our code is available at https://github.com/rAIson-Lab/G2D."
+      }
+    ],
+    "text": "[2506.21514] G$^{2}$D: Boosting Multimodal Learning with Gradient-Guided Distillation Skip to main content Search Submit Donate Log in Search arXiv Press Enter to search · Advanced search Computer Science > Computer Vision and Pattern Recognition arXiv:2506.21514 (cs) [Submitted on 26 Jun 2025 ( v1 ), last revised 17 Oct 2025 (this version, v3)] Title: G$^{2}$D: Boosting Multimodal Learning with Gradient-Guided Distillation Authors: Mohammed Rakib , Arunkumar Bagavathi View a PDF of the paper titled G$^{2}$D: Boosting Multimodal Learning with Gradient-Guided Distillation, by Mohammed Rakib and 1 other authors View PDF HTML (experimental) Abstract: Multimodal learning aims to leverage information from diverse data modalities to achieve more comprehensive performance. However, conventional multimodal models often suffer from modality imbalance, where one or a few modalities dominate model optimization, leading to suboptimal feature representation and underutilization of weak modalities. To address this challenge, we introduce Gradient-Guided Distillation (G$^{2}$D), a knowledge distillation framework that optimizes the multimodal model with a custom-built loss function that fuses both unimodal and multimodal objectives. G$^{2}$D further incorporates a dynamic sequential modality prioritization (SMP) technique in the learning process to ensure each modality leads the learning process, avoiding the pitfall of stronger modalities overshadowing weaker ones. We validate G$^{2}$D on multiple real-world datasets and show that G$^{2}$D amplifies the significance of weak modalities while training and outperforms state-of-the-art methods in classification and regression tasks. Our code is available at this https URL . Comments: Accepted at ICCV 2025 Subjects: Computer Vision and Pattern Recognition (cs.CV) Cite as: arXiv:2506.21514 [cs.CV] (or arXiv:2506.21514v3 [cs.CV] for this version) https://doi.org/10.48550/arXiv.2506.21514 Focus to learn more arXiv-issued DOI via DataCite Submission history From: Mohammed Rakib [ view email ] [v1] Thu, 26 Jun 2025 17:37:36 UTC (6,068 KB) [v2] Sat, 28 Jun 2025 01:56:41 UTC (6,072 KB) [v3] Fri, 17 Oct 2025 20:02:53 UTC (6,072 KB) Full-text links: Access Paper: View a PDF of the paper titled G$^{2}$D: Boosting Multimodal Learning with Gradient-Guided Distillation, by Mohammed Rakib and 1 other authors View PDF HTML (experimental) TeX Source view license Additional Features Audio Summary Current browse context: cs.CV < prev | next > new | recent | 2025-06 Change to browse by: cs References & Citations SciX Google Scholar Semantic Scholar export BibTeX citation Loading... BibTeX formatted citation × loading... Data provided by: Bookmark Bibliographic Tools Bibliographic and Citation Tools Bibliographic Explorer Toggle Bibliographic Explorer ( What is the Explorer? ) Connected Papers Toggle Connected Papers ( What is Connected Papers? ) Litmaps Toggle Litmaps ( What is Litmaps? ) scite.ai Toggle scite Smart Citations ( What are Smart Citations? ) Code, Data, Media Code, Data and Media Associated with this Article alphaXiv Toggle alphaXiv ( What is alphaXiv? ) Links to Code Toggle CatalyzeX Code Finder for Papers ( What is CatalyzeX? ) DagsHub Toggle DagsHub ( What is DagsHub? ) GotitPub Toggle Gotit.pub ( What is GotitPub? ) Huggingface Toggle Hugging Face ( What is Huggingface? ) ScienceCast Toggle ScienceCast ( What is ScienceCast? ) Demos Demos Replicate Toggle Replicate ( What is Replicate? ) Spaces Toggle Hugging Face Spaces ( What is Spaces? ) Spaces Toggle TXYZ.AI ( What is TXYZ.AI? ) Related Papers Recommenders and Search Tools Link to Influence Flower Influence Flower ( What are Influence Flowers? ) Core recommender toggle CORE Recommender ( What is CORE? ) Author Venue Institution Topic About arXivLabs arXivLabs: experimental projects with community collaborators arXivLabs is a framework that allows collaborators to develop and share new arXiv features directly on our website. Both individuals and organizations that work with arXivLabs have embraced and accepted our values of openness, community, excellence, and user data privacy. arXiv is committed to these values and only works with partners that adhere to them. Have an idea for a project that will add value for arXiv's community? Learn more about arXivLabs . Which authors of this paper are endorsers? | Disable MathJax ( What is MathJax? ) We gratefully acknowledge support from our major funders , member institutions , ,\n        and all contributors. About · Help · Contact · Subscribe · Copyright · Privacy · Accessibility · Operational Status (opens in new tab) Major funding support from (opens in new tab) (opens in new tab) (opens in new tab)"
+  },
+  {
+    "id": "P10",
+    "url": "https://arxiv.org/abs/2509.25831",
+    "status": 200,
+    "metadata": [
+      {
+        "name": "citation_title",
+        "content": "MIDAS: Misalignment-based Data Augmentation Strategy for Imbalanced Multimodal Learning"
+      },
+      {
+        "name": "citation_author",
+        "content": "Hwang, Seong-Hyeon"
+      },
+      {
+        "name": "citation_author",
+        "content": "Choi, Soyoung"
+      },
+      {
+        "name": "citation_author",
+        "content": "Whang, Steven Euijong"
+      },
+      {
+        "name": "citation_date",
+        "content": "2025/09/30"
+      },
+      {
+        "name": "citation_online_date",
+        "content": "2025/09/30"
+      },
+      {
+        "name": "citation_pdf_url",
+        "content": "https://arxiv.org/pdf/2509.25831"
+      },
+      {
+        "name": "citation_arxiv_id",
+        "content": "2509.25831"
+      },
+      {
+        "name": "citation_abstract",
+        "content": "Multimodal models often over-rely on dominant modalities, failing to achieve optimal performance. While prior work focuses on modifying training objectives or optimization procedures, data-centric solutions remain underexplored. We propose MIDAS, a novel data augmentation strategy that generates misaligned samples with semantically inconsistent cross-modal information, labeled using unimodal confidence scores to compel learning from contradictory signals. However, this confidence-based labeling can still favor the more confident modality. To address this within our misaligned samples, we introduce weak-modality weighting, which dynamically increases the loss weight of the least confident modality, thereby helping the model fully utilize weaker modality. Furthermore, when misaligned features exhibit greater similarity to the aligned features, these misaligned samples pose a greater challenge, thereby enabling the model to better distinguish between classes. To leverage this, we propose hard-sample weighting, which prioritizes such semantically ambiguous misaligned samples. Experiments on multiple multimodal classification benchmarks demonstrate that MIDAS significantly outperforms related baselines in addressing modality imbalance."
+      }
+    ],
+    "text": "[2509.25831] MIDAS: Misalignment-based Data Augmentation Strategy for Imbalanced Multimodal Learning Skip to main content Search Submit Donate Log in Search arXiv Press Enter to search · Advanced search Computer Science > Machine Learning arXiv:2509.25831 (cs) [Submitted on 30 Sep 2025] Title: MIDAS: Misalignment-based Data Augmentation Strategy for Imbalanced Multimodal Learning Authors: Seong-Hyeon Hwang , Soyoung Choi , Steven Euijong Whang View a PDF of the paper titled MIDAS: Misalignment-based Data Augmentation Strategy for Imbalanced Multimodal Learning, by Seong-Hyeon Hwang and 2 other authors View PDF HTML (experimental) Abstract: Multimodal models often over-rely on dominant modalities, failing to achieve optimal performance. While prior work focuses on modifying training objectives or optimization procedures, data-centric solutions remain underexplored. We propose MIDAS, a novel data augmentation strategy that generates misaligned samples with semantically inconsistent cross-modal information, labeled using unimodal confidence scores to compel learning from contradictory signals. However, this confidence-based labeling can still favor the more confident modality. To address this within our misaligned samples, we introduce weak-modality weighting, which dynamically increases the loss weight of the least confident modality, thereby helping the model fully utilize weaker modality. Furthermore, when misaligned features exhibit greater similarity to the aligned features, these misaligned samples pose a greater challenge, thereby enabling the model to better distinguish between classes. To leverage this, we propose hard-sample weighting, which prioritizes such semantically ambiguous misaligned samples. Experiments on multiple multimodal classification benchmarks demonstrate that MIDAS significantly outperforms related baselines in addressing modality imbalance. Comments: Accepted to NeurIPS 2025 Subjects: Machine Learning (cs.LG) Cite as: arXiv:2509.25831 [cs.LG] (or arXiv:2509.25831v1 [cs.LG] for this version) https://doi.org/10.48550/arXiv.2509.25831 Focus to learn more arXiv-issued DOI via DataCite Submission history From: Soyoung Choi [ view email ] [v1] Tue, 30 Sep 2025 06:13:17 UTC (709 KB) Full-text links: Access Paper: View a PDF of the paper titled MIDAS: Misalignment-based Data Augmentation Strategy for Imbalanced Multimodal Learning, by Seong-Hyeon Hwang and 2 other authors View PDF HTML (experimental) TeX Source view license Current browse context: cs.LG < prev | next > new | recent | 2025-09 Change to browse by: cs References & Citations NASA ADS Google Scholar Semantic Scholar export BibTeX citation Loading... BibTeX formatted citation × loading... Data provided by: Bookmark Bibliographic Tools Bibliographic and Citation Tools Bibliographic Explorer Toggle Bibliographic Explorer ( What is the Explorer? ) Connected Papers Toggle Connected Papers ( What is Connected Papers? ) Litmaps Toggle Litmaps ( What is Litmaps? ) scite.ai Toggle scite Smart Citations ( What are Smart Citations? ) Code, Data, Media Code, Data and Media Associated with this Article alphaXiv Toggle alphaXiv ( What is alphaXiv? ) Links to Code Toggle CatalyzeX Code Finder for Papers ( What is CatalyzeX? ) DagsHub Toggle DagsHub ( What is DagsHub? ) GotitPub Toggle Gotit.pub ( What is GotitPub? ) Huggingface Toggle Hugging Face ( What is Huggingface? ) ScienceCast Toggle ScienceCast ( What is ScienceCast? ) Demos Demos Replicate Toggle Replicate ( What is Replicate? ) Spaces Toggle Hugging Face Spaces ( What is Spaces? ) Spaces Toggle TXYZ.AI ( What is TXYZ.AI? ) Related Papers Recommenders and Search Tools Link to Influence Flower Influence Flower ( What are Influence Flowers? ) Core recommender toggle CORE Recommender ( What is CORE? ) IArxiv recommender toggle IArxiv Recommender ( What is IArxiv? ) Author Venue Institution Topic About arXivLabs arXivLabs: experimental projects with community collaborators arXivLabs is a framework that allows collaborators to develop and share new arXiv features directly on our website. Both individuals and organizations that work with arXivLabs have embraced and accepted our values of openness, community, excellence, and user data privacy. arXiv is committed to these values and only works with partners that adhere to them. Have an idea for a project that will add value for arXiv's community? Learn more about arXivLabs . Which authors of this paper are endorsers? | Disable MathJax ( What is MathJax? ) We gratefully acknowledge support from\n        our major funders , member institutions , ,\n        and all contributors. About · Help · Contact · Subscribe · Copyright · Privacy · Accessibility · Operational Status (opens in new tab) Major funding support from"
+  },
+  {
+    "id": "P11",
+    "url": "https://arxiv.org/abs/2510.20877",
+    "status": 200,
+    "metadata": [
+      {
+        "name": "citation_title",
+        "content": "Multimodal Negative Learning"
+      },
+      {
+        "name": "citation_author",
+        "content": "Gong, Baoquan"
+      },
+      {
+        "name": "citation_author",
+        "content": "Gao, Xiyuan"
+      },
+      {
+        "name": "citation_author",
+        "content": "Zhu, Pengfei"
+      },
+      {
+        "name": "citation_author",
+        "content": "Hu, Qinghua"
+      },
+      {
+        "name": "citation_author",
+        "content": "Cao, Bing"
+      },
+      {
+        "name": "citation_date",
+        "content": "2025/10/23"
+      },
+      {
+        "name": "citation_online_date",
+        "content": "2025/10/23"
+      },
+      {
+        "name": "citation_pdf_url",
+        "content": "https://arxiv.org/pdf/2510.20877"
+      },
+      {
+        "name": "citation_arxiv_id",
+        "content": "2510.20877"
+      },
+      {
+        "name": "citation_abstract",
+        "content": "Multimodal learning systems often encounter challenges related to modality imbalance, where a dominant modality may overshadow others, thereby hindering the learning of weak modalities. Conventional approaches often force weak modalities to align with dominant ones in \"Learning to be (the same)\" (Positive Learning), which risks suppressing the unique information inherent in the weak modalities. To address this challenge, we offer a new learning paradigm: \"Learning Not to be\" (Negative Learning). Instead of enhancing weak modalities' target-class predictions, the dominant modalities dynamically guide the weak modality to suppress non-target classes. This stabilizes the decision space and preserves modality-specific information, allowing weak modalities to preserve unique information without being over-aligned. We proceed to reveal multimodal learning from a robustness perspective and theoretically derive the Multimodal Negative Learning (MNL) framework, which introduces a dynamic guidance mechanism tailored for negative learning. Our method provably tightens the robustness lower bound of multimodal learning by increasing the Unimodal Confidence Margin (UCoM) and reduces the empirical error of weak modalities, particularly under noisy and imbalanced scenarios. Extensive experiments across multiple benchmarks demonstrate the effectiveness and generalizability of our approach against competing methods. The code will be available at https://github.com/BaoquanGong/Multimodal-Negative-Learning.git."
+      }
+    ],
+    "text": "[2510.20877] Multimodal Negative Learning Skip to main content Search Submit Donate Log in Search arXiv Press Enter to search · Advanced search Computer Science > Machine Learning arXiv:2510.20877 (cs) [Submitted on 23 Oct 2025] Title: Multimodal Negative Learning Authors: Baoquan Gong , Xiyuan Gao , Pengfei Zhu , Qinghua Hu , Bing Cao View a PDF of the paper titled Multimodal Negative Learning, by Baoquan Gong and 4 other authors View PDF HTML (experimental) Abstract: Multimodal learning systems often encounter challenges related to modality imbalance, where a dominant modality may overshadow others, thereby hindering the learning of weak modalities. Conventional approaches often force weak modalities to align with dominant ones in \"Learning to be (the same)\" (Positive Learning), which risks suppressing the unique information inherent in the weak modalities. To address this challenge, we offer a new learning paradigm: \"Learning Not to be\" (Negative Learning). Instead of enhancing weak modalities' target-class predictions, the dominant modalities dynamically guide the weak modality to suppress non-target classes. This stabilizes the decision space and preserves modality-specific information, allowing weak modalities to preserve unique information without being over-aligned. We proceed to reveal multimodal learning from a robustness perspective and theoretically derive the Multimodal Negative Learning (MNL) framework, which introduces a dynamic guidance mechanism tailored for negative learning. Our method provably tightens the robustness lower bound of multimodal learning by increasing the Unimodal Confidence Margin (UCoM) and reduces the empirical error of weak modalities, particularly under noisy and imbalanced scenarios. Extensive experiments across multiple benchmarks demonstrate the effectiveness and generalizability of our approach against competing methods. The code will be available at this https URL . Comments: Published in NeurIPS 2025 Subjects: Machine Learning (cs.LG) ; Artificial Intelligence (cs.AI) Cite as: arXiv:2510.20877 [cs.LG] (or arXiv:2510.20877v1 [cs.LG] for this version) https://doi.org/10.48550/arXiv.2510.20877 Focus to learn more arXiv-issued DOI via DataCite Submission history From: Baoquan Gong [ view email ] [v1] Thu, 23 Oct 2025 11:47:11 UTC (4,397 KB) Full-text links: Access Paper: View a PDF of the paper titled Multimodal Negative Learning, by Baoquan Gong and 4 other authors View PDF HTML (experimental) TeX Source view license Additional Features Audio Summary Current browse context: cs.LG < prev | next > new | recent | 2025-10 Change to browse by: cs cs.AI References & Citations SciX Google Scholar Semantic Scholar export BibTeX citation Loading... BibTeX formatted citation × loading... Data provided by: Bookmark Bibliographic Tools Bibliographic and Citation Tools Bibliographic Explorer Toggle Bibliographic Explorer ( What is the Explorer? ) Connected Papers Toggle Connected Papers ( What is Connected Papers? ) Litmaps Toggle Litmaps ( What is Litmaps? ) scite.ai Toggle scite Smart Citations ( What are Smart Citations? ) Code, Data, Media Code, Data and Media Associated with this Article alphaXiv Toggle alphaXiv ( What is alphaXiv? ) Links to Code Toggle CatalyzeX Code Finder for Papers ( What is CatalyzeX? ) DagsHub Toggle DagsHub ( What is DagsHub? ) GotitPub Toggle Gotit.pub ( What is GotitPub? ) Huggingface Toggle Hugging Face ( What is Huggingface? ) ScienceCast Toggle ScienceCast ( What is ScienceCast? ) Demos Demos Replicate Toggle Replicate ( What is Replicate? ) Spaces Toggle Hugging Face Spaces ( What is Spaces? ) Spaces Toggle TXYZ.AI ( What is TXYZ.AI? ) Related Papers Recommenders and Search Tools Link to Influence Flower Influence Flower ( What are Influence Flowers? ) Core recommender toggle CORE Recommender ( What is CORE? ) IArxiv recommender toggle IArxiv Recommender ( What is IArxiv? ) Author Venue Institution Topic About arXivLabs arXivLabs: experimental projects with community collaborators arXivLabs is a framework that allows collaborators to develop and share new arXiv features directly on our website. Both individuals and organizations that work with arXivLabs have embraced and accepted our values of openness, community, excellence, and user data privacy. arXiv is committed to these values and only works with partners that adhere to them. Have an idea for a project that will add value for arXiv's community? Learn more about arXivLabs . Which authors of this paper are endorsers? | Disable MathJax ( What is MathJax? ) We gratefully acknowledge support from our major funders , member institutions , ,\n        and all contributors. About · Help · Contact · Subscribe · Copyright · Privacy · Accessibility · Operational Status (opens in new tab) Major funding support from (opens in new tab) (opens in new tab) (opens in new tab)"
+  },
+  {
+    "id": "P12",
+    "url": "https://arxiv.org/abs/2502.20120",
+    "status": 200,
+    "metadata": [
+      {
+        "name": "citation_title",
+        "content": "Rethinking Multimodal Learning from the Perspective of Mitigating Classification Ability Disproportion"
+      },
+      {
+        "name": "citation_author",
+        "content": "Jiang, QingYuan"
+      },
+      {
+        "name": "citation_author",
+        "content": "Huang, Longfei"
+      },
+      {
+        "name": "citation_author",
+        "content": "Yang, Yang"
+      },
+      {
+        "name": "citation_date",
+        "content": "2025/02/27"
+      },
+      {
+        "name": "citation_online_date",
+        "content": "2026/01/29"
+      },
+      {
+        "name": "citation_pdf_url",
+        "content": "https://arxiv.org/pdf/2502.20120"
+      },
+      {
+        "name": "citation_arxiv_id",
+        "content": "2502.20120"
+      },
+      {
+        "name": "citation_abstract",
+        "content": "Multimodal learning (MML) is significantly constrained by modality imbalance, leading to suboptimal performance in practice. While existing approaches primarily focus on balancing the learning of different modalities to address this issue, they fundamentally overlook the inherent disproportion in model classification ability, which serves as the primary cause of this phenomenon. In this paper, we propose a novel multimodal learning approach to dynamically balance the classification ability of weak and strong modalities by incorporating the principle of boosting. Concretely, we first propose a sustained boosting algorithm in multimodal learning by simultaneously optimizing the classification and residual errors. Subsequently, we introduce an adaptive classifier assignment strategy to dynamically facilitate the classification performance of the weak modality. Furthermore, we theoretically analyze the convergence property of the cross-modal gap function, ensuring the effectiveness of the proposed boosting scheme. To this end, the classification ability of strong and weak modalities is expected to be balanced, thereby mitigating the imbalance issue. Empirical experiments on widely used datasets reveal the superiority of our method through comparison with various state-of-the-art (SOTA) multimodal learning baselines. The source code is available at https://github.com/njustkmg/NeurIPS25-AUG."
+      }
+    ],
+    "text": "[2502.20120] Rethinking Multimodal Learning from the Perspective of Mitigating Classification Ability Disproportion Skip to main content Search Submit Donate Log in Search arXiv Press Enter to search · Advanced search Computer Science > Computer Vision and Pattern Recognition arXiv:2502.20120 (cs) [Submitted on 27 Feb 2025 ( v1 ), last revised 29 Jan 2026 (this version, v4)] Title: Rethinking Multimodal Learning from the Perspective of Mitigating Classification Ability Disproportion Authors: QingYuan Jiang , Longfei Huang , Yang Yang View a PDF of the paper titled Rethinking Multimodal Learning from the Perspective of Mitigating Classification Ability Disproportion, by QingYuan Jiang and 2 other authors View PDF HTML (experimental) Abstract: Multimodal learning (MML) is significantly constrained by modality imbalance, leading to suboptimal performance in practice. While existing approaches primarily focus on balancing the learning of different modalities to address this issue, they fundamentally overlook the inherent disproportion in model classification ability, which serves as the primary cause of this phenomenon. In this paper, we propose a novel multimodal learning approach to dynamically balance the classification ability of weak and strong modalities by incorporating the principle of boosting. Concretely, we first propose a sustained boosting algorithm in multimodal learning by simultaneously optimizing the classification and residual errors. Subsequently, we introduce an adaptive classifier assignment strategy to dynamically facilitate the classification performance of the weak modality. Furthermore, we theoretically analyze the convergence property of the cross-modal gap function, ensuring the effectiveness of the proposed boosting scheme. To this end, the classification ability of strong and weak modalities is expected to be balanced, thereby mitigating the imbalance issue. Empirical experiments on widely used datasets reveal the superiority of our method through comparison with various state-of-the-art (SOTA) multimodal learning baselines. The source code is available at this https URL . Comments: Accepted by NeurIPS 2025 Subjects: Computer Vision and Pattern Recognition (cs.CV) Cite as: arXiv:2502.20120 [cs.CV] (or arXiv:2502.20120v4 [cs.CV] for this version) https://doi.org/10.48550/arXiv.2502.20120 Focus to learn more arXiv-issued DOI via DataCite Submission history From: Longfei Huang [ view email ] [v1] Thu, 27 Feb 2025 14:12:20 UTC (5,789 KB) [v2] Mon, 20 Oct 2025 03:20:01 UTC (366 KB) [v3] Wed, 22 Oct 2025 08:44:44 UTC (366 KB) [v4] Thu, 29 Jan 2026 12:29:44 UTC (420 KB) Full-text links: Access Paper: View a PDF of the paper titled Rethinking Multimodal Learning from the Perspective of Mitigating Classification Ability Disproportion, by QingYuan Jiang and 2 other authors View PDF HTML (experimental) TeX Source view license Additional Features Audio Summary Current browse context: cs.CV < prev | next > new | recent | 2025-02 Change to browse by: cs References & Citations SciX Google Scholar Semantic Scholar export BibTeX citation Loading... BibTeX formatted citation × loading... Data provided by: Bookmark Bibliographic Tools Bibliographic and Citation Tools Bibliographic Explorer Toggle Bibliographic Explorer ( What is the Explorer? ) Connected Papers Toggle Connected Papers ( What is Connected Papers? ) Litmaps Toggle Litmaps ( What is Litmaps? ) scite.ai Toggle scite Smart Citations ( What are Smart Citations? ) Code, Data, Media Code, Data and Media Associated with this Article alphaXiv Toggle alphaXiv ( What is alphaXiv? ) Links to Code Toggle CatalyzeX Code Finder for Papers ( What is CatalyzeX? ) DagsHub Toggle DagsHub ( What is DagsHub? ) GotitPub Toggle Gotit.pub ( What is GotitPub? ) Huggingface Toggle Hugging Face ( What is Huggingface? ) ScienceCast Toggle ScienceCast ( What is ScienceCast? ) Demos Demos Replicate Toggle Replicate ( What is Replicate? ) Spaces Toggle Hugging Face Spaces ( What is Spaces? ) Spaces Toggle TXYZ.AI ( What is TXYZ.AI? ) Related Papers Recommenders and Search Tools Link to Influence Flower Influence Flower ( What are Influence Flowers? ) Core recommender toggle CORE Recommender ( What is CORE? ) Author Venue Institution Topic About arXivLabs arXivLabs: experimental projects with community collaborators arXivLabs is a framework that allows collaborators to develop and share new arXiv features directly on our website. Both individuals and organizations that work with arXivLabs have embraced and accepted our values of openness, community, excellence, and user data privacy. arXiv is committed to these values and only works with partners that adhere to them. Have an idea for a project that will add value for arXiv's community? Learn more about arXivLabs . Which authors of this paper are endorsers? | Disable MathJax ( What is MathJax? ) We gratefully acknowledge support from our major funders , member institutions , ,\n        and all contributors. About · Help · Contact · Subscribe · Copyright · Privacy · Accessibility · Operational Status (opens in new tab) Major funding support from (opens in new tab) (opens in new tab) (opens in new tab)"
+  },
+  {
+    "id": "P15",
+    "url": "https://arxiv.org/abs/2603.19718",
+    "status": 200,
+    "metadata": [
+      {
+        "name": "citation_title",
+        "content": "BALM: A Model-Agnostic Framework for Balanced Multimodal Learning under Imbalanced Missing Rates"
+      },
+      {
+        "name": "citation_author",
+        "content": "Nguyen, Phuong-Anh"
+      },
+      {
+        "name": "citation_author",
+        "content": "Pham, Tien Anh"
+      },
+      {
+        "name": "citation_author",
+        "content": "Le, Duc-Trong"
+      },
+      {
+        "name": "citation_author",
+        "content": "Nguyen, Cam-Van Thi"
+      },
+      {
+        "name": "citation_date",
+        "content": "2026/03/20"
+      },
+      {
+        "name": "citation_online_date",
+        "content": "2026/03/20"
+      },
+      {
+        "name": "citation_pdf_url",
+        "content": "https://arxiv.org/pdf/2603.19718"
+      },
+      {
+        "name": "citation_arxiv_id",
+        "content": "2603.19718"
+      },
+      {
+        "name": "citation_abstract",
+        "content": "Learning from multiple modalities often suffers from imbalance, where information-rich modalities dominate optimization while weaker or partially missing modalities contribute less. This imbalance becomes severe in realistic settings with imbalanced missing rates (IMR), where each modality is absent with different probabilities, distorting representation learning and gradient dynamics. We revisit this issue from a training-process perspective and propose BALM, a model-agnostic plug-in framework to achieve balanced multimodal learning under IMR. The framework comprises two complementary modules: the Feature Calibration Module (FCM), which recalibrates unimodal features using global context to establish a shared representation basis across heterogeneous missing patterns; the Gradient Rebalancing Module (GRM), which balances learning dynamics across modalities by modulating gradient magnitudes and directions from both distributional and spatial perspectives. BALM can be seamlessly integrated into diverse backbones, including multimodal emotion recognition (MER) models, without altering their architectures. Experimental results across multiple MER benchmarks confirm that BALM consistently enhances robustness and improves performance under diverse missing and imbalance settings. Code available at: https://github.com/np4s/BALM_CVPR2026.git"
+      }
+    ],
+    "text": "[2603.19718] BALM: A Model-Agnostic Framework for Balanced Multimodal Learning under Imbalanced Missing Rates Skip to main content Search Submit Donate Log in Search arXiv Press Enter to search · Advanced search Computer Science > Computer Vision and Pattern Recognition arXiv:2603.19718 (cs) [Submitted on 20 Mar 2026] Title: BALM: A Model-Agnostic Framework for Balanced Multimodal Learning under Imbalanced Missing Rates Authors: Phuong-Anh Nguyen , Tien Anh Pham , Duc-Trong Le , Cam-Van Thi Nguyen View a PDF of the paper titled BALM: A Model-Agnostic Framework for Balanced Multimodal Learning under Imbalanced Missing Rates, by Phuong-Anh Nguyen and 3 other authors View PDF HTML (experimental) Abstract: Learning from multiple modalities often suffers from imbalance, where information-rich modalities dominate optimization while weaker or partially missing modalities contribute less. This imbalance becomes severe in realistic settings with imbalanced missing rates (IMR), where each modality is absent with different probabilities, distorting representation learning and gradient dynamics. We revisit this issue from a training-process perspective and propose BALM, a model-agnostic plug-in framework to achieve balanced multimodal learning under IMR. The framework comprises two complementary modules: the Feature Calibration Module (FCM), which recalibrates unimodal features using global context to establish a shared representation basis across heterogeneous missing patterns; the Gradient Rebalancing Module (GRM), which balances learning dynamics across modalities by modulating gradient magnitudes and directions from both distributional and spatial perspectives. BALM can be seamlessly integrated into diverse backbones, including multimodal emotion recognition (MER) models, without altering their architectures. Experimental results across multiple MER benchmarks confirm that BALM consistently enhances robustness and improves performance under diverse missing and imbalance settings. Code available at: this https URL Comments: Accepted by CVPR 2026 Subjects: Computer Vision and Pattern Recognition (cs.CV) Cite as: arXiv:2603.19718 [cs.CV] (or arXiv:2603.19718v1 [cs.CV] for this version) https://doi.org/10.48550/arXiv.2603.19718 Focus to learn more arXiv-issued DOI via DataCite Submission history From: Cam-Van Thi Nguyen [ view email ] [v1] Fri, 20 Mar 2026 07:47:09 UTC (1,846 KB) Full-text links: Access Paper: View a PDF of the paper titled BALM: A Model-Agnostic Framework for Balanced Multimodal Learning under Imbalanced Missing Rates, by Phuong-Anh Nguyen and 3 other authors View PDF HTML (experimental) TeX Source view license Additional Features Audio Summary Current browse context: cs.CV < prev | next > new | recent | 2026-03 Change to browse by: cs References & Citations SciX Google Scholar Semantic Scholar export BibTeX citation Loading... BibTeX formatted citation × loading... Data provided by: Bookmark Bibliographic Tools Bibliographic and Citation Tools Bibliographic Explorer Toggle Bibliographic Explorer ( What is the Explorer? ) Connected Papers Toggle Connected Papers ( What is Connected Papers? ) Litmaps Toggle Litmaps ( What is Litmaps? ) scite.ai Toggle scite Smart Citations ( What are Smart Citations? ) Code, Data, Media Code, Data and Media Associated with this Article alphaXiv Toggle alphaXiv ( What is alphaXiv? ) Links to Code Toggle CatalyzeX Code Finder for Papers ( What is CatalyzeX? ) DagsHub Toggle DagsHub ( What is DagsHub? ) GotitPub Toggle Gotit.pub ( What is GotitPub? ) Huggingface Toggle Hugging Face ( What is Huggingface? ) ScienceCast Toggle ScienceCast ( What is ScienceCast? ) Demos Demos Replicate Toggle Replicate ( What is Replicate? ) Spaces Toggle Hugging Face Spaces ( What is Spaces? ) Spaces Toggle TXYZ.AI ( What is TXYZ.AI? ) Related Papers Recommenders and Search Tools Link to Influence Flower Influence Flower ( What are Influence Flowers? ) Core recommender toggle CORE Recommender ( What is CORE? ) Author Venue Institution Topic About arXivLabs arXivLabs: experimental projects with community collaborators arXivLabs is a framework that allows collaborators to develop and share new arXiv features directly on our website. Both individuals and organizations that work with arXivLabs have embraced and accepted our values of openness, community, excellence, and user data privacy. arXiv is committed to these values and only works with partners that adhere to them. Have an idea for a project that will add value for arXiv's community? Learn more about arXivLabs . Which authors of this paper are endorsers? | Disable MathJax ( What is MathJax? ) We gratefully acknowledge support from our major funders , member institutions , ,\n        and all contributors. About · Help · Contact · Subscribe · Copyright · Privacy · Accessibility · Operational Status (opens in new tab) Major funding support from (opens in new tab) (opens in new tab) (opens in new tab)"
+  },
+  {
+    "id": "P16",
+    "url": "https://arxiv.org/abs/2605.03820",
+    "status": 200,
+    "metadata": [
+      {
+        "name": "citation_title",
+        "content": "Multimodal Learning on Low-Quality Data with Conformal Predictive Self-Calibration"
+      },
+      {
+        "name": "citation_author",
+        "content": "Jiang, Xun"
+      },
+      {
+        "name": "citation_author",
+        "content": "Gu, Yufan"
+      },
+      {
+        "name": "citation_author",
+        "content": "Hu, Disen"
+      },
+      {
+        "name": "citation_author",
+        "content": "Hou, Yuqing"
+      },
+      {
+        "name": "citation_author",
+        "content": "Yao, Yazhou"
+      },
+      {
+        "name": "citation_author",
+        "content": "Shen, Fumin"
+      },
+      {
+        "name": "citation_author",
+        "content": "Shen, Heng Tao"
+      },
+      {
+        "name": "citation_author",
+        "content": "Xu, Xing"
+      },
+      {
+        "name": "citation_date",
+        "content": "2026/05/05"
+      },
+      {
+        "name": "citation_online_date",
+        "content": "2026/05/05"
+      },
+      {
+        "name": "citation_pdf_url",
+        "content": "https://arxiv.org/pdf/2605.03820"
+      },
+      {
+        "name": "citation_arxiv_id",
+        "content": "2605.03820"
+      },
+      {
+        "name": "citation_abstract",
+        "content": "Multimodal learning often grapples with the challenge of low-quality data, which predominantly manifests as two facets: modality imbalance and noisy corruption. While these issues are often studied in isolation, we argue that they share a common root in the predictive uncertainty towards the reliability of individual modalities and instances during learning. In this paper, we propose a unified framework, termed Conformal Predictive Self-Calibration (CPSC), which leverages conformal prediction to equip the model with the ability to perform self-guided calibration on-the-fly. The core of our proposed CPSC lies in a novel self-calibrating training loop that seamlessly integrates two key modules: (1) Representation Self-Calibration, which decomposes unimodal features into components, and selectively fuses the most robust ones identified by a conformal predictor to enhance feature resilience. (2) Gradient Self-Calibration, which recalibrates the gradient flow during backpropagation based on instance-wise reliability scores, steering the optimization towards more trustworthy directions. Furthermore, we also devise a self-update strategy for the conformal predictor to ensure the entire system co-evolves consistently throughout the training process. Extensive experiments on six benchmark datasets under both imbalanced and noisy settings demonstrate that our CPSC framework consistently outperforms existing state-of-the-art methods. Our code is available at https://github.com/XunCHN/CPSC."
+      }
+    ],
+    "text": "[2605.03820] Multimodal Learning on Low-Quality Data with Conformal Predictive Self-Calibration Skip to main content Search Submit Donate Log in Search arXiv Press Enter to search · Advanced search Computer Science > Computer Vision and Pattern Recognition arXiv:2605.03820 (cs) [Submitted on 5 May 2026] Title: Multimodal Learning on Low-Quality Data with Conformal Predictive Self-Calibration Authors: Xun Jiang , Yufan Gu , Disen Hu , Yuqing Hou , Yazhou Yao , Fumin Shen , Heng Tao Shen , Xing Xu View a PDF of the paper titled Multimodal Learning on Low-Quality Data with Conformal Predictive Self-Calibration, by Xun Jiang and 7 other authors View PDF HTML (experimental) Abstract: Multimodal learning often grapples with the challenge of low-quality data, which predominantly manifests as two facets: modality imbalance and noisy corruption. While these issues are often studied in isolation, we argue that they share a common root in the predictive uncertainty towards the reliability of individual modalities and instances during learning. In this paper, we propose a unified framework, termed Conformal Predictive Self-Calibration (CPSC), which leverages conformal prediction to equip the model with the ability to perform self-guided calibration on-the-fly. The core of our proposed CPSC lies in a novel self-calibrating training loop that seamlessly integrates two key modules: (1) Representation Self-Calibration, which decomposes unimodal features into components, and selectively fuses the most robust ones identified by a conformal predictor to enhance feature resilience. (2) Gradient Self-Calibration, which recalibrates the gradient flow during backpropagation based on instance-wise reliability scores, steering the optimization towards more trustworthy directions. Furthermore, we also devise a self-update strategy for the conformal predictor to ensure the entire system co-evolves consistently throughout the training process. Extensive experiments on six benchmark datasets under both imbalanced and noisy settings demonstrate that our CPSC framework consistently outperforms existing state-of-the-art methods. Our code is available at this https URL . Comments: Accepted by CVPR 2026 Subjects: Computer Vision and Pattern Recognition (cs.CV) ; Machine Learning (cs.LG); Multimedia (cs.MM) Cite as: arXiv:2605.03820 [cs.CV] (or arXiv:2605.03820v1 [cs.CV] for this version) https://doi.org/10.48550/arXiv.2605.03820 Focus to learn more arXiv-issued DOI via DataCite Submission history From: Xun Jiang [ view email ] [v1] Tue, 5 May 2026 14:48:52 UTC (814 KB) Full-text links: Access Paper: View a PDF of the paper titled Multimodal Learning on Low-Quality Data with Conformal Predictive Self-Calibration, by Xun Jiang and 7 other authors View PDF HTML (experimental) TeX Source view license Additional Features Audio Summary Current browse context: cs.CV < prev | next > new | recent | 2026-05 Change to browse by: cs cs.LG cs.MM References & Citations SciX Google Scholar Semantic Scholar export BibTeX citation Loading... BibTeX formatted citation × loading... Data provided by: Bookmark Bibliographic Tools Bibliographic and Citation Tools Bibliographic Explorer Toggle Bibliographic Explorer ( What is the Explorer? ) Connected Papers Toggle Connected Papers ( What is Connected Papers? ) Litmaps Toggle Litmaps ( What is Litmaps? ) scite.ai Toggle scite Smart Citations ( What are Smart Citations? ) Code, Data, Media Code, Data and Media Associated with this Article alphaXiv Toggle alphaXiv ( What is alphaXiv? ) Links to Code Toggle CatalyzeX Code Finder for Papers ( What is CatalyzeX? ) DagsHub Toggle DagsHub ( What is DagsHub? ) GotitPub Toggle Gotit.pub ( What is GotitPub? ) Huggingface Toggle Hugging Face ( What is Huggingface? ) ScienceCast Toggle ScienceCast ( What is ScienceCast? ) Demos Demos Replicate Toggle Replicate ( What is Replicate? ) Spaces Toggle Hugging Face Spaces ( What is Spaces? ) Spaces Toggle TXYZ.AI ( What is TXYZ.AI? ) Related Papers Recommenders and Search Tools Link to Influence Flower Influence Flower ( What are Influence Flowers? ) Core recommender toggle CORE Recommender ( What is CORE? ) Author Venue Institution Topic About arXivLabs arXivLabs: experimental projects with community collaborators arXivLabs is a framework that allows collaborators to develop and share new arXiv features directly on our website. Both individuals and organizations that work with arXivLabs have embraced and accepted our values of openness, community, excellence, and user data privacy. arXiv is committed to these values and only works with partners that adhere to them. Have an idea for a project that will add value for arXiv's community? Learn more about arXivLabs . Which authors of this paper are endorsers? | Disable MathJax ( What is MathJax? ) We gratefully acknowledge support from our major funders , member institutions , ,\n        and all contributors. About · Help · Contact · Subscribe · Copyright · Privacy · Accessibility · Operational Status (opens in new tab) Major funding support from (opens in new tab) (opens in new tab) (opens in new tab)"
+  },
+  {
+    "id": "P18",
+    "url": "https://arxiv.org/abs/2510.22880",
+    "status": 200,
+    "metadata": [
+      {
+        "name": "citation_title",
+        "content": "Learning Reconfigurable Representations for Multimodal Federated Learning with Missing Data"
+      },
+      {
+        "name": "citation_author",
+        "content": "Nguyen, Duong M."
+      },
+      {
+        "name": "citation_author",
+        "content": "Hoang, Trong Nghia"
+      },
+      {
+        "name": "citation_author",
+        "content": "Huynh, Thanh Trung"
+      },
+      {
+        "name": "citation_author",
+        "content": "Nguyen, Quoc Viet Hung"
+      },
+      {
+        "name": "citation_author",
+        "content": "Nguyen, Phi Le"
+      },
+      {
+        "name": "citation_date",
+        "content": "2025/10/27"
+      },
+      {
+        "name": "citation_online_date",
+        "content": "2025/10/27"
+      },
+      {
+        "name": "citation_pdf_url",
+        "content": "https://arxiv.org/pdf/2510.22880"
+      },
+      {
+        "name": "citation_arxiv_id",
+        "content": "2510.22880"
+      },
+      {
+        "name": "citation_abstract",
+        "content": "Multimodal federated learning in real-world settings often encounters incomplete and heterogeneous data across clients. This results in misaligned local feature representations that limit the effectiveness of model aggregation. Unlike prior work that assumes either differing modality sets without missing input features or a shared modality set with missing features across clients, we consider a more general and realistic setting where each client observes a different subset of modalities and might also have missing input features within each modality. To address the resulting misalignment in learned representations, we propose a new federated learning framework featuring locally adaptive representations based on learnable client-side embedding controls that encode each client's data-missing patterns. These embeddings serve as reconfiguration signals that align the globally aggregated representation with each client's local context, enabling more effective use of shared information. Furthermore, the embedding controls can be algorithmically aggregated across clients with similar data-missing patterns to enhance the robustness of reconfiguration signals in adapting the global representation. Empirical results on multiple federated multimodal benchmarks with diverse data-missing patterns across clients demonstrate the efficacy of the proposed method, achieving up to 36.45\\% performance improvement under severe data incompleteness. The method is also supported by a theoretical analysis with an explicit performance bound that matches our empirical observations. Our source codes are provided at https://github.com/nmduonggg/PEPSY"
+      }
+    ],
+    "text": "[2510.22880] Learning Reconfigurable Representations for Multimodal Federated Learning with Missing Data Skip to main content Search Submit Donate Log in Search arXiv Press Enter to search · Advanced search Computer Science > Machine Learning arXiv:2510.22880 (cs) [Submitted on 27 Oct 2025] Title: Learning Reconfigurable Representations for Multimodal Federated Learning with Missing Data Authors: Duong M. Nguyen , Trong Nghia Hoang , Thanh Trung Huynh , Quoc Viet Hung Nguyen , Phi Le Nguyen View a PDF of the paper titled Learning Reconfigurable Representations for Multimodal Federated Learning with Missing Data, by Duong M. Nguyen and 4 other authors View PDF HTML (experimental) Abstract: Multimodal federated learning in real-world settings often encounters incomplete and heterogeneous data across clients. This results in misaligned local feature representations that limit the effectiveness of model aggregation. Unlike prior work that assumes either differing modality sets without missing input features or a shared modality set with missing features across clients, we consider a more general and realistic setting where each client observes a different subset of modalities and might also have missing input features within each modality. To address the resulting misalignment in learned representations, we propose a new federated learning framework featuring locally adaptive representations based on learnable client-side embedding controls that encode each client's data-missing patterns. These embeddings serve as reconfiguration signals that align the globally aggregated representation with each client's local context, enabling more effective use of shared information. Furthermore, the embedding controls can be algorithmically aggregated across clients with similar data-missing patterns to enhance the robustness of reconfiguration signals in adapting the global representation. Empirical results on multiple federated multimodal benchmarks with diverse data-missing patterns across clients demonstrate the efficacy of the proposed method, achieving up to 36.45\\% performance improvement under severe data incompleteness. The method is also supported by a theoretical analysis with an explicit performance bound that matches our empirical observations. Our source codes are provided at this https URL Comments: Accepted at NeurIPS 2025 Subjects: Machine Learning (cs.LG) ; Artificial Intelligence (cs.AI) Cite as: arXiv:2510.22880 [cs.LG] (or arXiv:2510.22880v1 [cs.LG] for this version) https://doi.org/10.48550/arXiv.2510.22880 Focus to learn more arXiv-issued DOI via DataCite Submission history From: Duong M. Nguyen [ view email ] [v1] Mon, 27 Oct 2025 00:09:58 UTC (26,815 KB) Full-text links: Access Paper: View a PDF of the paper titled Learning Reconfigurable Representations for Multimodal Federated Learning with Missing Data, by Duong M. Nguyen and 4 other authors View PDF HTML (experimental) TeX Source view license Additional Features Audio Summary Current browse context: cs.LG < prev | next > new | recent | 2025-10 Change to browse by: cs cs.AI References & Citations SciX Google Scholar Semantic Scholar export BibTeX citation Loading... BibTeX formatted citation × loading... Data provided by: Bookmark Bibliographic Tools Bibliographic and Citation Tools Bibliographic Explorer Toggle Bibliographic Explorer ( What is the Explorer? ) Connected Papers Toggle Connected Papers ( What is Connected Papers? ) Litmaps Toggle Litmaps ( What is Litmaps? ) scite.ai Toggle scite Smart Citations ( What are Smart Citations? ) Code, Data, Media Code, Data and Media Associated with this Article alphaXiv Toggle alphaXiv ( What is alphaXiv? ) Links to Code Toggle CatalyzeX Code Finder for Papers ( What is CatalyzeX? ) DagsHub Toggle DagsHub ( What is DagsHub? ) GotitPub Toggle Gotit.pub ( What is GotitPub? ) Huggingface Toggle Hugging Face ( What is Huggingface? ) ScienceCast Toggle ScienceCast ( What is ScienceCast? ) Demos Demos Replicate Toggle Replicate ( What is Replicate? ) Spaces Toggle Hugging Face Spaces ( What is Spaces? ) Spaces Toggle TXYZ.AI ( What is TXYZ.AI? ) Related Papers Recommenders and Search Tools Link to Influence Flower Influence Flower ( What are Influence Flowers? ) Core recommender toggle CORE Recommender ( What is CORE? ) IArxiv recommender toggle IArxiv Recommender ( What is IArxiv? ) Author Venue Institution Topic About arXivLabs arXivLabs: experimental projects with community collaborators arXivLabs is a framework that allows collaborators to develop and share new arXiv features directly on our website. Both individuals and organizations that work with arXivLabs have embraced and accepted our values of openness, community, excellence, and user data privacy. arXiv is committed to these values and only works with partners that adhere to them. Have an idea for a project that will add value for arXiv's community? Learn more about arXivLabs . Which authors of this paper are endorsers? | Disable MathJax ( What is MathJax? ) We gratefully acknowledge support from our major funders , member institutions , ,\n        and all contributors. About · Help · Contact · Subscribe · Copyright · Privacy · Accessibility · Operational Status (opens in new tab) Major funding support from (opens in new tab) (opens in new tab) (opens in new tab)"
+  },
+  {
+    "id": "P19",
+    "url": "https://arxiv.org/abs/2602.07081",
+    "status": 200,
+    "metadata": [
+      {
+        "name": "citation_title",
+        "content": "Federated Prompt-Tuning with Heterogeneous and Incomplete Multimodal Client Data"
+      },
+      {
+        "name": "citation_author",
+        "content": "Phung, Thu Hang"
+      },
+      {
+        "name": "citation_author",
+        "content": "Nguyen, Duong M."
+      },
+      {
+        "name": "citation_author",
+        "content": "Huynh, Thanh Trung"
+      },
+      {
+        "name": "citation_author",
+        "content": "Nguyen, Quoc Viet Hung"
+      },
+      {
+        "name": "citation_author",
+        "content": "Hoang, Trong Nghia"
+      },
+      {
+        "name": "citation_author",
+        "content": "Nguyen, Phi Le"
+      },
+      {
+        "name": "citation_date",
+        "content": "2026/02/06"
+      },
+      {
+        "name": "citation_online_date",
+        "content": "2026/02/06"
+      },
+      {
+        "name": "citation_pdf_url",
+        "content": "https://arxiv.org/pdf/2602.07081"
+      },
+      {
+        "name": "citation_arxiv_id",
+        "content": "2602.07081"
+      },
+      {
+        "name": "citation_abstract",
+        "content": "This paper introduces a generalized federated prompt-tuning framework for practical scenarios where local datasets are multi-modal and exhibit different distributional patterns of missing features at the input level. The proposed framework bridges the gap between federated learning and multi-modal prompt-tuning which have traditionally focused on either uni-modal or centralized data. A key challenge in this setting arises from the lack of semantic alignment between prompt instructions that encode similar distributional patterns of missing data across different clients. To address this, our framework introduces specialized client-tuning and server-aggregation designs that simultaneously optimize, align, and aggregate prompt-tuning instructions across clients and data modalities. This allows prompt instructions to complement one another and be combined effectively. Extensive evaluations on diverse multimodal benchmark datasets demonstrate that our work consistently outperforms state-of-the-art (SOTA) baselines."
+      }
+    ],
+    "text": "[2602.07081] Federated Prompt-Tuning with Heterogeneous and Incomplete Multimodal Client Data Skip to main content Search Submit Donate Log in Search arXiv Press Enter to search · Advanced search Computer Science > Multimedia arXiv:2602.07081 (cs) [Submitted on 6 Feb 2026] Title: Federated Prompt-Tuning with Heterogeneous and Incomplete Multimodal Client Data Authors: Thu Hang Phung , Duong M. Nguyen , Thanh Trung Huynh , Quoc Viet Hung Nguyen , Trong Nghia Hoang , Phi Le Nguyen View a PDF of the paper titled Federated Prompt-Tuning with Heterogeneous and Incomplete Multimodal Client Data, by Thu Hang Phung and 5 other authors View PDF HTML (experimental) Abstract: This paper introduces a generalized federated prompt-tuning framework for practical scenarios where local datasets are multi-modal and exhibit different distributional patterns of missing features at the input level. The proposed framework bridges the gap between federated learning and multi-modal prompt-tuning which have traditionally focused on either uni-modal or centralized data. A key challenge in this setting arises from the lack of semantic alignment between prompt instructions that encode similar distributional patterns of missing data across different clients. To address this, our framework introduces specialized client-tuning and server-aggregation designs that simultaneously optimize, align, and aggregate prompt-tuning instructions across clients and data modalities. This allows prompt instructions to complement one another and be combined effectively. Extensive evaluations on diverse multimodal benchmark datasets demonstrate that our work consistently outperforms state-of-the-art (SOTA) baselines. Subjects: Multimedia (cs.MM) ; Artificial Intelligence (cs.AI); Computer Vision and Pattern Recognition (cs.CV) Cite as: arXiv:2602.07081 [cs.MM] (or arXiv:2602.07081v1 [cs.MM] for this version) https://doi.org/10.48550/arXiv.2602.07081 Focus to learn more arXiv-issued DOI via DataCite Submission history From: Thu Hang Phung [ view email ] [v1] Fri, 6 Feb 2026 03:53:35 UTC (836 KB) Full-text links: Access Paper: View a PDF of the paper titled Federated Prompt-Tuning with Heterogeneous and Incomplete Multimodal Client Data, by Thu Hang Phung and 5 other authors View PDF HTML (experimental) TeX Source view license Additional Features Audio Summary Current browse context: cs.MM < prev | next > new | recent | 2026-02 Change to browse by: cs cs.AI cs.CV References & Citations SciX Google Scholar Semantic Scholar export BibTeX citation Loading... BibTeX formatted citation × loading... Data provided by: Bookmark Bibliographic Tools Bibliographic and Citation Tools Bibliographic Explorer Toggle Bibliographic Explorer ( What is the Explorer? ) Connected Papers Toggle Connected Papers ( What is Connected Papers? ) Litmaps Toggle Litmaps ( What is Litmaps? ) scite.ai Toggle scite Smart Citations ( What are Smart Citations? ) Code, Data, Media Code, Data and Media Associated with this Article alphaXiv Toggle alphaXiv ( What is alphaXiv? ) Links to Code Toggle CatalyzeX Code Finder for Papers ( What is CatalyzeX? ) DagsHub Toggle DagsHub ( What is DagsHub? ) GotitPub Toggle Gotit.pub ( What is GotitPub? ) Huggingface Toggle Hugging Face ( What is Huggingface? ) ScienceCast Toggle ScienceCast ( What is ScienceCast? ) Demos Demos Replicate Toggle Replicate ( What is Replicate? ) Spaces Toggle Hugging Face Spaces ( What is Spaces? ) Spaces Toggle TXYZ.AI ( What is TXYZ.AI? ) Related Papers Recommenders and Search Tools Link to Influence Flower Influence Flower ( What are Influence Flowers? ) Core recommender toggle CORE Recommender ( What is CORE? ) Author Venue Institution Topic About arXivLabs arXivLabs: experimental projects with community collaborators arXivLabs is a framework that allows collaborators to develop and share new arXiv features directly on our website. Both individuals and organizations that work with arXivLabs have embraced and accepted our values of openness, community, excellence, and user data privacy. arXiv is committed to these values and only works with partners that adhere to them. Have an idea for a project that will add value for arXiv's community? Learn more about arXivLabs . Which authors of this paper are endorsers? | Disable MathJax ( What is MathJax? ) We gratefully acknowledge support from our major funders , member institutions , ,\n        and all contributors. About · Help · Contact · Subscribe · Copyright · Privacy · Accessibility · Operational Status (opens in new tab) Major funding support from (opens in new tab) (opens in new tab) (opens in new tab)"
+  },
+  {
+    "id": "P21",
+    "url": "https://arxiv.org/abs/2507.05394",
+    "status": 200,
+    "metadata": [
+      {
+        "name": "citation_title",
+        "content": "pFedMMA: Personalized Federated Fine-Tuning with Multi-Modal Adapter for Vision-Language Models"
+      },
+      {
+        "name": "citation_author",
+        "content": "Ghiasvand, Sajjad"
+      },
+      {
+        "name": "citation_author",
+        "content": "Alizadeh, Mahnoosh"
+      },
+      {
+        "name": "citation_author",
+        "content": "Pedarsani, Ramtin"
+      },
+      {
+        "name": "citation_date",
+        "content": "2025/07/07"
+      },
+      {
+        "name": "citation_online_date",
+        "content": "2026/02/27"
+      },
+      {
+        "name": "citation_pdf_url",
+        "content": "https://arxiv.org/pdf/2507.05394"
+      },
+      {
+        "name": "citation_arxiv_id",
+        "content": "2507.05394"
+      },
+      {
+        "name": "citation_abstract",
+        "content": "Vision-Language Models (VLMs) like CLIP have demonstrated remarkable generalization in zero- and few-shot settings, but adapting them efficiently to decentralized, heterogeneous data remains a challenge. While prompt tuning has emerged as a popular parameter-efficient approach in personalized federated learning, existing methods often sacrifice generalization in favor of personalization, struggling particularly on unseen classes or domains. In this work, we propose pFedMMA, the first personalized federated learning framework that leverages multi-modal adapters for vision-language tasks. Each adapter contains modality-specific up- and down-projection layers alongside a globally shared projection that aligns cross-modal features. Our optimization strategy allows clients to locally adapt to personalized data distributions while collaboratively training the shared projection to improve global generalization. This design is also communication-efficient, as only the shared component is exchanged during communication rounds. Through extensive experiments across eleven datasets, including domain- and label-shift scenarios, we show that pFedMMA achieves state-of-the-art trade-offs between personalization and generalization, outperforming recent federated prompt tuning methods."
+      }
+    ],
+    "text": "[2507.05394] pFedMMA: Personalized Federated Fine-Tuning with Multi-Modal Adapter for Vision-Language Models Skip to main content Search Submit Donate Log in Search arXiv Press Enter to search · Advanced search Computer Science > Computer Vision and Pattern Recognition arXiv:2507.05394 (cs) [Submitted on 7 Jul 2025 ( v1 ), last revised 27 Feb 2026 (this version, v3)] Title: pFedMMA: Personalized Federated Fine-Tuning with Multi-Modal Adapter for Vision-Language Models Authors: Sajjad Ghiasvand , Mahnoosh Alizadeh , Ramtin Pedarsani View a PDF of the paper titled pFedMMA: Personalized Federated Fine-Tuning with Multi-Modal Adapter for Vision-Language Models, by Sajjad Ghiasvand and 2 other authors View PDF HTML (experimental) Abstract: Vision-Language Models (VLMs) like CLIP have demonstrated remarkable generalization in zero- and few-shot settings, but adapting them efficiently to decentralized, heterogeneous data remains a challenge. While prompt tuning has emerged as a popular parameter-efficient approach in personalized federated learning, existing methods often sacrifice generalization in favor of personalization, struggling particularly on unseen classes or domains. In this work, we propose pFedMMA, the first personalized federated learning framework that leverages multi-modal adapters for vision-language tasks. Each adapter contains modality-specific up- and down-projection layers alongside a globally shared projection that aligns cross-modal features. Our optimization strategy allows clients to locally adapt to personalized data distributions while collaboratively training the shared projection to improve global generalization. This design is also communication-efficient, as only the shared component is exchanged during communication rounds. Through extensive experiments across eleven datasets, including domain- and label-shift scenarios, we show that pFedMMA achieves state-of-the-art trade-offs between personalization and generalization, outperforming recent federated prompt tuning methods. Subjects: Computer Vision and Pattern Recognition (cs.CV) ; Machine Learning (cs.LG) Cite as: arXiv:2507.05394 [cs.CV] (or arXiv:2507.05394v3 [cs.CV] for this version) https://doi.org/10.48550/arXiv.2507.05394 Focus to learn more arXiv-issued DOI via DataCite Submission history From: Sajjad Ghiasvand [ view email ] [v1] Mon, 7 Jul 2025 18:26:34 UTC (351 KB) [v2] Fri, 26 Sep 2025 10:36:44 UTC (439 KB) [v3] Fri, 27 Feb 2026 00:14:04 UTC (436 KB) Full-text links: Access Paper: View a PDF of the paper titled pFedMMA: Personalized Federated Fine-Tuning with Multi-Modal Adapter for Vision-Language Models, by Sajjad Ghiasvand and 2 other authors View PDF HTML (experimental) TeX Source view license Additional Features Audio Summary Current browse context: cs.CV < prev | next > new | recent | 2025-07 Change to browse by: cs cs.LG References & Citations SciX Google Scholar Semantic Scholar export BibTeX citation Loading... BibTeX formatted citation × loading... Data provided by: Bookmark Bibliographic Tools Bibliographic and Citation Tools Bibliographic Explorer Toggle Bibliographic Explorer ( What is the Explorer? ) Connected Papers Toggle Connected Papers ( What is Connected Papers? ) Litmaps Toggle Litmaps ( What is Litmaps? ) scite.ai Toggle scite Smart Citations ( What are Smart Citations? ) Code, Data, Media Code, Data and Media Associated with this Article alphaXiv Toggle alphaXiv ( What is alphaXiv? ) Links to Code Toggle CatalyzeX Code Finder for Papers ( What is CatalyzeX? ) DagsHub Toggle DagsHub ( What is DagsHub? ) GotitPub Toggle Gotit.pub ( What is GotitPub? ) Huggingface Toggle Hugging Face ( What is Huggingface? ) ScienceCast Toggle ScienceCast ( What is ScienceCast? ) Demos Demos Replicate Toggle Replicate ( What is Replicate? ) Spaces Toggle Hugging Face Spaces ( What is Spaces? ) Spaces Toggle TXYZ.AI ( What is TXYZ.AI? ) Related Papers Recommenders and Search Tools Link to Influence Flower Influence Flower ( What are Influence Flowers? ) Core recommender toggle CORE Recommender ( What is CORE? ) Author Venue Institution Topic About arXivLabs arXivLabs: experimental projects with community collaborators arXivLabs is a framework that allows collaborators to develop and share new arXiv features directly on our website. Both individuals and organizations that work with arXivLabs have embraced and accepted our values of openness, community, excellence, and user data privacy. arXiv is committed to these values and only works with partners that adhere to them. Have an idea for a project that will add value for arXiv's community? Learn more about arXivLabs . Which authors of this paper are endorsers? | Disable MathJax ( What is MathJax? ) We gratefully acknowledge support from our major funders , member institutions , ,\n        and all contributors. About · Help · Contact · Subscribe · Copyright · Privacy · Accessibility · Operational Status (opens in new tab) Major funding support from (opens in new tab) (opens in new tab) (opens in new tab)"
+  }
+]

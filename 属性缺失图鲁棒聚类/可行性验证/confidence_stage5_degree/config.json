@@ -1,0 +1,9 @@
+{
+  "rates": "0.4,0.8",
+  "masks": 3,
+  "mask_seed": 20261024,
+  "mask_mode": "degree_biased",
+  "holdout_fraction": 0.2,
+  "steps": 40,
+  "output": "confidence_stage5_degree"
+}

@@ -1,0 +1,8 @@
+{
+  "rates": "0.4,0.8",
+  "masks": 5,
+  "mask_seed": 20261023,
+  "steps": 40,
+  "calibration_fraction": 0.2,
+  "output": "fp_cold_fallback_pair"
+}

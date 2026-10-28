@@ -1,0 +1,23 @@
+AUDIT OK F:\�о�������\����������ͼ����\results\full\Caltech101-20_r0.5_s1
+AUDIT OK F:\�о�������\����������ͼ����\results\full\Caltech101-20_r0.5_s2
+AUDIT OK F:\�о�������\����������ͼ����\results\full\Caltech101-20_r0.5_s3
+AUDIT OK F:\�о�������\����������ͼ����\results\full\Caltech101-20_r0.5_s4
+AUDIT OK F:\�о�������\����������ͼ����\results\full\Caltech101-20_r0.5_s5
+AUDIT OK F:\�о�������\����������ͼ����\results\full\Caltech101-20_r0.7_s1
+AUDIT OK F:\�о�������\����������ͼ����\results\full\Caltech101-20_r0.7_s2
+AUDIT OK F:\�о�������\����������ͼ����\results\full\Caltech101-20_r0.7_s3
+AUDIT OK F:\�о�������\����������ͼ����\results\full\Caltech101-20_r0.7_s4
+AUDIT OK F:\�о�������\����������ͼ����\results\full\Caltech101-20_r0.7_s5
+AUDIT OK F:\�о�������\����������ͼ����\results\full\Scene-15_r0.5_s1
+AUDIT OK F:\�о�������\����������ͼ����\results\full\Scene-15_r0.5_s2
+AUDIT OK F:\�о�������\����������ͼ����\results\full\Scene-15_r0.5_s3
+AUDIT OK F:\�о�������\����������ͼ����\results\full\Scene-15_r0.5_s4
+AUDIT OK F:\�о�������\����������ͼ����\results\full\Scene-15_r0.5_s5
+AUDIT OK F:\�о�������\����������ͼ����\results\full\Scene-15_r0.7_s1
+AUDIT OK F:\�о�������\����������ͼ����\results\full\Scene-15_r0.7_s2
+AUDIT OK F:\�о�������\����������ͼ����\results\full\Scene-15_r0.7_s3
+F:\�о�������\����������ͼ����\scripts\audit_results.py:81: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  rho,pval=spearmanr(s,err)
+AUDIT OK F:\�о�������\����������ͼ����\results\full\Scene-15_r0.7_s4
+AUDIT OK F:\�о�������\����������ͼ����\results\full\Scene-15_r0.7_s5
+ALL AUDITS PASSED 20

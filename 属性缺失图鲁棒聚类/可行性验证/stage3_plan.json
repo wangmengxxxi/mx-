@@ -1,0 +1,14 @@
+{
+  "date": "2026-10-22",
+  "scope": "SDCN local calibration and AMGC CPU smoke; expansion is conditional",
+  "sdcn_predeclared": [
+    {"name": "small_lr1e3", "hidden": "128,64", "pretrain_epochs": 100, "train_epochs": 400, "lr": 0.001, "rates": [0, 0.8], "methods": ["zero", "fp"], "seeds": [0, 1, 2], "masks": 1},
+    {"name": "wide_probe", "hidden": "500,500,2000", "pretrain_epochs": 30, "train_epochs": 100, "lr": 0.001, "rates": [0, 0.8], "methods": ["zero", "fp"], "seeds": [0], "masks": 1}
+  ],
+  "amgc": {"observed_ratio": 0.4, "split_seed": 72, "model_seed": 0, "epochs": 20, "schedule_epochs": 1000, "edge_mask_p": 0.5, "threads": 4},
+  "environment": "workspace venv with read-only inheritance of existing CPU scientific packages; additional AMGC dependencies installed only in venv",
+  "evaluation": "final epoch, labels for diagnostic evaluation only, global Hungarian mapping, raw predictions preserved",
+  "expansion_gate": "finite training and reproducible protocol, no persistent severe collapse in usable baselines, interpretable late training; AMGC smoke alone does not establish full convergence",
+  "next_if_gate_fails": "report the failed condition and address implementation/optimization before 5 masks x 3 seeds",
+  "development_warning": "calibration uses Cora labels for diagnostic comparisons; any configuration choice is exploratory and requires fresh evaluation masks"
+}

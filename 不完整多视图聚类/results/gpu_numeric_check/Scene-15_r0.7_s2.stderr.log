@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "F:\研究生毕设\不完整多视图聚类\scripts\inspect_gpu_roundoff.py", line 44, in <module>
+    with threadpool_limits(limits=4):rd.run(run_args)
+  File "F:\研究生毕设\不完整多视图聚类\scripts\gpu_before_roundoff_fix\run_diagnostic.py", line 141, in run
+    for v in range(2):assert np.allclose(B[v][mask[:,v]==1],oracle[v][mask[:,v]==1],rtol=1e-5,atol=1e-7)
+AssertionError

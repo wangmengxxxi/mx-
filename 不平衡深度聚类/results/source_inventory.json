@@ -1,0 +1,42 @@
+[
+  {
+    "name": "CIFAR100",
+    "url": "https://www.cs.toronto.edu/~kriz/cifar-100-python.tar.gz",
+    "path": "data\\cifar\\cifar-100-python.tar.gz",
+    "sha256": "85cd44d02ba6437773c5bbd22e183051d648de2e7d6b014e1ef29b855ba677a7",
+    "md5": "eb9058c3a382ffc7106e4002c42a8d85"
+  },
+  {
+    "name": "CIFAR10",
+    "url": "https://www.cs.toronto.edu/~kriz/cifar-10-python.tar.gz",
+    "path": "data\\cifar\\cifar-10-python.tar.gz",
+    "sha256": "6d958be074577803d12ecdefd02955f39262c83c16fe9348329d7fe0b5c001ce",
+    "md5": "c58f30108f718f92721af3b95e74349a",
+    "acquisition": "reused existing official torchvision archive, verified against built-in MD5; read-only source",
+    "cache_record": {
+      "cache_source": "F:\\PycharmProject\\科学智能\\data\\cifar-10-python.tar.gz",
+      "official_torchvision_download_code": "dataset.py lines27/30 use torchvision.datasets.CIFAR10(download=True)",
+      "md5": "c58f30108f718f92721af3b95e74349a",
+      "sha256": "6d958be074577803d12ecdefd02955f39262c83c16fe9348329d7fe0b5c001ce",
+      "read_only_source": true
+    }
+  },
+  {
+    "name": "DINOv2 ViT-B/14",
+    "url": "https://dl.fbaipublicfiles.com/dinov2/dinov2_vitb14/dinov2_vitb14_pretrain.pth",
+    "path": "data/dinov2_vitb14_pretrain.pth",
+    "sha256": "0b8b82f85de91b424aded121c7e1dcc2b7bc6d0adeea651bf73a13307fad8c73"
+  },
+  {
+    "name": "facebookresearch/dinov2",
+    "url": "https://codeload.github.com/facebookresearch/dinov2/zip/7764ea0f912e53c92e82eb78a2a1631e92725fc8",
+    "commit": "7764ea0f912e53c92e82eb78a2a1631e92725fc8",
+    "sha256": "04276715cddb29d45d05bff3a6fc132224dc27749b279ac98ad2ce4620e20d48"
+  },
+  {
+    "name": "rhfeiyang/PPOT",
+    "url": "https://codeload.github.com/rhfeiyang/PPOT/zip/33bd8872a87203ddb753cb94a05d639a414c6c06",
+    "commit": "33bd8872a87203ddb753cb94a05d639a414c6c06",
+    "sha256": "0154a5efb33c40494dfc839ac76fe26c4c18b443c4806b77c0dcc43444144cc4"
+  }
+]

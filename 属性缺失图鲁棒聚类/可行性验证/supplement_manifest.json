@@ -1,0 +1,118 @@
+[
+  {
+    "path": "references/fp_README.md",
+    "url": "https://raw.githubusercontent.com/twitter-research/feature-propagation/main/README.md",
+    "final_url": "https://raw.githubusercontent.com/twitter-research/feature-propagation/main/README.md",
+    "bytes": 4391,
+    "sha256": "2daf192175cd201525077e9c47d5bdbebfaffd499559ac8646372d81ab231736",
+    "status": "ok"
+  },
+  {
+    "path": "references/fp_official.py",
+    "url": "https://raw.githubusercontent.com/twitter-research/feature-propagation/af2733589eab4023fca67f7e71a3b46ddbbea8cd/src/feature_propagation.py",
+    "final_url": "https://raw.githubusercontent.com/twitter-research/feature-propagation/af2733589eab4023fca67f7e71a3b46ddbbea8cd/src/feature_propagation.py",
+    "bytes": 1440,
+    "sha256": "49bdc1af0d5131e2a06b17496a18015292f3857315859289372ac48353b7cac1",
+    "status": "ok"
+  },
+  {
+    "path": "references/sdcn.pdf",
+    "url": "https://arxiv.org/pdf/2002.01633",
+    "status": "failed",
+    "error": "HTTPSConnectionPool(host='arxiv.org', port=443): Read timed out."
+  },
+  {
+    "path": "references/sdcn_official.py",
+    "url": "https://raw.githubusercontent.com/bdy9527/SDCN/master/sdcn.py",
+    "final_url": "https://raw.githubusercontent.com/bdy9527/SDCN/master/sdcn.py",
+    "bytes": 6521,
+    "sha256": "97bcc1bda5e54fc72f89953d5a0057a6d4bb518ab1b7aab9c57f14ea6e53ef91",
+    "status": "ok"
+  },
+  {
+    "path": "references/sdcn_GNN.py",
+    "url": "https://raw.githubusercontent.com/bdy9527/SDCN/master/GNN.py",
+    "final_url": "https://raw.githubusercontent.com/bdy9527/SDCN/master/GNN.py",
+    "bytes": 690,
+    "sha256": "8836b9bf01178ac6ff542a76f9fcd1d4da36e0c5f69c36daeb1203f08eefa3f4",
+    "status": "ok"
+  },
+  {
+    "path": "references/sdcn_pretrain.py",
+    "url": "https://raw.githubusercontent.com/bdy9527/SDCN/master/data/pretrain.py",
+    "final_url": "https://raw.githubusercontent.com/bdy9527/SDCN/master/data/pretrain.py",
+    "bytes": 2955,
+    "sha256": "a539ef6e9d3f99318264b0c94cc348b129325cf48646c6ce3e6efd83632eb966",
+    "status": "ok"
+  },
+  {
+    "path": "references/amgc_search.json",
+    "url": "https://api.github.com/search/repositories?q=AMGC+clustering",
+    "final_url": "https://api.github.com/search/repositories?q=AMGC+clustering",
+    "bytes": 9825,
+    "sha256": "9e9330d68d6378b943631af39fa12cee921dd84a19c61bc43f6396b02522b330",
+    "status": "ok"
+  },
+  {
+    "path": "data/planetoid/ind.cora.x",
+    "url": "https://raw.githubusercontent.com/kimiyoung/planetoid/master/data/ind.cora.x",
+    "final_url": "https://raw.githubusercontent.com/kimiyoung/planetoid/master/data/ind.cora.x",
+    "bytes": 22119,
+    "sha256": "23cfa55d91c6f624233f5eb7b6e3f141f1bd2b2ae39608a63cf5d084bb27baab",
+    "status": "ok"
+  },
+  {
+    "path": "data/planetoid/ind.cora.tx",
+    "url": "https://raw.githubusercontent.com/kimiyoung/planetoid/master/data/ind.cora.tx",
+    "final_url": "https://raw.githubusercontent.com/kimiyoung/planetoid/master/data/ind.cora.tx",
+    "bytes": 148025,
+    "sha256": "b9afbaa4a400df991f6f02ef677e1e44da55ffc04801fd02f9e673987829226a",
+    "status": "ok"
+  },
+  {
+    "path": "data/planetoid/ind.cora.allx",
+    "url": "https://raw.githubusercontent.com/kimiyoung/planetoid/master/data/ind.cora.allx",
+    "final_url": "https://raw.githubusercontent.com/kimiyoung/planetoid/master/data/ind.cora.allx",
+    "bytes": 257305,
+    "sha256": "9419ba2f26f5c35243db64aba110e0f35a04851609e0dc5433450676ca6b8543",
+    "status": "ok"
+  },
+  {
+    "path": "data/planetoid/ind.cora.y",
+    "url": "https://raw.githubusercontent.com/kimiyoung/planetoid/master/data/ind.cora.y",
+    "final_url": "https://raw.githubusercontent.com/kimiyoung/planetoid/master/data/ind.cora.y",
+    "bytes": 4054,
+    "sha256": "94465c14eb53e04ca262198dcbb2521ee8af60fb3f3d546cd6ca24a511b0e7d1",
+    "status": "ok"
+  },
+  {
+    "path": "data/planetoid/ind.cora.ty",
+    "url": "https://raw.githubusercontent.com/kimiyoung/planetoid/master/data/ind.cora.ty",
+    "final_url": "https://raw.githubusercontent.com/kimiyoung/planetoid/master/data/ind.cora.ty",
+    "bytes": 28135,
+    "sha256": "41f5ac76596a1699cc33f53084a2419e92961c42bb75f36fc38e616d348532ad",
+    "status": "ok"
+  },
+  {
+    "path": "data/planetoid/ind.cora.ally",
+    "url": "https://raw.githubusercontent.com/kimiyoung/planetoid/master/data/ind.cora.ally",
+    "status": "failed",
+    "error": "HTTPSConnectionPool(host='raw.githubusercontent.com', port=443): Read timed out."
+  },
+  {
+    "path": "data/planetoid/ind.cora.graph",
+    "url": "https://raw.githubusercontent.com/kimiyoung/planetoid/master/data/ind.cora.graph",
+    "final_url": "https://raw.githubusercontent.com/kimiyoung/planetoid/master/data/ind.cora.graph",
+    "bytes": 59847,
+    "sha256": "58f13302f39dde8852dad6fe6d15b89b077b6d7f837626bce671ef80344b383d",
+    "status": "ok"
+  },
+  {
+    "path": "data/planetoid/ind.cora.test.index",
+    "url": "https://raw.githubusercontent.com/kimiyoung/planetoid/master/data/ind.cora.test.index",
+    "final_url": "https://raw.githubusercontent.com/kimiyoung/planetoid/master/data/ind.cora.test.index",
+    "bytes": 5000,
+    "sha256": "297ce89af2b51a6a194181c7dbe1796c6a1cf9cd9349a88383b1b1e227867875",
+    "status": "ok"
+  }
+]

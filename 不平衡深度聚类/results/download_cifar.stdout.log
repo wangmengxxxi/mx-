@@ -1,0 +1,142 @@
+{"retry": 0, "file": "cifar-100-python.tar.gz", "start": 12582912, "stderr": "curl: (35) Recv failure: Connection was reset\r\n"}
+{"retry": 0, "file": "cifar-100-python.tar.gz", "start": 20971520, "stderr": "curl: (35) Recv failure: Connection was reset\r\n"}
+{"retry": 0, "file": "cifar-100-python.tar.gz", "start": 14680064, "stderr": "curl: (35) Recv failure: Connection was reset\r\n"}
+{"retry": 0, "file": "cifar-100-python.tar.gz", "start": 25165824, "stderr": "curl: (35) Recv failure: Connection was reset\r\n"}
+{"retry": 0, "file": "cifar-100-python.tar.gz", "start": 31457280, "stderr": "curl: (35) Recv failure: Connection was reset\r\n"}
+{"retry": 0, "file": "cifar-100-python.tar.gz", "start": 23068672, "stderr": "curl: (35) Recv failure: Connection was reset\r\n"}
+{"retry": 0, "file": "cifar-100-python.tar.gz", "start": 29360128, "stderr": "curl: (35) Recv failure: Connection was reset\r\n"}
+{"retry": 1, "file": "cifar-100-python.tar.gz", "start": 12582912, "stderr": "curl: (35) Recv failure: Connection was reset\r\n"}
+{"retry": 1, "file": "cifar-100-python.tar.gz", "start": 25165824, "stderr": "curl: (35) Recv failure: Connection was reset\r\n"}
+{"retry": 1, "file": "cifar-100-python.tar.gz", "start": 29360128, "stderr": "curl: (35) Recv failure: Connection was reset\r\n"}
+{"retry": 1, "file": "cifar-100-python.tar.gz", "start": 23068672, "stderr": "curl: (35) Recv failure: Connection was reset\r\n"}
+{"retry": 2, "file": "cifar-100-python.tar.gz", "start": 12582912, "stderr": "curl: (35) Recv failure: Connection was reset\r\n"}
+{"retry": 2, "file": "cifar-100-python.tar.gz", "start": 25165824, "stderr": "curl: (35) Recv failure: Connection was reset\r\n"}
+{"retry": 2, "file": "cifar-100-python.tar.gz", "start": 23068672, "stderr": "curl: (35) Recv failure: Connection was reset\r\n"}
+{"retry": 3, "file": "cifar-100-python.tar.gz", "start": 12582912, "stderr": "curl: (35) Recv failure: Connection was reset\r\n"}
+{"retry": 3, "file": "cifar-100-python.tar.gz", "start": 25165824, "stderr": "curl: (35) Recv failure: Connection was reset\r\n"}
+{"retry": 2, "file": "cifar-100-python.tar.gz", "start": 29360128, "stderr": "curl: (28) Failed to connect to cave.cs.toronto.edu port 443 after 21059 ms: Could not connect to server\r\n"}
+{"retry": 4, "file": "cifar-100-python.tar.gz", "start": 12582912, "stderr": "curl: (28) Failed to connect to cave.cs.toronto.edu port 443 after 21047 ms: Could not connect to server\r\n"}
+{"retry": 4, "file": "cifar-100-python.tar.gz", "start": 25165824, "stderr": "curl: (28) Failed to connect to cave.cs.toronto.edu port 443 after 21054 ms: Could not connect to server\r\n"}
+{"retry": 0, "file": "cifar-100-python.tar.gz", "start": 27262976, "stderr": "curl: (28) Connection timed out after 30001 milliseconds\r\n"}
+{"retry": 1, "file": "cifar-100-python.tar.gz", "start": 20971520, "stderr": "curl: (28) Connection timed out after 30016 milliseconds\r\n"}
+{"retry": 1, "file": "cifar-100-python.tar.gz", "start": 14680064, "stderr": "curl: (28) Connection timed out after 30014 milliseconds\r\n"}
+{"retry": 1, "file": "cifar-100-python.tar.gz", "start": 31457280, "stderr": "curl: (28) Connection timed out after 30012 milliseconds\r\n"}
+{"retry": 3, "file": "cifar-100-python.tar.gz", "start": 23068672, "stderr": "curl: (28) Connection timed out after 30011 milliseconds\r\n"}
+{"retry": 3, "file": "cifar-100-python.tar.gz", "start": 29360128, "stderr": "curl: (28) Failed to connect to cave.cs.toronto.edu port 443 after 21058 ms: Could not connect to server\r\n"}
+{"retry": 5, "file": "cifar-100-python.tar.gz", "start": 12582912, "stderr": "curl: (28) Failed to connect to cave.cs.toronto.edu port 443 after 21028 ms: Could not connect to server\r\n"}
+{"retry": 5, "file": "cifar-100-python.tar.gz", "start": 25165824, "stderr": "curl: (28) Failed to connect to cave.cs.toronto.edu port 443 after 21027 ms: Could not connect to server\r\n"}
+{"retry": 1, "file": "cifar-100-python.tar.gz", "start": 27262976, "stderr": "curl: (28) Failed to connect to cave.cs.toronto.edu port 443 after 21067 ms: Could not connect to server\r\n"}
+{"retry": 0, "file": "cifar-100-python.tar.gz", "start": 18874368, "stderr": "curl: (56) Recv failure: Connection was reset\r\n"}
+{"retry": 2, "file": "cifar-100-python.tar.gz", "start": 20971520, "stderr": "curl: (28) Failed to connect to cave.cs.toronto.edu port 443 after 21065 ms: Could not connect to server\r\n"}
+{"retry": 2, "file": "cifar-100-python.tar.gz", "start": 14680064, "stderr": "curl: (28) Failed to connect to cave.cs.toronto.edu port 443 after 21053 ms: Could not connect to server\r\n"}
+{"retry": 2, "file": "cifar-100-python.tar.gz", "start": 31457280, "stderr": "curl: (28) Failed to connect to cave.cs.toronto.edu port 443 after 21053 ms: Could not connect to server\r\n"}
+{"retry": 4, "file": "cifar-100-python.tar.gz", "start": 23068672, "stderr": "curl: (28) Failed to connect to cave.cs.toronto.edu port 443 after 21038 ms: Could not connect to server\r\n"}
+{"retry": 4, "file": "cifar-100-python.tar.gz", "start": 29360128, "stderr": "curl: (28) Failed to connect to cave.cs.toronto.edu port 443 after 21052 ms: Could not connect to server\r\n"}
+{"retry": 6, "file": "cifar-100-python.tar.gz", "start": 12582912, "stderr": "curl: (28) Failed to connect to cave.cs.toronto.edu port 443 after 21038 ms: Could not connect to server\r\n"}
+{"retry": 6, "file": "cifar-100-python.tar.gz", "start": 25165824, "stderr": "curl: (28) Failed to connect to cave.cs.toronto.edu port 443 after 21038 ms: Could not connect to server\r\n"}
+{"retry": 2, "file": "cifar-100-python.tar.gz", "start": 27262976, "stderr": "curl: (28) Failed to connect to cave.cs.toronto.edu port 443 after 21063 ms: Could not connect to server\r\n"}
+{"retry": 1, "file": "cifar-100-python.tar.gz", "start": 18874368, "stderr": "curl: (28) Failed to connect to cave.cs.toronto.edu port 443 after 21059 ms: Could not connect to server\r\n"}
+{"retry": 3, "file": "cifar-100-python.tar.gz", "start": 20971520, "stderr": "curl: (28) Failed to connect to cave.cs.toronto.edu port 443 after 21033 ms: Could not connect to server\r\n"}
+{"retry": 3, "file": "cifar-100-python.tar.gz", "start": 14680064, "stderr": "curl: (28) Failed to connect to cave.cs.toronto.edu port 443 after 21041 ms: Could not connect to server\r\n"}
+{"retry": 3, "file": "cifar-100-python.tar.gz", "start": 31457280, "stderr": "curl: (28) Failed to connect to cave.cs.toronto.edu port 443 after 21047 ms: Could not connect to server\r\n"}
+{"retry": 2, "file": "cifar-100-python.tar.gz", "start": 18874368, "stderr": "curl: (35) Recv failure: Connection was reset\r\n"}
+{"retry": 4, "file": "cifar-100-python.tar.gz", "start": 14680064, "stderr": "curl: (35) Recv failure: Connection was reset\r\n"}
+{"retry": 4, "file": "cifar-100-python.tar.gz", "start": 31457280, "stderr": "curl: (35) Recv failure: Connection was reset\r\n"}
+{"retry": 3, "file": "cifar-100-python.tar.gz", "start": 18874368, "stderr": "curl: (35) Recv failure: Connection was reset\r\n"}
+{"retry": 3, "file": "cifar-100-python.tar.gz", "start": 27262976, "stderr": "curl: (35) Recv failure: Connection was reset\r\n"}
+{"retry": 5, "file": "cifar-100-python.tar.gz", "start": 14680064, "stderr": "curl: (35) Recv failure: Connection was reset\r\n"}
+{"retry": 5, "file": "cifar-100-python.tar.gz", "start": 23068672, "stderr": "curl: (28) Failed to connect to cave.cs.toronto.edu port 443 after 21051 ms: Could not connect to server\r\n"}
+{"retry": 4, "file": "cifar-100-python.tar.gz", "start": 18874368, "stderr": "curl: (35) Recv failure: Connection was reset\r\n"}
+{"retry": 6, "file": "cifar-100-python.tar.gz", "start": 14680064, "stderr": "curl: (35) Recv failure: Connection was reset\r\n"}
+{"retry": 5, "file": "cifar-100-python.tar.gz", "start": 31457280, "stderr": "curl: (35) Recv failure: Connection was reset\r\n"}
+{"retry": 5, "file": "cifar-100-python.tar.gz", "start": 18874368, "stderr": "curl: (35) Recv failure: Connection was reset\r\n"}
+{"retry": 7, "file": "cifar-100-python.tar.gz", "start": 14680064, "stderr": "curl: (35) Recv failure: Connection was reset\r\n"}
+{"retry": 6, "file": "cifar-100-python.tar.gz", "start": 23068672, "stderr": "curl: (35) Recv failure: Connection was reset\r\n"}
+{"retry": 6, "file": "cifar-100-python.tar.gz", "start": 31457280, "stderr": "curl: (35) Recv failure: Connection was reset\r\n"}
+{"retry": 6, "file": "cifar-100-python.tar.gz", "start": 18874368, "stderr": "curl: (35) Recv failure: Connection was reset\r\n"}
+{"retry": 7, "file": "cifar-100-python.tar.gz", "start": 23068672, "stderr": "curl: (35) Recv failure: Connection was reset\r\n"}
+{"retry": 7, "file": "cifar-100-python.tar.gz", "start": 18874368, "stderr": "curl: (35) Recv failure: Connection was reset\r\n"}
+{"retry": 0, "file": "cifar-100-python.tar.gz", "start": 37748736, "stderr": "curl: (35) Recv failure: Connection was reset\r\n"}
+{"retry": 0, "file": "cifar-100-python.tar.gz", "start": 33554432, "stderr": "curl: (35) Recv failure: Connection was reset\r\n"}
+{"retry": 0, "file": "cifar-100-python.tar.gz", "start": 35651584, "stderr": "curl: (35) Recv failure: Connection was reset\r\n"}
+{"retry": 1, "file": "cifar-100-python.tar.gz", "start": 33554432, "stderr": "curl: (35) Recv failure: Connection was reset\r\n"}
+{"retry": 1, "file": "cifar-100-python.tar.gz", "start": 35651584, "stderr": "curl: (35) Recv failure: Connection was reset\r\n"}
+{"retry": 2, "file": "cifar-100-python.tar.gz", "start": 35651584, "stderr": "curl: (35) Recv failure: Connection was reset\r\n"}
+{"retry": 5, "file": "cifar-100-python.tar.gz", "start": 29360128, "stderr": "curl: (35) Recv failure: Connection was reset\r\n"}
+{"retry": 6, "file": "cifar-100-python.tar.gz", "start": 29360128, "stderr": "curl: (35) Recv failure: Connection was reset\r\n"}
+{"retry": 7, "file": "cifar-100-python.tar.gz", "start": 12582912, "stderr": "curl: (35) Recv failure: Connection was reset\r\n"}
+{"retry": 7, "file": "cifar-100-python.tar.gz", "start": 25165824, "stderr": "curl: (35) Recv failure: Connection was reset\r\n"}
+{"retry": 7, "file": "cifar-100-python.tar.gz", "start": 29360128, "stderr": "curl: (35) Recv failure: Connection was reset\r\n"}
+{"retry": 0, "file": "cifar-100-python.tar.gz", "start": 39845888, "stderr": "curl: (35) Recv failure: Connection was reset\r\n"}
+{"retry": 0, "file": "cifar-100-python.tar.gz", "start": 41943040, "stderr": "curl: (35) Recv failure: Connection was reset\r\n"}
+{"retry": 0, "file": "cifar-100-python.tar.gz", "start": 44040192, "stderr": "curl: (35) Recv failure: Connection was reset\r\n"}
+{"retry": 1, "file": "cifar-100-python.tar.gz", "start": 39845888, "stderr": "curl: (35) Recv failure: Connection was reset\r\n"}
+{"retry": 1, "file": "cifar-100-python.tar.gz", "start": 41943040, "stderr": "curl: (35) Recv failure: Connection was reset\r\n"}
+{"retry": 2, "file": "cifar-100-python.tar.gz", "start": 39845888, "stderr": "curl: (35) Recv failure: Connection was reset\r\n"}
+{"retry": 2, "file": "cifar-100-python.tar.gz", "start": 41943040, "stderr": "curl: (35) Recv failure: Connection was reset\r\n"}
+{"retry": 1, "file": "cifar-100-python.tar.gz", "start": 44040192, "stderr": "curl: (35) Recv failure: Connection was reset\r\n"}
+{"retry": 3, "file": "cifar-100-python.tar.gz", "start": 41943040, "stderr": "curl: (35) Recv failure: Connection was reset\r\n"}
+{"retry": 2, "file": "cifar-100-python.tar.gz", "start": 44040192, "stderr": "curl: (35) Recv failure: Connection was reset\r\n"}
+{"retry": 3, "file": "cifar-100-python.tar.gz", "start": 44040192, "stderr": "curl: (35) Recv failure: Connection was reset\r\n"}
+{"retry": 4, "file": "cifar-100-python.tar.gz", "start": 41943040, "stderr": "curl: (35) Recv failure: Connection was reset\r\n"}
+{"retry": 4, "file": "cifar-100-python.tar.gz", "start": 44040192, "stderr": "curl: (35) Recv failure: Connection was reset\r\n"}
+{"retry": 5, "file": "cifar-100-python.tar.gz", "start": 44040192, "stderr": "curl: (35) Recv failure: Connection was reset\r\n"}
+{"retry": 6, "file": "cifar-100-python.tar.gz", "start": 44040192, "stderr": "curl: (35) Recv failure: Connection was reset\r\n"}
+{"retry": 5, "file": "cifar-100-python.tar.gz", "start": 41943040, "stderr": "curl: (35) Recv failure: Connection was reset\r\n"}
+{"retry": 7, "file": "cifar-100-python.tar.gz", "start": 44040192, "stderr": "curl: (35) Recv failure: Connection was reset\r\n"}
+{"retry": 6, "file": "cifar-100-python.tar.gz", "start": 41943040, "stderr": "curl: (35) Recv failure: Connection was reset\r\n"}
+{"retry": 7, "file": "cifar-100-python.tar.gz", "start": 41943040, "stderr": "curl: (35) Recv failure: Connection was reset\r\n"}
+{"retry": 0, "file": "cifar-100-python.tar.gz", "start": 46137344, "stderr": "curl: (35) Recv failure: Connection was reset\r\n"}
+{"retry": 0, "file": "cifar-100-python.tar.gz", "start": 48234496, "stderr": "curl: (35) Recv failure: Connection was reset\r\n"}
+{"retry": 1, "file": "cifar-100-python.tar.gz", "start": 46137344, "stderr": "curl: (35) Recv failure: Connection was reset\r\n"}
+{"retry": 1, "file": "cifar-100-python.tar.gz", "start": 48234496, "stderr": "curl: (35) Recv failure: Connection was reset\r\n"}
+{"retry": 2, "file": "cifar-100-python.tar.gz", "start": 46137344, "stderr": "curl: (35) Recv failure: Connection was reset\r\n"}
+{"retry": 3, "file": "cifar-100-python.tar.gz", "start": 46137344, "stderr": "curl: (35) Recv failure: Connection was reset\r\n"}
+{"retry": 4, "file": "cifar-100-python.tar.gz", "start": 46137344, "stderr": "curl: (35) Recv failure: Connection was reset\r\n"}
+{"retry": 2, "file": "cifar-100-python.tar.gz", "start": 48234496, "stderr": "curl: (35) Recv failure: Connection was reset\r\n"}
+{"retry": 5, "file": "cifar-100-python.tar.gz", "start": 46137344, "stderr": "curl: (35) Recv failure: Connection was reset\r\n"}
+{"retry": 3, "file": "cifar-100-python.tar.gz", "start": 48234496, "stderr": "curl: (35) Recv failure: Connection was reset\r\n"}
+{"retry": 6, "file": "cifar-100-python.tar.gz", "start": 46137344, "stderr": "curl: (35) Recv failure: Connection was reset\r\n"}
+{"retry": 7, "file": "cifar-100-python.tar.gz", "start": 46137344, "stderr": "curl: (35) Recv failure: Connection was reset\r\n"}
+{"retry": 0, "file": "cifar-100-python.tar.gz", "start": 50331648, "stderr": "curl: (35) Recv failure: Connection was reset\r\n"}
+{"retry": 4, "file": "cifar-100-python.tar.gz", "start": 48234496, "stderr": "curl: (35) Recv failure: Connection was reset\r\n"}
+{"retry": 5, "file": "cifar-100-python.tar.gz", "start": 48234496, "stderr": "curl: (35) Recv failure: Connection was reset\r\n"}
+{"retry": 1, "file": "cifar-100-python.tar.gz", "start": 50331648, "stderr": "curl: (35) Recv failure: Connection was reset\r\n"}
+{"retry": 2, "file": "cifar-100-python.tar.gz", "start": 50331648, "stderr": "curl: (35) Recv failure: Connection was reset\r\n"}
+{"retry": 3, "file": "cifar-100-python.tar.gz", "start": 50331648, "stderr": "curl: (35) Recv failure: Connection was reset\r\n"}
+{"retry": 4, "file": "cifar-100-python.tar.gz", "start": 50331648, "stderr": "curl: (35) Recv failure: Connection was reset\r\n"}
+{"retry": 5, "file": "cifar-100-python.tar.gz", "start": 50331648, "stderr": "curl: (35) Recv failure: Connection was reset\r\n"}
+{"retry": 6, "file": "cifar-100-python.tar.gz", "start": 48234496, "stderr": "curl: (35) Recv failure: Connection was reset\r\n"}
+{"retry": 6, "file": "cifar-100-python.tar.gz", "start": 50331648, "stderr": "curl: (35) Recv failure: Connection was reset\r\n"}
+{"retry": 7, "file": "cifar-100-python.tar.gz", "start": 48234496, "stderr": "curl: (35) Recv failure: Connection was reset\r\n"}
+{"retry": 7, "file": "cifar-100-python.tar.gz", "start": 50331648, "stderr": "curl: (35) Recv failure: Connection was reset\r\n"}
+{"retry": 0, "file": "cifar-100-python.tar.gz", "start": 52428800, "stderr": "curl: (35) Recv failure: Connection was reset\r\n"}
+{"retry": 0, "file": "cifar-100-python.tar.gz", "start": 54525952, "stderr": "curl: (35) Recv failure: Connection was reset\r\n"}
+{"retry": 1, "file": "cifar-100-python.tar.gz", "start": 52428800, "stderr": "curl: (35) Recv failure: Connection was reset\r\n"}
+{"retry": 1, "file": "cifar-100-python.tar.gz", "start": 54525952, "stderr": "curl: (35) Recv failure: Connection was reset\r\n"}
+{"retry": 2, "file": "cifar-100-python.tar.gz", "start": 52428800, "stderr": "curl: (35) Recv failure: Connection was reset\r\n"}
+{"retry": 4, "file": "cifar-100-python.tar.gz", "start": 20971520, "stderr": "curl: (28) Connection timed out after 30006 milliseconds\r\n"}
+{"retry": 4, "file": "cifar-100-python.tar.gz", "start": 27262976, "stderr": "curl: (28) Connection timed out after 30009 milliseconds\r\n"}
+{"retry": 7, "file": "cifar-100-python.tar.gz", "start": 31457280, "stderr": "curl: (28) Connection timed out after 30010 milliseconds\r\n"}
+{"retry": 1, "file": "cifar-100-python.tar.gz", "start": 37748736, "stderr": "curl: (28) Connection timed out after 30010 milliseconds\r\n"}
+{"retry": 2, "file": "cifar-100-python.tar.gz", "start": 33554432, "stderr": "curl: (28) Connection timed out after 30010 milliseconds\r\n"}
+{"retry": 3, "file": "cifar-100-python.tar.gz", "start": 35651584, "stderr": "curl: (28) Connection timed out after 30004 milliseconds\r\n"}
+{"retry": 3, "file": "cifar-100-python.tar.gz", "start": 39845888, "stderr": "curl: (28) Connection timed out after 30015 milliseconds\r\n"}
+{"retry": 2, "file": "cifar-100-python.tar.gz", "start": 54525952, "stderr": "curl: (28) Failed to connect to cave.cs.toronto.edu port 443 after 21041 ms: Could not connect to server\r\n"}
+{"retry": 3, "file": "cifar-100-python.tar.gz", "start": 52428800, "stderr": "curl: (28) Failed to connect to cave.cs.toronto.edu port 443 after 21033 ms: Could not connect to server\r\n"}
+{"retry": 5, "file": "cifar-100-python.tar.gz", "start": 20971520, "stderr": "curl: (28) Failed to connect to cave.cs.toronto.edu port 443 after 21073 ms: Could not connect to server\r\n"}
+{"retry": 5, "file": "cifar-100-python.tar.gz", "start": 27262976, "stderr": "curl: (28) Failed to connect to cave.cs.toronto.edu port 443 after 21042 ms: Could not connect to server\r\n"}
+{"retry": 0, "file": "cifar-100-python.tar.gz", "start": 56623104, "stderr": "curl: (28) Failed to connect to cave.cs.toronto.edu port 443 after 21046 ms: Could not connect to server\r\n"}
+{"retry": 2, "file": "cifar-100-python.tar.gz", "start": 37748736, "stderr": "curl: (28) Failed to connect to cave.cs.toronto.edu port 443 after 21045 ms: Could not connect to server\r\n"}
+{"retry": 3, "file": "cifar-100-python.tar.gz", "start": 33554432, "stderr": "curl: (28) Failed to connect to cave.cs.toronto.edu port 443 after 21028 ms: Could not connect to server\r\n"}
+{"retry": 4, "file": "cifar-100-python.tar.gz", "start": 35651584, "stderr": "curl: (28) Failed to connect to cave.cs.toronto.edu port 443 after 21061 ms: Could not connect to server\r\n"}
+{"retry": 4, "file": "cifar-100-python.tar.gz", "start": 39845888, "stderr": "curl: (28) Failed to connect to cave.cs.toronto.edu port 443 after 21057 ms: Could not connect to server\r\n"}
+{"retry": 3, "file": "cifar-100-python.tar.gz", "start": 54525952, "stderr": "curl: (28) Failed to connect to cave.cs.toronto.edu port 443 after 21051 ms: Could not connect to server\r\n"}
+{"retry": 4, "file": "cifar-100-python.tar.gz", "start": 52428800, "stderr": "curl: (28) Failed to connect to cave.cs.toronto.edu port 443 after 21045 ms: Could not connect to server\r\n"}
+{"retry": 6, "file": "cifar-100-python.tar.gz", "start": 20971520, "stderr": "curl: (28) Failed to connect to cave.cs.toronto.edu port 443 after 21053 ms: Could not connect to server\r\n"}
+{"retry": 6, "file": "cifar-100-python.tar.gz", "start": 27262976, "stderr": "curl: (28) Failed to connect to cave.cs.toronto.edu port 443 after 21065 ms: Could not connect to server\r\n"}
+{"retry": 1, "file": "cifar-100-python.tar.gz", "start": 56623104, "stderr": "curl: (28) Failed to connect to cave.cs.toronto.edu port 443 after 21058 ms: Could not connect to server\r\n"}
+{"retry": 3, "file": "cifar-100-python.tar.gz", "start": 37748736, "stderr": "curl: (28) Failed to connect to cave.cs.toronto.edu port 443 after 21053 ms: Could not connect to server\r\n"}
+{"retry": 4, "file": "cifar-100-python.tar.gz", "start": 33554432, "stderr": "curl: (28) Failed to connect to cave.cs.toronto.edu port 443 after 21028 ms: Could not connect to server\r\n"}
+{"retry": 5, "file": "cifar-100-python.tar.gz", "start": 35651584, "stderr": "curl: (28) Failed to connect to cave.cs.toronto.edu port 443 after 21058 ms: Could not connect to server\r\n"}
+{"retry": 5, "file": "cifar-100-python.tar.gz", "start": 39845888, "stderr": "curl: (28) Failed to connect to cave.cs.toronto.edu port 443 after 21072 ms: Could not connect to server\r\n"}

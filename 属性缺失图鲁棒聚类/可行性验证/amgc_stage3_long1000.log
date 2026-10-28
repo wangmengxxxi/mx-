@@ -1,0 +1,17 @@
+initial {'acc': 0.5731166912850812, 'nmi': 0.3775847752155128, 'ari': 0.2956027219858159, 'missing_acc': 0.5673846153846154, 'observed_acc': 0.5817174515235457, 'cold_acc': 0.4923747276688453, 'occupied_clusters': 7, 'largest_cluster_fraction': 0.21861152141802068}
+epoch 1: loss=1.001291 ACC=0.5731 NMI=0.3766 clusters=7 train_sec=14.73
+epoch 2: loss=1.042817 ACC=0.5676 NMI=0.3386 clusters=7 train_sec=16.45
+epoch 3: loss=0.890853 ACC=0.5702 NMI=0.3411 clusters=7 train_sec=25.00
+epoch 4: loss=0.866876 ACC=0.5687 NMI=0.3392 clusters=7 train_sec=15.41
+epoch 5: loss=0.809585 ACC=0.5694 NMI=0.3404 clusters=7 train_sec=15.05
+epoch 6: loss=0.857414 ACC=0.5679 NMI=0.3394 clusters=7 train_sec=14.06
+epoch 7: loss=0.816201 ACC=0.5683 NMI=0.3399 clusters=7 train_sec=14.20
+epoch 8: loss=0.780226 ACC=0.5713 NMI=0.3433 clusters=7 train_sec=13.91
+epoch 9: loss=0.843381 ACC=0.5702 NMI=0.3443 clusters=7 train_sec=14.26
+epoch 10: loss=0.829068 ACC=0.5698 NMI=0.3483 clusters=7 train_sec=14.00
+epoch 11: loss=0.786078 ACC=0.5709 NMI=0.3433 clusters=7 train_sec=14.00
+epoch 12: loss=0.786374 ACC=0.5702 NMI=0.3455 clusters=7 train_sec=13.85
+epoch 13: loss=0.787406 ACC=0.5705 NMI=0.3459 clusters=7 train_sec=13.92
+epoch 14: loss=0.818438 ACC=0.5687 NMI=0.3432 clusters=7 train_sec=14.56
+epoch 15: loss=0.837917 ACC=0.5720 NMI=0.3474 clusters=7 train_sec=14.33
+epoch 16: loss=0.793643 ACC=0.5724 NMI=0.3447 clusters=7 train_sec=14.95

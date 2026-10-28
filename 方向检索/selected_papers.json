@@ -1,0 +1,556 @@
+[
+  {
+    "location": "ICLR2026/self_supervised/mini-cluster_guided_long-tailed_deep_clustering/",
+    "title": "Mini-cluster Guided Long-tailed Deep Clustering",
+    "text": "深度聚类, 长尾分布, 无监督重加权, mini-cluster, 自标注",
+    "tags": [
+      "长尾分布",
+      "自监督学习",
+      "深度聚类"
+    ],
+    "id": "P01"
+  },
+  {
+    "location": "ICLR2026/self_supervised/uncover_underlying_correspondence_for_robust_multi-view_clustering/",
+    "title": "Uncover Underlying Correspondence for Robust Multi-view Clustering",
+    "text": "多视图聚类、噪声对应、EM算法、最优传输、鲁棒表征学习",
+    "tags": [
+      "多视图聚类",
+      "自监督学习",
+      "最优传输",
+      "噪声对应",
+      "EM算法"
+    ],
+    "id": "P02"
+  },
+  {
+    "location": "ICLR2026/self_supervised/relationship_alignment_for_view-aware_multi-view_clustering/",
+    "title": "Relationship Alignment for View-aware Multi-view Clustering",
+    "text": "多视图聚类, 对比学习, 关系对齐, 视图感知加权, Wasserstein 距离",
+    "tags": [
+      "Wasserstein 距离",
+      "多视图聚类",
+      "对比学习",
+      "自监督学习"
+    ],
+    "id": "P03"
+  },
+  {
+    "location": "ICLR2026/multimodal_vlm/calibrated_information_bottleneck_for_trusted_multi-modal_clustering/",
+    "title": "Calibrated Information Bottleneck for Trusted Multi-modal Clustering",
+    "text": "信息瓶颈, 多模态聚类, 置信度校准, 伪标签筛选, 可信聚类",
+    "tags": [
+      "置信度校准",
+      "信息瓶颈",
+      "多模态VLM"
+    ],
+    "id": "P04"
+  },
+  {
+    "location": "CVPR2026/others/bootstrapping_multi-view_learning_for_test-time_noisy_correspondence/",
+    "title": "Bootstrapping Multi-view Learning for Test-time Noisy Correspondence",
+    "text": "测试时噪声对应, 多视图融合, 可靠性估计, 自举增强, 揭示监督",
+    "tags": [
+      "多视图融合"
+    ],
+    "id": "P05"
+  },
+  {
+    "location": "CVPR2026/multimodal_vlm/rethinking_cross-modal_anchor_alignment_for_mitigating_error_accumulation/",
+    "title": "Rethinking Cross-Modal Anchor Alignment for Mitigating Error Accumulation",
+    "text": "噪声对应, 锚点对齐, 傅里叶变换, 软标签校正, 三元组损失",
+    "tags": [
+      "傅里叶变换",
+      "噪声对应",
+      "多模态VLM"
+    ],
+    "id": "P06"
+  },
+  {
+    "location": "NeurIPS2026/self_supervised/beyond_missing_rates_rethinking_incomplete_multi-view_clustering_with_protocol_d/",
+    "title": "Beyond Missing Rates: Rethinking Incomplete Multi-View Clustering with Protocol Divergence",
+    "text": "不完整多视图聚类、协议分歧、观测支持、掩码注意力、一次训练多场景部署",
+    "tags": [
+      "不完整多视图聚类",
+      "自监督学习",
+      "掩码注意力"
+    ],
+    "id": "P07"
+  },
+  {
+    "location": "CVPR2026/multimodal_vlm/global-graph_guided_and_local-graph_weighted_contrastive_learning_for_unified_cl/",
+    "title": "Global-Graph Guided and Local-Graph Weighted Contrastive Learning for Unified Clustering on Incomplete and Noise Multi-View Data",
+    "text": "多视图聚类, 对比学习, 不完整数据, 噪声鲁棒, 亲和图",
+    "tags": [
+      "噪声鲁棒",
+      "多视图聚类",
+      "对比学习",
+      "多模态VLM"
+    ],
+    "id": "P08"
+  },
+  {
+    "location": "ICCV2025/multimodal_vlm/g2d_boosting_multimodal_learning_with_gradient-guided_distillation/",
+    "title": "G2D: Boosting Multimodal Learning with Gradient-Guided Distillation",
+    "text": "modality imbalance, knowledge distillation, gradient modulation, sequential modality prioritization, multimodal fusion",
+    "tags": [
+      "知识蒸馏",
+      "多模态",
+      "多模态VLM"
+    ],
+    "id": "P09"
+  },
+  {
+    "location": "NeurIPS2025/multimodal_vlm/midas_misalignment-based_data_augmentation_strategy_for_imbalanced_multimodal_le/",
+    "title": "MIDAS: Misalignment-based Data Augmentation Strategy for Imbalanced Multimodal Learning",
+    "text": "modality imbalance, data augmentation, misaligned samples, weak-modality weighting, hard-sample weighting",
+    "tags": [
+      "数据增强",
+      "多模态VLM"
+    ],
+    "id": "P10"
+  },
+  {
+    "location": "NeurIPS2025/multimodal_vlm/multimodal_negative_learning/",
+    "title": "Multimodal Negative Learning",
+    "text": "多模态融合, 模态不平衡, 负学习, 鲁棒性, 决策融合",
+    "tags": [
+      "多模态融合",
+      "鲁棒性",
+      "模态不平衡",
+      "多模态VLM"
+    ],
+    "id": "P11"
+  },
+  {
+    "location": "NeurIPS2025/multimodal_vlm/rethinking_multimodal_learning_from_the_perspective_of_mitig/",
+    "title": "Rethinking Multimodal Learning from the Perspective of Mitigating Classification Ability Disproportion",
+    "text": "modality imbalance, classification ability disproportion, sustained boosting, adaptive classifier assignment",
+    "tags": [
+      "多模态VLM"
+    ],
+    "id": "P12"
+  },
+  {
+    "location": "ICML2025/multimodal_vlm/rollingq_reviving_the_cooperation_dynamics_in_multimodal_transformer/",
+    "title": "RollingQ: Reviving the Cooperation Dynamics in Multimodal Transformer",
+    "text": "多模态融合, 注意力机制, 模态偏置, 动态融合, Transformer",
+    "tags": [
+      "多模态融合",
+      "Transformer",
+      "注意力机制",
+      "多模态VLM"
+    ],
+    "id": "P13"
+  },
+  {
+    "location": "ICLR2026/optimization/masam_multimodal_adaptive_sharpness-aware_minimization_for_heterogeneous_data_fu/",
+    "title": "MASAM: Multimodal Adaptive Sharpness-Aware Minimization for Heterogeneous Data Fusion",
+    "text": "模态不平衡, Sharpness-Aware Minimization, 损失曲面平坦度, 异构数据融合, 自适应扰动",
+    "tags": [
+      "Sharpness-Aware Minimization",
+      "优化/理论",
+      "模态不平衡"
+    ],
+    "id": "P14"
+  },
+  {
+    "location": "CVPR2026/multimodal_vlm/balm_a_model-agnostic_framework_for_balanced_multimodal_learning_under_imbalance/",
+    "title": "BALM: A Model-Agnostic Framework for Balanced Multimodal Learning under Imbalanced Missing Rates",
+    "text": "Multimodal Learning, Missing Modality, Imbalanced Missing Rate, Gradient Rebalancing, Feature Calibration",
+    "tags": [
+      "多模态",
+      "多模态VLM"
+    ],
+    "id": "P15"
+  },
+  {
+    "location": "CVPR2026/multimodal_vlm/multimodal_learning_on_low-quality_data_with_conformal_predictive_self-calibrati/",
+    "title": "Multimodal Learning on Low-Quality Data with Conformal Predictive Self-Calibration",
+    "text": "多模态学习, 共形预测, 模态不平衡, 噪声鲁棒, 自校准训练",
+    "tags": [
+      "多模态学习",
+      "模态不平衡",
+      "多模态VLM",
+      "共形预测",
+      "噪声鲁棒"
+    ],
+    "id": "P16"
+  },
+  {
+    "location": "CVPR2026/multimodal_vlm/enhance-then-balance_modality_collaboration_for_robust_multimodal_sentiment_anal/",
+    "title": "Enhance-then-Balance Modality Collaboration for Robust Multimodal Sentiment Analysis",
+    "text": "多模态情感分析, 模态不平衡, 能量模型, 弱模态增强, 鲁棒融合",
+    "tags": [
+      "多模态情感分析",
+      "多模态VLM",
+      "模态不平衡",
+      "能量模型"
+    ],
+    "id": "P17"
+  },
+  {
+    "location": "NeurIPS2025/optimization/learning_reconfigurable_representations_for_multimodal_federated_learning_with_m/",
+    "title": "Learning Reconfigurable Representations for Multimodal Federated Learning with Missing Data",
+    "text": "联邦学习, 多模态学习, 缺失数据, 可重配置表示, 嵌入控制",
+    "tags": [
+      "联邦学习",
+      "优化/理论",
+      "多模态学习"
+    ],
+    "id": "P18"
+  },
+  {
+    "location": "ICCV2025/optimization/federated_prompt-tuning_with_heterogeneous_and_incomplete_multimodal_client_data/",
+    "title": "Federated Prompt-Tuning with Heterogeneous and Incomplete Multimodal Client Data",
+    "text": "联邦学习, Prompt-Tuning, 多模态, 缺失模态, 异构数据",
+    "tags": [
+      "缺失模态",
+      "联邦学习",
+      "异构数据",
+      "提示学习",
+      "多模态",
+      "优化/理论"
+    ],
+    "id": "P19"
+  },
+  {
+    "location": "ICCV2025/multimodal_vlm/fedmvp_federated_multimodal_visual_prompt_tuning_for_vision-language_models/",
+    "title": "FedMVP: Federated Multimodal Visual Prompt Tuning for Vision-Language Models",
+    "text": "联邦学习, CLIP提示学习, 多模态提示, 视觉提示调优, 跨域泛化",
+    "tags": [
+      "多模态提示",
+      "联邦学习",
+      "跨域泛化",
+      "多模态VLM"
+    ],
+    "id": "P20"
+  },
+  {
+    "location": "ICLR2026/multimodal_vlm/pfedmma_personalized_federated_fine-tuning_with_multi-modal_adapter_for_vision-l/",
+    "title": "pFedMMA: Personalized Federated Fine-Tuning with Multi-Modal Adapter for Vision-Language Models",
+    "text": "联邦学习, CLIP, 多模态适配器, 个性化, 泛化-个性化权衡",
+    "tags": [
+      "个性化",
+      "CLIP",
+      "联邦学习",
+      "多模态VLM"
+    ],
+    "id": "P21"
+  },
+  {
+    "location": "CVPR2026/llm_safety/fedafd_multimodal_federated_learning_via_adversarial_fusion_and_distillation/",
+    "title": "FedAFD: Multimodal Federated Learning via Adversarial Fusion and Distillation",
+    "text": "Multimodal Federated Learning, Adversarial Alignment, Feature Fusion, knowledge distillation, Model Heterogeneity",
+    "tags": [
+      "知识蒸馏",
+      "联邦学习",
+      "安全"
+    ],
+    "id": "P22"
+  },
+  {
+    "location": "ICLR2026/graph_learning/federated_graph-level_clustering_network_with_dual_knowledge_separation/",
+    "title": "Federated Graph-Level Clustering Network with Dual Knowledge Separation",
+    "text": "联邦图聚类, 不变图学习, 子图解耦, 个性化聚合, 图核",
+    "tags": [
+      "图学习"
+    ],
+    "id": "P23"
+  },
+  {
+    "location": "ICLR2026/recommender/low-pass_personalized_subgraph_federated_recommendation/",
+    "title": "Low-pass Personalized Subgraph Federated Recommendation",
+    "text": "联邦推荐系统, 子图结构不平衡, 图傅里叶变换, 低通谱滤波, 流行度偏置, 个性化联邦学习",
+    "tags": [
+      "推荐系统",
+      "个性化联邦学习"
+    ],
+    "id": "P24"
+  },
+  {
+    "location": "NeurIPS2025/optimization/personalized_subgraph_federated_learning_with_differentiable_auxiliary_projectio/",
+    "title": "Personalized Subgraph Federated Learning with Differentiable Auxiliary Projections",
+    "text": "联邦学习, 图神经网络, 个性化聚合, 子图异质性, 辅助投影向量",
+    "tags": [
+      "图神经网络",
+      "优化/理论",
+      "联邦学习"
+    ],
+    "id": "P25"
+  },
+  {
+    "location": "NeurIPS2025/model_compression/towards_effective_federated_graph_foundation_model_via_mitigating_knowledge_enta/",
+    "title": "Towards Effective Federated Graph Foundation Model via Mitigating Knowledge Entanglement",
+    "text": "联邦图学习, 图基础模型, 知识纠缠, 向量量化, 提示学习",
+    "tags": [
+      "提示学习",
+      "模型压缩",
+      "向量量化",
+      "图基础模型"
+    ],
+    "id": "P26"
+  },
+  {
+    "location": "CVPR2026/others/fedsst_rethinking_fair_federated_graph_learning_under_structural_shift/",
+    "title": "FedSST: Rethinking Fair Federated Graph Learning under Structural Shift",
+    "text": "联邦图学习, 泛化公平, 结构异质性, 自适应聚合, 探针图",
+    "id": "P27"
+  },
+  {
+    "location": "CVPR2026/others/fedsdr_federated_graph_learning_with_structural_noise_detection_and_reconstructi/",
+    "title": "FedSDR: Federated Graph Learning with Structural Noise Detection and Reconstruction",
+    "text": "联邦图学习, 结构噪声, 谱图理论, 鲁棒聚合, 图结构重建",
+    "tags": [
+      "鲁棒聚合"
+    ],
+    "id": "P28"
+  },
+  {
+    "location": "ICML2026/model_compression/fedsdr_federated_self-distillation_with_rectification/",
+    "title": "FedSDR: Federated Self-Distillation with Rectification",
+    "text": "联邦学习, LLM 指令微调, 自蒸馏, 双流 LoRA, 选择性聚合",
+    "tags": [
+      "自蒸馏",
+      "模型压缩",
+      "联邦学习"
+    ],
+    "id": "P29"
+  },
+  {
+    "location": "ICLR2026/others/a_federated_generalized_expectation-maximization_algorithm_for_mixture_models_wi/",
+    "title": "A Federated Generalized Expectation-Maximization Algorithm for Mixture Models with an Unknown Number of Components",
+    "text": "联邦聚类, 广义EM算法, 混合模型, 未知聚类数, 不确定性集",
+    "tags": [
+      "混合模型"
+    ],
+    "id": "P30"
+  },
+  {
+    "location": "CVPR2026/federated_learning/fedrg_unleashing_the_representation_geometry_for_federated_learning_with_noisy_c/",
+    "title": "FedRG: Unleashing the Representation Geometry for Federated Learning with Noisy Clients",
+    "text": "联邦学习, 噪声标签, 表征几何, vMF混合模型, 数据异质性",
+    "tags": [
+      "噪声标签",
+      "数据异质性",
+      "表征几何",
+      "联邦学习"
+    ],
+    "id": "P31"
+  },
+  {
+    "location": "ICML2026/optimization/learning_locally_revising_globally_global_reviser_for_federated_learning_with_no/",
+    "title": "Learning Locally, Revising Globally: Global Reviser for Federated Learning with Noisy Labels",
+    "text": "联邦学习, 标签噪声, EMA 蒸馏, GMM 样本筛选, 隐私保护",
+    "tags": [
+      "隐私保护",
+      "标签噪声",
+      "优化/理论",
+      "联邦学习"
+    ],
+    "id": "P32"
+  },
+  {
+    "location": "NeurIPS2025/graph_learning/making_classic_gnns_strong_baselines_across_varying_homophily_a_smoothness-gener/",
+    "title": "Making Classic GNNs Strong Baselines Across Varying Homophily: A Smoothness-Generalization Perspective",
+    "text": "GNN, Homophily, Heterophily, Smoothness-Generalization Dilemma, IGNN",
+    "tags": [
+      "图神经网络",
+      "图学习"
+    ],
+    "id": "P33"
+  },
+  {
+    "location": "ICLR2026/others/oversmoothing_oversquashing_heterophily_long-range_and_more_demystifying_common_/",
+    "title": "Oversmoothing, Oversquashing, Heterophily, Long-Range, and More: Demystifying Common Beliefs in Graph Machine Learning",
+    "text": "oversmoothing, oversquashing, heterophily, long-range dependencies, message-passing, GNN",
+    "id": "P34"
+  },
+  {
+    "location": "NeurIPS2025/llm_safety/redundancy-aware_test-time_graph_out-of-distribution_detection/",
+    "title": "Redundancy-Aware Test-Time Graph Out-of-Distribution Detection",
+    "text": "图OOD检测, 结构熵, 信息瓶颈, 测试时检测, 编码树",
+    "tags": [
+      "结构熵",
+      "信息瓶颈",
+      "安全"
+    ],
+    "id": "P35"
+  },
+  {
+    "location": "ICLR2026/graph_learning/graphuniverse_synthetic_graph_generation_for_evaluating_inductive_generalization/",
+    "title": "GraphUniverse: Synthetic Graph Generation for Evaluating Inductive Generalization",
+    "text": "synthetic graph generation, inductive generalization, graph benchmarking, stochastic block model, distribution shift",
+    "tags": [
+      "distribution shift",
+      "图学习"
+    ],
+    "id": "P36"
+  },
+  {
+    "location": "AAAI2026/time_series/mask_the_redundancy_evolving_masking_representation_learning_for_multivariate_ti/",
+    "title": "Mask the Redundancy: Evolving Masking Representation Learning for Multivariate Time-Series Clustering",
+    "text": "multivariate time-series clustering, masking, representation learning, contrastive learning",
+    "tags": [
+      "时间序列",
+      "对比学习",
+      "representation learning"
+    ],
+    "id": "P37"
+  },
+  {
+    "location": "ICLR2026/time_series/when_foundation_models_are_one-liners_limitations_and_future_directions_for_time/",
+    "title": "When Foundation Models Are One-Liners: Limitations and Future Directions for Time Series Anomaly Detection",
+    "text": "时序基础模型, 异常检测, 重建误差, 预测误差, 基线诊断",
+    "tags": [
+      "时间序列",
+      "异常检测",
+      "重建误差",
+      "时序基础模型"
+    ],
+    "id": "P38"
+  },
+  {
+    "location": "ICLR2026/time_series/tspulse_tiny_pre-trained_models_with_disentangled_representations_for_rapid_time/",
+    "title": "TSPulse: Tiny Pre-Trained Models with Disentangled Representations for Rapid Time Series",
+    "text": "Time Series Pre-trained Model, Disentangled Representations, Dual-Space Reconstruction, Anomaly Detection, Tiny Model",
+    "tags": [
+      "时间序列"
+    ],
+    "id": "P39"
+  },
+  {
+    "location": "ICLR2026/anomaly_detection/adaptive_conformal_anomaly_detection_with_time_series_foundation_models_for_sign/",
+    "title": "Adaptive Conformal Anomaly Detection with Time Series Foundation Models for Signal Monitoring",
+    "text": "时间序列基础模型, 共形预测, 自适应异常检测, 信号监测, 误报率控制",
+    "tags": [
+      "共形预测",
+      "异常检测",
+      "时间序列基础模型"
+    ],
+    "id": "P40"
+  },
+  {
+    "location": "ICML2025/object_detection/causality-aware_contrastive_learning_for_robust_multivariate_time-series_anomaly/",
+    "title": "Causality-Aware Contrastive Learning for Robust Multivariate Time-Series Anomaly Detection",
+    "text": "多变量异常检测, 因果关系, 对比学习, 数据增强, 因果发现",
+    "tags": [
+      "数据增强",
+      "目标检测",
+      "因果发现",
+      "对比学习"
+    ],
+    "id": "P41"
+  },
+  {
+    "location": "ICML2025/object_detection/kan-ad_time_series_anomaly_detection_with_kolmogorov-arnold_networks/",
+    "title": "KAN-AD: Time Series Anomaly Detection with Kolmogorov-Arnold Networks",
+    "text": "时间序列异常检测, KAN, Kolmogorov-Arnold网络, B样条, 傅里叶展开",
+    "tags": [
+      "KAN",
+      "目标检测",
+      "时间序列异常检测",
+      "B样条"
+    ],
+    "id": "P42"
+  },
+  {
+    "location": "ICLR2026/information_retrieval/summaries_as_centroids_for_interpretable_and_scalable_text_clustering/",
+    "title": "Summaries as Centroids for Interpretable and Scalable Text Clustering",
+    "text": "文本聚类, k-means, 摘要即中心, 可解释性, 流式聚类, LLM可选",
+    "tags": [
+      "信息检索/RAG",
+      "可解释性"
+    ],
+    "id": "P43"
+  },
+  {
+    "location": "AAAI2026/aigc_detection/optimized_algorithms_for_text_clustering_with_llm-generated_constraints/",
+    "title": "Optimized Algorithms for Text Clustering with LLM-Generated Constraints",
+    "text": "文本聚类, LLM约束生成, k-means, 半监督聚类, 局部搜索",
+    "tags": [
+      "AIGC检测"
+    ],
+    "id": "P44"
+  },
+  {
+    "location": "ICLR2026/self_supervised/bures-isotropy_alignment_manifold_learning_of_generalized_category_discovery/",
+    "title": "Bures-Isotropy Alignment: Manifold Learning of Generalized Category Discovery",
+    "text": "广义类别发现, Bures距离, 各向同性, 维度坍缩, 类别数估计",
+    "tags": [
+      "广义类别发现",
+      "自监督学习"
+    ],
+    "id": "P45"
+  },
+  {
+    "location": "ICLR2026/multimodal_vlm/spectralgcd_spectral_concept_selection_and_cross-modal_representation_learning_f/",
+    "title": "SpectralGCD: Spectral Concept Selection and Cross-modal Representation Learning for Generalized Category Discovery",
+    "text": "广义类别发现, CLIP, 跨模态表示, 谱过滤, 概念字典, 知识蒸馏",
+    "tags": [
+      "知识蒸馏",
+      "广义类别发现",
+      "CLIP",
+      "多模态VLM"
+    ],
+    "id": "P46"
+  },
+  {
+    "location": "CVPR2026/self_supervised/nonparametric_deep_fine-grained_clustering_with_low-rank_guided_vision-language_/",
+    "title": "Nonparametric Deep Fine-grained Clustering with Low-Rank Guided Vision-Language Model",
+    "text": "细粒度聚类, 低秩引导, VLM 教师, 正交约束, 狄利克雷过程",
+    "tags": [
+      "自监督学习",
+      "正交约束"
+    ],
+    "id": "P47"
+  },
+  {
+    "location": "CVPR2025/object_detection/abra_teleporting_fine-tuned_knowledge_across_domains_for_open-vocabulary_object_/",
+    "title": "ABRA: Teleporting Fine-Tuned Knowledge Across Domains for Open-Vocabulary Object Detection",
+    "text": "开放词汇检测, 域适应, 权重空间传输, SVD分解, 参数高效微调",
+    "tags": [
+      "参数高效微调",
+      "开放词汇检测",
+      "目标检测",
+      "域适应"
+    ],
+    "id": "P48"
+  },
+  {
+    "location": "CVPR2025/object_detection/efficient_test-time_adaptive_object_detection_via_sensitivity-guided_pruning/",
+    "title": "Efficient Test-Time Adaptive Object Detection via Sensitivity-Guided Pruning",
+    "text": "持续测试时自适应, 通道剪枝, 敏感性度量, 域偏移, 高效推理",
+    "tags": [
+      "高效推理",
+      "目标检测",
+      "域偏移",
+      "持续测试时自适应"
+    ],
+    "id": "P49"
+  },
+  {
+    "location": "ICLR2026/reinforcement_learning/adaptive_scaling_of_policy_constraints_for_offline_reinforcement_learning/",
+    "title": "Adaptive Scaling of Policy Constraints for Offline Reinforcement Learning",
+    "text": "离线强化学习、策略约束、自适应缩放、双层优化、TD3+BC",
+    "tags": [
+      "双层优化",
+      "自适应缩放",
+      "强化学习",
+      "离线强化学习"
+    ],
+    "id": "P50"
+  },
+  {
+    "location": "AAAI2026/reinforcement_learning/enhancing_robustness_of_offline_reinforcement_learning_under_data_corruption_via/",
+    "title": "Enhancing Robustness of Offline RL Under Data Corruption via SAM",
+    "text": "离线RL, 数据损坏, SAM优化器, 平坦极小值, 鲁棒性",
+    "tags": [
+      "离线RL",
+      "鲁棒性",
+      "强化学习",
+      "平坦极小值"
+    ],
+    "id": "P51"
+  }
+]

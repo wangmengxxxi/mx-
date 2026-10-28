@@ -1,0 +1,132 @@
+{
+  "repository": "https://github.com/XLearning-SCU/2021-CVPR-Completer",
+  "commit": "624dd9fd10431802214fab1d7b34c44f5a0a92df",
+  "license": "MIT",
+  "retrieval": "GitHub raw files pinned to commit; clone failed TLS",
+  "datasets": {
+    "Caltech101-20": {
+      "samples": 2386,
+      "classes": 20,
+      "stored_views": 6,
+      "all_shapes": [
+        [
+          2386,
+          48
+        ],
+        [
+          2386,
+          40
+        ],
+        [
+          2386,
+          254
+        ],
+        [
+          2386,
+          1984
+        ],
+        [
+          2386,
+          512
+        ],
+        [
+          2386,
+          928
+        ]
+      ],
+      "used_view_indices": [
+        3,
+        4
+      ],
+      "used_dimensions": [
+        1984,
+        512
+      ],
+      "sha256": "aa51f62a9f37e177fb74abf7eab1bbe8c9a160e831835e20c3ff292793ac5658"
+    },
+    "Scene-15": {
+      "samples": 4485,
+      "classes": 15,
+      "stored_views": 3,
+      "all_shapes": [
+        [
+          4485,
+          20
+        ],
+        [
+          4485,
+          59
+        ],
+        [
+          4485,
+          40
+        ]
+      ],
+      "used_view_indices": [
+        0,
+        1
+      ],
+      "used_dimensions": [
+        20,
+        59
+      ],
+      "sha256": "ec33b5e1f53eea04ccacc8b7bdfc6091ed490b04214eb41fd83c05a0a173221f"
+    }
+  },
+  "files": {
+    "third_party\\2021-CVPR-Completer\\.gitmodules": {
+      "bytes": 111,
+      "sha256": "c44820c56766dc766a00b3ab3ca6fb588f4f2e5534079db71dccecea5fdaa597"
+    },
+    "third_party\\2021-CVPR-Completer\\configure.py": {
+      "bytes": 3402,
+      "sha256": "ca90ac6236263e4c6d6c08d12260f9b64e6eac7be94f7bc9bfde29d30e91312f"
+    },
+    "third_party\\2021-CVPR-Completer\\datasets.py": {
+      "bytes": 5356,
+      "sha256": "7724086e56bc1aaa39988e846b965f66aad75c27db85617af0178708248e4ca6"
+    },
+    "third_party\\2021-CVPR-Completer\\evaluation.py": {
+      "bytes": 5353,
+      "sha256": "3e2c6263ab3d10e3e6093ca3762cea691b0479c32767f998e31f299a9ce114ea"
+    },
+    "third_party\\2021-CVPR-Completer\\get_mask.py": {
+      "bytes": 1638,
+      "sha256": "f833566091aeee4465b9edc7d0ce5d81a17940aa2d382fbe5f1dfa0728fe20d7"
+    },
+    "third_party\\2021-CVPR-Completer\\LICENSE": {
+      "bytes": 1072,
+      "sha256": "91255454d0aab1fae2a11b9f09ba7dd72d964e7770d2e558822a5233567d91eb"
+    },
+    "third_party\\2021-CVPR-Completer\\loss.py": {
+      "bytes": 1348,
+      "sha256": "0ac5ea5853fef850ecfa86a06650875906c25df9c68db81ce0e0a737cd3b6ebf"
+    },
+    "third_party\\2021-CVPR-Completer\\model.py": {
+      "bytes": 14427,
+      "sha256": "bc6e3ed129147c33216897b8a6e7b02db8e98f0169bf9fecf383e3124a676f07"
+    },
+    "third_party\\2021-CVPR-Completer\\README.md": {
+      "bytes": 3757,
+      "sha256": "bc609fcf0a5a562564702a4e76fd5b185e5e63670d6cab4d16c96b470e97b11b"
+    },
+    "third_party\\2021-CVPR-Completer\\run.py": {
+      "bytes": 4142,
+      "sha256": "c250ed34734f3e51ef700bbd14393b97fb1a5f2a2e2ed3ac7d73904952de6f5a"
+    },
+    "third_party\\2021-CVPR-Completer\\util.py": {
+      "bytes": 2132,
+      "sha256": "c28656959032e9589ded52ed18861882553416ac3e24f838d0ea7e73f88ac5aa"
+    },
+    "third_party\\2021-CVPR-Completer\\data\\Caltech101-20.mat": {
+      "bytes": 36482487,
+      "sha256": "aa51f62a9f37e177fb74abf7eab1bbe8c9a160e831835e20c3ff292793ac5658"
+    },
+    "third_party\\2021-CVPR-Completer\\data\\Scene-15.mat": {
+      "bytes": 3384483,
+      "sha256": "ec33b5e1f53eea04ccacc8b7bdfc6091ed490b04214eb41fd83c05a0a173221f"
+    }
+  },
+  "python": "3.9.21 (main, Dec 11 2024, 16:35:24) [MSC v.1929 64 bit (AMD64)]",
+  "platform": "Windows-10-10.0.22631-SP0"
+}

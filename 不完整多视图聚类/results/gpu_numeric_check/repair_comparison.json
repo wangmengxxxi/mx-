@@ -1,0 +1,25 @@
+{
+  "all_passed": true,
+  "checks": [
+    {
+      "group": "Caltech101-20_r0.7_s1",
+      "all_weights_and_buffers_bitwise_equal": true,
+      "mask_bitwise_equal": true,
+      "failed_comparison_arrays_bitwise_equal": true
+    },
+    {
+      "group": "Scene-15_r0.7_s2",
+      "all_weights_and_buffers_bitwise_equal": true,
+      "mask_bitwise_equal": true,
+      "failed_comparison_arrays_bitwise_equal": true
+    },
+    {
+      "group": "Scene-15_r0.7_s3",
+      "all_weights_and_buffers_bitwise_equal": true,
+      "mask_bitwise_equal": true,
+      "failed_comparison_arrays_bitwise_equal": true
+    }
+  ],
+  "initial_completed_results_hash_unchanged": 17,
+  "protocol_sha256": "7ddf3260ccebdf199cea02efdb9f562e8afc66c6a725f05ff4bcf0d6553cb34a"
+}

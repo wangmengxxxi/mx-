@@ -1,0 +1,23 @@
+{"start": "KM", "dataset": "cifar10", "ir": 1, "seed": 4, "n": 50000}
+{"complete": "KM", "elapsed_s": 15.102455}
+{"start": "BAL", "dataset": "cifar10", "ir": 1, "seed": 4, "n": 50000}
+{"method": "BAL", "epoch": 20, "loss": 0.305077528553009, "lr": 0.00045677014356864043, "rho": null, "elapsed_s": 4.6482256}
+{"method": "BAL", "epoch": 40, "loss": 0.3040987340450287, "lr": 0.0003346844800613229, "rho": null, "elapsed_s": 9.2992883}
+{"method": "BAL", "epoch": 60, "loss": 0.3041005754947662, "lr": 0.0001802522234901927, "rho": null, "elapsed_s": 13.7237307}
+{"method": "BAL", "epoch": 80, "loss": 0.3036752956581116, "lr": 5.2461246906077396e-05, "rho": null, "elapsed_s": 18.1905337}
+{"method": "BAL", "epoch": 100, "loss": 0.30373601815223694, "lr": 1.233599085671e-07, "rho": null, "elapsed_s": 22.6137512}
+{"complete": "BAL", "elapsed_s": 24.5210961}
+{"start": "P2OT_feat", "dataset": "cifar10", "ir": 1, "seed": 4, "n": 50000}
+semi_use: True
+epsilon: 0.1
+sk_numItermax: 1000
+{"method": "P2OT_feat", "epoch": 20, "loss": 0.007163546199202538, "lr": 0.00045677014356864043, "rho": 0.13662612933754034, "elapsed_s": 248.2874864}
+{"method": "P2OT_feat", "epoch": 40, "loss": 0.01364638766437769, "lr": 0.0003346844800613229, "rho": 0.24858691381976677, "elapsed_s": 422.0570847}
+{"method": "P2OT_feat", "epoch": 60, "loss": 0.03895136335730553, "lr": 0.0001802522234901927, "rho": 0.5040659990270808, "elapsed_s": 533.9219572000001}
+{"method": "P2OT_feat", "epoch": 80, "loss": 0.11926221405982972, "lr": 5.2461246906077396e-05, "rho": 0.8365568275197964, "elapsed_s": 622.3974393}
+{"method": "P2OT_feat", "epoch": 100, "loss": 0.22294452236175538, "lr": 1.233599085671e-07, "rho": 0.999999812578112, "elapsed_s": 694.1798151}
+{"complete": "P2OT_feat", "elapsed_s": 694.2643093}
+{"start": "ORACLE_KM", "dataset": "cifar10", "ir": 1, "seed": 4, "n": 50000}
+{"complete": "ORACLE_KM", "elapsed_s": 0.12539509999999154}
+{"start": "LP", "dataset": "cifar10", "ir": 1, "seed": 4, "n": 50000}
+{"complete": "LP", "elapsed_s": 2.69864199999995}

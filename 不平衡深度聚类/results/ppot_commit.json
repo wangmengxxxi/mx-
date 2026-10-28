@@ -1,0 +1,101 @@
+{
+  "sha": "33bd8872a87203ddb753cb94a05d639a414c6c06",
+  "node_id": "C_kwDOKdfdVNoAKDMzYmQ4ODcyYTg3MjAzZGRiNzUzY2I5NGEwNWQ2MzlhNDE0YzZjMDY",
+  "commit": {
+    "author": {
+      "name": "Hui Ren",
+      "email": "99195158+rhfeiyang@users.noreply.github.com",
+      "date": "2026-06-24T06:04:00Z"
+    },
+    "committer": {
+      "name": "GitHub",
+      "email": "noreply@github.com",
+      "date": "2026-06-24T06:04:00Z"
+    },
+    "message": "update bib",
+    "tree": {
+      "sha": "9d0e4ea73679c689d8803bf42949f5ff85bcb9c9",
+      "url": "https://api.github.com/repos/rhfeiyang/PPOT/git/trees/9d0e4ea73679c689d8803bf42949f5ff85bcb9c9"
+    },
+    "url": "https://api.github.com/repos/rhfeiyang/PPOT/git/commits/33bd8872a87203ddb753cb94a05d639a414c6c06",
+    "comment_count": 0,
+    "verification": {
+      "verified": true,
+      "reason": "valid",
+      "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJqO3NQCRC1aQ7uu5UhlAAAPakQAEW2nwNge4pW5zowcaU/2ghZ\n4KlG90z2dGxfhVZ9tn7kpOgAuyxHxAmIyPx71Aaw3nWWcZ50DFxDYiT61pzt/gzG\nGP7057Yx2W+KIYbTxiNeRLUEtAGaO3cd2Phf49/F2gmTWQb0+ukN7IvIenp6IUwA\nmARcegLCP/FWI5WVq3nwJj6YO+BQO0+sxtx6OKyYlyL/ORzPfe5st2WHyjBTOzUU\n/unlf5bX1zQU7LRtyWM3+gz+9eKZ+2+cVOayG4sOHzSN+fQ/+l0AoHDwvSAVz2bf\n3jKaYx7BAbo1uPuIW7YTB5CoV77IQ78EIRfny1ZrhhXvwgFmN7xoXl0YT64ktTSc\nErjd/6CygUdnxHg99u1NwvkbDB5lulJM6AprFy2tdT1dNu7jifbZpVIa3RV+T/Mt\nEFMmvFAbU8y8ESkIk86KmKVIFcMtquHX1JszEyT2+UDXg8zyAoSE2F/sr14DvG0d\nOc3c4+gg0SF2fGTYt8+BlCdEUA4mzDJmCIXhnIo14HKBeFxkVNmPOauA5zSn+1Ei\nb3c3lEDCePnlJ5CZaQlMQNUP9SKRurFCwS4I+lG5hQNykgqgZ3Ovz3SXxXTVyEpr\nn8poAf3BwH88hAUdeIbiw4Gc/Dp9uM2lzWN6lKn4EDO5/pC0jVQFfwD8HrTsQKX/\nkYzMayW8FPOSRAHa3D6k\n=2Rm8\n-----END PGP SIGNATURE-----\n",
+      "payload": "tree 9d0e4ea73679c689d8803bf42949f5ff85bcb9c9\nparent bd6721c4b5f6581ae5cd896eba9cc9250c769997\nauthor Hui Ren <99195158+rhfeiyang@users.noreply.github.com> 1782281040 -0700\ncommitter GitHub <noreply@github.com> 1782281040 -0700\n\nupdate bib",
+      "verified_at": "2026-06-24T06:04:01Z"
+    }
+  },
+  "url": "https://api.github.com/repos/rhfeiyang/PPOT/commits/33bd8872a87203ddb753cb94a05d639a414c6c06",
+  "html_url": "https://github.com/rhfeiyang/PPOT/commit/33bd8872a87203ddb753cb94a05d639a414c6c06",
+  "comments_url": "https://api.github.com/repos/rhfeiyang/PPOT/commits/33bd8872a87203ddb753cb94a05d639a414c6c06/comments",
+  "author": {
+    "login": "rhfeiyang",
+    "id": 99195158,
+    "node_id": "U_kgDOBemZFg",
+    "avatar_url": "https://avatars.githubusercontent.com/u/99195158?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/rhfeiyang",
+    "html_url": "https://github.com/rhfeiyang",
+    "followers_url": "https://api.github.com/users/rhfeiyang/followers",
+    "following_url": "https://api.github.com/users/rhfeiyang/following{/other_user}",
+    "gists_url": "https://api.github.com/users/rhfeiyang/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/rhfeiyang/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/rhfeiyang/subscriptions",
+    "organizations_url": "https://api.github.com/users/rhfeiyang/orgs",
+    "repos_url": "https://api.github.com/users/rhfeiyang/repos",
+    "events_url": "https://api.github.com/users/rhfeiyang/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/rhfeiyang/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "committer": {
+    "login": "web-flow",
+    "id": 19864447,
+    "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+    "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/web-flow",
+    "html_url": "https://github.com/web-flow",
+    "followers_url": "https://api.github.com/users/web-flow/followers",
+    "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+    "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+    "organizations_url": "https://api.github.com/users/web-flow/orgs",
+    "repos_url": "https://api.github.com/users/web-flow/repos",
+    "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/web-flow/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "parents": [
+    {
+      "sha": "bd6721c4b5f6581ae5cd896eba9cc9250c769997",
+      "url": "https://api.github.com/repos/rhfeiyang/PPOT/commits/bd6721c4b5f6581ae5cd896eba9cc9250c769997",
+      "html_url": "https://github.com/rhfeiyang/PPOT/commit/bd6721c4b5f6581ae5cd896eba9cc9250c769997"
+    }
+  ],
+  "stats": {
+    "total": 3,
+    "additions": 2,
+    "deletions": 1
+  },
+  "files": [
+    {
+      "sha": "cedb885d5b6f7b4c0047964f06457f5decd62c7a",
+      "filename": "README.md",
+      "status": "modified",
+      "additions": 2,
+      "deletions": 1,
+      "changes": 3,
+      "blob_url": "https://github.com/rhfeiyang/PPOT/blob/33bd8872a87203ddb753cb94a05d639a414c6c06/README.md",
+      "raw_url": "https://github.com/rhfeiyang/PPOT/raw/33bd8872a87203ddb753cb94a05d639a414c6c06/README.md",
+      "contents_url": "https://api.github.com/repos/rhfeiyang/PPOT/contents/README.md?ref=33bd8872a87203ddb753cb94a05d639a414c6c06",
+      "patch": "@@ -58,9 +58,10 @@ This software is released under a creative commons license which allows for pers\n ## Citation\n \n ```shell\n-@misc{zhang2024p2ot,\n+@inproceedings{zhang2024p2ot,\n       title={P$^2$OT: Progressive Partial Optimal Transport for Deep Imbalanced Clustering}, \n       author={Chuyu Zhang and Hui Ren and Xuming He},\n+      booktitle={The Twelfth International Conference on Learning Representations},\n       year={2024},\n       eprint={2401.09266},\n       archivePrefix={arXiv},"
+    }
+  ]
+}

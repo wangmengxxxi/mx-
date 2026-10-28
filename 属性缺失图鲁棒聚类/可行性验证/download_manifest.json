@@ -1,0 +1,60 @@
+[
+  {
+    "path": "data/cora.tgz",
+    "url": "https://linqs-data.soe.ucsc.edu/public/lbc/cora.tgz",
+    "status": "failed",
+    "error": "HTTPSConnectionPool(host='linqs-data.soe.ucsc.edu', port=443): Max retries exceeded with url: /public/lbc/cora.tgz (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000001CE1BF56250>: Failed to establish a new connection: [WinError 10060] \u7531\u4e8e\u8fde\u63a5\u65b9\u5728\u4e00\u6bb5\u65f6\u95f4\u540e\u6ca1\u6709\u6b63\u786e\u7b54\u590d\u6216\u8fde\u63a5\u7684\u4e3b\u673a\u6ca1\u6709\u53cd\u5e94\uff0c\u8fde\u63a5\u5c1d\u8bd5\u5931\u8d25\u3002'))"
+  },
+  {
+    "path": "references/fp_README.md",
+    "url": "https://raw.githubusercontent.com/twitter-research/feature-propagation/main/README.md",
+    "status": "failed",
+    "error": "HTTPSConnectionPool(host='raw.githubusercontent.com', port=443): Read timed out. (read timeout=60)"
+  },
+  {
+    "path": "references/fp_tree.json",
+    "url": "https://api.github.com/repos/twitter-research/feature-propagation/git/trees/main?recursive=1",
+    "final_url": "https://api.github.com/repos/twitter-research/feature-propagation/git/trees/main?recursive=1",
+    "bytes": 6254,
+    "sha256": "8b1fb2b6afcf71730047dbed8f3f7ce0f9f8d83480c6f105f70a0a270e48ee05",
+    "status": "ok"
+  },
+  {
+    "path": "references/sdcn_README.md",
+    "url": "https://raw.githubusercontent.com/bdy9527/SDCN/master/README.md",
+    "final_url": "https://raw.githubusercontent.com/bdy9527/SDCN/master/README.md",
+    "bytes": 2499,
+    "sha256": "073aa43f7c9effc7b5755f86a3eb7d4ec238969541bea6fa2a5c84669c11653d",
+    "status": "ok"
+  },
+  {
+    "path": "references/amgc_openreview.html",
+    "url": "https://openreview.net/forum?id=hcohfNBI1c",
+    "final_url": "https://openreview.net/challenge?redirect=%2Fforum%3Fid%3DhcohfNBI1c",
+    "bytes": 4787,
+    "sha256": "284a11abbbf064bfd06f08549656e04d2750c0189c19c494bf33de75255bb476",
+    "status": "ok"
+  },
+  {
+    "path": "references/fp.pdf",
+    "url": "https://arxiv.org/pdf/2111.12128",
+    "final_url": "https://arxiv.org/pdf/2111.12128",
+    "bytes": 699229,
+    "sha256": "6b5b44c4f9874c2afbb446d104b973d68f10d625a2c04305c2d64782a9c30d71",
+    "status": "ok"
+  },
+  {
+    "path": "references/sdcn.pdf",
+    "url": "https://arxiv.org/pdf/2004.10417",
+    "final_url": "https://arxiv.org/pdf/2004.10417",
+    "bytes": 494364,
+    "sha256": "afbccaec03854eaae9c294c6d3f87fd36b4475fc8282bab2830330da2d2aeaed",
+    "status": "ok"
+  },
+  {
+    "path": "references/amgc.pdf",
+    "url": "https://openreview.net/pdf?id=hcohfNBI1c",
+    "status": "failed",
+    "error": "403 Client Error: Forbidden for url: https://openreview.net/pdf?id=hcohfNBI1c"
+  }
+]

@@ -1,0 +1,21 @@
+{
+  "all_passed": true,
+  "runs": 1,
+  "checks": [
+    {
+      "run": "F:\\研究生毕设\\不完整多视图聚类\\results\\full\\Scene-15_r0.5_s1",
+      "mask_match": true,
+      "selections_match": true,
+      "branch_hashes_match": true,
+      "metrics_match": true,
+      "official_metrics_rounding_match": true,
+      "scores_match": true,
+      "checkpoint_hash_match": true,
+      "kmeans_refit_match": true
+    }
+  ],
+  "third_party_unchanged": true,
+  "data_hashes_match": true,
+  "training_runtime_unchanged": true,
+  "protocol_sha256": "7ddf3260ccebdf199cea02efdb9f562e8afc66c6a725f05ff4bcf0d6553cb34a"
+}

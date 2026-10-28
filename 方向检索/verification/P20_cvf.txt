@@ -1,0 +1,14 @@
+ICCV 2025 Open Access Repository ICCV 2025 open access These ICCV 2025 papers are the Open Access versions, provided by the Computer Vision Foundation. Except for the watermark, they are identical to the accepted versions;
+the final published version of the proceedings is available on IEEE Xplore. This material is presented to ensure timely dissemination of scholarly and technical work.
+Copyright and all rights therein are retained by authors or by other copyright holders.
+All persons copying this information are expected to adhere to the terms and constraints invoked 
+by each author's copyright. Powered by: Sponsored by: FedMVP: Federated Multimodal Visual Prompt Tuning for Vision-Language Models Mainak Singha, Subhankar Roy, Sarthak Mehrotra, Ankit Jha, Moloud Abdar, Biplab Banerjee, Elisa Ricci ; Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV), 2025, pp. 17869-17878 Abstract In federated learning, textual prompt tuning adapts Vision-Language Models (e.g., CLIP) by tuning lightweight input tokens (or prompts) on local client data, while keeping network weights frozen. After training, only the prompts are shared by the clients with the central server for aggregation. However, textual prompt tuning suffers from overfitting to known concepts, limiting its generalizability to unseen concepts. To address this limitation, we propose Multimodal Visual Prompt Tuning (FedMVP) that conditions the prompts on multimodal contextual information - derived from the input image and textual attribute features of a class. At the core of FedMVP is a PromptFormer module that synergistically aligns textual and visual features through a cross-attention mechanism. The dynamically generated multimodal visual prompts are then input to the frozen vision encoder of CLIP, and trained with a combination of CLIP similarity loss and a consistency loss. Extensive evaluation on 20 datasets, spanning three generalization settings, demonstrates that FedMVP not only preserves performance on in-distribution classes and domains, but also displays higher generalizability to unseen classes and domains, surpassing state-of-the-art methods by a notable margin of +1.57% - 2.26%. Code is available at https://github.com/mainaksingha01/FedMVP. Related Material [ pdf ]
+[ supp ]
+[ arXiv ] [ bibtex ] @InProceedings{Singha_2025_ICCV,
+    author    = {Singha, Mainak and Roy, Subhankar and Mehrotra, Sarthak and Jha, Ankit and Abdar, Moloud and Banerjee, Biplab and Ricci, Elisa},
+    title     = {FedMVP: Federated Multimodal Visual Prompt Tuning for Vision-Language Models},
+    booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+    month     = {October},
+    year      = {2025},
+    pages     = {17869-17878}
+}

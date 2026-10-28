@@ -1,0 +1,19 @@
+{
+  "shape": [
+    1528,
+    128
+  ],
+  "dtype": "float32",
+  "original_rtol": 1e-05,
+  "original_atol": 1e-07,
+  "max_abs_difference": 2.4437904357910156e-06,
+  "max_difference_to_allowed_ratio": 1.6395214796066284,
+  "failed_elements": 4,
+  "total_elements": 195584,
+  "value_at_max_difference": [
+    0.32459524273872375,
+    0.32459279894828796
+  ],
+  "all_finite": true,
+  "allclose_at_rtol_1e5_atol_1e6": true
+}

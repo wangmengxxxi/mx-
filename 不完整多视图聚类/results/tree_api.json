@@ -1,0 +1,163 @@
+{
+  "sha": "624dd9fd10431802214fab1d7b34c44f5a0a92df",
+  "url": "https://api.github.com/repos/XLearning-SCU/2021-CVPR-Completer/git/trees/624dd9fd10431802214fab1d7b34c44f5a0a92df",
+  "tree": [
+    {
+      "path": ".DS_Store",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0d784ab81ee2d1f12456341568e747734992b741",
+      "size": 6148,
+      "url": "https://api.github.com/repos/XLearning-SCU/2021-CVPR-Completer/git/blobs/0d784ab81ee2d1f12456341568e747734992b741"
+    },
+    {
+      "path": ".gitmodules",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "842b2fe82ff271cad8d6b9444529f78b0360ae8a",
+      "size": 111,
+      "url": "https://api.github.com/repos/XLearning-SCU/2021-CVPR-Completer/git/blobs/842b2fe82ff271cad8d6b9444529f78b0360ae8a"
+    },
+    {
+      "path": "2022-TPAMI-DCP",
+      "mode": "160000",
+      "type": "commit",
+      "sha": "723b0aaaa9905dccef56ecf5dbebc797f1c50bf2"
+    },
+    {
+      "path": "LICENSE",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e7c74745cccb665c5d9e71717e815ce01ef840a2",
+      "size": 1072,
+      "url": "https://api.github.com/repos/XLearning-SCU/2021-CVPR-Completer/git/blobs/e7c74745cccb665c5d9e71717e815ce01ef840a2"
+    },
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "699372b111f7aabfd4bae86c61a54d4cc861c8fc",
+      "size": 3757,
+      "url": "https://api.github.com/repos/XLearning-SCU/2021-CVPR-Completer/git/blobs/699372b111f7aabfd4bae86c61a54d4cc861c8fc"
+    },
+    {
+      "path": "configure.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "394079ae44556c79360fafe174ed7bf729bdc9a0",
+      "size": 3402,
+      "url": "https://api.github.com/repos/XLearning-SCU/2021-CVPR-Completer/git/blobs/394079ae44556c79360fafe174ed7bf729bdc9a0"
+    },
+    {
+      "path": "data",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "03837bf92e96be811b4272cfd7429688234b0167",
+      "url": "https://api.github.com/repos/XLearning-SCU/2021-CVPR-Completer/git/trees/03837bf92e96be811b4272cfd7429688234b0167"
+    },
+    {
+      "path": "data/.DS_Store",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5008ddfcf53c02e82d7eee2e57c38e5672ef89f6",
+      "size": 6148,
+      "url": "https://api.github.com/repos/XLearning-SCU/2021-CVPR-Completer/git/blobs/5008ddfcf53c02e82d7eee2e57c38e5672ef89f6"
+    },
+    {
+      "path": "data/Caltech101-20.mat",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f61831f54343b90b1adc8da218a98ee855fe8974",
+      "size": 36482487,
+      "url": "https://api.github.com/repos/XLearning-SCU/2021-CVPR-Completer/git/blobs/f61831f54343b90b1adc8da218a98ee855fe8974"
+    },
+    {
+      "path": "data/LandUse-21.mat",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "688dd6bba0ad58dd22cacde4359c56ccd1a57fd6",
+      "size": 1609900,
+      "url": "https://api.github.com/repos/XLearning-SCU/2021-CVPR-Completer/git/blobs/688dd6bba0ad58dd22cacde4359c56ccd1a57fd6"
+    },
+    {
+      "path": "data/Scene-15.mat",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a603ca90c2319b36de04aaf01a4043c9e50b5c4f",
+      "size": 3384483,
+      "url": "https://api.github.com/repos/XLearning-SCU/2021-CVPR-Completer/git/blobs/a603ca90c2319b36de04aaf01a4043c9e50b5c4f"
+    },
+    {
+      "path": "datasets.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "808e07cdc3ba9140b5250d07cbd4b5c1f43dda62",
+      "size": 5356,
+      "url": "https://api.github.com/repos/XLearning-SCU/2021-CVPR-Completer/git/blobs/808e07cdc3ba9140b5250d07cbd4b5c1f43dda62"
+    },
+    {
+      "path": "evaluation.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "91c95ab4850399212f7587e08b4aeb501d737532",
+      "size": 5353,
+      "url": "https://api.github.com/repos/XLearning-SCU/2021-CVPR-Completer/git/blobs/91c95ab4850399212f7587e08b4aeb501d737532"
+    },
+    {
+      "path": "figs",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "7b52f98e2e609930e07ab03b25507d175ebd4dc9",
+      "url": "https://api.github.com/repos/XLearning-SCU/2021-CVPR-Completer/git/trees/7b52f98e2e609930e07ab03b25507d175ebd4dc9"
+    },
+    {
+      "path": "figs/framework.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f23cdfac61b4f17082e084afcb64573f6a7f2856",
+      "size": 1003503,
+      "url": "https://api.github.com/repos/XLearning-SCU/2021-CVPR-Completer/git/blobs/f23cdfac61b4f17082e084afcb64573f6a7f2856"
+    },
+    {
+      "path": "get_mask.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0e3654b9cf2e88e0812adc33c300e3e801f3e731",
+      "size": 1638,
+      "url": "https://api.github.com/repos/XLearning-SCU/2021-CVPR-Completer/git/blobs/0e3654b9cf2e88e0812adc33c300e3e801f3e731"
+    },
+    {
+      "path": "loss.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7d8b651d9bb26b1136ad7b8650b402ba9d6be1d6",
+      "size": 1348,
+      "url": "https://api.github.com/repos/XLearning-SCU/2021-CVPR-Completer/git/blobs/7d8b651d9bb26b1136ad7b8650b402ba9d6be1d6"
+    },
+    {
+      "path": "model.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "674ac6134cda33a77a08c4cc484f2e0e54216aa7",
+      "size": 14427,
+      "url": "https://api.github.com/repos/XLearning-SCU/2021-CVPR-Completer/git/blobs/674ac6134cda33a77a08c4cc484f2e0e54216aa7"
+    },
+    {
+      "path": "run.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "83cada4cc1c1fd04125b302e099e81b0b4183c77",
+      "size": 4142,
+      "url": "https://api.github.com/repos/XLearning-SCU/2021-CVPR-Completer/git/blobs/83cada4cc1c1fd04125b302e099e81b0b4183c77"
+    },
+    {
+      "path": "util.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7b0c5657179fe52be2302223c9d15285d6aa431b",
+      "size": 2132,
+      "url": "https://api.github.com/repos/XLearning-SCU/2021-CVPR-Completer/git/blobs/7b0c5657179fe52be2302223c9d15285d6aa431b"
+    }
+  ],
+  "truncated": false
+}

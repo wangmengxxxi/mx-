@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "F:\研究生毕设\不完整多视图聚类\scripts\run_batch.py", line 88, in <module>
+    try:main()
+  File "F:\研究生毕设\不完整多视图聚类\scripts\run_batch.py", line 68, in main
+    (ROOT/'results/batch_errors.json').write_text(json.dumps(errors,indent=2),encoding='utf-8');raise RuntimeError(errors)
+RuntimeError: [{'job': ('Caltech101-20', 0.7, 1), 'error': "RuntimeError('Caltech101-20_r0.7_s1')"}, {'job': ('Scene-15', 0.7, 2), 'error': "RuntimeError('Scene-15_r0.7_s2')"}, {'job': ('Scene-15', 0.7, 3), 'error': "RuntimeError('Scene-15_r0.7_s3')"}]

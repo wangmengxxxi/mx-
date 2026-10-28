@@ -1,0 +1,22 @@
+{
+  "synthetic_feature_timings": [
+    {
+      "batch": 32,
+      "images_per_second": 8.655972849387027,
+      "peak_allocated": 373438976
+    },
+    {
+      "batch": 16,
+      "images_per_second": 8.408913553478106,
+      "peak_allocated": 299145728
+    }
+  ],
+  "uniform_assignment_marginal_check": true,
+  "ppot_finite_check": true,
+  "ppot_mean_row_mass_at_rho_half": 0.49999988079071045,
+  "ppot_synthetic_s": 0.20791170000000037,
+  "torch": "2.8.0+cu126",
+  "cuda": "12.6",
+  "device": "NVIDIA GeForce GTX 1650 Ti",
+  "protocol_sha256": "70efb79c1db888df478f71ea2d110cc999293d797990fdb76dcfe5d0844cf097"
+}

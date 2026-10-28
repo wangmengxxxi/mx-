@@ -1,0 +1,123 @@
+{
+  "config": {
+    "Prediction": {
+      "arch1": [
+        128,
+        256,
+        128
+      ],
+      "arch2": [
+        128,
+        256,
+        128
+      ]
+    },
+    "Autoencoder": {
+      "arch1": [
+        20,
+        1024,
+        1024,
+        1024,
+        128
+      ],
+      "arch2": [
+        59,
+        1024,
+        1024,
+        1024,
+        128
+      ],
+      "activations1": "relu",
+      "activations2": "relu",
+      "batchnorm": true
+    },
+    "training": {
+      "missing_rate": 0.7,
+      "seed": 8,
+      "start_dual_prediction": 100,
+      "batch_size": 256,
+      "epoch": 500,
+      "lr": 0.0001,
+      "alpha": 9,
+      "lambda1": 0.1,
+      "lambda2": 0.1
+    },
+    "dataset": "Scene_15",
+    "data_root": "F:\\研究生毕设\\不完整多视图聚类\\data",
+    "n_clusters": 15,
+    "print_num": 100
+  },
+  "arguments": {
+    "root": "F:\\研究生毕设\\不完整多视图聚类",
+    "dataset": "Scene-15",
+    "rate": 0.7,
+    "seed": 2,
+    "epochs": 500,
+    "threads": 4,
+    "out": "F:\\研究生毕设\\不完整多视图聚类\\results\\full\\Scene-15_r0.7_s2",
+    "device": "cuda"
+  },
+  "mask_sha256": "8e1a1d983e10b91d0fc79fc4b3b1317bbcf7436dda6524b1890254f4e5f9adf8",
+  "versions": {
+    "python": "3.9.21 (main, Dec 11 2024, 16:35:24) [MSC v.1929 64 bit (AMD64)]",
+    "torch": "2.8.0+cu126",
+    "numpy": "1.26.4"
+  },
+  "runtime": {
+    "device": "cuda",
+    "torch_version": "2.8.0+cu126",
+    "cuda_version": "12.6",
+    "gpu_name": "NVIDIA GeForce GTX 1650 Ti",
+    "cudnn_deterministic": true,
+    "cudnn_benchmark": false,
+    "cublas_workspace_config": ":4096:8",
+    "deterministic_algorithms": true,
+    "deterministic_warn_only": true
+  },
+  "threadpools": [
+    {
+      "user_api": "blas",
+      "internal_api": "openblas",
+      "num_threads": 4,
+      "prefix": "libopenblas",
+      "filepath": "F:\\研究生毕设\\不完整多视图聚类\\envs\\imvc_gpu\\Lib\\site-packages\\numpy.libs\\libopenblas64__v0.3.23-293-gc2f4bdbb-gcc_10_3_0-2bde3a66a51006b2b53eb373ff767a3f.dll",
+      "version": "0.3.23.dev",
+      "threading_layer": "pthreads",
+      "architecture": "Zen"
+    },
+    {
+      "user_api": "openmp",
+      "internal_api": "openmp",
+      "num_threads": 4,
+      "prefix": "libiomp",
+      "filepath": "F:\\研究生毕设\\不完整多视图聚类\\envs\\imvc_gpu\\Lib\\site-packages\\torch\\lib\\libiomp5md.dll",
+      "version": null
+    },
+    {
+      "user_api": "openmp",
+      "internal_api": "openmp",
+      "num_threads": 1,
+      "prefix": "libiomp",
+      "filepath": "F:\\研究生毕设\\不完整多视图聚类\\envs\\imvc_gpu\\Lib\\site-packages\\torch\\lib\\libiompstubs5md.dll",
+      "version": null
+    },
+    {
+      "user_api": "blas",
+      "internal_api": "openblas",
+      "num_threads": 4,
+      "prefix": "libopenblas",
+      "filepath": "F:\\研究生毕设\\不完整多视图聚类\\envs\\imvc_gpu\\Lib\\site-packages\\scipy.libs\\libopenblas_v0.3.27--3aa239bc726cfb0bd8e5330d8d4c15c6.dll",
+      "version": "0.3.27",
+      "threading_layer": "pthreads",
+      "architecture": "Zen"
+    },
+    {
+      "user_api": "openmp",
+      "internal_api": "openmp",
+      "num_threads": 4,
+      "prefix": "vcomp",
+      "filepath": "F:\\研究生毕设\\不完整多视图聚类\\envs\\imvc_gpu\\Lib\\site-packages\\sklearn\\.libs\\vcomp140.dll",
+      "version": null
+    }
+  ]
+}

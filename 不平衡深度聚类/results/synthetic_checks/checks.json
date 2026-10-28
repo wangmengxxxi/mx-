@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "all_data_synthetic": true,
+  "global_hungarian_shared_by_tail": true,
+  "nested_subsets_and_counts": true,
+  "full_100_epoch_head_checks": {
+    "BAL": {
+      "epochs": 100,
+      "steps": 100,
+      "last_loss": 1.748521089553833,
+      "peak_allocated_bytes": 73862144
+    },
+    "P2OT_feat": {
+      "epochs": 100,
+      "steps": 100,
+      "last_loss": 1.4954431056976318,
+      "peak_allocated_bytes": 74076160
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "cifar10": {
+    "cache_source": "F:\\PycharmProject\\科学智能\\data\\cifar-10-python.tar.gz",
+    "official_torchvision_download_code": "dataset.py lines27/30 use torchvision.datasets.CIFAR10(download=True)",
+    "md5": "c58f30108f718f92721af3b95e74349a",
+    "sha256": "6d958be074577803d12ecdefd02955f39262c83c16fe9348329d7fe0b5c001ce",
+    "read_only_source": true
+  }
+}

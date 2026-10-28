@@ -1,0 +1,62 @@
+[
+  {
+    "path": "configure.py",
+    "git_blob": "394079ae44556c79360fafe174ed7bf729bdc9a0",
+    "sha256": "ca90ac6236263e4c6d6c08d12260f9b64e6eac7be94f7bc9bfde29d30e91312f"
+  },
+  {
+    "path": "datasets.py",
+    "git_blob": "808e07cdc3ba9140b5250d07cbd4b5c1f43dda62",
+    "sha256": "7724086e56bc1aaa39988e846b965f66aad75c27db85617af0178708248e4ca6"
+  },
+  {
+    "path": "evaluation.py",
+    "git_blob": "91c95ab4850399212f7587e08b4aeb501d737532",
+    "sha256": "3e2c6263ab3d10e3e6093ca3762cea691b0479c32767f998e31f299a9ce114ea"
+  },
+  {
+    "path": "get_mask.py",
+    "git_blob": "0e3654b9cf2e88e0812adc33c300e3e801f3e731",
+    "sha256": "f833566091aeee4465b9edc7d0ce5d81a17940aa2d382fbe5f1dfa0728fe20d7"
+  },
+  {
+    "path": "loss.py",
+    "git_blob": "7d8b651d9bb26b1136ad7b8650b402ba9d6be1d6",
+    "sha256": "0ac5ea5853fef850ecfa86a06650875906c25df9c68db81ce0e0a737cd3b6ebf"
+  },
+  {
+    "path": "model.py",
+    "git_blob": "674ac6134cda33a77a08c4cc484f2e0e54216aa7",
+    "sha256": "bc6e3ed129147c33216897b8a6e7b02db8e98f0169bf9fecf383e3124a676f07"
+  },
+  {
+    "path": "run.py",
+    "git_blob": "83cada4cc1c1fd04125b302e099e81b0b4183c77",
+    "sha256": "c250ed34734f3e51ef700bbd14393b97fb1a5f2a2e2ed3ac7d73904952de6f5a"
+  },
+  {
+    "path": "util.py",
+    "git_blob": "7b0c5657179fe52be2302223c9d15285d6aa431b",
+    "sha256": "c28656959032e9589ded52ed18861882553416ac3e24f838d0ea7e73f88ac5aa"
+  },
+  {
+    "path": "LICENSE",
+    "git_blob": "e7c74745cccb665c5d9e71717e815ce01ef840a2",
+    "sha256": "91255454d0aab1fae2a11b9f09ba7dd72d964e7770d2e558822a5233567d91eb"
+  },
+  {
+    "path": "README.md",
+    "git_blob": "699372b111f7aabfd4bae86c61a54d4cc861c8fc",
+    "sha256": "bc609fcf0a5a562564702a4e76fd5b185e5e63670d6cab4d16c96b470e97b11b"
+  },
+  {
+    "path": "data/Caltech101-20.mat",
+    "git_blob": "f61831f54343b90b1adc8da218a98ee855fe8974",
+    "sha256": "aa51f62a9f37e177fb74abf7eab1bbe8c9a160e831835e20c3ff292793ac5658"
+  },
+  {
+    "path": "data/Scene-15.mat",
+    "git_blob": "a603ca90c2319b36de04aaf01a4043c9e50b5c4f",
+    "sha256": "ec33b5e1f53eea04ccacc8b7bdfc6091ed490b04214eb41fd83c05a0a173221f"
+  }
+]

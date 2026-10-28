@@ -1,0 +1,21 @@
+{
+  "raw_records": 26609,
+  "unique_papers": 26609,
+  "bytes": 9205988,
+  "sha256": "bd24c6a64805cfb81bb90a8dafee1b8eaa4fab01579a46a456826085a27cd4cb",
+  "venues": {
+    "AAAI2026": 1382,
+    "ACL2025": 1855,
+    "ACL2026": 1409,
+    "CVPR2025": 1820,
+    "CVPR2026": 4065,
+    "ECCV2024": 869,
+    "ECCV2026": 2907,
+    "ICCV2025": 1315,
+    "ICLR2026": 5316,
+    "ICML2025": 1063,
+    "ICML2026": 1845,
+    "NeurIPS2025": 2530,
+    "NeurIPS2026": 233
+  }
+}

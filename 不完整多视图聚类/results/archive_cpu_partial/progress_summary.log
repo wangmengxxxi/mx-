@@ -1,0 +1,24 @@
+{
+  "runs": 6,
+  "overall": "实验进行中，暂不判读",
+  "decisions": [
+    {
+      "dataset": "Caltech101-20",
+      "rate": 0.5,
+      "n": 5,
+      "completion": true,
+      "ceiling": false,
+      "reliable_scores": [],
+      "verdict": "不通过"
+    },
+    {
+      "dataset": "Scene-15",
+      "rate": 0.5,
+      "n": 1,
+      "completion": false,
+      "ceiling": false,
+      "reliable_scores": [],
+      "verdict": "未落入预设三类，证据不足"
+    }
+  ]
+}

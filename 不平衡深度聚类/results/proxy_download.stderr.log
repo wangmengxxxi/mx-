@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "F:\�о�������\��ƽ����Ⱦ���\scripts\proxy_download.py", line 86, in <module>
+    main()
+  File "F:\�о�������\��ƽ����Ⱦ���\scripts\proxy_download.py", line 68, in main
+    raise RuntimeError('No configured proxy node can reach official Toronto URL')
+RuntimeError: No configured proxy node can reach official Toronto URL

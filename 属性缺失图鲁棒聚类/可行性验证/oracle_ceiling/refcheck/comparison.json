@@ -1,0 +1,25 @@
+{
+  "reference_path": "F:\\研究生毕设\\可行性验证\\sdcn_stage4_holdout\\r0.4_m0_fp_s0\\result.json",
+  "rerun_path": "F:\\研究生毕设\\可行性验证\\oracle_ceiling\\refcheck\\r0.4_m0_fp_k0_s0",
+  "mask_equal": true,
+  "reference": {
+    "acc": 0.5011078286558346,
+    "nmi": 0.3064973326164587,
+    "ari": 0.2571739383533762,
+    "cold_acc": 0.41333333333333333
+  },
+  "rerun": {
+    "acc": 0.5025849335302807,
+    "nmi": 0.3056261891491176,
+    "ari": 0.2584931552104355,
+    "cold_acc": 0.41333333333333333
+  },
+  "delta": {
+    "acc": 0.001477104874446078,
+    "nmi": -0.0008711434673410734,
+    "ari": 0.0013192168570592688,
+    "cold_acc": 0.0
+  },
+  "investigation_limit": 0.005,
+  "limit_note": "Engineering guard, not a scientific decision threshold; investigate if ACC/NMI/ARI differ by over 0.005"
+}

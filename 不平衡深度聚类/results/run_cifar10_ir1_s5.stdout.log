@@ -1,0 +1,23 @@
+{"start": "KM", "dataset": "cifar10", "ir": 1, "seed": 5, "n": 50000}
+{"complete": "KM", "elapsed_s": 15.130128599999999}
+{"start": "BAL", "dataset": "cifar10", "ir": 1, "seed": 5, "n": 50000}
+{"method": "BAL", "epoch": 20, "loss": 0.2989621984767914, "lr": 0.00045677014356864043, "rho": null, "elapsed_s": 5.036576100000001}
+{"method": "BAL", "epoch": 40, "loss": 0.2988471040439606, "lr": 0.0003346844800613229, "rho": null, "elapsed_s": 9.880684300000002}
+{"method": "BAL", "epoch": 60, "loss": 0.2982283385753632, "lr": 0.0001802522234901927, "rho": null, "elapsed_s": 14.616805499999998}
+{"method": "BAL", "epoch": 80, "loss": 0.29818948133468626, "lr": 5.2461246906077396e-05, "rho": null, "elapsed_s": 19.385407100000002}
+{"method": "BAL", "epoch": 100, "loss": 0.29743441133499143, "lr": 1.233599085671e-07, "rho": null, "elapsed_s": 24.178463200000003}
+{"complete": "BAL", "elapsed_s": 26.0387865}
+{"start": "P2OT_feat", "dataset": "cifar10", "ir": 1, "seed": 5, "n": 50000}
+semi_use: True
+epsilon: 0.1
+sk_numItermax: 1000
+{"method": "P2OT_feat", "epoch": 20, "loss": 0.007441373467743396, "lr": 0.00045677014356864043, "rho": 0.13662612933754034, "elapsed_s": 277.1600675}
+{"method": "P2OT_feat", "epoch": 40, "loss": 0.016512365217208863, "lr": 0.0003346844800613229, "rho": 0.24858691381976677, "elapsed_s": 475.37128340000004}
+{"method": "P2OT_feat", "epoch": 60, "loss": 0.05026818797111511, "lr": 0.0001802522234901927, "rho": 0.5040659990270808, "elapsed_s": 595.8896865}
+{"method": "P2OT_feat", "epoch": 80, "loss": 0.10425431594848633, "lr": 5.2461246906077396e-05, "rho": 0.8365568275197964, "elapsed_s": 676.102781}
+{"method": "P2OT_feat", "epoch": 100, "loss": 0.22029298843860626, "lr": 1.233599085671e-07, "rho": 0.999999812578112, "elapsed_s": 743.3173678}
+{"complete": "P2OT_feat", "elapsed_s": 743.4003638}
+{"start": "ORACLE_KM", "dataset": "cifar10", "ir": 1, "seed": 5, "n": 50000}
+{"complete": "ORACLE_KM", "elapsed_s": 0.12466910000000553}
+{"start": "LP", "dataset": "cifar10", "ir": 1, "seed": 5, "n": 50000}
+{"complete": "LP", "elapsed_s": 2.760532900000044}

@@ -1,0 +1,11 @@
+{
+  "features_equal": true,
+  "labels_equal": true,
+  "edges_equal": true,
+  "nodes": 2708,
+  "edges": 10556,
+  "observed_count": 1083,
+  "missing_count": 1625,
+  "cold_count": 459,
+  "mask_sha256": "6c55c8fc65399e5e8c276c5b6cfc95e5f7bfc0ec2a569a492108ff98d05584df"
+}

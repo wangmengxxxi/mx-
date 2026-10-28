@@ -1,0 +1,6 @@
+curl: (28) Connection timed out after 20002 milliseconds
+curl: (28) Connection timed out after 20004 milliseconds
+curl: (28) Connection timed out after 20002 milliseconds
+curl: (28) Connection timed out after 20013 milliseconds
+curl: (28) Connection timed out after 20004 milliseconds
+curl: (28) Operation timed out after 600146 milliseconds with 7000000 out of 167285213 bytes received

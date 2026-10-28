@@ -1,0 +1,13 @@
+ICCV 2025 Open Access Repository ICCV 2025 open access These ICCV 2025 papers are the Open Access versions, provided by the Computer Vision Foundation. Except for the watermark, they are identical to the accepted versions;
+the final published version of the proceedings is available on IEEE Xplore. This material is presented to ensure timely dissemination of scholarly and technical work.
+Copyright and all rights therein are retained by authors or by other copyright holders.
+All persons copying this information are expected to adhere to the terms and constraints invoked 
+by each author's copyright. Powered by: Sponsored by: Federated Prompt-Tuning with Heterogeneous and Incomplete Multimodal Client Data Thu Hang Phung, Duong M. Nguyen, Thanh Trung Huynh, Quoc Viet Hung Nguyen, Trong Nghia Hoang, Phi Le Nguyen ; Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV), 2025, pp. 3936-3946 Abstract This paper introduces a generalized federated prompt-tuning framework for practical scenarios where local datasets are multi-modal and exhibit different distributional patterns of missing features at the input level. The proposed framework bridges the gap between federated learning and multi-modal prompt-tuning which have traditionally focused on either uni-modal or centralized data. A key challenge in this setting arises from the lack of semantic alignment between prompt instructions that encode similar distributional patterns of missing data across different clients. To address this, our framework introduces specialized client-tuning and server-aggregation designs that simultaneously optimize, align, and aggregate prompt-tuning instructions across clients and data modalities. This allows prompt instructions to complement one another and be combined effectively. Extensive evaluations on diverse multimodal benchmark datasets demonstrate that our work consistently outperforms state-of-the-art (SOTA) baselines. Related Material [ pdf ]
+[ supp ] [ bibtex ] @InProceedings{Phung_2025_ICCV,
+    author    = {Phung, Thu Hang and Nguyen, Duong M. and Huynh, Thanh Trung and Nguyen, Quoc Viet Hung and Hoang, Trong Nghia and Le Nguyen, Phi},
+    title     = {Federated Prompt-Tuning with Heterogeneous and Incomplete Multimodal Client Data},
+    booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+    month     = {October},
+    year      = {2025},
+    pages     = {3936-3946}
+}

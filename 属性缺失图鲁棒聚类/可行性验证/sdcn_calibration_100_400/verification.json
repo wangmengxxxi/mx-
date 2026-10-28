@@ -1,0 +1,93 @@
+{
+  "checks": [
+    {
+      "run": "r0_m0_complete_s0",
+      "predictions_recomputed": true,
+      "mask_verified": true,
+      "finite_losses": true
+    },
+    {
+      "run": "r0_m0_complete_s1",
+      "predictions_recomputed": true,
+      "mask_verified": true,
+      "finite_losses": true
+    },
+    {
+      "run": "r0.4_m0_zero_s0",
+      "predictions_recomputed": true,
+      "mask_verified": true,
+      "finite_losses": true
+    },
+    {
+      "run": "r0.4_m0_zero_s1",
+      "predictions_recomputed": true,
+      "mask_verified": true,
+      "finite_losses": true
+    },
+    {
+      "run": "r0.4_m0_fp_s0",
+      "predictions_recomputed": true,
+      "mask_verified": true,
+      "finite_losses": true
+    },
+    {
+      "run": "r0.4_m0_fp_s1",
+      "predictions_recomputed": true,
+      "mask_verified": true,
+      "finite_losses": true
+    },
+    {
+      "run": "r0.8_m0_zero_s0",
+      "predictions_recomputed": true,
+      "mask_verified": true,
+      "finite_losses": true
+    },
+    {
+      "run": "r0.8_m0_zero_s1",
+      "predictions_recomputed": true,
+      "mask_verified": true,
+      "finite_losses": true
+    },
+    {
+      "run": "r0.8_m0_fp_s0",
+      "predictions_recomputed": true,
+      "mask_verified": true,
+      "finite_losses": true
+    },
+    {
+      "run": "r0.8_m0_fp_s1",
+      "predictions_recomputed": true,
+      "mask_verified": true,
+      "finite_losses": true
+    }
+  ],
+  "shared_masks_verified": true,
+  "reachability": [
+    {
+      "rate": 0.0,
+      "mask": 0,
+      "one_hop_cold": 0,
+      "unreachable_missing": 0,
+      "reachable_after_multiple_hops": 0,
+      "max_hops": 0
+    },
+    {
+      "rate": 0.4,
+      "mask": 0,
+      "one_hop_cold": 122,
+      "unreachable_missing": 16,
+      "reachable_after_multiple_hops": 106,
+      "max_hops": 3
+    },
+    {
+      "rate": 0.8,
+      "mask": 0,
+      "one_hop_cold": 1061,
+      "unreachable_missing": 101,
+      "reachable_after_multiple_hops": 960,
+      "max_hops": 7
+    }
+  ],
+  "training_seconds_sum": 405.1985276,
+  "standard_deviation": "sample std across 2 model seeds, 1 mask; not a confidence interval"
+}

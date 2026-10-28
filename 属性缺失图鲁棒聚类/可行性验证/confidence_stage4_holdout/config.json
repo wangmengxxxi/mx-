@@ -1,0 +1,8 @@
+{
+  "rates": "0.4,0.8",
+  "masks": 5,
+  "mask_seed": 20261023,
+  "holdout_fraction": 0.2,
+  "steps": 40,
+  "output": "confidence_stage4_holdout"
+}

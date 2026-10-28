@@ -1,0 +1,63 @@
+{
+  "groups": [
+    {
+      "group": "Caltech101-20_r0.5_s1",
+      "completed": true,
+      "result_sha256": "597827cdefee4ccd06bb328560b07579bb4f14126ed9495b0977ca0b94f88616"
+    },
+    {
+      "group": "Caltech101-20_r0.5_s2",
+      "completed": true,
+      "result_sha256": "21f89f7dcb5c1fef015f981a921a1d60ecc692f4dec9d301e560972c4fd2a255"
+    },
+    {
+      "group": "Caltech101-20_r0.5_s3",
+      "completed": true,
+      "result_sha256": "400d28a701fa6c0af139e6a609bf4a29ca3707ffaad9156cdf8a20da036fc568"
+    },
+    {
+      "group": "Caltech101-20_r0.5_s4",
+      "completed": true,
+      "result_sha256": "a348076b546bfd06fe22312fb2c0598788b340e1690e73dc32aeafb681984d1d"
+    },
+    {
+      "group": "Caltech101-20_r0.5_s5",
+      "completed": true,
+      "result_sha256": "1e621792f5cdde5fb412b9c3c10306f8856bf4cfd432c7d05851c9aa8ce770fc"
+    },
+    {
+      "group": "Scene-15_r0.5_s1",
+      "completed": true,
+      "result_sha256": "ae5e5db6f7826d693662a6c619e704c94da4af51717f161c9f0957a731392f2e"
+    },
+    {
+      "group": "Scene-15_r0.5_s2",
+      "completed": false,
+      "result_sha256": null
+    },
+    {
+      "group": "Scene-15_r0.5_s3",
+      "completed": false,
+      "result_sha256": null
+    }
+  ],
+  "moved": [
+    "full",
+    "refcheck",
+    "batch_events.jsonl",
+    "batch.stdout.log",
+    "batch.stderr.log",
+    "batch_process.json",
+    "progress_summary.log",
+    "summary.json",
+    "branch_means.csv",
+    "paired_differences.csv",
+    "paired_summary.csv",
+    "reliability_correlations.csv",
+    "reliability_summary.csv",
+    "mask_metadata.csv",
+    "reproduction.csv"
+  ],
+  "protocol_sha256": "7ddf3260ccebdf199cea02efdb9f562e8afc66c6a725f05ff4bcf0d6553cb34a",
+  "reason": "User requested full homogeneous GPU rerun"
+}

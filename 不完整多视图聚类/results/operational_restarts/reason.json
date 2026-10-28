@@ -1,0 +1,9 @@
+{
+  "rate": 0.5,
+  "reason": "Superseded queue workers cancelled before final results, to reserve standalone Scene timing; no completed metric-based exclusion",
+  "data_seeds": [
+    2,
+    3
+  ],
+  "dataset": "Caltech101-20"
+}

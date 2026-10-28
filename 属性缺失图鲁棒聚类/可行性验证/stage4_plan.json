@@ -1,0 +1,48 @@
+{
+  "date": "2026-10-22",
+  "purpose": "Three feasibility gates: full AMGC training, independent mask/seed repeats, and label-free confidence weighting ablation",
+  "hardware": "CPU only; no local GPU driver changes",
+  "amgc": {
+    "output": "amgc_stage4_full1000",
+    "observed_ratio": 0.4,
+    "split_seed": 72,
+    "model_seed": 0,
+    "edge_mask_p": 0.5,
+    "epochs": 1000,
+    "schedule_epochs": 1000,
+    "eval_every": 5,
+    "note": "Fixed-mask convergence check; one seed cannot establish repeatability"
+  },
+  "sdcn_repeats": {
+    "output": "sdcn_stage4_holdout",
+    "mask_seed": 20261023,
+    "rates": [0, 0.4, 0.8],
+    "nonzero_masks": 5,
+    "model_seeds": [0, 1, 2],
+    "nonzero_inputs": ["zero", "fp"],
+    "hidden": [128, 64],
+    "pretrain_epochs": 100,
+    "joint_epochs": 400,
+    "joint_lr": 0.001,
+    "steps": 40,
+    "report": "fixed final epoch, paired masks and model seeds"
+  },
+  "confidence": {
+    "output": "confidence_stage4_holdout",
+    "calibration": "Within each mask, hide 20% of originally observed nodes to fit a ridge model predicting log FP reconstruction error from four label-free signals",
+    "honest_test": "A disjoint 20% of originally observed nodes is artificially hidden and scored without fitting on it",
+    "original_missing_audit": "True attributes of originally missing benchmark nodes are accessed only after confidence scores are frozen, for offline correlation analysis",
+    "signals": ["one-hop observed count", "two-hop observed path count", "degree", "FP feature norm"],
+    "weight_mapping": "Observed=1; missing score rank linearly mapped to (0.2,1.0), mean approximately 0.6"
+  },
+  "weighted_ablation": {
+    "output": "sdcn_stage4_weighted",
+    "input": "FP fixed for all runs",
+    "rates": [0.4, 0.8],
+    "masks": [0, 1, 2],
+    "seeds": [0, 1, 2],
+    "modes": ["uniform reference from sdcn_stage4_holdout", "fixed missing weight 0.6", "informed confidence", "shuffled confidence within missing nodes"],
+    "loss": "Confidence applied to both nodewise KL terms and normalized by sum of node weights; reconstruction unchanged",
+    "selection": "No label-based epoch or parameter selection"
+  }
+}

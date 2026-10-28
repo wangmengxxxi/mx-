@@ -1,0 +1,16 @@
+c2_01 || federated AND clustering AND (imbalanced OR "long-tailed" OR "class imbalance") || 2021-01-01 || 40
+c2_02 || "federated clustering" || 2021-01-01 || 40
+c2_03 || "federated k-means" OR "federated kmeans" || 2021-01-01 || 30
+c2_04 || "federated deep clustering" || 2021-01-01 || 30
+c2_05 || "federated spectral clustering" || 2021-01-01 || 30
+c2_06 || "federated learning" AND "long-tailed" || 2021-01-01 || 40
+c2_07 || "federated learning" AND ("class imbalance" OR "imbalanced data") || 2021-01-01 || 40
+c2_08 || federated AND ("novel class discovery" OR "category discovery") || 2021-01-01 || 30
+c2_09 || federated AND clustering AND ("non-IID" OR "non-iid" OR heterogeneous) || 2021-01-01 || 40
+c2_10 || "k-FED" OR "kFED" AND clustering || 2021-01-01 || 20
+c2_11 || "federated" AND "unsupervised" AND "clustering" AND "clients" || 2021-01-01 || 40
+c2_12 || "federated clustering" AND ("number of clusters" OR "unknown") || 2021-01-01 || 25
+c2_13 || "federated learning" AND "long-tailed" AND ("classifier" OR "rebalancing") || 2021-01-01 || 30
+c2_14 || "personalized federated" AND clustering || 2021-01-01 || 30
+c2_15 || "federated" AND ("label skew" OR "label-skew") AND (clustering OR unsupervised) || 2021-01-01 || 30
+c2_16 || "decentralized" AND clustering AND (imbalanced OR "long-tailed") || 2021-01-01 || 25

@@ -1,0 +1,58 @@
+{
+  "passed": true,
+  "protocol_sha256": "7ddf3260ccebdf199cea02efdb9f562e8afc66c6a725f05ff4bcf0d6553cb34a",
+  "cpu_training_seconds": 459.4673606,
+  "gpu_training_seconds": [
+    81.0442787,
+    76.7713205
+  ],
+  "training_speedups": [
+    5.6693374038258915,
+    5.9848828652100625
+  ],
+  "max_run_ACC_difference": 0.0,
+  "branch_run2_minus_run1": {
+    "B": {
+      "ACC": 0.0,
+      "NMI": 0.0,
+      "ARI": 0.0
+    },
+    "A": {
+      "ACC": 0.0,
+      "NMI": 0.0,
+      "ARI": 0.0
+    },
+    "E": {
+      "ACC": 0.0,
+      "NMI": 0.0,
+      "ARI": 0.0
+    },
+    "C_rand": {
+      "ACC": 0.0,
+      "NMI": 0.0,
+      "ARI": 0.0
+    },
+    "C_low_s1": {
+      "ACC": 0.0,
+      "NMI": 0.0,
+      "ARI": 0.0
+    },
+    "C_low_s2": {
+      "ACC": 0.0,
+      "NMI": 0.0,
+      "ARI": 0.0
+    }
+  },
+  "mask_match": true,
+  "runtime_ok": true,
+  "cpu_smoke_audit_passed": true,
+  "peak_memory_allocated_bytes": [
+    411039232,
+    411039232
+  ],
+  "warning_counts": [
+    0,
+    0
+  ],
+  "checked_at": "2026-10-27T18:12:10.214545+08:00"
+}

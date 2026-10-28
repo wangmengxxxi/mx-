@@ -1,0 +1,7 @@
+{
+  "data/dinov2_vitb14_pretrain.pth": "0b8b82f85de91b424aded121c7e1dcc2b7bc6d0adeea651bf73a13307fad8c73",
+  "data/cifar/cifar-10-python.tar.gz": "6d958be074577803d12ecdefd02955f39262c83c16fe9348329d7fe0b5c001ce",
+  "third_party/dinov2.zip": "04276715cddb29d45d05bff3a6fc132224dc27749b279ac98ad2ce4620e20d48",
+  "third_party/ppot.zip": "0154a5efb33c40494dfc839ac76fe26c4c18b443c4806b77c0dcc43444144cc4",
+  "results/protocol.json": "70efb79c1db888df478f71ea2d110cc999293d797990fdb76dcfe5d0844cf097"
+}

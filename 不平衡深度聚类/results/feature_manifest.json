@@ -1,0 +1,66 @@
+{
+  "cifar100_train": {
+    "path": "data\\features\\cifar100_train.npy",
+    "shape": [
+      50000,
+      768
+    ],
+    "dtype": "float32",
+    "inference_dtype": "float16",
+    "sha256": "c52bbeb3e2243ec7223e7c0ac56127b49668e04bac660df98de0138de7dc888f",
+    "labels_sha256": "233cdd4afc94cd00f3ddec6f8640168bf76a6872168cf6c5a9990ac9f144be3b",
+    "batch": 32,
+    "peak_allocated_bytes": 360806912,
+    "elapsed_this_process_s": 5807.7987218,
+    "torch": "2.8.0+cu126",
+    "device": "NVIDIA GeForce GTX 1650 Ti"
+  },
+  "cifar100_test": {
+    "path": "data\\features\\cifar100_test.npy",
+    "shape": [
+      10000,
+      768
+    ],
+    "dtype": "float32",
+    "inference_dtype": "float16",
+    "sha256": "9e0e4c995542d4531d281e0471cb7b4bce8e2f4b477ee28658bad0c89d37c88d",
+    "labels_sha256": "7827272d0fbeee517a81b235f35fae2128af64393371c2fdde1c8f9a638e4a1a",
+    "batch": 32,
+    "peak_allocated_bytes": 360806912,
+    "elapsed_this_process_s": 1160.6816147,
+    "torch": "2.8.0+cu126",
+    "device": "NVIDIA GeForce GTX 1650 Ti"
+  },
+  "cifar10_train": {
+    "path": "data\\features\\cifar10_train.npy",
+    "shape": [
+      50000,
+      768
+    ],
+    "dtype": "float32",
+    "inference_dtype": "float16",
+    "sha256": "26858e9978b15b8f9265ee60761f72a3df94f801c3393fd3c0d5bbed39acaca1",
+    "labels_sha256": "9dfee6f275bac0f14e63de8d1091cd1f4487a16d30c6d8726f61d1b8f999c745",
+    "batch": 32,
+    "peak_allocated_bytes": 360806912,
+    "elapsed_this_process_s": 5706.1697684,
+    "torch": "2.8.0+cu126",
+    "device": "NVIDIA GeForce GTX 1650 Ti"
+  },
+  "cifar10_test": {
+    "path": "data\\features\\cifar10_test.npy",
+    "shape": [
+      10000,
+      768
+    ],
+    "dtype": "float32",
+    "inference_dtype": "float16",
+    "sha256": "10e72c26522ca4dbeba551e89fc733a37b6ede3793d03822f4e9db11ee38bbcb",
+    "labels_sha256": "fc48d9ecfdbeacce2dacf004498170f2df12e75e3485475017d2663b587a92f3",
+    "batch": 32,
+    "peak_allocated_bytes": 360806912,
+    "elapsed_this_process_s": 1138.8155444000004,
+    "torch": "2.8.0+cu126",
+    "device": "NVIDIA GeForce GTX 1650 Ti"
+  }
+}

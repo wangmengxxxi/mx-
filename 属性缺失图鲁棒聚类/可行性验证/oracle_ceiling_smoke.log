@@ -1,0 +1,31 @@
+START r0_m0_complete_k2_s0
+r0_m0_complete_k2_s0 joint 0: ACC=0.3021 NMI=0.0000 clusters=1
+r0_m0_complete_k2_s0 joint 1: ACC=0.2917 NMI=0.0148 clusters=2
+r0_m0_complete_k2_s0 joint 2: ACC=0.3095 NMI=0.0420 clusters=3
+r0_m0_complete_k2_s0 joint 3: ACC=0.3028 NMI=0.0272 clusters=4
+DONE r0_m0_complete_k2_s0 ACC=0.302806 elapsed=3.3s
+START r0.8_m0_zero_k2_s0
+r0.8_m0_zero_k2_s0 joint 0: ACC=0.3021 NMI=0.0000 clusters=1
+r0.8_m0_zero_k2_s0 joint 1: ACC=0.3021 NMI=0.0000 clusters=1
+r0.8_m0_zero_k2_s0 joint 2: ACC=0.3013 NMI=0.0010 clusters=2
+r0.8_m0_zero_k2_s0 joint 3: ACC=0.2999 NMI=0.0029 clusters=2
+DONE r0.8_m0_zero_k2_s0 ACC=0.299852 elapsed=0.8s
+START r0.8_m0_fp_k2_s0
+r0.8_m0_fp_k2_s0 joint 0: ACC=0.3021 NMI=0.0000 clusters=1
+r0.8_m0_fp_k2_s0 joint 1: ACC=0.3010 NMI=0.0063 clusters=3
+r0.8_m0_fp_k2_s0 joint 2: ACC=0.2363 NMI=0.0459 clusters=4
+r0.8_m0_fp_k2_s0 joint 3: ACC=0.3379 NMI=0.0721 clusters=4
+DONE r0.8_m0_fp_k2_s0 ACC=0.337888 elapsed=0.7s
+START r0.8_m0_oracle_cold_k2_s0
+r0.8_m0_oracle_cold_k2_s0 joint 0: ACC=0.3021 NMI=0.0000 clusters=1
+r0.8_m0_oracle_cold_k2_s0 joint 1: ACC=0.2932 NMI=0.0099 clusters=2
+r0.8_m0_oracle_cold_k2_s0 joint 2: ACC=0.2408 NMI=0.0350 clusters=4
+r0.8_m0_oracle_cold_k2_s0 joint 3: ACC=0.3246 NMI=0.0421 clusters=4
+DONE r0.8_m0_oracle_cold_k2_s0 ACC=0.324594 elapsed=0.8s
+START r0.8_m0_oracle_random_k2_s0
+r0.8_m0_oracle_random_k2_s0 joint 0: ACC=0.3021 NMI=0.0000 clusters=1
+r0.8_m0_oracle_random_k2_s0 joint 1: ACC=0.3010 NMI=0.0065 clusters=3
+r0.8_m0_oracle_random_k2_s0 joint 2: ACC=0.3176 NMI=0.0585 clusters=3
+r0.8_m0_oracle_random_k2_s0 joint 3: ACC=0.3165 NMI=0.0383 clusters=4
+DONE r0.8_m0_oracle_random_k2_s0 ACC=0.316470 elapsed=0.8s
+ALL COMPLETE: 5 main fits -> F:\�о�������\��������֤\oracle_ceiling_smoke

@@ -1,0 +1,776 @@
+{
+  "passed": true,
+  "formal_runs": 30,
+  "checks": [
+    {
+      "feature": "cifar100_train",
+      "hash_shape_finite": true
+    },
+    {
+      "feature": "cifar100_test",
+      "hash_shape_finite": true
+    },
+    {
+      "feature": "cifar10_train",
+      "hash_shape_finite": true
+    },
+    {
+      "feature": "cifar10_test",
+      "hash_shape_finite": true
+    },
+    {
+      "run": "cifar100_ir100_s1",
+      "method": "KM",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar100_ir100_s1",
+      "method": "BAL",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar100_ir100_s1",
+      "method": "P2OT_feat",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar100_ir100_s1",
+      "method": "ORACLE_KM",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar100_ir100_s1",
+      "method": "LP",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar100_ir100_s2",
+      "method": "KM",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar100_ir100_s2",
+      "method": "BAL",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar100_ir100_s2",
+      "method": "P2OT_feat",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar100_ir100_s2",
+      "method": "ORACLE_KM",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar100_ir100_s2",
+      "method": "LP",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar100_ir100_s3",
+      "method": "KM",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar100_ir100_s3",
+      "method": "BAL",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar100_ir100_s3",
+      "method": "P2OT_feat",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar100_ir100_s3",
+      "method": "ORACLE_KM",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar100_ir100_s3",
+      "method": "LP",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar100_ir100_s4",
+      "method": "KM",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar100_ir100_s4",
+      "method": "BAL",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar100_ir100_s4",
+      "method": "P2OT_feat",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar100_ir100_s4",
+      "method": "ORACLE_KM",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar100_ir100_s4",
+      "method": "LP",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar100_ir100_s5",
+      "method": "KM",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar100_ir100_s5",
+      "method": "BAL",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar100_ir100_s5",
+      "method": "P2OT_feat",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar100_ir100_s5",
+      "method": "ORACLE_KM",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar100_ir100_s5",
+      "method": "LP",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar100_ir10_s1",
+      "method": "KM",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar100_ir10_s1",
+      "method": "BAL",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar100_ir10_s1",
+      "method": "P2OT_feat",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar100_ir10_s1",
+      "method": "ORACLE_KM",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar100_ir10_s1",
+      "method": "LP",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar100_ir10_s2",
+      "method": "KM",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar100_ir10_s2",
+      "method": "BAL",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar100_ir10_s2",
+      "method": "P2OT_feat",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar100_ir10_s2",
+      "method": "ORACLE_KM",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar100_ir10_s2",
+      "method": "LP",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar100_ir10_s3",
+      "method": "KM",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar100_ir10_s3",
+      "method": "BAL",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar100_ir10_s3",
+      "method": "P2OT_feat",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar100_ir10_s3",
+      "method": "ORACLE_KM",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar100_ir10_s3",
+      "method": "LP",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar100_ir10_s4",
+      "method": "KM",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar100_ir10_s4",
+      "method": "BAL",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar100_ir10_s4",
+      "method": "P2OT_feat",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar100_ir10_s4",
+      "method": "ORACLE_KM",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar100_ir10_s4",
+      "method": "LP",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar100_ir10_s5",
+      "method": "KM",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar100_ir10_s5",
+      "method": "BAL",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar100_ir10_s5",
+      "method": "P2OT_feat",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar100_ir10_s5",
+      "method": "ORACLE_KM",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar100_ir10_s5",
+      "method": "LP",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar100_ir1_s1",
+      "method": "KM",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar100_ir1_s1",
+      "method": "BAL",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar100_ir1_s1",
+      "method": "P2OT_feat",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar100_ir1_s1",
+      "method": "ORACLE_KM",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar100_ir1_s1",
+      "method": "LP",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar100_ir1_s2",
+      "method": "KM",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar100_ir1_s2",
+      "method": "BAL",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar100_ir1_s2",
+      "method": "P2OT_feat",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar100_ir1_s2",
+      "method": "ORACLE_KM",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar100_ir1_s2",
+      "method": "LP",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar100_ir1_s3",
+      "method": "KM",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar100_ir1_s3",
+      "method": "BAL",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar100_ir1_s3",
+      "method": "P2OT_feat",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar100_ir1_s3",
+      "method": "ORACLE_KM",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar100_ir1_s3",
+      "method": "LP",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar100_ir1_s4",
+      "method": "KM",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar100_ir1_s4",
+      "method": "BAL",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar100_ir1_s4",
+      "method": "P2OT_feat",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar100_ir1_s4",
+      "method": "ORACLE_KM",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar100_ir1_s4",
+      "method": "LP",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar100_ir1_s5",
+      "method": "KM",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar100_ir1_s5",
+      "method": "BAL",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar100_ir1_s5",
+      "method": "P2OT_feat",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar100_ir1_s5",
+      "method": "ORACLE_KM",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar100_ir1_s5",
+      "method": "LP",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar10_ir100_s1",
+      "method": "KM",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar10_ir100_s1",
+      "method": "BAL",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar10_ir100_s1",
+      "method": "P2OT_feat",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar10_ir100_s1",
+      "method": "ORACLE_KM",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar10_ir100_s1",
+      "method": "LP",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar10_ir100_s2",
+      "method": "KM",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar10_ir100_s2",
+      "method": "BAL",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar10_ir100_s2",
+      "method": "P2OT_feat",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar10_ir100_s2",
+      "method": "ORACLE_KM",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar10_ir100_s2",
+      "method": "LP",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar10_ir100_s3",
+      "method": "KM",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar10_ir100_s3",
+      "method": "BAL",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar10_ir100_s3",
+      "method": "P2OT_feat",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar10_ir100_s3",
+      "method": "ORACLE_KM",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar10_ir100_s3",
+      "method": "LP",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar10_ir100_s4",
+      "method": "KM",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar10_ir100_s4",
+      "method": "BAL",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar10_ir100_s4",
+      "method": "P2OT_feat",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar10_ir100_s4",
+      "method": "ORACLE_KM",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar10_ir100_s4",
+      "method": "LP",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar10_ir100_s5",
+      "method": "KM",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar10_ir100_s5",
+      "method": "BAL",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar10_ir100_s5",
+      "method": "P2OT_feat",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar10_ir100_s5",
+      "method": "ORACLE_KM",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar10_ir100_s5",
+      "method": "LP",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar10_ir10_s1",
+      "method": "KM",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar10_ir10_s1",
+      "method": "BAL",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar10_ir10_s1",
+      "method": "P2OT_feat",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar10_ir10_s1",
+      "method": "ORACLE_KM",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar10_ir10_s1",
+      "method": "LP",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar10_ir10_s2",
+      "method": "KM",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar10_ir10_s2",
+      "method": "BAL",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar10_ir10_s2",
+      "method": "P2OT_feat",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar10_ir10_s2",
+      "method": "ORACLE_KM",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar10_ir10_s2",
+      "method": "LP",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar10_ir10_s3",
+      "method": "KM",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar10_ir10_s3",
+      "method": "BAL",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar10_ir10_s3",
+      "method": "P2OT_feat",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar10_ir10_s3",
+      "method": "ORACLE_KM",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar10_ir10_s3",
+      "method": "LP",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar10_ir10_s4",
+      "method": "KM",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar10_ir10_s4",
+      "method": "BAL",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar10_ir10_s4",
+      "method": "P2OT_feat",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar10_ir10_s4",
+      "method": "ORACLE_KM",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar10_ir10_s4",
+      "method": "LP",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar10_ir10_s5",
+      "method": "KM",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar10_ir10_s5",
+      "method": "BAL",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar10_ir10_s5",
+      "method": "P2OT_feat",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar10_ir10_s5",
+      "method": "ORACLE_KM",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar10_ir10_s5",
+      "method": "LP",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar10_ir1_s1",
+      "method": "KM",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar10_ir1_s1",
+      "method": "BAL",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar10_ir1_s1",
+      "method": "P2OT_feat",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar10_ir1_s1",
+      "method": "ORACLE_KM",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar10_ir1_s1",
+      "method": "LP",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar10_ir1_s2",
+      "method": "KM",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar10_ir1_s2",
+      "method": "BAL",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar10_ir1_s2",
+      "method": "P2OT_feat",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar10_ir1_s2",
+      "method": "ORACLE_KM",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar10_ir1_s2",
+      "method": "LP",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar10_ir1_s3",
+      "method": "KM",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar10_ir1_s3",
+      "method": "BAL",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar10_ir1_s3",
+      "method": "P2OT_feat",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar10_ir1_s3",
+      "method": "ORACLE_KM",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar10_ir1_s3",
+      "method": "LP",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar10_ir1_s4",
+      "method": "KM",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar10_ir1_s4",
+      "method": "BAL",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar10_ir1_s4",
+      "method": "P2OT_feat",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar10_ir1_s4",
+      "method": "ORACLE_KM",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar10_ir1_s4",
+      "method": "LP",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar10_ir1_s5",
+      "method": "KM",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar10_ir1_s5",
+      "method": "BAL",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar10_ir1_s5",
+      "method": "P2OT_feat",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar10_ir1_s5",
+      "method": "ORACLE_KM",
+      "subset_metrics_saved_parameters": true
+    },
+    {
+      "run": "cifar10_ir1_s5",
+      "method": "LP",
+      "subset_metrics_saved_parameters": true
+    }
+  ],
+  "protocol_sha256": "70efb79c1db888df478f71ea2d110cc999293d797990fdb76dcfe5d0844cf097",
+  "third_party_original_and_compatibility_hashes": true,
+  "runtime_code_hashes": true,
+  "refcheck_passed": true
+}

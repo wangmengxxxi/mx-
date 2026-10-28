@@ -1,0 +1,1429 @@
+START r0.4_m0_fp_k0_s0
+r0.4_m0_fp_k0_s0 pretrain 20: mse=0.007541
+r0.4_m0_fp_k0_s0 pretrain 40: mse=0.007102
+r0.4_m0_fp_k0_s0 pretrain 60: mse=0.006855
+r0.4_m0_fp_k0_s0 pretrain 80: mse=0.006683
+r0.4_m0_fp_k0_s0 pretrain 100: mse=0.006552
+r0.4_m0_fp_k0_s0 joint 0: ACC=0.3187 NMI=0.1522 clusters=7
+r0.4_m0_fp_k0_s0 joint 20: ACC=0.4841 NMI=0.2680 clusters=7
+r0.4_m0_fp_k0_s0 joint 40: ACC=0.5783 NMI=0.3460 clusters=7
+r0.4_m0_fp_k0_s0 joint 60: ACC=0.5945 NMI=0.3654 clusters=7
+r0.4_m0_fp_k0_s0 joint 80: ACC=0.5742 NMI=0.3634 clusters=7
+r0.4_m0_fp_k0_s0 joint 100: ACC=0.5572 NMI=0.3598 clusters=7
+r0.4_m0_fp_k0_s0 joint 120: ACC=0.5513 NMI=0.3607 clusters=7
+r0.4_m0_fp_k0_s0 joint 140: ACC=0.5510 NMI=0.3551 clusters=7
+r0.4_m0_fp_k0_s0 joint 160: ACC=0.5406 NMI=0.3421 clusters=7
+r0.4_m0_fp_k0_s0 joint 180: ACC=0.5362 NMI=0.3407 clusters=7
+r0.4_m0_fp_k0_s0 joint 200: ACC=0.5306 NMI=0.3338 clusters=7
+r0.4_m0_fp_k0_s0 joint 220: ACC=0.5214 NMI=0.3247 clusters=7
+r0.4_m0_fp_k0_s0 joint 240: ACC=0.5196 NMI=0.3235 clusters=7
+r0.4_m0_fp_k0_s0 joint 260: ACC=0.5155 NMI=0.3201 clusters=7
+r0.4_m0_fp_k0_s0 joint 280: ACC=0.5140 NMI=0.3169 clusters=7
+r0.4_m0_fp_k0_s0 joint 300: ACC=0.5085 NMI=0.3129 clusters=7
+r0.4_m0_fp_k0_s0 joint 320: ACC=0.5052 NMI=0.3115 clusters=7
+r0.4_m0_fp_k0_s0 joint 340: ACC=0.4996 NMI=0.3061 clusters=7
+r0.4_m0_fp_k0_s0 joint 360: ACC=0.4974 NMI=0.3028 clusters=7
+r0.4_m0_fp_k0_s0 joint 380: ACC=0.5015 NMI=0.3058 clusters=7
+r0.4_m0_fp_k0_s0 joint 400: ACC=0.5026 NMI=0.3056 clusters=7
+DONE r0.4_m0_fp_k0_s0 ACC=0.502585 elapsed=44.8s
+START r0_m0_complete_k2_s0
+r0_m0_complete_k2_s0 pretrain 20: mse=0.001922
+r0_m0_complete_k2_s0 pretrain 40: mse=0.001680
+r0_m0_complete_k2_s0 pretrain 60: mse=0.001560
+r0_m0_complete_k2_s0 pretrain 80: mse=0.001473
+r0_m0_complete_k2_s0 pretrain 100: mse=0.001416
+r0_m0_complete_k2_s0 joint 0: ACC=0.3748 NMI=0.2326 clusters=7
+r0_m0_complete_k2_s0 joint 20: ACC=0.5210 NMI=0.3456 clusters=6
+r0_m0_complete_k2_s0 joint 40: ACC=0.6067 NMI=0.4262 clusters=6
+r0_m0_complete_k2_s0 joint 60: ACC=0.6200 NMI=0.4899 clusters=6
+r0_m0_complete_k2_s0 joint 80: ACC=0.6237 NMI=0.4951 clusters=6
+r0_m0_complete_k2_s0 joint 100: ACC=0.6248 NMI=0.4927 clusters=7
+r0_m0_complete_k2_s0 joint 120: ACC=0.6230 NMI=0.4918 clusters=7
+r0_m0_complete_k2_s0 joint 140: ACC=0.6204 NMI=0.4866 clusters=7
+r0_m0_complete_k2_s0 joint 160: ACC=0.6200 NMI=0.4865 clusters=7
+r0_m0_complete_k2_s0 joint 180: ACC=0.6196 NMI=0.4849 clusters=7
+r0_m0_complete_k2_s0 joint 200: ACC=0.6182 NMI=0.4828 clusters=7
+r0_m0_complete_k2_s0 joint 220: ACC=0.6174 NMI=0.4813 clusters=7
+r0_m0_complete_k2_s0 joint 240: ACC=0.6160 NMI=0.4804 clusters=7
+r0_m0_complete_k2_s0 joint 260: ACC=0.6156 NMI=0.4800 clusters=7
+r0_m0_complete_k2_s0 joint 280: ACC=0.6160 NMI=0.4812 clusters=7
+r0_m0_complete_k2_s0 joint 300: ACC=0.6156 NMI=0.4807 clusters=7
+r0_m0_complete_k2_s0 joint 320: ACC=0.6156 NMI=0.4799 clusters=7
+r0_m0_complete_k2_s0 joint 340: ACC=0.6152 NMI=0.4794 clusters=7
+r0_m0_complete_k2_s0 joint 360: ACC=0.6160 NMI=0.4814 clusters=7
+r0_m0_complete_k2_s0 joint 380: ACC=0.6156 NMI=0.4807 clusters=7
+r0_m0_complete_k2_s0 joint 400: ACC=0.6160 NMI=0.4806 clusters=7
+DONE r0_m0_complete_k2_s0 ACC=0.615953 elapsed=43.2s
+START r0_m0_complete_k2_s1
+r0_m0_complete_k2_s1 pretrain 20: mse=0.001955
+r0_m0_complete_k2_s1 pretrain 40: mse=0.001668
+r0_m0_complete_k2_s1 pretrain 60: mse=0.001554
+r0_m0_complete_k2_s1 pretrain 80: mse=0.001490
+r0_m0_complete_k2_s1 pretrain 100: mse=0.001436
+r0_m0_complete_k2_s1 joint 0: ACC=0.3287 NMI=0.0622 clusters=5
+r0_m0_complete_k2_s1 joint 20: ACC=0.3759 NMI=0.2422 clusters=6
+r0_m0_complete_k2_s1 joint 40: ACC=0.3401 NMI=0.2353 clusters=5
+r0_m0_complete_k2_s1 joint 60: ACC=0.4812 NMI=0.3591 clusters=5
+r0_m0_complete_k2_s1 joint 80: ACC=0.4749 NMI=0.3469 clusters=5
+r0_m0_complete_k2_s1 joint 100: ACC=0.4804 NMI=0.3479 clusters=6
+r0_m0_complete_k2_s1 joint 120: ACC=0.4838 NMI=0.3633 clusters=7
+r0_m0_complete_k2_s1 joint 140: ACC=0.5074 NMI=0.3914 clusters=7
+r0_m0_complete_k2_s1 joint 160: ACC=0.5151 NMI=0.4000 clusters=7
+r0_m0_complete_k2_s1 joint 180: ACC=0.5188 NMI=0.4030 clusters=7
+r0_m0_complete_k2_s1 joint 200: ACC=0.5203 NMI=0.4040 clusters=7
+r0_m0_complete_k2_s1 joint 220: ACC=0.5199 NMI=0.4019 clusters=7
+r0_m0_complete_k2_s1 joint 240: ACC=0.5199 NMI=0.4016 clusters=7
+r0_m0_complete_k2_s1 joint 260: ACC=0.5188 NMI=0.4007 clusters=7
+r0_m0_complete_k2_s1 joint 280: ACC=0.5177 NMI=0.3999 clusters=7
+r0_m0_complete_k2_s1 joint 300: ACC=0.5162 NMI=0.3980 clusters=7
+r0_m0_complete_k2_s1 joint 320: ACC=0.5162 NMI=0.3993 clusters=7
+r0_m0_complete_k2_s1 joint 340: ACC=0.5162 NMI=0.3997 clusters=7
+r0_m0_complete_k2_s1 joint 360: ACC=0.5155 NMI=0.3989 clusters=7
+r0_m0_complete_k2_s1 joint 380: ACC=0.5155 NMI=0.3989 clusters=7
+r0_m0_complete_k2_s1 joint 400: ACC=0.5151 NMI=0.3985 clusters=7
+DONE r0_m0_complete_k2_s1 ACC=0.515140 elapsed=42.9s
+START r0.8_m0_zero_k2_s0
+r0.8_m0_zero_k2_s0 pretrain 20: mse=0.000340
+r0.8_m0_zero_k2_s0 pretrain 40: mse=0.000298
+r0.8_m0_zero_k2_s0 pretrain 60: mse=0.000270
+r0.8_m0_zero_k2_s0 pretrain 80: mse=0.000248
+r0.8_m0_zero_k2_s0 pretrain 100: mse=0.000236
+r0.8_m0_zero_k2_s0 joint 0: ACC=0.2976 NMI=0.1039 clusters=6
+r0.8_m0_zero_k2_s0 joint 20: ACC=0.3032 NMI=0.0048 clusters=4
+r0.8_m0_zero_k2_s0 joint 40: ACC=0.2903 NMI=0.0102 clusters=4
+r0.8_m0_zero_k2_s0 joint 60: ACC=0.2740 NMI=0.0124 clusters=3
+r0.8_m0_zero_k2_s0 joint 80: ACC=0.2622 NMI=0.0054 clusters=3
+r0.8_m0_zero_k2_s0 joint 100: ACC=0.2566 NMI=0.0062 clusters=3
+r0.8_m0_zero_k2_s0 joint 120: ACC=0.2559 NMI=0.0070 clusters=4
+r0.8_m0_zero_k2_s0 joint 140: ACC=0.2485 NMI=0.0098 clusters=4
+r0.8_m0_zero_k2_s0 joint 160: ACC=0.2452 NMI=0.0128 clusters=6
+r0.8_m0_zero_k2_s0 joint 180: ACC=0.2515 NMI=0.0157 clusters=7
+r0.8_m0_zero_k2_s0 joint 200: ACC=0.2393 NMI=0.0158 clusters=6
+r0.8_m0_zero_k2_s0 joint 220: ACC=0.2371 NMI=0.0190 clusters=5
+r0.8_m0_zero_k2_s0 joint 240: ACC=0.2434 NMI=0.0252 clusters=5
+r0.8_m0_zero_k2_s0 joint 260: ACC=0.2463 NMI=0.0253 clusters=5
+r0.8_m0_zero_k2_s0 joint 280: ACC=0.2485 NMI=0.0289 clusters=6
+r0.8_m0_zero_k2_s0 joint 300: ACC=0.2463 NMI=0.0260 clusters=6
+r0.8_m0_zero_k2_s0 joint 320: ACC=0.2448 NMI=0.0234 clusters=6
+r0.8_m0_zero_k2_s0 joint 340: ACC=0.2411 NMI=0.0198 clusters=6
+r0.8_m0_zero_k2_s0 joint 360: ACC=0.2382 NMI=0.0186 clusters=6
+r0.8_m0_zero_k2_s0 joint 380: ACC=0.2352 NMI=0.0169 clusters=6
+r0.8_m0_zero_k2_s0 joint 400: ACC=0.2367 NMI=0.0161 clusters=6
+DONE r0.8_m0_zero_k2_s0 ACC=0.236706 elapsed=43.0s
+START r0.8_m0_zero_k2_s1
+r0.8_m0_zero_k2_s1 pretrain 20: mse=0.000334
+r0.8_m0_zero_k2_s1 pretrain 40: mse=0.000289
+r0.8_m0_zero_k2_s1 pretrain 60: mse=0.000260
+r0.8_m0_zero_k2_s1 pretrain 80: mse=0.000239
+r0.8_m0_zero_k2_s1 pretrain 100: mse=0.000225
+r0.8_m0_zero_k2_s1 joint 0: ACC=0.2840 NMI=0.0674 clusters=4
+r0.8_m0_zero_k2_s1 joint 20: ACC=0.2976 NMI=0.0428 clusters=3
+r0.8_m0_zero_k2_s1 joint 40: ACC=0.2622 NMI=0.0455 clusters=3
+r0.8_m0_zero_k2_s1 joint 60: ACC=0.2703 NMI=0.0081 clusters=3
+r0.8_m0_zero_k2_s1 joint 80: ACC=0.2699 NMI=0.0299 clusters=3
+r0.8_m0_zero_k2_s1 joint 100: ACC=0.2670 NMI=0.0433 clusters=3
+r0.8_m0_zero_k2_s1 joint 120: ACC=0.2581 NMI=0.0467 clusters=5
+r0.8_m0_zero_k2_s1 joint 140: ACC=0.2640 NMI=0.0541 clusters=4
+r0.8_m0_zero_k2_s1 joint 160: ACC=0.2607 NMI=0.0514 clusters=4
+r0.8_m0_zero_k2_s1 joint 180: ACC=0.2600 NMI=0.0507 clusters=5
+r0.8_m0_zero_k2_s1 joint 200: ACC=0.2703 NMI=0.0597 clusters=6
+r0.8_m0_zero_k2_s1 joint 220: ACC=0.2607 NMI=0.0606 clusters=6
+r0.8_m0_zero_k2_s1 joint 240: ACC=0.2544 NMI=0.0630 clusters=6
+r0.8_m0_zero_k2_s1 joint 260: ACC=0.2555 NMI=0.0571 clusters=6
+r0.8_m0_zero_k2_s1 joint 280: ACC=0.2541 NMI=0.0556 clusters=6
+r0.8_m0_zero_k2_s1 joint 300: ACC=0.2544 NMI=0.0553 clusters=6
+r0.8_m0_zero_k2_s1 joint 320: ACC=0.2541 NMI=0.0553 clusters=6
+r0.8_m0_zero_k2_s1 joint 340: ACC=0.2533 NMI=0.0532 clusters=6
+r0.8_m0_zero_k2_s1 joint 360: ACC=0.2515 NMI=0.0532 clusters=6
+r0.8_m0_zero_k2_s1 joint 380: ACC=0.2511 NMI=0.0533 clusters=6
+r0.8_m0_zero_k2_s1 joint 400: ACC=0.2496 NMI=0.0581 clusters=6
+DONE r0.8_m0_zero_k2_s1 ACC=0.249631 elapsed=42.9s
+START r0.8_m0_fp_k2_s0
+r0.8_m0_fp_k2_s0 pretrain 20: mse=0.001592
+r0.8_m0_fp_k2_s0 pretrain 40: mse=0.001275
+r0.8_m0_fp_k2_s0 pretrain 60: mse=0.001097
+r0.8_m0_fp_k2_s0 pretrain 80: mse=0.000986
+r0.8_m0_fp_k2_s0 pretrain 100: mse=0.000907
+r0.8_m0_fp_k2_s0 joint 0: ACC=0.2744 NMI=0.1793 clusters=7
+r0.8_m0_fp_k2_s0 joint 20: ACC=0.2733 NMI=0.1298 clusters=6
+r0.8_m0_fp_k2_s0 joint 40: ACC=0.4793 NMI=0.3216 clusters=7
+r0.8_m0_fp_k2_s0 joint 60: ACC=0.5410 NMI=0.3537 clusters=7
+r0.8_m0_fp_k2_s0 joint 80: ACC=0.5572 NMI=0.3623 clusters=7
+r0.8_m0_fp_k2_s0 joint 100: ACC=0.5583 NMI=0.3614 clusters=7
+r0.8_m0_fp_k2_s0 joint 120: ACC=0.5727 NMI=0.3584 clusters=7
+r0.8_m0_fp_k2_s0 joint 140: ACC=0.5558 NMI=0.3563 clusters=7
+r0.8_m0_fp_k2_s0 joint 160: ACC=0.5517 NMI=0.3537 clusters=7
+r0.8_m0_fp_k2_s0 joint 180: ACC=0.5510 NMI=0.3550 clusters=7
+r0.8_m0_fp_k2_s0 joint 200: ACC=0.5510 NMI=0.3556 clusters=7
+r0.8_m0_fp_k2_s0 joint 220: ACC=0.5476 NMI=0.3525 clusters=7
+r0.8_m0_fp_k2_s0 joint 240: ACC=0.5469 NMI=0.3514 clusters=7
+r0.8_m0_fp_k2_s0 joint 260: ACC=0.5469 NMI=0.3513 clusters=7
+r0.8_m0_fp_k2_s0 joint 280: ACC=0.5469 NMI=0.3508 clusters=7
+r0.8_m0_fp_k2_s0 joint 300: ACC=0.5473 NMI=0.3516 clusters=7
+r0.8_m0_fp_k2_s0 joint 320: ACC=0.5465 NMI=0.3503 clusters=7
+r0.8_m0_fp_k2_s0 joint 340: ACC=0.5469 NMI=0.3519 clusters=7
+r0.8_m0_fp_k2_s0 joint 360: ACC=0.5469 NMI=0.3519 clusters=7
+r0.8_m0_fp_k2_s0 joint 380: ACC=0.5473 NMI=0.3523 clusters=7
+r0.8_m0_fp_k2_s0 joint 400: ACC=0.5469 NMI=0.3516 clusters=7
+DONE r0.8_m0_fp_k2_s0 ACC=0.546898 elapsed=42.7s
+START r0.8_m0_fp_k2_s1
+r0.8_m0_fp_k2_s1 pretrain 20: mse=0.001596
+r0.8_m0_fp_k2_s1 pretrain 40: mse=0.001246
+r0.8_m0_fp_k2_s1 pretrain 60: mse=0.001067
+r0.8_m0_fp_k2_s1 pretrain 80: mse=0.000967
+r0.8_m0_fp_k2_s1 pretrain 100: mse=0.000900
+r0.8_m0_fp_k2_s1 joint 0: ACC=0.3973 NMI=0.1943 clusters=5
+r0.8_m0_fp_k2_s1 joint 20: ACC=0.4483 NMI=0.3012 clusters=6
+r0.8_m0_fp_k2_s1 joint 40: ACC=0.4893 NMI=0.3263 clusters=5
+r0.8_m0_fp_k2_s1 joint 60: ACC=0.4424 NMI=0.2996 clusters=5
+r0.8_m0_fp_k2_s1 joint 80: ACC=0.4568 NMI=0.3148 clusters=6
+r0.8_m0_fp_k2_s1 joint 100: ACC=0.5118 NMI=0.3642 clusters=6
+r0.8_m0_fp_k2_s1 joint 120: ACC=0.5129 NMI=0.3575 clusters=6
+r0.8_m0_fp_k2_s1 joint 140: ACC=0.5103 NMI=0.3569 clusters=6
+r0.8_m0_fp_k2_s1 joint 160: ACC=0.5111 NMI=0.3583 clusters=7
+r0.8_m0_fp_k2_s1 joint 180: ACC=0.5118 NMI=0.3586 clusters=7
+r0.8_m0_fp_k2_s1 joint 200: ACC=0.5122 NMI=0.3587 clusters=7
+r0.8_m0_fp_k2_s1 joint 220: ACC=0.5103 NMI=0.3572 clusters=7
+r0.8_m0_fp_k2_s1 joint 240: ACC=0.5100 NMI=0.3895 clusters=7
+r0.8_m0_fp_k2_s1 joint 260: ACC=0.5103 NMI=0.3913 clusters=7
+r0.8_m0_fp_k2_s1 joint 280: ACC=0.5092 NMI=0.3906 clusters=7
+r0.8_m0_fp_k2_s1 joint 300: ACC=0.5089 NMI=0.3893 clusters=7
+r0.8_m0_fp_k2_s1 joint 320: ACC=0.5085 NMI=0.3896 clusters=7
+r0.8_m0_fp_k2_s1 joint 340: ACC=0.5078 NMI=0.3885 clusters=7
+r0.8_m0_fp_k2_s1 joint 360: ACC=0.5085 NMI=0.3888 clusters=7
+r0.8_m0_fp_k2_s1 joint 380: ACC=0.5085 NMI=0.3891 clusters=7
+r0.8_m0_fp_k2_s1 joint 400: ACC=0.5085 NMI=0.3897 clusters=7
+DONE r0.8_m0_fp_k2_s1 ACC=0.508493 elapsed=42.8s
+START r0.8_m0_oracle_cold_k2_s0
+r0.8_m0_oracle_cold_k2_s0 pretrain 20: mse=0.002089
+r0.8_m0_oracle_cold_k2_s0 pretrain 40: mse=0.001795
+r0.8_m0_oracle_cold_k2_s0 pretrain 60: mse=0.001633
+r0.8_m0_oracle_cold_k2_s0 pretrain 80: mse=0.001526
+r0.8_m0_oracle_cold_k2_s0 pretrain 100: mse=0.001447
+r0.8_m0_oracle_cold_k2_s0 joint 0: ACC=0.3364 NMI=0.2425 clusters=7
+r0.8_m0_oracle_cold_k2_s0 joint 20: ACC=0.5657 NMI=0.3726 clusters=7
+r0.8_m0_oracle_cold_k2_s0 joint 40: ACC=0.5528 NMI=0.3890 clusters=5
+r0.8_m0_oracle_cold_k2_s0 joint 60: ACC=0.5572 NMI=0.4063 clusters=6
+r0.8_m0_oracle_cold_k2_s0 joint 80: ACC=0.5473 NMI=0.4041 clusters=6
+r0.8_m0_oracle_cold_k2_s0 joint 100: ACC=0.5524 NMI=0.3968 clusters=7
+r0.8_m0_oracle_cold_k2_s0 joint 120: ACC=0.5428 NMI=0.3869 clusters=7
+r0.8_m0_oracle_cold_k2_s0 joint 140: ACC=0.5403 NMI=0.3805 clusters=7
+r0.8_m0_oracle_cold_k2_s0 joint 160: ACC=0.5380 NMI=0.3779 clusters=7
+r0.8_m0_oracle_cold_k2_s0 joint 180: ACC=0.5351 NMI=0.3768 clusters=7
+r0.8_m0_oracle_cold_k2_s0 joint 200: ACC=0.5332 NMI=0.3763 clusters=7
+r0.8_m0_oracle_cold_k2_s0 joint 220: ACC=0.5321 NMI=0.3771 clusters=7
+r0.8_m0_oracle_cold_k2_s0 joint 240: ACC=0.5299 NMI=0.3767 clusters=7
+r0.8_m0_oracle_cold_k2_s0 joint 260: ACC=0.5281 NMI=0.3757 clusters=7
+r0.8_m0_oracle_cold_k2_s0 joint 280: ACC=0.5284 NMI=0.3772 clusters=7
+r0.8_m0_oracle_cold_k2_s0 joint 300: ACC=0.5281 NMI=0.3779 clusters=7
+r0.8_m0_oracle_cold_k2_s0 joint 320: ACC=0.5281 NMI=0.3777 clusters=7
+r0.8_m0_oracle_cold_k2_s0 joint 340: ACC=0.5288 NMI=0.3775 clusters=7
+r0.8_m0_oracle_cold_k2_s0 joint 360: ACC=0.5288 NMI=0.3770 clusters=7
+r0.8_m0_oracle_cold_k2_s0 joint 380: ACC=0.5284 NMI=0.3776 clusters=7
+r0.8_m0_oracle_cold_k2_s0 joint 400: ACC=0.5281 NMI=0.3777 clusters=7
+DONE r0.8_m0_oracle_cold_k2_s0 ACC=0.528065 elapsed=42.9s
+START r0.8_m0_oracle_cold_k2_s1
+r0.8_m0_oracle_cold_k2_s1 pretrain 20: mse=0.002134
+r0.8_m0_oracle_cold_k2_s1 pretrain 40: mse=0.001805
+r0.8_m0_oracle_cold_k2_s1 pretrain 60: mse=0.001646
+r0.8_m0_oracle_cold_k2_s1 pretrain 80: mse=0.001550
+r0.8_m0_oracle_cold_k2_s1 pretrain 100: mse=0.001477
+r0.8_m0_oracle_cold_k2_s1 joint 0: ACC=0.3833 NMI=0.2007 clusters=5
+r0.8_m0_oracle_cold_k2_s1 joint 20: ACC=0.4350 NMI=0.2946 clusters=7
+r0.8_m0_oracle_cold_k2_s1 joint 40: ACC=0.4934 NMI=0.3066 clusters=7
+r0.8_m0_oracle_cold_k2_s1 joint 60: ACC=0.4572 NMI=0.3063 clusters=6
+r0.8_m0_oracle_cold_k2_s1 joint 80: ACC=0.4003 NMI=0.2868 clusters=6
+r0.8_m0_oracle_cold_k2_s1 joint 100: ACC=0.5103 NMI=0.3716 clusters=6
+r0.8_m0_oracle_cold_k2_s1 joint 120: ACC=0.4922 NMI=0.3742 clusters=7
+r0.8_m0_oracle_cold_k2_s1 joint 140: ACC=0.5000 NMI=0.3740 clusters=7
+r0.8_m0_oracle_cold_k2_s1 joint 160: ACC=0.5063 NMI=0.3789 clusters=7
+r0.8_m0_oracle_cold_k2_s1 joint 180: ACC=0.5059 NMI=0.3759 clusters=7
+r0.8_m0_oracle_cold_k2_s1 joint 200: ACC=0.5044 NMI=0.3743 clusters=7
+r0.8_m0_oracle_cold_k2_s1 joint 220: ACC=0.5055 NMI=0.3745 clusters=7
+r0.8_m0_oracle_cold_k2_s1 joint 240: ACC=0.5052 NMI=0.3719 clusters=7
+r0.8_m0_oracle_cold_k2_s1 joint 260: ACC=0.5048 NMI=0.3727 clusters=7
+r0.8_m0_oracle_cold_k2_s1 joint 280: ACC=0.5041 NMI=0.3728 clusters=7
+r0.8_m0_oracle_cold_k2_s1 joint 300: ACC=0.5033 NMI=0.3724 clusters=7
+r0.8_m0_oracle_cold_k2_s1 joint 320: ACC=0.5022 NMI=0.3722 clusters=7
+r0.8_m0_oracle_cold_k2_s1 joint 340: ACC=0.5015 NMI=0.3711 clusters=7
+r0.8_m0_oracle_cold_k2_s1 joint 360: ACC=0.5011 NMI=0.3710 clusters=7
+r0.8_m0_oracle_cold_k2_s1 joint 380: ACC=0.5015 NMI=0.3711 clusters=7
+r0.8_m0_oracle_cold_k2_s1 joint 400: ACC=0.5018 NMI=0.3712 clusters=7
+DONE r0.8_m0_oracle_cold_k2_s1 ACC=0.501846 elapsed=42.7s
+START r0.8_m0_oracle_random_k2_s0
+r0.8_m0_oracle_random_k2_s0 pretrain 20: mse=0.001300
+r0.8_m0_oracle_random_k2_s0 pretrain 40: mse=0.001077
+r0.8_m0_oracle_random_k2_s0 pretrain 60: mse=0.000967
+r0.8_m0_oracle_random_k2_s0 pretrain 80: mse=0.000904
+r0.8_m0_oracle_random_k2_s0 pretrain 100: mse=0.000859
+r0.8_m0_oracle_random_k2_s0 joint 0: ACC=0.2592 NMI=0.1787 clusters=7
+r0.8_m0_oracle_random_k2_s0 joint 20: ACC=0.3150 NMI=0.1582 clusters=6
+r0.8_m0_oracle_random_k2_s0 joint 40: ACC=0.3619 NMI=0.1801 clusters=2
+r0.8_m0_oracle_random_k2_s0 joint 60: ACC=0.4926 NMI=0.3232 clusters=6
+r0.8_m0_oracle_random_k2_s0 joint 80: ACC=0.5395 NMI=0.3461 clusters=6
+r0.8_m0_oracle_random_k2_s0 joint 100: ACC=0.5521 NMI=0.3558 clusters=6
+r0.8_m0_oracle_random_k2_s0 joint 120: ACC=0.5517 NMI=0.3594 clusters=6
+r0.8_m0_oracle_random_k2_s0 joint 140: ACC=0.5528 NMI=0.3585 clusters=7
+r0.8_m0_oracle_random_k2_s0 joint 160: ACC=0.5535 NMI=0.3605 clusters=7
+r0.8_m0_oracle_random_k2_s0 joint 180: ACC=0.5513 NMI=0.3590 clusters=7
+r0.8_m0_oracle_random_k2_s0 joint 200: ACC=0.5495 NMI=0.3579 clusters=7
+r0.8_m0_oracle_random_k2_s0 joint 220: ACC=0.5491 NMI=0.3579 clusters=7
+r0.8_m0_oracle_random_k2_s0 joint 240: ACC=0.5480 NMI=0.3549 clusters=7
+r0.8_m0_oracle_random_k2_s0 joint 260: ACC=0.5462 NMI=0.3533 clusters=7
+r0.8_m0_oracle_random_k2_s0 joint 280: ACC=0.5462 NMI=0.3522 clusters=7
+r0.8_m0_oracle_random_k2_s0 joint 300: ACC=0.5462 NMI=0.3524 clusters=7
+r0.8_m0_oracle_random_k2_s0 joint 320: ACC=0.5462 NMI=0.3520 clusters=7
+r0.8_m0_oracle_random_k2_s0 joint 340: ACC=0.5447 NMI=0.3488 clusters=7
+r0.8_m0_oracle_random_k2_s0 joint 360: ACC=0.5451 NMI=0.3474 clusters=7
+r0.8_m0_oracle_random_k2_s0 joint 380: ACC=0.5439 NMI=0.3466 clusters=7
+r0.8_m0_oracle_random_k2_s0 joint 400: ACC=0.5443 NMI=0.3473 clusters=7
+DONE r0.8_m0_oracle_random_k2_s0 ACC=0.544313 elapsed=42.8s
+START r0.8_m0_oracle_random_k2_s1
+r0.8_m0_oracle_random_k2_s1 pretrain 20: mse=0.001333
+r0.8_m0_oracle_random_k2_s1 pretrain 40: mse=0.001073
+r0.8_m0_oracle_random_k2_s1 pretrain 60: mse=0.000956
+r0.8_m0_oracle_random_k2_s1 pretrain 80: mse=0.000896
+r0.8_m0_oracle_random_k2_s1 pretrain 100: mse=0.000847
+r0.8_m0_oracle_random_k2_s1 joint 0: ACC=0.3227 NMI=0.1496 clusters=5
+r0.8_m0_oracle_random_k2_s1 joint 20: ACC=0.4520 NMI=0.2751 clusters=7
+r0.8_m0_oracle_random_k2_s1 joint 40: ACC=0.5063 NMI=0.3579 clusters=6
+r0.8_m0_oracle_random_k2_s1 joint 60: ACC=0.6680 NMI=0.4822 clusters=6
+r0.8_m0_oracle_random_k2_s1 joint 80: ACC=0.6662 NMI=0.4852 clusters=6
+r0.8_m0_oracle_random_k2_s1 joint 100: ACC=0.6691 NMI=0.4860 clusters=6
+r0.8_m0_oracle_random_k2_s1 joint 120: ACC=0.6706 NMI=0.4877 clusters=6
+r0.8_m0_oracle_random_k2_s1 joint 140: ACC=0.6558 NMI=0.4692 clusters=6
+r0.8_m0_oracle_random_k2_s1 joint 160: ACC=0.6536 NMI=0.4629 clusters=7
+r0.8_m0_oracle_random_k2_s1 joint 180: ACC=0.6551 NMI=0.4601 clusters=6
+r0.8_m0_oracle_random_k2_s1 joint 200: ACC=0.6547 NMI=0.4585 clusters=6
+r0.8_m0_oracle_random_k2_s1 joint 220: ACC=0.6536 NMI=0.4562 clusters=6
+r0.8_m0_oracle_random_k2_s1 joint 240: ACC=0.6532 NMI=0.4559 clusters=6
+r0.8_m0_oracle_random_k2_s1 joint 260: ACC=0.6529 NMI=0.4549 clusters=6
+r0.8_m0_oracle_random_k2_s1 joint 280: ACC=0.6536 NMI=0.4557 clusters=7
+r0.8_m0_oracle_random_k2_s1 joint 300: ACC=0.6540 NMI=0.4564 clusters=7
+r0.8_m0_oracle_random_k2_s1 joint 320: ACC=0.6536 NMI=0.4566 clusters=7
+r0.8_m0_oracle_random_k2_s1 joint 340: ACC=0.6581 NMI=0.4822 clusters=7
+r0.8_m0_oracle_random_k2_s1 joint 360: ACC=0.6581 NMI=0.4828 clusters=7
+r0.8_m0_oracle_random_k2_s1 joint 380: ACC=0.6581 NMI=0.4833 clusters=7
+r0.8_m0_oracle_random_k2_s1 joint 400: ACC=0.6581 NMI=0.4837 clusters=7
+DONE r0.8_m0_oracle_random_k2_s1 ACC=0.658050 elapsed=43.1s
+START r0.8_m1_zero_k2_s0
+r0.8_m1_zero_k2_s0 pretrain 20: mse=0.000342
+r0.8_m1_zero_k2_s0 pretrain 40: mse=0.000300
+r0.8_m1_zero_k2_s0 pretrain 60: mse=0.000263
+r0.8_m1_zero_k2_s0 pretrain 80: mse=0.000242
+r0.8_m1_zero_k2_s0 pretrain 100: mse=0.000226
+r0.8_m1_zero_k2_s0 joint 0: ACC=0.2696 NMI=0.0322 clusters=7
+r0.8_m1_zero_k2_s0 joint 20: ACC=0.2999 NMI=0.0037 clusters=3
+r0.8_m1_zero_k2_s0 joint 40: ACC=0.2290 NMI=0.0320 clusters=4
+r0.8_m1_zero_k2_s0 joint 60: ACC=0.2969 NMI=0.0424 clusters=6
+r0.8_m1_zero_k2_s0 joint 80: ACC=0.2725 NMI=0.0392 clusters=6
+r0.8_m1_zero_k2_s0 joint 100: ACC=0.2891 NMI=0.0638 clusters=6
+r0.8_m1_zero_k2_s0 joint 120: ACC=0.2965 NMI=0.0735 clusters=5
+r0.8_m1_zero_k2_s0 joint 140: ACC=0.2891 NMI=0.0906 clusters=5
+r0.8_m1_zero_k2_s0 joint 160: ACC=0.2825 NMI=0.0956 clusters=5
+r0.8_m1_zero_k2_s0 joint 180: ACC=0.2906 NMI=0.0948 clusters=5
+r0.8_m1_zero_k2_s0 joint 200: ACC=0.2840 NMI=0.0992 clusters=5
+r0.8_m1_zero_k2_s0 joint 220: ACC=0.2688 NMI=0.0986 clusters=5
+r0.8_m1_zero_k2_s0 joint 240: ACC=0.2736 NMI=0.0925 clusters=6
+r0.8_m1_zero_k2_s0 joint 260: ACC=0.2836 NMI=0.0872 clusters=6
+r0.8_m1_zero_k2_s0 joint 280: ACC=0.2781 NMI=0.0856 clusters=6
+r0.8_m1_zero_k2_s0 joint 300: ACC=0.2714 NMI=0.0829 clusters=7
+r0.8_m1_zero_k2_s0 joint 320: ACC=0.2674 NMI=0.0859 clusters=7
+r0.8_m1_zero_k2_s0 joint 340: ACC=0.2470 NMI=0.0775 clusters=7
+r0.8_m1_zero_k2_s0 joint 360: ACC=0.2518 NMI=0.0770 clusters=7
+r0.8_m1_zero_k2_s0 joint 380: ACC=0.2478 NMI=0.0769 clusters=7
+r0.8_m1_zero_k2_s0 joint 400: ACC=0.2485 NMI=0.0750 clusters=7
+DONE r0.8_m1_zero_k2_s0 ACC=0.248523 elapsed=42.9s
+START r0.8_m1_zero_k2_s1
+r0.8_m1_zero_k2_s1 pretrain 20: mse=0.000345
+r0.8_m1_zero_k2_s1 pretrain 40: mse=0.000306
+r0.8_m1_zero_k2_s1 pretrain 60: mse=0.000269
+r0.8_m1_zero_k2_s1 pretrain 80: mse=0.000248
+r0.8_m1_zero_k2_s1 pretrain 100: mse=0.000233
+r0.8_m1_zero_k2_s1 joint 0: ACC=0.3416 NMI=0.0795 clusters=5
+r0.8_m1_zero_k2_s1 joint 20: ACC=0.2825 NMI=0.0825 clusters=5
+r0.8_m1_zero_k2_s1 joint 40: ACC=0.3054 NMI=0.1379 clusters=5
+r0.8_m1_zero_k2_s1 joint 60: ACC=0.2733 NMI=0.0881 clusters=4
+r0.8_m1_zero_k2_s1 joint 80: ACC=0.2788 NMI=0.0968 clusters=3
+r0.8_m1_zero_k2_s1 joint 100: ACC=0.2980 NMI=0.1080 clusters=3
+r0.8_m1_zero_k2_s1 joint 120: ACC=0.3124 NMI=0.1154 clusters=5
+r0.8_m1_zero_k2_s1 joint 140: ACC=0.2991 NMI=0.1166 clusters=5
+r0.8_m1_zero_k2_s1 joint 160: ACC=0.3135 NMI=0.1134 clusters=5
+r0.8_m1_zero_k2_s1 joint 180: ACC=0.3047 NMI=0.1110 clusters=5
+r0.8_m1_zero_k2_s1 joint 200: ACC=0.2925 NMI=0.1088 clusters=5
+r0.8_m1_zero_k2_s1 joint 220: ACC=0.2932 NMI=0.1136 clusters=5
+r0.8_m1_zero_k2_s1 joint 240: ACC=0.2866 NMI=0.1119 clusters=6
+r0.8_m1_zero_k2_s1 joint 260: ACC=0.2832 NMI=0.1120 clusters=7
+r0.8_m1_zero_k2_s1 joint 280: ACC=0.2825 NMI=0.1103 clusters=7
+r0.8_m1_zero_k2_s1 joint 300: ACC=0.2788 NMI=0.1075 clusters=7
+r0.8_m1_zero_k2_s1 joint 320: ACC=0.2744 NMI=0.1036 clusters=6
+r0.8_m1_zero_k2_s1 joint 340: ACC=0.2733 NMI=0.1007 clusters=6
+r0.8_m1_zero_k2_s1 joint 360: ACC=0.2751 NMI=0.0982 clusters=6
+r0.8_m1_zero_k2_s1 joint 380: ACC=0.2784 NMI=0.0964 clusters=6
+r0.8_m1_zero_k2_s1 joint 400: ACC=0.2762 NMI=0.0962 clusters=6
+DONE r0.8_m1_zero_k2_s1 ACC=0.276219 elapsed=43.0s
+START r0.8_m1_fp_k2_s0
+r0.8_m1_fp_k2_s0 pretrain 20: mse=0.001655
+r0.8_m1_fp_k2_s0 pretrain 40: mse=0.001253
+r0.8_m1_fp_k2_s0 pretrain 60: mse=0.001102
+r0.8_m1_fp_k2_s0 pretrain 80: mse=0.000998
+r0.8_m1_fp_k2_s0 pretrain 100: mse=0.000915
+r0.8_m1_fp_k2_s0 joint 0: ACC=0.2906 NMI=0.1864 clusters=7
+r0.8_m1_fp_k2_s0 joint 20: ACC=0.4970 NMI=0.2992 clusters=6
+r0.8_m1_fp_k2_s0 joint 40: ACC=0.5270 NMI=0.3063 clusters=5
+r0.8_m1_fp_k2_s0 joint 60: ACC=0.4849 NMI=0.2940 clusters=5
+r0.8_m1_fp_k2_s0 joint 80: ACC=0.4797 NMI=0.2953 clusters=5
+r0.8_m1_fp_k2_s0 joint 100: ACC=0.4845 NMI=0.3193 clusters=7
+r0.8_m1_fp_k2_s0 joint 120: ACC=0.4838 NMI=0.3141 clusters=7
+r0.8_m1_fp_k2_s0 joint 140: ACC=0.4871 NMI=0.3169 clusters=7
+r0.8_m1_fp_k2_s0 joint 160: ACC=0.4845 NMI=0.3146 clusters=7
+r0.8_m1_fp_k2_s0 joint 180: ACC=0.4856 NMI=0.3152 clusters=7
+r0.8_m1_fp_k2_s0 joint 200: ACC=0.4867 NMI=0.3146 clusters=7
+r0.8_m1_fp_k2_s0 joint 220: ACC=0.4856 NMI=0.3134 clusters=7
+r0.8_m1_fp_k2_s0 joint 240: ACC=0.4849 NMI=0.3125 clusters=7
+r0.8_m1_fp_k2_s0 joint 260: ACC=0.4852 NMI=0.3116 clusters=7
+r0.8_m1_fp_k2_s0 joint 280: ACC=0.4845 NMI=0.3105 clusters=7
+r0.8_m1_fp_k2_s0 joint 300: ACC=0.4841 NMI=0.3096 clusters=7
+r0.8_m1_fp_k2_s0 joint 320: ACC=0.4826 NMI=0.3081 clusters=7
+r0.8_m1_fp_k2_s0 joint 340: ACC=0.4826 NMI=0.3075 clusters=7
+r0.8_m1_fp_k2_s0 joint 360: ACC=0.4826 NMI=0.3079 clusters=7
+r0.8_m1_fp_k2_s0 joint 380: ACC=0.4834 NMI=0.3084 clusters=7
+r0.8_m1_fp_k2_s0 joint 400: ACC=0.4826 NMI=0.3081 clusters=7
+DONE r0.8_m1_fp_k2_s0 ACC=0.482644 elapsed=43.1s
+START r0.8_m1_fp_k2_s1
+r0.8_m1_fp_k2_s1 pretrain 20: mse=0.001671
+r0.8_m1_fp_k2_s1 pretrain 40: mse=0.001264
+r0.8_m1_fp_k2_s1 pretrain 60: mse=0.001102
+r0.8_m1_fp_k2_s1 pretrain 80: mse=0.001005
+r0.8_m1_fp_k2_s1 pretrain 100: mse=0.000933
+r0.8_m1_fp_k2_s1 joint 0: ACC=0.3198 NMI=0.1360 clusters=4
+r0.8_m1_fp_k2_s1 joint 20: ACC=0.3139 NMI=0.1590 clusters=5
+r0.8_m1_fp_k2_s1 joint 40: ACC=0.3907 NMI=0.2460 clusters=5
+r0.8_m1_fp_k2_s1 joint 60: ACC=0.4572 NMI=0.2781 clusters=6
+r0.8_m1_fp_k2_s1 joint 80: ACC=0.5495 NMI=0.3516 clusters=6
+r0.8_m1_fp_k2_s1 joint 100: ACC=0.5746 NMI=0.3804 clusters=6
+r0.8_m1_fp_k2_s1 joint 120: ACC=0.5742 NMI=0.3912 clusters=7
+r0.8_m1_fp_k2_s1 joint 140: ACC=0.5735 NMI=0.3862 clusters=7
+r0.8_m1_fp_k2_s1 joint 160: ACC=0.5676 NMI=0.3811 clusters=7
+r0.8_m1_fp_k2_s1 joint 180: ACC=0.5657 NMI=0.3799 clusters=7
+r0.8_m1_fp_k2_s1 joint 200: ACC=0.5602 NMI=0.3782 clusters=7
+r0.8_m1_fp_k2_s1 joint 220: ACC=0.5587 NMI=0.3776 clusters=7
+r0.8_m1_fp_k2_s1 joint 240: ACC=0.5580 NMI=0.3758 clusters=7
+r0.8_m1_fp_k2_s1 joint 260: ACC=0.5572 NMI=0.3756 clusters=7
+r0.8_m1_fp_k2_s1 joint 280: ACC=0.5561 NMI=0.3734 clusters=7
+r0.8_m1_fp_k2_s1 joint 300: ACC=0.5558 NMI=0.3726 clusters=7
+r0.8_m1_fp_k2_s1 joint 320: ACC=0.5565 NMI=0.3711 clusters=7
+r0.8_m1_fp_k2_s1 joint 340: ACC=0.5561 NMI=0.3705 clusters=7
+r0.8_m1_fp_k2_s1 joint 360: ACC=0.5561 NMI=0.3703 clusters=7
+r0.8_m1_fp_k2_s1 joint 380: ACC=0.5561 NMI=0.3701 clusters=7
+r0.8_m1_fp_k2_s1 joint 400: ACC=0.5558 NMI=0.3700 clusters=7
+DONE r0.8_m1_fp_k2_s1 ACC=0.555761 elapsed=43.0s
+START r0.8_m1_oracle_cold_k2_s0
+r0.8_m1_oracle_cold_k2_s0 pretrain 20: mse=0.002100
+r0.8_m1_oracle_cold_k2_s0 pretrain 40: mse=0.001780
+r0.8_m1_oracle_cold_k2_s0 pretrain 60: mse=0.001618
+r0.8_m1_oracle_cold_k2_s0 pretrain 80: mse=0.001518
+r0.8_m1_oracle_cold_k2_s0 pretrain 100: mse=0.001443
+r0.8_m1_oracle_cold_k2_s0 joint 0: ACC=0.3202 NMI=0.1974 clusters=7
+r0.8_m1_oracle_cold_k2_s0 joint 20: ACC=0.4383 NMI=0.2986 clusters=6
+r0.8_m1_oracle_cold_k2_s0 joint 40: ACC=0.4645 NMI=0.3285 clusters=6
+r0.8_m1_oracle_cold_k2_s0 joint 60: ACC=0.5166 NMI=0.3663 clusters=7
+r0.8_m1_oracle_cold_k2_s0 joint 80: ACC=0.5668 NMI=0.3627 clusters=7
+r0.8_m1_oracle_cold_k2_s0 joint 100: ACC=0.6089 NMI=0.3877 clusters=7
+r0.8_m1_oracle_cold_k2_s0 joint 120: ACC=0.6167 NMI=0.3988 clusters=7
+r0.8_m1_oracle_cold_k2_s0 joint 140: ACC=0.6130 NMI=0.3947 clusters=7
+r0.8_m1_oracle_cold_k2_s0 joint 160: ACC=0.6082 NMI=0.3924 clusters=7
+r0.8_m1_oracle_cold_k2_s0 joint 180: ACC=0.6075 NMI=0.3936 clusters=7
+r0.8_m1_oracle_cold_k2_s0 joint 200: ACC=0.6067 NMI=0.3935 clusters=7
+r0.8_m1_oracle_cold_k2_s0 joint 220: ACC=0.6071 NMI=0.3938 clusters=7
+r0.8_m1_oracle_cold_k2_s0 joint 240: ACC=0.6034 NMI=0.3901 clusters=7
+r0.8_m1_oracle_cold_k2_s0 joint 260: ACC=0.6027 NMI=0.3893 clusters=7
+r0.8_m1_oracle_cold_k2_s0 joint 280: ACC=0.6019 NMI=0.3890 clusters=7
+r0.8_m1_oracle_cold_k2_s0 joint 300: ACC=0.6012 NMI=0.3883 clusters=7
+r0.8_m1_oracle_cold_k2_s0 joint 320: ACC=0.5993 NMI=0.3871 clusters=7
+r0.8_m1_oracle_cold_k2_s0 joint 340: ACC=0.5993 NMI=0.3874 clusters=7
+r0.8_m1_oracle_cold_k2_s0 joint 360: ACC=0.6008 NMI=0.3887 clusters=7
+r0.8_m1_oracle_cold_k2_s0 joint 380: ACC=0.6001 NMI=0.3880 clusters=7
+r0.8_m1_oracle_cold_k2_s0 joint 400: ACC=0.6001 NMI=0.3880 clusters=7
+DONE r0.8_m1_oracle_cold_k2_s0 ACC=0.600074 elapsed=44.7s
+START r0.8_m1_oracle_cold_k2_s1
+r0.8_m1_oracle_cold_k2_s1 pretrain 20: mse=0.002116
+r0.8_m1_oracle_cold_k2_s1 pretrain 40: mse=0.001776
+r0.8_m1_oracle_cold_k2_s1 pretrain 60: mse=0.001650
+r0.8_m1_oracle_cold_k2_s1 pretrain 80: mse=0.001559
+r0.8_m1_oracle_cold_k2_s1 pretrain 100: mse=0.001488
+r0.8_m1_oracle_cold_k2_s1 joint 0: ACC=0.3257 NMI=0.1684 clusters=5
+r0.8_m1_oracle_cold_k2_s1 joint 20: ACC=0.3966 NMI=0.2487 clusters=5
+r0.8_m1_oracle_cold_k2_s1 joint 40: ACC=0.3696 NMI=0.2388 clusters=4
+r0.8_m1_oracle_cold_k2_s1 joint 60: ACC=0.4254 NMI=0.2672 clusters=6
+r0.8_m1_oracle_cold_k2_s1 joint 80: ACC=0.4590 NMI=0.3507 clusters=6
+r0.8_m1_oracle_cold_k2_s1 joint 100: ACC=0.4793 NMI=0.3502 clusters=6
+r0.8_m1_oracle_cold_k2_s1 joint 120: ACC=0.4778 NMI=0.3393 clusters=7
+r0.8_m1_oracle_cold_k2_s1 joint 140: ACC=0.4852 NMI=0.3503 clusters=7
+r0.8_m1_oracle_cold_k2_s1 joint 160: ACC=0.4985 NMI=0.3594 clusters=7
+r0.8_m1_oracle_cold_k2_s1 joint 180: ACC=0.5059 NMI=0.3643 clusters=7
+r0.8_m1_oracle_cold_k2_s1 joint 200: ACC=0.5100 NMI=0.3674 clusters=7
+r0.8_m1_oracle_cold_k2_s1 joint 220: ACC=0.5103 NMI=0.3671 clusters=7
+r0.8_m1_oracle_cold_k2_s1 joint 240: ACC=0.5133 NMI=0.3690 clusters=7
+r0.8_m1_oracle_cold_k2_s1 joint 260: ACC=0.5126 NMI=0.3689 clusters=7
+r0.8_m1_oracle_cold_k2_s1 joint 280: ACC=0.5126 NMI=0.3700 clusters=7
+r0.8_m1_oracle_cold_k2_s1 joint 300: ACC=0.5129 NMI=0.3705 clusters=7
+r0.8_m1_oracle_cold_k2_s1 joint 320: ACC=0.5140 NMI=0.3718 clusters=7
+r0.8_m1_oracle_cold_k2_s1 joint 340: ACC=0.5144 NMI=0.3724 clusters=7
+r0.8_m1_oracle_cold_k2_s1 joint 360: ACC=0.5140 NMI=0.3720 clusters=7
+r0.8_m1_oracle_cold_k2_s1 joint 380: ACC=0.5140 NMI=0.3720 clusters=7
+r0.8_m1_oracle_cold_k2_s1 joint 400: ACC=0.5140 NMI=0.3720 clusters=7
+DONE r0.8_m1_oracle_cold_k2_s1 ACC=0.514032 elapsed=44.2s
+START r0.8_m1_oracle_random_k2_s0
+r0.8_m1_oracle_random_k2_s0 pretrain 20: mse=0.001379
+r0.8_m1_oracle_random_k2_s0 pretrain 40: mse=0.001128
+r0.8_m1_oracle_random_k2_s0 pretrain 60: mse=0.000995
+r0.8_m1_oracle_random_k2_s0 pretrain 80: mse=0.000915
+r0.8_m1_oracle_random_k2_s0 pretrain 100: mse=0.000865
+r0.8_m1_oracle_random_k2_s0 joint 0: ACC=0.3227 NMI=0.2200 clusters=6
+r0.8_m1_oracle_random_k2_s0 joint 20: ACC=0.4021 NMI=0.2464 clusters=7
+r0.8_m1_oracle_random_k2_s0 joint 40: ACC=0.4579 NMI=0.2834 clusters=5
+r0.8_m1_oracle_random_k2_s0 joint 60: ACC=0.4801 NMI=0.3061 clusters=7
+r0.8_m1_oracle_random_k2_s0 joint 80: ACC=0.5528 NMI=0.3813 clusters=6
+r0.8_m1_oracle_random_k2_s0 joint 100: ACC=0.5665 NMI=0.3968 clusters=7
+r0.8_m1_oracle_random_k2_s0 joint 120: ACC=0.5727 NMI=0.3956 clusters=7
+r0.8_m1_oracle_random_k2_s0 joint 140: ACC=0.5764 NMI=0.3981 clusters=7
+r0.8_m1_oracle_random_k2_s0 joint 160: ACC=0.5668 NMI=0.3947 clusters=7
+r0.8_m1_oracle_random_k2_s0 joint 180: ACC=0.5731 NMI=0.3977 clusters=7
+r0.8_m1_oracle_random_k2_s0 joint 200: ACC=0.5750 NMI=0.3987 clusters=7
+r0.8_m1_oracle_random_k2_s0 joint 220: ACC=0.5764 NMI=0.3982 clusters=7
+r0.8_m1_oracle_random_k2_s0 joint 240: ACC=0.5764 NMI=0.3968 clusters=7
+r0.8_m1_oracle_random_k2_s0 joint 260: ACC=0.5787 NMI=0.3974 clusters=7
+r0.8_m1_oracle_random_k2_s0 joint 280: ACC=0.5794 NMI=0.3973 clusters=7
+r0.8_m1_oracle_random_k2_s0 joint 300: ACC=0.5798 NMI=0.3963 clusters=7
+r0.8_m1_oracle_random_k2_s0 joint 320: ACC=0.5812 NMI=0.3971 clusters=7
+r0.8_m1_oracle_random_k2_s0 joint 340: ACC=0.5812 NMI=0.3969 clusters=7
+r0.8_m1_oracle_random_k2_s0 joint 360: ACC=0.5809 NMI=0.3961 clusters=7
+r0.8_m1_oracle_random_k2_s0 joint 380: ACC=0.5805 NMI=0.3957 clusters=7
+r0.8_m1_oracle_random_k2_s0 joint 400: ACC=0.5812 NMI=0.3962 clusters=7
+DONE r0.8_m1_oracle_random_k2_s0 ACC=0.581241 elapsed=43.9s
+START r0.8_m1_oracle_random_k2_s1
+r0.8_m1_oracle_random_k2_s1 pretrain 20: mse=0.001403
+r0.8_m1_oracle_random_k2_s1 pretrain 40: mse=0.001143
+r0.8_m1_oracle_random_k2_s1 pretrain 60: mse=0.001009
+r0.8_m1_oracle_random_k2_s1 pretrain 80: mse=0.000944
+r0.8_m1_oracle_random_k2_s1 pretrain 100: mse=0.000902
+r0.8_m1_oracle_random_k2_s1 joint 0: ACC=0.4450 NMI=0.2435 clusters=5
+r0.8_m1_oracle_random_k2_s1 joint 20: ACC=0.4553 NMI=0.3246 clusters=5
+r0.8_m1_oracle_random_k2_s1 joint 40: ACC=0.4210 NMI=0.2951 clusters=5
+r0.8_m1_oracle_random_k2_s1 joint 60: ACC=0.4982 NMI=0.3471 clusters=5
+r0.8_m1_oracle_random_k2_s1 joint 80: ACC=0.5358 NMI=0.3870 clusters=6
+r0.8_m1_oracle_random_k2_s1 joint 100: ACC=0.5244 NMI=0.4048 clusters=6
+r0.8_m1_oracle_random_k2_s1 joint 120: ACC=0.5229 NMI=0.4119 clusters=6
+r0.8_m1_oracle_random_k2_s1 joint 140: ACC=0.5196 NMI=0.4103 clusters=6
+r0.8_m1_oracle_random_k2_s1 joint 160: ACC=0.5196 NMI=0.4090 clusters=6
+r0.8_m1_oracle_random_k2_s1 joint 180: ACC=0.5199 NMI=0.4095 clusters=7
+r0.8_m1_oracle_random_k2_s1 joint 200: ACC=0.5207 NMI=0.4102 clusters=7
+r0.8_m1_oracle_random_k2_s1 joint 220: ACC=0.5203 NMI=0.4097 clusters=7
+r0.8_m1_oracle_random_k2_s1 joint 240: ACC=0.5203 NMI=0.4095 clusters=6
+r0.8_m1_oracle_random_k2_s1 joint 260: ACC=0.5203 NMI=0.4103 clusters=6
+r0.8_m1_oracle_random_k2_s1 joint 280: ACC=0.5203 NMI=0.4104 clusters=6
+r0.8_m1_oracle_random_k2_s1 joint 300: ACC=0.5203 NMI=0.4102 clusters=6
+r0.8_m1_oracle_random_k2_s1 joint 320: ACC=0.5203 NMI=0.4102 clusters=6
+r0.8_m1_oracle_random_k2_s1 joint 340: ACC=0.5203 NMI=0.4105 clusters=6
+r0.8_m1_oracle_random_k2_s1 joint 360: ACC=0.5199 NMI=0.4101 clusters=6
+r0.8_m1_oracle_random_k2_s1 joint 380: ACC=0.5196 NMI=0.4097 clusters=6
+r0.8_m1_oracle_random_k2_s1 joint 400: ACC=0.5196 NMI=0.4097 clusters=6
+DONE r0.8_m1_oracle_random_k2_s1 ACC=0.519572 elapsed=44.1s
+START r0.8_m2_zero_k2_s0
+r0.8_m2_zero_k2_s0 pretrain 20: mse=0.000329
+r0.8_m2_zero_k2_s0 pretrain 40: mse=0.000293
+r0.8_m2_zero_k2_s0 pretrain 60: mse=0.000263
+r0.8_m2_zero_k2_s0 pretrain 80: mse=0.000244
+r0.8_m2_zero_k2_s0 pretrain 100: mse=0.000228
+r0.8_m2_zero_k2_s0 joint 0: ACC=0.2788 NMI=0.0511 clusters=7
+r0.8_m2_zero_k2_s0 joint 20: ACC=0.3290 NMI=0.0775 clusters=4
+r0.8_m2_zero_k2_s0 joint 40: ACC=0.2474 NMI=0.0235 clusters=3
+r0.8_m2_zero_k2_s0 joint 60: ACC=0.2696 NMI=0.0343 clusters=4
+r0.8_m2_zero_k2_s0 joint 80: ACC=0.2688 NMI=0.0363 clusters=4
+r0.8_m2_zero_k2_s0 joint 100: ACC=0.2651 NMI=0.0452 clusters=4
+r0.8_m2_zero_k2_s0 joint 120: ACC=0.2518 NMI=0.0452 clusters=4
+r0.8_m2_zero_k2_s0 joint 140: ACC=0.2334 NMI=0.0551 clusters=4
+r0.8_m2_zero_k2_s0 joint 160: ACC=0.2190 NMI=0.0562 clusters=5
+r0.8_m2_zero_k2_s0 joint 180: ACC=0.2467 NMI=0.0465 clusters=5
+r0.8_m2_zero_k2_s0 joint 200: ACC=0.2323 NMI=0.0482 clusters=5
+r0.8_m2_zero_k2_s0 joint 220: ACC=0.2216 NMI=0.0518 clusters=5
+r0.8_m2_zero_k2_s0 joint 240: ACC=0.2312 NMI=0.0500 clusters=6
+r0.8_m2_zero_k2_s0 joint 260: ACC=0.2304 NMI=0.0498 clusters=7
+r0.8_m2_zero_k2_s0 joint 280: ACC=0.2179 NMI=0.0531 clusters=7
+r0.8_m2_zero_k2_s0 joint 300: ACC=0.2197 NMI=0.0517 clusters=7
+r0.8_m2_zero_k2_s0 joint 320: ACC=0.2168 NMI=0.0537 clusters=7
+r0.8_m2_zero_k2_s0 joint 340: ACC=0.2201 NMI=0.0541 clusters=7
+r0.8_m2_zero_k2_s0 joint 360: ACC=0.2168 NMI=0.0536 clusters=7
+r0.8_m2_zero_k2_s0 joint 380: ACC=0.2168 NMI=0.0539 clusters=7
+r0.8_m2_zero_k2_s0 joint 400: ACC=0.2164 NMI=0.0525 clusters=7
+DONE r0.8_m2_zero_k2_s0 ACC=0.216396 elapsed=44.1s
+START r0.8_m2_zero_k2_s1
+r0.8_m2_zero_k2_s1 pretrain 20: mse=0.000334
+r0.8_m2_zero_k2_s1 pretrain 40: mse=0.000295
+r0.8_m2_zero_k2_s1 pretrain 60: mse=0.000263
+r0.8_m2_zero_k2_s1 pretrain 80: mse=0.000241
+r0.8_m2_zero_k2_s1 pretrain 100: mse=0.000228
+r0.8_m2_zero_k2_s1 joint 0: ACC=0.3556 NMI=0.0839 clusters=4
+r0.8_m2_zero_k2_s1 joint 20: ACC=0.3076 NMI=0.0145 clusters=4
+r0.8_m2_zero_k2_s1 joint 40: ACC=0.3028 NMI=0.0016 clusters=2
+r0.8_m2_zero_k2_s1 joint 60: ACC=0.2858 NMI=0.0092 clusters=3
+r0.8_m2_zero_k2_s1 joint 80: ACC=0.2614 NMI=0.0222 clusters=4
+r0.8_m2_zero_k2_s1 joint 100: ACC=0.2411 NMI=0.0259 clusters=4
+r0.8_m2_zero_k2_s1 joint 120: ACC=0.2478 NMI=0.0238 clusters=4
+r0.8_m2_zero_k2_s1 joint 140: ACC=0.2589 NMI=0.0243 clusters=4
+r0.8_m2_zero_k2_s1 joint 160: ACC=0.2622 NMI=0.0220 clusters=4
+r0.8_m2_zero_k2_s1 joint 180: ACC=0.2648 NMI=0.0188 clusters=3
+r0.8_m2_zero_k2_s1 joint 200: ACC=0.2655 NMI=0.0178 clusters=4
+r0.8_m2_zero_k2_s1 joint 220: ACC=0.2637 NMI=0.0178 clusters=4
+r0.8_m2_zero_k2_s1 joint 240: ACC=0.2622 NMI=0.0172 clusters=5
+r0.8_m2_zero_k2_s1 joint 260: ACC=0.2611 NMI=0.0231 clusters=5
+r0.8_m2_zero_k2_s1 joint 280: ACC=0.2382 NMI=0.0164 clusters=5
+r0.8_m2_zero_k2_s1 joint 300: ACC=0.2341 NMI=0.0149 clusters=5
+r0.8_m2_zero_k2_s1 joint 320: ACC=0.2345 NMI=0.0151 clusters=5
+r0.8_m2_zero_k2_s1 joint 340: ACC=0.2319 NMI=0.0152 clusters=5
+r0.8_m2_zero_k2_s1 joint 360: ACC=0.2345 NMI=0.0156 clusters=5
+r0.8_m2_zero_k2_s1 joint 380: ACC=0.2341 NMI=0.0162 clusters=6
+r0.8_m2_zero_k2_s1 joint 400: ACC=0.2334 NMI=0.0170 clusters=6
+DONE r0.8_m2_zero_k2_s1 ACC=0.233383 elapsed=45.8s
+START r0.8_m2_fp_k2_s0
+r0.8_m2_fp_k2_s0 pretrain 20: mse=0.001526
+r0.8_m2_fp_k2_s0 pretrain 40: mse=0.001167
+r0.8_m2_fp_k2_s0 pretrain 60: mse=0.001028
+r0.8_m2_fp_k2_s0 pretrain 80: mse=0.000939
+r0.8_m2_fp_k2_s0 pretrain 100: mse=0.000870
+r0.8_m2_fp_k2_s0 joint 0: ACC=0.2899 NMI=0.2136 clusters=7
+r0.8_m2_fp_k2_s0 joint 20: ACC=0.3301 NMI=0.1586 clusters=7
+r0.8_m2_fp_k2_s0 joint 40: ACC=0.3578 NMI=0.2178 clusters=7
+r0.8_m2_fp_k2_s0 joint 60: ACC=0.3530 NMI=0.2389 clusters=7
+r0.8_m2_fp_k2_s0 joint 80: ACC=0.3811 NMI=0.2718 clusters=7
+r0.8_m2_fp_k2_s0 joint 100: ACC=0.3911 NMI=0.2909 clusters=7
+r0.8_m2_fp_k2_s0 joint 120: ACC=0.4029 NMI=0.3001 clusters=7
+r0.8_m2_fp_k2_s0 joint 140: ACC=0.4032 NMI=0.2990 clusters=7
+r0.8_m2_fp_k2_s0 joint 160: ACC=0.4010 NMI=0.2976 clusters=7
+r0.8_m2_fp_k2_s0 joint 180: ACC=0.4003 NMI=0.2993 clusters=7
+r0.8_m2_fp_k2_s0 joint 200: ACC=0.3988 NMI=0.2964 clusters=7
+r0.8_m2_fp_k2_s0 joint 220: ACC=0.3999 NMI=0.2951 clusters=7
+r0.8_m2_fp_k2_s0 joint 240: ACC=0.4007 NMI=0.2953 clusters=7
+r0.8_m2_fp_k2_s0 joint 260: ACC=0.4018 NMI=0.2948 clusters=7
+r0.8_m2_fp_k2_s0 joint 280: ACC=0.4010 NMI=0.2929 clusters=7
+r0.8_m2_fp_k2_s0 joint 300: ACC=0.4014 NMI=0.2918 clusters=7
+r0.8_m2_fp_k2_s0 joint 320: ACC=0.4010 NMI=0.2916 clusters=7
+r0.8_m2_fp_k2_s0 joint 340: ACC=0.4014 NMI=0.2916 clusters=7
+r0.8_m2_fp_k2_s0 joint 360: ACC=0.3996 NMI=0.2901 clusters=7
+r0.8_m2_fp_k2_s0 joint 380: ACC=0.3992 NMI=0.2901 clusters=7
+r0.8_m2_fp_k2_s0 joint 400: ACC=0.3996 NMI=0.2902 clusters=7
+DONE r0.8_m2_fp_k2_s0 ACC=0.399557 elapsed=44.1s
+START r0.8_m2_fp_k2_s1
+r0.8_m2_fp_k2_s1 pretrain 20: mse=0.001574
+r0.8_m2_fp_k2_s1 pretrain 40: mse=0.001169
+r0.8_m2_fp_k2_s1 pretrain 60: mse=0.001045
+r0.8_m2_fp_k2_s1 pretrain 80: mse=0.000975
+r0.8_m2_fp_k2_s1 pretrain 100: mse=0.000915
+r0.8_m2_fp_k2_s1 joint 0: ACC=0.2951 NMI=0.0789 clusters=5
+r0.8_m2_fp_k2_s1 joint 20: ACC=0.3582 NMI=0.1574 clusters=7
+r0.8_m2_fp_k2_s1 joint 40: ACC=0.4110 NMI=0.2315 clusters=7
+r0.8_m2_fp_k2_s1 joint 60: ACC=0.3959 NMI=0.2367 clusters=7
+r0.8_m2_fp_k2_s1 joint 80: ACC=0.4335 NMI=0.2733 clusters=7
+r0.8_m2_fp_k2_s1 joint 100: ACC=0.4383 NMI=0.2719 clusters=7
+r0.8_m2_fp_k2_s1 joint 120: ACC=0.4468 NMI=0.3000 clusters=6
+r0.8_m2_fp_k2_s1 joint 140: ACC=0.4217 NMI=0.2985 clusters=7
+r0.8_m2_fp_k2_s1 joint 160: ACC=0.4221 NMI=0.3000 clusters=7
+r0.8_m2_fp_k2_s1 joint 180: ACC=0.4254 NMI=0.2987 clusters=7
+r0.8_m2_fp_k2_s1 joint 200: ACC=0.4261 NMI=0.2999 clusters=7
+r0.8_m2_fp_k2_s1 joint 220: ACC=0.4261 NMI=0.3012 clusters=7
+r0.8_m2_fp_k2_s1 joint 240: ACC=0.4261 NMI=0.3006 clusters=7
+r0.8_m2_fp_k2_s1 joint 260: ACC=0.4250 NMI=0.2998 clusters=7
+r0.8_m2_fp_k2_s1 joint 280: ACC=0.4239 NMI=0.2988 clusters=7
+r0.8_m2_fp_k2_s1 joint 300: ACC=0.4232 NMI=0.2979 clusters=7
+r0.8_m2_fp_k2_s1 joint 320: ACC=0.4228 NMI=0.2979 clusters=7
+r0.8_m2_fp_k2_s1 joint 340: ACC=0.4221 NMI=0.2969 clusters=7
+r0.8_m2_fp_k2_s1 joint 360: ACC=0.4213 NMI=0.2965 clusters=7
+r0.8_m2_fp_k2_s1 joint 380: ACC=0.4206 NMI=0.2960 clusters=7
+r0.8_m2_fp_k2_s1 joint 400: ACC=0.4206 NMI=0.2957 clusters=7
+DONE r0.8_m2_fp_k2_s1 ACC=0.420606 elapsed=44.6s
+START r0.8_m2_oracle_cold_k2_s0
+r0.8_m2_oracle_cold_k2_s0 pretrain 20: mse=0.002044
+r0.8_m2_oracle_cold_k2_s0 pretrain 40: mse=0.001705
+r0.8_m2_oracle_cold_k2_s0 pretrain 60: mse=0.001551
+r0.8_m2_oracle_cold_k2_s0 pretrain 80: mse=0.001455
+r0.8_m2_oracle_cold_k2_s0 pretrain 100: mse=0.001385
+r0.8_m2_oracle_cold_k2_s0 joint 0: ACC=0.3128 NMI=0.2244 clusters=7
+r0.8_m2_oracle_cold_k2_s0 joint 20: ACC=0.4125 NMI=0.2193 clusters=7
+r0.8_m2_oracle_cold_k2_s0 joint 40: ACC=0.4405 NMI=0.2644 clusters=5
+r0.8_m2_oracle_cold_k2_s0 joint 60: ACC=0.5210 NMI=0.3534 clusters=6
+r0.8_m2_oracle_cold_k2_s0 joint 80: ACC=0.5321 NMI=0.3569 clusters=7
+r0.8_m2_oracle_cold_k2_s0 joint 100: ACC=0.5436 NMI=0.3699 clusters=7
+r0.8_m2_oracle_cold_k2_s0 joint 120: ACC=0.5417 NMI=0.3680 clusters=7
+r0.8_m2_oracle_cold_k2_s0 joint 140: ACC=0.5347 NMI=0.3607 clusters=7
+r0.8_m2_oracle_cold_k2_s0 joint 160: ACC=0.5325 NMI=0.3574 clusters=7
+r0.8_m2_oracle_cold_k2_s0 joint 180: ACC=0.5314 NMI=0.3553 clusters=7
+r0.8_m2_oracle_cold_k2_s0 joint 200: ACC=0.5325 NMI=0.3529 clusters=7
+r0.8_m2_oracle_cold_k2_s0 joint 220: ACC=0.5318 NMI=0.3535 clusters=7
+r0.8_m2_oracle_cold_k2_s0 joint 240: ACC=0.5314 NMI=0.3508 clusters=7
+r0.8_m2_oracle_cold_k2_s0 joint 260: ACC=0.5299 NMI=0.3492 clusters=7
+r0.8_m2_oracle_cold_k2_s0 joint 280: ACC=0.5299 NMI=0.3484 clusters=7
+r0.8_m2_oracle_cold_k2_s0 joint 300: ACC=0.5295 NMI=0.3471 clusters=7
+r0.8_m2_oracle_cold_k2_s0 joint 320: ACC=0.5288 NMI=0.3460 clusters=7
+r0.8_m2_oracle_cold_k2_s0 joint 340: ACC=0.5273 NMI=0.3455 clusters=7
+r0.8_m2_oracle_cold_k2_s0 joint 360: ACC=0.5284 NMI=0.3470 clusters=7
+r0.8_m2_oracle_cold_k2_s0 joint 380: ACC=0.5288 NMI=0.3464 clusters=7
+r0.8_m2_oracle_cold_k2_s0 joint 400: ACC=0.5281 NMI=0.3449 clusters=7
+DONE r0.8_m2_oracle_cold_k2_s0 ACC=0.528065 elapsed=43.7s
+START r0.8_m2_oracle_cold_k2_s1
+r0.8_m2_oracle_cold_k2_s1 pretrain 20: mse=0.002094
+r0.8_m2_oracle_cold_k2_s1 pretrain 40: mse=0.001726
+r0.8_m2_oracle_cold_k2_s1 pretrain 60: mse=0.001584
+r0.8_m2_oracle_cold_k2_s1 pretrain 80: mse=0.001500
+r0.8_m2_oracle_cold_k2_s1 pretrain 100: mse=0.001431
+r0.8_m2_oracle_cold_k2_s1 joint 0: ACC=0.2644 NMI=0.0813 clusters=5
+r0.8_m2_oracle_cold_k2_s1 joint 20: ACC=0.4671 NMI=0.2988 clusters=5
+r0.8_m2_oracle_cold_k2_s1 joint 40: ACC=0.3652 NMI=0.2259 clusters=6
+r0.8_m2_oracle_cold_k2_s1 joint 60: ACC=0.3892 NMI=0.2727 clusters=5
+r0.8_m2_oracle_cold_k2_s1 joint 80: ACC=0.4180 NMI=0.3147 clusters=5
+r0.8_m2_oracle_cold_k2_s1 joint 100: ACC=0.5347 NMI=0.4006 clusters=5
+r0.8_m2_oracle_cold_k2_s1 joint 120: ACC=0.5473 NMI=0.4064 clusters=6
+r0.8_m2_oracle_cold_k2_s1 joint 140: ACC=0.5436 NMI=0.4112 clusters=7
+r0.8_m2_oracle_cold_k2_s1 joint 160: ACC=0.5373 NMI=0.4135 clusters=7
+r0.8_m2_oracle_cold_k2_s1 joint 180: ACC=0.5362 NMI=0.4149 clusters=7
+r0.8_m2_oracle_cold_k2_s1 joint 200: ACC=0.5336 NMI=0.4123 clusters=7
+r0.8_m2_oracle_cold_k2_s1 joint 220: ACC=0.5347 NMI=0.4147 clusters=7
+r0.8_m2_oracle_cold_k2_s1 joint 240: ACC=0.5318 NMI=0.4120 clusters=7
+r0.8_m2_oracle_cold_k2_s1 joint 260: ACC=0.5314 NMI=0.4120 clusters=7
+r0.8_m2_oracle_cold_k2_s1 joint 280: ACC=0.5310 NMI=0.4120 clusters=7
+r0.8_m2_oracle_cold_k2_s1 joint 300: ACC=0.5314 NMI=0.4123 clusters=7
+r0.8_m2_oracle_cold_k2_s1 joint 320: ACC=0.5314 NMI=0.4126 clusters=7
+r0.8_m2_oracle_cold_k2_s1 joint 340: ACC=0.5314 NMI=0.4134 clusters=7
+r0.8_m2_oracle_cold_k2_s1 joint 360: ACC=0.5310 NMI=0.4129 clusters=7
+r0.8_m2_oracle_cold_k2_s1 joint 380: ACC=0.5306 NMI=0.4130 clusters=7
+r0.8_m2_oracle_cold_k2_s1 joint 400: ACC=0.5306 NMI=0.4132 clusters=7
+DONE r0.8_m2_oracle_cold_k2_s1 ACC=0.530650 elapsed=44.1s
+START r0.8_m2_oracle_random_k2_s0
+r0.8_m2_oracle_random_k2_s0 pretrain 20: mse=0.001325
+r0.8_m2_oracle_random_k2_s0 pretrain 40: mse=0.001076
+r0.8_m2_oracle_random_k2_s0 pretrain 60: mse=0.000966
+r0.8_m2_oracle_random_k2_s0 pretrain 80: mse=0.000895
+r0.8_m2_oracle_random_k2_s0 pretrain 100: mse=0.000844
+r0.8_m2_oracle_random_k2_s0 joint 0: ACC=0.2629 NMI=0.1722 clusters=7
+r0.8_m2_oracle_random_k2_s0 joint 20: ACC=0.4487 NMI=0.2963 clusters=6
+r0.8_m2_oracle_random_k2_s0 joint 40: ACC=0.4199 NMI=0.2815 clusters=5
+r0.8_m2_oracle_random_k2_s0 joint 60: ACC=0.5137 NMI=0.3573 clusters=4
+r0.8_m2_oracle_random_k2_s0 joint 80: ACC=0.5358 NMI=0.3797 clusters=4
+r0.8_m2_oracle_random_k2_s0 joint 100: ACC=0.5473 NMI=0.3892 clusters=6
+r0.8_m2_oracle_random_k2_s0 joint 120: ACC=0.5292 NMI=0.3762 clusters=7
+r0.8_m2_oracle_random_k2_s0 joint 140: ACC=0.5325 NMI=0.3772 clusters=7
+r0.8_m2_oracle_random_k2_s0 joint 160: ACC=0.5340 NMI=0.3816 clusters=7
+r0.8_m2_oracle_random_k2_s0 joint 180: ACC=0.5332 NMI=0.3787 clusters=7
+r0.8_m2_oracle_random_k2_s0 joint 200: ACC=0.5347 NMI=0.3795 clusters=7
+r0.8_m2_oracle_random_k2_s0 joint 220: ACC=0.5347 NMI=0.3779 clusters=7
+r0.8_m2_oracle_random_k2_s0 joint 240: ACC=0.5347 NMI=0.3753 clusters=7
+r0.8_m2_oracle_random_k2_s0 joint 260: ACC=0.5340 NMI=0.3750 clusters=7
+r0.8_m2_oracle_random_k2_s0 joint 280: ACC=0.5340 NMI=0.3749 clusters=7
+r0.8_m2_oracle_random_k2_s0 joint 300: ACC=0.5336 NMI=0.3744 clusters=7
+r0.8_m2_oracle_random_k2_s0 joint 320: ACC=0.5343 NMI=0.3747 clusters=7
+r0.8_m2_oracle_random_k2_s0 joint 340: ACC=0.5336 NMI=0.3745 clusters=7
+r0.8_m2_oracle_random_k2_s0 joint 360: ACC=0.5329 NMI=0.3735 clusters=7
+r0.8_m2_oracle_random_k2_s0 joint 380: ACC=0.5336 NMI=0.3735 clusters=7
+r0.8_m2_oracle_random_k2_s0 joint 400: ACC=0.5332 NMI=0.3727 clusters=7
+DONE r0.8_m2_oracle_random_k2_s0 ACC=0.533235 elapsed=44.0s
+START r0.8_m2_oracle_random_k2_s1
+r0.8_m2_oracle_random_k2_s1 pretrain 20: mse=0.001350
+r0.8_m2_oracle_random_k2_s1 pretrain 40: mse=0.001070
+r0.8_m2_oracle_random_k2_s1 pretrain 60: mse=0.000960
+r0.8_m2_oracle_random_k2_s1 pretrain 80: mse=0.000897
+r0.8_m2_oracle_random_k2_s1 pretrain 100: mse=0.000850
+r0.8_m2_oracle_random_k2_s1 joint 0: ACC=0.3900 NMI=0.2105 clusters=5
+r0.8_m2_oracle_random_k2_s1 joint 20: ACC=0.4446 NMI=0.2691 clusters=5
+r0.8_m2_oracle_random_k2_s1 joint 40: ACC=0.3305 NMI=0.1434 clusters=5
+r0.8_m2_oracle_random_k2_s1 joint 60: ACC=0.4742 NMI=0.2880 clusters=5
+r0.8_m2_oracle_random_k2_s1 joint 80: ACC=0.4321 NMI=0.2789 clusters=6
+r0.8_m2_oracle_random_k2_s1 joint 100: ACC=0.4284 NMI=0.2767 clusters=6
+r0.8_m2_oracle_random_k2_s1 joint 120: ACC=0.4391 NMI=0.2869 clusters=6
+r0.8_m2_oracle_random_k2_s1 joint 140: ACC=0.4520 NMI=0.3116 clusters=6
+r0.8_m2_oracle_random_k2_s1 joint 160: ACC=0.4472 NMI=0.3163 clusters=6
+r0.8_m2_oracle_random_k2_s1 joint 180: ACC=0.4413 NMI=0.3220 clusters=6
+r0.8_m2_oracle_random_k2_s1 joint 200: ACC=0.4394 NMI=0.3258 clusters=7
+r0.8_m2_oracle_random_k2_s1 joint 220: ACC=0.4383 NMI=0.3287 clusters=7
+r0.8_m2_oracle_random_k2_s1 joint 240: ACC=0.4409 NMI=0.3339 clusters=7
+r0.8_m2_oracle_random_k2_s1 joint 260: ACC=0.4483 NMI=0.3361 clusters=7
+r0.8_m2_oracle_random_k2_s1 joint 280: ACC=0.4494 NMI=0.3362 clusters=7
+r0.8_m2_oracle_random_k2_s1 joint 300: ACC=0.4513 NMI=0.3368 clusters=7
+r0.8_m2_oracle_random_k2_s1 joint 320: ACC=0.4505 NMI=0.3366 clusters=7
+r0.8_m2_oracle_random_k2_s1 joint 340: ACC=0.4509 NMI=0.3363 clusters=7
+r0.8_m2_oracle_random_k2_s1 joint 360: ACC=0.4509 NMI=0.3354 clusters=7
+r0.8_m2_oracle_random_k2_s1 joint 380: ACC=0.4509 NMI=0.3347 clusters=7
+r0.8_m2_oracle_random_k2_s1 joint 400: ACC=0.4520 NMI=0.3351 clusters=7
+DONE r0.8_m2_oracle_random_k2_s1 ACC=0.451994 elapsed=44.2s
+START r0.4_m0_zero_k2_s0
+r0.4_m0_zero_k2_s0 pretrain 20: mse=0.001073
+r0.4_m0_zero_k2_s0 pretrain 40: mse=0.000921
+r0.4_m0_zero_k2_s0 pretrain 60: mse=0.000851
+r0.4_m0_zero_k2_s0 pretrain 80: mse=0.000800
+r0.4_m0_zero_k2_s0 pretrain 100: mse=0.000765
+r0.4_m0_zero_k2_s0 joint 0: ACC=0.2744 NMI=0.1876 clusters=7
+r0.4_m0_zero_k2_s0 joint 20: ACC=0.4169 NMI=0.2426 clusters=6
+r0.4_m0_zero_k2_s0 joint 40: ACC=0.4874 NMI=0.2885 clusters=4
+r0.4_m0_zero_k2_s0 joint 60: ACC=0.5026 NMI=0.3126 clusters=4
+r0.4_m0_zero_k2_s0 joint 80: ACC=0.5018 NMI=0.3054 clusters=4
+r0.4_m0_zero_k2_s0 joint 100: ACC=0.4863 NMI=0.2893 clusters=4
+r0.4_m0_zero_k2_s0 joint 120: ACC=0.4823 NMI=0.2844 clusters=4
+r0.4_m0_zero_k2_s0 joint 140: ACC=0.4886 NMI=0.2868 clusters=5
+r0.4_m0_zero_k2_s0 joint 160: ACC=0.4941 NMI=0.2886 clusters=5
+r0.4_m0_zero_k2_s0 joint 180: ACC=0.5011 NMI=0.2983 clusters=5
+r0.4_m0_zero_k2_s0 joint 200: ACC=0.5030 NMI=0.3005 clusters=5
+r0.4_m0_zero_k2_s0 joint 220: ACC=0.5070 NMI=0.3030 clusters=6
+r0.4_m0_zero_k2_s0 joint 240: ACC=0.5055 NMI=0.3038 clusters=6
+r0.4_m0_zero_k2_s0 joint 260: ACC=0.5055 NMI=0.3026 clusters=6
+r0.4_m0_zero_k2_s0 joint 280: ACC=0.5048 NMI=0.3007 clusters=6
+r0.4_m0_zero_k2_s0 joint 300: ACC=0.5037 NMI=0.2985 clusters=6
+r0.4_m0_zero_k2_s0 joint 320: ACC=0.5030 NMI=0.2978 clusters=6
+r0.4_m0_zero_k2_s0 joint 340: ACC=0.5011 NMI=0.2953 clusters=6
+r0.4_m0_zero_k2_s0 joint 360: ACC=0.5000 NMI=0.2946 clusters=6
+r0.4_m0_zero_k2_s0 joint 380: ACC=0.4996 NMI=0.2941 clusters=6
+r0.4_m0_zero_k2_s0 joint 400: ACC=0.4978 NMI=0.2905 clusters=6
+DONE r0.4_m0_zero_k2_s0 ACC=0.497784 elapsed=43.9s
+START r0.4_m0_zero_k2_s1
+r0.4_m0_zero_k2_s1 pretrain 20: mse=0.001114
+r0.4_m0_zero_k2_s1 pretrain 40: mse=0.000916
+r0.4_m0_zero_k2_s1 pretrain 60: mse=0.000835
+r0.4_m0_zero_k2_s1 pretrain 80: mse=0.000795
+r0.4_m0_zero_k2_s1 pretrain 100: mse=0.000766
+r0.4_m0_zero_k2_s1 joint 0: ACC=0.3597 NMI=0.2236 clusters=4
+r0.4_m0_zero_k2_s1 joint 20: ACC=0.3689 NMI=0.1745 clusters=5
+r0.4_m0_zero_k2_s1 joint 40: ACC=0.4236 NMI=0.2263 clusters=6
+r0.4_m0_zero_k2_s1 joint 60: ACC=0.4963 NMI=0.3047 clusters=5
+r0.4_m0_zero_k2_s1 joint 80: ACC=0.5022 NMI=0.3109 clusters=5
+r0.4_m0_zero_k2_s1 joint 100: ACC=0.5103 NMI=0.3272 clusters=5
+r0.4_m0_zero_k2_s1 joint 120: ACC=0.5041 NMI=0.3238 clusters=5
+r0.4_m0_zero_k2_s1 joint 140: ACC=0.5011 NMI=0.3157 clusters=6
+r0.4_m0_zero_k2_s1 joint 160: ACC=0.4982 NMI=0.3125 clusters=6
+r0.4_m0_zero_k2_s1 joint 180: ACC=0.4970 NMI=0.3111 clusters=6
+r0.4_m0_zero_k2_s1 joint 200: ACC=0.4970 NMI=0.3082 clusters=6
+r0.4_m0_zero_k2_s1 joint 220: ACC=0.4963 NMI=0.3067 clusters=6
+r0.4_m0_zero_k2_s1 joint 240: ACC=0.4941 NMI=0.3046 clusters=6
+r0.4_m0_zero_k2_s1 joint 260: ACC=0.4941 NMI=0.3045 clusters=6
+r0.4_m0_zero_k2_s1 joint 280: ACC=0.4937 NMI=0.3038 clusters=6
+r0.4_m0_zero_k2_s1 joint 300: ACC=0.4937 NMI=0.3040 clusters=6
+r0.4_m0_zero_k2_s1 joint 320: ACC=0.4930 NMI=0.3026 clusters=6
+r0.4_m0_zero_k2_s1 joint 340: ACC=0.4922 NMI=0.3022 clusters=6
+r0.4_m0_zero_k2_s1 joint 360: ACC=0.4897 NMI=0.3013 clusters=6
+r0.4_m0_zero_k2_s1 joint 380: ACC=0.4886 NMI=0.3001 clusters=6
+r0.4_m0_zero_k2_s1 joint 400: ACC=0.4878 NMI=0.2992 clusters=6
+DONE r0.4_m0_zero_k2_s1 ACC=0.487814 elapsed=44.0s
+START r0.4_m0_fp_k2_s0
+r0.4_m0_fp_k2_s0 pretrain 20: mse=0.002038
+r0.4_m0_fp_k2_s0 pretrain 40: mse=0.001737
+r0.4_m0_fp_k2_s0 pretrain 60: mse=0.001582
+r0.4_m0_fp_k2_s0 pretrain 80: mse=0.001485
+r0.4_m0_fp_k2_s0 pretrain 100: mse=0.001417
+r0.4_m0_fp_k2_s0 joint 0: ACC=0.3091 NMI=0.2027 clusters=7
+r0.4_m0_fp_k2_s0 joint 20: ACC=0.4645 NMI=0.2960 clusters=7
+r0.4_m0_fp_k2_s0 joint 40: ACC=0.4657 NMI=0.2610 clusters=7
+r0.4_m0_fp_k2_s0 joint 60: ACC=0.4601 NMI=0.2658 clusters=7
+r0.4_m0_fp_k2_s0 joint 80: ACC=0.5362 NMI=0.3204 clusters=7
+r0.4_m0_fp_k2_s0 joint 100: ACC=0.5462 NMI=0.3222 clusters=6
+r0.4_m0_fp_k2_s0 joint 120: ACC=0.5384 NMI=0.3125 clusters=7
+r0.4_m0_fp_k2_s0 joint 140: ACC=0.5321 NMI=0.3067 clusters=7
+r0.4_m0_fp_k2_s0 joint 160: ACC=0.5273 NMI=0.3053 clusters=7
+r0.4_m0_fp_k2_s0 joint 180: ACC=0.5244 NMI=0.3003 clusters=7
+r0.4_m0_fp_k2_s0 joint 200: ACC=0.5251 NMI=0.2983 clusters=7
+r0.4_m0_fp_k2_s0 joint 220: ACC=0.5233 NMI=0.2959 clusters=7
+r0.4_m0_fp_k2_s0 joint 240: ACC=0.5247 NMI=0.2961 clusters=7
+r0.4_m0_fp_k2_s0 joint 260: ACC=0.5244 NMI=0.2947 clusters=7
+r0.4_m0_fp_k2_s0 joint 280: ACC=0.5240 NMI=0.2949 clusters=7
+r0.4_m0_fp_k2_s0 joint 300: ACC=0.5244 NMI=0.2946 clusters=7
+r0.4_m0_fp_k2_s0 joint 320: ACC=0.5251 NMI=0.2943 clusters=7
+r0.4_m0_fp_k2_s0 joint 340: ACC=0.5247 NMI=0.2943 clusters=7
+r0.4_m0_fp_k2_s0 joint 360: ACC=0.5247 NMI=0.2940 clusters=7
+r0.4_m0_fp_k2_s0 joint 380: ACC=0.5240 NMI=0.2916 clusters=7
+r0.4_m0_fp_k2_s0 joint 400: ACC=0.5244 NMI=0.2921 clusters=7
+DONE r0.4_m0_fp_k2_s0 ACC=0.524372 elapsed=44.4s
+START r0.4_m0_fp_k2_s1
+r0.4_m0_fp_k2_s1 pretrain 20: mse=0.002039
+r0.4_m0_fp_k2_s1 pretrain 40: mse=0.001738
+r0.4_m0_fp_k2_s1 pretrain 60: mse=0.001592
+r0.4_m0_fp_k2_s1 pretrain 80: mse=0.001514
+r0.4_m0_fp_k2_s1 pretrain 100: mse=0.001451
+r0.4_m0_fp_k2_s1 joint 0: ACC=0.3191 NMI=0.1962 clusters=5
+r0.4_m0_fp_k2_s1 joint 20: ACC=0.4645 NMI=0.2619 clusters=5
+r0.4_m0_fp_k2_s1 joint 40: ACC=0.4668 NMI=0.2753 clusters=5
+r0.4_m0_fp_k2_s1 joint 60: ACC=0.4058 NMI=0.3026 clusters=5
+r0.4_m0_fp_k2_s1 joint 80: ACC=0.4383 NMI=0.3442 clusters=6
+r0.4_m0_fp_k2_s1 joint 100: ACC=0.4930 NMI=0.3806 clusters=6
+r0.4_m0_fp_k2_s1 joint 120: ACC=0.5000 NMI=0.3892 clusters=6
+r0.4_m0_fp_k2_s1 joint 140: ACC=0.5018 NMI=0.3906 clusters=7
+r0.4_m0_fp_k2_s1 joint 160: ACC=0.5606 NMI=0.4230 clusters=7
+r0.4_m0_fp_k2_s1 joint 180: ACC=0.5628 NMI=0.4308 clusters=7
+r0.4_m0_fp_k2_s1 joint 200: ACC=0.5609 NMI=0.4318 clusters=7
+r0.4_m0_fp_k2_s1 joint 220: ACC=0.5602 NMI=0.4307 clusters=7
+r0.4_m0_fp_k2_s1 joint 240: ACC=0.5598 NMI=0.4276 clusters=7
+r0.4_m0_fp_k2_s1 joint 260: ACC=0.5583 NMI=0.4244 clusters=7
+r0.4_m0_fp_k2_s1 joint 280: ACC=0.5580 NMI=0.4235 clusters=7
+r0.4_m0_fp_k2_s1 joint 300: ACC=0.5580 NMI=0.4215 clusters=7
+r0.4_m0_fp_k2_s1 joint 320: ACC=0.5572 NMI=0.4207 clusters=7
+r0.4_m0_fp_k2_s1 joint 340: ACC=0.5565 NMI=0.4188 clusters=7
+r0.4_m0_fp_k2_s1 joint 360: ACC=0.5565 NMI=0.4188 clusters=7
+r0.4_m0_fp_k2_s1 joint 380: ACC=0.5565 NMI=0.4187 clusters=7
+r0.4_m0_fp_k2_s1 joint 400: ACC=0.5565 NMI=0.4186 clusters=7
+DONE r0.4_m0_fp_k2_s1 ACC=0.556499 elapsed=43.8s
+START r0.4_m0_oracle_cold_k2_s0
+r0.4_m0_oracle_cold_k2_s0 pretrain 20: mse=0.002141
+r0.4_m0_oracle_cold_k2_s0 pretrain 40: mse=0.001841
+r0.4_m0_oracle_cold_k2_s0 pretrain 60: mse=0.001710
+r0.4_m0_oracle_cold_k2_s0 pretrain 80: mse=0.001613
+r0.4_m0_oracle_cold_k2_s0 pretrain 100: mse=0.001538
+r0.4_m0_oracle_cold_k2_s0 joint 0: ACC=0.2788 NMI=0.1943 clusters=7
+r0.4_m0_oracle_cold_k2_s0 joint 20: ACC=0.4804 NMI=0.3006 clusters=7
+r0.4_m0_oracle_cold_k2_s0 joint 40: ACC=0.5502 NMI=0.3661 clusters=6
+r0.4_m0_oracle_cold_k2_s0 joint 60: ACC=0.5883 NMI=0.4327 clusters=6
+r0.4_m0_oracle_cold_k2_s0 joint 80: ACC=0.6108 NMI=0.4474 clusters=7
+r0.4_m0_oracle_cold_k2_s0 joint 100: ACC=0.6289 NMI=0.4620 clusters=7
+r0.4_m0_oracle_cold_k2_s0 joint 120: ACC=0.6304 NMI=0.4681 clusters=7
+r0.4_m0_oracle_cold_k2_s0 joint 140: ACC=0.6296 NMI=0.4630 clusters=7
+r0.4_m0_oracle_cold_k2_s0 joint 160: ACC=0.6267 NMI=0.4559 clusters=7
+r0.4_m0_oracle_cold_k2_s0 joint 180: ACC=0.6278 NMI=0.4533 clusters=7
+r0.4_m0_oracle_cold_k2_s0 joint 200: ACC=0.6259 NMI=0.4517 clusters=7
+r0.4_m0_oracle_cold_k2_s0 joint 220: ACC=0.6256 NMI=0.4493 clusters=7
+r0.4_m0_oracle_cold_k2_s0 joint 240: ACC=0.6256 NMI=0.4465 clusters=7
+r0.4_m0_oracle_cold_k2_s0 joint 260: ACC=0.6263 NMI=0.4475 clusters=7
+r0.4_m0_oracle_cold_k2_s0 joint 280: ACC=0.6263 NMI=0.4469 clusters=7
+r0.4_m0_oracle_cold_k2_s0 joint 300: ACC=0.6267 NMI=0.4474 clusters=7
+r0.4_m0_oracle_cold_k2_s0 joint 320: ACC=0.6270 NMI=0.4473 clusters=7
+r0.4_m0_oracle_cold_k2_s0 joint 340: ACC=0.6270 NMI=0.4476 clusters=7
+r0.4_m0_oracle_cold_k2_s0 joint 360: ACC=0.6267 NMI=0.4476 clusters=7
+r0.4_m0_oracle_cold_k2_s0 joint 380: ACC=0.6274 NMI=0.4477 clusters=7
+r0.4_m0_oracle_cold_k2_s0 joint 400: ACC=0.6270 NMI=0.4480 clusters=7
+DONE r0.4_m0_oracle_cold_k2_s0 ACC=0.627031 elapsed=44.0s
+START r0.4_m0_oracle_cold_k2_s1
+r0.4_m0_oracle_cold_k2_s1 pretrain 20: mse=0.002150
+r0.4_m0_oracle_cold_k2_s1 pretrain 40: mse=0.001811
+r0.4_m0_oracle_cold_k2_s1 pretrain 60: mse=0.001680
+r0.4_m0_oracle_cold_k2_s1 pretrain 80: mse=0.001588
+r0.4_m0_oracle_cold_k2_s1 pretrain 100: mse=0.001522
+r0.4_m0_oracle_cold_k2_s1 joint 0: ACC=0.3179 NMI=0.1898 clusters=5
+r0.4_m0_oracle_cold_k2_s1 joint 20: ACC=0.3885 NMI=0.2504 clusters=5
+r0.4_m0_oracle_cold_k2_s1 joint 40: ACC=0.4398 NMI=0.3232 clusters=4
+r0.4_m0_oracle_cold_k2_s1 joint 60: ACC=0.3874 NMI=0.2793 clusters=4
+r0.4_m0_oracle_cold_k2_s1 joint 80: ACC=0.4948 NMI=0.3864 clusters=5
+r0.4_m0_oracle_cold_k2_s1 joint 100: ACC=0.5059 NMI=0.3868 clusters=6
+r0.4_m0_oracle_cold_k2_s1 joint 120: ACC=0.5111 NMI=0.3894 clusters=6
+r0.4_m0_oracle_cold_k2_s1 joint 140: ACC=0.5085 NMI=0.3852 clusters=6
+r0.4_m0_oracle_cold_k2_s1 joint 160: ACC=0.4996 NMI=0.3820 clusters=7
+r0.4_m0_oracle_cold_k2_s1 joint 180: ACC=0.4978 NMI=0.3775 clusters=7
+r0.4_m0_oracle_cold_k2_s1 joint 200: ACC=0.4989 NMI=0.3737 clusters=7
+r0.4_m0_oracle_cold_k2_s1 joint 220: ACC=0.5026 NMI=0.3721 clusters=7
+r0.4_m0_oracle_cold_k2_s1 joint 240: ACC=0.5085 NMI=0.3759 clusters=7
+r0.4_m0_oracle_cold_k2_s1 joint 260: ACC=0.5085 NMI=0.3755 clusters=7
+r0.4_m0_oracle_cold_k2_s1 joint 280: ACC=0.5089 NMI=0.3764 clusters=7
+r0.4_m0_oracle_cold_k2_s1 joint 300: ACC=0.5092 NMI=0.3768 clusters=7
+r0.4_m0_oracle_cold_k2_s1 joint 320: ACC=0.5092 NMI=0.3754 clusters=7
+r0.4_m0_oracle_cold_k2_s1 joint 340: ACC=0.5085 NMI=0.3748 clusters=7
+r0.4_m0_oracle_cold_k2_s1 joint 360: ACC=0.5085 NMI=0.3745 clusters=7
+r0.4_m0_oracle_cold_k2_s1 joint 380: ACC=0.5092 NMI=0.3744 clusters=7
+r0.4_m0_oracle_cold_k2_s1 joint 400: ACC=0.5092 NMI=0.3736 clusters=7
+DONE r0.4_m0_oracle_cold_k2_s1 ACC=0.509232 elapsed=43.9s
+START r0.4_m0_oracle_random_k2_s0
+r0.4_m0_oracle_random_k2_s0 pretrain 20: mse=0.001988
+r0.4_m0_oracle_random_k2_s0 pretrain 40: mse=0.001738
+r0.4_m0_oracle_random_k2_s0 pretrain 60: mse=0.001586
+r0.4_m0_oracle_random_k2_s0 pretrain 80: mse=0.001492
+r0.4_m0_oracle_random_k2_s0 pretrain 100: mse=0.001412
+r0.4_m0_oracle_random_k2_s0 joint 0: ACC=0.2999 NMI=0.1870 clusters=7
+r0.4_m0_oracle_random_k2_s0 joint 20: ACC=0.4077 NMI=0.2890 clusters=7
+r0.4_m0_oracle_random_k2_s0 joint 40: ACC=0.5491 NMI=0.4066 clusters=7
+r0.4_m0_oracle_random_k2_s0 joint 60: ACC=0.6049 NMI=0.4586 clusters=6
+r0.4_m0_oracle_random_k2_s0 joint 80: ACC=0.6078 NMI=0.4499 clusters=7
+r0.4_m0_oracle_random_k2_s0 joint 100: ACC=0.6049 NMI=0.4407 clusters=7
+r0.4_m0_oracle_random_k2_s0 joint 120: ACC=0.6104 NMI=0.4420 clusters=7
+r0.4_m0_oracle_random_k2_s0 joint 140: ACC=0.6156 NMI=0.4445 clusters=7
+r0.4_m0_oracle_random_k2_s0 joint 160: ACC=0.6193 NMI=0.4546 clusters=7
+r0.4_m0_oracle_random_k2_s0 joint 180: ACC=0.6189 NMI=0.4538 clusters=7
+r0.4_m0_oracle_random_k2_s0 joint 200: ACC=0.6171 NMI=0.4534 clusters=7
+r0.4_m0_oracle_random_k2_s0 joint 220: ACC=0.6178 NMI=0.4543 clusters=7
+r0.4_m0_oracle_random_k2_s0 joint 240: ACC=0.6171 NMI=0.4531 clusters=7
+r0.4_m0_oracle_random_k2_s0 joint 260: ACC=0.6174 NMI=0.4546 clusters=7
+r0.4_m0_oracle_random_k2_s0 joint 280: ACC=0.6160 NMI=0.4525 clusters=7
+r0.4_m0_oracle_random_k2_s0 joint 300: ACC=0.6156 NMI=0.4519 clusters=7
+r0.4_m0_oracle_random_k2_s0 joint 320: ACC=0.6156 NMI=0.4520 clusters=7
+r0.4_m0_oracle_random_k2_s0 joint 340: ACC=0.6152 NMI=0.4516 clusters=7
+r0.4_m0_oracle_random_k2_s0 joint 360: ACC=0.6145 NMI=0.4506 clusters=7
+r0.4_m0_oracle_random_k2_s0 joint 380: ACC=0.6145 NMI=0.4505 clusters=7
+r0.4_m0_oracle_random_k2_s0 joint 400: ACC=0.6141 NMI=0.4496 clusters=7
+DONE r0.4_m0_oracle_random_k2_s0 ACC=0.614106 elapsed=44.1s
+START r0.4_m0_oracle_random_k2_s1
+r0.4_m0_oracle_random_k2_s1 pretrain 20: mse=0.002014
+r0.4_m0_oracle_random_k2_s1 pretrain 40: mse=0.001688
+r0.4_m0_oracle_random_k2_s1 pretrain 60: mse=0.001560
+r0.4_m0_oracle_random_k2_s1 pretrain 80: mse=0.001469
+r0.4_m0_oracle_random_k2_s1 pretrain 100: mse=0.001405
+r0.4_m0_oracle_random_k2_s1 joint 0: ACC=0.3549 NMI=0.1423 clusters=5
+r0.4_m0_oracle_random_k2_s1 joint 20: ACC=0.3179 NMI=0.1431 clusters=5
+r0.4_m0_oracle_random_k2_s1 joint 40: ACC=0.3660 NMI=0.2548 clusters=5
+r0.4_m0_oracle_random_k2_s1 joint 60: ACC=0.4893 NMI=0.3423 clusters=5
+r0.4_m0_oracle_random_k2_s1 joint 80: ACC=0.4520 NMI=0.3290 clusters=5
+r0.4_m0_oracle_random_k2_s1 joint 100: ACC=0.4697 NMI=0.3446 clusters=6
+r0.4_m0_oracle_random_k2_s1 joint 120: ACC=0.4834 NMI=0.3622 clusters=7
+r0.4_m0_oracle_random_k2_s1 joint 140: ACC=0.5329 NMI=0.3683 clusters=7
+r0.4_m0_oracle_random_k2_s1 joint 160: ACC=0.5388 NMI=0.3697 clusters=7
+r0.4_m0_oracle_random_k2_s1 joint 180: ACC=0.5421 NMI=0.3686 clusters=6
+r0.4_m0_oracle_random_k2_s1 joint 200: ACC=0.5443 NMI=0.3691 clusters=6
+r0.4_m0_oracle_random_k2_s1 joint 220: ACC=0.5436 NMI=0.3680 clusters=7
+r0.4_m0_oracle_random_k2_s1 joint 240: ACC=0.5454 NMI=0.3690 clusters=7
+r0.4_m0_oracle_random_k2_s1 joint 260: ACC=0.5439 NMI=0.3667 clusters=7
+r0.4_m0_oracle_random_k2_s1 joint 280: ACC=0.5417 NMI=0.3652 clusters=7
+r0.4_m0_oracle_random_k2_s1 joint 300: ACC=0.5428 NMI=0.3640 clusters=7
+r0.4_m0_oracle_random_k2_s1 joint 320: ACC=0.5403 NMI=0.3629 clusters=7
+r0.4_m0_oracle_random_k2_s1 joint 340: ACC=0.5395 NMI=0.3609 clusters=7
+r0.4_m0_oracle_random_k2_s1 joint 360: ACC=0.5380 NMI=0.3609 clusters=7
+r0.4_m0_oracle_random_k2_s1 joint 380: ACC=0.5388 NMI=0.3621 clusters=7
+r0.4_m0_oracle_random_k2_s1 joint 400: ACC=0.5384 NMI=0.3622 clusters=7
+DONE r0.4_m0_oracle_random_k2_s1 ACC=0.538405 elapsed=43.9s
+START r0.4_m1_zero_k2_s0
+r0.4_m1_zero_k2_s0 pretrain 20: mse=0.001072
+r0.4_m1_zero_k2_s0 pretrain 40: mse=0.000936
+r0.4_m1_zero_k2_s0 pretrain 60: mse=0.000861
+r0.4_m1_zero_k2_s0 pretrain 80: mse=0.000816
+r0.4_m1_zero_k2_s0 pretrain 100: mse=0.000782
+r0.4_m1_zero_k2_s0 joint 0: ACC=0.3940 NMI=0.2198 clusters=7
+r0.4_m1_zero_k2_s0 joint 20: ACC=0.3578 NMI=0.1964 clusters=6
+r0.4_m1_zero_k2_s0 joint 40: ACC=0.3002 NMI=0.0043 clusters=2
+r0.4_m1_zero_k2_s0 joint 60: ACC=0.3043 NMI=0.0105 clusters=2
+r0.4_m1_zero_k2_s0 joint 80: ACC=0.3556 NMI=0.1648 clusters=5
+r0.4_m1_zero_k2_s0 joint 100: ACC=0.3674 NMI=0.1723 clusters=4
+r0.4_m1_zero_k2_s0 joint 120: ACC=0.3575 NMI=0.1783 clusters=6
+r0.4_m1_zero_k2_s0 joint 140: ACC=0.3804 NMI=0.2008 clusters=6
+r0.4_m1_zero_k2_s0 joint 160: ACC=0.3885 NMI=0.2089 clusters=6
+r0.4_m1_zero_k2_s0 joint 180: ACC=0.3848 NMI=0.2134 clusters=6
+r0.4_m1_zero_k2_s0 joint 200: ACC=0.3852 NMI=0.2122 clusters=6
+r0.4_m1_zero_k2_s0 joint 220: ACC=0.3863 NMI=0.2130 clusters=6
+r0.4_m1_zero_k2_s0 joint 240: ACC=0.3848 NMI=0.2082 clusters=6
+r0.4_m1_zero_k2_s0 joint 260: ACC=0.3833 NMI=0.2054 clusters=6
+r0.4_m1_zero_k2_s0 joint 280: ACC=0.3792 NMI=0.2038 clusters=6
+r0.4_m1_zero_k2_s0 joint 300: ACC=0.3778 NMI=0.2013 clusters=6
+r0.4_m1_zero_k2_s0 joint 320: ACC=0.3763 NMI=0.2008 clusters=6
+r0.4_m1_zero_k2_s0 joint 340: ACC=0.3696 NMI=0.1977 clusters=6
+r0.4_m1_zero_k2_s0 joint 360: ACC=0.3663 NMI=0.1962 clusters=6
+r0.4_m1_zero_k2_s0 joint 380: ACC=0.3634 NMI=0.1937 clusters=6
+r0.4_m1_zero_k2_s0 joint 400: ACC=0.3645 NMI=0.1933 clusters=6
+DONE r0.4_m1_zero_k2_s0 ACC=0.364476 elapsed=44.0s
+START r0.4_m1_zero_k2_s1
+r0.4_m1_zero_k2_s1 pretrain 20: mse=0.001120
+r0.4_m1_zero_k2_s1 pretrain 40: mse=0.000932
+r0.4_m1_zero_k2_s1 pretrain 60: mse=0.000832
+r0.4_m1_zero_k2_s1 pretrain 80: mse=0.000781
+r0.4_m1_zero_k2_s1 pretrain 100: mse=0.000750
+r0.4_m1_zero_k2_s1 joint 0: ACC=0.3578 NMI=0.1530 clusters=5
+r0.4_m1_zero_k2_s1 joint 20: ACC=0.3704 NMI=0.2114 clusters=6
+r0.4_m1_zero_k2_s1 joint 40: ACC=0.3682 NMI=0.2308 clusters=5
+r0.4_m1_zero_k2_s1 joint 60: ACC=0.4069 NMI=0.2638 clusters=6
+r0.4_m1_zero_k2_s1 joint 80: ACC=0.3800 NMI=0.2487 clusters=5
+r0.4_m1_zero_k2_s1 joint 100: ACC=0.5026 NMI=0.3294 clusters=5
+r0.4_m1_zero_k2_s1 joint 120: ACC=0.5192 NMI=0.3486 clusters=5
+r0.4_m1_zero_k2_s1 joint 140: ACC=0.5240 NMI=0.3585 clusters=6
+r0.4_m1_zero_k2_s1 joint 160: ACC=0.5255 NMI=0.3602 clusters=7
+r0.4_m1_zero_k2_s1 joint 180: ACC=0.5266 NMI=0.3684 clusters=7
+r0.4_m1_zero_k2_s1 joint 200: ACC=0.5207 NMI=0.3682 clusters=7
+r0.4_m1_zero_k2_s1 joint 220: ACC=0.4860 NMI=0.3622 clusters=7
+r0.4_m1_zero_k2_s1 joint 240: ACC=0.5166 NMI=0.3639 clusters=7
+r0.4_m1_zero_k2_s1 joint 260: ACC=0.5251 NMI=0.3599 clusters=7
+r0.4_m1_zero_k2_s1 joint 280: ACC=0.5284 NMI=0.3611 clusters=7
+r0.4_m1_zero_k2_s1 joint 300: ACC=0.5284 NMI=0.3609 clusters=7
+r0.4_m1_zero_k2_s1 joint 320: ACC=0.5258 NMI=0.3591 clusters=7
+r0.4_m1_zero_k2_s1 joint 340: ACC=0.5262 NMI=0.3594 clusters=7
+r0.4_m1_zero_k2_s1 joint 360: ACC=0.5258 NMI=0.3592 clusters=7
+r0.4_m1_zero_k2_s1 joint 380: ACC=0.5251 NMI=0.3585 clusters=7
+r0.4_m1_zero_k2_s1 joint 400: ACC=0.5251 NMI=0.3571 clusters=7
+DONE r0.4_m1_zero_k2_s1 ACC=0.525111 elapsed=44.3s
+START r0.4_m1_fp_k2_s0
+r0.4_m1_fp_k2_s0 pretrain 20: mse=0.002083
+r0.4_m1_fp_k2_s0 pretrain 40: mse=0.001812
+r0.4_m1_fp_k2_s0 pretrain 60: mse=0.001641
+r0.4_m1_fp_k2_s0 pretrain 80: mse=0.001539
+r0.4_m1_fp_k2_s0 pretrain 100: mse=0.001466
+r0.4_m1_fp_k2_s0 joint 0: ACC=0.2692 NMI=0.2026 clusters=7
+r0.4_m1_fp_k2_s0 joint 20: ACC=0.4479 NMI=0.2835 clusters=7
+r0.4_m1_fp_k2_s0 joint 40: ACC=0.5742 NMI=0.4155 clusters=6
+r0.4_m1_fp_k2_s0 joint 60: ACC=0.6008 NMI=0.4286 clusters=7
+r0.4_m1_fp_k2_s0 joint 80: ACC=0.6211 NMI=0.4700 clusters=7
+r0.4_m1_fp_k2_s0 joint 100: ACC=0.6292 NMI=0.4792 clusters=7
+r0.4_m1_fp_k2_s0 joint 120: ACC=0.6259 NMI=0.4684 clusters=7
+r0.4_m1_fp_k2_s0 joint 140: ACC=0.6274 NMI=0.4675 clusters=7
+r0.4_m1_fp_k2_s0 joint 160: ACC=0.6256 NMI=0.4691 clusters=7
+r0.4_m1_fp_k2_s0 joint 180: ACC=0.6252 NMI=0.4691 clusters=7
+r0.4_m1_fp_k2_s0 joint 200: ACC=0.6263 NMI=0.4692 clusters=7
+r0.4_m1_fp_k2_s0 joint 220: ACC=0.6267 NMI=0.4683 clusters=7
+r0.4_m1_fp_k2_s0 joint 240: ACC=0.6281 NMI=0.4687 clusters=7
+r0.4_m1_fp_k2_s0 joint 260: ACC=0.6296 NMI=0.4705 clusters=7
+r0.4_m1_fp_k2_s0 joint 280: ACC=0.6292 NMI=0.4702 clusters=7
+r0.4_m1_fp_k2_s0 joint 300: ACC=0.6296 NMI=0.4705 clusters=7
+r0.4_m1_fp_k2_s0 joint 320: ACC=0.6304 NMI=0.4717 clusters=7
+r0.4_m1_fp_k2_s0 joint 340: ACC=0.6307 NMI=0.4725 clusters=7
+r0.4_m1_fp_k2_s0 joint 360: ACC=0.6307 NMI=0.4734 clusters=7
+r0.4_m1_fp_k2_s0 joint 380: ACC=0.6307 NMI=0.4731 clusters=7
+r0.4_m1_fp_k2_s0 joint 400: ACC=0.6307 NMI=0.4731 clusters=7
+DONE r0.4_m1_fp_k2_s0 ACC=0.630724 elapsed=43.7s
+START r0.4_m1_fp_k2_s1
+r0.4_m1_fp_k2_s1 pretrain 20: mse=0.002071
+r0.4_m1_fp_k2_s1 pretrain 40: mse=0.001751
+r0.4_m1_fp_k2_s1 pretrain 60: mse=0.001602
+r0.4_m1_fp_k2_s1 pretrain 80: mse=0.001520
+r0.4_m1_fp_k2_s1 pretrain 100: mse=0.001457
+r0.4_m1_fp_k2_s1 joint 0: ACC=0.3231 NMI=0.1579 clusters=5
+r0.4_m1_fp_k2_s1 joint 20: ACC=0.4106 NMI=0.2973 clusters=5
+r0.4_m1_fp_k2_s1 joint 40: ACC=0.3837 NMI=0.2783 clusters=5
+r0.4_m1_fp_k2_s1 joint 60: ACC=0.3711 NMI=0.2840 clusters=5
+r0.4_m1_fp_k2_s1 joint 80: ACC=0.4557 NMI=0.3383 clusters=6
+r0.4_m1_fp_k2_s1 joint 100: ACC=0.4867 NMI=0.3455 clusters=6
+r0.4_m1_fp_k2_s1 joint 120: ACC=0.4952 NMI=0.3514 clusters=7
+r0.4_m1_fp_k2_s1 joint 140: ACC=0.5340 NMI=0.3859 clusters=7
+r0.4_m1_fp_k2_s1 joint 160: ACC=0.5410 NMI=0.3899 clusters=7
+r0.4_m1_fp_k2_s1 joint 180: ACC=0.5439 NMI=0.3926 clusters=7
+r0.4_m1_fp_k2_s1 joint 200: ACC=0.5432 NMI=0.3919 clusters=7
+r0.4_m1_fp_k2_s1 joint 220: ACC=0.5425 NMI=0.3913 clusters=7
+r0.4_m1_fp_k2_s1 joint 240: ACC=0.5421 NMI=0.3909 clusters=7
+r0.4_m1_fp_k2_s1 joint 260: ACC=0.5410 NMI=0.3900 clusters=7
+r0.4_m1_fp_k2_s1 joint 280: ACC=0.5414 NMI=0.3901 clusters=7
+r0.4_m1_fp_k2_s1 joint 300: ACC=0.5414 NMI=0.3898 clusters=7
+r0.4_m1_fp_k2_s1 joint 320: ACC=0.5414 NMI=0.3905 clusters=7
+r0.4_m1_fp_k2_s1 joint 340: ACC=0.5414 NMI=0.3913 clusters=7
+r0.4_m1_fp_k2_s1 joint 360: ACC=0.5414 NMI=0.3918 clusters=7
+r0.4_m1_fp_k2_s1 joint 380: ACC=0.5414 NMI=0.3917 clusters=7
+r0.4_m1_fp_k2_s1 joint 400: ACC=0.5417 NMI=0.3925 clusters=7
+DONE r0.4_m1_fp_k2_s1 ACC=0.541728 elapsed=44.6s
+START r0.4_m1_oracle_cold_k2_s0
+r0.4_m1_oracle_cold_k2_s0 pretrain 20: mse=0.002173
+r0.4_m1_oracle_cold_k2_s0 pretrain 40: mse=0.001849
+r0.4_m1_oracle_cold_k2_s0 pretrain 60: mse=0.001700
+r0.4_m1_oracle_cold_k2_s0 pretrain 80: mse=0.001598
+r0.4_m1_oracle_cold_k2_s0 pretrain 100: mse=0.001518
+r0.4_m1_oracle_cold_k2_s0 joint 0: ACC=0.2751 NMI=0.1854 clusters=7
+r0.4_m1_oracle_cold_k2_s0 joint 20: ACC=0.4638 NMI=0.3224 clusters=7
+r0.4_m1_oracle_cold_k2_s0 joint 40: ACC=0.5122 NMI=0.3145 clusters=6
+r0.4_m1_oracle_cold_k2_s0 joint 60: ACC=0.6012 NMI=0.4042 clusters=6
+r0.4_m1_oracle_cold_k2_s0 joint 80: ACC=0.6174 NMI=0.4253 clusters=6
+r0.4_m1_oracle_cold_k2_s0 joint 100: ACC=0.6130 NMI=0.4167 clusters=6
+r0.4_m1_oracle_cold_k2_s0 joint 120: ACC=0.6100 NMI=0.4136 clusters=7
+r0.4_m1_oracle_cold_k2_s0 joint 140: ACC=0.6067 NMI=0.4111 clusters=7
+r0.4_m1_oracle_cold_k2_s0 joint 160: ACC=0.6023 NMI=0.4058 clusters=7
+r0.4_m1_oracle_cold_k2_s0 joint 180: ACC=0.5975 NMI=0.4026 clusters=7
+r0.4_m1_oracle_cold_k2_s0 joint 200: ACC=0.5916 NMI=0.3960 clusters=7
+r0.4_m1_oracle_cold_k2_s0 joint 220: ACC=0.5879 NMI=0.3935 clusters=7
+r0.4_m1_oracle_cold_k2_s0 joint 240: ACC=0.5853 NMI=0.3917 clusters=7
+r0.4_m1_oracle_cold_k2_s0 joint 260: ACC=0.5823 NMI=0.3895 clusters=7
+r0.4_m1_oracle_cold_k2_s0 joint 280: ACC=0.5831 NMI=0.3891 clusters=7
+r0.4_m1_oracle_cold_k2_s0 joint 300: ACC=0.5831 NMI=0.3889 clusters=7
+r0.4_m1_oracle_cold_k2_s0 joint 320: ACC=0.5820 NMI=0.3885 clusters=7
+r0.4_m1_oracle_cold_k2_s0 joint 340: ACC=0.5812 NMI=0.3887 clusters=7
+r0.4_m1_oracle_cold_k2_s0 joint 360: ACC=0.5798 NMI=0.3883 clusters=7
+r0.4_m1_oracle_cold_k2_s0 joint 380: ACC=0.5787 NMI=0.3877 clusters=7
+r0.4_m1_oracle_cold_k2_s0 joint 400: ACC=0.5787 NMI=0.3877 clusters=7
+DONE r0.4_m1_oracle_cold_k2_s0 ACC=0.578656 elapsed=44.8s
+START r0.4_m1_oracle_cold_k2_s1
+r0.4_m1_oracle_cold_k2_s1 pretrain 20: mse=0.002162
+r0.4_m1_oracle_cold_k2_s1 pretrain 40: mse=0.001828
+r0.4_m1_oracle_cold_k2_s1 pretrain 60: mse=0.001677
+r0.4_m1_oracle_cold_k2_s1 pretrain 80: mse=0.001599
+r0.4_m1_oracle_cold_k2_s1 pretrain 100: mse=0.001535
+r0.4_m1_oracle_cold_k2_s1 joint 0: ACC=0.3397 NMI=0.1651 clusters=5
+r0.4_m1_oracle_cold_k2_s1 joint 20: ACC=0.4298 NMI=0.2886 clusters=6
+r0.4_m1_oracle_cold_k2_s1 joint 40: ACC=0.4657 NMI=0.2674 clusters=6
+r0.4_m1_oracle_cold_k2_s1 joint 60: ACC=0.4815 NMI=0.3158 clusters=5
+r0.4_m1_oracle_cold_k2_s1 joint 80: ACC=0.4708 NMI=0.3178 clusters=5
+r0.4_m1_oracle_cold_k2_s1 joint 100: ACC=0.4734 NMI=0.3259 clusters=6
+r0.4_m1_oracle_cold_k2_s1 joint 120: ACC=0.5100 NMI=0.3459 clusters=5
+r0.4_m1_oracle_cold_k2_s1 joint 140: ACC=0.5162 NMI=0.3759 clusters=7
+r0.4_m1_oracle_cold_k2_s1 joint 160: ACC=0.5454 NMI=0.3913 clusters=7
+r0.4_m1_oracle_cold_k2_s1 joint 180: ACC=0.5587 NMI=0.3999 clusters=7
+r0.4_m1_oracle_cold_k2_s1 joint 200: ACC=0.5591 NMI=0.3983 clusters=7
+r0.4_m1_oracle_cold_k2_s1 joint 220: ACC=0.5606 NMI=0.3995 clusters=7
+r0.4_m1_oracle_cold_k2_s1 joint 240: ACC=0.5602 NMI=0.3999 clusters=7
+r0.4_m1_oracle_cold_k2_s1 joint 260: ACC=0.5576 NMI=0.3965 clusters=7
+r0.4_m1_oracle_cold_k2_s1 joint 280: ACC=0.5572 NMI=0.3957 clusters=7
+r0.4_m1_oracle_cold_k2_s1 joint 300: ACC=0.5572 NMI=0.3956 clusters=7
+r0.4_m1_oracle_cold_k2_s1 joint 320: ACC=0.5558 NMI=0.3944 clusters=7
+r0.4_m1_oracle_cold_k2_s1 joint 340: ACC=0.5547 NMI=0.3943 clusters=7
+r0.4_m1_oracle_cold_k2_s1 joint 360: ACC=0.5543 NMI=0.3941 clusters=7
+r0.4_m1_oracle_cold_k2_s1 joint 380: ACC=0.5539 NMI=0.3938 clusters=7
+r0.4_m1_oracle_cold_k2_s1 joint 400: ACC=0.5532 NMI=0.3929 clusters=7
+DONE r0.4_m1_oracle_cold_k2_s1 ACC=0.553176 elapsed=44.6s
+START r0.4_m1_oracle_random_k2_s0
+r0.4_m1_oracle_random_k2_s0 pretrain 20: mse=0.002049
+r0.4_m1_oracle_random_k2_s0 pretrain 40: mse=0.001759
+r0.4_m1_oracle_random_k2_s0 pretrain 60: mse=0.001615
+r0.4_m1_oracle_random_k2_s0 pretrain 80: mse=0.001515
+r0.4_m1_oracle_random_k2_s0 pretrain 100: mse=0.001443
+r0.4_m1_oracle_random_k2_s0 joint 0: ACC=0.2655 NMI=0.1977 clusters=7
+r0.4_m1_oracle_random_k2_s0 joint 20: ACC=0.3925 NMI=0.2784 clusters=7
+r0.4_m1_oracle_random_k2_s0 joint 40: ACC=0.4199 NMI=0.2752 clusters=7
+r0.4_m1_oracle_random_k2_s0 joint 60: ACC=0.6019 NMI=0.4508 clusters=7
+r0.4_m1_oracle_random_k2_s0 joint 80: ACC=0.6182 NMI=0.4663 clusters=7
+r0.4_m1_oracle_random_k2_s0 joint 100: ACC=0.6185 NMI=0.4618 clusters=7
+r0.4_m1_oracle_random_k2_s0 joint 120: ACC=0.6256 NMI=0.4651 clusters=7
+r0.4_m1_oracle_random_k2_s0 joint 140: ACC=0.6252 NMI=0.4644 clusters=7
+r0.4_m1_oracle_random_k2_s0 joint 160: ACC=0.6267 NMI=0.4643 clusters=7
+r0.4_m1_oracle_random_k2_s0 joint 180: ACC=0.6274 NMI=0.4635 clusters=7
+r0.4_m1_oracle_random_k2_s0 joint 200: ACC=0.6267 NMI=0.4636 clusters=7
+r0.4_m1_oracle_random_k2_s0 joint 220: ACC=0.6270 NMI=0.4631 clusters=7
+r0.4_m1_oracle_random_k2_s0 joint 240: ACC=0.6263 NMI=0.4616 clusters=7
+r0.4_m1_oracle_random_k2_s0 joint 260: ACC=0.6256 NMI=0.4602 clusters=7
+r0.4_m1_oracle_random_k2_s0 joint 280: ACC=0.6248 NMI=0.4604 clusters=7
+r0.4_m1_oracle_random_k2_s0 joint 300: ACC=0.6244 NMI=0.4604 clusters=7
+r0.4_m1_oracle_random_k2_s0 joint 320: ACC=0.6248 NMI=0.4600 clusters=7
+r0.4_m1_oracle_random_k2_s0 joint 340: ACC=0.6252 NMI=0.4610 clusters=7
+r0.4_m1_oracle_random_k2_s0 joint 360: ACC=0.6252 NMI=0.4607 clusters=7
+r0.4_m1_oracle_random_k2_s0 joint 380: ACC=0.6252 NMI=0.4606 clusters=7
+r0.4_m1_oracle_random_k2_s0 joint 400: ACC=0.6259 NMI=0.4612 clusters=7
+DONE r0.4_m1_oracle_random_k2_s0 ACC=0.625923 elapsed=44.6s
+START r0.4_m1_oracle_random_k2_s1
+r0.4_m1_oracle_random_k2_s1 pretrain 20: mse=0.002047
+r0.4_m1_oracle_random_k2_s1 pretrain 40: mse=0.001745
+r0.4_m1_oracle_random_k2_s1 pretrain 60: mse=0.001609
+r0.4_m1_oracle_random_k2_s1 pretrain 80: mse=0.001517
+r0.4_m1_oracle_random_k2_s1 pretrain 100: mse=0.001451
+r0.4_m1_oracle_random_k2_s1 joint 0: ACC=0.3615 NMI=0.2042 clusters=5
+r0.4_m1_oracle_random_k2_s1 joint 20: ACC=0.3730 NMI=0.2074 clusters=6
+r0.4_m1_oracle_random_k2_s1 joint 40: ACC=0.4213 NMI=0.2571 clusters=5
+r0.4_m1_oracle_random_k2_s1 joint 60: ACC=0.4273 NMI=0.2776 clusters=6
+r0.4_m1_oracle_random_k2_s1 joint 80: ACC=0.5203 NMI=0.3695 clusters=6
+r0.4_m1_oracle_random_k2_s1 joint 100: ACC=0.5015 NMI=0.3636 clusters=6
+r0.4_m1_oracle_random_k2_s1 joint 120: ACC=0.5048 NMI=0.3661 clusters=6
+r0.4_m1_oracle_random_k2_s1 joint 140: ACC=0.5089 NMI=0.3657 clusters=7
+r0.4_m1_oracle_random_k2_s1 joint 160: ACC=0.5140 NMI=0.3646 clusters=7
+r0.4_m1_oracle_random_k2_s1 joint 180: ACC=0.5170 NMI=0.3663 clusters=7
+r0.4_m1_oracle_random_k2_s1 joint 200: ACC=0.5207 NMI=0.3719 clusters=7
+r0.4_m1_oracle_random_k2_s1 joint 220: ACC=0.5225 NMI=0.3744 clusters=7
+r0.4_m1_oracle_random_k2_s1 joint 240: ACC=0.5218 NMI=0.3753 clusters=7
+r0.4_m1_oracle_random_k2_s1 joint 260: ACC=0.5218 NMI=0.3757 clusters=7
+r0.4_m1_oracle_random_k2_s1 joint 280: ACC=0.5218 NMI=0.3760 clusters=7
+r0.4_m1_oracle_random_k2_s1 joint 300: ACC=0.5225 NMI=0.3764 clusters=7
+r0.4_m1_oracle_random_k2_s1 joint 320: ACC=0.5222 NMI=0.3757 clusters=7
+r0.4_m1_oracle_random_k2_s1 joint 340: ACC=0.5214 NMI=0.3753 clusters=7
+r0.4_m1_oracle_random_k2_s1 joint 360: ACC=0.5210 NMI=0.3753 clusters=7
+r0.4_m1_oracle_random_k2_s1 joint 380: ACC=0.5203 NMI=0.3746 clusters=7
+r0.4_m1_oracle_random_k2_s1 joint 400: ACC=0.5207 NMI=0.3747 clusters=7
+DONE r0.4_m1_oracle_random_k2_s1 ACC=0.520679 elapsed=44.0s
+START r0.4_m2_zero_k2_s0
+r0.4_m2_zero_k2_s0 pretrain 20: mse=0.001094
+r0.4_m2_zero_k2_s0 pretrain 40: mse=0.000936
+r0.4_m2_zero_k2_s0 pretrain 60: mse=0.000865
+r0.4_m2_zero_k2_s0 pretrain 80: mse=0.000824
+r0.4_m2_zero_k2_s0 pretrain 100: mse=0.000792
+r0.4_m2_zero_k2_s0 joint 0: ACC=0.3061 NMI=0.1791 clusters=7
+r0.4_m2_zero_k2_s0 joint 20: ACC=0.3966 NMI=0.1774 clusters=7
+r0.4_m2_zero_k2_s0 joint 40: ACC=0.4391 NMI=0.2333 clusters=6
+r0.4_m2_zero_k2_s0 joint 60: ACC=0.4557 NMI=0.2641 clusters=5
+r0.4_m2_zero_k2_s0 joint 80: ACC=0.4686 NMI=0.2730 clusters=6
+r0.4_m2_zero_k2_s0 joint 100: ACC=0.4712 NMI=0.2772 clusters=6
+r0.4_m2_zero_k2_s0 joint 120: ACC=0.4745 NMI=0.2848 clusters=6
+r0.4_m2_zero_k2_s0 joint 140: ACC=0.4782 NMI=0.2844 clusters=7
+r0.4_m2_zero_k2_s0 joint 160: ACC=0.4790 NMI=0.2818 clusters=7
+r0.4_m2_zero_k2_s0 joint 180: ACC=0.4797 NMI=0.2803 clusters=7
+r0.4_m2_zero_k2_s0 joint 200: ACC=0.4826 NMI=0.2811 clusters=7
+r0.4_m2_zero_k2_s0 joint 220: ACC=0.4841 NMI=0.2791 clusters=7
+r0.4_m2_zero_k2_s0 joint 240: ACC=0.4823 NMI=0.2754 clusters=7
+r0.4_m2_zero_k2_s0 joint 260: ACC=0.4778 NMI=0.2728 clusters=7
+r0.4_m2_zero_k2_s0 joint 280: ACC=0.4760 NMI=0.2698 clusters=7
+r0.4_m2_zero_k2_s0 joint 300: ACC=0.4756 NMI=0.2687 clusters=7
+r0.4_m2_zero_k2_s0 joint 320: ACC=0.4749 NMI=0.2679 clusters=7
+r0.4_m2_zero_k2_s0 joint 340: ACC=0.4738 NMI=0.2694 clusters=7
+r0.4_m2_zero_k2_s0 joint 360: ACC=0.4734 NMI=0.2689 clusters=7
+r0.4_m2_zero_k2_s0 joint 380: ACC=0.4753 NMI=0.2686 clusters=7
+r0.4_m2_zero_k2_s0 joint 400: ACC=0.4745 NMI=0.2678 clusters=7
+DONE r0.4_m2_zero_k2_s0 ACC=0.474520 elapsed=43.7s
+START r0.4_m2_zero_k2_s1
+r0.4_m2_zero_k2_s1 pretrain 20: mse=0.001149
+r0.4_m2_zero_k2_s1 pretrain 40: mse=0.000929
+r0.4_m2_zero_k2_s1 pretrain 60: mse=0.000844
+r0.4_m2_zero_k2_s1 pretrain 80: mse=0.000804
+r0.4_m2_zero_k2_s1 pretrain 100: mse=0.000771
+r0.4_m2_zero_k2_s1 joint 0: ACC=0.3386 NMI=0.1510 clusters=5
+r0.4_m2_zero_k2_s1 joint 20: ACC=0.4158 NMI=0.2952 clusters=5
+r0.4_m2_zero_k2_s1 joint 40: ACC=0.4051 NMI=0.2810 clusters=5
+r0.4_m2_zero_k2_s1 joint 60: ACC=0.4376 NMI=0.2995 clusters=5
+r0.4_m2_zero_k2_s1 joint 80: ACC=0.4365 NMI=0.3024 clusters=6
+r0.4_m2_zero_k2_s1 joint 100: ACC=0.4354 NMI=0.2983 clusters=6
+r0.4_m2_zero_k2_s1 joint 120: ACC=0.4446 NMI=0.3164 clusters=5
+r0.4_m2_zero_k2_s1 joint 140: ACC=0.4561 NMI=0.3150 clusters=5
+r0.4_m2_zero_k2_s1 joint 160: ACC=0.4679 NMI=0.3145 clusters=4
+r0.4_m2_zero_k2_s1 joint 180: ACC=0.4708 NMI=0.3143 clusters=4
+r0.4_m2_zero_k2_s1 joint 200: ACC=0.4723 NMI=0.3158 clusters=5
+r0.4_m2_zero_k2_s1 joint 220: ACC=0.4738 NMI=0.3189 clusters=5
+r0.4_m2_zero_k2_s1 joint 240: ACC=0.4742 NMI=0.3165 clusters=6
+r0.4_m2_zero_k2_s1 joint 260: ACC=0.4760 NMI=0.3172 clusters=6
+r0.4_m2_zero_k2_s1 joint 280: ACC=0.4742 NMI=0.3147 clusters=6
+r0.4_m2_zero_k2_s1 joint 300: ACC=0.4756 NMI=0.3145 clusters=6
+r0.4_m2_zero_k2_s1 joint 320: ACC=0.4764 NMI=0.3132 clusters=6
+r0.4_m2_zero_k2_s1 joint 340: ACC=0.4734 NMI=0.3107 clusters=6
+r0.4_m2_zero_k2_s1 joint 360: ACC=0.4712 NMI=0.3092 clusters=6
+r0.4_m2_zero_k2_s1 joint 380: ACC=0.4716 NMI=0.3091 clusters=6
+r0.4_m2_zero_k2_s1 joint 400: ACC=0.4701 NMI=0.3079 clusters=6
+DONE r0.4_m2_zero_k2_s1 ACC=0.470089 elapsed=43.5s
+START r0.4_m2_fp_k2_s0
+r0.4_m2_fp_k2_s0 pretrain 20: mse=0.002114
+r0.4_m2_fp_k2_s0 pretrain 40: mse=0.001832
+r0.4_m2_fp_k2_s0 pretrain 60: mse=0.001670
+r0.4_m2_fp_k2_s0 pretrain 80: mse=0.001565
+r0.4_m2_fp_k2_s0 pretrain 100: mse=0.001492
+r0.4_m2_fp_k2_s0 joint 0: ACC=0.3069 NMI=0.1874 clusters=7
+r0.4_m2_fp_k2_s0 joint 20: ACC=0.4372 NMI=0.3048 clusters=7
+r0.4_m2_fp_k2_s0 joint 40: ACC=0.5207 NMI=0.3614 clusters=7
+r0.4_m2_fp_k2_s0 joint 60: ACC=0.5236 NMI=0.3827 clusters=6
+r0.4_m2_fp_k2_s0 joint 80: ACC=0.5277 NMI=0.3856 clusters=6
+r0.4_m2_fp_k2_s0 joint 100: ACC=0.5366 NMI=0.3902 clusters=7
+r0.4_m2_fp_k2_s0 joint 120: ACC=0.5406 NMI=0.3948 clusters=7
+r0.4_m2_fp_k2_s0 joint 140: ACC=0.5432 NMI=0.3939 clusters=7
+r0.4_m2_fp_k2_s0 joint 160: ACC=0.5428 NMI=0.3914 clusters=7
+r0.4_m2_fp_k2_s0 joint 180: ACC=0.5436 NMI=0.3942 clusters=7
+r0.4_m2_fp_k2_s0 joint 200: ACC=0.5439 NMI=0.3945 clusters=7
+r0.4_m2_fp_k2_s0 joint 220: ACC=0.5447 NMI=0.3947 clusters=7
+r0.4_m2_fp_k2_s0 joint 240: ACC=0.5436 NMI=0.3948 clusters=7
+r0.4_m2_fp_k2_s0 joint 260: ACC=0.5432 NMI=0.3945 clusters=7
+r0.4_m2_fp_k2_s0 joint 280: ACC=0.5425 NMI=0.3937 clusters=7
+r0.4_m2_fp_k2_s0 joint 300: ACC=0.5428 NMI=0.3926 clusters=7
+r0.4_m2_fp_k2_s0 joint 320: ACC=0.5421 NMI=0.3922 clusters=7
+r0.4_m2_fp_k2_s0 joint 340: ACC=0.5421 NMI=0.3924 clusters=7
+r0.4_m2_fp_k2_s0 joint 360: ACC=0.5421 NMI=0.3923 clusters=7
+r0.4_m2_fp_k2_s0 joint 380: ACC=0.5421 NMI=0.3923 clusters=7
+r0.4_m2_fp_k2_s0 joint 400: ACC=0.5417 NMI=0.3926 clusters=7
+DONE r0.4_m2_fp_k2_s0 ACC=0.541728 elapsed=44.2s
+START r0.4_m2_fp_k2_s1
+r0.4_m2_fp_k2_s1 pretrain 20: mse=0.002173
+r0.4_m2_fp_k2_s1 pretrain 40: mse=0.001852
+r0.4_m2_fp_k2_s1 pretrain 60: mse=0.001711
+r0.4_m2_fp_k2_s1 pretrain 80: mse=0.001621
+r0.4_m2_fp_k2_s1 pretrain 100: mse=0.001546
+r0.4_m2_fp_k2_s1 joint 0: ACC=0.3375 NMI=0.2141 clusters=5
+r0.4_m2_fp_k2_s1 joint 20: ACC=0.3855 NMI=0.2885 clusters=5
+r0.4_m2_fp_k2_s1 joint 40: ACC=0.3874 NMI=0.2865 clusters=5
+r0.4_m2_fp_k2_s1 joint 60: ACC=0.5170 NMI=0.3921 clusters=6
+r0.4_m2_fp_k2_s1 joint 80: ACC=0.5111 NMI=0.3796 clusters=6
+r0.4_m2_fp_k2_s1 joint 100: ACC=0.5535 NMI=0.4254 clusters=6
+r0.4_m2_fp_k2_s1 joint 120: ACC=0.5513 NMI=0.4290 clusters=6
+r0.4_m2_fp_k2_s1 joint 140: ACC=0.5495 NMI=0.4283 clusters=7
+r0.4_m2_fp_k2_s1 joint 160: ACC=0.5465 NMI=0.4254 clusters=7
+r0.4_m2_fp_k2_s1 joint 180: ACC=0.5436 NMI=0.4310 clusters=7
+r0.4_m2_fp_k2_s1 joint 200: ACC=0.5487 NMI=0.4377 clusters=7
+r0.4_m2_fp_k2_s1 joint 220: ACC=0.5510 NMI=0.4394 clusters=7
+r0.4_m2_fp_k2_s1 joint 240: ACC=0.5550 NMI=0.4398 clusters=7
+r0.4_m2_fp_k2_s1 joint 260: ACC=0.5561 NMI=0.4381 clusters=7
+r0.4_m2_fp_k2_s1 joint 280: ACC=0.5569 NMI=0.4379 clusters=7
+r0.4_m2_fp_k2_s1 joint 300: ACC=0.5565 NMI=0.4383 clusters=7
+r0.4_m2_fp_k2_s1 joint 320: ACC=0.5561 NMI=0.4375 clusters=7
+r0.4_m2_fp_k2_s1 joint 340: ACC=0.5569 NMI=0.4372 clusters=7
+r0.4_m2_fp_k2_s1 joint 360: ACC=0.5569 NMI=0.4374 clusters=7
+r0.4_m2_fp_k2_s1 joint 380: ACC=0.5550 NMI=0.4360 clusters=7
+r0.4_m2_fp_k2_s1 joint 400: ACC=0.5547 NMI=0.4351 clusters=7
+DONE r0.4_m2_fp_k2_s1 ACC=0.554653 elapsed=43.2s
+START r0.4_m2_oracle_cold_k2_s0
+r0.4_m2_oracle_cold_k2_s0 pretrain 20: mse=0.002159
+r0.4_m2_oracle_cold_k2_s0 pretrain 40: mse=0.001888
+r0.4_m2_oracle_cold_k2_s0 pretrain 60: mse=0.001725
+r0.4_m2_oracle_cold_k2_s0 pretrain 80: mse=0.001615
+r0.4_m2_oracle_cold_k2_s0 pretrain 100: mse=0.001540
+r0.4_m2_oracle_cold_k2_s0 joint 0: ACC=0.3080 NMI=0.1973 clusters=7
+r0.4_m2_oracle_cold_k2_s0 joint 20: ACC=0.3597 NMI=0.1915 clusters=7
+r0.4_m2_oracle_cold_k2_s0 joint 40: ACC=0.5273 NMI=0.3820 clusters=5
+r0.4_m2_oracle_cold_k2_s0 joint 60: ACC=0.5425 NMI=0.4064 clusters=6
+r0.4_m2_oracle_cold_k2_s0 joint 80: ACC=0.5499 NMI=0.4204 clusters=7
+r0.4_m2_oracle_cold_k2_s0 joint 100: ACC=0.5521 NMI=0.4312 clusters=7
+r0.4_m2_oracle_cold_k2_s0 joint 120: ACC=0.5403 NMI=0.4242 clusters=7
+r0.4_m2_oracle_cold_k2_s0 joint 140: ACC=0.5377 NMI=0.4256 clusters=7
+r0.4_m2_oracle_cold_k2_s0 joint 160: ACC=0.5369 NMI=0.4241 clusters=7
+r0.4_m2_oracle_cold_k2_s0 joint 180: ACC=0.5369 NMI=0.4225 clusters=7
+r0.4_m2_oracle_cold_k2_s0 joint 200: ACC=0.5343 NMI=0.4161 clusters=7
+r0.4_m2_oracle_cold_k2_s0 joint 220: ACC=0.5336 NMI=0.4164 clusters=7
+r0.4_m2_oracle_cold_k2_s0 joint 240: ACC=0.5332 NMI=0.4151 clusters=7
+r0.4_m2_oracle_cold_k2_s0 joint 260: ACC=0.5310 NMI=0.4136 clusters=7
+r0.4_m2_oracle_cold_k2_s0 joint 280: ACC=0.5310 NMI=0.4120 clusters=7
+r0.4_m2_oracle_cold_k2_s0 joint 300: ACC=0.5310 NMI=0.4123 clusters=7
+r0.4_m2_oracle_cold_k2_s0 joint 320: ACC=0.5306 NMI=0.4117 clusters=7
+r0.4_m2_oracle_cold_k2_s0 joint 340: ACC=0.5310 NMI=0.4117 clusters=7
+r0.4_m2_oracle_cold_k2_s0 joint 360: ACC=0.5306 NMI=0.4106 clusters=7
+r0.4_m2_oracle_cold_k2_s0 joint 380: ACC=0.5306 NMI=0.4100 clusters=7
+r0.4_m2_oracle_cold_k2_s0 joint 400: ACC=0.5306 NMI=0.4088 clusters=7
+DONE r0.4_m2_oracle_cold_k2_s0 ACC=0.530650 elapsed=44.0s
+START r0.4_m2_oracle_cold_k2_s1
+r0.4_m2_oracle_cold_k2_s1 pretrain 20: mse=0.002213
+r0.4_m2_oracle_cold_k2_s1 pretrain 40: mse=0.001884
+r0.4_m2_oracle_cold_k2_s1 pretrain 60: mse=0.001723
+r0.4_m2_oracle_cold_k2_s1 pretrain 80: mse=0.001631
+r0.4_m2_oracle_cold_k2_s1 pretrain 100: mse=0.001567
+r0.4_m2_oracle_cold_k2_s1 joint 0: ACC=0.3264 NMI=0.2006 clusters=5
+r0.4_m2_oracle_cold_k2_s1 joint 20: ACC=0.4516 NMI=0.2805 clusters=5
+r0.4_m2_oracle_cold_k2_s1 joint 40: ACC=0.4527 NMI=0.3470 clusters=5
+r0.4_m2_oracle_cold_k2_s1 joint 60: ACC=0.5052 NMI=0.3549 clusters=6
+r0.4_m2_oracle_cold_k2_s1 joint 80: ACC=0.5137 NMI=0.3579 clusters=6
+r0.4_m2_oracle_cold_k2_s1 joint 100: ACC=0.5015 NMI=0.3552 clusters=6
+r0.4_m2_oracle_cold_k2_s1 joint 120: ACC=0.5436 NMI=0.3792 clusters=7
+r0.4_m2_oracle_cold_k2_s1 joint 140: ACC=0.5480 NMI=0.3910 clusters=7
+r0.4_m2_oracle_cold_k2_s1 joint 160: ACC=0.5458 NMI=0.3932 clusters=7
+r0.4_m2_oracle_cold_k2_s1 joint 180: ACC=0.5439 NMI=0.3945 clusters=7
+r0.4_m2_oracle_cold_k2_s1 joint 200: ACC=0.5436 NMI=0.3918 clusters=7
+r0.4_m2_oracle_cold_k2_s1 joint 220: ACC=0.5417 NMI=0.3892 clusters=7
+r0.4_m2_oracle_cold_k2_s1 joint 240: ACC=0.5406 NMI=0.3887 clusters=7
+r0.4_m2_oracle_cold_k2_s1 joint 260: ACC=0.5403 NMI=0.3874 clusters=7
+r0.4_m2_oracle_cold_k2_s1 joint 280: ACC=0.5384 NMI=0.3853 clusters=7
+r0.4_m2_oracle_cold_k2_s1 joint 300: ACC=0.5384 NMI=0.3853 clusters=7
+r0.4_m2_oracle_cold_k2_s1 joint 320: ACC=0.5380 NMI=0.3845 clusters=7
+r0.4_m2_oracle_cold_k2_s1 joint 340: ACC=0.5366 NMI=0.3830 clusters=7
+r0.4_m2_oracle_cold_k2_s1 joint 360: ACC=0.5366 NMI=0.3823 clusters=7
+r0.4_m2_oracle_cold_k2_s1 joint 380: ACC=0.5355 NMI=0.3802 clusters=7
+r0.4_m2_oracle_cold_k2_s1 joint 400: ACC=0.5351 NMI=0.3794 clusters=7
+DONE r0.4_m2_oracle_cold_k2_s1 ACC=0.535081 elapsed=43.8s
+START r0.4_m2_oracle_random_k2_s0
+r0.4_m2_oracle_random_k2_s0 pretrain 20: mse=0.002082
+r0.4_m2_oracle_random_k2_s0 pretrain 40: mse=0.001791
+r0.4_m2_oracle_random_k2_s0 pretrain 60: mse=0.001625
+r0.4_m2_oracle_random_k2_s0 pretrain 80: mse=0.001513
+r0.4_m2_oracle_random_k2_s0 pretrain 100: mse=0.001441
+r0.4_m2_oracle_random_k2_s0 joint 0: ACC=0.2976 NMI=0.1917 clusters=6
+r0.4_m2_oracle_random_k2_s0 joint 20: ACC=0.5380 NMI=0.3654 clusters=7
+r0.4_m2_oracle_random_k2_s0 joint 40: ACC=0.5244 NMI=0.3681 clusters=6
+r0.4_m2_oracle_random_k2_s0 joint 60: ACC=0.6100 NMI=0.4464 clusters=6
+r0.4_m2_oracle_random_k2_s0 joint 80: ACC=0.5986 NMI=0.4280 clusters=6
+r0.4_m2_oracle_random_k2_s0 joint 100: ACC=0.6064 NMI=0.4255 clusters=6
+r0.4_m2_oracle_random_k2_s0 joint 120: ACC=0.6045 NMI=0.4222 clusters=7
+r0.4_m2_oracle_random_k2_s0 joint 140: ACC=0.6030 NMI=0.4213 clusters=7
+r0.4_m2_oracle_random_k2_s0 joint 160: ACC=0.6008 NMI=0.4211 clusters=7
+r0.4_m2_oracle_random_k2_s0 joint 180: ACC=0.5993 NMI=0.4195 clusters=7
+r0.4_m2_oracle_random_k2_s0 joint 200: ACC=0.5975 NMI=0.4172 clusters=7
+r0.4_m2_oracle_random_k2_s0 joint 220: ACC=0.5934 NMI=0.4187 clusters=7
+r0.4_m2_oracle_random_k2_s0 joint 240: ACC=0.5942 NMI=0.4183 clusters=7
+r0.4_m2_oracle_random_k2_s0 joint 260: ACC=0.5927 NMI=0.4167 clusters=7
+r0.4_m2_oracle_random_k2_s0 joint 280: ACC=0.5927 NMI=0.4182 clusters=7
+r0.4_m2_oracle_random_k2_s0 joint 300: ACC=0.5919 NMI=0.4181 clusters=7
+r0.4_m2_oracle_random_k2_s0 joint 320: ACC=0.5919 NMI=0.4181 clusters=7
+r0.4_m2_oracle_random_k2_s0 joint 340: ACC=0.5916 NMI=0.4185 clusters=7
+r0.4_m2_oracle_random_k2_s0 joint 360: ACC=0.5919 NMI=0.4193 clusters=7
+r0.4_m2_oracle_random_k2_s0 joint 380: ACC=0.5919 NMI=0.4197 clusters=7
+r0.4_m2_oracle_random_k2_s0 joint 400: ACC=0.5916 NMI=0.4194 clusters=7
+DONE r0.4_m2_oracle_random_k2_s0 ACC=0.591581 elapsed=44.3s
+START r0.4_m2_oracle_random_k2_s1
+r0.4_m2_oracle_random_k2_s1 pretrain 20: mse=0.002113
+r0.4_m2_oracle_random_k2_s1 pretrain 40: mse=0.001799
+r0.4_m2_oracle_random_k2_s1 pretrain 60: mse=0.001673
+r0.4_m2_oracle_random_k2_s1 pretrain 80: mse=0.001578
+r0.4_m2_oracle_random_k2_s1 pretrain 100: mse=0.001507
+r0.4_m2_oracle_random_k2_s1 joint 0: ACC=0.3183 NMI=0.1603 clusters=5
+r0.4_m2_oracle_random_k2_s1 joint 20: ACC=0.4694 NMI=0.3233 clusters=6
+r0.4_m2_oracle_random_k2_s1 joint 40: ACC=0.5063 NMI=0.3190 clusters=5
+r0.4_m2_oracle_random_k2_s1 joint 60: ACC=0.4524 NMI=0.3221 clusters=5
+r0.4_m2_oracle_random_k2_s1 joint 80: ACC=0.4402 NMI=0.3468 clusters=6
+r0.4_m2_oracle_random_k2_s1 joint 100: ACC=0.4649 NMI=0.3752 clusters=6
+r0.4_m2_oracle_random_k2_s1 joint 120: ACC=0.4797 NMI=0.3902 clusters=6
+r0.4_m2_oracle_random_k2_s1 joint 140: ACC=0.4790 NMI=0.3798 clusters=6
+r0.4_m2_oracle_random_k2_s1 joint 160: ACC=0.4760 NMI=0.3732 clusters=6
+r0.4_m2_oracle_random_k2_s1 joint 180: ACC=0.4727 NMI=0.3719 clusters=6
+r0.4_m2_oracle_random_k2_s1 joint 200: ACC=0.4712 NMI=0.3693 clusters=7
+r0.4_m2_oracle_random_k2_s1 joint 220: ACC=0.4694 NMI=0.3691 clusters=7
+r0.4_m2_oracle_random_k2_s1 joint 240: ACC=0.4686 NMI=0.3673 clusters=7
+r0.4_m2_oracle_random_k2_s1 joint 260: ACC=0.4675 NMI=0.3662 clusters=7
+r0.4_m2_oracle_random_k2_s1 joint 280: ACC=0.4653 NMI=0.3635 clusters=7
+r0.4_m2_oracle_random_k2_s1 joint 300: ACC=0.4575 NMI=0.3580 clusters=7
+r0.4_m2_oracle_random_k2_s1 joint 320: ACC=0.4557 NMI=0.3571 clusters=7
+r0.4_m2_oracle_random_k2_s1 joint 340: ACC=0.4549 NMI=0.3559 clusters=7
+r0.4_m2_oracle_random_k2_s1 joint 360: ACC=0.4557 NMI=0.3561 clusters=7
+r0.4_m2_oracle_random_k2_s1 joint 380: ACC=0.4557 NMI=0.3558 clusters=7
+r0.4_m2_oracle_random_k2_s1 joint 400: ACC=0.4561 NMI=0.3555 clusters=7
+DONE r0.4_m2_oracle_random_k2_s1 ACC=0.456056 elapsed=43.7s
+ALL COMPLETE: 50 main fits -> F:\研究生毕设\可行性验证\oracle_ceiling

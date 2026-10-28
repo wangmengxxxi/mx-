@@ -1,0 +1,182 @@
+{
+  "frozen_at": "2026-10-27T20:46:31.207543+08:00",
+  "purpose": "diagnosis only; no new method; no label-based hyperparameter or checkpoint selection",
+  "datasets": {
+    "cifar10": 10,
+    "cifar100": 100
+  },
+  "irs": [
+    1,
+    10,
+    100
+  ],
+  "seeds": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "features": {
+    "backbone": "official DINOv2 ViT-B/14 without registers",
+    "dim": 768,
+    "weights_url": "https://dl.fbaipublicfiles.com/dinov2/dinov2_vitb14/dinov2_vitb14_pretrain.pth",
+    "dino_commit": "7764ea0f912e53c92e82eb78a2a1631e92725fc8",
+    "frozen": true,
+    "inference": "model.half + input.half; eval; inference_mode",
+    "output": "final LayerNorm CLS token, saved float32 (fp16 values)",
+    "preprocess": {
+      "resize": 224,
+      "center_crop": 224,
+      "interpolation": "PIL bicubic",
+      "mean": [
+        0.485,
+        0.456,
+        0.406
+      ],
+      "std": [
+        0.229,
+        0.224,
+        0.225
+      ]
+    },
+    "preprocess_note": "user explicitly requests resize224; official eval defaults resize256/crop224, overridden resize_size=224. Square CIFAR images retain full image.",
+    "extraction_order": [
+      "cifar100_train",
+      "cifar100_test",
+      "cifar10_train",
+      "cifar10_test"
+    ],
+    "batch_candidates_memory_only": [
+      32,
+      16,
+      8,
+      4,
+      2,
+      1
+    ],
+    "workers": 2,
+    "extract_once_reuse": true
+  },
+  "subset": {
+    "formula": "int((50000/K) * (1/IR)**(c/(K-1))), c=0..K-1",
+    "class_order": "torchvision label id ascending, fixed across all seeds and IRs",
+    "rng": "numpy RandomState(seed), independently permute each class pool once in class order; take prefix; identical permutation across IRs",
+    "tail": "floor(K/3) classes with smallest counts; ties by class id ascending",
+    "setting": "transductive: fit and evaluate on same selected train subset; test features never used"
+  },
+  "methods": {
+    "KM": {
+      "init": "k-means++",
+      "n_init": 10,
+      "max_iter": 300,
+      "tol": 0.0001,
+      "algorithm": "lloyd",
+      "random_state": "seed",
+      "features": "L2 normalized float32"
+    },
+    "BAL": {
+      "head": "single cosine linear head, bias=False, 768->K, random torch Linear initialization, normalized weights each forward",
+      "epochs": 100,
+      "batch": 1024,
+      "last_batch": "included",
+      "optimizer": "Adam",
+      "lr": 0.0005,
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "weight_decay": 0,
+      "scheduler": "cosine lr=base*0.5*(1+cos(pi*epoch/100))",
+      "logit_scale": 10,
+      "sinkhorn": "uniform marginals, log-domain, 3 row/column normalization iterations, epsilon=0.05 on cosine similarities",
+      "loss": "mean soft-target CE on logits=10*cosine, stop-gradient assignment; same cached feature as input and target; no augmentation or backbone tuning",
+      "checkpoint": "final epoch 100 only",
+      "features": "same L2 features as KM",
+      "labels_received": false
+    },
+    "P2OT_feat": {
+      "included": true,
+      "ppot_commit": "33bd8872a87203ddb753cb94a05d639a414c6c06",
+      "solver": "unmodified official utils/sinkhorn_knopp.py SemiCurrSinkhornKnopp loaded by absolute importlib path",
+      "epsilon": 0.1,
+      "gamma": 1.0,
+      "stoperr": 1e-06,
+      "numItermax": 1000,
+      "semi_use": true,
+      "rho": "0.1+0.9*exp(-5*(1-step/total_steps)**2), step=0..total_steps-1, official sigmoid schedule",
+      "wrapper": "same head, initialization, permutation, optimizer, epochs, final checkpoint as BAL; official solver replaces uniform Sinkhorn; soft CE retains partial target mass",
+      "adaptation_limits": "one head; no logits memory bank, no image multiview, no backbone tuning; module adaptation, not paper reproduction",
+      "on_nonfinite": "stop and preserve failure; no tuning or deleting runs"
+    },
+    "ORACLE_KM": {
+      "centers": "mean of L2 normalized features by true class within current subset, NOT renormalized",
+      "assignment": "nearest centroid squared Euclidean, zero Lloyd updates",
+      "caveat": "operational supervised reference, not mathematical upper bound"
+    },
+    "LP": {
+      "implementation": "sklearn LogisticRegression",
+      "C": 1.0,
+      "solver": "lbfgs",
+      "max_iter": 1000,
+      "tol": 0.0001,
+      "multi_class": "multinomial",
+      "class_weight": null,
+      "fit_intercept": true,
+      "random_state": "seed",
+      "features": "same L2 normalized features",
+      "evaluation": "resubstitution on same selected subset, supervised representation reference only; not generalization"
+    }
+  },
+  "evaluation": {
+    "metrics": [
+      "ACC",
+      "NMI",
+      "ARI",
+      "balanced_accuracy",
+      "macro_F1",
+      "tail_recall"
+    ],
+    "mapping": "one global Hungarian mapping maximizing total correct sample count per run; shared by ACC and all subgroup metrics; NMI/ARI permutation invariant; LP also same global mapping",
+    "NMI_average_method": "arithmetic",
+    "zero_division": 0,
+    "cluster_sizes": "all K cluster ids including empty; Hungarian aligned counts + raw counts; per-class true counts",
+    "distribution": "KL(p_true||q_aligned) with additive count smoothing 1e-12; natural log; also JS(p_true,q_aligned), JS(sorted p,sorted q), JS(q,uniform), normalized entropy"
+  },
+  "decision": {
+    "primary": [
+      "cifar100",
+      100,
+      "balanced_accuracy"
+    ],
+    "best": "per-seed max(KM,BAL) in balanced_accuracy, offline diagnostic envelope, never deployment selection; excludes P2OT_feat",
+    "long_tail_loss": "mean_s(best(IR1,s)-best(IR100,s)) >= 0.08 AND strictly positive in >=4/5 seeds",
+    "room": "mean_s(ORACLE_KM(IR100,s)-best(IR100,s)) >=0.05 AND strictly positive in >=4/5 seeds",
+    "classification": {
+      "both": "通过",
+      "one": "部分通过",
+      "neither": "不通过"
+    },
+    "uniform_prior_harm": "descriptive only: BAL-KM BA/tail mean<0, or BAL has smaller JS(q,uniform); all per-seed differences reported",
+    "paired": "same dataset, IR, seed; cross-IR uses same seed, nested class prefixes; zero not positive",
+    "statistics": "mean and population std ddof=0, no post-hoc thresholds or significance test; auxiliary CIFAR10 and IR10 do not alter primary"
+  },
+  "runtime": {
+    "python": "3.9.21",
+    "torch": "2.8.0+cu126",
+    "threads": 4,
+    "determinism": "torch deterministic True; cudnn deterministic True benchmark False; TF32 disabled; CUBLAS_WORKSPACE_CONFIG=:4096:8",
+    "device": "single GTX1650Ti 4GB, sequential GPU jobs"
+  },
+  "audit": {
+    "full_rerun": "cifar100 IR100 seed1 all five methods in separate process using cached features",
+    "recompute": "all subset indices, predictions->metrics, counts and hashes; saved KM centers and heads->predictions; refit KM during full rerun",
+    "rerun_tolerances": {
+      "metrics_abs": 1e-06,
+      "head_float_atol": 1e-06,
+      "head_float_rtol": 1e-05
+    },
+    "feature_audit": "finite shape/dtype and SHA256 all four splits; no second full extraction"
+  },
+  "label_firewall": "labels used only for requested LT construction, offline evaluation and explicitly supervised ORACLE_KM/LP. KM/BAL/P2OT_feat training accept features,K,seed only."
+}

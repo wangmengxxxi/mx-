@@ -1,0 +1,1 @@
+START Caltech101-20 rate=0.5 mask_seed=3 model_seed=4 complete=1216 threads=4

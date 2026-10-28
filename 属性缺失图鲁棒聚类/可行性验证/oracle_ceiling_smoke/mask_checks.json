@@ -1,0 +1,26 @@
+[
+  {
+    "rate": 0.8,
+    "mask": 0,
+    "seed": 0,
+    "method": "zero",
+    "reference_path": "F:\\研究生毕设\\可行性验证\\sdcn_stage4_holdout\\r0.8_m0_zero_s0\\result.json",
+    "mask_sha256": "7817c38a81d949018caec9d6df50db79940a0e492d34f1f43ae4282934065f58",
+    "reference_mask_sha256": "7817c38a81d949018caec9d6df50db79940a0e492d34f1f43ae4282934065f58",
+    "equal": true,
+    "cold_count": 1128,
+    "reference_cold_count": 1128
+  },
+  {
+    "rate": 0.8,
+    "mask": 0,
+    "seed": 0,
+    "method": "fp",
+    "reference_path": "F:\\研究生毕设\\可行性验证\\sdcn_stage4_holdout\\r0.8_m0_fp_s0\\result.json",
+    "mask_sha256": "7817c38a81d949018caec9d6df50db79940a0e492d34f1f43ae4282934065f58",
+    "reference_mask_sha256": "7817c38a81d949018caec9d6df50db79940a0e492d34f1f43ae4282934065f58",
+    "equal": true,
+    "cold_count": 1128,
+    "reference_cold_count": 1128
+  }
+]

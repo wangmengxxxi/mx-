@@ -1,0 +1,16 @@
+[
+  {
+    "view": 0,
+    "max_abs_difference": 2.8312206268310547e-06,
+    "rtol": 1e-05,
+    "atol": 1e-06,
+    "passed": true
+  },
+  {
+    "view": 1,
+    "max_abs_difference": 2.9206275939941406e-06,
+    "rtol": 1e-05,
+    "atol": 1e-06,
+    "passed": true
+  }
+]

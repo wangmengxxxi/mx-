@@ -1,0 +1,9 @@
+{
+  "status": "finished",
+  "jobs": {
+    "reconstruction_weighting": "finished",
+    "degree_biased_baseline": "finished"
+  },
+  "note": "Full summary, report, and manifest generated.",
+  "utc": "2026-10-23T03:58:46.489332+00:00"
+}

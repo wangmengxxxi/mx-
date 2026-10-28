@@ -1,0 +1,30 @@
+START Scene-15 rate=0.7 mask_seed=2 model_seed=8 complete=1339 threads=4
+[2;29mEpoch : 100/500 ===> Reconstruction loss = 2.3128===> Reconstruction loss = 13.6816 ===> Dual prediction loss = 0.0116  ===> Contrastive loss = -5.3497e+02 ===> Loss = -5.3337e+02[0m
+Unlabelled evaluation mode switch, no intermediate label metrics
+[2;29mEpoch : 200/500 ===> Reconstruction loss = 2.0287===> Reconstruction loss = 13.3034 ===> Dual prediction loss = 0.0026  ===> Contrastive loss = -5.3670e+02 ===> Loss = -5.3517e+02[0m
+Unlabelled evaluation mode switch, no intermediate label metrics
+[2;29mEpoch : 300/500 ===> Reconstruction loss = 1.7867===> Reconstruction loss = 12.8023 ===> Dual prediction loss = 0.0022  ===> Contrastive loss = -5.3751e+02 ===> Loss = -5.3605e+02[0m
+Unlabelled evaluation mode switch, no intermediate label metrics
+[2;29mEpoch : 400/500 ===> Reconstruction loss = 1.5947===> Reconstruction loss = 12.7072 ===> Dual prediction loss = 0.0019  ===> Contrastive loss = -5.3697e+02 ===> Loss = -5.3554e+02[0m
+Unlabelled evaluation mode switch, no intermediate label metrics
+[2;29mEpoch : 500/500 ===> Reconstruction loss = 1.3998===> Reconstruction loss = 12.2633 ===> Dual prediction loss = 0.0015  ===> Contrastive loss = -5.3745e+02 ===> Loss = -5.3609e+02[0m
+Unlabelled evaluation mode switch, no intermediate label metrics
+{
+  "shape": [
+    2912,
+    128
+  ],
+  "dtype": "float32",
+  "original_rtol": 1e-05,
+  "original_atol": 1e-07,
+  "max_abs_difference": 2.8312206268310547e-06,
+  "max_difference_to_allowed_ratio": 1.0311274528503418,
+  "failed_elements": 2,
+  "total_elements": 372736,
+  "value_at_max_difference": [
+    0.31717580556869507,
+    0.3171786367893219
+  ],
+  "all_finite": true,
+  "allclose_at_rtol_1e5_atol_1e6": true
+}

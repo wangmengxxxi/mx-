@@ -1,0 +1,19 @@
+{
+  "status": "completed",
+  "cpu_archived": true,
+  "cpu_completed": 6,
+  "cpu_interrupted": 2,
+  "cpu_smoke_audit_passed": true,
+  "formal_gpu_runs": 20,
+  "protocol_unchanged": true,
+  "updated_at": "2026-10-27T19:07:27.434467+08:00",
+  "gpu_environment_verified": true,
+  "gpu_gate_passed": true,
+  "workers": 1,
+  "refcheck_gpu_runs": 1,
+  "full_recluster_audit_passed": true,
+  "refcheck_recluster_audit_passed": true,
+  "validation_repair_bitwise_check_passed": true,
+  "overall": "不通过",
+  "background_training_running": false
+}

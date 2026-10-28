@@ -1,0 +1,7 @@
+{
+  "pid": 22756,
+  "device": "cuda",
+  "workers": 1,
+  "python": "F:\\研究生毕设\\不完整多视图聚类\\envs\\imvc_gpu\\python.exe",
+  "started_at": "2026-10-27T18:13:14.0917307+08:00"
+}

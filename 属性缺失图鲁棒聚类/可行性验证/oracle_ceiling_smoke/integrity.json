@@ -1,0 +1,15 @@
+{
+  "source_files_unchanged": true,
+  "reference_json_unchanged": true,
+  "source_sha256_after": {
+    "run_oracle_ceiling.py": "e0b6bd8ed5045b5e398b0a854c14c634a7c8972eec6a00ae7c627aaa80edb539",
+    "run_sdcn_baseline.py": "0f9ea45df865561e967fd68b70a7834d321bfba149a27dcc42e4f24eb4763376",
+    "run_sdcn_smoke.py": "5d151d2d982d6c64ae3180bd2110e4d75f9d8ebe47254f3155032e43faddda1f",
+    "run_minimal_diagnostic.py": "ca4746a602cd15f338e1cf9f69775373a34c013f6497c85bb29bed3efcbd9cbb",
+    "run_fp_cold_fallback_pair.py": "db6490f6c98ce943143f93fce1553aa8f500b56f19720ed7aeddd4cdbe34fc2c",
+    "run_fp_coverage_pair.py": "039c849051171965691cfbec8dc246fec37de608215a5571c513bfad5ad4b33f"
+  },
+  "main_run_count": 5,
+  "expected_main_runs": 5,
+  "mask_checks_passed": true
+}

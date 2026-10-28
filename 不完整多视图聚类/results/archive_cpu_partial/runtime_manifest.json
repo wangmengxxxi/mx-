@@ -1,0 +1,11 @@
+{
+  "scripts\\run_diagnostic.py": "6594ad159aa71d2eaf829aa1562f8e7b7d5438d35fd93909ed511219937d0cc5",
+  "results\\protocol.json": "7ddf3260ccebdf199cea02efdb9f562e8afc66c6a725f05ff4bcf0d6553cb34a",
+  "scripts\\completer\\configure.py": "ca90ac6236263e4c6d6c08d12260f9b64e6eac7be94f7bc9bfde29d30e91312f",
+  "scripts\\completer\\datasets.py": "02e7f95ec39cff4f7cc31a64fc2e1306511b4bb33360637a329a8358e016e27d",
+  "scripts\\completer\\evaluation.py": "3e2c6263ab3d10e3e6093ca3762cea691b0479c32767f998e31f299a9ce114ea",
+  "scripts\\completer\\get_mask.py": "aa3862af2192c160cb16f40cafb72a061588cc41ce3a9e30d4ee1c4fa945e146",
+  "scripts\\completer\\loss.py": "0ac5ea5853fef850ecfa86a06650875906c25df9c68db81ce0e0a737cd3b6ebf",
+  "scripts\\completer\\model.py": "bc6e3ed129147c33216897b8a6e7b02db8e98f0169bf9fecf383e3124a676f07",
+  "scripts\\completer\\util.py": "c28656959032e9589ded52ed18861882553416ac3e24f838d0ea7e73f88ac5aa"
+}

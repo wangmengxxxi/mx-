@@ -1,0 +1,67 @@
+[
+  {
+    "run": "Caltech101-20_r0.5_s1",
+    "branch_metric_deltas": {
+      "A": {
+        "ACC": 0.0,
+        "NMI": 0.0,
+        "ARI": 0.0
+      },
+      "B": {
+        "ACC": 0.0,
+        "NMI": 0.0,
+        "ARI": 0.0
+      },
+      "E": {
+        "ACC": 0.0,
+        "NMI": 0.0,
+        "ARI": 0.0
+      },
+      "C_low_s1": {
+        "ACC": 0.0,
+        "NMI": 0.0,
+        "ARI": 0.0
+      },
+      "C_low_s2": {
+        "ACC": 0.0,
+        "NMI": 0.0,
+        "ARI": 0.0
+      },
+      "C_rand": {
+        "ACC": 0.0,
+        "NMI": 0.0,
+        "ARI": 0.0
+      }
+    },
+    "array_equal": {
+      "mask": true,
+      "missing": true,
+      "missing_view": true,
+      "error": true,
+      "s1": false,
+      "s2": true,
+      "prototypes": false,
+      "stability_partitions": true,
+      "labels": true,
+      "B_v0": true,
+      "oracle_v0": true,
+      "B_v1": true,
+      "oracle_v1": true,
+      "selection_C_rand": true,
+      "selection_C_low_s1": true,
+      "selection_C_low_s2": true,
+      "prediction_B": true,
+      "prediction_A": true,
+      "prediction_E": true,
+      "prediction_C_rand": true,
+      "prediction_C_low_s1": true,
+      "prediction_C_low_s2": true
+    },
+    "array_max_abs_differences": {
+      "s1": 2.535559089078543e-11,
+      "prototypes": 1.4901161193847656e-08
+    },
+    "mask_hash_equal": true,
+    "input_hash_equal": true
+  }
+]

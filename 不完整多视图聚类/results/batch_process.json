@@ -1,0 +1,8 @@
+{
+  "pid": 5928,
+  "device": "cuda",
+  "workers": 1,
+  "python": "F:\\研究生毕设\\不完整多视图聚类\\envs\\imvc_gpu\\python.exe",
+  "started_at": "2026-10-27T18:53:23.6925417+08:00",
+  "phase": "validation_only_repair"
+}

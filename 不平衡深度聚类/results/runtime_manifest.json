@@ -1,0 +1,14 @@
+{
+  "scripts\\audit_results.py": "898d968389cb1fe3deb54027da73c31e3a53484379c79c9071d5505de4989d8f",
+  "scripts\\check_diagnostics.py": "d5b1a6fbab9284f8383a4fe5edce90073cd7efacd40b3fa991d46c999e52ff78",
+  "scripts\\check_runtime.py": "8f921f265f0541dc5e08e62464a828457bc804a4fd66a6bbf27d65c1744b7f1b",
+  "scripts\\check_summary.py": "15311c07dafbe1e14096721f78498f1d918ea13876c3830f8ed36a8580e8f20f",
+  "scripts\\download_cifar.py": "a6ec50c7e17b316dff29af579e4a94ae12188c1bd3b5db10a54c53c3d6a39f57",
+  "scripts\\extract_features.py": "23a7fe814e013e412e21a6d3fb49bae0992ad2268eef405232f8ad8e77997689",
+  "scripts\\freeze_protocol.py": "a54e0db0c56ca2f1190bf06c9984cf31e6f0d75032c4c41f70298f2bc7a1dc10",
+  "scripts\\proxy_download.py": "28fd48878e0ddd6b6f4b54718dbe8ce0e157d20a6f6ef05214b2776ff81eca94",
+  "scripts\\run_diagnostic.py": "b04967d3b805d70aa58d51f04533f3c9ec7b8dc9abc8dda8921de17c97ad4bb9",
+  "scripts\\run_pipeline.py": "5bd6fc6783c8a46705114d1ae17ba8604910a39a842187ebf0d9660348603be4",
+  "scripts\\site_notes.py": "0c5991193e52ee1737f59bc8b7ef22926bebb3637f11b6d1726f705cf2b18fc9",
+  "scripts\\summarize_results.py": "f977404b182fbf8fac5ec89d76b1c2858aa038c3192efc7ca0884d4c194d751a"
+}

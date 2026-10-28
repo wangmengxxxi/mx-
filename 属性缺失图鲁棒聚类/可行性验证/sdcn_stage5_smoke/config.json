@@ -1,0 +1,30 @@
+{
+  "rates": "0.4",
+  "methods": "fp",
+  "seeds": "0",
+  "masks": 1,
+  "mask_seed": 20261023,
+  "hidden": "128,64",
+  "latent": 10,
+  "clusters": 7,
+  "pretrain_epochs": 2,
+  "train_epochs": 2,
+  "batch_size": 256,
+  "pretrain_lr": 0.001,
+  "lr": 0.001,
+  "steps": 40,
+  "threads": 2,
+  "eval_every": 20,
+  "output": "sdcn_stage5_smoke",
+  "confidence_dir": "confidence_stage4_holdout",
+  "weight_modes": "uniform,informed",
+  "weight_location": "reconstruction",
+  "mask_mode": "random",
+  "hidden_dims": [
+    128,
+    64
+  ],
+  "torch": "2.8.0+cpu",
+  "numpy": "1.26.4",
+  "protocol": "Fixed FP; node weights on reconstruction; final epoch; no label selection"
+}

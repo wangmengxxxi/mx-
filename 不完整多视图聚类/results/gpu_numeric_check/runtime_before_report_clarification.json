@@ -1,0 +1,21 @@
+{
+  "scripts\\run_diagnostic.py": "24ef739f4938a0c4c8c36afaf49536f0fdfc6efeb70b81cd3ca8c5905d6ce55c",
+  "results\\protocol.json": "7ddf3260ccebdf199cea02efdb9f562e8afc66c6a725f05ff4bcf0d6553cb34a",
+  "scripts\\completer\\configure.py": "ca90ac6236263e4c6d6c08d12260f9b64e6eac7be94f7bc9bfde29d30e91312f",
+  "scripts\\completer\\datasets.py": "02e7f95ec39cff4f7cc31a64fc2e1306511b4bb33360637a329a8358e016e27d",
+  "scripts\\completer\\evaluation.py": "3e2c6263ab3d10e3e6093ca3762cea691b0479c32767f998e31f299a9ce114ea",
+  "scripts\\completer\\get_mask.py": "aa3862af2192c160cb16f40cafb72a061588cc41ce3a9e30d4ee1c4fa945e146",
+  "scripts\\completer\\loss.py": "0ac5ea5853fef850ecfa86a06650875906c25df9c68db81ce0e0a737cd3b6ebf",
+  "scripts\\completer\\model.py": "bc6e3ed129147c33216897b8a6e7b02db8e98f0169bf9fecf383e3124a676f07",
+  "scripts\\completer\\util.py": "c28656959032e9589ded52ed18861882553416ac3e24f838d0ea7e73f88ac5aa",
+  "scripts\\run_batch.py": "a39a55f562a7369380dde86d4b8cfcbfa0838b19bc171af82225804c34d862c1",
+  "scripts\\audit_results.py": "fde690b2062ed5b28345de8799a0d894d7389308aea830a9186ef44301b67a98",
+  "scripts\\summarize_results.py": "b39bf0b36da221918d59b14b9a29a2cf1d39b0d2dc63d01217a27ba95fb9e67b",
+  "scripts\\prepare_adaptation.py": "527d1e5c3d6045a04c731bfbdc19d742d055fa53b593830ca994d2018c3261dd",
+  "scripts\\gpu_transition.py": "fa5fb560819bbf0df1b68280b6f725299e8e36d9327a7415ac2e1d37beae39a7",
+  "scripts\\run_gpu_checks.py": "b56ffd594d0678d243ad1c3bd3eb754339a3f3d0a0919b717d7adc833b42203c",
+  "scripts\\verify_gpu_environment.py": "1d6d98f05635a55c58066dbaab4dde462d7456be07b6b55c52fd6e0cff6e48d3",
+  "scripts\\inspect_gpu_roundoff.py": "a1ce888d8f18257d97e28d3c94fe92a69249271c5f125844063816d33870a11c",
+  "scripts\\inspect_failed_gpu_runs.py": "243f2b36d5bda3b9225c30ec8c77b523a83fd81bc9d250d414aa2393c6973b2d",
+  "scripts\\verify_gpu_roundoff.py": "b73b9e518f89b74bbfdd936cb14b955d6468a96eef57f69e5e37e2b758e19547"
+}

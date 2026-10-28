@@ -1,0 +1,10 @@
+{
+  "status": "finished",
+  "jobs": {
+    "amgc": "finished",
+    "sdcn_repeats": "finished",
+    "sdcn_weighted": "finished"
+  },
+  "note": "Full summary, report, and hash manifest generated.",
+  "utc": "2026-10-22T15:46:39.962303+00:00"
+}
