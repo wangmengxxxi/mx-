@@ -1,0 +1,19 @@
+{
+  "P2OT_full": {
+    "prediction_hash_equal": true,
+    "BA_abs_diff": 0.0,
+    "main_hash": "07d11952459090df3a858be13c04ed8a06df48bf4087b5fc47eeeef383a642af",
+    "rerun_hash": "07d11952459090df3a858be13c04ed8a06df48bf4087b5fc47eeeef383a642af"
+  },
+  "KM": {
+    "prediction_hash_equal": true,
+    "BA_abs_diff": 0.0,
+    "inertia_abs_diff": 0.0,
+    "main_hash": "57cfc00ac67b1fa543f62e83d9ec58fd5239eeb73707f81b23ec7a45a2392b90",
+    "rerun_hash": "57cfc00ac67b1fa543f62e83d9ec58fd5239eeb73707f81b23ec7a45a2392b90"
+  },
+  "ORACLE_KM": {
+    "prediction_hash_equal": true,
+    "BA_abs_diff": 0.0
+  }
+}

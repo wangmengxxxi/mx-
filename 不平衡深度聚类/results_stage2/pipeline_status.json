@@ -1,0 +1,11 @@
+{
+  "state": "complete",
+  "started_at": "2026-10-30T11:26:41+08:00",
+  "updated_at": "2026-10-31T04:36:25+08:00",
+  "machine": "RTX 5060 8GB",
+  "protocol_sha256": "ee8aff58b27ed44b4bf560aa1f4697be991508cb14ab2786f80673427e38ec21",
+  "total": 232,
+  "completed": 232,
+  "current": null,
+  "failures": []
+}

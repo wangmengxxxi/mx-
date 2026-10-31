@@ -1,0 +1,34 @@
+﻿# Active stage-2 environment: envs/lt_gpu_5060_reuse (venv --system-site-packages over D:/Miniconda3/envs/pytorch)
+# User requested reuse of installed torch; Python 3.12.16, torch 2.11.0+cu128 differ from original Python 3.9.21 / torch 2.8.0 plan.
+# RTX 5060, driver 610.88, CUDA runtime 12.8; validated sm_120 matmul and convolution.
+contourpy==1.3.3
+cycler==0.12.1
+filelock==3.32.3
+fonttools==4.68.0
+fsspec==2026.7.0
+Jinja2==3.1.6
+joblib==1.5.3
+kiwisolver==1.5.1
+MarkupSafe==3.0.3
+matplotlib==3.11.2
+mpmath==1.3.0
+munkres==1.1.4
+networkx==3.6.1
+numpy==1.26.4
+packaging==26.3
+pillow==12.3.0
+pip==26.2.2
+pyparsing==3.3.3
+python-dateutil==3.0.0
+scikit-learn==1.4.0
+scipy==1.13.1
+setuptools==78.1.0
+six==1.17.0
+sympy==1.14.0
+threadpoolctl==3.5.0
+torch==2.11.0+cu128
+torchaudio==2.11.0+cu128
+torchvision==0.26.0+cu128
+typing_extensions==4.16.0
+tzdata==2026.6
+wheel==0.48.0

@@ -1,0 +1,298 @@
+{
+  "feature_checks": [
+    {
+      "file": "cifar10_train.npy",
+      "sha256": "26858e9978b15b8f9265ee60761f72a3df94f801c3393fd3c0d5bbed39acaca1",
+      "expected": "26858e9978b15b8f9265ee60761f72a3df94f801c3393fd3c0d5bbed39acaca1",
+      "match": true
+    },
+    {
+      "file": "cifar10_train_labels.npy",
+      "sha256": "9dfee6f275bac0f14e63de8d1091cd1f4487a16d30c6d8726f61d1b8f999c745",
+      "expected": "9dfee6f275bac0f14e63de8d1091cd1f4487a16d30c6d8726f61d1b8f999c745",
+      "match": true
+    },
+    {
+      "file": "cifar10_test.npy",
+      "sha256": "10e72c26522ca4dbeba551e89fc733a37b6ede3793d03822f4e9db11ee38bbcb",
+      "expected": "10e72c26522ca4dbeba551e89fc733a37b6ede3793d03822f4e9db11ee38bbcb",
+      "match": true
+    },
+    {
+      "file": "cifar10_test_labels.npy",
+      "sha256": "fc48d9ecfdbeacce2dacf004498170f2df12e75e3485475017d2663b587a92f3",
+      "expected": "fc48d9ecfdbeacce2dacf004498170f2df12e75e3485475017d2663b587a92f3",
+      "match": true
+    },
+    {
+      "file": "cifar100_train.npy",
+      "sha256": "c52bbeb3e2243ec7223e7c0ac56127b49668e04bac660df98de0138de7dc888f",
+      "expected": "c52bbeb3e2243ec7223e7c0ac56127b49668e04bac660df98de0138de7dc888f",
+      "match": true
+    },
+    {
+      "file": "cifar100_train_labels.npy",
+      "sha256": "233cdd4afc94cd00f3ddec6f8640168bf76a6872168cf6c5a9990ac9f144be3b",
+      "expected": "233cdd4afc94cd00f3ddec6f8640168bf76a6872168cf6c5a9990ac9f144be3b",
+      "match": true
+    },
+    {
+      "file": "cifar100_test.npy",
+      "sha256": "9e0e4c995542d4531d281e0471cb7b4bce8e2f4b477ee28658bad0c89d37c88d",
+      "expected": "9e0e4c995542d4531d281e0471cb7b4bce8e2f4b477ee28658bad0c89d37c88d",
+      "match": true
+    },
+    {
+      "file": "cifar100_test_labels.npy",
+      "sha256": "7827272d0fbeee517a81b235f35fae2128af64393371c2fdde1c8f9a638e4a1a",
+      "expected": "7827272d0fbeee517a81b235f35fae2128af64393371c2fdde1c8f9a638e4a1a",
+      "match": true
+    }
+  ],
+  "index_checks": [
+    {
+      "dataset": "cifar10",
+      "ir": 1,
+      "seed": 1,
+      "sha256": "1ac53ac6732cd0c469e63dc1ce6cd5485ac7a71b74ddfc00ff38f3d777990047",
+      "expected": "1ac53ac6732cd0c469e63dc1ce6cd5485ac7a71b74ddfc00ff38f3d777990047",
+      "match": true
+    },
+    {
+      "dataset": "cifar10",
+      "ir": 1,
+      "seed": 2,
+      "sha256": "dc084670bc062639caefad8381039ce2efc281252d3c1d03ca4e8a31fcc9816a",
+      "expected": "dc084670bc062639caefad8381039ce2efc281252d3c1d03ca4e8a31fcc9816a",
+      "match": true
+    },
+    {
+      "dataset": "cifar10",
+      "ir": 1,
+      "seed": 3,
+      "sha256": "efe82a84ae518aab7e64aa0e13c9d10d013db0781a8d27ef22490c51132b8de6",
+      "expected": "efe82a84ae518aab7e64aa0e13c9d10d013db0781a8d27ef22490c51132b8de6",
+      "match": true
+    },
+    {
+      "dataset": "cifar10",
+      "ir": 1,
+      "seed": 4,
+      "sha256": "403cf4bec3f74b8bdd9b5d1d0cad1a2a3a90c95cd2a2c47d5314b212354d7bd7",
+      "expected": "403cf4bec3f74b8bdd9b5d1d0cad1a2a3a90c95cd2a2c47d5314b212354d7bd7",
+      "match": true
+    },
+    {
+      "dataset": "cifar10",
+      "ir": 1,
+      "seed": 5,
+      "sha256": "6f2140a9da09563e1131864027bbdf9761256e558f0f6df7dcc3d9606f8a725e",
+      "expected": "6f2140a9da09563e1131864027bbdf9761256e558f0f6df7dcc3d9606f8a725e",
+      "match": true
+    },
+    {
+      "dataset": "cifar10",
+      "ir": 10,
+      "seed": 1,
+      "sha256": "ee13341a74c5967f6b4c5c29adea960a3ea9f060f1b4d6e5cbe070f4a5ba97fc",
+      "expected": "ee13341a74c5967f6b4c5c29adea960a3ea9f060f1b4d6e5cbe070f4a5ba97fc",
+      "match": true
+    },
+    {
+      "dataset": "cifar10",
+      "ir": 10,
+      "seed": 2,
+      "sha256": "f99060428c3e16bf20aee3f17bd0f54eb3eec420098e2cc356d13a1410457077",
+      "expected": "f99060428c3e16bf20aee3f17bd0f54eb3eec420098e2cc356d13a1410457077",
+      "match": true
+    },
+    {
+      "dataset": "cifar10",
+      "ir": 10,
+      "seed": 3,
+      "sha256": "7c46f141e2fcaefc166529cb847169b7ad81b9be95e34974c68c3fa4c2d3c61c",
+      "expected": "7c46f141e2fcaefc166529cb847169b7ad81b9be95e34974c68c3fa4c2d3c61c",
+      "match": true
+    },
+    {
+      "dataset": "cifar10",
+      "ir": 10,
+      "seed": 4,
+      "sha256": "aa50f568aadda6b2df03225b7c433da356ee187f6c091baaee1646b2658e81c6",
+      "expected": "aa50f568aadda6b2df03225b7c433da356ee187f6c091baaee1646b2658e81c6",
+      "match": true
+    },
+    {
+      "dataset": "cifar10",
+      "ir": 10,
+      "seed": 5,
+      "sha256": "ea7dfda96469463a328dda438f7d2519ac57bc89de57bbb912558f8d9a6e5b0c",
+      "expected": "ea7dfda96469463a328dda438f7d2519ac57bc89de57bbb912558f8d9a6e5b0c",
+      "match": true
+    },
+    {
+      "dataset": "cifar10",
+      "ir": 100,
+      "seed": 1,
+      "sha256": "413abfec7c82c41b14cbce0680d0ece4e3e8b3de60098a6bacc3c435cddc503b",
+      "expected": "413abfec7c82c41b14cbce0680d0ece4e3e8b3de60098a6bacc3c435cddc503b",
+      "match": true
+    },
+    {
+      "dataset": "cifar10",
+      "ir": 100,
+      "seed": 2,
+      "sha256": "027642dc97221538509f6b64fe0fccc58a7a07d0ca438472de29c0957fde11ca",
+      "expected": "027642dc97221538509f6b64fe0fccc58a7a07d0ca438472de29c0957fde11ca",
+      "match": true
+    },
+    {
+      "dataset": "cifar10",
+      "ir": 100,
+      "seed": 3,
+      "sha256": "4522cd591be7cfc5011929da2efde64328b1c84e1d74daa090dc494fad30b177",
+      "expected": "4522cd591be7cfc5011929da2efde64328b1c84e1d74daa090dc494fad30b177",
+      "match": true
+    },
+    {
+      "dataset": "cifar10",
+      "ir": 100,
+      "seed": 4,
+      "sha256": "5eb120d809baa05e79d5219f9f9973e0b0eed93ce5a667d4809b040f922cc439",
+      "expected": "5eb120d809baa05e79d5219f9f9973e0b0eed93ce5a667d4809b040f922cc439",
+      "match": true
+    },
+    {
+      "dataset": "cifar10",
+      "ir": 100,
+      "seed": 5,
+      "sha256": "9b85f1eee2bf63128b2eda201718c7b2e109278b059615267809509d592e1687",
+      "expected": "9b85f1eee2bf63128b2eda201718c7b2e109278b059615267809509d592e1687",
+      "match": true
+    },
+    {
+      "dataset": "cifar100",
+      "ir": 1,
+      "seed": 1,
+      "sha256": "da193a73194eef77b654506dc01b7a06c4311c27da9c7f7c50ce47d8722df1bb",
+      "expected": "da193a73194eef77b654506dc01b7a06c4311c27da9c7f7c50ce47d8722df1bb",
+      "match": true
+    },
+    {
+      "dataset": "cifar100",
+      "ir": 1,
+      "seed": 2,
+      "sha256": "55e224a00a1b791cace14cd38dc953a3d8299fb9d32acf5596b0c600bc3a97b7",
+      "expected": "55e224a00a1b791cace14cd38dc953a3d8299fb9d32acf5596b0c600bc3a97b7",
+      "match": true
+    },
+    {
+      "dataset": "cifar100",
+      "ir": 1,
+      "seed": 3,
+      "sha256": "53a5e70d50cb569844f6e29ee84f3cad12a3bc6294a6d256f276f585369c1417",
+      "expected": "53a5e70d50cb569844f6e29ee84f3cad12a3bc6294a6d256f276f585369c1417",
+      "match": true
+    },
+    {
+      "dataset": "cifar100",
+      "ir": 1,
+      "seed": 4,
+      "sha256": "25b794636ece18f6ce876c59a1887044c7db5f4fb1b8e0811f4901e77bac4998",
+      "expected": "25b794636ece18f6ce876c59a1887044c7db5f4fb1b8e0811f4901e77bac4998",
+      "match": true
+    },
+    {
+      "dataset": "cifar100",
+      "ir": 1,
+      "seed": 5,
+      "sha256": "9d3798754a80aad075745b61c539a273d36d5d846930ddeceb72a031fc7091a4",
+      "expected": "9d3798754a80aad075745b61c539a273d36d5d846930ddeceb72a031fc7091a4",
+      "match": true
+    },
+    {
+      "dataset": "cifar100",
+      "ir": 10,
+      "seed": 1,
+      "sha256": "e1425abd0d0e4e908b2e6784d900de179a906d200db2c39c4eafd93460a690f6",
+      "expected": "e1425abd0d0e4e908b2e6784d900de179a906d200db2c39c4eafd93460a690f6",
+      "match": true
+    },
+    {
+      "dataset": "cifar100",
+      "ir": 10,
+      "seed": 2,
+      "sha256": "4f156cc3181591f2dea879bd73810c2da7604ac08ffa178da843de9d941ece8d",
+      "expected": "4f156cc3181591f2dea879bd73810c2da7604ac08ffa178da843de9d941ece8d",
+      "match": true
+    },
+    {
+      "dataset": "cifar100",
+      "ir": 10,
+      "seed": 3,
+      "sha256": "6df8bafb47a01d30c89a2fa364e1941799e9b6052bcb3a7ddacae4441383ddd6",
+      "expected": "6df8bafb47a01d30c89a2fa364e1941799e9b6052bcb3a7ddacae4441383ddd6",
+      "match": true
+    },
+    {
+      "dataset": "cifar100",
+      "ir": 10,
+      "seed": 4,
+      "sha256": "cdb02d03664c02f01323c1505b94dfd61ed47dcd6f52c753c502c69f4e0a07ea",
+      "expected": "cdb02d03664c02f01323c1505b94dfd61ed47dcd6f52c753c502c69f4e0a07ea",
+      "match": true
+    },
+    {
+      "dataset": "cifar100",
+      "ir": 10,
+      "seed": 5,
+      "sha256": "29dedf67a4e87061172771af4cb3bf131c4c30cdcc07ef1af64c1ee3bd1a986a",
+      "expected": "29dedf67a4e87061172771af4cb3bf131c4c30cdcc07ef1af64c1ee3bd1a986a",
+      "match": true
+    },
+    {
+      "dataset": "cifar100",
+      "ir": 100,
+      "seed": 1,
+      "sha256": "b9d7ce11fbf787c4361e4148f27990b31ef6edf2b292cfd42ac0f6009d47cd14",
+      "expected": "b9d7ce11fbf787c4361e4148f27990b31ef6edf2b292cfd42ac0f6009d47cd14",
+      "match": true
+    },
+    {
+      "dataset": "cifar100",
+      "ir": 100,
+      "seed": 2,
+      "sha256": "47fb89590a741a9f060d84a50fb86c5f4b6a45c81b676f1768deafadc9e18c55",
+      "expected": "47fb89590a741a9f060d84a50fb86c5f4b6a45c81b676f1768deafadc9e18c55",
+      "match": true
+    },
+    {
+      "dataset": "cifar100",
+      "ir": 100,
+      "seed": 3,
+      "sha256": "00bd2718d56486d06e1d5efdde92a11b01ffa8442d375b6b7bf2d55cce9ce6fc",
+      "expected": "00bd2718d56486d06e1d5efdde92a11b01ffa8442d375b6b7bf2d55cce9ce6fc",
+      "match": true
+    },
+    {
+      "dataset": "cifar100",
+      "ir": 100,
+      "seed": 4,
+      "sha256": "be40768d87217262cfdf5d9bc8881239a49709b91e77e4a13683284a471c1a34",
+      "expected": "be40768d87217262cfdf5d9bc8881239a49709b91e77e4a13683284a471c1a34",
+      "match": true
+    },
+    {
+      "dataset": "cifar100",
+      "ir": 100,
+      "seed": 5,
+      "sha256": "65e7b5b04f975bda339444a3b9ccc3c18ec9a6741e2cee0ec28ff13e3f967416",
+      "expected": "65e7b5b04f975bda339444a3b9ccc3c18ec9a6741e2cee0ec28ff13e3f967416",
+      "match": true
+    }
+  ],
+  "cifar100_archive_sha256": "85cd44d02ba6437773c5bbd22e183051d648de2e7d6b014e1ef29b855ba677a7",
+  "cifar100_archive_expected": "85cd44d02ba6437773c5bbd22e183051d648de2e7d6b014e1ef29b855ba677a7",
+  "checked": 30,
+  "failures": []
+}

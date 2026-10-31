@@ -1,0 +1,21 @@
+started=2026-10-31T04:30:15+08:00 command=['D:\\project\\研究生毕业选题\\不平衡深度聚类\\envs\\lt_gpu_5060_reuse\\Scripts\\python.exe', '-I', 'D:\\project\\研究生毕业选题\\不平衡深度聚类\\scripts\\run_stage2.py', '--dataset', 'cifar100', '--ir', '1', '--seed', '5', '--method', 'silhouette', '--out', 'results_stage2/full']
+{"k": 20, "silhouette": 0.04404440149664879}
+{"k": 30, "silhouette": 0.05959620699286461}
+{"k": 40, "silhouette": 0.06927250325679779}
+{"k": 50, "silhouette": 0.07873156666755676}
+{"k": 60, "silhouette": 0.08675166964530945}
+{"k": 70, "silhouette": 0.09329617023468018}
+{"k": 80, "silhouette": 0.09878095984458923}
+{"k": 90, "silhouette": 0.10067242383956909}
+{"k": 100, "silhouette": 0.09840729832649231}
+{"k": 110, "silhouette": 0.0973631739616394}
+{"k": 120, "silhouette": 0.0975995659828186}
+{"k": 130, "silhouette": 0.093594491481781}
+{"k": 140, "silhouette": 0.09834995865821838}
+{"k": 150, "silhouette": 0.09288879483938217}
+{"k": 160, "silhouette": 0.09205996990203857}
+{"k": 170, "silhouette": 0.08449818193912506}
+{"k": 180, "silhouette": 0.08670365810394287}
+{"k": 190, "silhouette": 0.08407612890005112}
+{"k": 200, "silhouette": 0.08164108544588089}
+finished=2026-10-31T04:31:08+08:00 exit_code=0

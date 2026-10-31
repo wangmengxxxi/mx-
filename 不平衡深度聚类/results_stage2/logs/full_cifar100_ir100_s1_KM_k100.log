@@ -1,0 +1,2 @@
+started=2026-10-30T14:48:16+08:00 command=['D:\\project\\研究生毕业选题\\不平衡深度聚类\\envs\\lt_gpu_5060_reuse\\Scripts\\python.exe', '-I', 'D:\\project\\研究生毕业选题\\不平衡深度聚类\\scripts\\run_stage2.py', '--dataset', 'cifar100', '--ir', '100', '--seed', '1', '--method', 'KM', '--out', 'results_stage2/full', '--k', '100']
+finished=2026-10-30T14:48:32+08:00 exit_code=0

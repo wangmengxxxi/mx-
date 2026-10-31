@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "D:\project\研究生毕业选题\不平衡深度聚类\scripts\watch_finalize_stage2.py", line 35, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "D:\project\研究生毕业选题\不平衡深度聚类\scripts\watch_finalize_stage2.py", line 15, in main
+    state = json.loads(STATUS.read_text(encoding="utf-8"))["state"]
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Miniconda3\envs\pytorch\Lib\json\__init__.py", line 335, in loads
+    raise JSONDecodeError("Unexpected UTF-8 BOM (decode using utf-8-sig)",
+json.decoder.JSONDecodeError: Unexpected UTF-8 BOM (decode using utf-8-sig): line 1 column 1 (char 0)

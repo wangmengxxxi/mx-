@@ -1,0 +1,25 @@
+{
+  "reviewed_on": "2026-10-30",
+  "execution_boundary": "stage-two scripts run with python -I; only PPOT/utils/sinkhorn_knopp.py is imported from third_party; MiniClustering source is read but never imported or executed",
+  "ppot": {
+    "repository": "rhfeiyang/PPOT",
+    "commit": "33bd8872a87203ddb753cb94a05d639a414c6c06",
+    "archive_sha256": "0154a5efb33c40494dfc839ac76fe26c4c18b443c4806b77c0dcc43444144cc4",
+    "license": "CC BY-NC 4.0 LICENSE present in fixed archive",
+    "reviewed_paths": ["train.py", "losses/losses.py", "models/classifer.py", "models/dino.py", "utils/common_config.py", "utils/memory.py", "utils/sinkhorn_knopp.py", "utils/train_utils.py"],
+    "executed_path": "utils/sinkhorn_knopp.py",
+    "executed_path_behavior": "imports torch/numpy; SemiCurrSinkhornKnopp allocates CUDA tensors and computes OT plan; no file writes, deletion, network calls, shell or subprocess in executed module",
+    "source_modifications": "none; official solver imported by absolute path; size-prior diagnostic implemented in own script"
+  },
+  "miniclustering": {
+    "repository": "LZX-001/MiniClustering",
+    "commit": "e17dddcee21294e6d274bcdde8086ada7c1a08ff",
+    "archive_sha256": "f7d1c21f5210a2495ec5f29ac4203dc9a0d33b9603e90c586bbe74b2639691f9",
+    "license": "no LICENSE in fixed archive",
+    "reviewed_paths": ["README.md", "main_byol.py", "MiniClustering.py", "models/util.py", "data/cifar100.py"],
+    "executed_paths": [],
+    "source_modifications": "none; feature adaptation independently implemented in scripts/run_stage2.py",
+    "official_run_issue": "MiniClustering.py line 190 TabError; code labels CIFAR-100 as 20 superclasses; paper contains no CIFAR-100 fine-class configuration"
+  },
+  "redistribution": "third_party archives and extracted sources are gitignored and not submitted"
+}

@@ -1,0 +1,21 @@
+running ['D:\\project\\研究生毕业选题\\不平衡深度聚类\\envs\\lt_gpu_5060_reuse\\Scripts\\python.exe', '-I', 'D:\\project\\研究生毕业选题\\不平衡深度聚类\\scripts\\audit_stage2_outputs.py']
+{
+  "P2OT_full": {
+    "prediction_hash_equal": true,
+    "BA_abs_diff": 0.0,
+    "main_hash": "07d11952459090df3a858be13c04ed8a06df48bf4087b5fc47eeeef383a642af",
+    "rerun_hash": "07d11952459090df3a858be13c04ed8a06df48bf4087b5fc47eeeef383a642af"
+  },
+  "KM": {
+    "prediction_hash_equal": true,
+    "BA_abs_diff": 0.0,
+    "inertia_abs_diff": 0.0,
+    "main_hash": "57cfc00ac67b1fa543f62e83d9ec58fd5239eeb73707f81b23ec7a45a2392b90",
+    "rerun_hash": "57cfc00ac67b1fa543f62e83d9ec58fd5239eeb73707f81b23ec7a45a2392b90"
+  },
+  "ORACLE_KM": {
+    "prediction_hash_equal": true,
+    "BA_abs_diff": 0.0
+  }
+}
+running ['D:\\project\\研究生毕业选题\\不平衡深度聚类\\envs\\lt_gpu_5060_reuse\\Scripts\\python.exe', '-I', 'D:\\project\\研究生毕业选题\\不平衡深度聚类\\scripts\\analyze_stage2.py']
