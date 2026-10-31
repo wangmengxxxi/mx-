@@ -1,0 +1,11 @@
+started=2026-10-31T13:50:34+08:00 command=['D:\\project\\鐮旂┒鐢熸瘯涓氶�夐\\涓嶅钩琛℃繁搴﹁仛绫籠\envs\\lt_gpu_5060_reuse\\Scripts\\python.exe', '-I', 'D:\\project\\鐮旂┒鐢熸瘯涓氶�夐\\涓嶅钩琛℃繁搴﹁仛绫籠\scripts\\run_stage3.py', '--dataset', 'cifar100', '--ir', '100', '--seed', '1', '--method', 'HDBSCAN']
+Traceback (most recent call last):
+  File "D:\project\研究生毕业选题\不平衡深度聚类\scripts\run_stage3.py", line 253, in <module>
+    run(args)
+  File "D:\project\研究生毕业选题\不平衡深度聚类\scripts\run_stage3.py", line 236, in run
+    pred, fit = fit_method(x, k, args.seed, args.method, args.kprime)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\project\研究生毕业选题\不平衡深度聚类\scripts\run_stage3.py", line 229, in fit_method
+    raise ValueError(method)
+ValueError: HDBSCAN
+finished=2026-10-31T13:50:35+08:00 exit_code=1

@@ -1,0 +1,9 @@
+started=2026-10-31T16:30:18+08:00 command=['D:\\project\\鐮旂┒鐢熸瘯涓氶�夐\\涓嶅钩琛℃繁搴﹁仛绫籠\envs\\lt_gpu_5060_reuse\\Scripts\\python.exe', '-I', 'D:\\project\\鐮旂┒鐢熸瘯涓氶�夐\\涓嶅钩琛℃繁搴﹁仛绫籠\scripts\\run_stage3.py', '--dataset', 'cifar100', '--ir', '1', '--seed', '3', '--method', 'HDBSCAN_nearest']
+Traceback (most recent call last):
+  File "D:\project\研究生毕业选题\不平衡深度聚类\scripts\run_stage3.py", line 371, in <module>
+    run(args)
+  File "D:\project\研究生毕业选题\不平衡深度聚类\scripts\run_stage3.py", line 349, in run
+    assert sha(PROTOCOL) == PROTOCOL.with_suffix('.sha256').read_text().split()[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
+finished=2026-10-31T16:30:22+08:00 exit_code=1

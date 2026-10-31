@@ -1,0 +1,19 @@
+{
+  "official_commit": "95c9376ac1b0cb48ea017c52d3abbf2a901940b3",
+  "license": "MIT",
+  "source_verification": "41 source and metadata files across DeepDPM and FINCH matched fixed Git tree blob SHA-1 values; see source_manifest.json",
+  "requested_initial_k": [10, 200],
+  "completed_runs": 0,
+  "official_requirements": {
+    "torch": "1.11.0",
+    "pytorch_lightning": "1.2.10",
+    "numpy": "1.20.3"
+  },
+  "existing_runtime": {
+    "python": "3.12.16",
+    "torch": "2.11.0+cu128",
+    "numpy": "1.26.4"
+  },
+  "probe": "The unmodified official DeepDPM.py --help could not finish imports. After no-deps installation of legacy Lightning and selected support packages, it failed in the Neptune import on missing click; the original also uses legacy Lightning Trainer(gpus=..., checkpoint_callback=...) and training_epoch_end hooks. This requires more than a minimal local patch under the existing runtime.",
+  "decision": "Skipped both initial-K configurations. No DeepDPM prediction, metric, or runtime is included in aggregate statistics."
+}

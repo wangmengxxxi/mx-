@@ -1,0 +1,157 @@
+{
+  "best_a_name": [
+    "FINCH_reqK",
+    "OVER_MERGE",
+    "FINCH_reqK",
+    "OVER_MERGE",
+    "OVER_MERGE"
+  ],
+  "best_a_ba": [
+    0.529782007608662,
+    0.5887589548675419,
+    0.5580436956417617,
+    0.5529592221270992,
+    0.5785533150227861
+  ],
+  "gap_oracle_a": [
+    0.38417857586881854,
+    0.32839498798732114,
+    0.35778616224731796,
+    0.3646749126787635,
+    0.3332427251122503
+  ],
+  "gap_a_mini": [
+    0.04654887338351771,
+    0.137474108250709,
+    0.10187444831120374,
+    0.08958364495464466,
+    0.14278737870106856
+  ],
+  "rule_a": "经典方法没有解决问题，主线有力成立",
+  "best_b_name": [
+    "HDBSCAN_nearest",
+    "HDBSCAN_nearest",
+    "HDBSCAN_nearest",
+    "HDBSCAN_nearest",
+    "HDBSCAN_nearest"
+  ],
+  "best_b_ba": [
+    0.5173438310590025,
+    0.5535139942403177,
+    0.5414280860386611,
+    0.5194745207337249,
+    0.5566857203520452
+  ],
+  "gap_oracle_b": [
+    0.39661675241847805,
+    0.3636399486145454,
+    0.37440177185041856,
+    0.39815961407213785,
+    0.3551103197829911
+  ],
+  "b_underestimated_methods": [
+    "FINCH_auto",
+    "Leiden_knn"
+  ],
+  "b_ir1": [
+    {
+      "method": "FINCH_auto",
+      "mean_k": 203.0,
+      "mean_tail_coverage": 1.0,
+      "mean_k_ir100": 68.6,
+      "mean_tail_coverage_ir100": 0.013333333333333332,
+      "contrast_supported": true
+    },
+    {
+      "method": "Leiden_knn",
+      "mean_k": 63.4,
+      "mean_tail_coverage": 0.6266666666666667,
+      "mean_k_ir100": 39.2,
+      "mean_tail_coverage_ir100": 0.013333333333333332,
+      "contrast_supported": true
+    }
+  ],
+  "rule_b": "已运行 B 组的最优 BA 差满足 5/5，尾部退化已覆盖完整 B 组至少一半；DeepDPM 缺测使最终最优 BA 条件未定",
+  "skipped": [
+    {
+      "job": "cifar100/IR100/seed1/DeepDPM",
+      "reason": "official shallow clone yielded no worktree; implementation/permission not verified"
+    },
+    {
+      "job": "cifar100/IR100/seed2/DeepDPM",
+      "reason": "official shallow clone yielded no worktree; implementation/permission not verified"
+    },
+    {
+      "job": "cifar100/IR100/seed3/DeepDPM",
+      "reason": "official shallow clone yielded no worktree; implementation/permission not verified"
+    },
+    {
+      "job": "cifar100/IR100/seed4/DeepDPM",
+      "reason": "official shallow clone yielded no worktree; implementation/permission not verified"
+    },
+    {
+      "job": "cifar100/IR100/seed5/DeepDPM",
+      "reason": "official shallow clone yielded no worktree; implementation/permission not verified"
+    },
+    {
+      "job": "cifar100/IR10/seed1/DeepDPM",
+      "reason": "official shallow clone yielded no worktree; implementation/permission not verified"
+    },
+    {
+      "job": "cifar100/IR10/seed2/DeepDPM",
+      "reason": "official shallow clone yielded no worktree; implementation/permission not verified"
+    },
+    {
+      "job": "cifar100/IR10/seed3/DeepDPM",
+      "reason": "official shallow clone yielded no worktree; implementation/permission not verified"
+    },
+    {
+      "job": "cifar100/IR10/seed4/DeepDPM",
+      "reason": "official shallow clone yielded no worktree; implementation/permission not verified"
+    },
+    {
+      "job": "cifar100/IR10/seed5/DeepDPM",
+      "reason": "official shallow clone yielded no worktree; implementation/permission not verified"
+    },
+    {
+      "job": "cifar10/IR100/seed1/DeepDPM",
+      "reason": "official shallow clone yielded no worktree; implementation/permission not verified"
+    },
+    {
+      "job": "cifar10/IR100/seed2/DeepDPM",
+      "reason": "official shallow clone yielded no worktree; implementation/permission not verified"
+    },
+    {
+      "job": "cifar10/IR100/seed3/DeepDPM",
+      "reason": "official shallow clone yielded no worktree; implementation/permission not verified"
+    },
+    {
+      "job": "cifar10/IR100/seed4/DeepDPM",
+      "reason": "official shallow clone yielded no worktree; implementation/permission not verified"
+    },
+    {
+      "job": "cifar10/IR100/seed5/DeepDPM",
+      "reason": "official shallow clone yielded no worktree; implementation/permission not verified"
+    },
+    {
+      "job": "cifar100/IR1/seed1/DeepDPM",
+      "reason": "official shallow clone yielded no worktree; implementation/permission not verified"
+    },
+    {
+      "job": "cifar100/IR1/seed2/DeepDPM",
+      "reason": "official shallow clone yielded no worktree; implementation/permission not verified"
+    },
+    {
+      "job": "cifar100/IR1/seed3/DeepDPM",
+      "reason": "official shallow clone yielded no worktree; implementation/permission not verified"
+    },
+    {
+      "job": "cifar100/IR1/seed4/DeepDPM",
+      "reason": "official shallow clone yielded no worktree; implementation/permission not verified"
+    },
+    {
+      "job": "cifar100/IR1/seed5/DeepDPM",
+      "reason": "official shallow clone yielded no worktree; implementation/permission not verified"
+    }
+  ]
+}

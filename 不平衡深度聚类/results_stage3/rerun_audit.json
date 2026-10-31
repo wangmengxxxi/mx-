@@ -1,0 +1,46 @@
+{
+  "passed": true,
+  "condition": "cifar100 IR100 seed1",
+  "methods": {
+    "GMM_diag": {
+      "passed": true,
+      "metrics_equal": true,
+      "fit_equal": true,
+      "indices_equal": true,
+      "prediction_equal": null,
+      "prediction_hash_original": null,
+      "prediction_hash_rerun": "7efd5cfb103a01854aae70bc99253395adc12fe971b1c714dabfdb046d67c93b",
+      "BA_difference": 0.0
+    },
+    "OVER_MERGE": {
+      "passed": true,
+      "metrics_equal": true,
+      "fit_equal": true,
+      "indices_equal": true,
+      "prediction_equal": null,
+      "prediction_hash_original": null,
+      "prediction_hash_rerun": "a91908761d17de318e682543c7f16682ad962c81d6af33f6407d7387bc8f3a2f",
+      "BA_difference": 0.0
+    },
+    "HDBSCAN_error": {
+      "passed": true,
+      "metrics_equal": true,
+      "fit_equal": true,
+      "indices_equal": true,
+      "prediction_equal": null,
+      "prediction_hash_original": null,
+      "prediction_hash_rerun": "f715caff2cfc54678a77b8ab9c831af6c27e81e3f88ff67136323d11cfefe9a4",
+      "BA_difference": 0.0
+    },
+    "HDBSCAN_nearest": {
+      "passed": true,
+      "metrics_equal": true,
+      "fit_equal": true,
+      "indices_equal": true,
+      "prediction_equal": null,
+      "prediction_hash_original": null,
+      "prediction_hash_rerun": "c49507a4e50fd97875fc1d7fe91c434eacb8671a5fc5cce3940bb8ac2beca05c",
+      "BA_difference": 0.0
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "dataset": "cifar100",
+  "ir": 100,
+  "seed": 5,
+  "method": "OVER_ORACLE_MERGE",
+  "k": 100,
+  "n": 10847,
+  "protocol_sha256": "f2b298c369f2ce72687d55beeee9c6710675c00001ad4ab936206db695adce59",
+  "indices_array_sha256": "65e7b5b04f975bda339444a3b9ccc3c18ec9a6741e2cee0ec28ff13e3f967416",
+  "prediction_sha256": "d09ff58fbdec858b1957a97ca078f6bdba281dc61882808c1e621232a0caa00d",
+  "code_sha256": "498183964f81c684baa911dcc5ef983bb05b9b33f1595661425238cd930ab039",
+  "metrics": {
+    "ACC": 0.8612519590670231,
+    "NMI": 0.7155839717550959,
+    "ARI": 0.15808632064339415,
+    "balanced_accuracy": 0.6604229603821978,
+    "macro_F1": 0.6678370275561543,
+    "head_recall": 0.8936253587713963,
+    "medium_recall": 0.734100938249024,
+    "tail_recall": 0.32898325817056473,
+    "stage1_tail_recall": 0.35440823548760503,
+    "many_to_one_BA": 0.6604229603821978,
+    "many_to_one_tail_recall": 0.32898325817056473,
+    "covered_classes": 83,
+    "many_to_one_stage1_tail_recall": 0.35440823548760503,
+    "tail_coverage": 0.43333333333333335,
+    "stage1_tail_coverage": 0.48484848484848486,
+    "predicted_clusters": 500,
+    "normalized_entropy": 0.976758752896391
+  },
+  "fit": {
+    "microclusters": 500,
+    "inertia": 5376.44921875
+  },
+  "elapsed_s": 63.919422300001315,
+  "peak_memory_bytes": 784293888
+}

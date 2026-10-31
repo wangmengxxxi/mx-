@@ -1,0 +1,31 @@
+{
+  "dataset": "cifar100",
+  "ir": 100,
+  "seed": 2,
+  "method": "GMM_diag",
+  "k": 100,
+  "n": 10847,
+  "protocol_sha256": "f2b298c369f2ce72687d55beeee9c6710675c00001ad4ab936206db695adce59",
+  "indices_array_sha256": "47fb89590a741a9f060d84a50fb86c5f4b6a45c81b676f1768deafadc9e18c55",
+  "metrics": {
+    "ACC": 0.47497003779846964,
+    "NMI": 0.7623832976741547,
+    "ARI": 0.41004003539226425,
+    "balanced_accuracy": 0.403570010051074,
+    "macro_F1": 0.36737176405709304,
+    "head_recall": 0.5189073414939219,
+    "medium_recall": 0.4958756448258693,
+    "tail_recall": 0.1651584989084989,
+    "stage1_tail_recall": 0.15598824576097303,
+    "many_to_one_BA": 0.429814227003435,
+    "many_to_one_tail_recall": 0.0,
+    "covered_classes": 51,
+    "tail_coverage": 0.0,
+    "predicted_clusters": 100,
+    "normalized_entropy": 0.9777794668069035
+  },
+  "fit": {
+    "lower_bound": 223.43209013908705
+  },
+  "elapsed_s": 3.795871699999225
+}

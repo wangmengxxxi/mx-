@@ -1,0 +1,86 @@
+{
+  "state": "failed",
+  "started_at": "2026-10-31T14:56:07+08:00",
+  "updated_at": "2026-10-31T16:30:22+08:00",
+  "machine": "RTX 5060 8GB",
+  "total": 235,
+  "completed": 201,
+  "current": "cifar100/IR1/seed3/HDBSCAN_nearest",
+  "skipped": [
+    {
+      "job": "cifar100/IR100/seed1/DeepDPM",
+      "reason": "official shallow clone yielded no worktree; implementation/permission not verified"
+    },
+    {
+      "job": "cifar100/IR100/seed2/DeepDPM",
+      "reason": "official shallow clone yielded no worktree; implementation/permission not verified"
+    },
+    {
+      "job": "cifar100/IR100/seed3/DeepDPM",
+      "reason": "official shallow clone yielded no worktree; implementation/permission not verified"
+    },
+    {
+      "job": "cifar100/IR100/seed4/DeepDPM",
+      "reason": "official shallow clone yielded no worktree; implementation/permission not verified"
+    },
+    {
+      "job": "cifar100/IR100/seed5/DeepDPM",
+      "reason": "official shallow clone yielded no worktree; implementation/permission not verified"
+    },
+    {
+      "job": "cifar100/IR10/seed1/DeepDPM",
+      "reason": "official shallow clone yielded no worktree; implementation/permission not verified"
+    },
+    {
+      "job": "cifar100/IR10/seed2/DeepDPM",
+      "reason": "official shallow clone yielded no worktree; implementation/permission not verified"
+    },
+    {
+      "job": "cifar100/IR10/seed3/DeepDPM",
+      "reason": "official shallow clone yielded no worktree; implementation/permission not verified"
+    },
+    {
+      "job": "cifar100/IR10/seed4/DeepDPM",
+      "reason": "official shallow clone yielded no worktree; implementation/permission not verified"
+    },
+    {
+      "job": "cifar100/IR10/seed5/DeepDPM",
+      "reason": "official shallow clone yielded no worktree; implementation/permission not verified"
+    },
+    {
+      "job": "cifar10/IR100/seed1/DeepDPM",
+      "reason": "official shallow clone yielded no worktree; implementation/permission not verified"
+    },
+    {
+      "job": "cifar10/IR100/seed2/DeepDPM",
+      "reason": "official shallow clone yielded no worktree; implementation/permission not verified"
+    },
+    {
+      "job": "cifar10/IR100/seed3/DeepDPM",
+      "reason": "official shallow clone yielded no worktree; implementation/permission not verified"
+    },
+    {
+      "job": "cifar10/IR100/seed4/DeepDPM",
+      "reason": "official shallow clone yielded no worktree; implementation/permission not verified"
+    },
+    {
+      "job": "cifar10/IR100/seed5/DeepDPM",
+      "reason": "official shallow clone yielded no worktree; implementation/permission not verified"
+    },
+    {
+      "job": "cifar100/IR1/seed1/DeepDPM",
+      "reason": "official shallow clone yielded no worktree; implementation/permission not verified"
+    },
+    {
+      "job": "cifar100/IR1/seed2/DeepDPM",
+      "reason": "official shallow clone yielded no worktree; implementation/permission not verified"
+    }
+  ],
+  "failures": [
+    {
+      "job": "cifar100/IR1/seed3/HDBSCAN_nearest",
+      "exit_code": 1,
+      "log": "results_stage3\\logs\\cifar100_ir1_s3_HDBSCAN_nearest_k.log"
+    }
+  ]
+}

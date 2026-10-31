@@ -1,0 +1,70 @@
+{
+  "dataset": "cifar10",
+  "ir": 100,
+  "seed": 3,
+  "method": "vMF_free",
+  "k": 10,
+  "n": 12406,
+  "protocol_sha256": "f2b298c369f2ce72687d55beeee9c6710675c00001ad4ab936206db695adce59",
+  "indices_array_sha256": "4522cd591be7cfc5011929da2efde64328b1c84e1d74daa090dc494fad30b177",
+  "metrics": {
+    "ACC": 0.5172497178784459,
+    "NMI": 0.6648010143353015,
+    "balanced_accuracy": 0.3480167911518407,
+    "macro_F1": 0.3535484116712003,
+    "head_recall": 0.5020708985649841,
+    "medium_recall": 0.4834888039558636,
+    "tail_recall": 0.013333333333333334,
+    "stage1_tail_recall": 0.013333333333333334,
+    "many_to_one_BA": 0.4667437232063897,
+    "many_to_one_tail_recall": 0.0,
+    "covered_classes": 5,
+    "tail_coverage": 0.0,
+    "recall_per_class": [
+      0.3842,
+      0.6659993326659993,
+      0.45601336302895323,
+      0.9990714948932219,
+      0.9348837209302325,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.04
+    ],
+    "mapping": [
+      9,
+      2,
+      5,
+      4,
+      1,
+      0,
+      3,
+      6,
+      7,
+      8
+    ],
+    "cluster_counts": [
+      548,
+      820,
+      1317,
+      606,
+      2001,
+      1929,
+      2599,
+      408,
+      589,
+      1589
+    ],
+    "many_to_one_stage1_tail_recall": 0.0,
+    "stage1_tail_coverage": 0.0,
+    "ARI": 0.41156787383959187,
+    "predicted_clusters": 10,
+    "normalized_entropy": 0.9269005241596291
+  },
+  "fit": {
+    "iterations": 15
+  },
+  "elapsed_s": 3.342763399999967,
+  "peak_memory_bytes": 763166720
+}

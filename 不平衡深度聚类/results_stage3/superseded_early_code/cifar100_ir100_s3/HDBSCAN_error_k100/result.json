@@ -1,0 +1,32 @@
+{
+  "dataset": "cifar100",
+  "ir": 100,
+  "seed": 3,
+  "method": "HDBSCAN_error",
+  "k": 100,
+  "n": 10847,
+  "protocol_sha256": "f2b298c369f2ce72687d55beeee9c6710675c00001ad4ab936206db695adce59",
+  "indices_array_sha256": "00bd2718d56486d06e1d5efdde92a11b01ffa8442d375b6b7bf2d55cce9ce6fc",
+  "metrics": {
+    "ACC": 0.4786576933714391,
+    "NMI": 0.6327414713728522,
+    "ARI": 0.07814638753351115,
+    "balanced_accuracy": 0.3546584374547226,
+    "macro_F1": 0.41367132934832596,
+    "head_recall": 0.49121824137157183,
+    "medium_recall": 0.4170007641396368,
+    "tail_recall": 0.13497553129132076,
+    "stage1_tail_recall": 0.15036474247000564,
+    "many_to_one_BA": 0.37285318579304694,
+    "many_to_one_tail_recall": 0.10770280401859349,
+    "covered_classes": 63,
+    "tail_coverage": 0.2,
+    "predicted_clusters": 117,
+    "normalized_entropy": 0.6326724427386431
+  },
+  "fit": {
+    "raw_noise": 4592,
+    "raw_clusters": 117
+  },
+  "elapsed_s": 8.379091000000699
+}

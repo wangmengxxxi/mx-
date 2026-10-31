@@ -1,0 +1,45 @@
+{
+  "dataset": "cifar100",
+  "ir": 100,
+  "seed": 2,
+  "method": "FINCH_reqK",
+  "k": 100,
+  "n": 10847,
+  "protocol_sha256": "f2b298c369f2ce72687d55beeee9c6710675c00001ad4ab936206db695adce59",
+  "indices_array_sha256": "47fb89590a741a9f060d84a50fb86c5f4b6a45c81b676f1768deafadc9e18c55",
+  "metrics": {
+    "ACC": 0.4982944592975016,
+    "NMI": 0.7392303140445717,
+    "ARI": 0.4485459105229465,
+    "balanced_accuracy": 0.3607599033544115,
+    "macro_F1": 0.3135844017638599,
+    "head_recall": 0.571899203920578,
+    "medium_recall": 0.2942581692090589,
+    "tail_recall": 0.2382895816487148,
+    "stage1_tail_recall": 0.231129056910087,
+    "many_to_one_BA": 0.34365018013198095,
+    "many_to_one_tail_recall": 0.07825396825396824,
+    "covered_classes": 46,
+    "tail_coverage": 0.13333333333333333,
+    "predicted_clusters": 96,
+    "normalized_entropy": 0.8851355269377383
+  },
+  "fit": {
+    "levels": [
+      856,
+      452,
+      263,
+      164,
+      96,
+      59,
+      32,
+      19,
+      10,
+      6,
+      3,
+      2,
+      1
+    ]
+  },
+  "elapsed_s": 0.7796450999994704
+}

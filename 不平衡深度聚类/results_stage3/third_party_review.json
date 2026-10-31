@@ -1,0 +1,22 @@
+{
+  "DeepDPM": {
+    "official_url": "https://github.com/BGU-CS-VIL/DeepDPM",
+    "commit": "95c9376ac1b0cb48ea017c52d3abbf2a901940b3",
+    "commit_source": "git ls-remote HEAD over HTTPS on 2026-10-31",
+    "attempts": ["shallow clone: stalled with no worktree", "shallow clone with OpenSSL/HTTP1.1: connection reset", "sparse blobless shallow clone: stalled with no worktree", "codeload zip: connection timeout"],
+    "code_review": "Source snapshot fetched through raw.githubusercontent.com and verified against the fixed commit Git tree blob hashes; reviewed DeepDPM.py, datasets.py, ClusterNetModel and requirements.",
+    "license": "MIT (official LICENSE at fixed commit)",
+    "run_status": "not run for initial K=10 or K=200. Official requirements pin torch 1.11 and pytorch-lightning 1.2.10, while existing environment has torch 2.11/Python 3.12. Installed the legacy Lightning and selected dependencies with --no-deps, preserving torch/NumPy, but even --help fails during the old Neptune import (missing click and further dependencies). The code also uses legacy Trainer(gpus=..., checkpoint_callback=...) and training_epoch_end hooks, so a one-line compatibility patch is insufficient. No clustering output fabricated.",
+    "incorporated_into_own_method": false
+  },
+  "FINCH": {
+    "official_url": "https://github.com/ssarfraz/FINCH-Clustering",
+    "commit": "ab3b014ae30c0dd2eaa82ff37378e076ca21198a",
+    "commit_source": "git ls-remote HEAD over HTTPS on 2026-10-31",
+    "attempts": ["shallow clone: stalled with no worktree", "shallow clone with OpenSSL/HTTP1.1: connection unavailable", "codeload zip: connection timeout"],
+    "code_review": "Source snapshot fetched and verified against Git tree blob hashes; reviewed finch/finch.py and license. Local first-neighbor and requested-K behavior differs from official req_numclust/early-exit paths.",
+    "license": "MIT (official LICENSE.txt at fixed commit)",
+    "run_status": "local implementation from paper first-neighbor rule only; official code not executed; report identifies this as a diagnostic adaptation",
+    "incorporated_into_own_method": false
+  }
+}

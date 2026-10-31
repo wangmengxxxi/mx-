@@ -1,0 +1,92 @@
+{
+  "state": "complete",
+  "started_at": "2026-10-31T17:02:17+08:00",
+  "updated_at": "2026-10-31T17:52:48+08:00",
+  "machine": "RTX 5060 8GB",
+  "total": 235,
+  "completed": 235,
+  "current": null,
+  "skipped": [
+    {
+      "job": "cifar100/IR100/seed1/DeepDPM",
+      "reason": "official shallow clone yielded no worktree; implementation/permission not verified"
+    },
+    {
+      "job": "cifar100/IR100/seed2/DeepDPM",
+      "reason": "official shallow clone yielded no worktree; implementation/permission not verified"
+    },
+    {
+      "job": "cifar100/IR100/seed3/DeepDPM",
+      "reason": "official shallow clone yielded no worktree; implementation/permission not verified"
+    },
+    {
+      "job": "cifar100/IR100/seed4/DeepDPM",
+      "reason": "official shallow clone yielded no worktree; implementation/permission not verified"
+    },
+    {
+      "job": "cifar100/IR100/seed5/DeepDPM",
+      "reason": "official shallow clone yielded no worktree; implementation/permission not verified"
+    },
+    {
+      "job": "cifar100/IR10/seed1/DeepDPM",
+      "reason": "official shallow clone yielded no worktree; implementation/permission not verified"
+    },
+    {
+      "job": "cifar100/IR10/seed2/DeepDPM",
+      "reason": "official shallow clone yielded no worktree; implementation/permission not verified"
+    },
+    {
+      "job": "cifar100/IR10/seed3/DeepDPM",
+      "reason": "official shallow clone yielded no worktree; implementation/permission not verified"
+    },
+    {
+      "job": "cifar100/IR10/seed4/DeepDPM",
+      "reason": "official shallow clone yielded no worktree; implementation/permission not verified"
+    },
+    {
+      "job": "cifar100/IR10/seed5/DeepDPM",
+      "reason": "official shallow clone yielded no worktree; implementation/permission not verified"
+    },
+    {
+      "job": "cifar10/IR100/seed1/DeepDPM",
+      "reason": "official shallow clone yielded no worktree; implementation/permission not verified"
+    },
+    {
+      "job": "cifar10/IR100/seed2/DeepDPM",
+      "reason": "official shallow clone yielded no worktree; implementation/permission not verified"
+    },
+    {
+      "job": "cifar10/IR100/seed3/DeepDPM",
+      "reason": "official shallow clone yielded no worktree; implementation/permission not verified"
+    },
+    {
+      "job": "cifar10/IR100/seed4/DeepDPM",
+      "reason": "official shallow clone yielded no worktree; implementation/permission not verified"
+    },
+    {
+      "job": "cifar10/IR100/seed5/DeepDPM",
+      "reason": "official shallow clone yielded no worktree; implementation/permission not verified"
+    },
+    {
+      "job": "cifar100/IR1/seed1/DeepDPM",
+      "reason": "official shallow clone yielded no worktree; implementation/permission not verified"
+    },
+    {
+      "job": "cifar100/IR1/seed2/DeepDPM",
+      "reason": "official shallow clone yielded no worktree; implementation/permission not verified"
+    },
+    {
+      "job": "cifar100/IR1/seed3/DeepDPM",
+      "reason": "official shallow clone yielded no worktree; implementation/permission not verified"
+    },
+    {
+      "job": "cifar100/IR1/seed4/DeepDPM",
+      "reason": "official shallow clone yielded no worktree; implementation/permission not verified"
+    },
+    {
+      "job": "cifar100/IR1/seed5/DeepDPM",
+      "reason": "official shallow clone yielded no worktree; implementation/permission not verified"
+    }
+  ],
+  "failures": []
+}
